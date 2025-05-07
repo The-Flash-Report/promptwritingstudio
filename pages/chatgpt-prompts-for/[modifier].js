@@ -48,7 +48,7 @@ export default function ModifierPage({ modifierData }) {
             <p className="text-xl mb-8">
               Save hours and get better results with our tested and optimized prompts specifically designed for {modifierName.toLowerCase()} professionals and enthusiasts.
             </p>
-            <a href="#prompt-templates" className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block">
+            <a href="#prompt-templates" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block">
               View Prompt Templates
             </a>
           </div>
@@ -67,23 +67,23 @@ export default function ModifierPage({ modifierData }) {
               Our {modifierName.toLowerCase()} prompts are designed by experts who understand both the capabilities of ChatGPT and the specific needs of {modifierName.toLowerCase()} work. Each prompt template has been tested and refined to ensure it produces high-quality, relevant outputs.
             </p>
             
-            <div className="bg-indigo-50 p-8 rounded-xl border border-indigo-100 mt-8">
-              <h3 className="text-xl font-bold mb-4 text-indigo-700">What Makes Our {modifierName} Prompts Different</h3>
+            <div className="bg-[#F9F9F9] p-8 rounded-xl border border-[#E5E5E5] mt-8">
+              <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">What Makes Our {modifierName} Prompts Different</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
                   <span><strong>Context-Rich Instructions</strong>: Each prompt includes the necessary context for ChatGPT to understand exactly what you need.</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
                   <span><strong>Structured Outputs</strong>: Our prompts guide ChatGPT to deliver responses in useful, structured formats.</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
                   <span><strong>Industry-Specific Language</strong>: We incorporate {modifierName.toLowerCase()}-specific terminology and best practices.</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-indigo-600 mt-1 mr-2"></i>
+                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
                   <span><strong>Customization Guidance</strong>: Tips for adapting each template to your specific needs.</span>
                 </li>
               </ul>
@@ -93,14 +93,16 @@ export default function ModifierPage({ modifierData }) {
       </section>
       
       {/* Prompt Templates Section */}
-      <section id="prompt-templates" className="py-16 md:py-24 bg-gray-50">
+      <section id="prompt-templates" className="py-16 md:py-24 bg-[#F9F9F9]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">ChatGPT Prompt Templates for {modifierName}</h2>
-            
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center text-[#1A1A1A]">Expert-Crafted {modifierName} Prompt Templates</h2>
+            <p className="text-lg text-[#333333] mb-12 text-center">
+              Click on any prompt to view the full template. Copy and paste into ChatGPT to use.
+            </p>
             {promptTemplates.map((template, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-sm mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-indigo-700">{template.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 text-[#1A1A1A]">{template.title}</h3>
                 <p className="text-gray-700 mb-6">{template.description}</p>
                 
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 font-mono text-sm mb-6 whitespace-pre-wrap">
@@ -110,9 +112,10 @@ export default function ModifierPage({ modifierData }) {
                 <div className="flex justify-between items-center">
                   <button 
                     onClick={() => copyToClipboard(template.prompt)}
-                    className="text-indigo-600 hover:text-indigo-800 flex items-center"
+                    className="text-sm bg-[#FFDE59] text-black px-4 py-2 rounded-lg hover:bg-[#E5C84F] transition"
                   >
-                    <i className="far fa-copy mr-2"></i> Copy Prompt
+                    <i className="fas fa-copy mr-2"></i>
+                    Copy to Clipboard
                   </button>
                   <span className="text-sm text-gray-500">
                     {template.wordCount} words | {template.category}
@@ -122,7 +125,7 @@ export default function ModifierPage({ modifierData }) {
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <button 
                     onClick={() => togglePrompt(index)}
-                    className="flex items-center text-indigo-600 font-medium"
+                    className="flex items-center text-[#1A1A1A] font-medium"
                   >
                     {activePromptIndex === index ? (
                       <>
@@ -194,16 +197,16 @@ export default function ModifierPage({ modifierData }) {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center text-[#1A1A1A]">Frequently Asked Questions</h2>
             
             <div className="space-y-6">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white p-6 rounded-xl shadow-sm">
-                  <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
-                  <div className="text-gray-700">{faq.answer}</div>
+                <div key={index} className="bg-[#F9F9F9] p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{faq.question}</h3>
+                  <div className="text-[#333333]">{faq.answer}</div>
                 </div>
               ))}
             </div>
@@ -215,17 +218,17 @@ export default function ModifierPage({ modifierData }) {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Explore More ChatGPT Prompts</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center text-[#1A1A1A]">Explore More ChatGPT Prompts</h2>
             
             <div className="grid md:grid-cols-2 gap-6">
               {relatedModifiers.slice(0, 4).map((related, index) => (
                 <Link 
                   key={index} 
                   href={`/chatgpt-prompts-for/${related.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="block bg-gray-50 p-6 rounded-xl hover:shadow-md transition"
+                  className="block bg-white p-6 rounded-xl hover:shadow-md transition border border-[#E5E5E5]"
                 >
-                  <h3 className="text-xl font-bold mb-2 text-indigo-700">ChatGPT Prompts for {related}</h3>
-                  <p className="text-gray-700">Discover expert-crafted prompts to improve your {related.toLowerCase()} results.</p>
+                  <h3 className="text-xl font-bold mb-2 text-[#1A1A1A]">ChatGPT Prompts for {related}</h3>
+                  <p className="text-[#333333]">Discover expert-crafted prompts to improve your {related.toLowerCase()} results.</p>
                 </Link>
               ))}
             </div>
@@ -244,13 +247,13 @@ export default function ModifierPage({ modifierData }) {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/#pricing" 
-                className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition"
+                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition"
               >
                 View Pricing Plans
               </Link>
               <Link 
                 href="/chatgpt-prompt-templates" 
-                className="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-indigo-600 transition"
+                className="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] hover:border-[#FFDE59] transition"
               >
                 Browse All Templates
               </Link>
@@ -263,12 +266,16 @@ export default function ModifierPage({ modifierData }) {
 }
 
 export async function getStaticPaths() {
+  // Get all modifier slugs
   const modifiers = getModifierSlugs()
   
+  // Map the slugs to the required format for Next.js
   const paths = modifiers.map(modifier => ({
     params: { modifier }
   }))
   
+  // For Netlify deployment, ensure we're returning a complete array of paths
+  // and setting fallback to false to generate all pages at build time
   return {
     paths,
     fallback: false
@@ -276,11 +283,33 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const modifierData = getModifierData(params.modifier)
-  
-  return {
-    props: {
-      modifierData
+  try {
+    // Get data for this specific modifier
+    const modifierData = getModifierData(params.modifier)
+    
+    return {
+      props: {
+        modifierData
+      }
+    }
+  } catch (error) {
+    console.error(`Error in getStaticProps for modifier ${params.modifier}:`, error)
+    
+    // Return fallback data to prevent build failures
+    return {
+      props: {
+        modifierData: {
+          modifierName: params.modifier,
+          promptTemplates: [],
+          useCases: [],
+          faqs: [],
+          relatedModifiers: [],
+          seoData: {
+            title: `${params.modifier} Prompts`,
+            description: `ChatGPT prompts for ${params.modifier}`
+          }
+        }
+      }
     }
   }
 }
