@@ -1,0 +1,122 @@
+{
+  "modifierName": "Business",
+  "searchVolume": 200,
+  "keywordDifficulty": 6,
+  "seoData": {
+    "title": "ChatGPT Prompts for Business - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for business strategy, operations, and growth. Our expert-crafted templates help you solve business challenges and save valuable time."
+  },
+  "promptTemplates": [
+    {
+      "title": "SWOT Analysis Generator",
+      "description": "Create a comprehensive SWOT analysis for any business or product.",
+      "prompt": "Create a detailed SWOT (Strengths, Weaknesses, Opportunities, Threats) analysis for a [type of business/product] in the [industry] industry. For context: [brief description of business/product, target market, and current situation]. For each SWOT category, provide at least 5 specific points with a brief explanation of each. Conclude with 3 strategic recommendations based on the analysis.",
+      "wordCount": 120,
+      "category": "Strategic Planning",
+      "example": "STRENGTHS:\n1. Proprietary Technology: Your patented algorithm provides a 30% efficiency improvement over competitors\n2. Strong Brand Recognition: 85% awareness among target demographic in primary markets...\n\nWEAKNESSES:\n1. Limited Geographic Presence: Currently only operating in 3 states, limiting market reach...",
+      "tips": [
+        "Be specific about your industry and business model",
+        "Include relevant metrics and market information if available",
+        "Focus on actionable insights rather than generic statements"
+      ]
+    },
+    {
+      "title": "Business Plan Executive Summary",
+      "description": "Generate a compelling executive summary for a business plan.",
+      "prompt": "Write an executive summary for a business plan for a [new/existing] [type of business] called [business name]. The business offers [products/services] to [target market] with the unique value proposition of [main benefit/differentiator]. Our business model is [brief description of how you make money]. We're seeking [amount] in [funding/investment] to [primary use of funds]. Include brief sections on: market opportunity (with market size), competitive advantage, financial projections for 3 years, and team strengths. Keep it under 500 words and compelling for investors.",
+      "wordCount": 140,
+      "category": "Business Planning",
+      "example": "Executive Summary: TechHealth Solutions\n\nTechHealth Solutions is a digital health platform connecting patients with on-demand virtual care while reducing administrative burden for healthcare providers. Our AI-powered triage and scheduling system reduces patient wait times by 65% and increases provider efficiency by 40%...",
+      "tips": [
+        "Focus on your unique value proposition and competitive advantage",
+        "Include realistic but attractive financial projections",
+        "Keep it concise - executives and investors have limited time"
+      ]
+    },
+    {
+      "title": "Marketing Strategy Framework",
+      "description": "Develop a comprehensive marketing strategy for any business.",
+      "prompt": "Create a comprehensive marketing strategy framework for a [type of business] targeting [customer segment]. The business offers [products/services] with a budget of approximately [budget range]. Include the following sections: 1) Target audience persona with demographics and psychographics, 2) Positioning statement and unique value proposition, 3) Channel strategy with primary and secondary channels, 4) Content strategy with content types and themes, 5) Customer acquisition approach, 6) Retention and loyalty tactics, 7) Key performance indicators, 8) Timeline for implementation over 6 months. Make recommendations specific and actionable.",
+      "wordCount": 150,
+      "category": "Marketing",
+      "example": "MARKETING STRATEGY: PREMIUM FITNESS APPAREL BRAND\n\nTARGET AUDIENCE PERSONA:\nPrimary: 'Fitness Enthusiast Emma' - Urban professional female, 28-40, income $75K+, values quality and performance, exercises 4+ times weekly, follows fitness influencers...",
+      "tips": [
+        "Be specific about your target audience - the more detailed, the better",
+        "Align your channel strategy with where your audience spends time",
+        "Ensure your KPIs directly measure progress toward business goals"
+      ]
+    },
+    {
+      "title": "Competitive Analysis Matrix",
+      "description": "Create a detailed comparison of your business versus competitors.",
+      "prompt": "Create a comprehensive competitive analysis matrix comparing [your business name] with [competitor 1], [competitor 2], and [competitor 3] in the [industry] market. For context: [brief description of your business and key differentiators]. Compare across the following categories: 1) Product/service offerings and pricing, 2) Target audience and market share, 3) Unique selling propositions, 4) Marketing approach and channels, 5) Customer experience and support, 6) Strengths and weaknesses, 7) Technology and innovation. For each category, provide a brief analysis of how your business compares, and identify opportunities to differentiate or improve.",
+      "wordCount": 145,
+      "category": "Market Analysis",
+      "example": "COMPETITIVE ANALYSIS MATRIX\n\nPRODUCT/SERVICE OFFERINGS & PRICING:\nYour Business: Full-service digital marketing with custom packages $2,000-$10,000/month, specializing in data-driven campaigns\nCompetitor 1: Focuses primarily on social media management, $1,500-$5,000/month, lacks advanced analytics...",
+      "tips": [
+        "Be honest about competitor strengths",
+        "Include pricing information when available",
+        "Focus on factors that matter most to customers in your industry"
+      ]
+    },
+    {
+      "title": "Business Process Optimization",
+      "description": "Identify inefficiencies and improve business processes.",
+      "prompt": "Help me optimize this business process for a [type of business]: [describe current process with steps, tools used, people involved, and approximate time for each step]. The main pain points are [list problems with the current process]. Our goals for optimization are [e.g., reduce time, lower costs, improve quality, enhance customer experience]. Suggest specific improvements including: 1) Steps that can be eliminated or combined, 2) Tasks that could be automated and suggested tools, 3) Reallocation of responsibilities, 4) Changes to workflow sequence, 5) Implementation of new metrics or quality controls. Provide a revised process flow and estimate the potential time/cost savings.",
+      "wordCount": 160,
+      "category": "Operations",
+      "example": "OPTIMIZED CUSTOMER ONBOARDING PROCESS\n\nCurrent Process Analysis:\n- Manual data entry (30 mins) → Automate with web form integration to CRM (5 mins)\n- Email approval workflow (48 hours) → Implement digital signature solution with automated reminders (12 hours)...",
+      "tips": [
+        "Be very detailed about your current process",
+        "Specify what technology or tools you're currently using",
+        "Prioritize changes that address your biggest pain points"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Entrepreneurs & Startups",
+      "icon": "fas fa-rocket",
+      "description": "Entrepreneurs use these prompts to quickly develop business plans, conduct market analyses, and create strategic frameworks without hiring expensive consultants or spending weeks on research.",
+      "recommendedPrompt": "Business Plan Executive Summary"
+    },
+    {
+      "title": "Small Business Owners",
+      "icon": "fas fa-store",
+      "description": "Small business owners leverage these prompts to optimize operations, develop marketing strategies, and identify growth opportunities with limited resources and time constraints.",
+      "recommendedPrompt": "Business Process Optimization"
+    },
+    {
+      "title": "Business Consultants",
+      "icon": "fas fa-chart-line",
+      "description": "Consultants use these prompts to create client deliverables, prepare for meetings, and generate frameworks that can be customized for specific client situations, increasing their productivity and value.",
+      "recommendedPrompt": "Competitive Analysis Matrix"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How can I make these business prompts more specific to my industry?",
+      "answer": "To customize these prompts for your industry, replace the general terms with industry-specific language and metrics. For example, in the SWOT analysis prompt, include industry-specific challenges, regulations, or trends. You can also add industry benchmarks or standards that would be relevant to your analysis. The more specific context you provide, the more tailored the output will be."
+    },
+    {
+      "question": "Can ChatGPT replace business consultants or strategists?",
+      "answer": "While ChatGPT can provide valuable frameworks, analyses, and starting points, it shouldn't completely replace human expertise. ChatGPT lacks real-time market insights, can't conduct primary research, and doesn't have industry experience. Use these prompts to supplement your thinking, save time on initial drafts, and explore options—but combine the outputs with your own business judgment and industry knowledge."
+    },
+    {
+      "question": "How accurate are the financial projections or market analyses from these prompts?",
+      "answer": "ChatGPT cannot provide accurate financial projections or market analyses based on current data. Any numbers generated are illustrative examples only. For accurate financial projections or market analyses, you should input your own data and assumptions, or use the output as a framework that you populate with real figures from reliable sources."
+    },
+    {
+      "question": "How often should I update analyses created with these prompts?",
+      "answer": "Business analyses should be updated regularly as market conditions change. For fast-moving industries, quarterly reviews are recommended. For more stable industries, semi-annual or annual updates may be sufficient. Use these prompts to refresh your analyses when you experience significant changes in your business, when new competitors emerge, or when market conditions shift."
+    }
+  ],
+  "relatedModifiers": [
+    "Marketing",
+    "Sales",
+    "Startup",
+    "E-commerce",
+    "Management",
+    "Leadership"
+  ]
+}

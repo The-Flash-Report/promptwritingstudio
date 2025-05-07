@@ -1,0 +1,122 @@
+{
+  "modifierName": "Resume",
+  "searchVolume": 500,
+  "keywordDifficulty": 7,
+  "seoData": {
+    "title": "ChatGPT Prompts for Resume - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for resume writing and optimization. Our expert-crafted templates help you create better resumes and land more interviews."
+  },
+  "promptTemplates": [
+    {
+      "title": "ATS-Optimized Resume Generator",
+      "description": "Create an ATS-friendly resume tailored to a specific job description.",
+      "prompt": "Create an ATS-optimized resume for a [job title] position based on the following job description: [paste job description]. Use my background: [your experience, skills, education]. Format it professionally with clear sections for Summary, Experience, Skills, and Education. Ensure it includes relevant keywords from the job description while remaining truthful to my background. Suggest 3-5 bullet points for each role that quantify achievements where possible.",
+      "wordCount": 135,
+      "category": "Resume Creation",
+      "example": "PROFESSIONAL SUMMARY\nDetail-oriented Software Engineer with 5+ years of experience developing scalable web applications using React, Node.js, and AWS. Proven track record of reducing application load times by 40% and implementing CI/CD pipelines that decreased deployment times by 65%...",
+      "tips": [
+        "Paste the full job description for best results",
+        "Include your actual experience and skills - don't fabricate",
+        "Be specific about your achievements with numbers when possible"
+      ]
+    },
+    {
+      "title": "Resume Achievement Bullet Points",
+      "description": "Transform basic job descriptions into achievement-focused bullet points.",
+      "prompt": "Transform the following basic job responsibilities into powerful, achievement-focused resume bullet points with metrics where possible. For context, my role was [job title] at [company type/industry]: [list of responsibilities]. For each bullet point, follow the formula: Action verb + Task + Result/Impact. Suggest at least 5 strong bullet points.",
+      "wordCount": 110,
+      "category": "Resume Enhancement",
+      "example": "• Spearheaded the implementation of an automated testing framework that reduced QA time by 35% and improved code coverage from 65% to 92%\n• Redesigned the customer onboarding process, resulting in a 28% increase in user activation and a 15% reduction in support tickets...",
+      "tips": [
+        "Include specific metrics and percentages whenever possible",
+        "Use strong action verbs at the beginning of each bullet point",
+        "Focus on results and impact, not just responsibilities"
+      ]
+    },
+    {
+      "title": "Resume Skills Section Optimizer",
+      "description": "Create a tailored skills section based on job requirements and your experience.",
+      "prompt": "Based on this job description [paste job description] and my background [your skills and experience], create an optimized Skills section for my resume. Organize skills into categories (e.g., Technical Skills, Soft Skills, Industry Knowledge). Include both hard and soft skills that are relevant to the position. Prioritize skills mentioned in the job description that I actually possess. Format it in a clean, scannable way that would work well on a resume.",
+      "wordCount": 120,
+      "category": "Resume Enhancement",
+      "example": "SKILLS\n\nTechnical: Python, SQL, Tableau, Power BI, Excel (Advanced), Statistical Analysis, Data Visualization, ETL Processes\n\nSoft Skills: Cross-functional Collaboration, Project Management, Data Storytelling, Problem-solving, Strategic Thinking\n\nIndustry Knowledge: Financial Reporting, Business Intelligence, KPI Development, Predictive Analytics",
+      "tips": [
+        "Only include skills you genuinely possess",
+        "Prioritize skills mentioned in the job description",
+        "Group similar skills into logical categories for better readability"
+      ]
+    },
+    {
+      "title": "Professional Summary Generator",
+      "description": "Create a compelling professional summary for your resume.",
+      "prompt": "Write a compelling professional summary for my resume. I am a [your profession] with [years] of experience in [industry/field]. My key strengths include [list 3-4 key skills]. I have experience with [relevant achievements or responsibilities]. I'm looking for a role as a [target position] where I can [your goal]. The summary should be 3-4 sentences, impactful, and tailored for a [entry/mid/senior] level position.",
+      "wordCount": 115,
+      "category": "Resume Creation",
+      "example": "Results-driven Marketing Manager with 7+ years of experience in digital marketing and brand development for SaaS companies. Expertise in campaign optimization, content strategy, and marketing analytics with a proven track record of increasing conversion rates by 35% and reducing customer acquisition costs by 25%. Adept at leading cross-functional teams and aligning marketing initiatives with business objectives to drive sustainable growth.",
+      "tips": [
+        "Keep it concise (3-4 sentences maximum)",
+        "Include your most impressive achievements with metrics",
+        "Tailor it to the specific job you're applying for"
+      ]
+    },
+    {
+      "title": "Resume Tailoring for Job Description",
+      "description": "Modify your existing resume to better match a specific job description.",
+      "prompt": "Help me tailor my current resume to better match this job description. Job description: [paste job description]. My current resume: [paste your current resume]. Suggest specific modifications including: 1) Keywords to add or emphasize, 2) Skills to highlight, 3) Experiences to emphasize or reword, 4) Achievements to quantify or highlight, 5) Sections to reorganize for better impact. Don't rewrite the entire resume, just suggest targeted improvements to better align with this specific job.",
+      "wordCount": 130,
+      "category": "Resume Optimization",
+      "example": "RECOMMENDED MODIFICATIONS:\n\n1. Keywords to Add: Add 'cross-functional team leadership' and 'agile project management' to your skills section\n2. Skills to Highlight: Move your technical skills section higher on the resume and emphasize your experience with Salesforce and HubSpot\n3. Experiences to Emphasize: Your role at XYZ Company aligns closely with this position - expand those bullet points...",
+      "tips": [
+        "Always include the full job description for best results",
+        "Be selective about which suggestions you implement",
+        "Focus on truthful modifications that highlight relevant experience"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Job Seekers",
+      "icon": "fas fa-briefcase",
+      "description": "Job seekers use these prompts to create tailored resumes for each application, significantly increasing their interview callback rates by ensuring their resumes pass ATS systems and highlight relevant experience.",
+      "recommendedPrompt": "ATS-Optimized Resume Generator"
+    },
+    {
+      "title": "Career Changers",
+      "icon": "fas fa-exchange-alt",
+      "description": "Professionals transitioning to new industries use these prompts to reframe their existing experience in terms that resonate with hiring managers in their target field, emphasizing transferable skills.",
+      "recommendedPrompt": "Resume Tailoring for Job Description"
+    },
+    {
+      "title": "Recent Graduates",
+      "icon": "fas fa-graduation-cap",
+      "description": "New graduates with limited work experience use these prompts to create professional resumes that highlight academic achievements, relevant coursework, and transferable skills from internships or part-time jobs.",
+      "recommendedPrompt": "Resume Achievement Bullet Points"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I know if my resume will pass ATS systems?",
+      "answer": "ATS (Applicant Tracking System) compatibility depends on several factors: using a clean, standard format; including relevant keywords from the job description; avoiding tables, headers/footers, and unusual fonts; and properly labeling your sections. Our ATS-Optimized Resume Generator prompt helps you create a resume that addresses these factors while remaining readable for human recruiters."
+    },
+    {
+      "question": "Should I include the same skills on every resume I send out?",
+      "answer": "No, you should customize your skills section for each job application. Use our Resume Skills Section Optimizer prompt to identify which of your skills align with each specific job description. This targeted approach significantly increases your chances of passing ATS screening and catching a recruiter's attention."
+    },
+    {
+      "question": "How long should my resume be?",
+      "answer": "For most professionals, a one-page resume is ideal. Those with 10+ years of relevant experience may extend to two pages. Our resume prompts are designed to help you create concise, impactful content that fits these length guidelines while highlighting your most relevant qualifications."
+    },
+    {
+      "question": "How can I quantify achievements if my work doesn't have obvious metrics?",
+      "answer": "Even in roles without clear metrics, you can quantify your impact by considering: volume of work (number of projects/clients), time savings, efficiency improvements, team size, project scope, or positive feedback rates. Our Resume Achievement Bullet Points prompt can help you identify and articulate these less obvious metrics in a compelling way."
+    }
+  ],
+  "relatedModifiers": [
+    "Cover Letter",
+    "LinkedIn",
+    "Job Interview",
+    "Career Change",
+    "Personal Branding",
+    "Job Search"
+  ]
+}

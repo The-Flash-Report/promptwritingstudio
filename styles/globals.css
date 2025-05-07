@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Design System */
+@import url('design-system.css');
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* Legacy variables for backward compatibility */
+:root {
+  --primary: var(--color-primary);
+  --primary-dark: var(--color-primary-dark);
+  --secondary: var(--color-secondary);
+  --accent: var(--color-primary);
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-off-white);
+  color: var(--color-dark-gray);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #000000 100%);
+  color: var(--color-pure-white);
+}
+
+.typing-effect {
+  border-right: 0.15em solid var(--color-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--color-primary) }
+}
+
+/* Additional utility classes */
+.pricing-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
+  
+  .typing-container {
+    justify-content: center;
+  }
+}
+
+.pricing-card {
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
+  
+  .typing-container {
+    justify-content: center;
+  }
+}

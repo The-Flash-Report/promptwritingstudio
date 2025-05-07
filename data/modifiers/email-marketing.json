@@ -1,0 +1,122 @@
+{
+  "modifierName": "Email Marketing",
+  "searchVolume": 80,
+  "keywordDifficulty": 4,
+  "seoData": {
+    "title": "ChatGPT Prompts for Email Marketing - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for email marketing campaigns. Our expert-crafted templates help you create better emails, improve open rates, and boost conversions."
+  },
+  "promptTemplates": [
+    {
+      "title": "Email Subject Line Generator",
+      "description": "Create high-converting email subject lines for any campaign.",
+      "prompt": "Generate 10 compelling email subject lines for a [type of email campaign] promoting [product/service/content] to [target audience]. The key benefit we want to highlight is [main benefit/selling point]. Our brand voice is [describe brand voice: casual, professional, playful, etc.]. Include a mix of approaches: curiosity-driven, benefit-focused, urgency-based, question-based, and personalized. For each subject line, explain why it would be effective. Keep subject lines under 50 characters for mobile optimization.",
+      "wordCount": 130,
+      "category": "Email Copywriting",
+      "example": "1. \"Last Day: 30% Off Your First Design Package\" - Uses urgency and clear value proposition\n2. \"The Design Secret Most Startups Miss\" - Creates curiosity while implying valuable insider knowledge\n3. \"[Name], Transform Your Brand in Just 7 Days\" - Personalized with specific timeframe and transformation promise...",
+      "tips": [
+        "A/B test different subject line approaches to see what resonates with your audience",
+        "Avoid spam trigger words like 'free', 'guarantee', and excessive punctuation",
+        "Consider your audience's pain points and desires when crafting subject lines"
+      ]
+    },
+    {
+      "title": "Welcome Email Sequence",
+      "description": "Create a 5-part welcome email sequence for new subscribers or customers.",
+      "prompt": "Create a 5-email welcome sequence for new [subscribers/customers] of our [type of business]. Our product/service is [brief description] and our target audience is [target audience description]. Our brand voice is [describe brand voice]. For each email, provide: 1) Subject line, 2) Main goal of the email, 3) Opening hook, 4) Key content sections with headers, 5) Call-to-action, and 6) Recommended send timing. Email 1 should welcome and deliver any promised lead magnet. Email 2 should introduce our brand story. Email 3 should highlight key benefits/features. Email 4 should address common objections. Email 5 should present an offer or next steps.",
+      "wordCount": 150,
+      "category": "Email Sequences",
+      "example": "EMAIL 1: WELCOME & LEAD MAGNET DELIVERY\nSubject: Welcome to [Brand] - Your [Lead Magnet] Inside!\nGoal: Deliver lead magnet and set expectations for the sequence\nTiming: Immediately after signup\n\nOpening Hook: Welcome to the [Brand] community! We're thrilled you've joined our [number] of [subscribers/customers] who are [achieving desired outcome]...",
+      "tips": [
+        "Personalize each email with the subscriber's name and relevant details",
+        "Keep emails focused on a single goal to avoid overwhelming readers",
+        "Space out the sequence appropriately (typically 2-3 days between emails)"
+      ]
+    },
+    {
+      "title": "Abandoned Cart Email",
+      "description": "Create effective abandoned cart recovery emails.",
+      "prompt": "Write an abandoned cart recovery email for our [type of business] selling [products/services]. The customer added [specific product(s)] to their cart but didn't complete checkout. Our brand voice is [describe brand voice]. Include: 1) An attention-grabbing subject line, 2) A friendly reminder about their cart items, 3) A section addressing common objections or hesitations, 4) Social proof (suggest the type of testimonial or review to include), 5) A clear call-to-action to return to checkout, 6) A secondary section with 2-3 recommended related products, and 7) Any urgency element (like limited stock or time-limited discount). The email should be conversational and helpful, not pushy.",
+      "wordCount": 145,
+      "category": "Conversion Emails",
+      "example": "SUBJECT: Your [Product Name] is Waiting For You!\n\nHi [Name],\n\nLooks like you left something special behind! The [Product Name] you added to your cart is still there, but it won't wait forever.\n\nWe noticed you didn't complete your purchase, and we wanted to check if you had any questions about the [Product Name]. Many customers love its [key feature/benefit], and it's one of our best-selling items...",
+      "tips": [
+        "Include a clear image of the abandoned product",
+        "Consider offering a small, time-limited discount to encourage completion",
+        "Make the checkout process as simple as possible - include a direct link"
+      ]
+    },
+    {
+      "title": "Email Newsletter Template",
+      "description": "Create engaging newsletter templates for regular audience communication.",
+      "prompt": "Design a template for a [weekly/monthly] email newsletter for our [type of business]. Our audience consists of [target audience description] interested in [topics of interest]. Our brand voice is [describe brand voice]. Create a structured template with: 1) 3 subject line formulas we can adapt for each issue, 2) An engaging introduction section format, 3) 3-5 content section templates with headers and description of what goes in each (e.g., featured article, news roundup, tip of the week), 4) A promotional section template for our products/services, 5) Call-to-action examples, 6) Sign-off format. For each section, provide specific examples we could use in our first newsletter.",
+      "wordCount": 155,
+      "category": "Email Content",
+      "example": "SUBJECT LINE FORMULAS:\n1. [Number] [Topic] Tips You Need This [Timeframe] - Example: \"5 SEO Tips You Need This Summer\"\n2. The Inside Scoop: [Timely Topic] + [Benefit] - Example: \"The Inside Scoop: Google's New Algorithm + How to Adapt\"\n3. [Audience Name], Don't Miss This [Content Type] About [Topic] - Example: \"Marketers, Don't Miss This Guide About AI Content Creation\"...",
+      "tips": [
+        "Maintain a consistent structure so readers know what to expect",
+        "Keep the design mobile-friendly with a single-column layout",
+        "Balance valuable content with promotional material (80/20 rule)"
+      ]
+    },
+    {
+      "title": "Re-engagement Email Campaign",
+      "description": "Create emails to win back inactive subscribers or customers.",
+      "prompt": "Create a 3-part re-engagement email campaign for subscribers who haven't opened or clicked our emails in [time period, e.g., 3 months]. We are a [type of business] serving [target audience]. For each email, provide: 1) Subject line, 2) Preview text, 3) Main message and copy, 4) Specific offer or incentive (if applicable), 5) Call-to-action, and 6) Recommended timing. Email 1 should be a gentle check-in. Email 2 should highlight what they're missing and offer value. Email 3 should be a final attempt with a strong incentive before we clean our list. Include a brief note on how to segment recipients based on their response to optimize future campaigns.",
+      "wordCount": 140,
+      "category": "Subscriber Retention",
+      "example": "EMAIL 1: GENTLE CHECK-IN\nSubject: We miss you, [Name] - Are we still a good fit?\nPreview text: It's been a while since we've connected...\nTiming: Day 1\n\nHi [Name],\n\nWe noticed it's been a while since you engaged with our emails, and we wanted to check in. We're constantly working to provide valuable content on [topic/industry], and we want to make sure we're still meeting your needs...",
+      "tips": [
+        "Personalize these emails as much as possible with subscriber name and history",
+        "Test different incentives to see what drives the highest re-engagement",
+        "Be prepared to remove non-responsive subscribers after the campaign"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Email Marketers",
+      "icon": "fas fa-envelope",
+      "description": "Email marketing professionals use these prompts to quickly generate campaign ideas, craft compelling copy, and create structured sequences that drive engagement and conversions.",
+      "recommendedPrompt": "Email Subject Line Generator"
+    },
+    {
+      "title": "E-commerce Businesses",
+      "icon": "fas fa-shopping-cart",
+      "description": "Online retailers use these prompts to create effective abandoned cart emails, product recommendation sequences, and promotional campaigns that boost sales and customer retention.",
+      "recommendedPrompt": "Abandoned Cart Email"
+    },
+    {
+      "title": "Content Creators",
+      "icon": "fas fa-pen",
+      "description": "Bloggers, course creators, and content marketers use these prompts to develop newsletter templates, welcome sequences, and promotional emails that nurture their audience and drive conversions.",
+      "recommendedPrompt": "Email Newsletter Template"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How can I improve my email open rates using these prompts?",
+      "answer": "To improve open rates, focus on the Email Subject Line Generator prompt to create compelling, curiosity-driving subject lines. Test different approaches (questions, numbers, personalization) with A/B testing. Also, use the Re-engagement Email Campaign prompt to win back inactive subscribers. Remember that sender name, send time, and list quality also significantly impact open rates, so combine great subject lines with proper email sending practices."
+    },
+    {
+      "question": "How long should my marketing emails be?",
+      "answer": "The ideal email length depends on your purpose and audience. For promotional emails, keep them concise (150-200 words) with clear CTAs. For newsletters and educational content, 300-500 words often works well. Welcome emails and abandoned cart emails should be brief and focused. Our email prompts are designed to create appropriately sized emails for each purpose, but you can always request shorter or longer versions based on your specific needs."
+    },
+    {
+      "question": "How do I make my emails more personalized beyond using the subscriber's name?",
+      "answer": "True personalization goes beyond using a subscriber's name. Use our prompts to create segmented content based on subscriber behavior (pages visited, products viewed), purchase history, or quiz/survey responses. Modify the prompts to include conditional sections based on subscriber attributes. For example, in the Welcome Email Sequence prompt, you can specify different content for segments like 'new to the industry' versus 'experienced professionals' to create truly personalized journeys."
+    },
+    {
+      "question": "How frequently should I send marketing emails?",
+      "answer": "Email frequency depends on your industry, content value, and audience preferences. Most businesses find success with 1-4 emails per month for newsletters and regular communications. For specific campaigns like welcome sequences, follow the timing recommendations in our Welcome Email Sequence prompt (typically more frequent initially, then tapering off). The best approach is to set expectations during signup and then test different frequencies with your specific audience to find the optimal balance."
+    }
+  ],
+  "relatedModifiers": [
+    "Marketing",
+    "Copywriting",
+    "Sales",
+    "Content Creation",
+    "E-commerce",
+    "Customer Retention"
+  ]
+}
