@@ -199,14 +199,16 @@ export default function SEOPage({ pageData }) {
 
 // This function gets called at build time
 export async function getStaticPaths() {
-  // Get the paths we want to pre-render based on seoPages
-  const paths = seoPages.map((page) => ({
+  // Filter out the chatgpt-prompt-templates slug to avoid conflict with the static page
+  const filteredPages = seoPages.filter(page => page.slug !== 'chatgpt-prompt-templates')
+  
+  // Get the paths we want to pre-render based on filtered seoPages
+  const paths = filteredPages.map((page) => ({
     params: { slug: page.slug },
   }))
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  // { fallback: true } would allow dynamic generation of additional pages
   return { paths, fallback: false }
 }
 
