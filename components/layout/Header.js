@@ -30,9 +30,14 @@ export default function Header() {
           </Link>
         </div>
         <div>
-          <Link href="/#pricing" className="bg-[#FFDE59] text-[#1A1A1A] px-4 py-2 rounded-md font-bold hover:bg-[#E5C84F] transition">
+          <a 
+            href="https://bryancollins.com/products/prompt-writing-studio" 
+            className="bg-[#FFDE59] text-[#1A1A1A] px-4 py-2 rounded-md font-bold hover:bg-[#E5C84F] transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Get Started
-          </Link>
+          </a>
         </div>
       </div>
     </nav>

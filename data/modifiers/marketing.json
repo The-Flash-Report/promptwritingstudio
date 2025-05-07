@@ -1,0 +1,122 @@
+{
+  "modifierName": "Marketing",
+  "searchVolume": 200,
+  "keywordDifficulty": 16,
+  "seoData": {
+    "title": "ChatGPT Prompts for Marketing - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for marketing campaigns, content creation, and audience targeting. Our expert-crafted templates help you create compelling marketing materials that convert."
+  },
+  "promptTemplates": [
+    {
+      "title": "Content Calendar Generator",
+      "description": "Create a comprehensive content calendar for any marketing campaign.",
+      "prompt": "Create a 30-day content calendar for a [type of business] targeting [target audience] on [social media platforms]. Our main marketing goal is [goal, e.g., brand awareness, lead generation, sales]. Include the following: 1) Content themes for each week, 2) Specific post ideas for each day (including copy suggestions under 280 characters), 3) Content types (video, image, carousel, etc.), 4) Best posting times, 5) Hashtag suggestions, and 6) Key metrics to track for each content type. Ensure content aligns with the customer journey from awareness to conversion.",
+      "wordCount": 150,
+      "category": "Content Marketing",
+      "example": "WEEK 1: BRAND AWARENESS\n\nMonday, 9:00 AM\nContent Type: Carousel post\nCopy: \"Struggling with [pain point]? Swipe to discover 5 proven ways to [benefit]. #YourIndustry #TipsTuesday\"\nHashtags: #MarketingTips #DigitalStrategy\nMetrics: Impressions, Saves, Shares...",
+      "tips": [
+        "Include your brand voice guidelines for more tailored content",
+        "Mention any seasonal events or holidays during your campaign period",
+        "Specify any existing content that performs well with your audience"
+      ]
+    },
+    {
+      "title": "Customer Avatar Creator",
+      "description": "Develop detailed customer personas for targeted marketing.",
+      "prompt": "Create a comprehensive customer avatar/persona for a [product/service] in the [industry] industry. Target demographic: [basic demographic info]. Include the following sections: 1) Detailed demographics (age range, income level, education, occupation, family status), 2) Psychographics (values, interests, lifestyle, personality traits), 3) Goals and aspirations, 4) Pain points and challenges, 5) Objections to purchasing, 6) Preferred communication channels, 7) Decision-making factors, 8) A day in their life, and 9) How our product/service specifically helps them. Give this persona a name and include a brief narrative that brings them to life.",
+      "wordCount": 160,
+      "category": "Market Research",
+      "example": "CUSTOMER AVATAR: PROFESSIONAL PATRICIA\n\nDemographics: Patricia is a 35-42 year old marketing director earning $95-120K annually. She has an MBA, is married with one child, and lives in a suburban area near a major metropolitan city...\n\nPsychographics: Achievement-oriented, values efficiency and professional growth...",
+      "tips": [
+        "Use real customer data or interviews to inform your avatar",
+        "Create multiple avatars for different segments of your market",
+        "Revisit and refine your avatars quarterly as you learn more about your customers"
+      ]
+    },
+    {
+      "title": "Email Campaign Sequence",
+      "description": "Design a complete email marketing sequence that converts.",
+      "prompt": "Create a 5-email sequence for [campaign purpose: welcoming new subscribers, promoting a product launch, re-engaging inactive customers, etc.] for a [type of business]. Target audience: [brief description]. For each email, include: 1) Subject line (with 2 A/B testing variations), 2) Preview text, 3) Email body (including headers, main copy, and CTA), 4) Recommended sending time, and 5) The specific goal of each email. The sequence should follow a logical progression that builds engagement and moves recipients toward [desired action]. Include personalization opportunities and segmentation recommendations.",
+      "wordCount": 180,
+      "category": "Email Marketing",
+      "example": "EMAIL 1: WELCOME & INTRODUCTION\n\nSubject Line A: \"Welcome to [Brand] - Your [benefit] journey starts now\"\nSubject Line B: \"[First Name], here's your first step toward [desired outcome]\"\nPreview Text: \"Quick wins and what to expect from us\"\n\nBody:\nHeader: Welcome to the [Brand] Community!\n\nHi [First Name],\n\nExcited to have you join us! Here's what you can expect...",
+      "tips": [
+        "Align email sending frequency with your audience's preferences",
+        "Include specific segmentation rules based on recipient behavior",
+        "Test different CTAs to optimize conversion rates"
+      ]
+    },
+    {
+      "title": "Social Media Ad Copy Generator",
+      "description": "Create compelling ad copy for various social media platforms.",
+      "prompt": "Create ad copy for a [product/service] targeting [audience] on [Facebook/Instagram/LinkedIn/Twitter/TikTok]. The main value proposition is [key benefit]. Campaign objective: [awareness/consideration/conversion]. For each platform, create 3 ad variations including: 1) Attention-grabbing headline (under 40 characters), 2) Main copy (appropriate length for the platform), 3) Call-to-action, 4) 2-3 relevant hashtags (if applicable), and 5) Notes on visual elements that would pair well with the copy. Each variation should have a slightly different angle or appeal to different motivations while maintaining consistent messaging.",
+      "wordCount": 150,
+      "category": "Social Media Marketing",
+      "example": "FACEBOOK AD VARIATION 1:\n\nHeadline: \"Cut Your [Task] Time in Half\"\nMain Copy: \"Tired of spending hours on [pain point]? [Product Name] helps you [benefit] without [negative aspect of alternatives]. Join over 10,000 [professionals/users] who save X hours every week.\"\nCTA: \"Try Free For 14 Days\"\nVisual Notes: Show split screen of frustrated person using competitor vs. happy person using your product...",
+      "tips": [
+        "Research character limits for each platform before finalizing",
+        "Include social proof elements like testimonials or user numbers",
+        "Test different emotional appeals (fear, aspiration, curiosity, etc.)"
+      ]
+    },
+    {
+      "title": "Marketing Campaign ROI Calculator",
+      "description": "Create a framework to calculate and project marketing ROI.",
+      "prompt": "Create a marketing ROI calculation framework for a [type of campaign] for a [type of business] with an average [customer value/order value] of [amount]. Include: 1) All cost components to track (fixed and variable), 2) Revenue and conversion metrics to monitor, 3) Formula for calculating ROI with explanation, 4) Break-even analysis, 5) Sensitivity analysis showing how changes in key variables affect ROI, 6) Benchmarks for what constitutes good ROI in this industry/channel, and 7) Recommendations for improving ROI if targets aren't met. Make the framework practical for a marketing manager to implement with existing analytics tools.",
+      "wordCount": 170,
+      "category": "Marketing Analytics",
+      "example": "MARKETING ROI FRAMEWORK FOR PPC CAMPAIGN\n\nCost Components:\n- Ad spend (per platform)\n- Agency/management fees\n- Landing page development\n- Creative production\n\nRevenue Metrics:\n- Conversion rate (by channel)\n- Average order value\n- Customer lifetime value...",
+      "tips": [
+        "Include both short-term and long-term ROI calculations",
+        "Specify which analytics platforms would provide the necessary data",
+        "Consider including non-financial KPIs that indicate campaign health"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Digital Marketing Agencies",
+      "icon": "fas fa-bullhorn",
+      "description": "Marketing agencies use these prompts to quickly develop client strategies, create campaign frameworks, and generate content ideas that would normally take hours of brainstorming.",
+      "recommendedPrompt": "Content Calendar Generator"
+    },
+    {
+      "title": "Small Business Owners",
+      "icon": "fas fa-store",
+      "description": "Small business owners with limited marketing budgets use these prompts to create professional marketing materials and strategies without hiring expensive specialists.",
+      "recommendedPrompt": "Social Media Ad Copy Generator"
+    },
+    {
+      "title": "Marketing Managers",
+      "icon": "fas fa-chart-pie",
+      "description": "Marketing managers in larger companies use these prompts to scale their content production, improve targeting accuracy, and optimize campaign performance across multiple channels.",
+      "recommendedPrompt": "Marketing Campaign ROI Calculator"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How can I make these marketing prompts more specific to my brand?",
+      "answer": "To customize these prompts for your brand, include your brand guidelines, tone of voice, key messaging points, and unique selling propositions in the prompt. You can also reference successful past campaigns or content that resonated with your audience. The more brand-specific context you provide, the more aligned the output will be with your brand identity."
+    },
+    {
+      "question": "Can ChatGPT create truly original marketing ideas?",
+      "answer": "ChatGPT generates content based on patterns in its training data, so while it can combine ideas in novel ways, it's not creating truly original concepts from nothing. Use ChatGPT's outputs as starting points that you then refine with your unique market insights and creative thinking. The most effective approach is to use these prompts to generate a variety of options, then apply your human creativity to develop the most promising ideas further."
+    },
+    {
+      "question": "How should I adapt these marketing prompts for different industries?",
+      "answer": "For industry-specific adaptation, include relevant industry terminology, common customer pain points in that sector, regulatory considerations, and typical conversion paths. Research industry benchmarks for metrics like conversion rates or engagement rates to make the outputs more realistic. You might also specify competitor approaches that are common in your industry so ChatGPT can suggest differentiation strategies."
+    },
+    {
+      "question": "How often should I refresh my marketing content created with AI?",
+      "answer": "Marketing content should be refreshed based on performance data and market changes. Monitor engagement metrics closely - when you see declining performance, it's time to refresh. As a general rule, social media content may need refreshing every 1-3 months, email sequences every 3-6 months, and core marketing messages annually. Always update content when your product features change, when competitors shift strategies, or when new trends emerge in your industry."
+    }
+  ],
+  "relatedModifiers": [
+    "Social Media",
+    "Content Creation",
+    "Email Marketing",
+    "SEO",
+    "Advertising",
+    "Copywriting"
+  ]
+}

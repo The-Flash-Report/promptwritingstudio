@@ -49,8 +49,8 @@ export default function About() {
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                  <i className="fas fa-graduation-cap text-2xl text-indigo-600"></i>
+                <div className="bg-[#FFDE59] bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <i className="fas fa-graduation-cap text-2xl text-[#1A1A1A]"></i>
                 </div>
                 <h3 className="text-xl font-bold mb-4">Learn by Example</h3>
                 <p className="text-gray-600">
@@ -59,8 +59,8 @@ export default function About() {
               </div>
               
               <div className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                  <i className="fas fa-sync-alt text-2xl text-indigo-600"></i>
+                <div className="bg-[#FFDE59] bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <i className="fas fa-sync-alt text-2xl text-[#1A1A1A]"></i>
                 </div>
                 <h3 className="text-xl font-bold mb-4">Iterative Improvement</h3>
                 <p className="text-gray-600">
@@ -69,8 +69,8 @@ export default function About() {
               </div>
               
               <div className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                  <i className="fas fa-users text-2xl text-indigo-600"></i>
+                <div className="bg-[#FFDE59] bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <i className="fas fa-users text-2xl text-[#1A1A1A]"></i>
                 </div>
                 <h3 className="text-xl font-bold mb-4">Community-Driven</h3>
                 <p className="text-gray-600">
@@ -79,8 +79,8 @@ export default function About() {
               </div>
               
               <div className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                  <i className="fas fa-chart-line text-2xl text-indigo-600"></i>
+                <div className="bg-[#FFDE59] bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                  <i className="fas fa-chart-line text-2xl text-[#1A1A1A]"></i>
                 </div>
                 <h3 className="text-xl font-bold mb-4">Data-Driven</h3>
                 <p className="text-gray-600">
@@ -100,9 +100,14 @@ export default function About() {
             <p className="text-xl mb-8">
               Join our community of prompt engineers and start getting better results from AI tools today.
             </p>
-            <a href="/#pricing" className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block">
-              Get Started
-            </a>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="https://bryancollins.com/products/prompt-writing-studio" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block" target="_blank" rel="noopener noreferrer">
+                Get Started
+              </a>
+              <a href="https://aiflashreport.com/" className="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition inline-block" target="_blank" rel="noopener noreferrer">
+                Check Out AI Flash Report
+              </a>
+            </div>
           </div>
         </div>
       </section>

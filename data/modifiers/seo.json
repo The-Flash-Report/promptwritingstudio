@@ -1,0 +1,122 @@
+{
+  "modifierName": "SEO",
+  "searchVolume": 110,
+  "keywordDifficulty": 14,
+  "seoData": {
+    "title": "ChatGPT Prompts for SEO - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for SEO to improve your rankings, content, and keyword research. Our expert-crafted templates help you optimize your website."
+  },
+  "promptTemplates": [
+    {
+      "title": "Keyword Research Expander",
+      "description": "Generate comprehensive keyword lists with search intent analysis.",
+      "prompt": "I need to create a comprehensive keyword research report for a [type of business/website] in the [industry/niche]. My primary seed keyword is [main keyword]. Please help me expand this into a complete keyword strategy by: 1) Generating 30+ related keywords organized by search intent (informational, navigational, commercial, transactional), 2) For each keyword, suggest the estimated search volume (high/medium/low), competition level, and keyword difficulty, 3) Group the keywords into 5-7 topical clusters that could each become content pillars, 4) For each cluster, recommend 3-5 specific content pieces that could target these keywords, including suggested titles and meta descriptions, 5) Identify 3-5 potential featured snippet opportunities and how to structure content to capture them, and 6) Suggest a content prioritization strategy based on difficulty, traffic potential, and business impact. Focus on keywords with clear commercial intent that would attract our target audience of [target audience description].",
+      "wordCount": 200,
+      "category": "Keyword Research",
+      "example": "KEYWORD RESEARCH REPORT: ORGANIC SKINCARE BRAND\n\nSEED KEYWORD: \"natural skincare products\"\n\nKEYWORD EXPANSION BY SEARCH INTENT:\n\nINFORMATIONAL KEYWORDS:\n1. \"how to create a natural skincare routine\" (Medium volume, Low competition, KD: 35)\n2. \"benefits of organic ingredients in skincare\" (Medium volume, Medium competition, KD: 42)\n3. \"what ingredients to avoid in skincare products\" (High volume, Medium competition, KD: 48)\n4. \"difference between natural and organic skincare\" (Medium volume, Low competition, KD: 30)\n5. \"best natural remedies for [skin condition]\" (High volume, Medium competition, KD: 45)...\n\nTOPICAL CLUSTERS:\n\n1. NATURAL INGREDIENTS EDUCATION\n   • Content Piece 1: \"15 Natural Ingredients That Transform Skin (And How They Work)\"\n     Title: \"15 Natural Skincare Ingredients That Transform Your Skin | [Brand]\"\n     Meta Description: \"Discover 15 powerful natural ingredients that actually work for better skin. Learn the science behind organic skincare and how to choose effective products.\"...",
+      "tips": [
+        "Include specific competitors to analyze",
+        "Specify any existing keywords you're already ranking for",
+        "Note any specific business goals or conversion priorities"
+      ]
+    },
+    {
+      "title": "SEO Content Optimizer",
+      "description": "Optimize existing content to improve search rankings and relevance.",
+      "prompt": "I need to optimize the following content for SEO while maintaining readability and value for users. The target keyword is [primary keyword] with secondary keywords [list 2-3 secondary keywords]. Current content: [paste your content or summarize it]. Please provide: 1) An optimized H1 title tag (under 60 characters) that includes the primary keyword naturally, 2) A compelling meta description (under 155 characters) that includes the primary keyword and a clear value proposition, 3) A recommended content structure with H2s and H3s that incorporate keywords naturally, 4) Suggestions for internal linking opportunities to and from this content, 5) Recommendations for external data sources, statistics or studies to cite for credibility, 6) Ideas for complementary media (images, videos, infographics) with optimized alt text suggestions, and 7) A revised version of the content that naturally incorporates the keywords while improving readability through shorter paragraphs, bullet points, and engaging questions. The content should align with search intent for [primary keyword] which is primarily [informational/commercial/transactional] intent.",
+      "wordCount": 210,
+      "category": "Content Optimization",
+      "example": "SEO CONTENT OPTIMIZATION\n\nTARGET KEYWORD: \"best home office setup for productivity\"\nSECONDARY KEYWORDS: \"ergonomic home office,\" \"home office productivity tips\"\n\nOPTIMIZED H1: \"The Best Home Office Setup for Maximum Productivity in 2025\"\n\nMETA DESCRIPTION: \"Discover the best home office setup to boost your productivity. Research-backed ergonomic solutions and productivity tips for remote workers on any budget.\"\n\nRECOMMENDED CONTENT STRUCTURE:\n\nH2: Why Your Home Office Setup Directly Impacts Productivity\n- H3: The Science Behind Environment and Focus\n- H3: Common Home Office Mistakes Killing Your Productivity\n\nH2: Essential Components of a Productive Home Office Setup\n- H3: Ergonomic Chair and Desk Combinations Worth the Investment\n- H3: Monitor Setup and Positioning for Reduced Eye Strain\n- H3: Lighting Solutions That Reduce Fatigue and Boost Focus...",
+      "tips": [
+        "Include current ranking position if the content already exists",
+        "Specify any word count constraints or requirements",
+        "Note any specific competitors to outrank"
+      ]
+    },
+    {
+      "title": "Technical SEO Audit Generator",
+      "description": "Create comprehensive technical SEO audit checklists and implementation plans.",
+      "prompt": "Create a comprehensive technical SEO audit framework for a [type of website: e-commerce, blog, SaaS, etc.] built on [platform/CMS]. The website has approximately [number] pages and is experiencing issues with [specific problem: indexing, page speed, mobile usability, etc.]. Please provide: 1) A prioritized checklist of technical SEO elements to audit, organized by critical, high, medium, and low priority, 2) For each item, include specific metrics to measure, tools to use for assessment, and what constitutes a pass/fail, 3) Common issues found for each audit item and their technical solutions with code examples where relevant, 4) A suggested implementation roadmap that prioritizes fixes based on impact and difficulty, 5) Recommendations for ongoing monitoring to prevent regression, and 6) Specific questions to ask developers or specific data to gather before beginning the technical implementation. Focus especially on technical aspects that impact [specific goals: organic traffic, conversion rate, user experience, etc.].",
+      "wordCount": 200,
+      "category": "Technical SEO",
+      "example": "TECHNICAL SEO AUDIT FRAMEWORK: E-COMMERCE SITE ON SHOPIFY\n\nCRITICAL PRIORITY ITEMS:\n\n1. SITE INDEXING & CRAWLABILITY\n   Metrics: Indexed pages vs. submitted pages, crawl stats in GSC\n   Tools: Google Search Console, Screaming Frog\n   Pass/Fail: >90% of important pages indexed = Pass\n   \n   Common Issues:\n   • Incorrect robots.txt configuration blocking important content\n     Solution: Audit robots.txt for unintended disallow directives\n     Example: Replace `Disallow: /collections/` with `Disallow: /collections/*?*sort_by=`\n   \n   • Orphaned product pages not in crawl path\n     Solution: Implement proper internal linking and XML sitemaps\n     Example: Add related products sections, ensure category pages link to all products...\n\n2. PAGE SPEED & CORE WEB VITALS\n   Metrics: LCP, FID, CLS scores, PageSpeed Insights score\n   Tools: PageSpeed Insights, Chrome UX Report\n   Pass/Fail: LCP < 2.5s, FID < 100ms, CLS < 0.1 = Pass...",
+      "tips": [
+        "Include specific technical limitations of the platform",
+        "Specify any previous technical SEO work completed",
+        "Note any specific performance issues currently experienced"
+      ]
+    },
+    {
+      "title": "Local SEO Strategy Developer",
+      "description": "Create comprehensive local SEO strategies for businesses targeting specific geographic areas.",
+      "prompt": "Develop a comprehensive local SEO strategy for a [type of business] located in [city/region] that wants to attract customers within a [X]-mile radius. The business has [number of locations] and offers [key services/products]. Please provide: 1) A complete Google Business Profile optimization plan with specific recommendations for categories, attributes, and Q&A to target, 2) A location-based keyword strategy that includes both discovery keywords (\"near me\", \"in [location]\") and service keywords with local modifiers, 3) A content plan for location-specific pages with templates and unique elements to avoid duplicate content issues, 4) Local link building and citation opportunities specific to this industry and location, including a prioritized list of directories and local organizations, 5) A review generation strategy with templates for requesting reviews and responding to both positive and negative reviews, and 6) A local schema markup implementation plan with JSON-LD examples for the business. The strategy should account for [specific local competitors] and the unique selling proposition of [USP].",
+      "wordCount": 210,
+      "category": "Local SEO",
+      "example": "LOCAL SEO STRATEGY: DENTAL PRACTICE IN AUSTIN, TX\n\nGOOGLE BUSINESS PROFILE OPTIMIZATION:\n\nPrimary Category: Dentist\nSecondary Categories: Cosmetic Dentist, Family Dentist, Emergency Dentist\n\nKey Attributes to Enable:\n• Appointment required: No\n• Free consultation: Yes\n• Emergency service: Yes\n• Accessibility: Wheelchair accessible entrance, Wheelchair accessible restroom\n• Health & safety: Mask required, Temperature check required, Staff wears masks\n• Payments: Accepts insurance, Financing options\n\nQ&A Strategy (Questions to Seed):\n1. \"Do you accept [local popular insurance] dental insurance?\"\n2. \"How quickly can I get an emergency appointment?\"\n3. \"Do you offer sedation dentistry for anxious patients?\"...\n\nLOCATION-BASED KEYWORD STRATEGY:\n\nDiscovery Keywords:\n• \"dentist near me\" (7,400 monthly searches)\n• \"emergency dentist near me\" (2,900 monthly searches)\n• \"dentist in Austin\" (1,900 monthly searches)...",
+      "tips": [
+        "Include specific local events or community opportunities",
+        "Specify any existing local rankings or visibility",
+        "Note any specific local competitors to analyze"
+      ]
+    },
+    {
+      "title": "E-A-T Content Framework",
+      "description": "Create content that demonstrates expertise, authoritativeness, and trustworthiness.",
+      "prompt": "Help me create a content framework that demonstrates strong E-A-T (Expertise, Authoritativeness, Trustworthiness) for a [type of content: blog post, guide, landing page] about [topic] in the [industry/niche]. The target audience is [audience description] and the content will be published on a [website type] with [current domain authority/site reputation]. Please provide: 1) A content structure that clearly signals expertise, including specific sections that should be included to demonstrate deep knowledge, 2) Recommendations for data points, research studies, and authoritative sources to cite, with specific examples, 3) Author positioning strategies to establish credibility in this specific topic, 4) Trust signals to incorporate throughout the content (certifications, methodologies, transparent disclosures, etc.), 5) Suggestions for expert quotes or contributions that could enhance credibility, and 6) Technical E-A-T elements to implement (schema markup, author bios, credentials display, etc.). The content should target the keyword [target keyword] but prioritize demonstrating genuine expertise over keyword density.",
+      "wordCount": 190,
+      "category": "Content Strategy",
+      "example": "E-A-T CONTENT FRAMEWORK: HEALTH GUIDE ON INTERMITTENT FASTING\n\nCONTENT STRUCTURE SIGNALING EXPERTISE:\n\nH1: Intermittent Fasting: A Science-Based Guide to Benefits, Methods, and Results\n\nIntroduction:\n• Establish scope and purpose of the guide\n• Include a clear definition of intermittent fasting based on peer-reviewed research\n• Add a \"medical review disclosure\" box stating this content has been reviewed by [Medical Expert Name, Credentials]\n\nH2: The Science Behind Intermittent Fasting\n• Include subsections on metabolic changes, autophagy, and hormonal impacts\n• Cite specific studies from journals like Cell Metabolism, NEJM, and The BMJ\n• Use precise scientific terminology while providing plain language explanations\n\nH2: Evidence-Based Benefits of Intermittent Fasting\n• Structure as benefit → research evidence → limitations of current research\n• Include a \"research quality assessment\" for each claim...",
+      "tips": [
+        "Include specific credentials or expertise of the content creator",
+        "Specify any existing E-A-T issues to address",
+        "Note any specific industry regulations or guidelines to follow"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "SEO Professionals",
+      "icon": "fas fa-search",
+      "description": "SEO specialists use these prompts to streamline technical audits, create comprehensive keyword strategies, and develop content briefs that align with search intent and E-A-T guidelines.",
+      "recommendedPrompt": "Technical SEO Audit Generator"
+    },
+    {
+      "title": "Content Marketers",
+      "icon": "fas fa-pencil-alt",
+      "description": "Content creators leverage these prompts to optimize existing content, develop SEO-friendly content frameworks, and ensure their work demonstrates the expertise and authority that search engines reward.",
+      "recommendedPrompt": "SEO Content Optimizer"
+    },
+    {
+      "title": "Local Business Owners",
+      "icon": "fas fa-store",
+      "description": "Small business owners use these prompts to develop local SEO strategies, optimize their Google Business Profiles, and create location-specific content that attracts nearby customers.",
+      "recommendedPrompt": "Local SEO Strategy Developer"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can ChatGPT help with technical SEO issues?",
+      "answer": "ChatGPT can help with many technical SEO tasks, but with important limitations. It excels at: 1) Creating comprehensive audit checklists tailored to your platform, 2) Explaining technical concepts and providing implementation guidance, 3) Generating structured data markup and helping troubleshoot existing schema, 4) Creating templates for robots.txt, .htaccess files, and XML sitemaps, and 5) Analyzing crawl errors and suggesting solutions based on patterns. However, ChatGPT cannot: directly crawl your website, access your specific site data, or identify site-specific technical issues without you providing that information. For best results, use ChatGPT alongside technical SEO tools like Screaming Frog, Google Search Console, and PageSpeed Insights, then ask ChatGPT to help interpret the data and suggest solutions."
+    },
+    {
+      "question": "How accurate is ChatGPT's SEO advice compared to industry best practices?",
+      "answer": "ChatGPT's SEO advice generally aligns with industry best practices but has important limitations: 1) It lacks real-time knowledge of the latest algorithm updates or industry changes after its training cutoff, 2) It can't access your specific website data or analytics to provide customized recommendations, 3) It may not account for niche-specific ranking factors that experienced SEO professionals would recognize, and 4) It can't perform competitive analysis on your specific market. ChatGPT is most reliable for evergreen SEO principles (technical fundamentals, content quality guidelines, basic link building strategies) and least reliable for cutting-edge tactics or highly specific technical troubleshooting. Always verify ChatGPT's SEO recommendations against trusted industry sources like Google's official documentation, respected SEO publications, and your own performance data."
+    },
+    {
+      "question": "How can I use these prompts to improve my website's rankings?",
+      "answer": "To effectively use these prompts for improving rankings: 1) Start with the Keyword Research Expander to identify opportunities aligned with your business goals and search intent, 2) Use the Technical SEO Audit Generator to identify and fix foundational issues that may be limiting your site's performance, 3) Apply the SEO Content Optimizer to existing content that's ranking on page 2-3 or has high impression but low CTR in Search Console, 4) Implement the E-A-T Content Framework for topics in YMYL (Your Money Your Life) categories where Google scrutinizes expertise more heavily, and 5) For local businesses, prioritize the Local SEO Strategy Developer. The most effective approach is addressing technical issues first, then creating or optimizing content based on keyword opportunities, and finally building authority through quality backlinks and E-A-T signals. Remember that SEO is a long-term process—expect to see results in months, not days."
+    },
+    {
+      "question": "Can AI-generated content rank well in search engines?",
+      "answer": "AI-generated content can rank well in search engines, but only with proper human oversight and enhancement. For best results: 1) Use AI as a starting point or framework, then add unique insights, original research, or personal expertise that AI cannot provide, 2) Thoroughly fact-check all information, as AI can generate plausible-sounding but incorrect statements, 3) Enhance the content with original media, case studies, or examples from your direct experience, 4) Ensure the content truly satisfies search intent better than competing pages through comprehensive coverage and actionable advice, and 5) Build appropriate E-A-T signals including proper attribution, author expertise, and citations to authoritative sources. Google's stance is not against AI content per se, but against content that provides little value beyond what's already available. The key differentiator is whether your AI-assisted content adds genuine value and expertise to the topic."
+    }
+  ],
+  "relatedModifiers": [
+    "Content Creation",
+    "Marketing",
+    "Blogging",
+    "Keyword Research",
+    "Website Optimization",
+    "Local Business"
+  ]
+}

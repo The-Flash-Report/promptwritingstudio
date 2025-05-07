@@ -266,12 +266,16 @@ export default function ModifierPage({ modifierData }) {
 }
 
 export async function getStaticPaths() {
+  // Get all modifier slugs
   const modifiers = getModifierSlugs()
   
+  // Map the slugs to the required format for Next.js
   const paths = modifiers.map(modifier => ({
     params: { modifier }
   }))
   
+  // For Netlify deployment, ensure we're returning a complete array of paths
+  // and setting fallback to false to generate all pages at build time
   return {
     paths,
     fallback: false

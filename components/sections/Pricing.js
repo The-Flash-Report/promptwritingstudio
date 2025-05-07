@@ -93,10 +93,14 @@ export default function Pricing() {
                   ))}
                 </ul>
                 <Link 
-                  href="#checkout" 
+                  href={plan.name === "Basic" ? "https://bryancollins.com/products/prompt-writing-studio" : 
+                        plan.name === "Pro" ? "#" : 
+                        "#"} 
                   className="bg-[#FFDE59] text-[#1A1A1A] block text-center mt-8 px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Join Now
+                  {plan.cta}
                 </Link>
               </div>
             </div>

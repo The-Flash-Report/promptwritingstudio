@@ -1,0 +1,27 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Handle Next.js routing
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Redirect all requests to the Next.js app
+[[redirects]]
+  from = "/*"
+  to = "/_next/static/:splat"
+  status = 200
+  force = false
+  conditions = {Path = ["/_next/static/*"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
+
+# For SPAs and dynamic routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false

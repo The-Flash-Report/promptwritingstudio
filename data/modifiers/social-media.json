@@ -1,0 +1,122 @@
+{
+  "modifierName": "Social Media",
+  "searchVolume": 140,
+  "keywordDifficulty": 14,
+  "seoData": {
+    "title": "ChatGPT Prompts for Social Media - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for social media content creation, engagement, and strategy. Our expert-crafted templates help you create compelling posts for any platform."
+  },
+  "promptTemplates": [
+    {
+      "title": "Platform-Specific Content Adapter",
+      "description": "Adapt content for different social media platforms while maintaining message consistency.",
+      "prompt": "I have the following content idea: [describe your content idea or paste your original content]. Please adapt this content for the following platforms while maintaining the core message but optimizing for each platform's unique characteristics: 1) Instagram: Create a carousel post with 5 slides (main point for each slide + caption with emojis and 5-7 hashtags), 2) Twitter: Create a thread of 5 tweets that breaks down the concept conversationally with relevant hashtags, 3) LinkedIn: Create a more professional, insight-driven post that establishes thought leadership (500-600 characters) with a clear call-to-action, 4) TikTok/Reels: Create a 30-second script with hook, key points, and engaging close, 5) Facebook: Create a community-focused post that encourages discussion (250-300 characters). For each adaptation, consider the platform's audience, optimal content length, tone, and engagement patterns.",
+      "wordCount": 200,
+      "category": "Content Creation",
+      "example": "INSTAGRAM CAROUSEL:\n\nSlide 1: \"5 Data-Proven Ways to Double Your Email Open Rates\" [Image suggestion: Eye-catching graphic with email icon and upward arrow]\n\nSlide 2: \"1. Personalized Subject Lines increase open rates by 26%\" [Image suggestion: Example of personalized vs. generic subject line]\n\nCaption: Ready to transform your email marketing results? 📈 These 5 strategies helped us boost our open rates from 18% to 37% in just one month!\n\nSwipe through to discover exactly how we did it (strategy #4 surprised even our marketing team! 😮)\n\n#EmailMarketing #DigitalStrategy #MarketingTips #OpenRates #EmailTips #ContentCreation #MarketingResults",
+      "tips": [
+        "Include your brand voice characteristics for more consistent adaptation",
+        "Specify any content themes or topics that perform well on each platform",
+        "Note any specific formatting preferences for each platform"
+      ]
+    },
+    {
+      "title": "Engagement-Focused Question Generator",
+      "description": "Create thought-provoking questions that spark meaningful engagement.",
+      "prompt": "Generate 10 engagement-focused questions about [topic/industry/niche] for social media posts. For each question, include: 1) The question formatted to maximize engagement (thought-provoking, relatable, or slightly controversial without being offensive), 2) A brief 1-2 sentence context that sets up the question, 3) The best platform for this specific question (Instagram, LinkedIn, Twitter, Facebook, etc.) and why, 4) 2-3 relevant hashtags, and 5) A follow-up prompt or secondary question that could be used in the comments to further drive conversation. The questions should range from simple, quick-response formats to deeper discussions, and should appeal to both beginners and experts in the field. Avoid questions with obvious or single-word answers.",
+      "wordCount": 180,
+      "category": "Engagement",
+      "example": "QUESTION 1:\n\"What productivity 'rule' did you have to break to actually become more productive?\"\n\nContext: Sometimes conventional wisdom doesn't work for everyone, and the most productive people often create their own rules.\n\nBest Platform: LinkedIn - This question challenges conventional wisdom which performs well with LinkedIn's professional audience seeking growth insights.\n\nHashtags: #ProductivityTips #WorkSmarter #ProfessionalDevelopment\n\nFollow-up: \"Interesting! What made you realize the conventional advice wasn't working for you, and how did you discover your own approach?\"",
+      "tips": [
+        "Include industry-specific terminology to attract your target audience",
+        "Consider current trends or pain points in your industry for relevance",
+        "Specify if you want questions to align with specific marketing goals"
+      ]
+    },
+    {
+      "title": "Content Calendar Generator",
+      "description": "Create a comprehensive social media content calendar.",
+      "prompt": "Create a 30-day social media content calendar for a [type of business] focusing on [primary goal: brand awareness, engagement, lead generation, etc.]. The target audience is [audience description] and our brand voice is [brand voice characteristics]. For each day, include: 1) Content theme or topic, 2) Platform(s) to post on, 3) Content type (image, carousel, video, poll, etc.), 4) Brief content description or hook (1-2 sentences), 5) Best time to post, and 6) Primary hashtags to use (3-5 per post). Include a strategic mix of content types: educational (30%), entertaining (20%), inspirational (20%), promotional (20%), and user-generated/community (10%). Incorporate relevant industry events, holidays, or observances during this period: [list any specific dates to include]. Organize the calendar in a clear, easy-to-follow format with days of the week indicated.",
+      "wordCount": 210,
+      "category": "Strategy",
+      "example": "30-DAY SOCIAL MEDIA CONTENT CALENDAR FOR FITNESS COACHING BUSINESS\n\nWEEK 1: TRANSFORMATION STORIES\n\nMonday (Educational)\nPlatforms: Instagram, Facebook\nContent Type: Carousel\nDescription: \"Client Transformation Monday: Sarah's 12-week journey and the 3 habit changes that made the biggest difference\"\nBest Time: 7:00 AM\nHashtags: #TransformationMonday #FitnessJourney #HealthHabits\n\nTuesday (Entertaining)\nPlatforms: TikTok, Instagram Reels\nContent Type: Short Video\nDescription: \"Gym equipment fails: Common mistakes people make with rowing machines and how to fix them\"\nBest Time: 12:00 PM\nHashtags: #GymTips #FitnessHumor #WorkoutCorrections",
+      "tips": [
+        "Include any seasonal promotions or launches to feature in the calendar",
+        "Specify content themes that have performed well with your audience",
+        "Note any content creation resources or limitations to consider"
+      ]
+    },
+    {
+      "title": "Viral Hook Generator",
+      "description": "Create attention-grabbing hooks for social media videos and posts.",
+      "prompt": "Generate 10 powerful hooks for [content type: video, carousel post, article] about [topic] targeting [audience]. Each hook should: 1) Grab attention in the first 5 seconds/lines, 2) Create curiosity or address a pain point, 3) Be between 1-2 sentences (or 5-15 seconds for video scripts), and 4) Naturally lead into the main content. For each hook, include: the hook itself, the emotional trigger it targets (curiosity, fear, aspiration, surprise, etc.), why this approach would work for the target audience, and a brief suggestion for how to follow up after the hook. Create variety in the approaches - include hooks that use questions, statistics, bold statements, counterintuitive claims, and storytelling elements. Avoid clickbait that doesn't deliver on its promise.",
+      "wordCount": 170,
+      "category": "Content Creation",
+      "example": "HOOK 1:\n\"I doubled my productivity while working 5 fewer hours per week—and the strategy had nothing to do with morning routines, apps, or time-blocking.\"\n\nEmotional Trigger: Curiosity + Surprise\nWhy It Works: Challenges conventional productivity advice while promising a desirable outcome (more results with less time) that directly addresses a key pain point for busy professionals.\nFollow-up: Transition into the counterintuitive strategy by briefly acknowledging popular productivity advice that didn't work, then introduce your unique approach.",
+      "tips": [
+        "Include specific pain points or aspirations of your target audience",
+        "Specify any brand voice guidelines to maintain consistency",
+        "Note any hooks or approaches that have worked well for you in the past"
+      ]
+    },
+    {
+      "title": "Hashtag Strategy Optimizer",
+      "description": "Develop a comprehensive hashtag strategy for any social media campaign.",
+      "prompt": "Create a comprehensive hashtag strategy for a [type of business/brand] in the [industry] space for a campaign about [campaign topic/theme]. Include: 1) 5 high-volume, broad reach hashtags (100K+ posts), 2) 7 medium-volume, niche-specific hashtags (10K-100K posts), 3) 3 low-volume, highly targeted hashtags (<10K posts), 4) 2 branded hashtags (one for the company, one campaign-specific), 5) 3 trending or seasonal hashtags relevant to the campaign period, and 6) 2 location-based hashtags if applicable. For each category, explain the strategic purpose and optimal usage. Then, create 3 different hashtag sets optimized for: Instagram, Twitter, and LinkedIn, considering platform-specific best practices and character limitations. Finally, provide recommendations for hashtag placement, optimal number per post by platform, and a tracking method to evaluate hashtag performance.",
+      "wordCount": 190,
+      "category": "Strategy",
+      "example": "HASHTAG STRATEGY FOR SUSTAINABLE FASHION BRAND\n\nHIGH-VOLUME HASHTAGS:\n#SustainableFashion (2.5M posts) - Connects to the broader movement\n#EthicalFashion (1.2M posts) - Reaches conscious consumers\n#SlowFashion (950K posts) - Aligns with industry terminology\n\nStrategic Purpose: These hashtags increase discoverability among users already interested in sustainable fashion concepts. Use these in every post to maximize reach, but combine with more specific hashtags to avoid getting lost in high-volume feeds.\n\nMEDIUM-VOLUME HASHTAGS:\n#EcoFriendlyClothing (85K posts) - Specific to product category\n#OrganicCottonClothes (45K posts) - Highlights key material...",
+      "tips": [
+        "Specify your geographic market for more relevant location hashtags",
+        "Include any campaign-specific goals that hashtags should support",
+        "Note any competitor hashtags to either use or avoid"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Social Media Managers",
+      "icon": "fas fa-share-alt",
+      "description": "Social media professionals use these prompts to efficiently create platform-specific content, develop comprehensive content calendars, and generate engaging posts that drive meaningful interactions.",
+      "recommendedPrompt": "Platform-Specific Content Adapter"
+    },
+    {
+      "title": "Small Business Owners",
+      "icon": "fas fa-store",
+      "description": "Entrepreneurs with limited marketing resources use these prompts to maintain a consistent social media presence, create professional-looking content, and engage with their audience effectively without hiring specialists.",
+      "recommendedPrompt": "Content Calendar Generator"
+    },
+    {
+      "title": "Content Creators & Influencers",
+      "icon": "fas fa-camera",
+      "description": "Creators use these prompts to generate attention-grabbing hooks, develop engaging questions that spark conversations, and optimize their hashtag strategy to increase discoverability and grow their following.",
+      "recommendedPrompt": "Viral Hook Generator"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How can I make AI-generated social media content sound more authentic and on-brand?",
+      "answer": "To make AI-generated content more authentic: 1) Include examples of your brand voice and previous successful posts in your prompts, 2) Create a brand voice guide with specific phrases, terminology, and tone indicators that you can reference, 3) Always edit the generated content to add personal touches and brand-specific insights, 4) Include customer stories or specific product details that only your brand would know, and 5) Develop a consistent editing process to ensure all AI-generated content aligns with your brand standards before posting. The most authentic approach is using AI for initial drafts and structure, then personalizing the content with your unique perspective."
+    },
+    {
+      "question": "How often should I refresh my social media content strategy?",
+      "answer": "Your social media strategy should be reviewed quarterly, with minor adjustments monthly based on performance data. Major refreshes are typically needed when: 1) You notice a consistent decline in engagement metrics, 2) Platform algorithms undergo significant changes, 3) Your business launches new products or services, 4) Seasonal shifts occur that affect your audience's behavior, or 5) Industry trends or competitor strategies significantly change. The most successful social media managers maintain a core strategy while continuously testing new approaches on approximately 20% of their content to discover what resonates with their evolving audience."
+    },
+    {
+      "question": "How can I adapt these prompts for different industries or niches?",
+      "answer": "To adapt these prompts for specific industries: 1) Insert industry-specific terminology, challenges, and goals, 2) Reference platform-specific trends within your niche (e.g., hashtags, content formats), 3) Adjust tone and formality based on industry expectations (more professional for B2B, more conversational for consumer brands), 4) Include competitor examples from your industry to benchmark against, and 5) Specify any industry regulations or guidelines that content must adhere to. The most effective adaptation comes from combining these prompts with your specific industry knowledge and audience insights."
+    },
+    {
+      "question": "How do I measure the success of social media content created with these prompts?",
+      "answer": "Measure success by tracking: 1) Engagement metrics (likes, comments, shares, saves) compared to your historical averages, 2) Reach and impression growth over time, 3) Conversion metrics if applicable (click-throughs, sign-ups, sales), 4) Audience growth rate, and 5) Sentiment in comments and responses. Create a simple dashboard that tracks these metrics weekly and monthly to identify trends. The most valuable approach is comparing content created using different prompts against each other to identify which strategies resonate best with your specific audience, then doubling down on those approaches."
+    }
+  ],
+  "relatedModifiers": [
+    "Content Creation",
+    "Marketing",
+    "Copywriting",
+    "Instagram",
+    "LinkedIn",
+    "TikTok"
+  ]
+}

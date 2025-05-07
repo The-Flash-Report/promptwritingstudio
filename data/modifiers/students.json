@@ -1,0 +1,122 @@
+{
+  "modifierName": "Students",
+  "searchVolume": 130,
+  "keywordDifficulty": 11,
+  "seoData": {
+    "title": "ChatGPT Prompts for Students - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for students to improve essay writing, research, studying, and more. Our expert-crafted templates help you excel academically."
+  },
+  "promptTemplates": [
+    {
+      "title": "Essay Structure Generator",
+      "description": "Create comprehensive essay outlines with supporting evidence.",
+      "prompt": "Create a detailed essay outline on the topic: \"[essay topic]\". The essay should be [length: e.g., 1500 words] and follow [citation style: MLA/APA/Chicago] format. Include: 1) A compelling thesis statement that takes a clear position, 2) An introduction that provides context and hooks the reader, 3) [number] body paragraphs, each with a clear topic sentence, supporting evidence, analysis, and transition, 4) A conclusion that synthesizes the arguments without simply restating them, and 5) Potential sources or evidence types for each main point. For each section, provide brief explanations of what should be included and how it connects to the thesis. The essay should follow a [type: argumentative/analytical/expository/narrative] structure and address potential counterarguments where appropriate.",
+      "wordCount": 180,
+      "category": "Writing",
+      "example": "ESSAY OUTLINE: THE IMPACT OF SOCIAL MEDIA ON ADOLESCENT MENTAL HEALTH\n\nThesis Statement: While social media platforms offer benefits of connection and community, their algorithmic design, emphasis on social comparison, and addictive features have contributed significantly to the rising rates of anxiety and depression among adolescents, necessitating both regulatory oversight and educational interventions.\n\nI. Introduction\n   A. Hook: Statistics on rising mental health issues among teens (cite recent CDC or WHO data)\n   B. Context: Brief history of social media adoption among adolescents\n   C. Thesis statement\n\nII. Body Paragraph 1: Social Comparison and Self-Image\n   A. Topic Sentence: Social media platforms create unprecedented opportunities for harmful social comparison...",
+      "tips": [
+        "Specify the academic level (high school, undergraduate, graduate)",
+        "Include any specific requirements from your assignment prompt",
+        "Mention any specific theories or authors that should be included"
+      ]
+    },
+    {
+      "title": "Study Guide Creator",
+      "description": "Generate comprehensive study guides for any subject.",
+      "prompt": "Create a comprehensive study guide for [subject/course] focusing on the topic of [specific topic]. The guide should be designed for a [educational level] student preparing for a [test type: quiz/midterm/final exam]. Include the following sections: 1) Key concepts and definitions (minimum 10), 2) Theoretical frameworks or models with explanations, 3) Important formulas, equations, or principles (if applicable), 4) A summary of main arguments or perspectives in the field, 5) 5-7 potential short answer questions with brief model answers, 6) 3-4 potential essay questions with outline answers, 7) Common misconceptions or areas where students typically struggle, and 8) Recommended study strategies specific to this material. Format the guide with clear headings, bullet points, and numbered lists for easy reference and memorization.",
+      "wordCount": 200,
+      "category": "Studying",
+      "example": "STUDY GUIDE: INTRODUCTION TO MACROECONOMICS - FISCAL POLICY\n\nKEY CONCEPTS AND DEFINITIONS:\n1. Fiscal Policy: Government use of taxation and spending to influence the economy\n2. Expansionary Fiscal Policy: Increasing government spending and/or reducing taxes to stimulate economic growth\n3. Contractionary Fiscal Policy: Decreasing government spending and/or increasing taxes to slow economic growth\n4. Budget Deficit: When government spending exceeds revenue in a fiscal year\n5. Budget Surplus: When government revenue exceeds spending in a fiscal year...\n\nTHEORETICAL FRAMEWORKS:\n1. Keynesian Economics\n   - Emphasizes active government intervention through fiscal policy\n   - Views government spending as a way to increase aggregate demand\n   - Key equation: Y = C + I + G + (X - M)...",
+      "tips": [
+        "Include specific textbooks or course materials to reference",
+        "Specify any particular areas you find challenging",
+        "Note any specific format requirements for your exam"
+      ]
+    },
+    {
+      "title": "Research Question Developer",
+      "description": "Generate nuanced research questions and methodological approaches.",
+      "prompt": "Help me develop a sophisticated research question and methodology for a [paper type: term paper/thesis/dissertation] in [field of study]. My general area of interest is [broad topic], and I'm particularly curious about [specific aspect or angle]. For this research question development, please provide: 1) 3-5 potential research questions ranging from narrow to broad in scope, with explanations of their strengths and limitations, 2) For each question, suggest appropriate research methodologies (qualitative, quantitative, or mixed methods) with justification, 3) Key variables or concepts that would need to be operationalized, 4) Potential theoretical frameworks that could guide the research, 5) Anticipated challenges in data collection or analysis, and 6) How this research might contribute to the existing literature. The final research question should be specific enough to be feasible within a [timeframe] project but substantial enough to make a meaningful contribution.",
+      "wordCount": 210,
+      "category": "Research",
+      "example": "RESEARCH QUESTION DEVELOPMENT: ENVIRONMENTAL PSYCHOLOGY\n\nPOTENTIAL RESEARCH QUESTIONS:\n\n1. Narrow Scope: \"How does exposure to different types of natural elements (water, forest, mountains) in virtual reality environments affect stress recovery rates among undergraduate students?\"\n   Strengths: Highly specific and testable; clear variables; feasible experimental design\n   Limitations: May lack broader applicability; limited to specific population\n   Methodology: Quantitative experimental design measuring physiological stress indicators (cortisol levels, heart rate variability) before and after VR nature exposure\n\n2. Medium Scope: \"In what ways do childhood experiences with natural environments influence environmental attitudes and behaviors in young adults, and how is this relationship mediated by place attachment?\"...",
+      "tips": [
+        "Include any specific theories or frameworks you're interested in exploring",
+        "Mention any methodological approaches you're familiar with or want to learn",
+        "Note any access to specific data sources or research populations"
+      ]
+    },
+    {
+      "title": "Literature Review Synthesizer",
+      "description": "Organize and synthesize academic literature for research papers.",
+      "prompt": "Help me organize a literature review on the topic of [research topic] for my [paper type] in [field/discipline]. I've found sources discussing the following key themes or arguments: [list 3-5 key themes or perspectives from your readings]. For this literature review structure, please provide: 1) A suggested organizational approach (chronological, thematic, methodological, or theoretical) with justification, 2) A framework for synthesizing rather than merely summarizing the literature, with 4-6 potential sections or themes, 3) For each section, suggestions on how to identify gaps, contradictions, or areas of consensus in the literature, 4) Strategies for establishing connections between different studies or theoretical approaches, 5) Recommendations for transitioning between sections, and 6) Approaches for concluding the literature review by identifying the gap your research will address. The literature review should demonstrate not just what is known, but how different studies relate to each other and where opportunities for new contributions exist.",
+      "wordCount": 190,
+      "category": "Research",
+      "example": "LITERATURE REVIEW STRUCTURE: THE IMPACT OF ARTIFICIAL INTELLIGENCE ON EMPLOYMENT MARKETS\n\nRECOMMENDED ORGANIZATIONAL APPROACH: THEMATIC WITH CHRONOLOGICAL ELEMENTS\nJustification: The AI and employment literature has evolved significantly over time, with distinct phases of technological development leading to different predictions and impacts. A primarily thematic approach allows you to compare competing perspectives while acknowledging how these views have evolved.\n\nFRAMEWORK FOR SYNTHESIS:\n\nSection 1: Theoretical Frameworks for Understanding Technology and Labor\n- Synthesis Focus: Compare how different economic theories (creative destruction, skill-biased technological change, task-based models) frame the relationship between technology and employment\n- Gap Identification: Note the limitations of each theoretical approach in accounting for AI's unique capabilities compared to previous technologies...",
+      "tips": [
+        "Include the number of sources you're working with",
+        "Specify any conflicting viewpoints you've encountered",
+        "Note any specific requirements for the literature review format"
+      ]
+    },
+    {
+      "title": "Exam Question Generator",
+      "description": "Create practice questions with detailed answer explanations.",
+      "prompt": "Create a comprehensive set of practice questions for [subject/course] focusing on [specific topic/chapter]. Generate the following types of questions: 1) 10 multiple-choice questions of varying difficulty (easy, medium, hard) with 4 options each, 2) 5 short-answer questions requiring paragraph-length responses, 3) 3 essay/long-form questions that test deeper understanding and application, and 4) 2 case study or scenario-based questions that require analysis and problem-solving. For each question, provide: the correct answer (for multiple choice), a detailed explanation of why the answer is correct, common misconceptions to avoid, and key concepts being tested. The questions should assess different cognitive levels (recall, comprehension, application, analysis, synthesis, evaluation) and cover the breadth of the topic while focusing on the most important concepts. Format everything clearly with numbered questions and labeled sections.",
+      "wordCount": 200,
+      "category": "Studying",
+      "example": "PRACTICE QUESTIONS: ORGANIC CHEMISTRY - ALKENE REACTIONS\n\nMULTIPLE CHOICE QUESTIONS:\n\n1. (Easy) Which reagent would you use to convert an alkene to an alcohol following Markovnikov's rule?\n   a) NaBH4\n   b) H2O/H2SO4\n   c) BH3-THF followed by H2O2/NaOH\n   d) LiAlH4\n\n   Correct Answer: b) H2O/H2SO4\n   Explanation: The acid-catalyzed hydration of alkenes (H2O/H2SO4) follows Markovnikov's rule, adding the OH group to the more substituted carbon of the double bond. This occurs because the carbocation intermediate forms preferentially at the more substituted carbon, which is more stable...\n   Misconception: Students often confuse this with hydroboration-oxidation (option c), which gives anti-Markovnikov products.\n   Concept Tested: Markovnikov's rule, electrophilic addition to alkenes",
+      "tips": [
+        "Specify the textbook or course materials the questions should be based on",
+        "Include any specific topics or concepts you want to focus on",
+        "Note the format of your actual exam if you want questions to match it"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Undergraduate Students",
+      "icon": "fas fa-graduation-cap",
+      "description": "Undergraduates use these prompts to structure essays, create comprehensive study guides, and prepare for exams across various subjects, helping them manage heavy course loads more efficiently.",
+      "recommendedPrompt": "Essay Structure Generator"
+    },
+    {
+      "title": "Graduate Students",
+      "icon": "fas fa-book",
+      "description": "Graduate students leverage these prompts to develop sophisticated research questions, organize literature reviews, and structure complex arguments for theses and dissertations.",
+      "recommendedPrompt": "Research Question Developer"
+    },
+    {
+      "title": "High School Students",
+      "icon": "fas fa-school",
+      "description": "High school students use these prompts to improve essay writing skills, create effective study materials, and prepare for standardized tests and college applications.",
+      "recommendedPrompt": "Study Guide Creator"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is using AI for academic work considered cheating?",
+      "answer": "The ethical use of AI in academics depends on how it's used and your institution's policies. Using AI as a learning tool, brainstorming assistant, or to help organize information is generally acceptable. However, submitting AI-generated content as your own work without substantial revision, critical thinking, and proper citation would be considered academic dishonesty. Always: 1) Check your institution's AI policy, 2) Use AI to enhance your thinking, not replace it, 3) Substantially revise and critically evaluate any AI-generated content, 4) Be transparent with instructors about AI use when appropriate, and 5) Cite AI assistance if required by your institution's guidelines."
+    },
+    {
+      "question": "How can I ensure the academic information from these prompts is accurate?",
+      "answer": "AI-generated academic content should always be verified. To ensure accuracy: 1) Cross-reference key facts, theories, and concepts with your course materials and reputable academic sources, 2) Be especially cautious with specific statistics, dates, author names, and technical terminology, 3) Use AI-generated content as a starting point for your own research rather than a definitive source, 4) Ask your AI to provide reasoning and sources for its information, then verify those sources, and 5) Remember that AI may present plausible-sounding but incorrect information, especially for specialized or cutting-edge topics. The responsibility for academic accuracy ultimately rests with you as the student."
+    },
+    {
+      "question": "How should I adapt these prompts for different academic disciplines?",
+      "answer": "To adapt these prompts for specific disciplines: 1) Add discipline-specific terminology and frameworks (e.g., for psychology, specify which theoretical approach to use—cognitive, behavioral, psychodynamic), 2) Modify the output format to match conventions in your field (e.g., lab reports for sciences, case analyses for business), 3) Specify the preferred citation style for your discipline (MLA, APA, Chicago, etc.), 4) Include relevant methodological approaches (qualitative vs. quantitative, specific research methods), and 5) Reference key scholars or seminal works in your field that should inform the response. The more specific you are about disciplinary conventions, the more tailored and useful the output will be."
+    },
+    {
+      "question": "Can these prompts help with learning difficult concepts, not just completing assignments?",
+      "answer": "Yes, these prompts can be powerful learning tools beyond assignment completion. For difficult concepts: 1) Use the Study Guide Creator to break down complex topics into manageable components, 2) Ask ChatGPT to explain concepts in multiple ways or using different analogies, 3) Generate practice questions at increasing difficulty levels to test your understanding, 4) Create scenarios where you need to apply theoretical concepts to real-world situations, and 5) Use the Socratic method by asking ChatGPT to pose questions that guide your thinking rather than providing direct answers. The most effective approach is using these prompts to create active learning experiences rather than passively consuming information."
+    }
+  ],
+  "relatedModifiers": [
+    "Research",
+    "Writing",
+    "Studying",
+    "Essay",
+    "Academic",
+    "Learning"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "modifierName": "Copywriting",
+  "searchVolume": 120,
+  "keywordDifficulty": 12,
+  "seoData": {
+    "title": "ChatGPT Prompts for Copywriting - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ effective ChatGPT prompts for copywriting that convert. Our expert-crafted templates help you create compelling sales pages, emails, ads, and more."
+  },
+  "promptTemplates": [
+    {
+      "title": "Sales Page Generator",
+      "description": "Create high-converting sales pages with proven copywriting frameworks.",
+      "prompt": "Create a comprehensive sales page for [product/service] targeting [ideal customer profile]. The product sells for [price point] and the main value proposition is [key benefit]. Use the AIDA framework (Attention, Interest, Desire, Action) and include the following sections: 1) An attention-grabbing headline that focuses on the main benefit, 2) An opening that identifies the customer's pain point and establishes empathy, 3) 3-5 key features with their corresponding benefits, using the 'Feature → Benefit → Proof' structure, 4) Social proof elements (where to include testimonials, case studies, etc.), 5) Objection handling for the top 3 likely objections, 6) A strong guarantee to reduce purchase risk, 7) Scarcity/urgency elements if applicable, 8) A clear, compelling call-to-action, and 9) A powerful P.S. statement. Use persuasive language, short paragraphs, and conversational tone throughout.",
+      "wordCount": 200,
+      "category": "Sales Copy",
+      "example": "HEADLINE: Transform Your Productivity in 14 Days (Or Your Money Back)\n\n[ATTENTION]\nYou've tried everything: to-do lists, time-blocking, meditation apps. Yet at the end of each day, your most important work remains undone, buried under meetings and notifications.\n\n[INTEREST]\nProductivityPro isn't another task manager. It's a complete system that rewires how your brain approaches work, based on neuroscience research from Stanford and Harvard. Unlike traditional productivity tools that just organize your overwhelm, ProductivityPro actually eliminates it.\n\n[DESIRE - FEATURE 1]\nFeature: AI-powered Task Prioritization Engine\nBenefit: End decision fatigue by always knowing exactly what to work on next\nProof: In a study of 1,500 professionals, users reported saving an average of 67 minutes daily on task-switching and decision-making...",
+      "tips": [
+        "Include specific pain points and desires of your target audience",
+        "Specify any brand voice guidelines or tone preferences",
+        "Note any specific proof points or statistics to include"
+      ]
+    },
+    {
+      "title": "Email Sequence Architect",
+      "description": "Design strategic email sequences that nurture and convert.",
+      "prompt": "Create a [number]-email sequence for [purpose: welcome series, product launch, abandoned cart, etc.] for a [type of business] targeting [audience description]. The goal of this sequence is to [specific objective: build trust, drive sales, re-engage, etc.]. For each email, provide: 1) Subject line (with an A/B testing alternative), 2) Preview text, 3) Personalized greeting, 4) Body copy with clear structure (hook, story/content, call-to-action), 5) Specific call-to-action text, and 6) P.S. section if applicable. The sequence should follow this strategic progression: [outline the purpose of each email, e.g., Email 1: Introduction and value, Email 2: Social proof, etc.]. Include psychological triggers such as [scarcity, social proof, authority, etc.] where appropriate. Each email should be [length guideline] and maintain a [desired tone] voice that aligns with the brand.",
+      "wordCount": 190,
+      "category": "Email Marketing",
+      "example": "5-EMAIL SEQUENCE: COURSE LAUNCH\n\nEMAIL 1: PROBLEM & HINT AT SOLUTION\n\nSubject: Is this why you're still struggling with [problem]?\nSubject B: The hidden reason your [problem] persists\n\nPreview Text: It's not what most experts tell you...\n\nHi [Name],\n\nI need to ask you something important: When you sit down to [relevant task], do you often find yourself [specific pain point]?\n\nIf you're nodding right now, you're not alone. I've spent 7 years working with people just like you, and I've discovered something surprising.\n\nMost advice about [topic] completely misses the real problem...",
+      "tips": [
+        "Include specific customer journey touchpoints this sequence addresses",
+        "Specify any existing email performance metrics to improve upon",
+        "Note any specific offers or promotions to include"
+      ]
+    },
+    {
+      "title": "Ad Copy Maximizer",
+      "description": "Create high-performing ad copy for multiple platforms and formats.",
+      "prompt": "Create high-converting ad copy for [product/service] targeting [audience] on [platform: Facebook, Google, LinkedIn, etc.]. The unique selling proposition is [USP] and the campaign objective is [objective: awareness, consideration, conversion]. For each ad format, include: 1) Attention-grabbing headline(s) following platform character limits, 2) Main copy that addresses pain points and presents the solution, 3) Call-to-action text, and 4) Any relevant URL structure or display text. Create variations for the following formats: [list relevant formats for your platform, e.g., for Facebook: single image ad, carousel ad, video ad script]. For each variation, include at least 2-3 options with different angles or appeals (emotional, logical, fear-based, aspiration-based, etc.). Ensure all copy adheres to the platform's policies and character limits while maintaining persuasive power and brand voice described as [brand voice characteristics].",
+      "wordCount": 180,
+      "category": "Advertising",
+      "example": "FACEBOOK SINGLE IMAGE AD - VARIATION 1 (EMOTIONAL/ASPIRATIONAL)\n\nHeadline: \"The Kitchen That Makes Friends Stay Longer\"\nSubheadline: \"Custom designs that become the heart of your home\"\n\nMain Copy: \"Remember when everyone gathered in the kitchen at every party you've ever been to? That's not an accident. We design kitchens that naturally draw people in and make them want to stay. No more apologizing for your outdated space—just compliments and connection. Book your free design consultation today.\"\n\nCTA: \"Book Free Consultation\"\n\nURL Display Text: kitchenremodelingexperts.com/free-design\n\nVARIATION 2 (LOGICAL/VALUE-BASED)...",
+      "tips": [
+        "Include specific competitor approaches to differentiate from",
+        "Specify any ad performance metrics from previous campaigns",
+        "Note any specific keywords or phrases to include for SEO/SEM"
+      ]
+    },
+    {
+      "title": "Product Description Enhancer",
+      "description": "Transform basic product information into compelling descriptions that sell.",
+      "prompt": "Transform the following basic product information into a compelling product description for [e-commerce platform/website]: Product: [product name]. Basic details: [list key specifications, features, materials, dimensions, etc.]. Target audience: [ideal customer profile]. Price point: [price range or specific price]. Create a product description that includes: 1) An attention-grabbing headline, 2) An engaging opening paragraph that hooks the reader with the main benefit, 3) Feature-benefit pairings that connect product attributes to customer outcomes, 4) Sensory language that helps customers imagine using the product, 5) Social proof elements or trust indicators, 6) Technical specifications formatted for easy scanning, 7) FAQ section addressing common questions, and 8) A clear call-to-action. The tone should be [desired tone] and the description should be optimized for both conversion and SEO, incorporating [target keywords] naturally. Total length should be approximately [word count] words.",
+      "wordCount": 170,
+      "category": "E-commerce",
+      "example": "HEADLINE: The Ultra-Light Hiking Backpack That Carries More While Weighing Less\n\nFree your shoulders from unnecessary strain without sacrificing storage. The TrailMaster Pro 65L weighs just 2.3 pounds but carries everything you need for multi-day adventures in the backcountry.\n\nFEATURE-BENEFIT PAIRINGS:\n• Revolutionary Suspension System: Distributes weight evenly across your core instead of shoulders, reducing fatigue by up to 40% on long treks\n• Waterproof Ripstop Nylon Construction: Keep your gear dry through unexpected downpours and river crossings\n• 7 Strategic Storage Zones: Find your gear instantly without unpacking everything (no more digging through your pack in the rain!)...",
+      "tips": [
+        "Include specific pain points the product solves",
+        "Specify any unique selling points to emphasize",
+        "Note any brand voice guidelines or competitor positioning"
+      ]
+    },
+    {
+      "title": "Headline Swipe File Creator",
+      "description": "Generate proven headline formulas customized for your specific offer.",
+      "prompt": "Create a comprehensive swipe file of 25 high-converting headlines for [product/service/content type] in the [industry/niche] targeting [audience]. The headlines should be organized into the following categories: 1) Curiosity-driven headlines that create information gaps (5), 2) Benefit-focused headlines that emphasize specific outcomes (5), 3) Problem-agitation headlines that highlight pain points (5), 4) Social proof/credibility headlines that leverage trust (5), and 5) Urgency/scarcity headlines that drive immediate action (5). For each category, include a brief explanation of why this approach works psychologically. Each headline should be adaptable as a: email subject line, ad headline, landing page headline, blog post title, and social media post. Include specific metrics, numbers, and timeframes where relevant, and avoid generic claims by making each headline specific to the offer's unique value proposition of [main value proposition].",
+      "wordCount": 190,
+      "category": "Conversion Optimization",
+      "example": "HEADLINE SWIPE FILE: ONLINE FITNESS PROGRAM\n\nCURIOSITY-DRIVEN HEADLINES:\n1. \"The Unusual 12-Minute Workout That's Helping Women Over 40 Lose Weight (Without Giving Up Their Favorite Foods)\"\n2. \"Why 'Eating Less' Is Making You Gain Weight (And What to Do Instead)\"\n\nPsychological Impact: Curiosity-based headlines work by creating an information gap that triggers a mild form of psychological discomfort that can only be resolved by clicking through. They challenge existing beliefs or hint at insider information, activating the brain's reward centers when the curiosity is satisfied.\n\nBENEFIT-FOCUSED HEADLINES:\n1. \"Build Lean Muscle in Just 20 Minutes a Day: The Busy Professional's Guide to Efficient Fitness\"\n2. \"87% of Our Members Drop a Dress Size in 21 Days Following This Simple Morning Routine\"...",
+      "tips": [
+        "Include specific customer language or phrases from testimonials",
+        "Specify any headline formulas that have worked well previously",
+        "Note any specific keywords to include for SEO purposes"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Digital Marketers",
+      "icon": "fas fa-bullhorn",
+      "description": "Marketing professionals use these prompts to create compelling copy for campaigns across multiple channels, saving hours of writing time while maintaining consistent messaging and persuasive power.",
+      "recommendedPrompt": "Ad Copy Maximizer"
+    },
+    {
+      "title": "E-commerce Businesses",
+      "icon": "fas fa-shopping-cart",
+      "description": "Online store owners use these prompts to transform basic product information into compelling descriptions that increase conversion rates and reduce bounce rates on product pages.",
+      "recommendedPrompt": "Product Description Enhancer"
+    },
+    {
+      "title": "Course Creators & Coaches",
+      "icon": "fas fa-graduation-cap",
+      "description": "Educators and coaches leverage these prompts to create persuasive sales pages and email sequences that effectively communicate their value proposition and convert prospects into customers.",
+      "recommendedPrompt": "Sales Page Generator"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How can I make AI-generated copy sound more authentic and on-brand?",
+      "answer": "To make AI copy more authentic and on-brand: 1) Create a detailed brand voice guide that includes tone characteristics, vocabulary preferences, and examples of your existing copy, then reference this in your prompts, 2) Include specific phrases or expressions unique to your brand, 3) Always edit the generated copy to add personal touches, industry insights, or company-specific knowledge that AI wouldn't have, 4) Incorporate real customer testimonials and specific product details, and 5) Develop a consistent editing process to align all AI-generated content with your brand standards. The most effective approach is using AI for structure and initial drafts, then personalizing the content with your unique brand perspective."
+    },
+    {
+      "question": "Will these prompts work for any industry or niche?",
+      "answer": "These prompts work across industries but require customization for maximum effectiveness. For specialized niches: 1) Add industry-specific terminology, pain points, and desired outcomes, 2) Include examples of successful copy in your industry as reference points, 3) Specify any regulatory requirements or compliance considerations (especially important for financial, health, or legal industries), 4) Mention industry benchmarks for claims or statistics, and 5) Reference competitor approaches that are standard in your field. The most effective adaptation comes from combining these prompts with your specific industry knowledge and customer insights."
+    },
+    {
+      "question": "How should I test the effectiveness of AI-generated copy?",
+      "answer": "To test AI-generated copy effectively: 1) Create A/B tests comparing different AI-generated versions against each other and against human-written copy, 2) Track specific metrics aligned with your goals (conversion rate, click-through rate, time on page, etc.), 3) Test smaller elements first (headlines, CTAs) before full page rewrites, 4) Implement heat mapping and session recording to see how users interact with the copy, and 5) Gather qualitative feedback through user testing or customer interviews. The most reliable approach is establishing a systematic testing framework where you isolate variables and make data-driven decisions about which copy performs best with your specific audience."
+    },
+    {
+      "question": "Can these prompts help with writer's block or speeding up my copywriting process?",
+      "answer": "These prompts are excellent for overcoming writer's block and accelerating your copywriting process. They help by: 1) Providing structured frameworks that break complex copy projects into manageable components, 2) Generating multiple variations to spark your creativity when you're stuck, 3) Creating solid first drafts that you can refine rather than facing a blank page, 4) Offering different angles or approaches you might not have considered, and 5) Handling the time-consuming parts of copywriting (like creating multiple headline options) so you can focus on strategic decisions and refinement. Many professional copywriters now use AI as a collaborative tool that handles the initial heavy lifting while they focus on adding the creative touches and strategic insights that only humans can provide."
+    }
+  ],
+  "relatedModifiers": [
+    "Marketing",
+    "Sales",
+    "Email Marketing",
+    "Advertising",
+    "E-commerce",
+    "Content Creation"
+  ]
+}
