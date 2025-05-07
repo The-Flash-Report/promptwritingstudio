@@ -19,7 +19,7 @@ export default function Pricing() {
     },
     {
       name: "Pro",
-      price: "$37",
+      price: "$47",
       period: "per month",
       description: "Our most popular plan for serious content creators who want to master AI prompts.",
       features: [

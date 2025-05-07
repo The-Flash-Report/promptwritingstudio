@@ -43,7 +43,7 @@ export default function ModifierPage({ modifierData }) {
           <div className="max-w-3xl mx-auto text-center">
             <span className="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">ChatGPT Prompts</span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              15+ Expert-Crafted ChatGPT Prompts for {modifierName}
+              {promptTemplates.length}+ Expert-Crafted ChatGPT Prompts for {modifierName}
             </h1>
             <p className="text-xl mb-8">
               Save hours and get better results with our tested and optimized prompts specifically designed for {modifierName.toLowerCase()} professionals and enthusiasts.
@@ -206,7 +206,29 @@ export default function ModifierPage({ modifierData }) {
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-[#F9F9F9] p-6 rounded-xl shadow-sm">
                   <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{faq.question}</h3>
-                  <div className="text-[#333333]">{faq.answer}</div>
+                  <div className="text-[#333333] space-y-4">
+                    {/* Format the answer text by splitting on numbered points */}
+                    {faq.answer.split(/(?=\d+\))/).map((part, i) => {
+                      if (!part.trim()) return null;
+                      
+                      // Check if this part starts with a number
+                      const isNumbered = /^\d+\)/.test(part.trim());
+                      
+                      if (isNumbered) {
+                        // This is a numbered point
+                        const [number, ...rest] = part.trim().split(' ');
+                        return (
+                          <div key={i} className="flex mb-3">
+                            <span className="font-bold mr-2 flex-shrink-0">{number}</span>
+                            <span>{rest.join(' ')}</span>
+                          </div>
+                        );
+                      } else {
+                        // This is a regular paragraph
+                        return <p key={i} className="mb-3">{part.trim()}</p>;
+                      }
+                    })}
+                  </div>
                 </div>
               ))}
             </div>

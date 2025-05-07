@@ -37,9 +37,9 @@
       "title": "Abandoned Cart Email",
       "description": "Create effective abandoned cart recovery emails.",
       "prompt": "Write an abandoned cart recovery email for our [type of business] selling [products/services]. The customer added [specific product(s)] to their cart but didn't complete checkout. Our brand voice is [describe brand voice]. Include: 1) An attention-grabbing subject line, 2) A friendly reminder about their cart items, 3) A section addressing common objections or hesitations, 4) Social proof (suggest the type of testimonial or review to include), 5) A clear call-to-action to return to checkout, 6) A secondary section with 2-3 recommended related products, and 7) Any urgency element (like limited stock or time-limited discount). The email should be conversational and helpful, not pushy.",
-      "wordCount": 145,
-      "category": "Conversion Emails",
-      "example": "SUBJECT: Your [Product Name] is Waiting For You!\n\nHi [Name],\n\nLooks like you left something special behind! The [Product Name] you added to your cart is still there, but it won't wait forever.\n\nWe noticed you didn't complete your purchase, and we wanted to check if you had any questions about the [Product Name]. Many customers love its [key feature/benefit], and it's one of our best-selling items...",
+      "wordCount": 180,
+      "category": "E-commerce Emails",
+      "example": "ABANDONED CART RECOVERY EMAIL\nSubject: Your [Product Name] is Waiting For You!\n\nHi [Customer Name],\n\nI noticed you were checking out our [Product Name] earlier but didn't complete your purchase. Your cart is saved and ready whenever you are!\n\n[Product Image with Brief Description]\n\nMany customers initially hesitate because they wonder about [common objection]. Here's what [Customer Name], a recent buyer, had to say: \"[Brief testimonial addressing the common objection]\"...",
       "tips": [
         "Include a clear image of the abandoned product",
         "Consider offering a small, time-limited discount to encourage completion",
@@ -50,9 +50,9 @@
       "title": "Email Newsletter Template",
       "description": "Create engaging newsletter templates for regular audience communication.",
       "prompt": "Design a template for a [weekly/monthly] email newsletter for our [type of business]. Our audience consists of [target audience description] interested in [topics of interest]. Our brand voice is [describe brand voice]. Create a structured template with: 1) 3 subject line formulas we can adapt for each issue, 2) An engaging introduction section format, 3) 3-5 content section templates with headers and description of what goes in each (e.g., featured article, news roundup, tip of the week), 4) A promotional section template for our products/services, 5) Call-to-action examples, 6) Sign-off format. For each section, provide specific examples we could use in our first newsletter.",
-      "wordCount": 155,
-      "category": "Email Content",
-      "example": "SUBJECT LINE FORMULAS:\n1. [Number] [Topic] Tips You Need This [Timeframe] - Example: \"5 SEO Tips You Need This Summer\"\n2. The Inside Scoop: [Timely Topic] + [Benefit] - Example: \"The Inside Scoop: Google's New Algorithm + How to Adapt\"\n3. [Audience Name], Don't Miss This [Content Type] About [Topic] - Example: \"Marketers, Don't Miss This Guide About AI Content Creation\"...",
+      "wordCount": 190,
+      "category": "Email Marketing",
+      "example": "EMAIL NEWSLETTER TEMPLATE\nSUBJECT LINE FORMULAS:\n1. [Number] [Topic] Tips for [Desired Outcome] This [Timeframe]\n2. The [Timeframe] [Industry] Update: [Key Topic] + [Benefit]\n3. [Question about pain point]? Try These [Number] [Solutions]\n\nINTRODUCTION SECTION:\nGreeting that references current events or season\nBrief personal update from the brand\nTeaser of what's in this issue with clear value proposition...",
       "tips": [
         "Maintain a consistent structure so readers know what to expect",
         "Keep the design mobile-friendly with a single-column layout",
@@ -63,13 +63,39 @@
       "title": "Re-engagement Email Campaign",
       "description": "Create emails to win back inactive subscribers or customers.",
       "prompt": "Create a 3-part re-engagement email campaign for subscribers who haven't opened or clicked our emails in [time period, e.g., 3 months]. We are a [type of business] serving [target audience]. For each email, provide: 1) Subject line, 2) Preview text, 3) Main message and copy, 4) Specific offer or incentive (if applicable), 5) Call-to-action, and 6) Recommended timing. Email 1 should be a gentle check-in. Email 2 should highlight what they're missing and offer value. Email 3 should be a final attempt with a strong incentive before we clean our list. Include a brief note on how to segment recipients based on their response to optimize future campaigns.",
-      "wordCount": 140,
-      "category": "Subscriber Retention",
-      "example": "EMAIL 1: GENTLE CHECK-IN\nSubject: We miss you, [Name] - Are we still a good fit?\nPreview text: It's been a while since we've connected...\nTiming: Day 1\n\nHi [Name],\n\nWe noticed it's been a while since you engaged with our emails, and we wanted to check in. We're constantly working to provide valuable content on [topic/industry], and we want to make sure we're still meeting your needs...",
+      "wordCount": 200,
+      "category": "Email Campaigns",
+      "example": "RE-ENGAGEMENT EMAIL 1: GENTLE CHECK-IN\nSubject: We miss you, [Name]!\nPreview Text: Are we still a good fit for your inbox?\n\nHi [Name],\n\nIt's been a while since you've opened our emails, and we wanted to check in. We're constantly working to provide valuable content on [topic/industry], and we want to make sure we're still delivering what you're interested in...",
       "tips": [
         "Personalize these emails as much as possible with subscriber name and history",
         "Test different incentives to see what drives the highest re-engagement",
         "Be prepared to remove non-responsive subscribers after the campaign"
+      ]
+    },
+    {
+      "title": "Promotional Email Campaign",
+      "description": "Create compelling promotional emails for product launches or special offers.",
+      "prompt": "Design a promotional email campaign for our [product/service] [launch/sale/special offer]. Our target audience is [target audience description] and our unique selling proposition is [main benefit or feature]. Our brand voice is [describe brand voice]. Create an email that includes: 1) An attention-grabbing subject line with preview text, 2) A compelling opening that creates excitement or urgency, 3) A clear presentation of the offer with key benefits highlighted, 4) Pricing details with any special discounts clearly explained, 5) Social proof elements (suggest testimonial types or statistics to include), 6) FAQ section addressing common objections, 7) A primary call-to-action and a secondary option, and 8) Any urgency elements like deadlines or limited availability. The email should be persuasive without being pushy.",
+      "wordCount": 170,
+      "category": "Promotional Emails",
+      "example": "PROMOTIONAL EMAIL\nSubject: Introducing [Product]: The [Benefit] Solution You've Been Waiting For\nPreview Text: Special launch pricing ends Friday!\n\nHi [Name],\n\nToday's the day! After months of development and testing, we're thrilled to announce the official launch of [Product Name].\n\n[PRODUCT IMAGE WITH CAPTION]\n\nWHAT IS [PRODUCT NAME]?\n[Product Name] is the first [product category] that [unique benefit]. Unlike other solutions that [common problem with alternatives], our [product/service] [key differentiator]...",
+      "tips": [
+        "Focus on benefits rather than features throughout the email",
+        "Use visuals strategically to showcase the product/service",
+        "Create a sense of urgency without using manipulative tactics"
+      ]
+    },
+    {
+      "title": "Customer Feedback Request Email",
+      "description": "Create emails that effectively solicit customer feedback and reviews.",
+      "prompt": "Write a customer feedback request email for our [product/service] that encourages recipients to share their experience. Our business is [brief description] serving [target audience]. Our brand voice is [describe brand voice]. The email should include: 1) A subject line that encourages opening, 2) A personalized greeting, 3) A brief explanation of why their feedback matters to us, 4) Clear instructions on how to provide feedback (survey, review site, reply email, etc.) with direct links, 5) An estimate of how long the feedback process will take, 6) Any incentive we're offering for their time (if applicable), 7) Reassurance that both positive and constructive feedback is valuable, and 8) A sincere thank you. The tone should be appreciative and not pushy.",
+      "wordCount": 160,
+      "category": "Customer Communication",
+      "example": "FEEDBACK REQUEST EMAIL\nSubject: [Name], how was your experience with [Product/Service]?\nPreview Text: We'd love your honest thoughts (takes just 2 minutes)\n\nHi [Customer Name],\n\nThank you for [specific action - purchasing/using/subscribing to] [Product/Service Name]. Now that you've had some time to experience it, I'd love to hear your thoughts.\n\nYour feedback directly helps us improve and better serve customers like you. Would you be willing to take our quick 2-minute survey?\n\n[PROMINENT BUTTON: Share Your Feedback]...",
+      "tips": [
+        "Send the request at the right time (after customer has had sufficient experience)",
+        "Keep any surveys or feedback forms as short and simple as possible",
+        "Follow up on negative feedback personally to show you're listening"
       ]
     }
   ],
