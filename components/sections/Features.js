@@ -75,12 +75,14 @@ export default function Features() {
         </div>
 
         <div className="text-center mt-12">
-          <Link
-            href="#pricing"
+          <a
+            href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
             className="bg-primary text-secondary font-bold px-8 py-3 rounded-md text-lg hover:bg-primary-dark transition inline-block"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Join Now
-          </Link>
+          </a>
         </div>
       </div>
     </section>

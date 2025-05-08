@@ -62,12 +62,14 @@ export default function WhatYouGet() {
             </div>
             
             <div className="mt-12 text-center">
-              <Link 
-                href="#pricing" 
+              <a 
+                href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" 
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Join Now
-              </Link>
+              </a>
             </div>
           </div>
         </div>
