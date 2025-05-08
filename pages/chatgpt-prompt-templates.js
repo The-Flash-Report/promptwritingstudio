@@ -1,5 +1,6 @@
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
+import Script from 'next/script'
 import { getAllModifiers } from '../lib/modifiers'
 
 export default function ChatGPTPromptTemplates({ modifiers }) {
@@ -18,7 +19,7 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
             <p className="text-xl mb-8">
               Browse our comprehensive library of expert-crafted ChatGPT prompt templates for various use cases. Get better results and save hours of time with our tested and optimized prompts.
             </p>
-            <a href="#prompt-categories" className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block">
+            <a href="#prompt-categories" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block">
               Browse Templates
             </a>
           </div>
@@ -79,13 +80,10 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
                   href={`/chatgpt-prompts-for/${modifier.slug}`}
                   className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition flex flex-col h-full"
                 >
-                  <h3 className="text-xl font-bold mb-2 text-indigo-700">ChatGPT Prompts for {modifier.modifierName}</h3>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">ChatGPT Prompts for {modifier.modifierName}</h3>
                   <p className="text-gray-700 mb-4 flex-grow">{modifier.promptTemplates.length}+ expert-crafted templates for {modifier.modifierName.toLowerCase()} tasks</p>
-                  <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
-                    <span className="text-sm text-gray-500">
-                      <i className="fas fa-fire text-orange-500 mr-1"></i> {modifier.searchVolume} monthly searches
-                    </span>
-                    <span className="text-indigo-600 font-medium">View Templates <i className="fas fa-arrow-right ml-1"></i></span>
+                  <div className="flex justify-end items-center mt-auto pt-4 border-t border-gray-100">
+                    <span className="text-blue-500 font-medium">View Templates <i className="fas fa-arrow-right ml-1"></i></span>
                   </div>
                 </Link>
               ))}
@@ -148,62 +146,19 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
       </section>
       
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">What Our Users Say</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
-                    <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold">Michael Chen</h4>
-                    <p className="text-gray-600 text-sm">Marketing Director</p>
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                </div>
-                <p className="text-gray-700">
-                  "These prompt templates have completely transformed our content creation process. We're now producing better marketing copy in half the time. The ROI has been incredible."
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
-                    <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </div>
-                  <div className="ml-4">
-                    <h4 className="font-bold">Sarah Johnson</h4>
-                    <p className="text-gray-600 text-sm">Content Creator</p>
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                  <i className="fas fa-star text-yellow-400"></i>
-                </div>
-                <p className="text-gray-700">
-                  "As a content creator, I was skeptical about AI tools, but these prompt templates have changed my mind. The quality of output is remarkable, and I can create content 3x faster."
-                </p>
-              </div>
-            </div>
+      <section id="testimonial-embed" className="py-16 md:py-24 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">What My Clients, Students and Readers Say</h2>
+          <Script src="https://testimonial.to/js/iframeResizer.min.js" strategy="beforeInteractive" />
+          <div className="testimonial-container">
+            <iframe 
+              height="800px" 
+              id='testimonialto-become-a-writer-today-tag-all-light-animated' 
+              src="https://embed-v2.testimonial.to/w/become-a-writer-today?animated=on&theme=light&shadowColor=ffffff&speed=1&tag=all&cc=off" 
+              frameBorder="0" 
+              scrolling="no" 
+              width="100%"
+            ></iframe>
           </div>
         </div>
       </section>
@@ -218,7 +173,7 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
             </p>
             <Link 
               href="/#pricing" 
-              className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block"
+              className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block"
             >
               View Pricing Plans
             </Link>

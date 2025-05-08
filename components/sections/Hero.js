@@ -23,9 +23,9 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-              <Link href="#pricing" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition text-center text-sm md:text-base">
+              <a href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition text-center text-sm md:text-base" target="_blank" rel="noopener noreferrer">
                 Join Now
-              </Link>
+              </a>
               <Link href="#problem-solution" className="border border-white text-white px-6 py-2.5 md:px-8 md:py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition text-center text-sm md:text-base">
                 See How It Works
               </Link>

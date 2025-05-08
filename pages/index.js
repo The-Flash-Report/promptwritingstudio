@@ -4,7 +4,8 @@ import ProblemSolution from '../components/sections/ProblemSolution'
 import WhatYouGet from '../components/sections/WhatYouGet'
 import Features from '../components/sections/Features'
 import Pricing from '../components/sections/Pricing'
-// Testimonials now included in Footer component
+import Testimonials from '../components/sections/Testimonials'
+import TestimonialEmbed from '../components/sections/TestimonialEmbed'
 import Guarantee from '../components/sections/Guarantee'
 import FAQ from '../components/sections/FAQ'
 import Instructor from '../components/sections/Instructor'
@@ -20,10 +21,11 @@ export default function Home() {
       <WhatYouGet />
       <Features />
       <Pricing />
-      {/* Testimonials now included in Footer component */}
+      <Testimonials />
       <Guarantee />
       <FAQ />
       <Instructor />
+      <TestimonialEmbed />
     </Layout>
   )
 }

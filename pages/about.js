@@ -1,4 +1,6 @@
 import Layout from '../components/layout/Layout'
+import Link from 'next/link'
+import { FaArrowRight } from 'react-icons/fa'
 
 export default function About() {
   return (
@@ -92,6 +94,21 @@ export default function About() {
         </div>
       </section>
       
+      {/* Contact Section */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get in Touch</h2>
+            <p className="text-xl mb-8">
+              Have questions about our services or want to learn more? We'd love to hear from you!
+            </p>
+            <Link href="/contact" className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+              Contact Us <FaArrowRight className="ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
       <section className="py-16 md:py-24 gradient-bg text-white">
         <div className="container mx-auto px-4 md:px-6">
@@ -101,7 +118,7 @@ export default function About() {
               Join our community of prompt engineers and start getting better results from AI tools today.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a href="https://bryancollins.com/products/prompt-writing-studio" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block" target="_blank" rel="noopener noreferrer">
+              <a href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block" target="_blank" rel="noopener noreferrer">
                 Get Started
               </a>
               <a href="https://aiflashreport.com/" className="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition inline-block" target="_blank" rel="noopener noreferrer">
