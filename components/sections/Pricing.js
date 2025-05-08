@@ -95,7 +95,7 @@ export default function Pricing() {
                 <Link 
                   href={plan.name === "Basic" ? "https://courses.becomeawritertoday.com/purchase?product_id=6253746" : 
                         plan.name === "Pro" ? "https://courses.becomeawritertoday.com/purchase?product_id=6253756" : 
-                        "https://courses.becomeawritertoday.com/purchase?product_id=6253756"} 
+                        "https://courses.becomeawritertoday.com/purchase?product_id=6253752"} 
                   className="bg-[#FFDE59] text-[#1A1A1A] block text-center mt-8 px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition"
                   target="_blank"
                   rel="noopener noreferrer"
