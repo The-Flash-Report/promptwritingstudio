@@ -20,6 +20,7 @@ This is the Next.js implementation of the PromptWritingStudio landing page, desi
     Features.js - Core features with icons
     Pricing.js - Pricing plans and options
     Testimonials.js - User testimonials and social proof
+    TestimonialEmbed.js - Embedded testimonial iframe from testimonial.to
     Guarantee.js - Money-back guarantee section
     FAQ.js - Frequently asked questions
     Instructor.js - About the instructor section
@@ -63,6 +64,11 @@ This is the Next.js implementation of the PromptWritingStudio landing page, desi
 
 ### Content Guidelines
 - Maintain "Join Now" as the primary CTA text throughout the site
+- All "Join Now" CTAs link directly to the Basic plan purchase URL (https://courses.becomeawritertoday.com/purchase?product_id=6253746)
+- Pricing links for each plan:
+  - Basic plan: https://courses.becomeawritertoday.com/purchase?product_id=6253746
+  - Pro plan: https://courses.becomeawritertoday.com/purchase?product_id=6253756
+  - Elite plan: https://courses.becomeawritertoday.com/purchase?product_id=6253752
 - Use benefit-driven headlines and copy
 - Include social proof and credibility indicators
 - Each section should have a clear purpose and call-to-action

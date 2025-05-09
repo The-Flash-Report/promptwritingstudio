@@ -24,6 +24,7 @@ export default function Footer() {
               <li><Link href="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
               <li><Link href="/best-ai-tools" className="text-gray-400 hover:text-white transition">Best AI Tools</Link></li>
               <li><Link href="/chatgpt-prompt-templates" className="text-gray-400 hover:text-white transition">Prompt Templates</Link></li>
+              <li><Link href="/ai-prompt-examples" className="text-gray-400 hover:text-white transition">AI Prompt Examples</Link></li>
             </ul>
           </div>
           
