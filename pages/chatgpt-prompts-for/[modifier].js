@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { getModifierSlugs, getModifierData } from '../../lib/modifiers'
 
 export default function ModifierPage({ modifierData }) {
+  const router = useRouter()
   const [activePromptIndex, setActivePromptIndex] = useState(null)
   const { 
     modifierName, 
@@ -61,30 +63,68 @@ export default function ModifierPage({ modifierData }) {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">Why You Need Specialized ChatGPT Prompts for {modifierName}</h2>
             <p className="text-lg text-gray-700 mb-6">
-              ChatGPT is a powerful AI assistant, but getting the best results for {modifierName.toLowerCase()} requires carefully crafted prompts. Generic prompts often lead to generic outputs that require extensive editing and refinement.
+              ChatGPT is a powerful AI assistant, but getting the best results for {modifierName.toLowerCase()} requires carefully crafted prompts that follow OpenAI's best practices. Generic prompts often lead to generic outputs that don't maintain your authentic voice.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              Our {modifierName.toLowerCase()} prompts are designed by experts who understand both the capabilities of ChatGPT and the specific needs of {modifierName.toLowerCase()} work. Each prompt template has been tested and refined to ensure it produces high-quality, relevant outputs.
+              Our {modifierName.toLowerCase()} prompts are designed based on OpenAI's official guidelines and include all the key components of effective prompts: clear context, specific instructions, format guidance, examples, and audience information.
             </p>
+            
+            <div className="bg-blue-50 p-6 rounded-xl mb-8">
+              <h3 className="text-xl font-bold mb-3">ChatGPT Prompt Best Practices for {modifierName}</h3>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-700"><strong>Be specific about your {modifierName.toLowerCase()} goals</strong> - Tell ChatGPT exactly what you're trying to achieve</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-700"><strong>Include your expertise level</strong> - Help ChatGPT understand your {modifierName.toLowerCase()} background</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-700"><strong>Define your audience</strong> - Specify who will be consuming your {modifierName.toLowerCase()} content</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-5 h-5 text-blue-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-700"><strong>Request your authentic voice</strong> - Ask for content that sounds like you wrote it</span>
+                </li>
+              </ul>
+            </div>
             
             <div className="bg-[#F9F9F9] p-8 rounded-xl border border-[#E5E5E5] mt-8">
               <h3 className="text-xl font-bold mb-4 text-[#1A1A1A]">What Makes Our {modifierName} Prompts Different</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
+                  <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
                   <span><strong>Context-Rich Instructions</strong>: Each prompt includes the necessary context for ChatGPT to understand exactly what you need.</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
+                  <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
                   <span><strong>Structured Outputs</strong>: Our prompts guide ChatGPT to deliver responses in useful, structured formats.</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
-                  <span><strong>Industry-Specific Language</strong>: We incorporate {modifierName.toLowerCase()}-specific terminology and best practices.</span>
+                  <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>Industry-Specific Language</strong>: We include the right terminology and concepts for {modifierName.toLowerCase()} to get more relevant results.</span>
                 </li>
                 <li className="flex items-start">
-                  <i className="fas fa-check-circle text-[#1A1A1A] mt-1 mr-2"></i>
-                  <span><strong>Customization Guidance</strong>: Tips for adapting each template to your specific needs.</span>
+                  <svg className="w-5 h-5 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span><strong>Voice Preservation</strong>: Our prompts are designed to maintain your authentic voice in the outputs.</span>
                 </li>
               </ul>
             </div>
@@ -258,13 +298,76 @@ export default function ModifierPage({ modifierData }) {
         </div>
       </section>
       
+      {/* AI Prompt Generator Promo */}
+      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div className="md:flex">
+              <div className="md:w-1/2 p-8 flex items-center">
+                <div>
+                  <h2 className="text-2xl font-bold mb-4">Create Your Own {modifierName} Prompts</h2>
+                  <p className="text-gray-700 mb-6">
+                    Want to create custom ChatGPT prompts for {modifierName.toLowerCase()}? Use our interactive prompt generator to build effective prompts based on OpenAI's best practices that maintain your authentic voice.                  
+                  </p>
+                  <Link 
+                    href={`/ai-prompt-generator/seo/chatgpt-prompt-for-${router.query.modifier}`}
+                    className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center"
+                  >
+                    <span>Create {modifierName} Prompts</span>
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+              <div className="md:w-1/2 bg-indigo-100 p-8 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="bg-white p-4 rounded-lg shadow-sm inline-block mb-4">
+                    <svg className="w-16 h-16 text-indigo-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">Features:</h3>
+                  <ul className="text-left text-sm space-y-2 max-w-xs mx-auto">
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>{modifierName}-specific components</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Based on OpenAI's best practices</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Maintains your authentic voice</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>100% free, no sign-up required</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
       <section className="py-16 md:py-24 gradient-bg text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Master ChatGPT for {modifierName}?</h2>
             <p className="text-xl mb-8">
-              Get access to our full library of premium prompt templates and start creating better content today.
+              Get access to our full library of premium prompt templates and start creating content that truly sounds like you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 

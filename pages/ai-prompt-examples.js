@@ -756,6 +756,69 @@ export default function AIPromptExamples() {
         </div>
       </section>
       
+      {/* AI Prompt Generator Promo */}
+      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div className="md:flex">
+              <div className="md:w-1/2 p-8 flex items-center">
+                <div>
+                  <h2 className="text-2xl font-bold mb-4">Try Our AI Prompt Generator</h2>
+                  <p className="text-gray-700 mb-6">
+                    Want to create your own custom AI prompts? Use our interactive AI prompt generator to build effective prompts for ChatGPT, Claude, and Gemini based on best practices from OpenAI, Anthropic, and Google.                  
+                  </p>
+                  <Link 
+                    href="/ai-prompt-generator" 
+                    className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center"
+                  >
+                    <span>Create Custom Prompts</span>
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+              <div className="md:w-1/2 bg-indigo-100 p-8 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="bg-white p-4 rounded-lg shadow-sm inline-block mb-4">
+                    <svg className="w-16 h-16 text-indigo-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">Features:</h3>
+                  <ul className="text-left text-sm space-y-2 max-w-xs mx-auto">
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Platform-specific templates</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Customizable components</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>Specialized use case generators</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="w-4 h-4 text-indigo-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span>100% free, no sign-up required</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Final CTA Section - Basic Plan */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 md:px-6">
