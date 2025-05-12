@@ -28,8 +28,12 @@ This is the Next.js implementation of the PromptWritingStudio landing page, desi
   index.js - Main landing page
   chatgpt-prompt-templates.js - Hub page for templates
   chatgpt-prompts-for/[modifier].js - Dynamic SEO pages
+  ai-prompt-generator/seo/[slug].js - Dynamic SEO pages for AI prompts
+  sitemap.js - HTML sitemap for all pages
   [slug].js - Generic dynamic pages
 /data
+  seo-use-cases.js - Data for programmatic SEO pages (45+ use cases)
+  prompt-generator-components.js - Components for AI prompt generator
   /modifiers - JSON data for programmatic SEO pages
     resume.json
     business.json
@@ -41,6 +45,36 @@ This is the Next.js implementation of the PromptWritingStudio landing page, desi
 /styles
   globals.css - Global CSS styles
 ```
+
+## Programmatic SEO Implementation
+
+The site implements a comprehensive programmatic SEO strategy targeting AI prompt-related keywords:
+
+### Content Structure
+- **45+ Specialized Content Pages** organized into categories:
+  - Art & Image Generation (Art Styles for AI Prompts, AI Image Prompts, etc.)
+  - Effectiveness & Best Practices (How to Write Effective AI Prompts, Best AI Prompts, etc.)
+  - Platform-Specific (Midjourney AI Prompts, Character AI Prompts, etc.)
+  - Business & Professional (AI Prompts for Business, AI Prompts for Teachers, etc.)
+  - Specialized Content (AI Writing Prompts, AI Chat Prompts, etc.)
+
+### Implementation Details
+- **Dynamic Page Template**: `/pages/ai-prompt-generator/seo/[slug].js` renders all SEO pages
+- **Data Source**: `/data/seo-use-cases.js` contains all page metadata and content
+- **Concept Descriptions**: Each page includes a highlighted concept description that explains the topic
+- **HTML Sitemap**: `/pages/sitemap.js` organizes all pages into logical categories
+
+### SEO Metadata
+Each page in `seo-use-cases.js` includes:
+- `slug`: URL path segment
+- `title`: SEO-optimized page title
+- `description`: Meta description
+- `h1`: Main heading
+- `intro`: Introductory paragraph
+- `conceptDescription`: Highlighted explanation of the concept
+- `searchVolume`: Monthly search volume (from Ahrefs)
+- `parentKeyword`: Main category keyword
+- `relatedKeywords`: Array of related search terms
 
 ## Design Rules & Conventions
 
