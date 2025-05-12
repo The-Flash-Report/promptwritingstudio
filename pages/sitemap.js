@@ -6,19 +6,19 @@ export default function Sitemap() {
   // Group SEO use cases by category
   const groupedUseCases = {
     'General AI Prompts': seoUseCases.filter(useCase => 
-      ['prompts-for-ai', 'free-prompt-generator', 'how-to-write-prompts-for-ai', 'how-to-write-effective-prompts-for-ai', 'best-practices-for-writing-ai-prompts'].includes(useCase.slug)
+      ['prompts-for-ai', 'free-ai-prompts', 'how-to-write-prompts-for-ai', 'how-to-write-effective-ai-prompts', 'best-practices-for-writing-ai-prompts', 'what-are-ai-prompts', 'what-are-prompts-in-ai', 'ai-prompts-examples', 'best-ai-prompts', 'good-ai-prompts', 'generative-ai-prompts', 'ai-prompts-generator', 'ai-generated-prompts'].includes(useCase.slug)
     ),
     'Platform-Specific Prompts': seoUseCases.filter(useCase => 
-      ['chatgpt-prompt', 'claude-prompt', 'gemini-prompt', 'chatgpt-prompt-for-email-marketing'].includes(useCase.slug)
+      ['chatgpt-prompt', 'claude-prompt', 'gemini-prompt', 'chatgpt-prompt-for-email-marketing', 'midjourney-ai-prompts', 'bing-ai-prompts', 'character-ai-prompts', 'suno-ai-prompts', 'novel-ai-prompts', 'leonardo-ai-prompts', 'playground-ai-prompts', 'luma-ai-prompts'].includes(useCase.slug)
     ),
     'Content Creation Prompts': seoUseCases.filter(useCase => 
-      ['writing-prompt', 'blog-post-prompt', 'marketing-copy-prompt', 'social-media-prompt', 'product-description-prompt', 'writing-prompts-for-ai', 'ai-prompts-for-content-creation'].includes(useCase.slug)
+      ['writing-prompt', 'blog-post-prompt', 'marketing-copy-prompt', 'social-media-prompt', 'product-description-prompt', 'ai-writing-prompts', 'ai-chat-prompts', 'ai-prompts-for-content-creation', 'how-to-write-ai-prompts'].includes(useCase.slug)
     ),
     'Image & Video Prompts': seoUseCases.filter(useCase => 
-      ['image-prompt', 'video-prompt', 'prompts-for-ai-art', 'ai-prompts-for-images', 'best-prompts-for-ai-art', 'how-to-write-prompts-for-ai-art', 'best-ai-prompts-for-images', 'ai-prompts-for-logo-design'].includes(useCase.slug)
+      ['image-prompt', 'video-prompt', 'ai-image-prompts', 'ai-art-prompts', 'how-to-write-ai-art-prompts', 'how-to-write-ai-image-prompts', 'best-ai-art-prompts', 'best-ai-image-prompts', 'ai-art-style-prompts', 'fun-ai-prompts-for-art', 'cool-ai-image-prompts', 'ai-image-generation-prompts', 'prompts-for-ai-image-generation', 'ai-prompts-for-images', 'negative-prompts-for-ai', 'dark-fantasy-ai-prompts', 'studio-ghibli-ai-prompts', 'ai-video-prompts', 'best-techniques-for-creating-hyper-realistic-ai-images', 'how-to-write-prompts-for-ai-image-generation', 'how-to-write-effective-prompts-for-ai-image-generation'].includes(useCase.slug)
     ),
     'Business & Professional Prompts': seoUseCases.filter(useCase => 
-      ['ai-prompts-for-business', 'ai-prompts-for-marketing', 'ai-prompts-for-sales', 'ai-prompts-for-resume'].includes(useCase.slug)
+      ['ai-prompts-for-business', 'ai-prompts-for-marketing', 'ai-prompts-for-sales', 'ai-resume-prompts', 'ai-prompts-for-resume', 'ai-logo-prompts', 'ai-prompts-for-teachers', 'ai-character-prompts'].includes(useCase.slug)
     )
   };
   

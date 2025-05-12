@@ -103,9 +103,14 @@ export default function SeoPromptGenerator() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               {useCaseData.h1}
             </h1>
-            <p className="text-xl mb-8">
+            <p className="text-xl mb-4">
               {useCaseData.intro}
             </p>
+            {useCaseData.conceptDescription && (
+              <p className="text-lg mb-8 font-medium bg-white bg-opacity-10 p-4 rounded-lg">
+                {useCaseData.conceptDescription}
+              </p>
+            )}
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/ai-prompt-generator"
