@@ -25,23 +25,46 @@ export default function Sitemap() {
   // Main site pages (not SEO use cases)
   const mainPages = [
     { title: 'Home', url: '/' },
+    { title: 'AI Prompt Generator', url: '/ai-prompt-generator' },
     { title: 'AI Prompt Examples', url: '/ai-prompt-examples' },
     { title: 'ChatGPT Prompt Templates', url: '/chatgpt-prompt-templates' },
-    { title: 'AI Prompt Generator', url: '/ai-prompt-generator' },
-    { title: 'AI Art Prompts', url: '/ai-prompt-generator/ai-art-prompts' },
-    { title: 'ChatGPT Prompts for Email Marketing', url: '/chatgpt-prompts-for/email-marketing' }
+    { title: 'Best AI Tools', url: '/best-ai-tools' },
+    { title: 'About', url: '/about' },
+    { title: 'Contact', url: '/contact' },
+    { title: 'Privacy Policy', url: '/privacy-policy' },
+    { title: 'Terms of Service', url: '/terms-of-service' },
+    { title: 'Cookie Policy', url: '/cookie-policy' }
+  ];
+
+  // Calculator pages - high priority for SEO
+  const calculatorPages = [
+    { title: 'AI Business Calculators Hub', url: '/calculators', description: 'Complete collection of AI calculators for business' },
+    { title: 'AI ROI Calculator', url: '/roi-calculator', description: 'Calculate time and money savings with AI automation' },
+    { title: 'AI vs Human Cost Calculator', url: '/calculators/ai-cost-comparison', description: 'Compare costs of AI automation vs hiring' },
+    { title: 'Content Creation Speed Calculator', url: '/calculators/content-creation-speed', description: 'Calculate time savings using AI for content creation' },
+    { title: 'E-commerce AI Calculator', url: '/calculators/ecommerce-ai-savings', description: 'Calculate savings from automating product descriptions and customer service' },
+    { title: 'Business Name Generator', url: '/business-name-generator', description: 'Generate unique business names with AI' }
+  ];
+
+  // Tool pages
+  const toolPages = [
+    { title: 'AI Prompt Writing Quiz', url: '/ai-prompt-quiz', description: 'Test your AI prompt writing knowledge and get personalized recommendations' },
+    { title: 'AI Art Prompts Generator', url: '/ai-prompt-generator/ai-art-prompts' },
+    { title: 'ChatGPT Prompts for Email Marketing', url: '/chatgpt-prompts-for/email-marketing' },
+    { title: 'ChatGPT Prompts for Business', url: '/chatgpt-prompts-for/business' },
+    { title: 'ChatGPT Prompts for Resume', url: '/chatgpt-prompts-for/resume' }
   ];
   
   return (
     <Layout
-      title="Sitemap | PromptWritingStudio"
-      description="Complete sitemap of PromptWritingStudio with links to all pages including our AI prompt generators, examples, and templates."
+      title="Sitemap | PromptWritingStudio - Complete Directory of AI Tools & Calculators"
+      description="Complete sitemap of PromptWritingStudio with links to all pages including AI calculators, prompt generators, examples, and templates."
     >
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">Sitemap</h1>
           <p className="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
-            A complete directory of all pages on PromptWritingStudio, organized by category for easy navigation.
+            A complete directory of all pages on PromptWritingStudio, organized by category for easy navigation and SEO indexing.
           </p>
           
           {/* Main Pages Section */}
@@ -57,11 +80,51 @@ export default function Sitemap() {
               ))}
             </ul>
           </div>
+
+          {/* AI Calculators Section - High Priority */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-yellow-400">
+              🔥 AI Business Calculators
+              <span className="text-sm font-normal text-gray-600 ml-2">(High SEO Value)</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {calculatorPages.map(page => (
+                <div key={page.url} className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                  <Link href={page.url} className="text-blue-600 hover:underline font-semibold block mb-1">
+                    {page.title}
+                  </Link>
+                  {page.description && (
+                    <p className="text-sm text-gray-600">{page.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* AI Tools & Generators Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">AI Tools & Generators</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {toolPages.map(page => (
+                <div key={page.url} className={page.description ? "bg-blue-50 p-4 rounded-lg border border-blue-200" : ""}>
+                  <Link href={page.url} className="text-blue-600 hover:underline font-semibold block mb-1">
+                    {page.title}
+                  </Link>
+                  {page.description && (
+                    <p className="text-sm text-gray-600">{page.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
           
           {/* SEO Use Cases Sections */}
           {Object.entries(groupedUseCases).map(([category, useCases]) => (
             <div key={category} className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">{category}</h2>
+              <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">
+                {category}
+                <span className="text-sm font-normal text-gray-600 ml-2">({useCases.length} pages)</span>
+              </h2>
               <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {useCases.map(useCase => (
                   <li key={useCase.slug}>
@@ -77,9 +140,32 @@ export default function Sitemap() {
             </div>
           ))}
           
+          {/* SEO Stats Summary */}
+          <div className="mt-12 mb-8 p-6 bg-blue-50 rounded-lg">
+            <h2 className="text-xl font-bold mb-4 text-blue-800">SEO Performance Summary</h2>
+            <div className="grid md:grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-2xl font-bold text-blue-600">{mainPages.length}</div>
+                <div className="text-sm text-blue-600">Main Pages</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-yellow-600">{calculatorPages.length}</div>
+                <div className="text-sm text-yellow-600">AI Calculators</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-green-600">{Object.values(groupedUseCases).flat().length}</div>
+                <div className="text-sm text-green-600">SEO Pages</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-purple-600">{mainPages.length + calculatorPages.length + Object.values(groupedUseCases).flat().length + toolPages.length}</div>
+                <div className="text-sm text-purple-600">Total Pages</div>
+              </div>
+            </div>
+          </div>
+          
           {/* Admin Section */}
           <div className="mt-16 p-6 bg-gray-50 rounded-lg">
-            <h2 className="text-xl font-bold mb-4">Admin Resources</h2>
+            <h2 className="text-xl font-bold mb-4">Technical Resources</h2>
             <ul className="space-y-2">
               <li>
                 <Link href="/sitemap.xml" className="text-blue-600 hover:underline">
@@ -89,7 +175,7 @@ export default function Sitemap() {
               </li>
               <li>
                 <a href="https://courses.becomeawritertoday.com/admin" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                  Admin Dashboard
+                  Course Admin Dashboard
                 </a>
                 <span className="text-sm text-gray-500 ml-2">(Login required)</span>
               </li>

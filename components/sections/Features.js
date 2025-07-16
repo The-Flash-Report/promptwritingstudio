@@ -67,10 +67,13 @@ export default function Features() {
             <div className="icon-container bg-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
               <i className="fas fa-sync text-secondary text-2xl"></i>
             </div>
-            <h3 className="font-display text-xl font-bold mb-3 text-secondary">Future-Proof Updates</h3>
-            <p className="text-dark-gray">
-              As AI tools evolve, you'll receive updated prompt techniques and strategies to stay ahead of the curve.
+            <h3 className="font-display text-xl font-bold mb-3 text-secondary">Latest AI Models & Updates</h3>
+            <p className="text-dark-gray mb-3">
+              Stay current with our comprehensive guide to the latest AI models including Llama 4, Grok 4, and Claude 4. Plus updated prompt techniques as AI tools evolve.
             </p>
+            <Link href="/ai-models-2025" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+              View AI Models Guide →
+            </Link>
           </div>
         </div>
 

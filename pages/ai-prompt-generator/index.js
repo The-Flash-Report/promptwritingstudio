@@ -7,6 +7,7 @@ import {
   platformTemplates, 
   generatePrompt 
 } from '../../data/prompt-generator-components'
+import CustomTemplateBuilder from '../../components/ui/CustomTemplateBuilder'
 
 export default function AIPromptGenerator() {
   const [selectedPlatform, setSelectedPlatform] = useState('openai');
@@ -14,6 +15,9 @@ export default function AIPromptGenerator() {
   const [componentValues, setComponentValues] = useState({});
   const [generatedPrompt, setGeneratedPrompt] = useState('');
   const [copiedToClipboard, setCopiedToClipboard] = useState(false);
+  const [activeTab, setActiveTab] = useState('generator'); // 'generator', 'builder'
+  const [customTemplates, setCustomTemplates] = useState([]);
+  const [showCustomTemplates, setShowCustomTemplates] = useState(false);
   
   // Reset component values when platform or template changes
   useEffect(() => {
@@ -31,11 +35,35 @@ export default function AIPromptGenerator() {
   
   // Generate prompt from platform template
   const handleGeneratePrompt = () => {
-    const prompt = generatePrompt(
-      selectedPlatform,
-      selectedTemplate,
-      componentValues
-    );
+    let prompt;
+    
+    if (selectedTemplate.startsWith('custom_')) {
+      // Handle custom template
+      const templateName = selectedTemplate.replace('custom_', '').replace(/_/g, ' ');
+      const customTemplate = customTemplates.find(t => t.name.toLowerCase() === templateName);
+      
+      if (customTemplate) {
+        // Use Handlebars to process custom template
+        const Handlebars = require('handlebars');
+        try {
+          const compiledTemplate = Handlebars.compile(customTemplate.template);
+          prompt = compiledTemplate(componentValues);
+        } catch (error) {
+          console.error('Error compiling custom template:', error);
+          prompt = `Error generating prompt: ${error.message}`;
+        }
+      } else {
+        prompt = 'Custom template not found';
+      }
+    } else {
+      // Handle built-in template
+      prompt = generatePrompt(
+        selectedPlatform,
+        selectedTemplate,
+        componentValues
+      );
+    }
+    
     setGeneratedPrompt(prompt);
   };
   
@@ -48,12 +76,65 @@ export default function AIPromptGenerator() {
   
   // Get components for the selected template
   const getTemplateComponents = () => {
-    if (!selectedPlatform || !selectedTemplate) return [];
+    if (!selectedTemplate) return [];
     
-    const template = platformTemplates[selectedPlatform][selectedTemplate];
+    let template;
+    
+    // Check if it's a custom template
+    if (selectedTemplate.startsWith('custom_')) {
+      const templateName = selectedTemplate.replace('custom_', '').replace(/_/g, ' ');
+      template = customTemplates.find(t => t.name.toLowerCase() === templateName);
+    } else {
+      // Built-in template
+      if (!selectedPlatform) return [];
+      template = platformTemplates[selectedPlatform][selectedTemplate];
+    }
+    
     if (!template) return [];
     
-    return template.components.map(componentId => promptComponents[componentId]);
+    return template.components.map(componentId => promptComponents[componentId]).filter(Boolean);
+  };
+
+  // Load custom templates from localStorage
+  useEffect(() => {
+    const saved = localStorage.getItem('customTemplates');
+    if (saved) {
+      try {
+        setCustomTemplates(JSON.parse(saved));
+      } catch (e) {
+        console.error('Failed to load custom templates:', e);
+      }
+    }
+  }, []);
+
+  // Save custom templates to localStorage
+  const saveTemplates = (templates) => {
+    try {
+      localStorage.setItem('customTemplates', JSON.stringify(templates));
+      setCustomTemplates(templates);
+    } catch (e) {
+      console.error('Failed to save custom templates:', e);
+    }
+  };
+
+  // Handle new custom template creation
+  const handleTemplateCreated = (newTemplate) => {
+    const updatedTemplates = [...customTemplates, newTemplate];
+    saveTemplates(updatedTemplates);
+    setActiveTab('generator');
+    alert('Template saved successfully! You can find it in the custom templates section.');
+  };
+
+  // Get available templates (built-in + custom)
+  const getAvailableTemplates = () => {
+    const builtInTemplates = selectedPlatform ? platformTemplates[selectedPlatform] : {};
+    const customTemplateMap = {};
+    
+    customTemplates.forEach(template => {
+      customTemplateMap[`custom_${template.name.replace(/\s+/g, '_').toLowerCase()}`] = template;
+    });
+
+    return { ...builtInTemplates, ...customTemplateMap };
   };
   
   return (
@@ -159,8 +240,38 @@ export default function AIPromptGenerator() {
             <h2 className="text-3xl font-bold mb-8 text-center">
               Generate Your AI Prompt
             </h2>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+
+            {/* Tabs */}
+            <div className="mb-6">
+              <div className="border-b border-gray-200">
+                <nav className="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
+                  <button
+                    onClick={() => setActiveTab('generator')}
+                    className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                      activeTab === 'generator'
+                        ? 'border-yellow-500 text-yellow-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    Use Templates
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('builder')}
+                    className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                      activeTab === 'builder'
+                        ? 'border-yellow-500 text-yellow-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    Build Custom Template
+                  </button>
+                </nav>
+              </div>
+            </div>
+
+            {/* Tab Content */}
+            {activeTab === 'generator' && (
+              <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <div className="md:flex">
                 {/* Left Panel - Controls */}
                 <div className="md:w-1/2 p-6 md:p-8 border-r border-gray-200">
@@ -208,21 +319,61 @@ export default function AIPromptGenerator() {
                   {/* Template Selection */}
                   <div className="mb-6">
                     <label className="block text-gray-700 font-medium mb-2">Select Template Type</label>
-                    <div className="flex flex-wrap gap-3">
-                      {selectedPlatform && Object.entries(platformTemplates[selectedPlatform]).map(([id, template]) => (
-                        <button
-                          key={id}
-                          onClick={() => setSelectedTemplate(id)}
-                          className={`px-4 py-2 rounded-md ${
-                            selectedTemplate === id
-                              ? 'bg-[#1A1A1A] text-white'
-                              : 'bg-gray-100 hover:bg-gray-200'
-                          }`}
-                        >
-                          {template.name}
-                        </button>
-                      ))}
+                    
+                    {/* Built-in Templates */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium text-gray-600 mb-2">Built-in Templates</h4>
+                      <div className="flex flex-wrap gap-3">
+                        {selectedPlatform && Object.entries(platformTemplates[selectedPlatform]).map(([id, template]) => (
+                          <button
+                            key={id}
+                            onClick={() => setSelectedTemplate(id)}
+                            className={`px-4 py-2 rounded-md ${
+                              selectedTemplate === id
+                                ? 'bg-[#1A1A1A] text-white'
+                                : 'bg-gray-100 hover:bg-gray-200'
+                            }`}
+                          >
+                            {template.name}
+                          </button>
+                        ))}
+                      </div>
                     </div>
+
+                    {/* Custom Templates */}
+                    {customTemplates.length > 0 && (
+                      <div className="mb-4">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="text-sm font-medium text-gray-600">Custom Templates</h4>
+                          <button
+                            onClick={() => setShowCustomTemplates(!showCustomTemplates)}
+                            className="text-yellow-600 hover:text-yellow-700 text-sm"
+                          >
+                            {showCustomTemplates ? 'Hide' : 'Show'} ({customTemplates.length})
+                          </button>
+                        </div>
+                        {showCustomTemplates && (
+                          <div className="flex flex-wrap gap-3">
+                            {customTemplates.map((template, index) => {
+                              const customId = `custom_${template.name.replace(/\s+/g, '_').toLowerCase()}`;
+                              return (
+                                <button
+                                  key={customId}
+                                  onClick={() => setSelectedTemplate(customId)}
+                                  className={`px-4 py-2 rounded-md ${
+                                    selectedTemplate === customId
+                                      ? 'bg-yellow-500 text-black'
+                                      : 'bg-yellow-100 hover:bg-yellow-200 text-yellow-800'
+                                  }`}
+                                >
+                                  {template.name} ✨
+                                </button>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                   
                   {/* Component Inputs */}
@@ -359,6 +510,12 @@ export default function AIPromptGenerator() {
                 </div>
               </div>
             </div>
+            )}
+
+            {/* Custom Template Builder Tab */}
+            {activeTab === 'builder' && (
+              <CustomTemplateBuilder onTemplateCreated={handleTemplateCreated} />
+            )}
           </div>
         </div>
       </section>

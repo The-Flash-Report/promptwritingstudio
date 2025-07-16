@@ -197,6 +197,218 @@ export const promptComponents = {
       anthropic: "Use <constraints> tags to clearly separate these requirements.",
       google: "Number your constraints for clarity and emphasis."
     }
+  },
+
+  stepByStep: {
+    id: "stepByStep",
+    name: "Step-by-Step Instructions",
+    description: "Define the specific steps for reasoning through the problem",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "textarea",
+    placeholder: "1. First, analyze the problem context\n2. Then, identify key variables\n3. Next, consider multiple approaches...",
+    examples: [
+      "1. Break down the problem into components\n2. Analyze each component separately\n3. Look for patterns or relationships\n4. Synthesize findings into a solution",
+      "1. Define success criteria\n2. Brainstorm potential approaches\n3. Evaluate pros/cons of each\n4. Select best approach and explain why"
+    ],
+    tips: "Break complex reasoning into clear, logical steps that the AI can follow systematically.",
+    bestPractices: {
+      openai: "Use numbered steps with clear action verbs at the start of each step.",
+      anthropic: "Structure steps within <thinking> tags for internal reasoning, then provide final answer.",
+      google: "Use bullet points or numbered lists with specific, actionable instructions."
+    }
+  },
+
+  thinkingProcess: {
+    id: "thinkingProcess",
+    name: "Thinking Process Framework",
+    description: "Specify the meta-cognitive approach for problem-solving",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "select",
+    options: [
+      { value: "analytical", label: "Analytical (break down into parts)" },
+      { value: "creative", label: "Creative (explore multiple possibilities)" },
+      { value: "critical", label: "Critical (evaluate and question assumptions)" },
+      { value: "comparative", label: "Comparative (compare multiple options)" },
+      { value: "systematic", label: "Systematic (follow structured methodology)" },
+      { value: "intuitive", label: "Intuitive (pattern recognition and insights)" }
+    ],
+    tips: "Choose the thinking style that best matches your problem type.",
+    bestPractices: {
+      openai: "Explicitly state the thinking framework you want ChatGPT to use.",
+      anthropic: "Claude responds well to metacognitive instructions about how to think.",
+      google: "Gemini benefits from clear thinking process definitions."
+    }
+  },
+
+  role: {
+    id: "role",
+    name: "Role/Character",
+    description: "Define the character or professional role the AI should adopt",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "textarea",
+    placeholder: "You are a senior marketing strategist with 10 years of experience in B2B SaaS companies...",
+    examples: [
+      "You are a friendly customer service representative who always tries to find solutions",
+      "You are a technical architect who explains complex systems in simple terms",
+      "You are a creative writing coach who provides constructive feedback",
+      "You are an experienced financial advisor specializing in small business planning"
+    ],
+    tips: "Be specific about expertise, personality traits, and communication style for the role.",
+    bestPractices: {
+      openai: "Use 'You are...' format and include relevant background/expertise.",
+      anthropic: "Define role characteristics and communication preferences clearly.",
+      google: "Specify both professional expertise and personality traits."
+    }
+  },
+
+  persona: {
+    id: "persona",
+    name: "Persona Details",
+    description: "Detailed personality, background, and behavioral characteristics",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "textarea",
+    placeholder: "Background: 15 years in tech\nPersonality: Analytical, direct, solution-focused\nCommunication style: Clear explanations with examples",
+    examples: [
+      "Background: Former startup founder, now consultant\nPersonality: Pragmatic, encouraging, results-driven\nCommunication: Uses real examples and actionable advice",
+      "Background: University professor in psychology\nPersonality: Patient, thorough, evidence-based\nCommunication: Asks clarifying questions, provides research context"
+    ],
+    tips: "Include background, personality traits, communication preferences, and any quirks.",
+    bestPractices: {
+      openai: "Structure as key characteristics with specific behavioral examples.",
+      anthropic: "Use clear categories for different aspects of the persona.",
+      google: "Focus on how the persona affects response style and content."
+    }
+  },
+
+  scenario: {
+    id: "scenario",
+    name: "Scenario/Setting",
+    description: "The situation or environment for the role-play interaction",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "textarea",
+    placeholder: "Setting: A client consultation meeting\nSituation: The client is frustrated with their current solution and considering alternatives",
+    examples: [
+      "Setting: A team meeting\nSituation: We're planning a product launch and need to address potential risks",
+      "Setting: A coffee shop conversation\nSituation: A friend is asking for career advice about switching industries"
+    ],
+    tips: "Set the scene clearly including location, context, and any relevant dynamics.",
+    bestPractices: {
+      openai: "Provide enough context for realistic responses without over-constraining.",
+      anthropic: "Include emotional context and stakeholder perspectives.",
+      google: "Focus on actionable scenario elements that affect the interaction."
+    }
+  },
+
+  dialogue: {
+    id: "dialogue",
+    name: "Dialogue Style",
+    description: "How the conversation should flow and feel",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "select",
+    options: [
+      { value: "conversational", label: "Conversational (natural, flowing)" },
+      { value: "professional", label: "Professional (formal, structured)" },
+      { value: "mentoring", label: "Mentoring (guiding, supportive)" },
+      { value: "collaborative", label: "Collaborative (brainstorming, building together)" },
+      { value: "interview", label: "Interview (question-answer format)" },
+      { value: "therapeutic", label: "Therapeutic (listening, reflecting)" }
+    ],
+    tips: "Choose the interaction style that matches your intended use case.",
+    bestPractices: {
+      openai: "Be explicit about turn-taking and response length expectations.",
+      anthropic: "Define the emotional tone and interaction dynamics.",
+      google: "Specify how formal or casual the exchange should be."
+    }
+  },
+
+  workflow: {
+    id: "workflow",
+    name: "Workflow Steps",
+    description: "Define the sequential steps for a multi-part process",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "textarea",
+    placeholder: "Step 1: Research and gather information\nStep 2: Analyze the findings\nStep 3: Generate initial recommendations\nStep 4: Refine and finalize output",
+    examples: [
+      "Step 1: Brainstorm 10 initial ideas\nStep 2: Evaluate each idea against criteria\nStep 3: Select top 3 ideas\nStep 4: Develop detailed plans for top 3",
+      "Step 1: Extract key information from the text\nStep 2: Categorize information by themes\nStep 3: Identify patterns and insights\nStep 4: Summarize findings with recommendations"
+    ],
+    tips: "Break complex tasks into clear, sequential steps that build on each other.",
+    bestPractices: {
+      openai: "Use clear numbering and action-oriented language for each step.",
+      anthropic: "Structure steps with clear inputs and outputs for each phase.",
+      google: "Include validation or check points between major steps."
+    }
+  },
+
+  iterationGuidance: {
+    id: "iterationGuidance",
+    name: "Iteration Instructions",
+    description: "How to handle feedback and refinement cycles",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "textarea",
+    placeholder: "After completing each step, pause and ask if I want to proceed or make adjustments. Incorporate any feedback before moving to the next step.",
+    examples: [
+      "After each step, show your work and ask for feedback before continuing",
+      "Complete all steps, then ask which parts need refinement",
+      "Pause after each major section for approval before proceeding"
+    ],
+    tips: "Define how the AI should handle the iterative refinement process.",
+    bestPractices: {
+      openai: "Specify when to pause for feedback and how to incorporate changes.",
+      anthropic: "Clarify how much autonomy the AI should have in each step.",
+      google: "Define clear checkpoints for user input and validation."
+    }
+  },
+
+  dependencies: {
+    id: "dependencies",
+    name: "Step Dependencies",
+    description: "Relationships and requirements between workflow steps",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "textarea",
+    placeholder: "Step 2 requires completion of Step 1 analysis. Step 4 can only begin after user approves Step 3 output.",
+    examples: [
+      "Each step must be approved before proceeding to the next",
+      "Steps 1-3 can run in parallel, but Step 4 requires all previous steps",
+      "If Step 2 fails validation, return to Step 1 with adjustments"
+    ],
+    tips: "Clarify which steps depend on others and any conditional logic.",
+    bestPractices: {
+      openai: "Use clear conditional language for dependencies and branching.",
+      anthropic: "Specify what constitutes completion or approval for each step.",
+      google: "Include fallback procedures if dependencies aren't met."
+    }
+  },
+
+  outputFormat: {
+    id: "outputFormat",
+    name: "Step Output Format",
+    description: "How each step's results should be presented",
+    required: false,
+    platforms: ["openai", "anthropic", "google"],
+    inputType: "select",
+    options: [
+      { value: "progressive", label: "Progressive (show each step as completed)" },
+      { value: "summary", label: "Summary (brief status updates, detailed final output)" },
+      { value: "detailed", label: "Detailed (full output for each step)" },
+      { value: "checkpoint", label: "Checkpoint (pause for approval between steps)" },
+      { value: "final", label: "Final only (complete all steps, show final result)" }
+    ],
+    tips: "Choose how much detail you want to see during the workflow process.",
+    bestPractices: {
+      openai: "Specify format consistency across all workflow steps.",
+      anthropic: "Define how much working detail vs. final results to show.",
+      google: "Clarify whether you want intermediate files or just final deliverables."
+    }
   }
 };
 
@@ -230,6 +442,55 @@ export const platformTemplates = {
       components: ["task", "context", "reasoning"],
       template: "# Problem\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}# Approach\nThink through this step-by-step and show your reasoning for each step.",
       bestFor: ["Problem solving", "Math questions", "Logic puzzles", "Complex reasoning"]
+    },
+    advancedCot: {
+      name: "Advanced Chain-of-Thought",
+      description: "Sophisticated reasoning with explicit thinking steps",
+      components: ["task", "context", "stepByStep", "thinkingProcess", "reasoning", "format"],
+      template: "# Problem\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}# Thinking Framework\nUse {{thinkingProcess}} thinking to approach this problem.\n\n{{#if stepByStep}}# Step-by-Step Process\n{{stepByStep}}\n\n{{/if}}# Reasoning Instructions\n{{reasoning}}\n\nFor each step:\n1. State what you're doing\n2. Show your work/reasoning\n3. Explain why this step is important\n4. Connect it to the overall solution\n\n{{#if format}}# Output Format\n{{format}}{{/if}}",
+      bestFor: ["Complex problem solving", "Multi-part analysis", "Research tasks", "Strategic planning"]
+    },
+    fewShotCot: {
+      name: "Few-Shot Chain-of-Thought",
+      description: "CoT with examples showing the reasoning process",
+      components: ["task", "context", "examples", "stepByStep", "format"],
+      template: "# Task\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}# Example of Expected Reasoning Process\n{{examples}}\n\n{{#if stepByStep}}# Process to Follow\n{{stepByStep}}\n\n{{/if}}Now apply this same reasoning process to the current problem. Show your work at each step.\n\n{{#if format}}# Format\n{{format}}{{/if}}",
+      bestFor: ["Teaching reasoning patterns", "Consistent analysis format", "Complex calculations"]
+    },
+    zeroCot: {
+      name: "Zero-Shot Chain-of-Thought",
+      description: "Simple trigger for step-by-step reasoning",
+      components: ["task", "context"],
+      template: "{{task}}\n\n{{#if context}}Context: {{context}}\n\n{{/if}}Let's think step by step.",
+      bestFor: ["Quick reasoning tasks", "Simple problem solving", "When you want emergent reasoning"]
+    },
+    rolePlay: {
+      name: "Role-Playing Prompt",
+      description: "Immersive character-based interactions",
+      components: ["role", "persona", "scenario", "task", "dialogue", "constraints"],
+      template: "# Character Setup\n{{role}}\n\n{{#if persona}}# Character Details\n{{persona}}\n\n{{/if}}{{#if scenario}}# Scenario\n{{scenario}}\n\n{{/if}}# Your Task\n{{task}}\n\n{{#if dialogue}}# Interaction Style\nMaintain a {{dialogue}} dialogue style throughout our conversation.\n\n{{/if}}{{#if constraints}}# Guidelines\n{{constraints}}\n\n{{/if}}Stay in character and respond as this person would in this situation.",
+      bestFor: ["Customer service training", "Interview practice", "Creative writing", "Skill practice"]
+    },
+    characterConsistent: {
+      name: "Character-Consistent Conversation",
+      description: "Maintain character consistency across multiple exchanges",
+      components: ["role", "persona", "dialogue", "constraints"],
+      template: "# Character Profile\n{{role}}\n\n{{#if persona}}# Background & Traits\n{{persona}}\n\n{{/if}}# Communication Style\nAlways respond in a {{dialogue}} manner that reflects this character's background and personality.\n\n{{#if constraints}}# Character Guidelines\n{{constraints}}\n\n{{/if}}Remember to stay consistent with this character throughout our entire conversation. Reference your background and personality in your responses when relevant.",
+      bestFor: ["Long conversations", "Character development", "Consistent persona interactions"]
+    },
+    workflow: {
+      name: "Multi-Step Workflow",
+      description: "Structured process with sequential steps",
+      components: ["task", "workflow", "iterationGuidance", "outputFormat", "constraints"],
+      template: "# Project Overview\n{{task}}\n\n# Workflow Process\n{{workflow}}\n\n{{#if iterationGuidance}}# Iteration Guidelines\n{{iterationGuidance}}\n\n{{/if}}# Output Requirements\nFor each step, follow the {{outputFormat}} format.\n\n{{#if constraints}}# Process Constraints\n{{constraints}}\n\n{{/if}}Begin with Step 1 and proceed systematically through each phase.",
+      bestFor: ["Complex projects", "Research tasks", "Multi-phase analysis", "Content creation pipelines"]
+    },
+    iterativeWorkflow: {
+      name: "Iterative Workflow with Feedback",
+      description: "Workflow designed for refinement cycles",
+      components: ["task", "workflow", "dependencies", "iterationGuidance", "outputFormat"],
+      template: "# Project Goal\n{{task}}\n\n# Step-by-Step Process\n{{workflow}}\n\n{{#if dependencies}}# Step Dependencies\n{{dependencies}}\n\n{{/if}}# Feedback & Iteration Process\n{{iterationGuidance}}\n\n# Output Format for Each Step\nUse {{outputFormat}} formatting for all step outputs.\n\nStart with the first step and wait for my feedback before proceeding to the next step.",
+      bestFor: ["Collaborative projects", "Iterative design", "Content development", "Problem-solving processes"]
     }
   },
   

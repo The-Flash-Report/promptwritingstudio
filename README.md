@@ -2,6 +2,15 @@
 
 This is the Next.js implementation of the PromptWritingStudio landing page, designed to support programmatic SEO and provide a modern, component-based architecture with a clean, simplified design focused on readability and conversion.
 
+**Repository**: https://github.com/The-Flash-Report/promptwritingstudio
+
+## Key Features
+- 📚 Professional AI Prompt Library
+- ⚡ Real-time Prompt Optimizer
+- 🤖 AI Agent Builder
+- 📊 Analytics Dashboard
+- 🛠️ Template Builder
+
 ## Project Structure
 
 ```

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
 import FloatingCTA from '../ui/FloatingCTA'
+import CookieConsent from '../ui/CookieConsent'
 
 export default function Layout({ children, title, description }) {
   return (
@@ -20,6 +21,7 @@ export default function Layout({ children, title, description }) {
       <main>{children}</main>
       <Footer />
       <FloatingCTA />
+      <CookieConsent />
     </>
   )
 }

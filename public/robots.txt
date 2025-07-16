@@ -1,4 +1,70 @@
 User-agent: *
 Allow: /
 
+# High Priority Pages - AI Calculators
+Allow: /calculators
+Allow: /roi-calculator
+Allow: /calculators/ai-cost-comparison
+Allow: /business-name-generator
+
+# Important Tool Pages
+Allow: /ai-prompt-generator
+Allow: /ai-prompt-examples
+Allow: /chatgpt-prompt-templates
+
+# SEO Landing Pages
+Allow: /ai-prompt-generator/seo/
+Allow: /chatgpt-prompts-for/
+
+# Block admin and development files
+Disallow: /admin
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /README.md
+
+# Allow common assets
+Allow: /images/
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.svg
+Allow: /*.webp
+
+# Crawl delay to be respectful to servers
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://promptwritingstudio.com/sitemap.xml
+Sitemap: https://promptwritingstudio.com/sitemap
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing-specific directives  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Additional search engines
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Block aggressive crawlers that might waste resources
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

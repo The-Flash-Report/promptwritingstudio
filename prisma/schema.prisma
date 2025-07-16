@@ -1,0 +1,155 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// NextAuth.js models
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Custom fields for PromptWritingStudio
+  subscriptionStatus String?  // "active", "canceled", "past_due", "incomplete"
+  subscriptionPlan   String?  // "basic", "pro", "elite"
+  stripeCustomerId   String?  @unique
+  stripeSubscriptionId String? @unique
+  subscriptionEndsAt DateTime?
+  
+  // User preferences
+  onboardingCompleted Boolean @default(false)
+  preferredCategories String[] // Array of category preferences
+  
+  accounts      Account[]
+  sessions      Session[]
+  promptHistory PromptHistory[]
+  favorites     PromptFavorite[]
+  customTemplates CustomTemplate[]
+  courseProgress CourseProgress[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// Custom models for PromptWritingStudio
+model PromptHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  prompt    String   @db.Text
+  platform  String   // "openai", "anthropic", "google"
+  template  String   // Template type used
+  createdAt DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, createdAt])
+}
+
+model PromptFavorite {
+  id        String   @id @default(cuid())
+  userId    String
+  prompt    String   @db.Text
+  title     String?
+  platform  String
+  template  String
+  createdAt DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+}
+
+model CustomTemplate {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  template    String   @db.Text
+  components  String[] // Array of component IDs
+  bestFor     String[] // Array of use cases
+  isPublic    Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@index([isPublic])
+}
+
+model Course {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  slug        String   @unique
+  content     Json     // Course content structure
+  order       Int      @default(0)
+  isPublished Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  progress CourseProgress[]
+  
+  @@index([isPublished, order])
+}
+
+model CourseProgress {
+  id           String   @id @default(cuid())
+  userId       String
+  courseId     String
+  progress     Float    @default(0) // Percentage completed
+  completedAt  DateTime?
+  lastAccessed DateTime @default(now())
+  
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, courseId])
+  @@index([userId])
+}

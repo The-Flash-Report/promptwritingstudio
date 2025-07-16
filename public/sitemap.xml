@@ -3,117 +3,207 @@
   <!-- Main Pages -->
   <url>
     <loc>https://promptwritingstudio.com/</loc>
-    <lastmod>2025-05-09</lastmod>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://promptwritingstudio.com/about</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://promptwritingstudio.com/contact</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://promptwritingstudio.com/sitemap</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AI Calculators - High Priority for SEO -->
+  <url>
+    <loc>https://promptwritingstudio.com/calculators</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/roi-calculator</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/ai-cost-comparison</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/content-creation-speed</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/ecommerce-ai-savings</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/business-name-generator</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI Tools & Generators -->
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/ai-art-prompts</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://promptwritingstudio.com/chatgpt-prompt-templates</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://promptwritingstudio.com/best-ai-tools</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://promptwritingstudio.com/ai-prompt-examples</loc>
-    <lastmod>2025-05-09</lastmod>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://promptwritingstudio.com/vibe-coding</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   
-  <!-- Programmatic SEO Pages -->
+  <!-- Programmatic SEO Pages - Business Focus -->
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-business</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/business</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-email-marketing</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/email-marketing</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-resume</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/resume</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-marketing</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/marketing</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-writing</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/writing</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-best</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/best</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-image</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/image</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-social-media</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/social-media</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-students</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/students</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-copywriting</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/copywriting</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-seo</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/seo</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/chatgpt-prompts-for-content-creation</loc>
-    <lastmod>2025-05-08</lastmod>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/content-creation</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SEO Landing Pages - Dynamic Content -->
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/how-to-write-effective-ai-prompts</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/ai-prompts-for-business</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/best-ai-prompts</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/ai-art-prompts</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/chatgpt-prompt</loc>
+    <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
