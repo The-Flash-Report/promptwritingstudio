@@ -593,7 +593,7 @@ export default function ChatGPTTemplates() {
                 <button
                   className="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700 hover:bg-blue-200 transition-colors"
                 >
-                  ⚡ Quick Setup (<10 min)
+                  ⚡ Quick Setup (&lt;10 min)
                 </button>
               </div>
               
@@ -818,6 +818,39 @@ export default function ChatGPTTemplates() {
                 </button>
               </div>
             )}
+
+            {/* Calculator Cross-Links - Quick SEO Boost */}
+            <section className="mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-center mb-6">Measure Your ChatGPT Impact</h3>
+              <p className="text-center text-gray-600 mb-8">
+                Use these templates with our calculators to quantify time and cost savings from ChatGPT automation.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Link href="/calculators/content-creation-speed" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">⚡</div>
+                  <h4 className="font-semibold text-green-600 group-hover:text-green-700 mb-2">Content Speed Calculator</h4>
+                  <p className="text-sm text-gray-600">Calculate how much faster you create content with ChatGPT templates</p>
+                </Link>
+                <Link href="/calculators/ai-cost-comparison" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">💰</div>
+                  <h4 className="font-semibold text-blue-600 group-hover:text-blue-700 mb-2">ROI Calculator</h4>
+                  <p className="text-sm text-gray-600">Compare ChatGPT costs vs hiring writers and content creators</p>
+                </Link>
+                <Link href="/calculators/business-ai-readiness" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">📋</div>
+                  <h4 className="font-semibold text-purple-600 group-hover:text-purple-700 mb-2">Business Assessment</h4>
+                  <p className="text-sm text-gray-600">Evaluate your team's readiness for ChatGPT implementation</p>
+                </Link>
+              </div>
+              <div className="text-center mt-6">
+                <Link href="/calculators" className="inline-flex items-center text-green-600 hover:text-green-700 font-medium">
+                  View All Business Calculators
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </section>
 
             {/* CTA Section */}
             <div className="mt-16 bg-gradient-to-r from-green-600 to-blue-700 rounded-2xl p-8 text-center text-white">

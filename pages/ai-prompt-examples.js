@@ -442,6 +442,39 @@ export default function AIPromptExamples() {
               </div>
             )}
 
+            {/* Calculator Cross-Links - Quick SEO Boost */}
+            <section className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-center mb-6">Calculate Your AI Savings</h3>
+              <p className="text-center text-gray-600 mb-8">
+                Ready to implement AI in your business? Use our calculators to see potential time and cost savings.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <Link href="/calculators/content-creation-speed" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">📝</div>
+                  <h4 className="font-semibold text-blue-600 group-hover:text-blue-700 mb-2">Content Creation Calculator</h4>
+                  <p className="text-sm text-gray-600">Calculate time savings using AI for blogs, emails, and social media</p>
+                </Link>
+                <Link href="/calculators/ai-cost-comparison" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">💰</div>
+                  <h4 className="font-semibold text-green-600 group-hover:text-green-700 mb-2">AI vs Human Cost</h4>
+                  <p className="text-sm text-gray-600">Compare automation costs vs hiring employees or contractors</p>
+                </Link>
+                <Link href="/calculators/business-ai-readiness" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">📊</div>
+                  <h4 className="font-semibold text-purple-600 group-hover:text-purple-700 mb-2">AI Readiness Assessment</h4>
+                  <p className="text-sm text-gray-600">Evaluate your business readiness for AI implementation</p>
+                </Link>
+              </div>
+              <div className="text-center mt-6">
+                <Link href="/calculators" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                  View All Calculators 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </section>
+
             {/* CTA Section */}
             <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-8 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">
