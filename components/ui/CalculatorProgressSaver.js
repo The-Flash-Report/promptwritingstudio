@@ -89,8 +89,8 @@ export default function CalculatorProgressSaver({
   if (!showRestorePrompt) return null
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg p-6 max-w-md w-full">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 overflow-y-auto">
+      <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 my-4 max-h-[90vh] overflow-y-auto">
         <div className="text-center mb-4">
           <div className="text-4xl mb-2">💾</div>
           <h3 className="text-xl font-bold text-gray-900">Resume Previous Session?</h3>

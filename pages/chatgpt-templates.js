@@ -873,97 +873,93 @@ export default function ChatGPTTemplates() {
 
           {/* Tutorial Modal */}
           {showTutorial && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-              <div className="bg-white rounded-xl max-w-md w-full p-6">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">🎯</div>
-                  <h3 className="text-xl font-bold mb-2">{tutorialSteps[currentStep].title}</h3>
-                  <p className="text-gray-600 mb-6">
-                    {tutorialSteps[currentStep].content}
-                  </p>
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 overflow-y-auto">
+              <div className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 my-4 max-h-[90vh] overflow-y-auto">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-xl font-bold">ChatGPT Template Tutorial</h3>
+                  <button
+                    onClick={() => setShowTutorial(false)}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    ✕
+                  </button>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-blue-900 mb-2">Step 1: Choose Your Template</h4>
+                    <p className="text-blue-800 text-sm">
+                      Browse our collection of proven ChatGPT templates. Each template is designed for specific use cases and optimized for best results.
+                    </p>
+                  </div>
                   
-                  <div className="flex justify-between items-center">
-                    <button
-                      onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
-                      disabled={currentStep === 0}
-                      className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors disabled:opacity-50"
-                    >
-                      ← Previous
-                    </button>
-                    
-                    <div className="flex gap-1">
-                      {tutorialSteps.map((_, index) => (
-                        <div
-                          key={index}
-                          className={`w-2 h-2 rounded-full ${
-                            index === currentStep ? 'bg-green-500' : 'bg-gray-300'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    
-                    {currentStep < tutorialSteps.length - 1 ? (
-                      <button
-                        onClick={() => setCurrentStep(currentStep + 1)}
-                        className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
-                      >
-                        Next →
-                      </button>
-                    ) : (
-                      <button
-                        onClick={() => setShowTutorial(false)}
-                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
-                      >
-                        Start Creating!
-                      </button>
-                    )}
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-green-900 mb-2">Step 2: Customize Variables</h4>
+                    <p className="text-green-800 text-sm">
+                      Replace the placeholder variables with your specific information. The more detailed you are, the better your results will be.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-purple-900 mb-2">Step 3: Copy & Use</h4>
+                    <p className="text-purple-800 text-sm">
+                      Copy the customized template and paste it directly into ChatGPT. You can further refine the response through conversation.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-yellow-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-yellow-900 mb-2">Pro Tips:</h4>
+                    <ul className="text-yellow-800 text-sm space-y-1">
+                      <li>• Use specific examples in your variables</li>
+                      <li>• Adjust tone and style to match your brand</li>
+                      <li>• Combine multiple templates for complex tasks</li>
+                      <li>• Save your best variations for future use</li>
+                    </ul>
                   </div>
                 </div>
+                
+                <button
+                  onClick={() => setShowTutorial(false)}
+                  className="w-full mt-6 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  Got It! Let's Start
+                </button>
               </div>
             </div>
           )}
 
           {/* Email Capture Modal */}
-          {showEmailCapture && !emailSubmitted && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-              <div className="bg-white rounded-xl max-w-md w-full p-6">
-                <div className="text-center">
-                  <div className="text-4xl mb-4">📧</div>
-                  <h3 className="text-xl font-bold mb-2">Get the Complete Template Pack!</h3>
-                  <p className="text-gray-600 mb-6">
-                    Download this template plus 50+ more ChatGPT templates for business, marketing, and content creation.
-                  </p>
-                  
-                  <form onSubmit={handleEmailSubmit} className="space-y-4">
-                    <input
-                      type="email"
-                      placeholder="Enter your email address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    />
-                    <div className="flex gap-3">
-                      <button
-                        type="submit"
-                        className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-                      >
-                        Download Template Pack
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setShowEmailCapture(false)}
-                        className="px-6 py-3 text-gray-600 hover:text-gray-800 transition-colors"
-                      >
-                        Maybe Later
-                      </button>
-                    </div>
-                  </form>
-                  
-                  <p className="text-xs text-gray-500 mt-4">
-                    No spam. Unsubscribe anytime. We respect your privacy.
-                  </p>
-                </div>
+          {showEmailCapture && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 overflow-y-auto">
+              <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 my-4 max-h-[90vh] overflow-y-auto">
+                <h3 className="text-xl font-bold mb-4">Get Your Free ChatGPT Template Library</h3>
+                <p className="text-gray-600 mb-4">
+                  Download our complete collection of proven ChatGPT templates for business, content creation, and productivity.
+                </p>
+                <form onSubmit={handleEmailSubmit}>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4"
+                  />
+                  <div className="flex gap-3">
+                    <button
+                      type="submit"
+                      className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+                    >
+                      Get Free Templates
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setShowEmailCapture(false)}
+                      className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+                    >
+                      Skip
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           )}

@@ -360,35 +360,35 @@ export default function CustomerServiceAICalculator() {
 
       {/* Email Capture Modal */}
       {showEmailCapture && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full">
-            <h3 className="text-xl font-bold mb-4">Get Your Detailed Report</h3>
-            <p className="text-gray-600 mb-4">
-              Enter your email to receive a comprehensive AI implementation roadmap based on your results.
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+          <div className="bg-white p-8 rounded-xl max-w-md w-full mx-4 my-4 max-h-[90vh] overflow-y-auto">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Get Your Free Customer Service AI Toolkit
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Download ready-to-use AI prompts for customer service responses, FAQ automation, and support ticket handling that can save you thousands.
             </p>
             <form onSubmit={handleEmailSubmit}>
               <input
                 type="email"
                 name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="your@email.com"
+                placeholder="Enter your email address"
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4"
+                className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <div className="flex gap-3">
                 <button
                   type="submit"
-                  className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700"
+                  className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
                 >
-                  Get Report
+                  Get Free Toolkit
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowEmailCapture(false)}
-                  className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+                  className="px-4 py-3 text-gray-500 hover:text-gray-700"
                 >
-                  Skip
+                  Close
                 </button>
               </div>
             </form>

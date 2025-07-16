@@ -271,13 +271,13 @@ const ContentSpeedCalculator = () => {
 
         {/* Email Capture Modal */}
         {showEmailCapture && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white p-8 rounded-xl max-w-md w-full mx-4">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+            <div className="bg-white p-8 rounded-xl max-w-md w-full mx-4 my-4 max-h-[90vh] overflow-y-auto">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Get Your Free Content Creation Automation Guide
+                Get Your Free Content Creation AI Toolkit
               </h3>
               <p className="text-gray-600 mb-6">
-                Learn the exact AI prompts and workflows that can 4-8x your content creation speed.
+                Download ready-to-use AI prompts for blog posts, social media content, and marketing copy that can save you hours every week.
               </p>
               <form onSubmit={handleEmailSubmit}>
                 <input
@@ -285,14 +285,14 @@ const ContentSpeedCalculator = () => {
                   name="email"
                   placeholder="Enter your email address"
                   required
-                  className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
                 <div className="flex gap-3">
                   <button
                     type="submit"
-                    className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                    className="flex-1 bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                   >
-                    Get Free Guide
+                    Get Free Toolkit
                   </button>
                   <button
                     type="button"

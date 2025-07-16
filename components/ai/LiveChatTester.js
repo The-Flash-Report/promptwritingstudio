@@ -9,6 +9,9 @@ export default function LiveChatTester({ initialPrompt = '', onClose }) {
   const [usage, setUsage] = useState({})
   const messagesEndRef = useRef(null)
   const [testPrompt, setTestPrompt] = useState(initialPrompt)
+  const [showTester, setShowTester] = useState(false)
+  const [testMessage, setTestMessage] = useState('')
+  const [testResult, setTestResult] = useState(null)
 
   const models = [
     { id: 'claude', name: 'Claude 3 Sonnet', icon: '🧠', available: true },
@@ -143,155 +146,76 @@ export default function LiveChatTester({ initialPrompt = '', onClose }) {
     }
   }
 
+  const testResponse = async () => {
+    setTestResult('Testing...')
+    try {
+      const response = await fetch('/api/ai/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          prompt: testMessage,
+          model: 'claude', // Hardcoded for testing
+          messages: [] // No previous messages for testing
+        })
+      })
+
+      if (!response.ok) {
+        const error = await response.json()
+        throw new Error(error.error || 'Failed to get AI response for testing')
+      }
+
+      const data = await response.json()
+      setTestResult(data.response)
+    } catch (error) {
+      setTestResult(`Error: ${error.message}`)
+    }
+  }
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg w-full max-w-4xl h-full max-h-[90vh] flex flex-col">
-        {/* Header */}
-        <div className="flex justify-between items-center p-4 border-b border-gray-200">
-          <div className="flex items-center gap-4">
-            <h3 className="text-lg font-semibold text-gray-800">Live AI Chat Tester</h3>
-            <div className={`flex items-center gap-2 text-sm ${getStatusColor()}`}>
-              <span>{getStatusIcon()}</span>
-              <span className="capitalize">{connectionStatus}</span>
-            </div>
-          </div>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 overflow-y-auto">
+      <div className="bg-white rounded-lg p-6 max-w-2xl w-full mx-4 my-4 max-h-[90vh] overflow-y-auto">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-xl font-bold">Live Chat Response Tester</h3>
           <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 text-xl"
+            onClick={() => setShowTester(false)}
+            className="text-gray-500 hover:text-gray-700"
           >
             ✕
           </button>
         </div>
-
-        {/* Model Selection */}
-        <div className="p-4 border-b border-gray-200 bg-gray-50">
-          <div className="flex items-center gap-4 mb-2">
-            <label className="text-sm font-medium text-gray-700">AI Model:</label>
-            <div className="flex gap-2">
-              {models.map(model => (
-                <button
-                  key={model.id}
-                  onClick={() => setSelectedModel(model.id)}
-                  disabled={!model.available}
-                  className={`px-3 py-1 rounded text-sm transition-colors ${
-                    selectedModel === model.id
-                      ? 'bg-blue-600 text-white'
-                      : model.available 
-                        ? 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                        : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  }`}
-                >
-                  <span className="mr-1">{model.icon}</span>
-                  {model.name}
-                  {!model.available && ' (Soon)'}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Usage Statistics */}
-          {Object.keys(usage).length > 0 && (
-            <div className="flex gap-4 text-xs text-gray-600">
-              <span>Tokens: {usage.total_tokens || usage.input_tokens + usage.output_tokens}</span>
-              <span>Input: {usage.input_tokens || usage.prompt_tokens}</span>
-              <span>Output: {usage.output_tokens || usage.completion_tokens}</span>
-            </div>
-          )}
-        </div>
-
-        {/* Chat Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
-          {messages.map(message => (
-            <div
-              key={message.id}
-              className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-            >
-              <div
-                className={`max-w-[80%] rounded-lg p-3 ${
-                  message.role === 'user'
-                    ? 'bg-blue-600 text-white'
-                    : message.role === 'error'
-                    ? 'bg-red-100 text-red-800 border border-red-200'
-                    : message.role === 'system'
-                    ? 'bg-yellow-100 text-yellow-800 border border-yellow-200'
-                    : 'bg-gray-100 text-gray-800'
-                }`}
-              >
-                {message.role === 'assistant' && (
-                  <div className="text-xs opacity-75 mb-1">
-                    {models.find(m => m.id === message.model)?.name || message.model}
-                  </div>
-                )}
-                
-                <div className="whitespace-pre-wrap">{message.content}</div>
-                
-                <div className="text-xs opacity-75 mt-1">
-                  {new Date(message.timestamp).toLocaleTimeString()}
-                </div>
-              </div>
-            </div>
-          ))}
-          
-          {isLoading && (
-            <div className="flex justify-start">
-              <div className="bg-gray-100 rounded-lg p-3 max-w-[80%]">
-                <div className="flex items-center gap-2">
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-600"></div>
-                  <span className="text-gray-600">AI is thinking...</span>
-                </div>
-              </div>
-            </div>
-          )}
-          
-          <div ref={messagesEndRef} />
-        </div>
-
-        {/* Test Prompt Display */}
-        {testPrompt && (
-          <div className="p-3 bg-blue-50 border-t border-blue-200">
-            <div className="text-xs text-blue-600 font-medium mb-1">Testing with prompt:</div>
-            <div className="text-sm text-blue-800 max-h-20 overflow-y-auto">
-              {testPrompt}
-            </div>
-          </div>
-        )}
-
-        {/* Input Area */}
-        <div className="p-4 border-t border-gray-200">
-          <div className="flex gap-2">
+        
+        <div className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Customer Message
+            </label>
             <textarea
-              value={currentMessage}
-              onChange={(e) => setCurrentMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="Type your message..."
-              className="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 resize-none"
-              rows="2"
+              value={testMessage}
+              onChange={(e) => setTestMessage(e.target.value)}
+              placeholder="Enter a customer message to test..."
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              rows={3}
             />
-            <div className="flex flex-col gap-2">
-              <button
-                onClick={sendMessage}
-                disabled={!currentMessage.trim() || isLoading}
-                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-              >
-                {isLoading ? (
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                ) : (
-                  <span>📤</span>
-                )}
-                Send
-              </button>
-              <button
-                onClick={clearChat}
-                className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 text-sm"
-              >
-                Clear
-              </button>
-            </div>
           </div>
           
-          <div className="text-xs text-gray-500 mt-2">
-            Press Enter to send, Shift+Enter for new line
-          </div>
+          <button
+            onClick={testResponse}
+            disabled={!testMessage.trim()}
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Test Response
+          </button>
+          
+          {testResult && (
+            <div className="border border-gray-200 rounded-lg p-4">
+              <h4 className="font-semibold text-gray-900 mb-2">AI Response:</h4>
+              <div className="bg-gray-50 p-3 rounded text-sm">
+                {testResult}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

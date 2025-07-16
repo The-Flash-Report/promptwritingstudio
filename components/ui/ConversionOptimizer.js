@@ -116,32 +116,36 @@ export default function ConversionOptimizer({
 
       {/* Exit intent modal */}
       {showExitIntent && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl p-6 max-w-md w-full">
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Wait! Don't Miss Out</h3>
-              <p className="text-gray-600 mb-4">
-                Get your free AI prompt starter pack and begin implementing these savings today.
-              </p>
-              <div className="space-y-3">
-                <a
-                  href="/ai-prompt-generator"
-                  onClick={() => {
-                    handleCTAClick('exit_intent_prompts')
-                    setShowExitIntent(false)
-                  }}
-                  className="block w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  🎁 Get Free AI Prompts
-                </a>
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 my-4 max-h-[90vh] overflow-y-auto">
+            <h3 className="text-xl font-bold mb-4">Wait! Don't Miss Out</h3>
+            <p className="text-gray-600 mb-4">
+              Get our free AI prompt templates and start writing better content today.
+            </p>
+            <form onSubmit={handleExitIntentSubmit}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4"
+              />
+              <div className="flex gap-3">
                 <button
-                  onClick={() => setShowExitIntent(false)}
-                  className="block w-full text-gray-500 text-sm hover:text-gray-700"
+                  type="submit"
+                  className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
                 >
-                  No thanks, I'll continue browsing
+                  Get Free Templates
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowExitIntent(false)}
+                  className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+                >
+                  No Thanks
                 </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       )}

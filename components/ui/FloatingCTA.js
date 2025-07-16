@@ -24,14 +24,19 @@ export default function FloatingCTA() {
         <div className="hidden md:block">
           <p className="font-bold text-[#1A1A1A]">PromptWritingStudio - Only $25/month</p>
         </div>
-        <a 
-          href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" 
-          className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-2 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 flex-shrink-0"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Join Now
-        </a>
+        <div className="flex items-center gap-3 w-full md:w-auto">
+          <div className="md:hidden flex-1">
+            <p className="font-bold text-[#1A1A1A] text-sm">PromptWritingStudio - $25/month</p>
+          </div>
+          <a 
+            href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" 
+            className="bg-[#FFDE59] text-[#1A1A1A] px-4 md:px-6 py-2 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 flex-shrink-0 text-sm md:text-base whitespace-nowrap"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join Now
+          </a>
+        </div>
       </div>
     </div>
   )
