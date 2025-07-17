@@ -62,12 +62,64 @@ export default function Home() {
     }
   }
 
+  // FAQ Schema for homepage
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is this different from other AI courses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlike generic AI courses, AI Prompt Writing Studio delivers actionable templates, workflows and tutorials directly to your inbox several times weekly. This isn't theoretical—it's a practical system refined through 100+ hours of testing that you can implement immediately."
+        }
+      },
+      {
+        "@type": "Question", 
+        "name": "Will this work with ChatGPT, Claude, or other AI tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! The prompt techniques and frameworks taught in PromptWritingStudio work across all major AI platforms including ChatGPT (3.5 and 4), Claude, Gemini, and others. The principles are universal and can be adapted to any current or future AI tool."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I'm not technical - will I be able to use this?", 
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely! PromptWritingStudio is designed for non-technical users. No coding or technical background is required. If you can type and follow simple instructions, you can master these prompt techniques."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long will it take to see results?",
+        "acceptedAnswer": {
+          "@type": "Answer", 
+          "text": "Many students report immediate improvements in their AI outputs after applying just the first few lessons. The complete course can be completed in a weekend, though most students prefer to work through it over 1-2 weeks to practice each technique."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer a money-back guarantee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We offer a 30-day 100% money-back guarantee. If you're not completely satisfied with the course, simply email us within 30 days of purchase for a full refund, no questions asked."
+        }
+      }
+    ]
+  }
+
   return (
     <>
       <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </Head>
       

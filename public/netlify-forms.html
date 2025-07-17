@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Netlify Forms Detection</title>
+</head>
+<body style="display: none;">
+    <!-- This file is required for Netlify to detect forms -->
+    
+    <!-- Pre-Order Form -->
+    <form name="pre-orders" netlify netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="pre-orders" />
+        <input type="hidden" name="bot-field" />
+        <input type="text" name="product" />
+        <input type="text" name="price" />
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <input type="text" name="company" />
+        <textarea name="use-case"></textarea>
+    </form>
+</body>
+</html> 

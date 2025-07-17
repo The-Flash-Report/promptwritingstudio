@@ -5,6 +5,24 @@
 
 export const seoUseCases = [
   {
+    slug: 'creative-writing-prompts',
+    id: 'creativeWritingPrompts',
+    title: 'Creative Writing Prompts Generator | Free Writing Prompts for Authors & Writers',
+    description: 'Generate unlimited creative writing prompts for fiction, poetry, characters, and more. Free tool for writers with 500+ unique prompts across all genres and writing styles.',
+    h1: 'Creative Writing Prompts Generator',
+    intro: 'Spark your creativity with unlimited writing prompts for fiction, poetry, character development, and more. Perfect for overcoming writer\'s block and exploring new ideas.',
+    conceptDescription: 'Creative writing prompts are story starters, character ideas, and writing exercises designed to inspire writers and help overcome creative blocks while developing specific writing skills across different genres and formats.',
+    searchVolume: 8100,
+    parentKeyword: 'writing prompts',
+    relatedKeywords: [
+      'creative writing prompts',
+      'fiction writing prompts',
+      'story prompts',
+      'character development prompts',
+      'poetry prompts'
+    ]
+  },
+  {
     slug: 'art-styles-for-ai-prompts',
     id: 'artStylesForAiPrompts',
     title: 'Art Styles for AI Prompts | Guide to Creating Stylized AI Art',

@@ -425,6 +425,7 @@ export const platformTemplates = {
     basic: {
       name: "Basic ChatGPT Prompt",
       description: "Simple prompt with essential components",
+      explanation: "Perfect for quick tasks and straightforward requests. Uses minimal structure while still being clear about what you want. Great when you need fast results without complex reasoning.",
       components: ["task", "context", "format"],
       template: "# Task\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}{{#if format}}# Format\n{{format}}{{/if}}",
       bestFor: ["Quick queries", "Simple content creation", "Basic information requests"]
@@ -432,6 +433,7 @@ export const platformTemplates = {
     detailed: {
       name: "Detailed ChatGPT Prompt",
       description: "Comprehensive prompt with all components",
+      explanation: "Use when you need precise, high-quality outputs. Includes all context, examples, and constraints to guide the AI. Best for professional content, complex tasks, or when specific tone and format are critical.",
       components: ["task", "context", "format", "examples", "reasoning", "tone", "audience", "constraints"],
       template: "# Task\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}{{#if audience}}# Audience\n{{audience}}\n\n{{/if}}{{#if format}}# Format\n{{format}}\n\n{{/if}}{{#if examples}}# Examples\n{{examples}}\n\n{{/if}}{{#if reasoning}}# Reasoning Approach\n{{reasoning}}\n\n{{/if}}{{#if tone}}# Tone\n{{tone}}\n\n{{/if}}{{#if constraints}}# Constraints\n{{constraints}}{{/if}}",
       bestFor: ["Complex content creation", "Technical writing", "Detailed analysis"]
@@ -439,6 +441,7 @@ export const platformTemplates = {
     cot: {
       name: "Chain-of-Thought Prompt",
       description: "Optimized for problem-solving with step-by-step reasoning",
+      explanation: "Forces the AI to 'think out loud' by showing its reasoning process step-by-step. This dramatically improves accuracy for math, logic, and complex analysis. The AI breaks down problems into smaller parts and explains each step.",
       components: ["task", "context", "reasoning"],
       template: "# Problem\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}# Approach\nThink through this step-by-step and show your reasoning for each step.",
       bestFor: ["Problem solving", "Math questions", "Logic puzzles", "Complex reasoning"]
@@ -446,6 +449,7 @@ export const platformTemplates = {
     advancedCot: {
       name: "Advanced Chain-of-Thought",
       description: "Sophisticated reasoning with explicit thinking steps",
+      explanation: "Enhanced version of chain-of-thought with structured thinking frameworks. Guides the AI through specific reasoning methodologies (like first principles, SWOT analysis, etc.) with detailed step explanations.",
       components: ["task", "context", "stepByStep", "thinkingProcess", "reasoning", "format"],
       template: "# Problem\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}# Thinking Framework\nUse {{thinkingProcess}} thinking to approach this problem.\n\n{{#if stepByStep}}# Step-by-Step Process\n{{stepByStep}}\n\n{{/if}}# Reasoning Instructions\n{{reasoning}}\n\nFor each step:\n1. State what you're doing\n2. Show your work/reasoning\n3. Explain why this step is important\n4. Connect it to the overall solution\n\n{{#if format}}# Output Format\n{{format}}{{/if}}",
       bestFor: ["Complex problem solving", "Multi-part analysis", "Research tasks", "Strategic planning"]
@@ -453,6 +457,7 @@ export const platformTemplates = {
     fewShotCot: {
       name: "Few-Shot Chain-of-Thought",
       description: "CoT with examples showing the reasoning process",
+      explanation: "Teaches the AI how to reason by showing examples of good reasoning first. Provides a template for thinking that the AI then applies to your specific problem. Great for consistent, high-quality analysis.",
       components: ["task", "context", "examples", "stepByStep", "format"],
       template: "# Task\n{{task}}\n\n{{#if context}}# Context\n{{context}}\n\n{{/if}}# Example of Expected Reasoning Process\n{{examples}}\n\n{{#if stepByStep}}# Process to Follow\n{{stepByStep}}\n\n{{/if}}Now apply this same reasoning process to the current problem. Show your work at each step.\n\n{{#if format}}# Format\n{{format}}{{/if}}",
       bestFor: ["Teaching reasoning patterns", "Consistent analysis format", "Complex calculations"]
@@ -460,6 +465,7 @@ export const platformTemplates = {
     zeroCot: {
       name: "Zero-Shot Chain-of-Thought",
       description: "Simple trigger for step-by-step reasoning",
+      explanation: "The simplest way to trigger step-by-step reasoning. Just adds 'Let's think step by step' to make the AI break down its thinking. Minimal setup but very effective for improving reasoning quality.",
       components: ["task", "context"],
       template: "{{task}}\n\n{{#if context}}Context: {{context}}\n\n{{/if}}Let's think step by step.",
       bestFor: ["Quick reasoning tasks", "Simple problem solving", "When you want emergent reasoning"]
@@ -467,6 +473,7 @@ export const platformTemplates = {
     rolePlay: {
       name: "Role-Playing Prompt",
       description: "Immersive character-based interactions",
+      explanation: "Transforms the AI into a specific character or expert persona. Perfect for practicing conversations, getting advice from different perspectives, or creating content from a particular viewpoint. The AI stays in character throughout.",
       components: ["role", "persona", "scenario", "task", "dialogue", "constraints"],
       template: "# Character Setup\n{{role}}\n\n{{#if persona}}# Character Details\n{{persona}}\n\n{{/if}}{{#if scenario}}# Scenario\n{{scenario}}\n\n{{/if}}# Your Task\n{{task}}\n\n{{#if dialogue}}# Interaction Style\nMaintain a {{dialogue}} dialogue style throughout our conversation.\n\n{{/if}}{{#if constraints}}# Guidelines\n{{constraints}}\n\n{{/if}}Stay in character and respond as this person would in this situation.",
       bestFor: ["Customer service training", "Interview practice", "Creative writing", "Skill practice"]
@@ -474,6 +481,7 @@ export const platformTemplates = {
     characterConsistent: {
       name: "Character-Consistent Conversation",
       description: "Maintain character consistency across multiple exchanges",
+      explanation: "Ensures the AI maintains the same personality, knowledge, and speaking style throughout long conversations. Great for extended role-play sessions, character development, or when you need consistent expert advice.",
       components: ["role", "persona", "dialogue", "constraints"],
       template: "# Character Profile\n{{role}}\n\n{{#if persona}}# Background & Traits\n{{persona}}\n\n{{/if}}# Communication Style\nAlways respond in a {{dialogue}} manner that reflects this character's background and personality.\n\n{{#if constraints}}# Character Guidelines\n{{constraints}}\n\n{{/if}}Remember to stay consistent with this character throughout our entire conversation. Reference your background and personality in your responses when relevant.",
       bestFor: ["Long conversations", "Character development", "Consistent persona interactions"]
@@ -481,6 +489,7 @@ export const platformTemplates = {
     workflow: {
       name: "Multi-Step Workflow",
       description: "Structured process with sequential steps",
+      explanation: "Breaks complex projects into manageable phases with clear deliverables at each step. Perfect for research, content creation, or any multi-part project that needs systematic execution.",
       components: ["task", "workflow", "iterationGuidance", "outputFormat", "constraints"],
       template: "# Project Overview\n{{task}}\n\n# Workflow Process\n{{workflow}}\n\n{{#if iterationGuidance}}# Iteration Guidelines\n{{iterationGuidance}}\n\n{{/if}}# Output Requirements\nFor each step, follow the {{outputFormat}} format.\n\n{{#if constraints}}# Process Constraints\n{{constraints}}\n\n{{/if}}Begin with Step 1 and proceed systematically through each phase.",
       bestFor: ["Complex projects", "Research tasks", "Multi-phase analysis", "Content creation pipelines"]
@@ -488,6 +497,7 @@ export const platformTemplates = {
     iterativeWorkflow: {
       name: "Iterative Workflow with Feedback",
       description: "Workflow designed for refinement cycles",
+      explanation: "Designed for collaborative work where you review and refine each step before moving forward. The AI waits for your feedback and incorporates it into the next phase. Great for creative projects.",
       components: ["task", "workflow", "dependencies", "iterationGuidance", "outputFormat"],
       template: "# Project Goal\n{{task}}\n\n# Step-by-Step Process\n{{workflow}}\n\n{{#if dependencies}}# Step Dependencies\n{{dependencies}}\n\n{{/if}}# Feedback & Iteration Process\n{{iterationGuidance}}\n\n# Output Format for Each Step\nUse {{outputFormat}} formatting for all step outputs.\n\nStart with the first step and wait for my feedback before proceeding to the next step.",
       bestFor: ["Collaborative projects", "Iterative design", "Content development", "Problem-solving processes"]
@@ -498,6 +508,7 @@ export const platformTemplates = {
     basic: {
       name: "Basic Claude Prompt",
       description: "Simple prompt with XML tags for structure",
+      explanation: "Uses Claude's preferred XML structure for clear organization. The XML tags help Claude understand exactly what each part of your prompt is for, leading to more accurate responses.",
       components: ["task", "context", "format"],
       template: "<task>{{task}}</task>\n\n{{#if context}}<context>{{context}}</context>\n\n{{/if}}{{#if format}}<format>{{format}}</format>{{/if}}",
       bestFor: ["Quick queries", "Simple content creation", "Basic information requests"]
@@ -505,6 +516,7 @@ export const platformTemplates = {
     detailed: {
       name: "Detailed Claude Prompt",
       description: "Comprehensive prompt with XML structure",
+      explanation: "Leverages Claude's excellent understanding of XML structure to create highly precise prompts. Each element is clearly tagged, making it easy for Claude to follow complex instructions perfectly.",
       components: ["task", "context", "format", "examples", "reasoning", "tone", "audience", "constraints"],
       template: "<task>{{task}}</task>\n\n{{#if context}}<context>{{context}}</context>\n\n{{/if}}{{#if audience}}<audience>{{audience}}</audience>\n\n{{/if}}{{#if format}}<format>{{format}}</format>\n\n{{/if}}{{#if examples}}<examples>{{examples}}</examples>\n\n{{/if}}{{#if reasoning}}<reasoning>{{reasoning}}</reasoning>\n\n{{/if}}{{#if tone}}<tone>{{tone}}</tone>\n\n{{/if}}{{#if constraints}}<constraints>{{constraints}}</constraints>{{/if}}",
       bestFor: ["Complex content creation", "Technical writing", "Detailed analysis"]
@@ -512,6 +524,7 @@ export const platformTemplates = {
     system: {
       name: "Claude System Prompt",
       description: "Using Claude's system prompt capability",
+      explanation: "Creates a conversational setup that feels natural while establishing clear parameters. Great for role-playing scenarios or when you need Claude to maintain specific behaviors throughout a conversation.",
       components: ["task", "context", "constraints", "tone"],
       template: "Human: I need your help with a task.\n\nAssistant: I'll help you with your task. What do you need?\n\nHuman: <task>{{task}}</task>\n\n{{#if context}}<context>{{context}}</context>\n\n{{/if}}{{#if constraints}}<constraints>{{constraints}}</constraints>\n\n{{/if}}{{#if tone}}<tone>{{tone}}</tone>{{/if}}",
       bestFor: ["Role-based interactions", "Constrained responses", "Consistent tone"]
@@ -522,6 +535,7 @@ export const platformTemplates = {
     basic: {
       name: "Basic Gemini Prompt",
       description: "Simple prompt with clear structure",
+      explanation: "Straightforward format that works well with Gemini's understanding. Uses simple labels like 'Task:' and 'Context:' to organize information clearly without complex formatting.",
       components: ["task", "context", "format"],
       template: "Task: {{task}}\n\n{{#if context}}Context: {{context}}\n\n{{/if}}{{#if format}}Format: {{format}}{{/if}}",
       bestFor: ["Quick queries", "Simple content creation", "Basic information requests"]
@@ -529,6 +543,7 @@ export const platformTemplates = {
     detailed: {
       name: "Detailed Gemini Prompt",
       description: "Comprehensive prompt with all components",
+      explanation: "Uses Gemini's strength in understanding structured information. Each section is clearly labeled and organized, helping Gemini provide comprehensive, well-structured responses.",
       components: ["task", "context", "format", "examples", "reasoning", "tone", "audience", "constraints"],
       template: "Task: {{task}}\n\n{{#if context}}Context: {{context}}\n\n{{/if}}{{#if audience}}Audience: {{audience}}\n\n{{/if}}{{#if format}}Format: {{format}}\n\n{{/if}}{{#if examples}}Examples: {{examples}}\n\n{{/if}}{{#if reasoning}}Reasoning Approach: {{reasoning}}\n\n{{/if}}{{#if tone}}Tone: {{tone}}\n\n{{/if}}{{#if constraints}}Constraints: {{constraints}}{{/if}}",
       bestFor: ["Complex content creation", "Technical writing", "Detailed analysis"]
@@ -536,6 +551,7 @@ export const platformTemplates = {
     structured: {
       name: "Structured Output Gemini Prompt",
       description: "Optimized for getting structured data responses",
+      explanation: "Perfect for when you need data in specific formats like JSON, tables, or lists. Gemini excels at following exact formatting requirements when given clear examples and structure.",
       components: ["task", "format", "examples"],
       template: "Task: {{task}}\n\nI need the response in this exact format:\n{{format}}\n\n{{#if examples}}Example of expected output:\n{{examples}}{{/if}}",
       bestFor: ["Data extraction", "JSON outputs", "Tabular data", "Structured information"]

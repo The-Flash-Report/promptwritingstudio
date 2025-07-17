@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AICalculatorExplainer from '../ai/AICalculatorExplainer';
 
 const ContentSpeedCalculator = () => {
   const [inputs, setInputs] = useState({
@@ -6,19 +7,43 @@ const ContentSpeedCalculator = () => {
     contentType: 'blog-posts',
     weeklyPieces: 5,
     averageWordCount: 1000,
-    hourlyRate: 50
+    hourlyRate: 50,
+    skillLevel: 'intermediate'
   });
   
   const [results, setResults] = useState(null);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
 
   const contentTypes = {
-    'blog-posts': { name: 'Blog Posts', aiSpeedMultiplier: 4.5, avgWords: 1000 },
-    'social-media': { name: 'Social Media Posts', aiSpeedMultiplier: 6, avgWords: 150 },
-    'email-campaigns': { name: 'Email Campaigns', aiSpeedMultiplier: 5, avgWords: 500 },
-    'product-descriptions': { name: 'Product Descriptions', aiSpeedMultiplier: 8, avgWords: 200 },
-    'ad-copy': { name: 'Ad Copy', aiSpeedMultiplier: 7, avgWords: 100 },
-    'reports': { name: 'Reports & Documents', aiSpeedMultiplier: 3.5, avgWords: 2000 }
+    'blog-posts': { name: 'Blog Posts', aiSpeedMultiplier: 4.5, avgWords: 1000, editingMultiplier: 1.3 },
+    'social-media': { name: 'Social Media Posts', aiSpeedMultiplier: 6, avgWords: 150, editingMultiplier: 1.1 },
+    'email-campaigns': { name: 'Email Campaigns', aiSpeedMultiplier: 5, avgWords: 500, editingMultiplier: 1.2 },
+    'newsletters': { name: 'Email Newsletters', aiSpeedMultiplier: 5.5, avgWords: 800, editingMultiplier: 1.25 },
+    'product-descriptions': { name: 'Product Descriptions', aiSpeedMultiplier: 8, avgWords: 200, editingMultiplier: 1.15 },
+    'ad-copy': { name: 'Ad Copy', aiSpeedMultiplier: 7, avgWords: 100, editingMultiplier: 1.25 },
+    'landing-pages': { name: 'Landing Page Copy', aiSpeedMultiplier: 5.8, avgWords: 600, editingMultiplier: 1.3 },
+    'case-studies': { name: 'Case Studies', aiSpeedMultiplier: 4, avgWords: 1500, editingMultiplier: 1.35 },
+    'video-scripts': { name: 'Video Scripts', aiSpeedMultiplier: 6.5, avgWords: 300, editingMultiplier: 1.2 },
+    'whitepapers': { name: 'Whitepapers/eBooks', aiSpeedMultiplier: 3.8, avgWords: 3000, editingMultiplier: 1.4 },
+    'reports': { name: 'Reports & Documents', aiSpeedMultiplier: 3.5, avgWords: 2000, editingMultiplier: 1.4 }
+  };
+
+  const skillLevels = {
+    'beginner': { 
+      name: 'Beginner (0-3 months)', 
+      multiplier: 0.6, 
+      description: 'New to AI content creation, still learning prompts and workflows' 
+    },
+    'intermediate': { 
+      name: 'Intermediate (3-12 months)', 
+      multiplier: 0.8, 
+      description: 'Some AI experience, familiar with basic prompting techniques' 
+    },
+    'advanced': { 
+      name: 'Advanced (12+ months)', 
+      multiplier: 1.0, 
+      description: 'Experienced with AI workflows, custom prompts, and training data' 
+    }
   };
 
   const handleInputChange = (field, value) => {
@@ -30,6 +55,7 @@ const ContentSpeedCalculator = () => {
 
   const calculateSavings = () => {
     const contentType = contentTypes[inputs.contentType];
+    const skillLevel = skillLevels[inputs.skillLevel];
     const wordsPerPiece = inputs.averageWordCount || contentType.avgWords;
     
     // Current process calculations
@@ -38,9 +64,11 @@ const ContentSpeedCalculator = () => {
     const monthlyHours = weeklyHours * 4.33;
     const yearlyHours = monthlyHours * 12;
     
-    // AI-enhanced process calculations
-    const aiWordsPerHour = inputs.currentWordsPerHour * contentType.aiSpeedMultiplier;
-    const aiHoursPerPiece = wordsPerPiece / aiWordsPerHour;
+    // AI-enhanced process calculations (including editing time and skill level)
+    const baseAiSpeedMultiplier = contentType.aiSpeedMultiplier * skillLevel.multiplier;
+    const aiWordsPerHour = inputs.currentWordsPerHour * baseAiSpeedMultiplier;
+    const aiHoursPerPieceRaw = wordsPerPiece / aiWordsPerHour;
+    const aiHoursPerPiece = aiHoursPerPieceRaw * contentType.editingMultiplier; // Factor in editing time
     const aiWeeklyHours = aiHoursPerPiece * inputs.weeklyPieces;
     const aiMonthlyHours = aiWeeklyHours * 4.33;
     const aiYearlyHours = aiMonthlyHours * 12;
@@ -55,7 +83,7 @@ const ContentSpeedCalculator = () => {
     const yearlyDollarSaved = yearlyTimeSaved * inputs.hourlyRate;
     
     // Productivity metrics
-    const productivityIncrease = ((contentType.aiSpeedMultiplier - 1) * 100);
+    const productivityIncrease = ((baseAiSpeedMultiplier - 1) * 100);
     const extraPiecesPerWeek = weeklyTimeSaved / aiHoursPerPiece;
     
     setResults({
@@ -80,9 +108,14 @@ const ContentSpeedCalculator = () => {
         yearlyDollars: yearlyDollarSaved.toFixed(0)
       },
       productivity: {
-        speedIncrease: contentType.aiSpeedMultiplier.toFixed(1),
+        speedIncrease: baseAiSpeedMultiplier.toFixed(1),
         percentIncrease: productivityIncrease.toFixed(0),
         extraPiecesPerWeek: extraPiecesPerWeek.toFixed(1)
+      },
+      skillLevel: {
+        name: skillLevel.name,
+        description: skillLevel.description,
+        multiplier: skillLevel.multiplier
       }
     });
     
@@ -95,7 +128,7 @@ const ContentSpeedCalculator = () => {
     
     // Here you would integrate with your email service
     console.log('Email submitted:', email);
-    alert('Thanks! Check your email for the "Content Creation Automation Guide"');
+    alert('Thanks! Check your email for the "AI Creative Partner Setup Guide"');
     setShowEmailCapture(false);
   };
 
@@ -107,7 +140,7 @@ const ContentSpeedCalculator = () => {
             Content Creation Speed Calculator
           </h2>
           <p className="text-lg text-gray-600">
-            Discover how much time and money you could save with AI-powered content creation
+            Get realistic time savings estimates based on your AI experience level. Includes editing time and skill-adjusted calculations for accurate results.
           </p>
         </div>
 
@@ -129,6 +162,24 @@ const ContentSpeedCalculator = () => {
                   <option key={key} value={key}>{type.name}</option>
                 ))}
               </select>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Your AI Experience Level
+              </label>
+              <select
+                value={inputs.skillLevel}
+                onChange={(e) => handleInputChange('skillLevel', e.target.value)}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                {Object.entries(skillLevels).map(([key, level]) => (
+                  <option key={key} value={key}>{level.name}</option>
+                ))}
+              </select>
+              <p className="text-sm text-gray-500 mt-1">
+                {skillLevels[inputs.skillLevel].description}
+              </p>
             </div>
 
             <div>
@@ -221,6 +272,17 @@ const ContentSpeedCalculator = () => {
                     <span className="font-bold text-green-600">{results.productivity.speedIncrease}x faster</span>
                   </div>
                 </div>
+                <div className="mt-3 p-3 bg-blue-50 rounded-lg">
+                  <p className="text-sm text-blue-700 mb-2">
+                    <span className="font-medium">✓ Includes editing time:</span> Calculations factor in {Math.round((contentTypes[inputs.contentType].editingMultiplier - 1) * 100)}% additional time for editing and fact-checking AI content.
+                  </p>
+                  <p className="text-sm text-blue-700 mb-2">
+                    <span className="font-medium">🎯 Skill level adjustment:</span> Results adjusted for {results.skillLevel.name.toLowerCase()} ({Math.round(results.skillLevel.multiplier * 100)}% of expert level).
+                  </p>
+                  <p className="text-sm text-blue-700">
+                    <span className="font-medium">💡 Based on Prompt Writing Studio method:</span> Using experience-first prompting with your own content as training data.
+                  </p>
+                </div>
               </div>
 
               {/* Time Savings */}
@@ -265,6 +327,65 @@ const ContentSpeedCalculator = () => {
                   <div className="text-sm text-gray-600">Extra {contentTypes[inputs.contentType].name.toLowerCase()} per week</div>
                 </div>
               </div>
+
+              {/* Skill Level Growth Opportunity */}
+              {(inputs.skillLevel === 'beginner' || inputs.skillLevel === 'intermediate') && (
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
+                  <h4 className="font-semibold text-gray-900 mb-3">🚀 Growth Opportunity</h4>
+                  <p className="text-sm text-gray-700 mb-3">
+                    {inputs.skillLevel === 'beginner' ? 
+                      'As a beginner, you have huge potential for improvement! Advanced users see ' + 
+                      Math.round(((1.0 / skillLevels[inputs.skillLevel].multiplier) - 1) * 100) + '% better results.' :
+                      'You\'re making good progress! Advanced users achieve ' + 
+                      Math.round(((1.0 / skillLevels[inputs.skillLevel].multiplier) - 1) * 100) + '% better time savings.'
+                    }
+                  </p>
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-green-600">
+                      Potential: {Math.round(results.savings.monthlyHours / skillLevels[inputs.skillLevel].multiplier)} hours/month
+                    </div>
+                    <div className="text-sm text-gray-600">with advanced skills</div>
+                  </div>
+                </div>
+              )}
+
+              {/* AI-Powered Explanation */}
+              <AICalculatorExplainer 
+                calculatorType="content-speed"
+                results={results}
+                inputs={inputs}
+                onExplanationGenerated={(explanation) => {
+                  // Track AI explanation generation for analytics
+                  console.log('AI explanation generated for content speed calculator')
+                }}
+              />
+
+              {/* Prompt Vault CTA */}
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-lg border border-yellow-200">
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-gray-900 mb-3">💡 Ready to Accelerate These Savings?</h4>
+                  <p className="text-gray-700 mb-4">
+                    Get 50 business-ready prompt templates that transform your AI tools into content creation powerhouses. 
+                    These proven prompts can help you achieve the {results.productivity.speedIncrease}x speed increase starting today.
+                  </p>
+                  
+                  <div className="bg-white p-4 rounded-lg mb-4 border border-yellow-300">
+                    <div className="flex items-center justify-center gap-4 mb-2">
+                      <span className="text-lg text-gray-500 line-through">$19</span>
+                      <span className="text-2xl font-bold text-orange-600">$7</span>
+                      <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded text-sm font-medium">Launch Special</span>
+                    </div>
+                    <p className="text-sm text-gray-600">📧 Instant email delivery • 💯 30-day money-back guarantee</p>
+                  </div>
+                  
+                  <a 
+                    href="/prompt-vault" 
+                    className="inline-block bg-yellow-500 text-gray-900 px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors duration-200"
+                  >
+                    Get The Prompt Vault - $7
+                  </a>
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -274,10 +395,10 @@ const ContentSpeedCalculator = () => {
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-8 rounded-xl max-w-md w-full mx-4">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
-                Get Your Free Content Creation Automation Guide
+                Get Your Free "AI Creative Partner" Setup Guide
               </h3>
               <p className="text-gray-600 mb-6">
-                Learn the exact AI prompts and workflows that can 4-8x your content creation speed.
+                Learn the experience-first prompting method and 3-Question Test framework that transforms AI from a generic tool into your personal creative partner.
               </p>
               <form onSubmit={handleEmailSubmit}>
                 <input

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { allAuthenticCreatorPrompts } from '../data/all-authentic-creator-prompts'
 import { categories } from '../data/sample-prompts'
 import EnhancedMeta from '../components/ui/EnhancedMeta'
+import Head from 'next/head'
 
 export default function AIPromptExamples() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -153,6 +154,34 @@ export default function AIPromptExamples() {
     }
   }
 
+  // Article schema for content page
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": pageTitle,
+    "description": pageDescription,
+    "author": {
+      "@type": "Person",
+      "name": "Bryan Collins"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Prompt Writing Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://promptwritingstudio.com/images/logo.png"
+      }
+    },
+    "datePublished": "2024-01-15T00:00:00Z",
+    "dateModified": "2024-01-22T00:00:00Z",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://promptwritingstudio.com/ai-prompt-examples"
+    },
+    "articleSection": "AI Tools",
+    "keywords": ["AI prompts", "ChatGPT examples", "AI templates", "prompt examples", "artificial intelligence"]
+  }
+
   return (
     <>
       <EnhancedMeta 
@@ -161,6 +190,14 @@ export default function AIPromptExamples() {
         canonicalUrl="https://promptwritingstudio.com/ai-prompt-examples"
         structuredData={structuredData}
       />
+      
+      {/* Additional structured data */}
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+      </Head>
       
       <Layout title={pageTitle} description={pageDescription}>
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12">
@@ -475,20 +512,189 @@ export default function AIPromptExamples() {
               </div>
             </section>
 
-            {/* CTA Section */}
-            <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-8 text-center text-white">
-              <h2 className="text-3xl font-bold mb-4">
-                Want Even More AI Prompts?
-              </h2>
-              <p className="text-xl mb-6 opacity-90">
-                Get our complete library of 1000+ prompts plus weekly updates with new examples.
-              </p>
+            {/* Prompt Vault CTA Section */}
+            <div className="mt-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl p-8 text-center text-gray-900">
+              <div className="mb-6">
+                <div className="inline-block bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold mb-3">
+                  🔥 LIMITED TIME: 65% OFF
+                </div>
+                <h2 className="text-3xl font-bold mb-2">
+                  Want Business-Ready Prompts?
+                </h2>
+                <p className="text-xl mb-4">
+                  50 professional prompt templates designed specifically for business owners and marketers.
+                </p>
+                
+                <div className="bg-white bg-opacity-90 rounded-lg p-4 mb-6 inline-block">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <span className="text-lg text-gray-500 line-through">$19</span>
+                    <span className="text-3xl font-bold text-orange-600">$7</span>
+                    <span className="bg-red-100 text-red-700 px-2 py-1 rounded text-sm font-medium">Launch Special</span>
+                  </div>
+                  <p className="text-sm text-gray-600">📧 Instant delivery • 💯 30-day guarantee</p>
+                </div>
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/ai-prompt-generator" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Try Our Prompt Generator
+                <Link href="/prompt-vault" className="bg-gray-900 text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors">
+                  Get Prompt Vault - $7
                 </Link>
-                <Link href="/pricing" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                  Get Full Course Access
+                <Link href="/ai-prompt-generator" className="bg-white text-orange-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                  Try Free Generator
+                </Link>
+              </div>
+            </div>
+
+            {/* Secondary CTA Section */}
+            <div className="mt-8 bg-gradient-to-r from-blue-600 to-purple-700 rounded-2xl p-8 text-center text-white">
+              <h3 className="text-2xl font-bold mb-3">
+                Want Unlimited Prompts + Training?
+              </h3>
+              <p className="text-lg mb-6 opacity-90">
+                Join PromptWritingStudio for 100+ advanced templates, weekly lessons, and expert support.
+              </p>
+              <Link href="/pricing" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                View Premium Plans
+              </Link>
+            </div>
+
+            {/* Business Tools Integration Section */}
+            <div className="max-w-4xl mx-auto mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  📊 Calculate Your AI Business Impact
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Now that you've seen powerful prompt examples, discover the exact time and cost savings 
+                  these AI techniques can bring to your business with our free calculators.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Link 
+                  href="/calculators/content-creation-speed"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">✍️</div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
+                      Content Speed Calculator
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Calculate time savings using AI for blogs, social media, and marketing content
+                    </p>
+                    <div className="text-blue-600 font-medium text-sm">Calculate Now →</div>
+                  </div>
+                </Link>
+                
+                <Link 
+                  href="/roi-calculator"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">💰</div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
+                      AI ROI Calculator
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Calculate overall time and money savings from AI automation in your business
+                    </p>
+                    <div className="text-blue-600 font-medium text-sm">Calculate Now →</div>
+                  </div>
+                </Link>
+                
+                <Link 
+                  href="/calculators/business-ai-readiness"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">📊</div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
+                      AI Readiness Assessment
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Evaluate your business readiness for AI implementation with actionable insights
+                    </p>
+                    <div className="text-blue-600 font-medium text-sm">Take Assessment →</div>
+                  </div>
+                </Link>
+              </div>
+              
+              <div className="text-center mt-6">
+                <Link 
+                  href="/calculators"
+                  className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  View All Business Calculators
+                  <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Page Links Section */}
+            <div className="max-w-4xl mx-auto mt-16 bg-white rounded-2xl border border-gray-200 p-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  🚀 Level Up Your AI Game
+                </h2>
+                <p className="text-gray-600">
+                  Explore our complete collection of AI tools, guides, and resources
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link 
+                  href="/chatgpt-templates"
+                  className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">
+                    📝 ChatGPT Templates
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Ready-to-use ChatGPT templates for business, marketing, and content creation
+                  </p>
+                  <div className="text-green-600 font-medium text-sm">Browse Templates →</div>
+                </Link>
+                
+                <Link 
+                  href="/ai-prompt-generator"
+                  className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600">
+                    ⚡ AI Prompt Generator
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Create custom AI prompts using best practices from OpenAI, Anthropic & Google
+                  </p>
+                  <div className="text-purple-600 font-medium text-sm">Generate Prompts →</div>
+                </Link>
+                
+                <Link 
+                  href="/ai-glossary"
+                  className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-yellow-600">
+                    📚 AI Glossary
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Essential AI terms every business owner should know, explained in plain English
+                  </p>
+                  <div className="text-yellow-600 font-medium text-sm">Learn Terms →</div>
+                </Link>
+                
+                <Link 
+                  href="/ai-history"
+                  className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-indigo-600">
+                    🕰️ AI History
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Complete journey of AI from ancient origins to modern business applications
+                  </p>
+                  <div className="text-indigo-600 font-medium text-sm">Explore History →</div>
                 </Link>
               </div>
             </div>

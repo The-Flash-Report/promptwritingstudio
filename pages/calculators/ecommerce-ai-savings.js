@@ -360,20 +360,22 @@ export default function EcommerceAISavingsPage() {
             <div className="max-w-4xl mx-auto mt-16">
               <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-8 rounded-xl text-white text-center">
                 <h2 className="text-3xl font-bold mb-4">
-                  Ready to Implement E-commerce AI Automation?
+                  Ready to Build Your E-commerce AI Assistant?
                 </h2>
                 <p className="text-xl mb-6 opacity-90">
-                  Get the complete toolkit of AI prompts, workflows, and strategies specifically designed for e-commerce stores
+                  Learn how to train AI on YOUR product data and customer experiences for personalized, high-converting content
                 </p>
                 <div className="space-y-4">
-                  <Link 
-                    href="/course" 
+                  <a
+                    href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
                     className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Get the E-commerce AI Mastery Course
-                  </Link>
+                    Get Prompt Writing Studio
+                  </a>
                   <div className="text-sm opacity-75">
-                    ✓ Platform-Specific Prompts ✓ Automation Workflows ✓ Customer Service Scripts ✓ Marketing Templates
+                    ✓ Product Data Training Methods ✓ Customer Experience Prompting ✓ Visual + Text E-commerce Prompts ✓ Conversion-Focused Templates
                   </div>
                 </div>
               </div>

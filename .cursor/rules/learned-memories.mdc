@@ -3,3 +3,51 @@ description:
 globs:
 alwaysApply: false
 ---
+# Project Memory
+
+This file stores project-specific knowledge, conventions, and user preferences learned by the AI assistant.
+
+## User Preferences
+
+- Talk to user like a junior developer - be concise, avoid major code changes without approval
+- Ask for confirmation before executing tasks not explicitly called out
+- Focus on practical, actionable solutions for SEO and business growth
+
+## Technical Decisions
+
+- **Framework**: Next.js with App Router structure for fullstack development
+- **Styling**: Tailwind CSS for utility-first responsive design
+- **Database**: Prisma ORM with schema.prisma configuration
+- **AI APIs**: Claude 3 Sonnet and Perplexity API integration for real-time optimization
+- **Testing**: Vitest for component and integration testing
+- **Deployment**: Netlify hosting with netlify.toml configuration
+
+## Project Conventions
+
+- **File Structure**: Pages Router pattern with components in organized subdirectories
+- **Component Organization**: 
+  - `/components/calculators/` - 5 fully functional AI calculators
+  - `/components/ai/` - AI integration components (PromptOptimizer, LiveChatTester, AIAgentBuilder)
+  - `/components/ui/` - Reusable UI components and advanced features
+  - `/components/sections/` - Landing page sections
+- **Data Management**: Prompt libraries in `/data/` directory with organized categories
+- **API Structure**: `/pages/api/ai/` for AI integration endpoints
+
+## Business Context
+
+- **Primary Goal**: Convert 5K+ monthly search impressions to traffic → Course sales
+- **Target**: 500+ monthly organic visitors within 6 weeks through SEO optimization
+- **Current Status**: Advanced AI platform complete, need content creation for SEO
+- **Key Metrics**: Ranking positions 40-90 need optimization to reach positions 15-30
+
+## Current Priorities
+
+- **SEO Content Creation**: AI prompt examples, ChatGPT templates, AI art prompts
+- **Technical SEO**: Meta optimization, structured data, internal linking
+- **Conversion Optimization**: Email capture funnels, calculator cross-promotion
+
+## Repository Information
+
+- **GitHub**: https://github.com/The-Flash-Report/promptwritingstudio
+- **Domain**: promptwritingstudio.com
+- **Platform Type**: AI prompt optimization platform with real API integrations

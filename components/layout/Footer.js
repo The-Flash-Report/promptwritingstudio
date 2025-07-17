@@ -48,6 +48,7 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">Company</h4>
             <ul className="space-y-2">
               <li><Link href="/" className="text-gray-400 hover:text-white transition">Home</Link></li>
+              <li><Link href="/shop" className="text-gray-400 hover:text-white transition">Shop</Link></li>
               <li><Link href="/about" className="text-gray-400 hover:text-white transition">About</Link></li>
               <li><Link href="/contact" className="text-gray-400 hover:text-white transition">Contact</Link></li>
               <li><Link href="/sitemap" className="text-gray-400 hover:text-white transition">Sitemap</Link></li>
@@ -76,6 +77,10 @@ export default function Footer() {
         
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-400">&copy; {new Date().getFullYear()} Prompt Writing Studio. All rights reserved.</p>
+          <p className="text-gray-500 text-sm mt-2">
+            We use essential cookies for site functionality and analytics to improve our service. 
+            By using this site, you agree to our <Link href="/cookie-policy" className="underline hover:text-gray-400">Cookie Policy</Link> and <Link href="/privacy-policy" className="underline hover:text-gray-400">Privacy Policy</Link>.
+          </p>
         </div>
       </div>
     </footer>

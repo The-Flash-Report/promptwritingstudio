@@ -4,7 +4,7 @@ export default function EnhancedMeta({
   title,
   description,
   url,
-  image,
+  image = 'https://promptwritingstudio.com/images/pws-opengraph-yellow.png',
   type = 'website',
   calculator = null,
   publishedTime,

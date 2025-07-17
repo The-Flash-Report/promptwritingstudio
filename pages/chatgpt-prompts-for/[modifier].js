@@ -310,7 +310,7 @@ export default function ModifierPage({ modifierData }) {
                     Want to create custom ChatGPT prompts for {modifierName.toLowerCase()}? Use our interactive prompt generator to build effective prompts based on OpenAI's best practices that maintain your authentic voice.                  
                   </p>
                   <Link 
-                    href={`/ai-prompt-generator/seo/chatgpt-prompt-for-${router.query.modifier}`}
+                    href={`/ai-prompt-generator/chatgpt-prompt-for-${router.query.modifier}`}
                     className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center"
                   >
                     <span>Create {modifierName} Prompts</span>

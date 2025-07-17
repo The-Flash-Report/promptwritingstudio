@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
 import { seoUseCases } from '../../data/seo-use-cases'
@@ -8,6 +9,7 @@ import {
   generatePrompt 
 } from '../../data/prompt-generator-components'
 import CustomTemplateBuilder from '../../components/ui/CustomTemplateBuilder'
+import PromptOptimizer from '../../components/ai/PromptOptimizer'
 
 export default function AIPromptGenerator() {
   const [selectedPlatform, setSelectedPlatform] = useState('openai');
@@ -18,6 +20,7 @@ export default function AIPromptGenerator() {
   const [activeTab, setActiveTab] = useState('generator'); // 'generator', 'builder'
   const [customTemplates, setCustomTemplates] = useState([]);
   const [showCustomTemplates, setShowCustomTemplates] = useState(false);
+  const [showOptimization, setShowOptimization] = useState(false);
   
   // Reset component values when platform or template changes
   useEffect(() => {
@@ -31,6 +34,22 @@ export default function AIPromptGenerator() {
       ...prev,
       [componentId]: value
     }));
+  };
+
+  // Handle prompt optimization
+  const handlePromptOptimize = (optimizedPrompt) => {
+    setGeneratedPrompt(optimizedPrompt);
+    setCopiedToClipboard(false); // Reset copy status
+    
+    // Track optimization usage for analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'prompt_optimized', {
+        platform: selectedPlatform,
+        template: selectedTemplate,
+        original_length: generatedPrompt.length,
+        optimized_length: optimizedPrompt.length
+      });
+    }
   };
   
   // Generate prompt from platform template
@@ -72,6 +91,26 @@ export default function AIPromptGenerator() {
     navigator.clipboard.writeText(generatedPrompt);
     setCopiedToClipboard(true);
     setTimeout(() => setCopiedToClipboard(false), 2000);
+  };
+
+  // Launch with specific AI platform
+  const launchWithPlatform = (platform) => {
+    // Copy prompt to clipboard first
+    navigator.clipboard.writeText(generatedPrompt);
+    
+    // Platform URLs
+    const platformUrls = {
+      'openai': 'https://chat.openai.com/',
+      'anthropic': 'https://claude.ai/',
+      'google': 'https://gemini.google.com/'
+    };
+    
+    // Open platform in new tab
+    window.open(platformUrls[platform], '_blank');
+    
+    // Show success message
+    setCopiedToClipboard(true);
+    setTimeout(() => setCopiedToClipboard(false), 3000);
   };
   
   // Get components for the selected template
@@ -137,11 +176,81 @@ export default function AIPromptGenerator() {
     return { ...builtInTemplates, ...customTemplateMap };
   };
   
+  // HowTo Schema for AI Prompt Generator
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Create Effective AI Prompts",
+    "description": "Step-by-step guide to creating optimized prompts for ChatGPT, Claude, and Gemini using best practices.",
+    "image": "https://promptwritingstudio.com/images/ai-prompt-generator-guide.jpg",
+    "totalTime": "PT10M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Access to AI tool (ChatGPT, Claude, or Gemini)"
+      },
+      {
+        "@type": "HowToSupply", 
+        "name": "Clear objective for your AI task"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Choose Your Use Case",
+        "text": "Select the specific type of content or task you want AI to help with from our generator options.",
+        "image": "https://promptwritingstudio.com/images/step-1-choose-use-case.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Fill in Context Details",
+        "text": "Provide specific information about your audience, goals, and any relevant background information.",
+        "image": "https://promptwritingstudio.com/images/step-2-add-context.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Specify Output Requirements",
+        "text": "Define the format, length, tone, and style you want for the AI-generated content.",
+        "image": "https://promptwritingstudio.com/images/step-3-specify-output.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Generate and Test Your Prompt",
+        "text": "Use our generator to create your optimized prompt, then test it with your preferred AI platform.",
+        "image": "https://promptwritingstudio.com/images/step-4-generate-test.jpg"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Refine Based on Results", 
+        "text": "Adjust the prompt based on the AI output quality and iterate until you get the desired results.",
+        "image": "https://promptwritingstudio.com/images/step-5-refine-prompt.jpg"
+      }
+    ],
+    "author": {
+      "@type": "Person",
+      "name": "Bryan Collins"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Prompt Writing Studio"
+    }
+  }
+  
   return (
     <Layout
-      title="AI Prompt Generator | Create Optimized Prompts for ChatGPT, Claude & Gemini"
-      description="Build effective AI prompts using best practices from OpenAI, Anthropic, and Google. Our AI prompt generator helps you create optimized prompts for ChatGPT, Claude, and Gemini."
+      title="Free AI Prompt Generator - Create Custom ChatGPT & AI Art Prompts"
+      description="Create custom AI prompts for ChatGPT, Claude, Gemini & AI art tools. Free generator uses best practices from OpenAI, Anthropic & Google. Get better AI results instantly."
     >
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(howToSchema)}
+        </script>
+      </Head>
       {/* Hero Section */}
       <section className="gradient-bg text-white py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
@@ -376,6 +485,21 @@ export default function AIPromptGenerator() {
                     )}
                   </div>
                   
+                  {/* Template Information */}
+                  {selectedPlatform && selectedTemplate && platformTemplates[selectedPlatform][selectedTemplate] && (
+                    <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                      <h4 className="font-semibold text-blue-900 mb-2">
+                        {platformTemplates[selectedPlatform][selectedTemplate].name}
+                      </h4>
+                      <p className="text-sm text-blue-800 mb-2">
+                        {platformTemplates[selectedPlatform][selectedTemplate].explanation}
+                      </p>
+                      <div className="text-xs text-blue-700">
+                        <strong>Best for:</strong> {platformTemplates[selectedPlatform][selectedTemplate].bestFor.join(', ')}
+                      </div>
+                    </div>
+                  )}
+                  
                   {/* Component Inputs */}
                   <div className="space-y-6 mt-8">
                     {getTemplateComponents().map(component => (
@@ -467,9 +591,39 @@ export default function AIPromptGenerator() {
                   </div>
                   
                   {generatedPrompt ? (
-                    <div className="bg-white border border-gray-200 rounded-lg p-4 h-[500px] overflow-y-auto">
-                      <pre className="whitespace-pre-wrap font-mono text-sm">{generatedPrompt}</pre>
-                    </div>
+                    <>
+                      <div className="bg-white border border-gray-200 rounded-lg p-4 h-[400px] overflow-y-auto">
+                        <pre className="whitespace-pre-wrap font-mono text-sm">{generatedPrompt}</pre>
+                      </div>
+                      
+                      {/* AI Optimization Toggle */}
+                      <div className="mt-4">
+                        <button
+                          onClick={() => setShowOptimization(!showOptimization)}
+                          className="flex items-center text-sm text-blue-600 hover:text-blue-800 font-medium"
+                        >
+                          <span className="mr-2">✨</span>
+                          {showOptimization ? 'Hide AI Optimization' : 'Get AI Optimization Suggestions'}
+                          <svg className={`w-4 h-4 ml-1 transition-transform ${showOptimization ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                      </div>
+
+                      {/* AI Optimization Panel */}
+                      {showOptimization && (
+                        <div className="mt-4">
+                          <PromptOptimizer
+                            prompt={generatedPrompt}
+                            onOptimize={handlePromptOptimize}
+                            tier="free" // You can make this dynamic based on user auth
+                            context={`${selectedPlatform} prompt generation`}
+                            useCase="prompt optimization"
+                            className="w-full"
+                          />
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <div className="bg-white border border-gray-200 rounded-lg p-6 h-[500px] flex items-center justify-center">
                       <div className="text-center text-gray-500">
@@ -479,6 +633,50 @@ export default function AIPromptGenerator() {
                         <h3 className="text-lg font-medium mb-2">No Prompt Generated Yet</h3>
                         <p>Fill in the form and click "Generate Prompt" to create your AI prompt.</p>
                       </div>
+                    </div>
+                  )}
+
+                  {/* Quick Launch Buttons */}
+                  {generatedPrompt && (
+                    <div className="mt-4">
+                      <h4 className="text-sm font-medium text-gray-700 mb-3">🚀 Quick Launch (copies prompt & opens platform):</h4>
+                      <div className="flex flex-wrap gap-2">
+                        <button
+                          onClick={() => launchWithPlatform('openai')}
+                          className="flex items-center px-3 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors duration-200 text-sm"
+                        >
+                          <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0734a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+                          </svg>
+                          ChatGPT
+                        </button>
+                        
+                        <button
+                          onClick={() => launchWithPlatform('anthropic')}
+                          className="flex items-center px-3 py-2 bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors duration-200 text-sm"
+                        >
+                          <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                          </svg>
+                          Claude
+                        </button>
+                        
+                        <button
+                          onClick={() => launchWithPlatform('google')}
+                          className="flex items-center px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
+                        >
+                          <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                          </svg>
+                          Gemini
+                        </button>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-2">
+                        ✨ Prompt copied to clipboard automatically when you click a platform
+                      </p>
                     </div>
                   )}
                   
@@ -535,7 +733,7 @@ export default function AIPromptGenerator() {
               {seoUseCases.map(useCase => (
                 <Link 
                   key={useCase.slug}
-                  href={`/ai-prompt-generator/seo/${useCase.slug}`}
+                  href={`/ai-prompt-generator/${useCase.slug}`}
                   className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200"
                 >
                   <h3 className="text-xl font-semibold mb-2">{useCase.h1}</h3>

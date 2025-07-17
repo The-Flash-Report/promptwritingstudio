@@ -29,6 +29,10 @@ export default function Sitemap() {
     { title: 'AI Prompt Examples', url: '/ai-prompt-examples' },
     { title: 'ChatGPT Prompt Templates', url: '/chatgpt-prompt-templates' },
     { title: 'Best AI Tools', url: '/best-ai-tools' },
+    { title: 'Prompt Engineering Meaning', url: '/prompt-engineering-meaning' },
+    { title: 'Prompt Engineering Basics', url: '/prompt-engineering-basics' },
+    { title: 'Prompt Engineering Jobs', url: '/prompt-engineering-jobs' },
+    { title: 'Prompt Engineering Salary', url: '/prompt-engineering-salary' },
     { title: 'About', url: '/about' },
     { title: 'Contact', url: '/contact' },
     { title: 'Privacy Policy', url: '/privacy-policy' },
@@ -129,7 +133,7 @@ export default function Sitemap() {
                 {useCases.map(useCase => (
                   <li key={useCase.slug}>
                     <Link 
-                      href={`/ai-prompt-generator/seo/${useCase.slug}`} 
+                      href={`/ai-prompt-generator/${useCase.slug}`} 
                       className="text-blue-600 hover:underline"
                     >
                       {useCase.h1}
@@ -140,28 +144,7 @@ export default function Sitemap() {
             </div>
           ))}
           
-          {/* SEO Stats Summary */}
-          <div className="mt-12 mb-8 p-6 bg-blue-50 rounded-lg">
-            <h2 className="text-xl font-bold mb-4 text-blue-800">SEO Performance Summary</h2>
-            <div className="grid md:grid-cols-4 gap-4 text-center">
-              <div>
-                <div className="text-2xl font-bold text-blue-600">{mainPages.length}</div>
-                <div className="text-sm text-blue-600">Main Pages</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-yellow-600">{calculatorPages.length}</div>
-                <div className="text-sm text-yellow-600">AI Calculators</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-green-600">{Object.values(groupedUseCases).flat().length}</div>
-                <div className="text-sm text-green-600">SEO Pages</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-600">{mainPages.length + calculatorPages.length + Object.values(groupedUseCases).flat().length + toolPages.length}</div>
-                <div className="text-sm text-purple-600">Total Pages</div>
-              </div>
-            </div>
-          </div>
+
           
           {/* Admin Section */}
           <div className="mt-16 p-6 bg-gray-50 rounded-lg">
@@ -172,12 +155,6 @@ export default function Sitemap() {
                   XML Sitemap
                 </Link>
                 <span className="text-sm text-gray-500 ml-2">(For search engines)</span>
-              </li>
-              <li>
-                <a href="https://courses.becomeawritertoday.com/admin" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                  Course Admin Dashboard
-                </a>
-                <span className="text-sm text-gray-500 ml-2">(Login required)</span>
               </li>
             </ul>
           </div>

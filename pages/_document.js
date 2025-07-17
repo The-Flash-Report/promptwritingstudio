@@ -4,6 +4,11 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* PWS Lettermark Favicon - Yellow Brand */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/pws-yellow-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/pws-yellow-16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/pws-yellow-180.png" />
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <script defer data-domain="promptwritingstudio.com" src="https://plausible.io/js/script.outbound-links.js"></script>

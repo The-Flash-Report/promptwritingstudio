@@ -1,0 +1,13 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+      <!-- Yellow background -->
+      <rect width="128" height="128" fill="#FFDE59" rx="19.2"/>
+      
+      <!-- Black PWS text -->
+      <text x="64" y="64" 
+            font-family="system-ui, -apple-system, sans-serif" 
+            font-size="44.8" 
+            font-weight="700" 
+            text-anchor="middle" 
+            dominant-baseline="central" 
+            fill="#1A1A1A">PWS</text>
+    </svg>

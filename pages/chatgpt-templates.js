@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/layout/Layout'
+import Head from 'next/head'
 import Link from 'next/link'
 import { allAuthenticCreatorPrompts } from '../data/all-authentic-creator-prompts'
 import { categories } from '../data/sample-prompts'
@@ -467,6 +468,34 @@ export default function ChatGPTTemplates() {
     }
   }
 
+  // Article schema for content page
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": pageTitle,
+    "description": pageDescription,
+    "author": {
+      "@type": "Person",
+      "name": "Bryan Collins"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Prompt Writing Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://promptwritingstudio.com/images/logo.png"
+      }
+    },
+    "datePublished": "2024-01-10T00:00:00Z",
+    "dateModified": "2024-01-22T00:00:00Z",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://promptwritingstudio.com/chatgpt-templates"
+    },
+    "articleSection": "AI Templates",
+    "keywords": ["ChatGPT templates", "AI prompts", "ChatGPT examples", "prompt templates", "AI tools"]
+  }
+
   return (
     <>
       <EnhancedMeta 
@@ -475,6 +504,14 @@ export default function ChatGPTTemplates() {
         canonicalUrl="https://promptwritingstudio.com/chatgpt-templates"
         structuredData={structuredData}
       />
+      
+      {/* Additional structured data */}
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+      </Head>
       
       <Layout title={pageTitle} description={pageDescription}>
         <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-100 py-12">
@@ -819,53 +856,145 @@ export default function ChatGPTTemplates() {
               </div>
             )}
 
-            {/* Calculator Cross-Links - Quick SEO Boost */}
-            <section className="mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-center mb-6">Measure Your ChatGPT Impact</h3>
-              <p className="text-center text-gray-600 mb-8">
-                Use these templates with our calculators to quantify time and cost savings from ChatGPT automation.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Link href="/calculators/content-creation-speed" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
-                  <div className="text-2xl mb-3">⚡</div>
-                  <h4 className="font-semibold text-green-600 group-hover:text-green-700 mb-2">Content Speed Calculator</h4>
-                  <p className="text-sm text-gray-600">Calculate how much faster you create content with ChatGPT templates</p>
+            {/* Business Impact Calculator Section */}
+            <div className="max-w-4xl mx-auto mt-16 bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  💡 Turn Templates Into Business Value
+                </h2>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  Ready to implement these ChatGPT templates? Calculate the exact time and cost savings 
+                  these proven templates can bring to your business operations.
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <Link 
+                  href="/calculators/content-creation-speed"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">⚡</div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">
+                      Content Creation Speed
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Calculate time savings using our content templates for blogs, emails, and social media
+                    </p>
+                    <div className="text-green-600 font-medium text-sm">Calculate Savings →</div>
+                  </div>
                 </Link>
-                <Link href="/calculators/ai-cost-comparison" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
-                  <div className="text-2xl mb-3">💰</div>
-                  <h4 className="font-semibold text-blue-600 group-hover:text-blue-700 mb-2">ROI Calculator</h4>
-                  <p className="text-sm text-gray-600">Compare ChatGPT costs vs hiring writers and content creators</p>
+                
+                <Link 
+                  href="/calculators/ai-cost-comparison"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">⚖️</div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">
+                      AI vs Human Cost
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Compare template automation costs vs hiring copywriters and content creators
+                    </p>
+                    <div className="text-green-600 font-medium text-sm">Compare Costs →</div>
+                  </div>
                 </Link>
-                <Link href="/calculators/business-ai-readiness" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
-                  <div className="text-2xl mb-3">📋</div>
-                  <h4 className="font-semibold text-purple-600 group-hover:text-purple-700 mb-2">Business Assessment</h4>
-                  <p className="text-sm text-gray-600">Evaluate your team's readiness for ChatGPT implementation</p>
+                
+                <Link 
+                  href="/roi-calculator"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-200 group"
+                >
+                  <div className="text-center">
+                    <div className="text-4xl mb-3">📈</div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-green-600">
+                      Overall AI ROI
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      Calculate total return on investment from implementing AI templates across your business
+                    </p>
+                    <div className="text-green-600 font-medium text-sm">Calculate ROI →</div>
+                  </div>
                 </Link>
               </div>
+              
               <div className="text-center mt-6">
-                <Link href="/calculators" className="inline-flex items-center text-green-600 hover:text-green-700 font-medium">
-                  View All Business Calculators
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                <div className="bg-white rounded-lg p-4 inline-block border border-gray-200">
+                  <p className="text-sm text-gray-600 mb-2">
+                    💡 <strong>Pro Tip:</strong> These templates work best when you understand your baseline costs
+                  </p>
+                  <Link 
+                    href="/calculators"
+                    className="text-green-600 hover:text-green-800 font-medium text-sm"
+                  >
+                    Explore All Business Calculators →
+                  </Link>
+                </div>
               </div>
-            </section>
+            </div>
 
-            {/* CTA Section */}
-            <div className="mt-16 bg-gradient-to-r from-green-600 to-blue-700 rounded-2xl p-8 text-center text-white">
-              <h2 className="text-3xl font-bold mb-4">
-                Want More ChatGPT Templates?
-              </h2>
-              <p className="text-xl mb-6 opacity-90">
-                Get our complete collection of 100+ ChatGPT templates plus our advanced prompt engineering course.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/ai-prompt-generator" className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                  Try Our Prompt Generator
+            {/* Related AI Resources Section */}
+            <div className="max-w-4xl mx-auto mt-16 bg-white rounded-2xl border border-gray-200 p-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  🔗 Expand Your AI Toolkit
+                </h2>
+                <p className="text-gray-600">
+                  Discover more AI resources to maximize your ChatGPT template effectiveness
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link 
+                  href="/ai-prompt-examples"
+                  className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600">
+                    💎 500+ AI Prompt Examples
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Explore our comprehensive collection of AI prompt examples for every business need
+                  </p>
+                  <div className="text-blue-600 font-medium text-sm">Browse Examples →</div>
                 </Link>
-                <Link href="/pricing" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors">
-                  Get Full Course Access
+                
+                <Link 
+                  href="/ai-prompt-generator"
+                  className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-purple-600">
+                    🛠️ Custom Prompt Generator
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Create custom prompts tailored to your specific business needs and voice
+                  </p>
+                  <div className="text-purple-600 font-medium text-sm">Generate Custom →</div>
+                </Link>
+                
+                <Link 
+                  href="/prompt-vault"
+                  className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-yellow-600">
+                    🔐 The Prompt Vault ($7)
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Professional business prompt templates for immediate download and implementation
+                  </p>
+                  <div className="text-yellow-600 font-medium text-sm">Get Premium Templates →</div>
+                </Link>
+                
+                <Link 
+                  href="/ai-glossary"
+                  className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-6 hover:shadow-md transition-all group"
+                >
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-emerald-600">
+                    📖 AI Terms Glossary
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Master AI terminology to better understand and optimize your template usage
+                  </p>
+                  <div className="text-emerald-600 font-medium text-sm">Learn Terms →</div>
                 </Link>
               </div>
             </div>

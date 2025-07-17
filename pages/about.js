@@ -28,15 +28,39 @@ export default function About() {
             
             <div className="prose prose-lg mx-auto">
               <p>
-                PromptWritingStudio was born from a simple observation: while AI tools like ChatGPT, Claude, and Gemini are incredibly powerful, most people struggle to get the results they want because they don't know how to communicate effectively with AI.
+                Picture this: Dublin journalism school graduate, failed freelance career, working as a care worker while writing tech articles for pennies. Not exactly the path to creative success.
               </p>
               
               <p>
-                Our founder, after spending countless hours refining prompts for various projects, realized that prompt engineering is both an art and a science that can be taught. What started as a collection of personal templates and strategies quickly grew into a comprehensive platform designed to help others master this essential skill.
+                But failure taught me resilience. I climbed from care worker to corporate copywriter, eventually helping a FTSE 100 company sell millions in boring software. The work was lucrative but soul-crushing—there's only so much accounting software copy you can write before it kills your creativity.
               </p>
               
               <p>
-                Today, PromptWritingStudio serves thousands of users worldwide, from content creators and marketers to educators and developers. Our mission remains the same: to democratize prompt engineering knowledge and help everyone get better results from AI tools.
+                I escaped corporate life to build my own content business. Six self-published books, multiple websites, thousands of blog posts. I lived by "little writing"—300 words daily, tracked obsessively on spreadsheets.
+              </p>
+              
+              <p>
+                Then ChatGPT changed everything.
+              </p>
+              
+              <p>
+                Suddenly, anyone could generate 300 words in seconds. But most of it was garbage—predictable, soulless, forgettable. The creators freaking out about AI "replacing" them were missing the point.
+              </p>
+              
+              <p>
+                AI doesn't replace creativity. It amplifies it. If you feed it your authentic experiences and ideas.
+              </p>
+              
+              <p>
+                While others churn out generic AI content, I use these tools to scale my authentic voice. That client success story becomes a case study. That business insight becomes a month of content. That random conversation becomes tomorrow's newsletter.
+              </p>
+              
+              <p>
+                With OpenAI's latest models hitting 500M weekly users and tools like Claude Sonnet 3.7 getting smarter by the month, the creators who master prompt writing now will dominate the next decade.
+              </p>
+              
+              <p>
+                PromptWritingStudio teaches you to be a Chief Idea Officer, not a word wrangler. You bring the ideas. AI handles the execution.
               </p>
             </div>
           </div>

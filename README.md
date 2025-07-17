@@ -68,7 +68,7 @@ The site implements a comprehensive programmatic SEO strategy targeting AI promp
   - Specialized Content (AI Writing Prompts, AI Chat Prompts, etc.)
 
 ### Implementation Details
-- **Dynamic Page Template**: `/pages/ai-prompt-generator/seo/[slug].js` renders all SEO pages
+- **Dynamic Page Template**: `/pages/ai-prompt-generator/[use-case].js` renders all SEO pages and regular use cases
 - **Data Source**: `/data/seo-use-cases.js` contains all page metadata and content
 - **Concept Descriptions**: Each page includes a highlighted concept description that explains the topic
 - **HTML Sitemap**: `/pages/sitemap.js` organizes all pages into logical categories

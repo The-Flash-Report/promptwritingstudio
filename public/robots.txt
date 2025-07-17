@@ -13,7 +13,7 @@ Allow: /ai-prompt-examples
 Allow: /chatgpt-prompt-templates
 
 # SEO Landing Pages
-Allow: /ai-prompt-generator/seo/
+Allow: /ai-prompt-generator/
 Allow: /chatgpt-prompts-for/
 
 # Block admin and development files
@@ -67,4 +67,17 @@ User-agent: AhrefsBot
 Disallow: /
 
 User-agent: SemrushBot
+Disallow: /
+
+User-agent: SemrushBot-SA
+Disallow: /
+
+# Block additional SEO tool crawlers
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: SeznamBot
 Disallow: /
