@@ -230,12 +230,14 @@ export default function ContentCreationSpeedPage() {
                   Get the exact AI prompts, workflows, and strategies that top content creators use to 4-8x their output
                 </p>
                 <div className="space-y-4">
-                  <Link 
-                    href="/course" 
+                  <a
+                    href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
                   >
-                    Get the Complete AI Content Creation Course
-                  </Link>
+                    Get the Complete Prompt Writing Studio Course
+                  </a>
                   <div className="text-sm opacity-75">
                     ✓ 50+ Proven AI Prompts ✓ Step-by-Step Workflows ✓ Industry-Specific Templates
                   </div>
