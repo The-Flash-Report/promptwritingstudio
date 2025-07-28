@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { allAuthenticCreatorPrompts } from '../data/all-authentic-creator-prompts'
 import { categories } from '../data/sample-prompts'
 import EnhancedMeta from '../components/ui/EnhancedMeta'
+import YouTubeVideoSection from '../components/ui/YouTubeVideoSection'
 
 export default function AIPromptExamples() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -492,6 +493,18 @@ export default function AIPromptExamples() {
                 </Link>
               </div>
             </div>
+          </div>
+
+          {/* Video Tutorials Section */}
+          <div className="mt-16">
+            <YouTubeVideoSection
+              title="Learn AI Prompt Writing with Video Tutorials"
+              description="Watch our comprehensive video series on writing effective AI prompts for ChatGPT, Claude, and Gemini. Perfect complement to our prompt examples."
+              playlistId="PLxQrU2dxeHH5O0Wb2AFOD3oATFEtQGoL8"
+              playlistTitle="Writing With AI"
+              videoCount={12}
+              category="AI Writing Education"
+            />
           </div>
 
           {/* Interactive Tutorial Modal */}

@@ -1,0 +1,123 @@
+{
+  "modifierName": "Marketing Professionals",
+  "searchVolume": 2200,
+  "keywordDifficulty": 14,
+  "seoData": {
+    "title": "AI Prompts for Marketing Professionals - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ specialized AI prompts for marketing professionals. Create campaigns, analyze data, write copy, and boost ROI with our expert-crafted ChatGPT templates for marketers."
+  },
+  "promptTemplates": [
+    {
+      "title": "Campaign Strategy Generator",
+      "description": "Create comprehensive marketing campaign strategies with clear objectives and tactics.",
+      "prompt": "Develop a complete marketing campaign strategy for [product/service] targeting [target audience]. The campaign should achieve [primary goal: brand awareness/lead generation/sales]. Include: 1) Campaign objectives and KPIs, 2) Target audience personas with pain points and motivations, 3) Key messaging and value propositions, 4) Channel strategy (paid, owned, earned media), 5) Content calendar with 8 weeks of content ideas, 6) Budget allocation recommendations, 7) Success metrics and tracking methods, 8) Risk assessment and contingency plans. Budget: [budget amount]. Timeline: [duration]. Tone: [professional/casual/authoritative].",
+      "wordCount": 160,
+      "category": "Strategy",
+      "example": "CAMPAIGN: SaaS Tool Launch\n\nObjectives:\n- Generate 500 qualified leads in 90 days\n- Achieve 20% brand awareness lift\n- Drive 50 demo bookings\n\nTarget Audience:\n- SMB Marketing Managers (25-45)\n- Pain Point: Manual reporting taking 10+ hours/week\n- Motivation: Need efficiency to focus on strategy...",
+      "tips": [
+        "Include your current marketing metrics for benchmarking",
+        "Mention any budget constraints or channel preferences",
+        "Specify your industry for more targeted recommendations"
+      ]
+    },
+    {
+      "title": "Marketing Copy Optimizer", 
+      "description": "Transform existing copy into high-converting marketing materials.",
+      "prompt": "Optimize this marketing copy for better conversion: [paste your current copy]. The copy is for [landing page/email/ad/social post] targeting [audience]. Goals: [increase CTR/improve conversion/boost engagement]. Please provide: 1) Analysis of current copy's strengths and weaknesses, 2) 3 optimized versions with different approaches (emotional/logical/social proof), 3) A/B testing recommendations, 4) Psychological triggers used in each version, 5) Suggested headlines and CTAs, 6) Mobile optimization tips. Focus on [specific outcome you want to achieve].",
+      "wordCount": 140,
+      "category": "Copywriting",
+      "example": "ORIGINAL: 'Get our software today!'\n\nOPTIMIZED VERSION 1 (Emotional):\n'Stop Wasting 10 Hours Weekly on Manual Reports - Automate in 5 Minutes'\n\nOPTIMIZED VERSION 2 (Logical):\n'Join 2,000+ Marketing Teams Who Cut Reporting Time by 80%'...",
+      "tips": [
+        "Include conversion metrics from your current copy",
+        "Mention your brand voice guidelines",
+        "Specify any compliance requirements for your industry"
+      ]
+    },
+    {
+      "title": "Customer Journey Mapper",
+      "description": "Map detailed customer journeys with touchpoints and optimization opportunities.",
+      "prompt": "Create a detailed customer journey map for [target customer] purchasing [product/service]. Map their journey from [awareness/consideration/decision] stage through post-purchase. Include: 1) Customer emotions and motivations at each stage, 2) Touchpoints and channels they use, 3) Content they consume and questions they have, 4) Pain points and friction areas, 5) Opportunities for marketing intervention, 6) Recommended content types for each stage, 7) Metrics to track at each touchpoint, 8) Personalization opportunities. Industry: [your industry]. Sales cycle: [length]. Average deal size: [amount].",
+      "wordCount": 150,
+      "category": "Strategy",
+      "example": "AWARENESS STAGE:\n\nEmotion: Frustrated with current solution\nTouchpoints: Google search, industry blogs, LinkedIn\nContent: Educational blog posts, comparison guides\nQuestions: 'Is there a better way to do this?'\nPain Points: Information overload, conflicting advice...",
+      "tips": [
+        "Include data from your current customer research",
+        "Mention any unique aspects of your sales process",
+        "Specify your main competitors for context"
+      ]
+    },
+    {
+      "title": "Marketing Automation Sequence",
+      "description": "Design sophisticated email automation sequences for different customer segments.",
+      "prompt": "Create a marketing automation sequence for [customer segment] who [specific trigger action]. The sequence should nurture them toward [desired outcome]. Design: 1) 7-email sequence with specific send timing, 2) Subject lines optimized for each email, 3) Content outline for each message, 4) Personalization elements to include, 5) Branching logic based on engagement, 6) Conversion tracking setup, 7) Follow-up sequences for different actions, 8) Exit criteria and re-engagement triggers. Industry: [industry]. Product: [product/service]. Average sales cycle: [duration].",
+      "wordCount": 135,
+      "category": "Email Marketing",
+      "example": "EMAIL 1 (Day 0): Welcome & Value Delivery\nSubject: 'Your [Resource] is ready + a bonus inside'\nContent: Deliver promised resource, set expectations, introduce brand story\nPersonalization: Use their download topic\nTrigger: Lead magnet download...",
+      "tips": [
+        "Include your current email marketing metrics for benchmarking",
+        "Mention any CRM or automation platform you use",
+        "Specify your typical customer persona details"
+      ]
+    },
+    {
+      "title": "Performance Analysis Report",
+      "description": "Analyze marketing performance data and generate actionable insights.",
+      "prompt": "Analyze this marketing performance data and provide actionable insights: [paste your metrics/data]. Time period: [duration]. Campaigns included: [campaign names]. Please provide: 1) Key performance highlights and lowlights, 2) Trend analysis with explanations, 3) Channel performance comparison, 4) ROI analysis by campaign/channel, 5) Audience segment insights, 6) 5 specific optimization recommendations, 7) Budget reallocation suggestions, 8) Next quarter priorities. Goals: [your KPIs]. Budget: [amount spent].",
+      "wordCount": 125,
+      "category": "Analytics",
+      "example": "KEY INSIGHTS:\n\n✓ LinkedIn ads generated 3x higher quality leads than Facebook\n✗ Email open rates dropped 15% (industry trend)\n→ RECOMMENDATION: Shift 30% Facebook budget to LinkedIn\n→ RECOMMENDATION: Test new email subject line formulas...",
+      "tips": [
+        "Include context about any external factors affecting performance",
+        "Mention your attribution model for more accurate analysis",
+        "Specify your most important KPIs for focused insights"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Digital Marketing Managers",
+      "icon": "fas fa-chart-line", 
+      "description": "Marketing managers use these prompts to develop comprehensive campaign strategies, analyze performance data, and create data-driven optimization plans that improve ROI and team efficiency.",
+      "recommendedPrompt": "Campaign Strategy Generator"
+    },
+    {
+      "title": "Content Marketing Specialists",
+      "icon": "fas fa-pencil-alt",
+      "description": "Content marketers leverage these prompts to map customer journeys, create targeted messaging for different segments, and develop content strategies that drive qualified leads through the funnel.",
+      "recommendedPrompt": "Customer Journey Mapper"
+    },
+    {
+      "title": "Marketing Analysts",
+      "icon": "fas fa-analytics",
+      "description": "Marketing analysts use these prompts to transform raw performance data into actionable insights, identify optimization opportunities, and create executive-ready reports that drive strategic decisions.",
+      "recommendedPrompt": "Performance Analysis Report"
+    },
+    {
+      "title": "Email Marketing Managers",
+      "icon": "fas fa-envelope",
+      "description": "Email marketing professionals use these prompts to design sophisticated automation sequences, optimize copy for higher engagement, and create personalized campaigns that nurture leads effectively.",
+      "recommendedPrompt": "Marketing Automation Sequence"
+    }
+  ],
+  "benefits": [
+    "Save 10+ hours weekly on campaign planning and analysis",
+    "Improve campaign ROI by 25-40% with data-driven strategies", 
+    "Create professional marketing materials without hiring agencies",
+    "Scale personalized marketing efforts across multiple segments",
+    "Generate months of content ideas in minutes"
+  ],
+  "faq": [
+    {
+      "question": "How do these prompts help with marketing ROI?",
+      "answer": "These prompts help you create data-driven strategies, optimize underperforming campaigns, and identify high-ROI opportunities you might miss with manual analysis. Many users report 25-40% ROI improvements within 90 days."
+    },
+    {
+      "question": "Can I use these prompts for B2B and B2C marketing?",
+      "answer": "Absolutely! The prompts are designed to work for both B2B and B2C contexts. Simply specify your business model and target audience in the prompt for tailored recommendations."
+    },
+    {
+      "question": "Do these prompts work with my existing marketing tools?",
+      "answer": "Yes! These prompts help you create strategies and content that work with any marketing stack - from HubSpot and Salesforce to Mailchimp and Google Analytics. The AI adapts to your tools and workflows."
+    }
+  ]
+} 

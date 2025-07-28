@@ -1,0 +1,123 @@
+{
+  "modifierName": "HR Managers",
+  "searchVolume": 2000,
+  "keywordDifficulty": 12,
+  "seoData": {
+    "title": "AI Prompts for HR Managers - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ specialized AI prompts for HR managers. Streamline recruitment, boost employee engagement, and automate HR processes with our expert ChatGPT templates."
+  },
+  "promptTemplates": [
+    {
+      "title": "Job Description Generator",
+      "description": "Create compelling, inclusive job descriptions that attract top talent.",
+      "prompt": "Create a comprehensive job description for a [job title] position at our [company type] company. Department: [department]. Reporting to: [manager title]. Company size: [number] employees. Generate: 1) Engaging job summary that highlights growth opportunities, 2) 8-10 key responsibilities with specific outcomes, 3) Required qualifications (must-haves vs nice-to-haves), 4) Skills assessment criteria for interviews, 5) Compensation range and benefits highlights, 6) Company culture elements that appeal to top talent, 7) Inclusive language review and suggestions. Focus on attracting [specific talent type: diverse candidates/experienced professionals/early career]. Remote work: [yes/no/hybrid].",
+      "wordCount": 150,
+      "category": "Recruitment",
+      "example": "POSITION: Senior Marketing Manager\n\nAre you ready to lead marketing strategy for a fast-growing SaaS company? Join our team where your ideas become reality and your growth accelerates our mission...\n\nKEY RESPONSIBILITIES:\n• Develop comprehensive marketing strategies that drive 40% annual growth\n• Lead a team of 4 marketing specialists...",
+      "tips": [
+        "Include your current time-to-hire metrics for benchmarking",
+        "Mention any specific diversity and inclusion goals",
+        "Specify your company culture and values for better alignment"
+      ]
+    },
+    {
+      "title": "Interview Question Bank",
+      "description": "Develop behavioral and technical interview questions that reveal candidate fit.",
+      "prompt": "Create an interview question bank for [job title] candidates. Company: [industry/type]. Key competencies needed: [list 4-5 competencies]. Generate: 1) 15 behavioral questions using STAR method framework, 2) 8 situational questions specific to this role, 3) 5 culture fit questions aligned with our values: [list values], 4) Technical assessment questions (if applicable), 5) Follow-up probing questions for each category, 6) Red flag responses to watch for, 7) Scoring rubric for consistent evaluation. Include questions that assess [specific qualities: leadership/problem-solving/adaptability]. Experience level: [entry/mid/senior].",
+      "wordCount": 140,
+      "category": "Recruitment",
+      "example": "BEHAVIORAL QUESTIONS:\n\n1. 'Tell me about a time you had to learn a new skill quickly to complete a project.'\nFollow-up: 'What specific steps did you take?'\nLook for: Self-directed learning, resourcefulness\nRed flag: Blaming others, making excuses...",
+      "tips": [
+        "Include your current interview success rate for context",
+        "Mention any specific role requirements or challenges",
+        "Specify your company's core values and culture"
+      ]
+    },
+    {
+      "title": "Employee Engagement Survey",
+      "description": "Design comprehensive employee engagement surveys that drive actionable insights.",
+      "prompt": "Create an employee engagement survey for our [company size] [industry] company. Current engagement challenge: [specific issue]. Survey goals: [what you want to measure]. Design: 1) 25 questions across key engagement drivers (leadership, growth, recognition, work-life balance), 2) Mix of rating scales, multiple choice, and open-ended questions, 3) Department-specific follow-up questions, 4) Anonymous vs. identified response options, 5) Communication plan for survey launch, 6) Analysis framework for results, 7) Action planning template for managers. Target response rate: [percentage]. Survey frequency: [timing].",
+      "wordCount": 130,
+      "category": "Employee Engagement",
+      "example": "LEADERSHIP QUESTIONS:\n\n1. How often does your manager provide clear direction and expectations? (1-5 scale)\n2. My manager supports my professional development (Strongly Agree to Strongly Disagree)\n3. What's one thing your manager could do differently to better support you? (Open-ended)...",
+      "tips": [
+        "Include your current engagement scores for benchmarking",
+        "Mention any recent organizational changes affecting morale",
+        "Specify your preferred survey tools or platforms"
+      ]
+    },
+    {
+      "title": "Performance Review Framework",
+      "description": "Create structured performance review processes that develop employees and drive results.",
+      "prompt": "Design a performance review framework for [job level: entry/mid/senior] employees in [department]. Review period: [quarterly/annual]. Company focus: [growth/retention/development]. Create: 1) Goal-setting template with SMART criteria, 2) Competency evaluation matrix for this role, 3) 360-feedback collection process, 4) Self-assessment questions that promote reflection, 5) Manager evaluation guidelines with examples, 6) Development planning template, 7) Compensation discussion framework, 8) Follow-up schedule and check-ins. Address these performance challenges: [list 2-3 common issues].",
+      "wordCount": 135,
+      "category": "Performance Management",
+      "example": "GOAL SETTING TEMPLATE:\n\nSMART Goal Example:\n'Increase customer satisfaction scores from 4.2 to 4.6 by Q4 through implementing new onboarding process and conducting monthly check-ins'\n\nSpecific: Customer satisfaction improvement\nMeasurable: 4.2 to 4.6 score\nAchievable: Based on benchmark data...",
+      "tips": [
+        "Include your current performance review completion rates",
+        "Mention any performance management software you use",
+        "Specify your company's promotion and development criteria"
+      ]
+    },
+    {
+      "title": "HR Policy Creator",
+      "description": "Draft comprehensive HR policies that protect the company and support employees.",
+      "prompt": "Create an HR policy for [policy type: remote work/PTO/harassment/etc.] for our [company size] company in [location/industry]. Legal requirements: [specific compliance needs]. Company culture: [values/approach]. Draft: 1) Policy statement and purpose, 2) Scope and who it applies to, 3) Detailed procedures and guidelines, 4) Employee responsibilities and expectations, 5) Manager/HR responsibilities, 6) Reporting and escalation processes, 7) Consequences for policy violations, 8) Review and update schedule. Ensure compliance with [relevant laws/regulations]. Tone: [formal/approachable/conversational].",
+      "wordCount": 125,
+      "category": "Policy Development",
+      "example": "REMOTE WORK POLICY\n\nPURPOSE:\nThis policy establishes guidelines for remote work arrangements that maintain productivity, collaboration, and work-life balance while supporting our company's flexibility values.\n\nSCOPE:\nApplies to all full-time employees after 90-day probationary period...",
+      "tips": [
+        "Include any existing policies that need updating",
+        "Mention your legal review process for new policies",
+        "Specify any industry-specific compliance requirements"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Talent Acquisition Managers",
+      "icon": "fas fa-search",
+      "description": "TA managers use these prompts to create compelling job descriptions, develop effective interview processes, and reduce time-to-hire by 30-40% with better candidate assessment tools.",
+      "recommendedPrompt": "Job Description Generator"
+    },
+    {
+      "title": "HR Business Partners",
+      "icon": "fas fa-handshake",
+      "description": "HR business partners leverage these prompts to design engagement surveys, create performance frameworks, and develop policies that align with business objectives and employee needs.",
+      "recommendedPrompt": "Employee Engagement Survey"
+    },
+    {
+      "title": "HR Generalists",
+      "icon": "fas fa-users",
+      "description": "HR generalists use these prompts to handle multiple HR functions efficiently, from policy creation to performance management, ensuring consistency across all HR processes.",
+      "recommendedPrompt": "HR Policy Creator"
+    },
+    {
+      "title": "People Operations Teams",
+      "icon": "fas fa-chart-line",
+      "description": "People ops teams use these prompts to streamline HR processes, improve employee experience, and create data-driven approaches to talent management and retention.",
+      "recommendedPrompt": "Performance Review Framework"
+    }
+  ],
+  "benefits": [
+    "Reduce time-to-hire by 30-40% with better job descriptions and interview processes",
+    "Improve employee engagement scores by 25% with targeted surveys and action plans",
+    "Create consistent, legally compliant HR policies in minutes, not weeks",
+    "Streamline performance reviews and reduce manager prep time by 60%",
+    "Scale HR processes without proportional headcount increases"
+  ],
+  "faq": [
+    {
+      "question": "Are these prompts legally compliant for HR use?",
+      "answer": "The prompts help you create HR content, but all policies and processes should be reviewed by legal counsel before implementation. We recommend working with employment lawyers familiar with your jurisdiction."
+    },
+    {
+      "question": "Can I use these prompts for different company sizes?",
+      "answer": "Absolutely! The prompts are designed to work for startups through enterprise companies. Simply specify your company size and industry for tailored recommendations that match your complexity needs."
+    },
+    {
+      "question": "How do these prompts help with diversity and inclusion?",
+      "answer": "Many prompts include specific guidance on inclusive language, bias reduction, and diverse candidate attraction. They help create more equitable processes while maintaining legal compliance."
+    }
+  ]
+} 

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SVG to PNG Converter for Chrome Extension</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            background: #f8fafc;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #374151;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .icon-container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+        .icon-wrapper {
+            display: inline-block;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: white;
+            padding: 10px;
+        }
+        canvas {
+            display: block;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+        }
+        .download-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .download-btn:hover {
+            background: #2563eb;
+        }
+        .size-label {
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #92400e;
+        }
+        .step {
+            margin-bottom: 10px;
+            color: #78350f;
+        }
+        .status {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            color: #065f46;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Chrome Extension Icon Generator</h1>
+        <p class="subtitle">Convert your PWS SVG icons to PNG format for Chrome Web Store</p>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <div class="step">1. Click "Download PNG" for each icon size below</div>
+            <div class="step">2. Save each file with the exact name shown (icon16.png, icon32.png, etc.)</div>
+            <div class="step">3. Put all 4 PNG files in your chrome-extension/icons/ folder</div>
+            <div class="step">4. Load your extension in Chrome: chrome://extensions/ → Load unpacked</div>
+        </div>
+
+        <div class="icon-grid" id="iconGrid">
+            <!-- Icons will be generated here -->
+        </div>
+
+        <div class="status" id="status" style="display: none;">
+            ✅ All PNG icons generated! Ready for Chrome Web Store submission.
+        </div>
+    </div>
+
+    <script>
+        // PWS icon SVG template
+        function createPWSIcon(size) {
+            return `
+                <svg width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="${size}" height="${size}" fill="#FFDE59" rx="${size * 0.15}"/>
+                    <text x="${size/2}" y="${size/2}" 
+                          font-family="system-ui, -apple-system, sans-serif" 
+                          font-size="${size * 0.35}" 
+                          font-weight="700" 
+                          text-anchor="middle" 
+                          dominant-baseline="central" 
+                          fill="#1A1A1A">PWS</text>
+                </svg>
+            `;
+        }
+
+        // Icon sizes for Chrome extension
+        const iconSizes = [
+            { size: 16, name: 'icon16.png' },
+            { size: 32, name: 'icon32.png' },
+            { size: 48, name: 'icon48.png' },
+            { size: 128, name: 'icon128.png' }
+        ];
+
+        // Convert SVG to PNG using canvas
+        function svgToPng(svgString, size, callback) {
+            const img = new Image();
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = size;
+            canvas.height = size;
+            
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, size, size);
+                callback(canvas);
+            };
+            
+            const svgBlob = new Blob([svgString], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(svgBlob);
+            img.src = url;
+        }
+
+        // Download canvas as PNG
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Generate icon UI
+        function generateIconUI(iconData) {
+            const container = document.createElement('div');
+            container.className = 'icon-container';
+            
+            const label = document.createElement('div');
+            label.className = 'size-label';
+            label.textContent = `${iconData.size}×${iconData.size}px`;
+            
+            const wrapper = document.createElement('div');
+            wrapper.className = 'icon-wrapper';
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = iconData.size;
+            canvas.height = iconData.size;
+            
+            const button = document.createElement('button');
+            button.className = 'download-btn';
+            button.textContent = `Download ${iconData.name}`;
+            
+            // Generate the icon
+            const svgString = createPWSIcon(iconData.size);
+            svgToPng(svgString, iconData.size, (resultCanvas) => {
+                // Replace the placeholder canvas with the generated one
+                wrapper.removeChild(canvas);
+                wrapper.appendChild(resultCanvas);
+                
+                button.onclick = () => {
+                    downloadCanvas(resultCanvas, iconData.name);
+                    button.textContent = '✅ Downloaded!';
+                    button.style.background = '#10b981';
+                    
+                    // Check if all icons are downloaded
+                    setTimeout(() => {
+                        const allButtons = document.querySelectorAll('.download-btn');
+                        const allDownloaded = Array.from(allButtons).every(btn => 
+                            btn.textContent.includes('Downloaded')
+                        );
+                        if (allDownloaded) {
+                            document.getElementById('status').style.display = 'block';
+                        }
+                    }, 100);
+                };
+            });
+            
+            wrapper.appendChild(canvas);
+            container.appendChild(label);
+            container.appendChild(wrapper);
+            container.appendChild(button);
+            
+            return container;
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('iconGrid');
+            
+            iconSizes.forEach(iconData => {
+                const iconUI = generateIconUI(iconData);
+                grid.appendChild(iconUI);
+            });
+        });
+    </script>
+</body>
+</html> 

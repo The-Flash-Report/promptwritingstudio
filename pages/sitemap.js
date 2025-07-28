@@ -27,6 +27,7 @@ export default function Sitemap() {
     { title: 'Home', url: '/' },
     { title: 'AI Prompt Generator', url: '/ai-prompt-generator' },
     { title: 'AI Prompt Examples', url: '/ai-prompt-examples' },
+    { title: 'Video Tutorials', url: '/video-tutorials' },
     { title: 'ChatGPT Prompt Templates', url: '/chatgpt-prompt-templates' },
     { title: 'Best AI Tools', url: '/best-ai-tools' },
     { title: 'About', url: '/about' },
@@ -48,11 +49,22 @@ export default function Sitemap() {
 
   // Tool pages
   const toolPages = [
+    { title: 'Mad Libs AI Prompt Creator', url: '/tools/mad-libs-prompt-creator', description: 'Create custom AI prompts with our Mad Libs-style fill-in-the-blank tool' },
+    { title: 'AI Prompt Diagnostic Quiz', url: '/tools/prompt-diagnostic-quiz', description: 'Discover why your AI prompts aren\'t working and get personalized recommendations' },
     { title: 'AI Prompt Writing Quiz', url: '/ai-prompt-quiz', description: 'Test your AI prompt writing knowledge and get personalized recommendations' },
     { title: 'AI Art Prompts Generator', url: '/ai-prompt-generator/ai-art-prompts' },
     { title: 'ChatGPT Prompts for Email Marketing', url: '/chatgpt-prompts-for/email-marketing' },
     { title: 'ChatGPT Prompts for Business', url: '/chatgpt-prompts-for/business' },
     { title: 'ChatGPT Prompts for Resume', url: '/chatgpt-prompts-for/resume' }
+  ];
+
+  // Professional prompt pages
+  const professionalPromptPages = [
+    { title: 'AI Prompts for Marketing Professionals', url: '/prompts/marketing-professionals', description: 'Specialized prompts for marketing campaigns, analytics, and ROI optimization' },
+    { title: 'AI Prompts for Sales Teams', url: '/prompts/sales-teams', description: 'Boost prospecting, improve close rates, and automate sales follow-ups' },
+    { title: 'AI Prompts for HR Managers', url: '/prompts/hr-managers', description: 'Streamline recruitment, boost engagement, and automate HR processes' },
+    { title: 'AI Prompts for Content Creators', url: '/prompts/content-creators', description: 'Scale content production, grow audience, and boost engagement' },
+    { title: 'AI Prompts for Small Business Owners', url: '/prompts/small-business-owners', description: 'Automate marketing, streamline operations, and boost growth' }
   ];
   
   return (
@@ -108,6 +120,26 @@ export default function Sitemap() {
               {toolPages.map(page => (
                 <div key={page.url} className={page.description ? "bg-blue-50 p-4 rounded-lg border border-blue-200" : ""}>
                   <Link href={page.url} className="text-blue-600 hover:underline font-semibold block mb-1">
+                    {page.title}
+                  </Link>
+                  {page.description && (
+                    <p className="text-sm text-gray-600">{page.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Professional Prompt Pages Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-purple-400">
+              🎯 Professional Prompt Collections
+              <span className="text-sm font-normal text-gray-600 ml-2">(2,000+ searches each)</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {professionalPromptPages.map(page => (
+                <div key={page.url} className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                  <Link href={page.url} className="text-purple-600 hover:underline font-semibold block mb-1">
                     {page.title}
                   </Link>
                   {page.description && (

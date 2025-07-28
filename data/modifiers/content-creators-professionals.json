@@ -1,0 +1,123 @@
+{
+  "modifierName": "Content Creators",
+  "searchVolume": 2300,
+  "keywordDifficulty": 15,
+  "seoData": {
+    "title": "AI Prompts for Content Creators - 15+ Expert Templates | PromptWritingStudio",
+    "description": "Discover 15+ specialized AI prompts for content creators. Scale content production, grow your audience, and boost engagement with our expert ChatGPT templates for creators."
+  },
+  "promptTemplates": [
+    {
+      "title": "Viral Content Strategy Generator",
+      "description": "Create content strategies designed to maximize reach and engagement across platforms.",
+      "prompt": "Develop a viral content strategy for [platform: TikTok/Instagram/YouTube/LinkedIn] targeting [audience demographic]. Niche: [your content niche]. Current followers: [number]. Goal: [specific viral outcome]. Create: 1) 10 content pillars aligned with trending topics, 2) Hook formulas for maximum engagement, 3) Posting schedule optimized for platform algorithm, 4) Cross-platform repurposing strategy, 5) Engagement tactics to boost early signals, 6) Trend monitoring system, 7) Success metrics to track, 8) Crisis management plan for negative feedback. Include current trends in [your industry/niche].",
+      "wordCount": 145,
+      "category": "Strategy",
+      "example": "CONTENT PILLAR 1: Behind-the-Scenes\nHook: 'POV: You're about to see how [process] really works'\nBest times: 7-9 AM, 6-8 PM EST\nEngagement tactic: Ask viewers to guess the outcome in comments\nRepurpose: Instagram Story → TikTok → YouTube Shorts...",
+      "tips": [
+        "Include your current engagement rates for benchmarking",
+        "Mention any brand partnerships or collaboration goals",
+        "Specify your content creation tools and workflow"
+      ]
+    },
+    {
+      "title": "Content Calendar Automation",
+      "description": "Build comprehensive content calendars that maintain consistency and drive growth.",
+      "prompt": "Create a 30-day content calendar for [platform(s)] in the [niche] space. Posting frequency: [daily/3x week/etc.]. Content mix: [percentages of different content types]. Business goal: [growth/sales/brand awareness]. Generate: 1) Daily post concepts with specific angles, 2) Captions/scripts for each post, 3) Hashtag strategies for discovery, 4) Visual direction and style guide, 5) Cross-promotion opportunities, 6) User-generated content campaigns, 7) Call-to-action variations, 8) Performance tracking setup. Seasonal considerations: [current events/holidays]. Brand voice: [description].",
+      "wordCount": 135,
+      "category": "Content Planning",
+      "example": "DAY 1: Educational Post\nConcept: '5 Mistakes [Target Audience] Make With [Topic]'\nCaption: Hook + mistake breakdown + personal story + CTA\nHashtags: #[Niche]Tips #[Platform]Creator (mix of 5 broad, 15 specific)\nVisual: Split-screen before/after format...",
+      "tips": [
+        "Include your current posting schedule and what's working",
+        "Mention any content themes or series you want to continue",
+        "Specify your content creation bandwidth and resources"
+      ]
+    },
+    {
+      "title": "Audience Growth Accelerator",
+      "description": "Develop strategies to rapidly grow and engage your target audience.",
+      "prompt": "Design an audience growth strategy for [current follower count] to [target follower count] in [timeframe]. Platform focus: [main platform]. Target audience: [detailed description]. Current growth rate: [percentage/month]. Create: 1) Follower magnet content series (5 episodes), 2) Collaboration opportunities with similar creators, 3) Community engagement playbook, 4) Lead magnets to capture contacts, 5) Conversion funnel from follower to customer, 6) Retention strategies for existing audience, 7) Analytics tracking system, 8) Monetization roadmap. Budget: [available spend]. Unique value proposition: [what makes you different].",
+      "wordCount": 140,
+      "category": "Growth",
+      "example": "WEEK 1-2: Follower Magnet Series\n'The Ultimate [Niche] Starter Pack'\nEpisode 1: Common myths debunked\nEpisode 2: Essential tools breakdown\nCTA: 'Follow for the rest of the series'\nMetrics: Save rate, profile visits, follow rate...",
+      "tips": [
+        "Include your current growth metrics and what platforms work best",
+        "Mention any audience research or feedback you've gathered",
+        "Specify your available time and budget for growth activities"
+      ]
+    },
+    {
+      "title": "Monetization Strategy Builder",
+      "description": "Create diversified revenue streams that align with your content and audience.",
+      "prompt": "Build a monetization strategy for a [follower count] creator in [niche] with [engagement rate]% engagement. Current income: [amount/month]. Goal: [target income]. Audience demographics: [age, interests, spending power]. Design: 1) 5 revenue stream options ranked by effort vs. return, 2) Product/service development roadmap, 3) Pricing strategies for different offerings, 4) Launch sequences for each revenue stream, 5) Partnership and sponsorship criteria, 6) Email list building strategy, 7) Customer retention programs, 8) Financial projections for 12 months. Platform focus: [main platforms]. Time available: [hours/week].",
+      "wordCount": 135,
+      "category": "Monetization",
+      "example": "REVENUE STREAM 1: Digital Course (High ROI)\nProduct: '[Niche] Masterclass'\nPrice point: $197\nLaunch timeline: 3 months\nMarketing: 4-week pre-launch sequence\nProjected monthly revenue: $3,000-8,000...",
+      "tips": [
+        "Include your current monetization efforts and results",
+        "Mention your audience's typical spending behavior",
+        "Specify any existing products or services you offer"
+      ]
+    },
+    {
+      "title": "Content Repurposing Engine",
+      "description": "Transform single pieces of content into multiple formats across all platforms.",
+      "prompt": "Create a content repurposing system for [primary content type: long-form video/blog post/podcast]. Original content: [brief description]. Target platforms: [list platforms]. Time constraints: [available time per week]. Generate: 1) Content breakdown into 8+ micro-pieces, 2) Platform-specific adaptations (format, length, style), 3) Optimal posting sequence and timing, 4) Cross-promotion strategy between platforms, 5) SEO optimization for each piece, 6) Engagement hooks tailored to each platform, 7) Performance tracking across formats, 8) Automation tools and workflows. Maintain brand consistency: [brand voice/style guidelines].",
+      "wordCount": 130,
+      "category": "Efficiency",
+      "example": "ORIGINAL: 20-minute YouTube video on 'Email Marketing Tips'\n\nREPURPOSE MAP:\n1. TikTok: 3 x 60-second tips\n2. Instagram: Carousel post with key points\n3. LinkedIn: Professional article excerpt\n4. Twitter: Thread with stats\n5. Blog: Extended written version...",
+      "tips": [
+        "Include your current content production workflow",
+        "Mention any editing tools or team members you work with",
+        "Specify which content formats perform best for your audience"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "YouTube Creators",
+      "icon": "fab fa-youtube",
+      "description": "YouTube creators use these prompts to develop video strategies, optimize for the algorithm, and create systematic approaches to content that drives views, subscribers, and revenue.",
+      "recommendedPrompt": "Viral Content Strategy Generator"
+    },
+    {
+      "title": "Instagram Influencers",
+      "icon": "fab fa-instagram",
+      "description": "Instagram influencers leverage these prompts to plan engaging content calendars, grow their following strategically, and develop multiple income streams from their audience.",
+      "recommendedPrompt": "Audience Growth Accelerator"
+    },
+    {
+      "title": "TikTok Creators",
+      "icon": "fab fa-tiktok",
+      "description": "TikTok creators use these prompts to stay ahead of trends, create viral content consistently, and repurpose their short-form content across multiple platforms for maximum reach.",
+      "recommendedPrompt": "Content Repurposing Engine"
+    },
+    {
+      "title": "Course Creators & Coaches",
+      "icon": "fas fa-graduation-cap",
+      "description": "Course creators use these prompts to build their personal brand, create educational content that attracts students, and develop systematic approaches to monetizing their expertise.",
+      "recommendedPrompt": "Monetization Strategy Builder"
+    }
+  ],
+  "benefits": [
+    "Scale content production 5x without proportional time increase",
+    "Grow followers 3-5x faster with strategic, algorithm-friendly content",
+    "Generate multiple revenue streams from existing audience",
+    "Save 10+ hours weekly on content planning and creation",
+    "Increase engagement rates by 40-60% with optimized strategies"
+  ],
+  "faq": [
+    {
+      "question": "How do these prompts help with algorithm changes?",
+      "answer": "The prompts focus on fundamental engagement principles that work across algorithm updates. They help you create content that prioritizes audience value over gaming the system, leading to more sustainable growth."
+    },
+    {
+      "question": "Can I use these prompts for multiple platforms simultaneously?",
+      "answer": "Absolutely! The content repurposing strategies are specifically designed to help you maximize your content across platforms while adapting to each platform's unique audience and format requirements."
+    },
+    {
+      "question": "Do these work for both personal brands and business accounts?",
+      "answer": "Yes! The prompts work for personal creators, business accounts, and hybrid approaches. Simply specify your brand type and goals for tailored strategies that match your content objectives."
+    }
+  ]
+} 

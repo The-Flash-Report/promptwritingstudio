@@ -8,6 +8,7 @@ import {
   generatePrompt 
 } from '../../data/prompt-generator-components'
 import CustomTemplateBuilder from '../../components/ui/CustomTemplateBuilder'
+import YouTubeVideoSection from '../../components/ui/YouTubeVideoSection'
 
 export default function AIPromptGenerator() {
   const [selectedPlatform, setSelectedPlatform] = useState('openai');
@@ -660,6 +661,20 @@ export default function AIPromptGenerator() {
         </div>
       </section>
       
+      {/* Video Tutorials Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <YouTubeVideoSection
+            title="Master AI Prompt Generation with Video Tutorials"
+            description="Learn advanced prompt engineering techniques through our comprehensive video series. Perfect for users of our AI prompt generator."
+            playlistId="PLxQrU2dxeHH5O0Wb2AFOD3oATFEtQGoL8"
+            playlistTitle="Writing With AI"
+            videoCount={12}
+            category="AI Writing Education"
+          />
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">

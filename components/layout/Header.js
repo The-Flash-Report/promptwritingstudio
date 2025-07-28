@@ -33,6 +33,12 @@ export default function Header() {
                 <Link href="/ai-prompt-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   🤖 AI Prompt Generator
                 </Link>
+                <Link href="/tools/mad-libs-prompt-creator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  🎯 Mad Libs Prompt Creator
+                </Link>
+                <Link href="/tools/prompt-diagnostic-quiz" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  🔍 Prompt Diagnostic Quiz
+                </Link>
                 <Link href="/ai-prompt-quiz" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   🧠 Prompt Writing Quiz
                 </Link>
@@ -53,6 +59,9 @@ export default function Header() {
             </button>
             <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-50">
               <div className="py-2">
+                <Link href="/video-tutorials" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-semibold">
+                  🎥 Video Tutorials
+                </Link>
                 <Link href="/ai-history" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 font-semibold">
                   📜 AI History
                 </Link>
@@ -66,6 +75,23 @@ export default function Header() {
                 <Link href="/chatgpt-prompt-templates" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   📝 Templates
                 </Link>
+                <div className="border-t border-gray-100 my-1"></div>
+                <Link href="/prompts/marketing-professionals" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  📊 Marketing Professionals
+                </Link>
+                <Link href="/prompts/sales-teams" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  📞 Sales Teams
+                </Link>
+                <Link href="/prompts/hr-managers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  👥 HR Managers
+                </Link>
+                <Link href="/prompts/content-creators" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  📱 Content Creators
+                </Link>
+                <Link href="/prompts/small-business-owners" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  🏪 Small Business
+                </Link>
+                <div className="border-t border-gray-100 my-1"></div>
                 <Link href="/best-ai-tools" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   🛠️ AI Tools Guide
                 </Link>
