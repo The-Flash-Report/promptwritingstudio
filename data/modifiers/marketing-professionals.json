@@ -158,5 +158,12 @@
       "question": "Do these prompts work with my existing marketing tools?",
       "answer": "Yes! These prompts help you create strategies and content that work with any marketing stack - from HubSpot and Salesforce to Mailchimp and Google Analytics. The AI adapts to your tools and workflows."
     }
+  ],
+  "relatedModifiers": [
+    "business",
+    "sales-teams",
+    "hr-managers",
+    "content-creators",
+    "small-business-owners"
   ]
 } 

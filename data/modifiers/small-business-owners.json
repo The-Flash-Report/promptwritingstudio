@@ -158,5 +158,12 @@
       "question": "Can I use these if I'm not tech-savvy?",
       "answer": "Absolutely! The prompts focus on practical, actionable strategies that don't require technical expertise. When technology is recommended, it includes simple, user-friendly options with implementation guidance."
     }
+  ],
+  "relatedModifiers": [
+    "business",
+    "marketing-professionals",
+    "sales-teams",
+    "hr-managers",
+    "content-creators"
   ]
 } 

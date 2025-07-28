@@ -45,6 +45,73 @@
       ]
     }
   ],
+  "promptTemplates": [
+    {
+      "title": "Cold Outreach Sequence Generator",
+      "description": "Create personalized cold outreach sequences that actually get responses.",
+      "prompt": "Create a 5-touch cold outreach sequence for [prospect title] at [company type] companies. Our product/service: [what you sell]. Value proposition: [key benefit]. Research shows this prospect likely struggles with [pain point]. Generate: 1) Initial email with personalized opener referencing [company trigger/recent news], 2) Follow-up email with social proof and case study, 3) Value-add touchpoint with relevant resource, 4) Break-up email with final compelling offer, 5) LinkedIn message alternative for each email. Include subject lines, timing between touches, and personalization guidelines. Tone: [professional/conversational]. Industry: [target industry].",
+      "wordCount": 155,
+      "category": "Prospecting",
+      "example": "EMAIL 1 (Day 1):\nSubject: Quick question about [Company]'s expansion into [Market]\n\nHi [First Name],\n\nSaw the news about [Company] expanding into [Market] - exciting move! \n\nI work with similar [industry] companies who face [specific challenge] during rapid growth...",
+      "tips": [
+        "Include your current response rates for benchmarking",
+        "Mention any specific industry regulations or compliance requirements",
+        "Specify your ideal customer profile details for better targeting"
+      ]
+    },
+    {
+      "title": "Objection Handler Scripts",
+      "description": "Develop responses to common sales objections that turn resistance into opportunities.",
+      "prompt": "Create objection handling scripts for these common objections: [list 3-5 objections you hear]. For each objection, provide: 1) The psychology behind why prospects say this, 2) A clarifying question to understand the real concern, 3) 3 different response approaches (logic-based, emotion-based, social proof), 4) A story or case study to reinforce your point, 5) A trial close or next step suggestion. Product: [your product/service]. Price point: [range]. Sales cycle: [length]. Target customer: [description].",
+      "wordCount": 120,
+      "category": "Objection Handling",
+      "example": "OBJECTION: 'It's too expensive'\n\nPsychology: Often means 'I don't see the value' or 'It's not a priority'\n\nClarifying Question: 'When you say expensive, are you comparing to other solutions or wondering about the ROI?'\n\nLogic Response: 'Let's break down the cost per [unit of value]...'",
+      "tips": [
+        "Include your actual objections and current response rates",
+        "Mention your competitive landscape for context",
+        "Specify your value proposition and differentiation"
+      ]
+    },
+    {
+      "title": "Sales Call Structure Template",
+      "description": "Create structured sales call frameworks for consistent, effective presentations.",
+      "prompt": "Design a sales call structure for [type of call: discovery/demo/closing] with [prospect type]. Call duration: [minutes]. Our solution: [product/service]. Create: 1) Pre-call research checklist, 2) Opening questions to build rapport and qualify, 3) Discovery questions organized by pain point, 4) Presentation flow with key messages, 5) Demo script highlighting relevant features, 6) Closing techniques and next steps, 7) Follow-up actions. Include transition phrases and time allocation for each section. Address these common challenges: [list 2-3 call challenges you face].",
+      "wordCount": 135,
+      "category": "Sales Process",
+      "example": "DISCOVERY CALL STRUCTURE (45 minutes):\n\n1. Rapport Building (5 min)\n'How's your [relevant business area] going this quarter?'\n\n2. Qualifying Questions (15 min)\n'What's driving you to look for a solution now?'\n'Who else is involved in this decision?'...",
+      "tips": [
+        "Include your current close rates for different call types",
+        "Mention any specific demo software or presentation tools you use",
+        "Specify your typical sales cycle and decision-making process"
+      ]
+    },
+    {
+      "title": "Proposal Generator",
+      "description": "Create compelling proposals that address specific client needs and win deals.",
+      "prompt": "Create a sales proposal for [prospect company] based on this discovery: [paste discovery notes or key requirements]. Our solution: [product/service]. Their budget: [range]. Generate: 1) Executive summary highlighting their key challenges, 2) Proposed solution with specific features addressing their needs, 3) Implementation timeline and milestones, 4) Investment breakdown with ROI projections, 5) Risk mitigation and guarantees, 6) Next steps and decision timeline, 7) Social proof relevant to their industry. Make it specific to their [industry] and [company size].",
+      "wordCount": 130,
+      "category": "Closing",
+      "example": "EXECUTIVE SUMMARY:\n\n[Company] faces three critical challenges:\n1. Manual processes costing 15 hours/week\n2. Data silos preventing real-time decisions\n3. Scaling bottlenecks limiting growth\n\nOur proposed solution addresses each challenge...",
+      "tips": [
+        "Include your proposal win rate for context",
+        "Mention any specific ROI metrics you typically promise",
+        "Specify your implementation process and timeline"
+      ]
+    },
+    {
+      "title": "Follow-Up Campaign Creator",
+      "description": "Design systematic follow-up campaigns that nurture prospects through long sales cycles.",
+      "prompt": "Create a follow-up campaign for prospects who [specific scenario: went quiet after demo/said they're evaluating/need time to decide]. Campaign should span [timeframe] with [frequency]. Generate: 1) 8 follow-up messages with varying approaches (value-add content, industry insights, social proof, urgency), 2) Timing and channel for each touchpoint (email/LinkedIn/phone), 3) Personalization elements to include, 4) Success metrics to track, 5) Exit criteria for when to stop following up, 6) Re-engagement triggers if they become active again. Industry: [industry]. Sales cycle: [typical length].",
+      "wordCount": 125,
+      "category": "Follow-up",
+      "example": "FOLLOW-UP 1 (Week 1):\nChannel: Email\nSubject: Resource: [Industry] ROI Calculator\n\nHi [Name],\n\nThought you'd find this ROI calculator useful for your evaluation. It shows how [similar companies] typically see returns...",
+      "tips": [
+        "Include your current follow-up response rates",
+        "Mention your CRM system for tracking suggestions",
+        "Specify your typical sales cycle length and buying process"
+      ]
+    }
+  ],
   "benefits": [
     {
       "icon": "📈",
@@ -97,5 +164,12 @@
       "question": "How do these prompts help with compliance and regulations?",
       "answer": "The prompts focus on value-driven, consultative selling approaches that comply with modern sales regulations. Always review with your legal team for industry-specific requirements."
     }
+  ],
+  "relatedModifiers": [
+    "business",
+    "marketing-professionals",
+    "hr-managers",
+    "content-creators",
+    "small-business-owners"
   ]
 } 

@@ -158,5 +158,12 @@
       "question": "Do these work for both personal brands and business accounts?",
       "answer": "Yes! The prompts work for personal creators, business accounts, and hybrid approaches. Simply specify your brand type and goals for tailored strategies that match your content objectives."
     }
+  ],
+  "relatedModifiers": [
+    "social-media",
+    "marketing-professionals",
+    "sales-teams",
+    "hr-managers",
+    "small-business-owners"
   ]
 } 
