@@ -4,8 +4,47 @@
   "keywordDifficulty": 15,
   "seoData": {
     "title": "AI Prompts for Content Creators - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for content creators. Scale content production, grow your audience, and boost engagement with our expert ChatGPT templates for creators."
+    "description": "Discover 15+ specialized AI prompts for content creators. Scale content production, grow your audience, and boost engagement with our expert ChatGPT templates for creators.",
+    "keywords": "AI prompts for content creators, content creation prompts, ChatGPT for creators, social media prompts, content marketing AI, viral content prompts, audience growth AI"
   },
+  "heroSection": {
+    "title": "AI Prompts for Content Creators",
+    "subtitle": "Scale content production, grow your audience, and boost engagement with our expert ChatGPT templates designed for content creators and influencers."
+  },
+  "promptCategories": [
+    {
+      "name": "Content Strategy",
+      "icon": "📝",
+      "prompts": [
+        {
+          "title": "Viral Content Strategy Generator",
+          "description": "Create content strategies designed to maximize reach and engagement.",
+          "template": "Develop a viral content strategy for [platform] targeting [audience]. Niche: [your content niche]. Create: 1) 10 content pillars aligned with trending topics, 2) Hook formulas for maximum engagement, 3) Posting schedule optimized for platform algorithm, 4) Cross-platform repurposing strategy, 5) Engagement tactics to boost early signals."
+        },
+        {
+          "title": "Content Calendar Automation",
+          "description": "Build comprehensive content calendars that maintain consistency.",
+          "template": "Create a 30-day content calendar for [platform(s)] in the [niche] space. Posting frequency: [daily/3x week/etc.]. Generate: 1) Daily post concepts with specific angles, 2) Captions/scripts for each post, 3) Hashtag strategies for discovery, 4) Visual direction and style guide, 5) Cross-promotion opportunities."
+        }
+      ]
+    },
+    {
+      "name": "Audience Growth",
+      "icon": "📈",
+      "prompts": [
+        {
+          "title": "Audience Growth Accelerator",
+          "description": "Develop strategies to rapidly grow and engage your target audience.",
+          "template": "Design an audience growth strategy from [current follower count] to [target] in [timeframe]. Platform focus: [main platform]. Create: 1) Follower magnet content series, 2) Collaboration opportunities, 3) Community engagement playbook, 4) Lead magnets to capture contacts, 5) Conversion funnel strategy."
+        },
+        {
+          "title": "Monetization Strategy Builder",
+          "description": "Create diversified revenue streams that align with your content.",
+          "template": "Build a monetization strategy for a [follower count] creator in [niche]. Current income: [amount/month]. Goal: [target income]. Design: 1) 5 revenue stream options ranked by effort vs. return, 2) Product/service development roadmap, 3) Pricing strategies, 4) Launch sequences, 5) Partnership criteria."
+        }
+      ]
+    }
+  ],
   "promptTemplates": [
     {
       "title": "Viral Content Strategy Generator",
@@ -106,7 +145,7 @@
     "Save 10+ hours weekly on content planning and creation",
     "Increase engagement rates by 40-60% with optimized strategies"
   ],
-  "faq": [
+  "faqs": [
     {
       "question": "How do these prompts help with algorithm changes?",
       "answer": "The prompts focus on fundamental engagement principles that work across algorithm updates. They help you create content that prioritizes audience value over gaming the system, leading to more sustainable growth."

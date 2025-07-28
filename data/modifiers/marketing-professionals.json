@@ -4,8 +4,47 @@
   "keywordDifficulty": 14,
   "seoData": {
     "title": "AI Prompts for Marketing Professionals - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for marketing professionals. Create campaigns, analyze data, write copy, and boost ROI with our expert-crafted ChatGPT templates for marketers."
+    "description": "Discover 15+ specialized AI prompts for marketing professionals. Create campaigns, analyze data, write copy, and boost ROI with our expert-crafted ChatGPT templates for marketers.",
+    "keywords": "AI prompts for marketing, marketing automation prompts, ChatGPT for marketers, digital marketing AI, campaign optimization prompts, marketing analytics AI, content marketing prompts"
   },
+  "heroSection": {
+    "title": "AI Prompts for Marketing Professionals",
+    "subtitle": "Create campaigns, analyze data, write copy, and boost ROI with our expert ChatGPT templates designed specifically for marketing professionals and agencies."
+  },
+  "promptCategories": [
+    {
+      "name": "Campaign Optimization",
+      "icon": "🎯",
+      "prompts": [
+        {
+          "title": "Campaign Strategy Generator",
+          "description": "Create comprehensive marketing campaigns that drive results.",
+          "template": "Create a marketing campaign for [product/service] targeting [audience segment]. Budget: [amount]. Generate: 1) Campaign strategy and positioning, 2) Channel-specific tactics, 3) Content calendar with messaging, 4) Budget allocation across channels, 5) KPIs and success metrics, 6) A/B testing framework."
+        },
+        {
+          "title": "Marketing Analytics Interpreter",
+          "description": "Analyze marketing data and extract actionable insights.",
+          "template": "Analyze this marketing data: [paste metrics/data]. Campaign: [campaign name]. Generate: 1) Key performance insights, 2) Trend analysis and patterns, 3) Underperforming areas with causes, 4) Optimization recommendations, 5) Forecasting for next period, 6) Resource reallocation suggestions."
+        }
+      ]
+    },
+    {
+      "name": "Content & Messaging",
+      "icon": "📝",
+      "prompts": [
+        {
+          "title": "Brand Voice Optimizer",
+          "description": "Develop consistent brand messaging across all channels.",
+          "template": "Create brand voice guidelines for [company/brand]. Target audience: [demographics]. Generate: 1) Voice and tone framework, 2) Messaging hierarchy, 3) Content style guide, 4) Do's and don'ts list, 5) Example messaging for different scenarios, 6) Adaptation guidelines for different channels."
+        },
+        {
+          "title": "Competitive Analysis Framework",
+          "description": "Analyze competitors and identify market opportunities.",
+          "template": "Conduct competitive analysis for [industry/niche]. Main competitors: [list competitors]. Generate: 1) Competitive positioning map, 2) Messaging gap analysis, 3) Channel strategy comparison, 4) Pricing analysis, 5) Content strategy insights, 6) Opportunity identification."
+        }
+      ]
+    }
+  ],
   "promptTemplates": [
     {
       "title": "Campaign Strategy Generator",
@@ -106,7 +145,7 @@
     "Scale personalized marketing efforts across multiple segments",
     "Generate months of content ideas in minutes"
   ],
-  "faq": [
+  "faqs": [
     {
       "question": "How do these prompts help with marketing ROI?",
       "answer": "These prompts help you create data-driven strategies, optimize underperforming campaigns, and identify high-ROI opportunities you might miss with manual analysis. Many users report 25-40% ROI improvements within 90 days."

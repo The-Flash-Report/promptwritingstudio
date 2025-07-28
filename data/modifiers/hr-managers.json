@@ -4,8 +4,47 @@
   "keywordDifficulty": 12,
   "seoData": {
     "title": "AI Prompts for HR Managers - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for HR managers. Streamline recruitment, boost employee engagement, and automate HR processes with our expert ChatGPT templates."
+    "description": "Discover 15+ specialized AI prompts for HR managers. Streamline recruitment, boost employee engagement, and automate HR processes with our expert ChatGPT templates.",
+    "keywords": "AI prompts for HR, human resources prompts, HR management AI, employee engagement prompts, recruitment AI templates, HR automation, ChatGPT for HR managers"
   },
+  "heroSection": {
+    "title": "AI Prompts for HR Managers",
+    "subtitle": "Streamline recruitment, boost employee engagement, and automate HR processes with our expert ChatGPT templates for human resources professionals."
+  },
+  "promptCategories": [
+    {
+      "name": "Recruitment & Hiring",
+      "icon": "👥",
+      "prompts": [
+        {
+          "title": "Job Description Generator",
+          "description": "Create compelling, inclusive job descriptions that attract top talent.",
+          "template": "Create a comprehensive job description for a [job title] position at our [company type] company. Department: [department]. Generate: 1) Engaging job summary, 2) 8-10 key responsibilities, 3) Required qualifications, 4) Skills assessment criteria, 5) Compensation range highlights, 6) Company culture elements, 7) Inclusive language review."
+        },
+        {
+          "title": "Interview Question Bank",
+          "description": "Develop behavioral and technical interview questions that reveal candidate fit.",
+          "template": "Create an interview question bank for [job title] candidates. Company: [industry/type]. Generate: 1) 15 behavioral questions using STAR method, 2) 8 situational questions, 3) 5 culture fit questions, 4) Technical assessment questions, 5) Follow-up probing questions, 6) Red flag responses to watch for, 7) Scoring rubric."
+        }
+      ]
+    },
+    {
+      "name": "Employee Engagement",
+      "icon": "📊",
+      "prompts": [
+        {
+          "title": "Employee Engagement Survey",
+          "description": "Design comprehensive surveys that drive actionable insights.",
+          "template": "Create an employee engagement survey for our [company size] [industry] company. Survey goals: [what you want to measure]. Design: 1) 25 questions across key engagement drivers, 2) Mix of rating scales and open-ended questions, 3) Department-specific follow-ups, 4) Communication plan for launch, 5) Analysis framework for results."
+        },
+        {
+          "title": "Performance Review Framework",
+          "description": "Create fair, comprehensive performance evaluation systems.",
+          "template": "Design a performance review framework for [job level] employees. Review cycle: [frequency]. Create: 1) Self-assessment questionnaire, 2) Manager evaluation criteria, 3) Goal-setting templates, 4) Development planning section, 5) Feedback conversation guides, 6) Performance improvement plans, 7) Recognition and reward criteria."
+        }
+      ]
+    }
+  ],
   "promptTemplates": [
     {
       "title": "Job Description Generator",
@@ -106,7 +145,7 @@
     "Streamline performance reviews and reduce manager prep time by 60%",
     "Scale HR processes without proportional headcount increases"
   ],
-  "faq": [
+  "faqs": [
     {
       "question": "Are these prompts legally compliant for HR use?",
       "answer": "The prompts help you create HR content, but all policies and processes should be reviewed by legal counsel before implementation. We recommend working with employment lawyers familiar with your jurisdiction."

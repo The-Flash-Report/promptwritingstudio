@@ -4,120 +4,98 @@
   "keywordDifficulty": 13,
   "seoData": {
     "title": "AI Prompts for Sales Teams - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for sales teams. Boost prospecting, improve close rates, and automate follow-ups with our expert-crafted ChatGPT templates for sales professionals."
+    "description": "Discover 15+ specialized AI prompts for sales teams. Boost prospecting, improve close rates, and automate follow-ups with our expert-crafted ChatGPT templates for sales professionals.",
+    "keywords": "AI prompts for sales, sales automation prompts, ChatGPT for sales teams, prospecting AI templates, sales follow-up prompts, closing techniques AI, sales outreach automation"
   },
-  "promptTemplates": [
+  "heroSection": {
+    "title": "AI Prompts for Sales Teams",
+    "subtitle": "Boost prospecting, improve close rates, and automate sales follow-ups with our expert ChatGPT templates designed for sales professionals."
+  },
+  "promptCategories": [
     {
-      "title": "Cold Outreach Sequence Generator",
-      "description": "Create personalized cold outreach sequences that actually get responses.",
-      "prompt": "Create a 5-touch cold outreach sequence for [prospect title] at [company type] companies. Our product/service: [what you sell]. Value proposition: [key benefit]. Research shows this prospect likely struggles with [pain point]. Generate: 1) Initial email with personalized opener referencing [company trigger/recent news], 2) Follow-up email with social proof and case study, 3) Value-add touchpoint with relevant resource, 4) Break-up email with final compelling offer, 5) LinkedIn message alternative for each email. Include subject lines, timing between touches, and personalization guidelines. Tone: [professional/conversational]. Industry: [target industry].",
-      "wordCount": 155,
-      "category": "Prospecting",
-      "example": "EMAIL 1 (Day 1):\nSubject: Quick question about [Company]'s expansion into [Market]\n\nHi [First Name],\n\nSaw the news about [Company] expanding into [Market] - exciting move! \n\nI work with similar [industry] companies who face [specific challenge] during rapid growth...",
-      "tips": [
-        "Include your current response rates for benchmarking",
-        "Mention any specific industry regulations or compliance requirements",
-        "Specify your ideal customer profile details for better targeting"
+      "name": "Prospecting & Outreach",
+      "icon": "🎯",
+      "prompts": [
+        {
+          "title": "Cold Email Sequences",
+          "description": "Create compelling cold email sequences that get responses.",
+          "template": "Create a 5-email cold outreach sequence for [target industry] prospects. Product: [your product/service]. Generate: 1) Subject lines with high open rates, 2) Personalized opening hooks, 3) Value propositions for each email, 4) Social proof elements, 5) Clear call-to-actions, 6) Follow-up timing strategy."
+        },
+        {
+          "title": "LinkedIn Prospecting Messages",
+          "description": "Craft LinkedIn messages that start conversations.",
+          "template": "Create LinkedIn prospecting messages for [job title] at [company size] companies. Generate: 1) Connection request messages, 2) Follow-up message sequence, 3) Value-driven conversation starters, 4) Industry-specific pain points, 5) Meeting scheduling approaches."
+        }
       ]
     },
     {
-      "title": "Objection Handler Scripts",
-      "description": "Develop responses to common sales objections that turn resistance into opportunities.",
-      "prompt": "Create objection handling scripts for these common objections: [list 3-5 objections you hear]. For each objection, provide: 1) The psychology behind why prospects say this, 2) A clarifying question to understand the real concern, 3) 3 different response approaches (logic-based, emotion-based, social proof), 4) A story or case study to reinforce your point, 5) A trial close or next step suggestion. Product: [your product/service]. Price point: [range]. Sales cycle: [length]. Target customer: [description].",
-      "wordCount": 120,
-      "category": "Objection Handling",
-      "example": "OBJECTION: 'It's too expensive'\n\nPsychology: Often means 'I don't see the value' or 'It's not a priority'\n\nClarifying Question: 'When you say expensive, are you comparing to other solutions or wondering about the ROI?'\n\nLogic Response: 'Let's break down the cost per [unit of value]...'",
-      "tips": [
-        "Include your actual objections and current response rates",
-        "Mention your competitive landscape for context",
-        "Specify your value proposition and differentiation"
+      "name": "Sales Conversations",
+      "icon": "💬", 
+      "prompts": [
+        {
+          "title": "Objection Handling Scripts",
+          "description": "Prepare responses to common sales objections.",
+          "template": "Create objection handling scripts for [product/service] sales. Common objections: [list top 5]. Generate: 1) Acknowledge responses, 2) Clarifying questions, 3) Evidence-based responses, 4) Reframe techniques, 5) Trial close approaches."
+        },
+        {
+          "title": "Discovery Question Framework",
+          "description": "Develop powerful discovery questions that uncover needs.",
+          "template": "Create discovery questions for [product/service] sales calls. Generate: 1) Opening rapport questions, 2) Current state assessment, 3) Pain point identification, 4) Impact questions, 5) Decision process questions, 6) Budget and timeline questions."
+        }
       ]
+    }
+  ],
+  "benefits": [
+    {
+      "icon": "📈",
+      "title": "Increase Close Rates",
+      "description": "Proven sales prompts that help you overcome objections and close more deals with confidence."
     },
     {
-      "title": "Sales Call Structure Template",
-      "description": "Create structured sales call frameworks for consistent, effective presentations.",
-      "prompt": "Design a sales call structure for [type of call: discovery/demo/closing] with [prospect type]. Call duration: [minutes]. Our solution: [product/service]. Create: 1) Pre-call research checklist, 2) Opening questions to build rapport and qualify, 3) Discovery questions organized by pain point, 4) Presentation flow with key messages, 5) Demo script highlighting relevant features, 6) Closing techniques and next steps, 7) Follow-up actions. Include transition phrases and time allocation for each section. Address these common challenges: [list 2-3 call challenges you face].",
-      "wordCount": 135,
-      "category": "Sales Process",
-      "example": "DISCOVERY CALL STRUCTURE (45 minutes):\n\n1. Rapport Building (5 min)\n'How's your [relevant business area] going this quarter?'\n\n2. Qualifying Questions (15 min)\n'What's driving you to look for a solution now?'\n'Who else is involved in this decision?'...",
-      "tips": [
-        "Include your current close rates for different call types",
-        "Mention any specific demo software or presentation tools you use",
-        "Specify your typical sales cycle and decision-making process"
-      ]
+      "icon": "⚡",
+      "title": "Faster Prospecting",
+      "description": "Automate outreach sequences and follow-ups to reach more qualified prospects in less time."
     },
     {
-      "title": "Proposal Generator",
-      "description": "Create compelling proposals that address specific client needs and win deals.",
-      "prompt": "Create a sales proposal for [prospect company] based on this discovery: [paste discovery notes or key requirements]. Our solution: [product/service]. Their budget: [range]. Generate: 1) Executive summary highlighting their key challenges, 2) Proposed solution with specific features addressing their needs, 3) Implementation timeline and milestones, 4) Investment breakdown with ROI projections, 5) Risk mitigation and guarantees, 6) Next steps and decision timeline, 7) Social proof relevant to their industry. Make it specific to their [industry] and [company size].",
-      "wordCount": 130,
-      "category": "Closing",
-      "example": "EXECUTIVE SUMMARY:\n\n[Company] faces three critical challenges:\n1. Manual processes costing 15 hours/week\n2. Data silos preventing real-time decisions\n3. Scaling bottlenecks limiting growth\n\nOur proposed solution addresses each challenge...",
-      "tips": [
-        "Include your proposal win rate for context",
-        "Mention any specific ROI metrics you typically promise",
-        "Specify your implementation process and timeline"
-      ]
-    },
-    {
-      "title": "Follow-Up Campaign Creator",
-      "description": "Design systematic follow-up campaigns that nurture prospects through long sales cycles.",
-      "prompt": "Create a follow-up campaign for prospects who [specific scenario: went quiet after demo/said they're evaluating/need time to decide]. Campaign should span [timeframe] with [frequency]. Generate: 1) 8 follow-up messages with varying approaches (value-add content, industry insights, social proof, urgency), 2) Timing and channel for each touchpoint (email/LinkedIn/phone), 3) Personalization elements to include, 4) Success metrics to track, 5) Exit criteria for when to stop following up, 6) Re-engagement triggers if they become active again. Industry: [industry]. Sales cycle: [typical length].",
-      "wordCount": 125,
-      "category": "Follow-up",
-      "example": "FOLLOW-UP 1 (Week 1):\nChannel: Email\nSubject: Resource: [Industry] ROI Calculator\n\nHi [Name],\n\nThought you'd find this ROI calculator useful for your evaluation. It shows how [similar companies] typically see returns...",
-      "tips": [
-        "Include your current follow-up response rates",
-        "Mention your CRM system for tracking suggestions",
-        "Specify your typical sales cycle length and buying process"
-      ]
+      "icon": "🎯",
+      "title": "Better Targeting",
+      "description": "Industry-specific prompts that resonate with your ideal customer profile and pain points."
     }
   ],
   "useCases": [
     {
-      "title": "Sales Development Reps (SDRs)",
-      "icon": "fas fa-phone",
-      "description": "SDRs use these prompts to create personalized outreach sequences, improve response rates, and qualify leads more effectively, leading to 2-3x more qualified appointments.",
-      "recommendedPrompt": "Cold Outreach Sequence Generator"
+      "icon": "📧",
+      "title": "Email Outreach",
+      "description": "Automated sequences for cold prospecting and warm follow-ups"
     },
     {
-      "title": "Account Executives",
-      "icon": "fas fa-handshake",
-      "description": "Account executives leverage these prompts to structure effective sales calls, handle objections confidently, and create compelling proposals that win more deals.",
-      "recommendedPrompt": "Sales Call Structure Template"
+      "icon": "📱",
+      "title": "Social Selling",
+      "description": "LinkedIn and social media prospecting that builds relationships"
     },
     {
-      "title": "Sales Managers",
-      "icon": "fas fa-chart-line",
-      "description": "Sales managers use these prompts to train teams on consistent messaging, create standardized processes, and develop playbooks that improve team performance.",
-      "recommendedPrompt": "Objection Handler Scripts"
+      "icon": "📞",
+      "title": "Sales Calls",
+      "description": "Discovery questions and objection handling for better conversations"
     },
     {
-      "title": "Inside Sales Teams",
-      "icon": "fas fa-headset",
-      "description": "Inside sales teams use these prompts to automate follow-up sequences, maintain consistent prospect engagement, and scale personalized outreach across large prospect lists.",
-      "recommendedPrompt": "Follow-Up Campaign Creator"
+      "icon": "📋",
+      "title": "Proposal Writing",
+      "description": "Compelling proposals and follow-up communications"
     }
   ],
-  "benefits": [
-    "Increase email response rates by 40-60% with personalized sequences",
-    "Reduce time spent on proposal writing by 70% with templates",
-    "Improve close rates by 25-35% with structured call frameworks",
-    "Scale personalized outreach without hiring more SDRs",
-    "Turn common objections into selling opportunities"
-  ],
-  "faq": [
+  "faqs": [
     {
-      "question": "How do these prompts help with sales quotas?",
-      "answer": "These prompts help you work more efficiently and effectively. Users typically see 40-60% better response rates, more qualified opportunities, and higher close rates, leading to quota attainment 2-3 months faster."
+      "question": "Do these prompts work for different sales cycles?",
+      "answer": "Yes! The prompts are designed to work for both short and long sales cycles. Simply adjust the timing and number of touchpoints based on your typical sales process."
     },
     {
-      "question": "Can I customize these prompts for my specific industry?",
-      "answer": "Absolutely! Each prompt is designed to be customized with your industry, product, and target audience. The more specific you are, the better the AI can tailor responses to your needs."
+      "question": "Can I customize these prompts for my industry?",
+      "answer": "Absolutely! Each prompt includes placeholders for industry-specific details, pain points, and value propositions. This makes them highly adaptable to any vertical."
     },
     {
-      "question": "Do these work for both B2B and B2C sales?",
-      "answer": "Yes! While most examples are B2B-focused, the frameworks work for any sales context. Simply adjust the tone, channels, and messaging to match your customer type and sales cycle."
+      "question": "How do these prompts help with compliance and regulations?",
+      "answer": "The prompts focus on value-driven, consultative selling approaches that comply with modern sales regulations. Always review with your legal team for industry-specific requirements."
     }
   ]
 } 

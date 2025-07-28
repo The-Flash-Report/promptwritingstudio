@@ -4,8 +4,47 @@
   "keywordDifficulty": 14,
   "seoData": {
     "title": "AI Prompts for Small Business Owners - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for small business owners. Automate marketing, streamline operations, and boost growth with our expert ChatGPT templates for entrepreneurs."
+    "description": "Discover 15+ specialized AI prompts for small business owners. Automate marketing, streamline operations, and boost growth with our expert ChatGPT templates for entrepreneurs.",
+    "keywords": "AI prompts for small business, business automation prompts, ChatGPT for entrepreneurs, small business AI, marketing automation prompts, business growth AI, operations automation"
   },
+  "heroSection": {
+    "title": "AI Prompts for Small Business Owners",
+    "subtitle": "Automate marketing, streamline operations, and boost growth with our expert ChatGPT templates designed specifically for small business owners and entrepreneurs."
+  },
+  "promptCategories": [
+    {
+      "name": "Marketing Automation",
+      "icon": "📢",
+      "prompts": [
+        {
+          "title": "Marketing Campaign Generator",
+          "description": "Create comprehensive marketing campaigns that drive results.",
+          "template": "Create a marketing campaign for [product/service] targeting [audience]. Budget: [amount]. Generate: 1) Campaign strategy and positioning, 2) Multi-channel content calendar, 3) Email sequence templates, 4) Social media content, 5) Landing page copy, 6) Success metrics and tracking."
+        },
+        {
+          "title": "Customer Communication Templates",
+          "description": "Automate customer communications while maintaining personal touch.",
+          "template": "Create customer communication templates for [business type]. Scenarios: [list common situations]. Generate: 1) Welcome email sequences, 2) Order confirmation messages, 3) Support response templates, 4) Follow-up communications, 5) Feedback request emails."
+        }
+      ]
+    },
+    {
+      "name": "Operations & Management",
+      "icon": "⚙️",
+      "prompts": [
+        {
+          "title": "Business Process Optimizer",
+          "description": "Streamline operations and improve efficiency.",
+          "template": "Optimize business processes for [business type] with [number] employees. Current challenge: [specific issue]. Generate: 1) Process mapping for key workflows, 2) Automation opportunities, 3) Standard operating procedures, 4) Quality control checklists, 5) Performance metrics, 6) Implementation timeline."
+        },
+        {
+          "title": "Financial Planning Assistant",
+          "description": "Create financial plans and budget templates.",
+          "template": "Create a financial plan for [business type] with [revenue] annual revenue. Goals: [specific objectives]. Generate: 1) Monthly budget template, 2) Cash flow projections, 3) Expense tracking categories, 4) Revenue optimization strategies, 5) Investment prioritization framework."
+        }
+      ]
+    }
+  ],
   "promptTemplates": [
     {
       "title": "Local Marketing Campaign Generator",
@@ -106,7 +145,7 @@
     "Create predictable cash flow with systematic financial planning",
     "Scale operations without proportional increases in time or stress"
   ],
-  "faq": [
+  "faqs": [
     {
       "question": "Do these prompts work for both B2B and B2C small businesses?",
       "answer": "Yes! The prompts are designed to work for any small business model. Simply specify your customer type (businesses or consumers) and the AI will tailor strategies accordingly."
