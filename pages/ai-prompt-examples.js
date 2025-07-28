@@ -132,8 +132,8 @@ export default function AIPromptExamples() {
     }
   ]
 
-  const pageTitle = "500+ Free AI Prompt Examples - ChatGPT, Claude & Gemini Templates"
-  const pageDescription = "Get 500+ free AI prompt examples for ChatGPT, Claude, and Gemini. Copy-paste ready prompts for business, content creation, marketing, and more. Boost your AI results instantly."
+  const pageTitle = "500+ ChatGPT Prompt Examples That Actually Work (Copy & Paste Free)"
+  const pageDescription = "Copy-paste 500+ proven ChatGPT prompts that save 10+ hours weekly. Free business, writing, and creativity templates with real results. Start saving time today."
 
   const structuredData = {
     "@context": "https://schema.org",

@@ -72,45 +72,84 @@ export default function Home() {
       </Head>
       
       <Layout 
-        title="Prompt Studio - Free AI Prompt Examples, Templates & Generator"
-        description="Get 500+ free ChatGPT prompt templates and examples. Generate custom AI prompts for business, writing, and creativity. Start optimizing your AI results today."
+        title="Save 20+ Hours Weekly with AI Prompts - Business Automation Tools"
+        description="Save 20+ hours weekly with proven AI prompts for business automation. Free ChatGPT templates, calculators, and tools that increase productivity and reduce costs."
       >
       <Hero />
       <ProblemSolution />
       <WhatYouGet />
       
-      {/* Interactive Tools Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🛠️ Interactive AI Tools
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Try our free tools to create better prompts and diagnose issues
-            </p>
-          </div>
+              {/* Interactive Business Tools Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                🛠️ Free Business AI Tools
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Save 10+ hours weekly with our proven business automation tools
+              </p>
+            </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             <Link href="/tools/mad-libs-prompt-creator" className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition group">
               <div className="text-3xl mb-4">🎯</div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600">Mad Libs Prompt Creator</h3>
-              <p className="text-gray-600 mb-4">Fill in the blanks to create custom AI prompts that get amazing results. No prompt engineering experience required!</p>
-              <span className="text-purple-600 font-semibold">Try Free Tool →</span>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600">Business Prompt Creator</h3>
+              <p className="text-gray-600 mb-4">Create custom business prompts in 2 minutes. Automate email responses, content creation, and customer service. Save 5+ hours weekly!</p>
+              <span className="text-purple-600 font-semibold">Save Time Now →</span>
             </Link>
             
             <Link href="/tools/prompt-diagnostic-quiz" className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition group">
               <div className="text-3xl mb-4">🔍</div>
-              <h3 className="text-xl font-bold mb-3 group-hover:text-red-600">Prompt Diagnostic Quiz</h3>
-              <p className="text-gray-600 mb-4">Discover exactly why your AI prompts aren't working and get personalized recommendations to 10x your results.</p>
-              <span className="text-red-600 font-semibold">Take Quiz →</span>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-red-600">AI ROI Assessment</h3>
+              <p className="text-gray-600 mb-4">Discover exactly how much time and money your business could save with AI. Get personalized ROI recommendations in 3 minutes.</p>
+              <span className="text-red-600 font-semibold">Calculate Savings →</span>
             </Link>
           </div>
         </div>
       </section>
       
-      <Features />
-      <Pricing />
+              <Features />
+
+        {/* Business Lead Magnet Section */}
+        <section className="py-16 bg-blue-600">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              📊 Get Your FREE Business AI ROI Report
+            </h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Discover exactly how much your business could save with AI automation. 
+              Get a personalized report showing your potential time and cost savings.
+            </p>
+            <div className="bg-white rounded-lg p-8 max-w-md mx-auto">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Free ROI Calculator + Business Prompt Pack
+              </h3>
+              <ul className="text-left text-gray-600 mb-6 space-y-2">
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-2">✓</span>
+                  Personalized savings calculation
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-2">✓</span>
+                  50+ business automation prompts
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-2">✓</span>
+                  Industry-specific recommendations
+                </li>
+              </ul>
+              <Link 
+                href="/calculators/ai-cost-comparison"
+                className="block w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Calculate My Business Savings →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <Pricing />
       <Testimonials />
       <Guarantee />
       <FAQ />

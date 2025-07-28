@@ -445,8 +445,8 @@ export default function ChatGPTTemplates() {
     }
   ]
 
-  const pageTitle = "Free ChatGPT Templates - 20+ Ready-to-Use Prompts for Business & Content"
-  const pageDescription = "Get 20+ free ChatGPT templates for email marketing, content creation, business proposals, and more. Download ready-to-use prompts that get better results from ChatGPT instantly."
+  const pageTitle = "200+ ChatGPT Templates That Save 15+ Hours Weekly (Free Download)"
+  const pageDescription = "Copy-paste 200+ ChatGPT templates that business owners use to save 15+ hours weekly. Free prompt templates for marketing, writing, and operations. Get instant results."
 
   const structuredData = {
     "@context": "https://schema.org",
