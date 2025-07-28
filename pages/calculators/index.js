@@ -352,6 +352,42 @@ export default function CalculatorsHub() {
         </div>
       </section>
 
+      {/* Professional Prompt Collections */}
+      <section className="py-16 bg-purple-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">
+                Professional Prompt Collections
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Specialized AI prompts designed for specific professional roles and industries
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href="/prompts/marketing-professionals" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                <div className="text-2xl mb-3">📊</div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-purple-600">Marketing Professionals</h3>
+                <p className="text-gray-600 text-sm">Campaign strategies, copy optimization, and analytics prompts</p>
+              </Link>
+              
+              <Link href="/prompts/sales-teams" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                <div className="text-2xl mb-3">📞</div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-purple-600">Sales Teams</h3>
+                <p className="text-gray-600 text-sm">Prospecting, objection handling, and closing prompts</p>
+              </Link>
+              
+              <Link href="/prompts/content-creators" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                <div className="text-2xl mb-3">📱</div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:text-purple-600">Content Creators</h3>
+                <p className="text-gray-600 text-sm">Viral content, audience growth, and monetization strategies</p>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-blue-500 to-purple-600">
         <div className="container mx-auto px-4 md:px-6">

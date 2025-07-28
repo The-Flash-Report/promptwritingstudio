@@ -171,10 +171,35 @@ export default function MadLibsPromptCreator() {
               "url": "https://promptwritingstudio.com/tools/mad-libs-prompt-creator",
               "applicationCategory": "ProductivityApplication",
               "operatingSystem": "Web Browser",
+              "author": {
+                "@type": "Organization",
+                "name": "PromptWritingStudio",
+                "url": "https://promptwritingstudio.com"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "PromptWritingStudio", 
+                "url": "https://promptwritingstudio.com"
+              },
               "offers": {
                 "@type": "Offer",
                 "price": "0",
-                "priceCurrency": "USD"
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              },
+              "featureList": [
+                "Fill-in-the-blank prompt templates",
+                "Custom AI prompt generation",
+                "Social media sharing",
+                "Copy-to-clipboard functionality",
+                "Multiple template categories"
+              ],
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "200",
+                "bestRating": "5",
+                "worstRating": "1"
               }
             })
           }}

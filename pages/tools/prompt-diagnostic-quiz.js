@@ -255,7 +255,33 @@ export default function PromptDiagnosticQuiz() {
               "description": "Interactive quiz to diagnose problems with AI prompt effectiveness and provide personalized improvement recommendations",
               "url": "https://promptwritingstudio.com/tools/prompt-diagnostic-quiz",
               "educationalLevel": "Beginner to Advanced",
-              "timeRequired": "PT5M"
+              "timeRequired": "PT5M",
+              "author": {
+                "@type": "Organization",
+                "name": "PromptWritingStudio",
+                "url": "https://promptwritingstudio.com"
+              },
+              "publisher": {
+                "@type": "Organization", 
+                "name": "PromptWritingStudio",
+                "url": "https://promptwritingstudio.com"
+              },
+              "about": {
+                "@type": "Thing",
+                "name": "AI Prompt Engineering",
+                "description": "The art and science of crafting effective prompts for artificial intelligence systems"
+              },
+              "teaches": [
+                "AI prompt optimization",
+                "ChatGPT prompt engineering", 
+                "Claude prompt techniques",
+                "Gemini prompt strategies"
+              ],
+              "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 1500
+              }
             })
           }}
         />

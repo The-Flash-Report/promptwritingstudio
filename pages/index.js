@@ -78,6 +78,37 @@ export default function Home() {
       <Hero />
       <ProblemSolution />
       <WhatYouGet />
+      
+      {/* Interactive Tools Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              🛠️ Interactive AI Tools
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Try our free tools to create better prompts and diagnose issues
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <Link href="/tools/mad-libs-prompt-creator" className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition group">
+              <div className="text-3xl mb-4">🎯</div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-purple-600">Mad Libs Prompt Creator</h3>
+              <p className="text-gray-600 mb-4">Fill in the blanks to create custom AI prompts that get amazing results. No prompt engineering experience required!</p>
+              <span className="text-purple-600 font-semibold">Try Free Tool →</span>
+            </Link>
+            
+            <Link href="/tools/prompt-diagnostic-quiz" className="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition group">
+              <div className="text-3xl mb-4">🔍</div>
+              <h3 className="text-xl font-bold mb-3 group-hover:text-red-600">Prompt Diagnostic Quiz</h3>
+              <p className="text-gray-600 mb-4">Discover exactly why your AI prompts aren't working and get personalized recommendations to 10x your results.</p>
+              <span className="text-red-600 font-semibold">Take Quiz →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+      
       <Features />
       <Pricing />
       <Testimonials />
