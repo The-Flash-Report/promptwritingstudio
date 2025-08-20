@@ -161,8 +161,8 @@ export default function EnhancedAIPromptGenerator() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-4 py-2 rounded-md font-medium transition-colors ${
                     activeTab === tab.id
-                      ? 'bg-blue-600 text-white shadow-md'
-                      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'
+                      ? 'bg-[#FFDE59] text-[#1A1A1A] shadow-md'
+                      : 'text-gray-600 hover:text-[#1A1A1A] hover:bg-[#F9F9F9]'
                   }`}
                 >
                   <span className="mr-2">{tab.icon}</span>
@@ -184,7 +184,7 @@ export default function EnhancedAIPromptGenerator() {
                   
                   {/* Stats Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                    <div className="bg-blue-50 rounded-lg p-6 text-center">
+                    <div className="bg-[#F9F9F9] rounded-lg p-6 text-center">
                       <div className="text-3xl font-bold text-blue-600 mb-2">{stats.totalPrompts}</div>
                       <div className="text-blue-800 font-medium">Prompts Created</div>
                     </div>
@@ -206,7 +206,7 @@ export default function EnhancedAIPromptGenerator() {
                   <div className="grid md:grid-cols-3 gap-6 mb-8">
                     <button
                       onClick={() => setActiveTab('optimizer')}
-                      className="p-6 border border-blue-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 text-left transition-all group"
+                      className="p-6 border border-[#E5E5E5] rounded-lg hover:border-[#FFDE59] hover:bg-[#F9F9F9] text-left transition-all group"
                     >
                       <div className="text-3xl mb-4 group-hover:scale-110 transition-transform">⚡</div>
                       <div className="font-bold text-lg mb-2">Optimize Prompt</div>
@@ -357,7 +357,7 @@ export default function EnhancedAIPromptGenerator() {
           {/* Feature Highlights */}
           <div className="mt-16 grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#F9F9F9] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">⚡</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Smart Optimization</h3>

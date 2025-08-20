@@ -1,4 +1,5 @@
 import Layout from '../components/layout/Layout'
+import { useEffect, useState } from 'react'
 import Hero from '../components/sections/Hero'
 import ROICalculator from '../components/tools/ROICalculator'
 import Link from 'next/link'
@@ -11,9 +12,54 @@ import TestimonialEmbed from '../components/sections/TestimonialEmbed'
 import Guarantee from '../components/sections/Guarantee'
 import FAQ from '../components/sections/FAQ'
 import Instructor from '../components/sections/Instructor'
+import IndustryNavigation from '../components/sections/IndustryNavigation'
 import Head from 'next/head'
 
 export default function Home() {
+  const [showExitModal, setShowExitModal] = useState(false)
+
+  // Exit-intent modal (homepage only)
+  useEffect(() => {
+    const checkoutUrl = 'https://checkout.teachable.com/secure/37332/checkout/order_g23vx78p'
+
+    // Skip if already handled this session
+    try {
+      if (typeof window !== 'undefined' && sessionStorage.getItem('exit_intent_handled') === '1') {
+        return
+      }
+    } catch (e) {}
+
+    // Only apply on devices with a mouse pointer
+    if (typeof window !== 'undefined' && window.matchMedia && !window.matchMedia('(pointer: fine)').matches) {
+      return
+    }
+
+    const handleMouseOut = (e) => {
+      if (!e) return
+      // Trigger when the cursor leaves at the top of the viewport
+      if (e.relatedTarget === null && e.clientY <= 0) {
+        try { sessionStorage.setItem('exit_intent_handled', '1') } catch (e) {}
+        // Add a 2-second delay to make it less aggressive
+        setTimeout(() => {
+          setShowExitModal(true)
+        }, 2000)
+      }
+    }
+
+    window.addEventListener('mouseout', handleMouseOut)
+    return () => window.removeEventListener('mouseout', handleMouseOut)
+  }, [])
+
+  // Allow closing modal with Escape
+  useEffect(() => {
+    if (!showExitModal) return
+    const onKey = (e) => {
+      if (e.key === 'Escape') setShowExitModal(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [showExitModal])
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -75,9 +121,36 @@ export default function Home() {
         title="Save 20+ Hours Weekly with AI Prompts - Business Automation Tools"
         description="Save 20+ hours weekly with proven AI prompts for business automation. Free ChatGPT templates, calculators, and tools that increase productivity and reduce costs."
       >
+      {showExitModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+          <div role="dialog" aria-modal="true" className="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 p-6">
+            <div className="text-center mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">🚀 Save 20+ Hours Weekly!</h3>
+              <p className="text-gray-700">Don't miss out on proven AI prompts that automate your business tasks. Get instant access to the complete system and start saving time today.</p>
+            </div>
+            <div className="space-y-3">
+              <button
+                onClick={() => { window.location.href = 'https://checkout.teachable.com/secure/37332/checkout/order_g23vx78p' }}
+                className="w-full bg-[#FFDE59] text-[#1A1A1A] py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors"
+              >
+                Start Saving Time Now
+              </button>
+              <button
+                onClick={() => setShowExitModal(false)}
+                className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+              >
+                Maybe Later
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Hero />
       <ProblemSolution />
       <WhatYouGet />
+      
+      {/* Industry-Specific Landing Pages */}
+      <IndustryNavigation />
       
               {/* Interactive Business Tools Section */}
         <section className="py-16 bg-gray-50">

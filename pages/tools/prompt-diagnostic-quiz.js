@@ -168,9 +168,6 @@ export default function PromptDiagnosticQuiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
-  const [showEmailCapture, setShowEmailCapture] = useState(false);
-  const [email, setEmail] = useState('');
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
 
   const handleAnswer = (questionId, answerId, score) => {
@@ -183,7 +180,7 @@ export default function PromptDiagnosticQuiz() {
       setCurrentQuestion(prev => prev + 1);
     } else {
       setQuizCompleted(true);
-      setShowEmailCapture(true);
+      setShowResults(true);
     }
   };
 
@@ -206,26 +203,11 @@ export default function PromptDiagnosticQuiz() {
     return getDiagnosticResult(totalScore, categoryScores);
   };
 
-  const handleEmailSubmit = async (e) => {
-    e.preventDefault();
-    if (!email) return;
-
-    // Here you would normally send to your email service
-    console.log('Email submitted:', email);
-    
-    setEmailSubmitted(true);
-    setShowEmailCapture(false);
-    setShowResults(true);
-  };
-
   const restartQuiz = () => {
     setCurrentQuestion(0);
     setAnswers({});
     setShowResults(false);
-    setShowEmailCapture(false);
     setQuizCompleted(false);
-    setEmailSubmitted(false);
-    setEmail('');
   };
 
   const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
@@ -307,7 +289,7 @@ export default function PromptDiagnosticQuiz() {
         </section>
 
         {/* Quiz Section */}
-        {!showResults && !showEmailCapture && (
+        {!showResults && (
           <section className="py-16">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Progress Bar */}
@@ -343,45 +325,6 @@ export default function PromptDiagnosticQuiz() {
                     </button>
                   ))}
                 </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Email Capture Modal */}
-        {showEmailCapture && (
-          <section className="py-16">
-            <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-                <div className="text-4xl mb-4">🎉</div>
-                <h2 className="text-2xl font-bold mb-4">Quiz Complete!</h2>
-                <p className="text-gray-600 mb-6">
-                  Get your personalized diagnostic report with specific recommendations 
-                  to improve your AI prompt results by 10x.
-                </p>
-                
-                <form onSubmit={handleEmailSubmit} className="space-y-4">
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Enter your email for the full diagnostic report"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent text-lg"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-red-700 transition-colors"
-                  >
-                    Get My Free Diagnostic Report
-                  </button>
-                </form>
-                
-                <p className="text-xs text-gray-500 mt-4">
-                  No spam. Unsubscribe anytime. We respect your privacy.
-                </p>
               </div>
             </div>
           </section>
@@ -449,6 +392,27 @@ export default function PromptDiagnosticQuiz() {
                 </div>
               </div>
 
+              {/* Course CTA Section */}
+              <div className="mt-12 bg-gradient-to-r from-red-600 to-orange-600 rounded-lg p-8 text-white text-center">
+                <h3 className="text-3xl font-bold mb-4">
+                  🚀 Ready to Master AI Prompting?
+                </h3>
+                <p className="text-xl mb-6 opacity-90">
+                  Get step-by-step training, templates, and advanced techniques to transform your AI results
+                </p>
+                <div className="space-y-4">
+                  <a
+                    href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                    className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors inline-block"
+                  >
+                    🎯 Get Advanced AI Prompt Training
+                  </a>
+                  <p className="text-sm opacity-75">
+                    Join 2,000+ professionals who've mastered AI prompting
+                  </p>
+                </div>
+              </div>
+
               {/* Action Buttons */}
               <div className="mt-8 text-center space-y-4">
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -463,12 +427,6 @@ export default function PromptDiagnosticQuiz() {
                     className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
                   >
                     See Example Prompts
-                  </a>
-                  <a
-                    href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
-                    className="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors inline-block"
-                  >
-                    Get Advanced Training
                   </a>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function EnhancedFAQSchema({ faqs, calculatorName, showExpanded = true }) {
+export default function EnhancedFAQSchema({ faqs, calculatorName, showExpanded = true, showBackground = true }) {
   const [expandedItems, setExpandedItems] = useState(showExpanded ? new Set([0]) : new Set())
 
   const toggleExpanded = (index) => {
@@ -44,7 +44,7 @@ export default function EnhancedFAQSchema({ faqs, calculatorName, showExpanded =
       />
 
       {/* Interactive FAQ Component */}
-      <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 mb-16">
+      <div className={`${showBackground ? 'bg-white rounded-xl shadow-lg border border-gray-200' : ''} p-8 mb-16`}>
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4 text-[#1A1A1A]">
             Frequently Asked Questions

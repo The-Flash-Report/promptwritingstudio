@@ -651,6 +651,12 @@ export default function AIHistory() {
               >
                 Learn AI Terms
               </Link>
+              <Link 
+                href="/what-is-rag"
+                className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-slate-900 transition-all duration-200 transform hover:scale-105"
+              >
+                What is RAG?
+              </Link>
             </div>
           </div>
         </div>

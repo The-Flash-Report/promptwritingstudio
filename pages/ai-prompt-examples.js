@@ -88,7 +88,23 @@ export default function AIPromptExamples() {
       await navigator.clipboard.writeText(textToCopy)
       setCopiedId(id)
       setUsageCount(prev => prev + 1)
-      setTimeout(() => setCopiedId(null), 2000)
+      
+      // Enhanced copy feedback
+      const copyButton = document.querySelector(`[data-copy-id="${id}"]`)
+      if (copyButton) {
+        copyButton.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!'
+        copyButton.classList.add('bg-green-500', 'hover:bg-green-600')
+        copyButton.classList.remove('bg-blue-600', 'hover:bg-blue-700')
+      }
+      
+      setTimeout(() => {
+        if (copyButton) {
+          copyButton.innerHTML = '<i class="fas fa-copy mr-2"></i>Copy to Clipboard'
+          copyButton.classList.remove('bg-green-500', 'hover:bg-green-600')
+          copyButton.classList.add('bg-blue-600', 'hover:bg-blue-700')
+        }
+        setCopiedId(null)
+      }, 2000)
       
       // Show email capture after first copy
       if (!emailSubmitted && !showEmailCapture) {
@@ -96,6 +112,7 @@ export default function AIPromptExamples() {
       }
     } catch (err) {
       console.error('Failed to copy:', err)
+      alert('Failed to copy to clipboard. Please try again.')
     }
   }
 
@@ -132,8 +149,8 @@ export default function AIPromptExamples() {
     }
   ]
 
-  const pageTitle = "500+ ChatGPT Prompt Examples That Actually Work (Copy & Paste Free)"
-  const pageDescription = "Copy-paste 500+ proven ChatGPT prompts that save 10+ hours weekly. Free business, writing, and creativity templates with real results. Start saving time today."
+  const pageTitle = "AI Prompt Examples - 500+ Free ChatGPT Prompts & Templates | PromptWritingStudio"
+  const pageDescription = "Discover 500+ proven AI prompt examples for ChatGPT, Claude & Gemini. Free business, writing & creativity templates that actually work. Copy & paste ready!"
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -170,11 +187,11 @@ export default function AIPromptExamples() {
             {/* Header Section with Interactive Elements */}
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                500+ Free AI Prompt Examples
+                AI Prompt Examples: 500+ Free ChatGPT Prompts That Work
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Copy-paste ready prompts for ChatGPT, Claude, Gemini, and other AI models. 
-                Boost your results with proven prompts for business, content creation, and creativity.
+                Copy-paste ready AI prompt examples for ChatGPT, Claude, Gemini & more. 
+                Proven templates for business, content creation & creativity. Start saving 10+ hours weekly today.
               </p>
               
               {/* Progress & Tutorial Bar */}
@@ -249,6 +266,22 @@ export default function AIPromptExamples() {
                       )
                     })}
                   </select>
+                </div>
+              </div>
+
+              {/* Popular Search Tags */}
+              <div className="mb-4">
+                <p className="text-sm text-gray-600 mb-3">Popular searches:</p>
+                <div className="flex flex-wrap gap-2">
+                  {['business', 'marketing', 'writing', 'content creation', 'email', 'social media', 'sales', 'customer service'].map((tag) => (
+                    <button
+                      key={tag}
+                      onClick={() => setSearchTerm(tag)}
+                      className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm hover:bg-blue-200 transition-colors"
+                    >
+                      {tag}
+                    </button>
+                  ))}
                 </div>
               </div>
 
@@ -344,11 +377,12 @@ export default function AIPromptExamples() {
                           ✏️
                         </button>
                         <button
+                          data-copy-id={prompt.id}
                           onClick={() => copyToClipboard(prompt.prompt, prompt.id)}
                           className={`px-3 py-1 rounded text-xs font-medium transition-all ${
                             copiedId === prompt.id 
                               ? 'bg-green-500 text-white' 
-                              : 'bg-blue-500 text-white hover:bg-blue-600'
+                              : 'bg-blue-600 text-white hover:bg-blue-700'
                           }`}
                         >
                           {copiedId === prompt.id ? '✓ Copied!' : '📋 Copy'}
@@ -469,6 +503,44 @@ export default function AIPromptExamples() {
               <div className="text-center mt-6">
                 <Link href="/calculators" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
                   View All Calculators 
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </section>
+
+            {/* New Modifier Categories - Internal Linking Boost */}
+            <section className="mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-center mb-6">Explore Specialized AI Prompt Categories</h3>
+              <p className="text-center text-gray-600 mb-8">
+                Find targeted prompts for your specific needs. Each category contains expert-crafted templates designed for maximum results.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <Link href="/chatgpt-prompts-for/productivity" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">⚡</div>
+                  <h4 className="font-semibold text-green-600 group-hover:text-green-700 mb-2">Productivity Prompts</h4>
+                  <p className="text-sm text-gray-600">Time management, automation & focus optimization</p>
+                </Link>
+                <Link href="/chatgpt-prompts-for/education" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">🎓</div>
+                  <h4 className="font-semibold text-blue-600 group-hover:text-blue-700 mb-2">Education Prompts</h4>
+                  <p className="text-sm text-gray-600">Lesson plans, teaching & learning optimization</p>
+                </Link>
+                <Link href="/chatgpt-prompts-for/finance" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">💰</div>
+                  <h4 className="font-semibold text-green-600 group-hover:text-green-700 mb-2">Finance Prompts</h4>
+                  <p className="text-sm text-gray-600">Budgeting, investing & financial planning</p>
+                </Link>
+                <Link href="/chatgpt-prompts-for/health" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">💪</div>
+                  <h4 className="font-semibold text-purple-600 group-hover:text-purple-700 mb-2">Health Prompts</h4>
+                  <p className="text-sm text-gray-600">Fitness, nutrition & wellness optimization</p>
+                </Link>
+              </div>
+              <div className="text-center mt-6">
+                <Link href="/chatgpt-prompts-for" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                  Browse All Categories 
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

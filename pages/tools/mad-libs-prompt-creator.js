@@ -97,15 +97,46 @@ export default function MadLibsPromptCreator() {
 
     let prompt = selectedTemplate.template;
     
-    // Replace placeholders with form data
+    // Replace placeholders with form data or smart defaults
     selectedTemplate.fields.forEach(field => {
-      const value = formData[field.id] || `[${field.label.toUpperCase()}]`;
+      let value = formData[field.id];
+      
+      // If no value provided, use smart defaults based on field type
+      if (!value || value.trim() === '') {
+        value = getSmartDefault(field);
+      }
+      
       prompt = prompt.replace(`{${field.id}}`, value);
     });
 
     setGeneratedPrompt(prompt);
     setShowResult(true);
   };
+
+  const getSmartDefault = (field) => {
+    // Provide smart defaults for common fields
+    const defaults = {
+      'tone': 'professional',
+      'formality': 'semi-formal',
+      'length': 'moderate (1 paragraph)',
+      'style': 'educational',
+      'platform': 'LinkedIn',
+      'content_type': 'post',
+      'copy_type': 'landing page headline',
+      'persuasion_technique': 'social proof',
+      'social_proof': 'customer testimonials',
+      'urgency': 'limited time offer',
+      'hashtags': '#ai #productivity #business',
+      'engagement_element': 'comment prompt',
+      'hook_type': 'question'
+    };
+    
+    return defaults[field.id] || `[${field.label}]`;
+  };
+
+  const isFormComplete = selectedTemplate && selectedTemplate.fields.some(field => 
+    formData[field.id] && formData[field.id].trim() !== ''
+  );
 
   const copyToClipboard = async () => {
     try {
@@ -141,10 +172,6 @@ export default function MadLibsPromptCreator() {
       localStorage.setItem('madLibsSharedCount', newCount.toString());
     }
   };
-
-  const isFormComplete = selectedTemplate && selectedTemplate.fields.every(field => 
-    formData[field.id] && formData[field.id].trim() !== ''
-  );
 
   return (
     <>
@@ -310,6 +337,7 @@ export default function MadLibsPromptCreator() {
                     <div key={field.id}>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         {field.label}
+                        <span className="text-gray-500 font-normal ml-1">(optional)</span>
                       </label>
                       
                       {field.type === 'select' ? (
@@ -344,6 +372,13 @@ export default function MadLibsPromptCreator() {
                   ))}
                 </div>
 
+                <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="text-blue-800 text-sm">
+                    💡 <strong>Quick Start:</strong> Fill in just the fields that matter most to you. 
+                    We'll use smart defaults for the rest. You can always edit the generated prompt later!
+                  </p>
+                </div>
+
                 <button
                   onClick={generatePrompt}
                   disabled={!isFormComplete}
@@ -353,7 +388,7 @@ export default function MadLibsPromptCreator() {
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
-                  {isFormComplete ? 'Generate My Custom Prompt' : 'Fill in all fields to continue'}
+                  {isFormComplete ? 'Generate My Custom Prompt' : 'Fill in at least one field to continue'}
                 </button>
               </div>
             )}

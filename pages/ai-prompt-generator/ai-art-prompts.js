@@ -255,7 +255,7 @@ export default function AiArtPrompts() {
                   
                   {/* Platform Information */}
                   {generatedPrompt && (
-                    <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+                    <div className="mt-4 p-4 bg-[#F9F9F9] rounded-lg">
                       <h3 className="font-medium text-blue-800 mb-2">
                         Compatible with DALL-E, Midjourney & Stable Diffusion
                       </h3>
@@ -331,7 +331,7 @@ export default function AiArtPrompts() {
             
             <div className="mt-8 text-center">
               <Link
-                href="/ai-prompt-generator/seo/art-styles-for-ai-prompts"
+                href="/ai-prompt-generator/art-styles-for-ai-prompts"
                 className="text-[#1A1A1A] font-medium hover:underline"
               >
                 View all art styles for AI prompts →
@@ -416,7 +416,7 @@ export default function AiArtPrompts() {
                 .map(useCase => (
                   <Link 
                     key={useCase.slug}
-                    href={`/ai-prompt-generator/seo/${useCase.slug}`}
+                    href={`/ai-prompt-generator/${useCase.slug}`}
                     className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200"
                   >
                     <h3 className="text-xl font-semibold mb-2">{useCase.h1}</h3>

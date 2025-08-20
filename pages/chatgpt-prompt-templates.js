@@ -23,7 +23,7 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
               <a href="#prompt-categories" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block">
                 Browse Templates
               </a>
-              <Link href="/ai-prompt-generator/seo/chatgpt-prompt" className="bg-white text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors duration-200 inline-block">
+              <Link href="/ai-prompt-generator/chatgpt-prompt" className="bg-white text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors duration-200 inline-block">
                 Try ChatGPT Prompt Generator
               </Link>
             </div>
@@ -216,7 +216,7 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
                     Want to create your own custom ChatGPT prompts? Use our interactive prompt generator to build effective prompts based on OpenAI's best practices that maintain your authentic voice.                  
                   </p>
                   <Link 
-                    href="/ai-prompt-generator/seo/chatgpt-prompt" 
+                    href="/ai-prompt-generator/chatgpt-prompt" 
                     className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center"
                   >
                     <span>Create Custom ChatGPT Prompts</span>

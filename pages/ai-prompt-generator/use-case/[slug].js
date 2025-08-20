@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import Layout from '../../components/layout/Layout'
+import Layout from '../../../components/layout/Layout'
 import Link from 'next/link'
 import { 
   useCaseTemplates, 
   generateFromUseCase 
-} from '../../data/prompt-generator-components'
+} from '../../../data/prompt-generator-components'
 
 // Map URL slugs to use case IDs
 const useCaseMap = {
@@ -87,7 +87,7 @@ const useCaseSeoData = {
 
 export default function UseCasePromptGenerator() {
   const router = useRouter();
-  const { 'use-case': useCaseSlug } = router.query;
+  const { slug: useCaseSlug } = router.query;
   
   const [useCaseId, setUseCaseId] = useState('');
   const [useCaseVariables, setUseCaseVariables] = useState({});
@@ -322,129 +322,7 @@ export default function UseCasePromptGenerator() {
                       </div>
                     </div>
                   )}
-                  
-                  {/* Platform Information */}
-                  {generatedPrompt && (
-                    <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-                      <h3 className="font-medium text-blue-800 mb-2">
-                        Optimized for {useCaseTemplates[useCaseId].defaultPlatform === 'openai' ? 'ChatGPT' : useCaseTemplates[useCaseId].defaultPlatform === 'anthropic' ? 'Claude' : 'Gemini'}
-                      </h3>
-                      <p className="text-sm text-blue-700">
-                        This prompt is optimized for {useCaseTemplates[useCaseId].defaultPlatform === 'openai' ? 'ChatGPT' : useCaseTemplates[useCaseId].defaultPlatform === 'anthropic' ? 'Claude' : 'Gemini'} but will work with other AI assistants as well. It follows official best practices for effective prompt engineering.
-                      </p>
-                    </div>
-                  )}
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* How It Works Section */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              How to Create Effective {useCaseTemplates[useCaseId].name} Prompts
-            </h2>
-            
-            <div className="space-y-8">
-              <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="bg-[#FFDE59] rounded-full h-10 w-10 flex items-center justify-center shrink-0">
-                  <span className="text-[#1A1A1A] font-bold">1</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Define Your Goal Clearly</h3>
-                  <p className="text-gray-700">
-                    Be specific about what you want the AI to create. For {useCaseTemplates[useCaseId].name.toLowerCase()}, include details about purpose, audience, tone, and key points to cover.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="bg-[#FFDE59] rounded-full h-10 w-10 flex items-center justify-center shrink-0">
-                  <span className="text-[#1A1A1A] font-bold">2</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Provide Context</h3>
-                  <p className="text-gray-700">
-                    Give the AI relevant background information. For {useCaseTemplates[useCaseId].name.toLowerCase()}, this might include your brand voice, target audience characteristics, or specific requirements.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="bg-[#FFDE59] rounded-full h-10 w-10 flex items-center justify-center shrink-0">
-                  <span className="text-[#1A1A1A] font-bold">3</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Specify the Format</h3>
-                  <p className="text-gray-700">
-                    Clearly define how you want the response structured. For {useCaseTemplates[useCaseId].name.toLowerCase()}, this includes sections, length, and any specific formatting requirements.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="bg-[#FFDE59] rounded-full h-10 w-10 flex items-center justify-center shrink-0">
-                  <span className="text-[#1A1A1A] font-bold">4</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">Iterate and Refine</h3>
-                  <p className="text-gray-700">
-                    Don't expect perfect results on the first try. Use the initial output to refine your prompt, adding more specificity or examples as needed.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* FAQ Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Frequently Asked Questions
-            </h2>
-            
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
-                  Which AI platform works best for {useCaseTemplates[useCaseId].name}?
-                </h3>
-                <p className="text-gray-700">
-                  Our {useCaseTemplates[useCaseId].name} prompts are optimized for {useCaseTemplates[useCaseId].defaultPlatform === 'openai' ? 'ChatGPT' : useCaseTemplates[useCaseId].defaultPlatform === 'anthropic' ? 'Claude' : 'Gemini'}, but they work well with any modern AI assistant. Each platform has different strengths, so you may want to experiment with different ones for your specific needs.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
-                  How can I maintain my authentic voice when using AI?
-                </h3>
-                <p className="text-gray-700">
-                  Include specific examples of your writing style in the prompt, mention phrases you commonly use, and always review and edit the AI output to align with your voice. Our generator includes fields for specifying tone and style to help preserve your authentic voice.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
-                  Can I save my prompts for future use?
-                </h3>
-                <p className="text-gray-700">
-                  Currently, you can copy your generated prompts to save them elsewhere. We're working on adding a feature to save prompts directly in your account for PromptWritingStudio members.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
-                  How often are prompt templates updated?
-                </h3>
-                <p className="text-gray-700">
-                  We regularly update our prompt templates based on the latest best practices from OpenAI, Anthropic, and Google. As AI capabilities evolve, we refine our templates to ensure you get the best results possible.
-                </p>
               </div>
             </div>
           </div>
@@ -466,7 +344,7 @@ export default function UseCasePromptGenerator() {
                 .map(([slug, id]) => (
                   <Link 
                     key={slug}
-                    href={`/ai-prompt-generator/${slug}`}
+                    href={`/ai-prompt-generator/use-case/${slug}`}
                     className="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow duration-200"
                   >
                     <h3 className="text-xl font-semibold mb-2">{useCaseTemplates[id].name}</h3>
@@ -489,26 +367,6 @@ export default function UseCasePromptGenerator() {
           </div>
         </div>
       </section>
-      
-      {/* CTA Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Take Your AI Prompting to the Next Level</h2>
-            <p className="text-lg text-gray-700 mb-8">
-              Join PromptWritingStudio to access our complete library of expert-crafted prompts, advanced techniques, and personalized guidance.
-            </p>
-            <a 
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" 
-              className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join PromptWritingStudio From $25/month
-            </a>
-          </div>
-        </div>
-      </section>
     </Layout>
   )
 }
@@ -517,7 +375,7 @@ export default function UseCasePromptGenerator() {
 export async function getStaticPaths() {
   // Get the paths we want to pre-render based on use cases
   const paths = Object.keys(useCaseMap).map(slug => ({
-    params: { 'use-case': slug }
+    params: { slug }
   }));
   
   return { paths, fallback: false };
@@ -525,7 +383,7 @@ export async function getStaticPaths() {
 
 // This function gets called at build time
 export async function getStaticProps({ params }) {
-  const useCaseSlug = params['use-case'];
+  const useCaseSlug = params.slug;
   
   // Check if this is a valid use case
   if (!useCaseMap[useCaseSlug]) {
@@ -538,3 +396,5 @@ export async function getStaticProps({ params }) {
     props: {}
   };
 }
+
+

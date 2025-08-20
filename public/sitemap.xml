@@ -26,6 +26,110 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Education Pages -->
+  <url>
+    <loc>https://promptwritingstudio.com/what-is-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/what-is-fine-tuning</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/what-are-embeddings</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/what-is-a-vector-database</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/rag-chunking-strategies</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/rag-evaluation</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/auto-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/self-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/flare-active-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/r2ag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/graphrag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/info-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/hybridrag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/corrective-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/speculative-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ra-rag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/morag</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- AI Calculators - High Priority for SEO -->
   <url>
     <loc>https://promptwritingstudio.com/calculators</loc>
@@ -228,33 +332,33 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- SEO Landing Pages - Dynamic Content -->
+  <!-- AI Prompt Generator Pages - Dynamic Content -->
   <url>
-    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/how-to-write-effective-ai-prompts</loc>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/how-to-write-effective-ai-prompts</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/ai-prompts-for-business</loc>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/ai-prompts-for-business</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/best-ai-prompts</loc>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/best-ai-prompts</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/ai-art-prompts</loc>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/ai-art-prompts</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://promptwritingstudio.com/ai-prompt-generator/seo/chatgpt-prompt</loc>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/chatgpt-prompt</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

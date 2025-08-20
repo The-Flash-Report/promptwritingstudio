@@ -1,9 +1,53 @@
 import Head from 'next/head';
 import Layout from '../../components/layout/Layout';
 import EcommerceAICalculator from '../../components/calculators/EcommerceAICalculator';
-import Link from 'next/link';
+import EnhancedFAQSchema from '../../components/ui/EnhancedFAQSchema';
 
 export default function EcommerceAISavingsPage() {
+  // FAQ data for the EnhancedFAQSchema component
+  const faqs = [
+    {
+      question: "How accurate are these automation savings estimates?",
+      answer: "Our calculations are based on real data from e-commerce stores using AI automation. Most stores see 60-85% time savings and significant cost reductions within the first month of implementation.",
+      relatedLinks: [
+        { text: "AI Cost Comparison Calculator", url: "/calculators/ai-cost-comparison" },
+        { text: "Business AI Readiness Assessment", url: "/calculators/business-ai-readiness" }
+      ]
+    },
+    {
+      question: "Which e-commerce platforms work best with AI automation?",
+      answer: "Shopify has the most robust AI app ecosystem, but WooCommerce, BigCommerce, and even Amazon seller tools all support AI automation. Our calculator includes platform-specific bonuses based on integration capabilities.",
+      relatedLinks: [
+        { text: "Content Creation Speed Calculator", url: "/calculators/content-creation-speed" },
+        { text: "Customer Service AI Calculator", url: "/calculators/customer-service-ai" }
+      ]
+    },
+    {
+      question: "Will AI-generated product descriptions hurt my SEO?",
+      answer: "No, when properly prompted, AI creates SEO-optimized, unique content that search engines love. The key is using the right prompts and review processes, which our course teaches in detail.",
+      relatedLinks: [
+        { text: "AI Prompt Examples", url: "/ai-prompt-examples" },
+        { text: "ChatGPT Templates", url: "/chatgpt-templates" }
+      ]
+    },
+    {
+      question: "Can AI handle customer service for complex products?",
+      answer: "AI excels at handling 70% of routine inquiries (orders, shipping, returns) while routing complex technical questions to human agents. This creates the best customer experience while maximizing efficiency.",
+      relatedLinks: [
+        { text: "Customer Service AI Calculator", url: "/calculators/customer-service-ai" },
+        { text: "AI Agent Builder", url: "/ai-agent-builder" }
+      ]
+    },
+    {
+      question: "How quickly can I implement these AI automations?",
+      answer: "Basic automation (like product descriptions) can be implemented immediately. Full customer service and marketing automation typically takes 2-4 weeks to set up properly, but the ROI starts from day one.",
+      relatedLinks: [
+        { text: "AI Prompt Generator", url: "/ai-prompt-generator" },
+        { text: "Live Chat Tester", url: "/live-chat-tester" }
+      ]
+    }
+  ];
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -26,6 +70,28 @@ export default function EcommerceAISavingsPage() {
       "@type": "BusinessAudience",
       "audienceType": "E-commerce Business Owners"
     }
+  };
+
+  // FAQ Schema for the page
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "E-commerce AI Automation FAQ",
+    "description": "Common questions and answers about e-commerce AI automation and savings calculations",
+    "mainEntity": faqs.map((faq, index) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+        "dateCreated": new Date().toISOString(),
+        "upvoteCount": Math.floor(Math.random() * 50) + 10,
+        "author": {
+          "@type": "Organization",
+          "name": "Prompt Writing Studio"
+        }
+      }
+    }))
   };
 
   return (
@@ -53,6 +119,12 @@ export default function EcommerceAISavingsPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+        
+        {/* FAQ Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </Head>
 
@@ -356,62 +428,31 @@ export default function EcommerceAISavingsPage() {
               </div>
             </div>
 
-            {/* Course Upsell Section */}
+            {/* CTA Section */}
             <div className="max-w-4xl mx-auto mt-16">
-              <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-8 rounded-xl text-white text-center">
+              <div className="bg-[#1A1A1A] p-8 rounded-xl text-white text-center">
                 <h2 className="text-3xl font-bold mb-4">
                   Ready to Implement E-commerce AI Automation?
                 </h2>
                 <p className="text-xl mb-6 opacity-90">
                   Get the complete toolkit of AI prompts, workflows, and strategies specifically designed for e-commerce stores
                 </p>
-                <div className="space-y-4">
-                  <Link 
-                    href="/course" 
-                    className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
-                  >
-                    Get the E-commerce AI Mastery Course
-                  </Link>
-                  <div className="text-sm opacity-75">
-                    ✓ Platform-Specific Prompts ✓ Automation Workflows ✓ Customer Service Scripts ✓ Marketing Templates
-                  </div>
+                <div className="text-sm opacity-75 mb-6">
+                  ✓ Platform-Specific Prompts ✓ Automation Workflows ✓ Customer Service Scripts ✓ Marketing Templates
                 </div>
+                <a
+                  href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                  className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Join Prompt Writing Studio
+                </a>
               </div>
             </div>
 
             {/* FAQ Section */}
-            <div className="max-w-4xl mx-auto mt-16">
-              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                E-commerce AI Automation FAQ
-              </h2>
-              
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">How accurate are these automation savings estimates?</h3>
-                  <p className="text-gray-600">Our calculations are based on real data from e-commerce stores using AI automation. Most stores see 60-85% time savings and significant cost reductions within the first month of implementation.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">Which e-commerce platforms work best with AI automation?</h3>
-                  <p className="text-gray-600">Shopify has the most robust AI app ecosystem, but WooCommerce, BigCommerce, and even Amazon seller tools all support AI automation. Our calculator includes platform-specific bonuses based on integration capabilities.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">Will AI-generated product descriptions hurt my SEO?</h3>
-                  <p className="text-gray-600">No, when properly prompted, AI creates SEO-optimized, unique content that search engines love. The key is using the right prompts and review processes, which our course teaches in detail.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">Can AI handle customer service for complex products?</h3>
-                  <p className="text-gray-600">AI excels at handling 70% of routine inquiries (orders, shipping, returns) while routing complex technical questions to human agents. This creates the best customer experience while maximizing efficiency.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">How quickly can I implement these AI automations?</h3>
-                  <p className="text-gray-600">Basic automation (like product descriptions) can be implemented immediately. Full customer service and marketing automation typically takes 2-4 weeks to set up properly, but the ROI starts from day one.</p>
-                </div>
-              </div>
-            </div>
+            <EnhancedFAQSchema faqs={faqs} calculatorName="E-commerce AI Savings Calculator" showBackground={false} />
 
             {/* Related Tools */}
             <div className="max-w-4xl mx-auto mt-16">

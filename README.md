@@ -37,7 +37,7 @@ This is the Next.js implementation of the PromptWritingStudio landing page, desi
   index.js - Main landing page
   chatgpt-prompt-templates.js - Hub page for templates
   chatgpt-prompts-for/[modifier].js - Dynamic SEO pages
-  ai-prompt-generator/seo/[slug].js - Dynamic SEO pages for AI prompts
+  ai-prompt-generator/[slug].js - Dynamic AI prompt generator pages
   sitemap.js - HTML sitemap for all pages
   [slug].js - Generic dynamic pages
 /data
@@ -68,7 +68,7 @@ The site implements a comprehensive programmatic SEO strategy targeting AI promp
   - Specialized Content (AI Writing Prompts, AI Chat Prompts, etc.)
 
 ### Implementation Details
-- **Dynamic Page Template**: `/pages/ai-prompt-generator/seo/[slug].js` renders all SEO pages
+- **Dynamic Page Template**: `/pages/ai-prompt-generator/[slug].js` renders all AI prompt generator pages
 - **Data Source**: `/data/seo-use-cases.js` contains all page metadata and content
 - **Concept Descriptions**: Each page includes a highlighted concept description that explains the topic
 - **HTML Sitemap**: `/pages/sitemap.js` organizes all pages into logical categories

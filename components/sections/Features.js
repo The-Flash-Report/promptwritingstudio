@@ -71,13 +71,13 @@ export default function Features() {
             <p className="text-dark-gray mb-3">
               Stay current with our comprehensive guide to the latest AI models including Llama 4, Grok 4, and Claude 4. Plus updated prompt techniques as AI tools evolve.
             </p>
-            <Link href="/ai-models-2025" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
+            <Link href="/ai-models" className="text-blue-600 hover:text-blue-800 font-semibold text-sm">
               View AI Models Guide →
             </Link>
           </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-10">
           <a
             href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
             className="bg-primary text-secondary font-bold px-8 py-3 rounded-md text-lg hover:bg-primary-dark transition inline-block"

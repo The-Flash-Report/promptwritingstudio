@@ -27,6 +27,23 @@ export default function Sitemap() {
     { title: 'Home', url: '/' },
     { title: 'AI Prompt Generator', url: '/ai-prompt-generator' },
     { title: 'AI Prompt Examples', url: '/ai-prompt-examples' },
+    { title: 'What is RAG?', url: '/what-is-rag' },
+    { title: 'What is Fine‑Tuning?', url: '/what-is-fine-tuning' },
+    { title: 'What are Embeddings?', url: '/what-are-embeddings' },
+    { title: 'What is a Vector Database?', url: '/what-is-a-vector-database' },
+    { title: 'RAG Chunking Strategies', url: '/rag-chunking-strategies' },
+    { title: 'RAG Evaluation', url: '/rag-evaluation' },
+    { title: 'Auto‑RAG', url: '/auto-rag' },
+    { title: 'Self‑RAG', url: '/self-rag' },
+    { title: 'FLARE / Active RAG', url: '/flare-active-rag' },
+    { title: 'R^2AG', url: '/r2ag' },
+    { title: 'GraphRAG', url: '/graphrag' },
+    { title: 'InFO‑RAG', url: '/info-rag' },
+    { title: 'HybridRAG', url: '/hybridrag' },
+    { title: 'Corrective RAG', url: '/corrective-rag' },
+    { title: 'Speculative RAG', url: '/speculative-rag' },
+    { title: 'Reliability‑Aware RAG (RA‑RAG)', url: '/ra-rag' },
+    { title: 'MoRAG (Multi‑Fusion RAG)', url: '/morag' },
     { title: 'Video Tutorials', url: '/video-tutorials' },
     { title: 'ChatGPT Prompt Templates', url: '/chatgpt-prompt-templates' },
     { title: 'Best AI Tools', url: '/best-ai-tools' },
@@ -52,10 +69,10 @@ export default function Sitemap() {
     { title: 'Mad Libs AI Prompt Creator', url: '/tools/mad-libs-prompt-creator', description: 'Create custom AI prompts with our Mad Libs-style fill-in-the-blank tool' },
     { title: 'AI Prompt Diagnostic Quiz', url: '/tools/prompt-diagnostic-quiz', description: 'Discover why your AI prompts aren\'t working and get personalized recommendations' },
     { title: 'AI Prompt Writing Quiz', url: '/ai-prompt-quiz', description: 'Test your AI prompt writing knowledge and get personalized recommendations' },
-    { title: 'AI Art Prompts Generator', url: '/ai-prompt-generator/ai-art-prompts' },
-    { title: 'ChatGPT Prompts for Email Marketing', url: '/chatgpt-prompts-for/email-marketing' },
-    { title: 'ChatGPT Prompts for Business', url: '/chatgpt-prompts-for/business' },
-    { title: 'ChatGPT Prompts for Resume', url: '/chatgpt-prompts-for/resume' }
+    { title: 'AI Art Prompts Generator', url: '/ai-prompt-generator/ai-art-prompts', description: 'Generate creative AI art prompts for image generation tools' },
+    { title: 'ChatGPT Prompts for Email Marketing', url: '/chatgpt-prompts-for/email-marketing', description: 'Professional email marketing prompts to boost engagement and conversions' },
+    { title: 'ChatGPT Prompts for Business', url: '/chatgpt-prompts-for/business', description: 'Business-focused prompts for strategy, planning, and operations' },
+    { title: 'ChatGPT Prompts for Resume', url: '/chatgpt-prompts-for/resume', description: 'AI-powered resume writing and optimization prompts' }
   ];
 
   // Professional prompt pages
@@ -76,7 +93,7 @@ export default function Sitemap() {
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">Sitemap</h1>
           <p className="text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
-            A complete directory of all pages on PromptWritingStudio, organized by category for easy navigation and SEO indexing.
+            A complete directory of all pages on PromptWritingStudio, organized by category for easy navigation.
           </p>
           
           {/* Main Pages Section */}
@@ -97,7 +114,6 @@ export default function Sitemap() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-yellow-400">
               🔥 AI Business Calculators
-              <span className="text-sm font-normal text-gray-600 ml-2">(High SEO Value)</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {calculatorPages.map(page => (
@@ -118,13 +134,11 @@ export default function Sitemap() {
             <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">AI Tools & Generators</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {toolPages.map(page => (
-                <div key={page.url} className={page.description ? "bg-blue-50 p-4 rounded-lg border border-blue-200" : ""}>
+                <div key={page.url} className="bg-blue-50 p-4 rounded-lg border border-blue-200">
                   <Link href={page.url} className="text-blue-600 hover:underline font-semibold block mb-1">
                     {page.title}
                   </Link>
-                  {page.description && (
-                    <p className="text-sm text-gray-600">{page.description}</p>
-                  )}
+                  <p className="text-sm text-gray-600">{page.description}</p>
                 </div>
               ))}
             </div>
@@ -134,7 +148,6 @@ export default function Sitemap() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-purple-400">
               🎯 Professional Prompt Collections
-              <span className="text-sm font-normal text-gray-600 ml-2">(2,000+ searches each)</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {professionalPromptPages.map(page => (
@@ -161,7 +174,7 @@ export default function Sitemap() {
                 {useCases.map(useCase => (
                   <li key={useCase.slug}>
                     <Link 
-                      href={`/ai-prompt-generator/seo/${useCase.slug}`} 
+                      href={`/ai-prompt-generator/${useCase.slug}`} 
                       className="text-blue-600 hover:underline"
                     >
                       {useCase.h1}
@@ -171,29 +184,6 @@ export default function Sitemap() {
               </ul>
             </div>
           ))}
-          
-          {/* SEO Stats Summary */}
-          <div className="mt-12 mb-8 p-6 bg-blue-50 rounded-lg">
-            <h2 className="text-xl font-bold mb-4 text-blue-800">SEO Performance Summary</h2>
-            <div className="grid md:grid-cols-4 gap-4 text-center">
-              <div>
-                <div className="text-2xl font-bold text-blue-600">{mainPages.length}</div>
-                <div className="text-sm text-blue-600">Main Pages</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-yellow-600">{calculatorPages.length}</div>
-                <div className="text-sm text-yellow-600">AI Calculators</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-green-600">{Object.values(groupedUseCases).flat().length}</div>
-                <div className="text-sm text-green-600">SEO Pages</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-purple-600">{mainPages.length + calculatorPages.length + Object.values(groupedUseCases).flat().length + toolPages.length}</div>
-                <div className="text-sm text-purple-600">Total Pages</div>
-              </div>
-            </div>
-          </div>
           
           {/* Admin Section */}
           <div className="mt-16 p-6 bg-gray-50 rounded-lg">

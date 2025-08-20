@@ -36,8 +36,8 @@ export default function Footer() {
               <li><Link href="/ai-prompt-quiz" className="text-gray-400 hover:text-white transition">Prompt Writing Quiz</Link></li>
               <li><Link href="/ai-prompt-examples" className="text-gray-400 hover:text-white transition">Prompt Examples</Link></li>
               <li><Link href="/chatgpt-prompt-templates" className="text-gray-400 hover:text-white transition">ChatGPT Templates</Link></li>
-              <li><Link href="/best-ai-tools" className="text-gray-400 hover:text-white transition">Best AI Tools 2025</Link></li>
-              <li><Link href="/ai-models-2025" className="text-gray-400 hover:text-white transition">AI Models Guide</Link></li>
+              <li><Link href="/best-ai-tools" className="text-gray-400 hover:text-white transition">Best AI Tools</Link></li>
+              <li><Link href="/ai-models" className="text-gray-400 hover:text-white transition">AI Models Guide</Link></li>
               <li><Link href="/ai-history" className="text-gray-400 hover:text-white transition">History of AI</Link></li>
               <li><Link href="/ai-glossary" className="text-gray-400 hover:text-white transition">AI Glossary</Link></li>
             </ul>

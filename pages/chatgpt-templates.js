@@ -445,8 +445,8 @@ export default function ChatGPTTemplates() {
     }
   ]
 
-  const pageTitle = "200+ ChatGPT Templates That Save 15+ Hours Weekly (Free Download)"
-  const pageDescription = "Copy-paste 200+ ChatGPT templates that business owners use to save 15+ hours weekly. Free prompt templates for marketing, writing, and operations. Get instant results."
+  const pageTitle = "ChatGPT Templates - Free AI Prompt Templates & Examples | PromptWritingStudio"
+  const pageDescription = "Get free ChatGPT templates for business, marketing, content creation & more. Copy-paste ready AI prompt templates that actually work. Start using AI effectively today."
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -483,11 +483,11 @@ export default function ChatGPTTemplates() {
             {/* Header Section with Progress Tracking */}
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Free ChatGPT Templates
+                ChatGPT Templates: Free AI Prompt Templates That Work
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Get better results from ChatGPT with our collection of ready-to-use templates. 
-                Download professional prompts for business, marketing, content creation, and more.
+                Get better results from ChatGPT with our collection of ready-to-use AI prompt templates. 
+                Download professional templates for business, marketing, content creation, and more.
               </p>
               
               {/* Progress Dashboard */}
@@ -845,6 +845,44 @@ export default function ChatGPTTemplates() {
               <div className="text-center mt-6">
                 <Link href="/calculators" className="inline-flex items-center text-green-600 hover:text-green-700 font-medium">
                   View All Business Calculators
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </section>
+
+            {/* New Modifier Categories - Internal Linking Boost */}
+            <section className="mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-center mb-6">Explore Specialized AI Prompt Categories</h3>
+              <p className="text-center text-gray-600 mb-8">
+                Find targeted prompts for your specific needs. Each category contains expert-crafted templates designed for maximum results.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <Link href="/chatgpt-prompts-for/productivity" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">⚡</div>
+                  <h4 className="font-semibold text-green-600 group-hover:text-green-700 mb-2">Productivity Prompts</h4>
+                  <p className="text-sm text-gray-600">Time management, automation & focus optimization</p>
+                </Link>
+                <Link href="/chatgpt-prompts-for/education" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">🎓</div>
+                  <h4 className="font-semibold text-blue-600 group-hover:text-blue-700 mb-2">Education Prompts</h4>
+                  <p className="text-sm text-gray-600">Lesson plans, teaching & learning optimization</p>
+                </Link>
+                <Link href="/chatgpt-prompts-for/finance" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">💰</div>
+                  <h4 className="font-semibold text-green-600 group-hover:text-green-700 mb-2">Finance Prompts</h4>
+                  <p className="text-sm text-gray-600">Budgeting, investing & financial planning</p>
+                </Link>
+                <Link href="/chatgpt-prompts-for/health" className="bg-white p-6 rounded-lg shadow hover:shadow-md transition group">
+                  <div className="text-2xl mb-3">💪</div>
+                  <h4 className="font-semibold text-purple-600 group-hover:text-purple-700 mb-2">Health Prompts</h4>
+                  <p className="text-sm text-gray-600">Fitness, nutrition & wellness optimization</p>
+                </Link>
+              </div>
+              <div className="text-center mt-6">
+                <Link href="/chatgpt-prompts-for" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                  Browse All Categories 
                   <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

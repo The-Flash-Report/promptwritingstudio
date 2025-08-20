@@ -56,6 +56,82 @@ export default function ModifierPage({ modifierData }) {
           </div>
         </div>
       </section>
+
+      {/* Special Image Tutorial Section - Only for Image Modifier */}
+      {modifierName.toLowerCase() === 'image' && (
+        <section className="py-12 bg-gradient-to-r from-purple-50 to-blue-50">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white rounded-2xl shadow-lg p-8">
+                <div className="text-center mb-8">
+                  <div className="text-4xl mb-4">🎨</div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">5-Minute AI Image Creation Tutorial</h2>
+                  <p className="text-lg text-gray-600">Learn how to create stunning AI images in just 5 minutes with our proven process</p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-purple-100 text-purple-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">Choose Your Style</h3>
+                        <p className="text-gray-600 text-sm">Pick from photorealistic, artistic, or stylized approaches based on your needs</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">Use Our Templates</h3>
+                        <p className="text-gray-600 text-sm">Copy one of our expert-crafted prompts below and customize it for your project</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-green-100 text-green-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900 mb-2">Generate & Refine</h3>
+                        <p className="text-gray-600 text-sm">Paste into DALL-E, Midjourney, or your preferred AI image generator</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-purple-100 to-blue-100 rounded-xl p-6">
+                    <h3 className="font-semibold text-gray-900 mb-4">Pro Tips for Best Results</h3>
+                    <ul className="space-y-3 text-sm text-gray-700">
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">•</span>
+                        <span>Be specific about lighting, mood, and artistic style</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">•</span>
+                        <span>Include technical details like aspect ratio and resolution</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">•</span>
+                        <span>Mention what NOT to include to avoid unwanted elements</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-purple-600 mr-2">•</span>
+                        <span>Use our examples below as starting points</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="text-center mt-8">
+                  <a href="#prompt-templates" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200 inline-flex items-center">
+                    <span>Start Creating Images Now</span>
+                    <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
       
       {/* Introduction Section */}
       <section className="py-16 md:py-24 bg-white">
@@ -131,6 +207,82 @@ export default function ModifierPage({ modifierData }) {
           </div>
         </div>
       </section>
+
+      {/* Visual Examples Section - Only for Image Modifier */}
+      {modifierName.toLowerCase() === 'image' && (
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">See What These Prompts Can Create</h2>
+                <p className="text-lg text-gray-600">Visual examples of AI-generated images using our prompt templates</p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Example 1: Detailed Scene */}
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-xl p-6">
+                  <div className="bg-gray-200 rounded-lg h-48 mb-4 flex items-center justify-center">
+                    <div className="text-center text-gray-500">
+                      <div className="text-4xl mb-2">🏰</div>
+                      <div className="text-sm">AI-Generated Scene</div>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Detailed Scene Generator</h3>
+                  <p className="text-sm text-gray-600 mb-3">Creates rich, atmospheric environments with specific lighting and mood</p>
+                  <div className="text-xs text-gray-500">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">DALL-E</span>
+                    <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded ml-2">Midjourney</span>
+                  </div>
+                </div>
+                
+                {/* Example 2: Character Design */}
+                <div className="bg-gradient-to-br from-purple-50 to-pink-100 rounded-xl p-6">
+                  <div className="bg-gray-200 rounded-lg h-48 mb-4 flex items-center justify-center">
+                    <div className="text-center text-gray-500">
+                      <div className="text-4xl mb-2">👤</div>
+                      <div className="text-sm">AI-Generated Character</div>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Character Design Prompt</h3>
+                  <p className="text-sm text-gray-600 mb-3">Detailed character descriptions with personality and visual traits</p>
+                  <div className="text-xs text-gray-500">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">DALL-E</span>
+                    <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded ml-2">Stable Diffusion</span>
+                  </div>
+                </div>
+                
+                {/* Example 3: Product Visualization */}
+                <div className="bg-gradient-to-br from-green-50 to-emerald-100 rounded-xl p-6">
+                  <div className="bg-gray-200 rounded-lg h-48 mb-4 flex items-center justify-center">
+                    <div className="text-center text-gray-500">
+                      <div className="text-4xl mb-2">📱</div>
+                      <div className="text-sm">AI-Generated Product</div>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">Product Visualization</h3>
+                  <p className="text-sm text-gray-600 mb-3">Professional product shots with perfect lighting and composition</p>
+                  <div className="text-xs text-gray-500">
+                    <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">DALL-E</span>
+                    <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded ml-2">Midjourney</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="text-center mt-8">
+                <p className="text-sm text-gray-500 mb-4">
+                  💡 <strong>Pro Tip:</strong> These are placeholder examples. Use our prompts below to create your own stunning AI images!
+                </p>
+                <a href="#prompt-templates" className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium">
+                  <span>View All Prompt Templates</span>
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
       
       {/* Prompt Templates Section */}
       <section id="prompt-templates" className="py-16 md:py-24 bg-[#F9F9F9]">
@@ -310,7 +462,7 @@ export default function ModifierPage({ modifierData }) {
                     Want to create custom ChatGPT prompts for {modifierName.toLowerCase()}? Use our interactive prompt generator to build effective prompts based on OpenAI's best practices that maintain your authentic voice.                  
                   </p>
                   <Link 
-                    href={`/ai-prompt-generator/seo/chatgpt-prompt-for-${router.query.modifier}`}
+                    href={`/ai-prompt-generator/chatgpt-prompt-for-${router.query.modifier}`}
                     className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center"
                   >
                     <span>Create {modifierName} Prompts</span>

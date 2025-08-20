@@ -51,7 +51,7 @@ export default function Header() {
 
           {/* Learn Section */}
           <div className="relative group">
-            <button className="text-[#333333] hover:text-[#1A1A1A] transition flex items-center">
+            <button className="text-[#333333] hover:text-[#1A1A1A] transition font-semibold flex items-center">
               Learn
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -103,7 +103,7 @@ export default function Header() {
           <Link href="/#pricing" className="text-[#333333] hover:text-[#1A1A1A] transition font-semibold">
             Pricing
           </Link>
-          <Link href="/about" className="text-[#333333] hover:text-[#1A1A1A] transition">
+          <Link href="/about" className="text-[#333333] hover:text-[#1A1A1A] transition font-semibold">
             About
           </Link>
         </div>

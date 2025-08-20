@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ProblemSolution() {
   return (
-    <section id="problem-solution" className="py-16 md:py-24 bg-[#F9F9F9]">
+    <section id="problem-solution" className="pt-16 md:pt-24 pb-12 md:pb-16 bg-[#F9F9F9]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">

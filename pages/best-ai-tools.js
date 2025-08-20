@@ -3,17 +3,14 @@ import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 
 export default function BestAITools() {
-  const currentYear = new Date().getFullYear();
   
   // Schema.org structured data for CollectionPage
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "headline": `Best AI Tools for ${currentYear}`,
-    "description": `A comprehensive, regularly updated collection of the most powerful AI tools to enhance your productivity, creativity, and workflow in ${currentYear}.`,
+    "headline": "Best AI Tools",
+    "description": "A comprehensive, regularly updated collection of the most powerful AI tools to enhance your productivity, creativity, and workflow.",
     "keywords": "AI tools, artificial intelligence tools, best AI tools, AI software, productivity tools, AI writing tools, AI image generation, AI coding tools, vibe coding",
-    "datePublished": "2025-05-07T00:00:00+00:00",
-    "dateModified": "2025-05-07T00:00:00+00:00",
     "author": {
       "@type": "Organization",
       "name": "PromptWritingStudio",
@@ -639,19 +636,19 @@ export default function BestAITools() {
   return (
     <Layout>
       <Head>
-        <title>Best AI Tools for {currentYear} | Ultimate Guide | PromptWritingStudio</title>
+        <title>Best AI Tools | Ultimate Guide | PromptWritingStudio</title>
         <meta 
           name="description" 
-          content={`Discover the best AI tools for ${currentYear}. A comprehensive, regularly updated collection of powerful AI tools for productivity, creativity, coding, and more.`}
+          content="Discover the best AI tools. A comprehensive, regularly updated collection of powerful AI tools for productivity, creativity, coding, and more."
         />
         <meta 
           name="keywords" 
           content="AI tools, artificial intelligence tools, best AI tools, AI software, productivity tools, AI writing tools, AI image generation, AI coding tools, vibe coding"
         />
-        <meta property="og:title" content={`Best AI Tools for ${currentYear} | Ultimate Guide`} />
+        <meta property="og:title" content="Best AI Tools | Ultimate Guide" />
         <meta 
           property="og:description" 
-          content={`Discover the best AI tools for ${currentYear}. A comprehensive, regularly updated collection of powerful AI tools for productivity, creativity, coding, and more.`}
+          content="Discover the best AI tools. A comprehensive, regularly updated collection of powerful AI tools for productivity, creativity, coding, and more."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://promptwritingstudio.com/best-ai-tools" />
@@ -666,7 +663,7 @@ export default function BestAITools() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Best AI Tools for {currentYear}
+              Best AI Tools
             </h1>
             <p className="text-xl mb-8">
               A comprehensive, regularly updated collection of the most powerful AI tools to enhance your productivity, creativity, and workflow.

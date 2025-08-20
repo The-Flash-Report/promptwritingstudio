@@ -10,7 +10,6 @@ export default function CalculatorsHub() {
       description: 'Calculate exactly how much time and money you could save with AI automation',
       url: '/roi-calculator',
       keywords: ['ROI', 'savings', 'automation', 'productivity'],
-      searchVolume: '1,200+',
       color: 'from-yellow-400 to-orange-500',
       icon: '💰',
       benefits: ['Time savings analysis', 'Cost reduction metrics', 'Business impact assessment']
@@ -20,7 +19,6 @@ export default function CalculatorsHub() {
       description: 'Compare the true cost of AI automation vs hiring employees or contractors',
       url: '/calculators/ai-cost-comparison',
       keywords: ['hiring vs AI', 'cost comparison', 'automation vs human'],
-      searchVolume: '800+',
       color: 'from-blue-500 to-purple-600',
       icon: '⚖️',
       benefits: ['Hiring decision support', 'Payback period analysis', 'Quality score comparison']
@@ -30,7 +28,6 @@ export default function CalculatorsHub() {
       description: 'Calculate how much time and money you save using AI for content creation',
       url: '/calculators/content-creation-speed',
       keywords: ['content speed', 'writing productivity', 'AI content'],
-      searchVolume: '600+',
       color: 'from-green-500 to-teal-600',
       icon: '✍️',
       benefits: ['Time savings analysis', 'Productivity increase metrics', 'ROI calculations']
@@ -40,7 +37,6 @@ export default function CalculatorsHub() {
       description: 'Calculate savings from automating product descriptions, customer service, and marketing',
       url: '/calculators/ecommerce-ai-savings',
       keywords: ['e-commerce AI', 'online store automation', 'product descriptions'],
-      searchVolume: '400+',
       color: 'from-purple-500 to-pink-600',
       icon: '🛒',
       benefits: ['Product description automation', 'Customer service savings', 'Marketing efficiency']
@@ -50,7 +46,6 @@ export default function CalculatorsHub() {
       description: 'Calculate support ticket reduction, response time improvement, and staff savings',
       url: '/calculators/customer-service-ai-savings',
       keywords: ['customer service AI', 'support automation', 'helpdesk AI'],
-      searchVolume: '300+',
       color: 'from-indigo-500 to-blue-600',
       icon: '🎧',
       benefits: ['Ticket volume reduction', 'Response time improvement', 'Staff cost savings']
@@ -60,7 +55,6 @@ export default function CalculatorsHub() {
       description: 'Assess your business readiness for AI implementation with actionable recommendations',
       url: '/calculators/business-ai-readiness',
       keywords: ['AI readiness', 'business AI score', 'AI adoption'],
-      searchVolume: '250+',
       color: 'from-red-500 to-pink-600',
       icon: '📊',
       benefits: ['Readiness assessment', 'Implementation roadmap', 'Priority recommendations']
@@ -155,6 +149,11 @@ export default function CalculatorsHub() {
                 Each calculator is designed for specific business decisions and provides instant, 
                 actionable insights with detailed reports and implementation guides.
               </p>
+              <div className="mt-4 text-sm">
+                <Link href="/what-is-rag" className="text-blue-600 hover:text-blue-800 font-semibold">
+                  New: What is RAG (Retrieval‑Augmented Generation)? →
+                </Link>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -165,7 +164,6 @@ export default function CalculatorsHub() {
                       <span className="text-3xl mr-3">{calc.icon}</span>
                       <div>
                         <h3 className="text-xl font-bold">{calc.title}</h3>
-                        <div className="text-sm opacity-90">{calc.searchVolume} monthly searches</div>
                       </div>
                     </div>
                   </div>

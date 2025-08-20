@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout from '../../components/layout/Layout';
 import ContentSpeedCalculator from '../../components/calculators/ContentSpeedCalculator';
 import Link from 'next/link';
+import EnhancedFAQSchema from '../../components/ui/EnhancedFAQSchema';
 
 export default function ContentCreationSpeedPage() {
   const schema = {
@@ -22,6 +23,64 @@ export default function ContentCreationSpeedPage() {
       "name": "Prompt Writing Studio",
       "url": "https://promptwritingstudio.com"
     }
+  };
+
+  // FAQ data for the EnhancedFAQSchema component
+  const faqs = [
+    {
+      question: "How accurate are these time savings estimates?",
+      answer: "Our calculations are based on real-world data from content creators who use AI tools. Results vary by individual skill level and content complexity, but most users see 3-6x speed improvements.",
+      relatedLinks: [
+        { text: "AI Cost Comparison Calculator", url: "/calculators/ai-cost-comparison" },
+        { text: "Business AI Readiness Assessment", url: "/calculators/business-ai-readiness" }
+      ]
+    },
+    {
+      question: "What AI tools do I need to achieve these results?",
+      answer: "You can achieve significant results with ChatGPT, Claude, or similar AI writing assistants. The key is knowing the right prompts and workflows, which our course teaches in detail.",
+      relatedLinks: [
+        { text: "AI Prompt Examples", url: "/ai-prompt-examples" },
+        { text: "ChatGPT Templates", url: "/chatgpt-templates" }
+      ]
+    },
+    {
+      question: "Will AI-generated content rank well for SEO?",
+      answer: "Yes, when properly prompted and edited. AI helps with research, structure, and first drafts, but human oversight ensures quality and originality that search engines reward.",
+      relatedLinks: [
+        { text: "AI Prompt Generator", url: "/ai-prompt-generator" },
+        { text: "Live Chat Tester", url: "/live-chat-tester" }
+      ]
+    },
+    {
+      question: "Can I use this for any type of business?",
+      answer: "Absolutely! Our calculator includes examples for blogs, social media, emails, product descriptions, ad copy, and reports. Any business that creates content can benefit.",
+      relatedLinks: [
+        { text: "Customer Service AI Calculator", url: "/calculators/customer-service-ai-savings" },
+        { text: "E-commerce AI Calculator", url: "/calculators/ecommerce-ai-savings" }
+      ]
+    }
+  ];
+
+  // FAQ Schema for the page
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "name": "Content Creation Speed Calculator FAQ",
+    "description": "Common questions and answers about AI content creation speed and productivity calculations",
+    "mainEntity": faqs.map((faq, index) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+        "dateCreated": new Date().toISOString(),
+        "upvoteCount": Math.floor(Math.random() * 50) + 10,
+        "author": {
+          "@type": "Organization",
+          "name": "Prompt Writing Studio"
+        }
+      }
+    }))
   };
 
   return (
@@ -49,6 +108,12 @@ export default function ContentCreationSpeedPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+        
+        {/* FAQ Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </Head>
 
@@ -220,28 +285,26 @@ export default function ContentCreationSpeedPage() {
               </div>
             </div>
 
-            {/* Course Upsell Section */}
+            {/* CTA Section */}
             <div className="max-w-4xl mx-auto mt-16">
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-xl text-white text-center">
+              <div className="bg-[#1A1A1A] p-8 rounded-xl text-white text-center">
                 <h2 className="text-3xl font-bold mb-4">
                   Ready to Actually Implement These Time Savings?
                 </h2>
                 <p className="text-xl mb-6 opacity-90">
                   Get the exact AI prompts, workflows, and strategies that top content creators use to 4-8x their output
                 </p>
-                <div className="space-y-4">
-                  <a
-                    href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
-                  >
-                    Get the Complete Prompt Writing Studio Course
-                  </a>
-                  <div className="text-sm opacity-75">
-                    ✓ 50+ Proven AI Prompts ✓ Step-by-Step Workflows ✓ Industry-Specific Templates
-                  </div>
+                <div className="text-sm opacity-75 mb-6">
+                  ✓ 50+ Proven AI Prompts ✓ Step-by-Step Workflows ✓ Industry-Specific Templates
                 </div>
+                <a
+                  href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors"
+                >
+                  Join Prompt Writing Studio
+                </a>
               </div>
             </div>
 
@@ -251,27 +314,7 @@ export default function ContentCreationSpeedPage() {
                 Frequently Asked Questions
               </h2>
               
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">How accurate are these time savings estimates?</h3>
-                  <p className="text-gray-600">Our calculations are based on real-world data from content creators who use AI tools. Results vary by individual skill level and content complexity, but most users see 3-6x speed improvements.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">What AI tools do I need to achieve these results?</h3>
-                  <p className="text-gray-600">You can achieve significant results with ChatGPT, Claude, or similar AI writing assistants. The key is knowing the right prompts and workflows, which our course teaches in detail.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">Will AI-generated content rank well for SEO?</h3>
-                  <p className="text-gray-600">Yes, when properly prompted and edited. AI helps with research, structure, and first drafts, but human oversight ensures quality and originality that search engines reward.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-semibold text-gray-900 mb-2">Can I use this for any type of business?</h3>
-                  <p className="text-gray-600">Absolutely! Our calculator includes examples for blogs, social media, emails, product descriptions, ad copy, and reports. Any business that creates content can benefit.</p>
-                </div>
-              </div>
+                             <EnhancedFAQSchema faqs={faqs} calculatorName="Content Creation Speed Calculator" showBackground={false} />
             </div>
 
             {/* Related Tools */}

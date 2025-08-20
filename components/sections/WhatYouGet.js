@@ -35,13 +35,13 @@ export default function WhatYouGet() {
   ];
   
   return (
-    <section id="what-you-get" className="py-16 md:py-24 bg-[#F9F9F9]">
+    <section id="what-you-get" className="pt-8 md:pt-12 pb-12 md:pb-16 bg-[#F9F9F9]">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <span className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-4 py-1 rounded-full font-bold text-sm mb-4">WHAT'S INCLUDED</span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1A1A1A]">What You'll Get</h2>
           <p className="text-lg text-[#333333] max-w-3xl mx-auto leading-relaxed">
-            Plug-and-Play AI Prompts Delivered to Your Inbox 3 Times a Week
+            Time‑saving, plug‑and‑play AI prompts delivered straight to your inbox so you can create faster with consistent quality
           </p>
         </div>
         
@@ -61,7 +61,7 @@ export default function WhatYouGet() {
               ))}
             </div>
             
-            <div className="mt-12 text-center">
+            <div className="mt-8 text-center">
               <a 
                 href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" 
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block"

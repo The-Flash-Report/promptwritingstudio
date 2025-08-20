@@ -139,11 +139,31 @@
     }
   ],
   "benefits": [
-    "Scale content production 5x without proportional time increase",
-    "Grow followers 3-5x faster with strategic, algorithm-friendly content",
-    "Generate multiple revenue streams from existing audience",
-    "Save 10+ hours weekly on content planning and creation",
-    "Increase engagement rates by 40-60% with optimized strategies"
+    {
+      "icon": "⚡",
+      "title": "Scale Content Production",
+      "description": "Scale content production 5x without proportional time increase using AI-powered strategies and automation."
+    },
+    {
+      "icon": "📈",
+      "title": "Faster Growth",
+      "description": "Grow followers 3-5x faster with strategic, algorithm-friendly content that maximizes reach and engagement."
+    },
+    {
+      "icon": "💰",
+      "title": "Multiple Revenue Streams",
+      "description": "Generate multiple revenue streams from existing audience through strategic monetization and product development."
+    },
+    {
+      "icon": "⏰",
+      "title": "Time Savings",
+      "description": "Save 10+ hours weekly on content planning and creation with systematic AI prompt strategies."
+    },
+    {
+      "icon": "🎯",
+      "title": "Higher Engagement",
+      "description": "Increase engagement rates by 40-60% with optimized strategies that resonate with your target audience."
+    }
   ],
   "faqs": [
     {

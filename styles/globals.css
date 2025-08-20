@@ -20,6 +20,7 @@ body {
   font-family: var(--font-primary);
   background-color: var(--color-off-white);
   color: var(--color-dark-gray);
+  scroll-behavior: smooth;
 }
 
 .gradient-bg {
