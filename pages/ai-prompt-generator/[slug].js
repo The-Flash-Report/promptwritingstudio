@@ -49,7 +49,7 @@ export default function UseCasePromptPage() {
       description={useCaseData.description}
     >
       {/* Hero Section */}
-              <section className="bg-[#1A1A1A] text-white py-16 md:py-24">
+      <section className="bg-[#1A1A1A] text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             {useCaseData.h1}
@@ -57,11 +57,7 @@ export default function UseCasePromptPage() {
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
             {useCaseData.intro}
           </p>
-          <div className="bg-[#F9F9F9] border border-[#E5E5E5] rounded-lg p-6 max-w-2xl mx-auto mb-8">
-            <p className="text-[#333333] text-lg">
-              {useCaseData.conceptDescription}
-            </p>
-          </div>
+
           
           {/* Course CTA Button */}
           <div className="text-center">
