@@ -399,8 +399,8 @@ export default function ModifierPage({ modifierData }) {
                 <div key={index} className="bg-[#F9F9F9] p-6 rounded-xl shadow-sm">
                   <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">{faq.question}</h3>
                   <div className="text-[#333333] space-y-4">
-                    {/* Format the answer text by splitting on numbered points */}
-                    {faq.answer.split(/(?=\d+\))/).map((part, i) => {
+                    {/* Format the answer or description text by splitting on numbered points */}
+                    {(faq.answer || faq.description || '').split(/(?=\d+\))/).map((part, i) => {
                       if (!part.trim()) return null;
                       
                       // Check if this part starts with a number
