@@ -440,7 +440,7 @@ export default function CostComparisonCalculator() {
                 Our PromptWritingStudio course teaches you the exact prompts and processes to achieve these savings.
               </p>
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
                 className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"

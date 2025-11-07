@@ -402,7 +402,7 @@ export default function PromptDiagnosticQuiz() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                    href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
                     className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors inline-block"
                   >
                     🎯 Get Advanced AI Prompt Training

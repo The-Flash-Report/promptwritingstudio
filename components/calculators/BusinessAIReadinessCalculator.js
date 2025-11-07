@@ -536,7 +536,7 @@ export default function BusinessAIReadinessCalculator() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+              href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
               onClick={() => trackCTAClick('course_purchase')}
               className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors"
               target="_blank"

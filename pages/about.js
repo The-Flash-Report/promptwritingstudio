@@ -118,7 +118,7 @@ export default function About() {
               Join our community of prompt engineers and start getting better results from AI tools today.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block" target="_blank" rel="noopener noreferrer">
+              <a href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block" target="_blank" rel="noopener noreferrer">
                 Get Started
               </a>
               <a href="https://aiflashreport.com/" className="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition inline-block" target="_blank" rel="noopener noreferrer">

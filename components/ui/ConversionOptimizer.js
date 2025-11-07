@@ -60,7 +60,7 @@ export default function ConversionOptimizer({
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
                 onClick={() => handleCTAClick('course_purchase')}
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center justify-center"
                 target="_blank"
@@ -180,7 +180,7 @@ export function StickyMobileCTA({ calculatorName, hasResults = false }) {
         </div>
         <a
           href={hasResults 
-            ? "https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+            ? "https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
             : "#calculator"
           }
           onClick={() => handleCTAClick(hasResults ? 'mobile_sticky_course' : 'mobile_sticky_calculator')}

@@ -8,6 +8,13 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <script defer data-domain="promptwritingstudio.com" src="https://plausible.io/js/script.outbound-links.js"></script>
         
+        {/* ConvertBox */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(e,t){(e=t.createElement("script")).src="https://cdn.convertbox.com/convertbox/js/embed.js",e.id="app-convertbox-script",e.async=true,e.dataset.uuid="9b03f284-1c74-4054-ba19-6604e0ecdd7a",document.getElementsByTagName("head")[0].appendChild(e)}(window,document);`,
+          }}
+        />
+        
         {/* Google Analytics 4 */}
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></script>
         <script

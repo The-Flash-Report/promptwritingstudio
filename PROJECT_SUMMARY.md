@@ -4,12 +4,10 @@
 PromptWritingStudio is a Next.js-based educational platform that teaches users how to write effective AI prompts for popular AI models like ChatGPT, Claude, and Gemini. The project combines free tools with paid educational content to create a comprehensive learning experience for AI prompt engineering.
 
 ## Business Model
-**SaaS Education Platform** with freemium model:
+**Educational Platform** with freemium model:
 - **Free Tier**: AI prompt generator, basic templates, educational content
-- **Paid Tiers**: 
-  - Basic ($25/month): 25+ templates, lessons, email support
-  - Pro ($47/month): 50+ templates, community, live Q&A
-  - Elite ($97/month): Custom prompts, 1-on-1 coaching, team features
+- **Paid Course**: 
+  - Complete Course ($197 one-time): Lifetime access to all content, 100+ templates, community, live Q&A, custom prompts, priority support
 
 ## Core Features
 

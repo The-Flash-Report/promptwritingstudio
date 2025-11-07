@@ -79,7 +79,7 @@ export default function Features() {
 
         <div className="text-center mt-10">
           <a
-            href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+            href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
             className="bg-primary text-secondary font-bold px-8 py-3 rounded-md text-lg hover:bg-primary-dark transition inline-block"
             target="_blank"
             rel="noopener noreferrer"

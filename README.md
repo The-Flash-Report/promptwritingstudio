@@ -107,11 +107,9 @@ Each page in `seo-use-cases.js` includes:
 
 ### Content Guidelines
 - Maintain "Join Now" as the primary CTA text throughout the site
-- All "Join Now" CTAs link directly to the Basic plan purchase URL (https://courses.becomeawritertoday.com/purchase?product_id=6253746)
-- Pricing links for each plan:
-  - Basic plan: https://courses.becomeawritertoday.com/purchase?product_id=6253746
-  - Pro plan: https://courses.becomeawritertoday.com/purchase?product_id=6253756
-  - Elite plan: https://courses.becomeawritertoday.com/purchase?product_id=6253752
+- All "Join Now" CTAs link directly to the single course purchase URL (https://newsletter.becomeawritertoday.com/products/prompt-writing-studio)
+- Purchase URL:
+  - Complete Course: https://newsletter.becomeawritertoday.com/products/prompt-writing-studio ($197 one-time payment)
 - Use benefit-driven headlines and copy
 - Include social proof and credibility indicators
 - Each section should have a clear purpose and call-to-action

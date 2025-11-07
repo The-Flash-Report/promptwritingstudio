@@ -212,7 +212,7 @@ export default function SmallBusinessOwnersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
                 className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
               >
                 Get the Complete Course

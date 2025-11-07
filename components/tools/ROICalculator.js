@@ -274,7 +274,7 @@ export default function ROICalculator() {
                 Our PromptWritingStudio course shows you exactly how to implement these AI automations in your business.
               </p>
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
                 className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"

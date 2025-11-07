@@ -120,7 +120,7 @@ export default function EnhancedFAQSchema({ faqs, calculatorName, showExpanded =
                 Contact Support
               </a>
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+                href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
                 className="inline-block border border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors"
               >
                 Get Prompt Writing Studio

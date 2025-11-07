@@ -119,7 +119,7 @@ export default function ProblemSolution() {
           
           <div className="text-center mt-12">
             <a 
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6253746" 
+              href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio" 
               className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block"
               target="_blank"
               rel="noopener noreferrer"

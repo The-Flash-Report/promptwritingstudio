@@ -185,7 +185,7 @@ export default function BusinessNameGeneratorPage() {
               Once you have your perfect business name, learn how to create compelling content with AI prompts that convert visitors into customers.
             </p>
             <a 
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6253746"
+              href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
               className="bg-[#1A1A1A] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors duration-200 inline-block"
               target="_blank"
               rel="noopener noreferrer"

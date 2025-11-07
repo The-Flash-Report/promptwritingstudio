@@ -44,6 +44,81 @@
 
 ---
 
+## 🆕 NEW FEATURE: AI Insights Hub
+
+### Overview
+Create dedicated section showcasing AI expertise and integrating relevant email content from Bryan's newsletter to demonstrate thought leadership and drive engagement.
+
+### Business Impact
+- Establish PromptWritingStudio as go-to AI resource
+- Leverage existing email content to improve site engagement  
+- Create additional touchpoints for newsletter signups
+- Improve SEO with fresh, AI-focused content
+- Cross-promote between site content and email list
+
+### Implementation Tasks
+
+#### Phase 1: Foundation (Next 2-3 weeks)
+- [ ] **Create AI Insights Hub page structure**
+  - New route: `/ai-insights`
+  - Basic layout with hero section and featured content
+  - Newsletter signup integration with "101 Prompts" lead magnet
+  
+- [ ] **Design and implement basic layout**
+  - Hero section: "Latest AI Insights from Our Newsletter"
+  - Featured content area for 3-5 recent AI-related emails
+  - Quick stats display (subscriber count, AI content frequency)
+  - Responsive design using existing Tailwind system
+  
+- [ ] **Set up ConvertKit RSS integration**
+  - Research ConvertKit RSS feed capabilities
+  - Implement basic RSS parsing for AI-tagged content
+  - Manual content posting workflow initially
+  
+- [ ] **Create content management interface**
+  - Simple admin interface for managing insights
+  - Content filtering system for AI-related posts
+  - Basic CRUD operations for insights management
+
+#### Phase 2: Automation (Month 2-3)
+- [ ] **Implement automated content filtering**
+  - AI content classification system
+  - Keyword-based filtering (AI, ChatGPT, Claude, prompts, etc.)
+  - Content relevance scoring
+  
+- [ ] **Set up auto-posting system**
+  - ConvertKit webhook integration
+  - Automated posting workflow
+  - Editorial review process integration
+  
+- [ ] **Add advanced user experience features**
+  - Search and filter functionality
+  - Content recommendations
+  - Social sharing integration
+  
+- [ ] **Optimize for SEO and conversion**
+  - Meta tags and schema markup
+  - Internal linking strategy
+  - Conversion optimization testing
+
+#### Phase 3: Enhancement (Month 3-4)
+- [ ] **Add analytics and tracking**
+  - Engagement metrics (time on page, shares, signups)
+  - SEO performance tracking
+  - Conversion funnel analysis
+  
+- [ ] **Content strategy optimization**
+  - Weekly content publishing schedule
+  - Content mix optimization (60% email expansion, 40% original)
+  - SEO keyword targeting refinement
+  
+- [ ] **Performance and scalability**
+  - Content caching and optimization
+  - Mobile experience enhancement
+  - A/B testing for layout and conversion
+
+---
+
 ## IMMEDIATE PRIORITIES (Next 2-4 Weeks)
 
 ### 🔧 CODE QUALITY IMPROVEMENTS (MONTH 2-3) - LOW PRIORITY
