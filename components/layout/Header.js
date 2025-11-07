@@ -33,6 +33,9 @@ export default function Header() {
                 <Link href="/ai-prompt-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   🤖 AI Prompt Generator
                 </Link>
+                <Link href="/gemini-prompt-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  💎 Gemini Prompt Generator
+                </Link>
                 <Link href="/tools/mad-libs-prompt-creator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                   🎯 Mad Libs Prompt Creator
                 </Link>

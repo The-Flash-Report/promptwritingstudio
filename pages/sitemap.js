@@ -26,6 +26,7 @@ export default function Sitemap() {
   const mainPages = [
     { title: 'Home', url: '/' },
     { title: 'AI Prompt Generator', url: '/ai-prompt-generator' },
+    { title: 'Gemini Prompt Generator', url: '/gemini-prompt-generator' },
     { title: 'AI Prompt Examples', url: '/ai-prompt-examples' },
     { title: 'What is RAG?', url: '/what-is-rag' },
     { title: 'What is Fine‑Tuning?', url: '/what-is-fine-tuning' },
