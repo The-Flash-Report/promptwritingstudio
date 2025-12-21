@@ -8,6 +8,17 @@ export default function Document() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <script defer data-domain="promptwritingstudio.com" src="https://plausible.io/js/script.outbound-links.js"></script>
         
+        {/* Privacy-friendly analytics by Plausible CE */}
+        <script async src="https://stats.bryancollins.com/js/pa-gzCAE9n0f6CLA2c1Syo5b.js"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+              plausible.init()
+            `,
+          }}
+        />
+        
         {/* ConvertBox */}
         <script
           dangerouslySetInnerHTML={{
