@@ -63,7 +63,7 @@ export default function UseCasePromptPage() {
           <div className="text-center">
             <p className="text-lg mb-4 text-white">Want to master AI prompts like a pro?</p>
             <Link 
-              href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio" 
+              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" 
               className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 font-semibold inline-block"
               target="_blank"
               rel="noopener noreferrer"

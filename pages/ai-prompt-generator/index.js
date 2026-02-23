@@ -1013,7 +1013,7 @@ export default function AIPromptGenerator() {
                   Do you have more advanced prompt templates?
                 </h3>
                 <p className="text-gray-700">
-                  Yes! Our PromptWritingStudio membership includes access to over 100 advanced prompt templates, personalized guidance, and a community of prompt engineers. <a href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio" className="text-blue-600 hover:underline">Learn more about our membership</a>.
+                  Yes! Our PromptWritingStudio membership includes access to over 100 advanced prompt templates, personalized guidance, and a community of prompt engineers. <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="text-blue-600 hover:underline">Learn more about our membership</a>.
                 </p>
               </div>
             </div>
@@ -1044,7 +1044,7 @@ export default function AIPromptGenerator() {
               Join PromptWritingStudio to access our complete library of expert-crafted prompts, advanced techniques, and personalized guidance.
             </p>
             <a 
-              href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio" 
+              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" 
               className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block"
               target="_blank"
               rel="noopener noreferrer"

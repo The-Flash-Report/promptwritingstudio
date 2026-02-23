@@ -368,7 +368,7 @@ export default function VideoTutorialsPage() {
                   Get the full PromptWritingStudio course with lifetime access
                 </p>
                 <a 
-                  href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
+                  href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
                   className="text-yellow-600 font-semibold hover:text-yellow-700"
                 >
                   Get the Course →
@@ -389,7 +389,7 @@ export default function VideoTutorialsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio"
+                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
                 className="bg-white text-yellow-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
               >
                 Get the Complete Course

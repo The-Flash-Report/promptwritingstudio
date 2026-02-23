@@ -60,7 +60,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <Link 
-                href="https://newsletter.becomeawritertoday.com/products/prompt-writing-studio" 
+                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" 
                 className="bg-[#FFDE59] text-[#1A1A1A] inline-block text-center px-12 py-4 rounded-lg font-bold hover:bg-[#E5C84F] transition text-lg"
                 target="_blank"
                 rel="noopener noreferrer"
