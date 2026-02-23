@@ -28,7 +28,7 @@ export default function EcommerceAISavingsPage() {
       answer: "No, when properly prompted, AI creates SEO-optimized, unique content that search engines love. The key is using the right prompts and review processes, which our course teaches in detail.",
       relatedLinks: [
         { text: "AI Prompt Examples", url: "/ai-prompt-examples" },
-        { text: "ChatGPT Templates", url: "/chatgpt-templates" }
+        { text: "ChatGPT Templates", url: "/chatgpt-prompt-templates" }
       ]
     },
     {

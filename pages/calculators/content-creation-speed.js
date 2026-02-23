@@ -40,7 +40,7 @@ export default function ContentCreationSpeedPage() {
       answer: "You can achieve significant results with ChatGPT, Claude, or similar AI writing assistants. The key is knowing the right prompts and workflows, which our course teaches in detail.",
       relatedLinks: [
         { text: "AI Prompt Examples", url: "/ai-prompt-examples" },
-        { text: "ChatGPT Templates", url: "/chatgpt-templates" }
+        { text: "ChatGPT Templates", url: "/chatgpt-prompt-templates" }
       ]
     },
     {
@@ -323,7 +323,7 @@ export default function ContentCreationSpeedPage() {
                 Related Business Calculators
               </h2>
               
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <Link 
                   href="/roi-calculator" 
                   className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
@@ -338,6 +338,30 @@ export default function ContentCreationSpeedPage() {
                 >
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">💰 AI vs Human Cost Calculator</h3>
                   <p className="text-gray-600">Compare costs between AI automation and human labor for various tasks.</p>
+                </Link>
+
+                <Link 
+                  href="/calculators/copywriting-tools-calculator" 
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">✏️ Copywriting Tools Calculator</h3>
+                  <p className="text-gray-600">Calculate AI copywriting time and cost savings for sales pages, emails, and ads.</p>
+                </Link>
+
+                <Link 
+                  href="/calculators/content-editor-calculator" 
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">📝 Content Editor Calculator</h3>
+                  <p className="text-gray-600">Calculate AI editing savings for structural edits, line edits, and proofreading.</p>
+                </Link>
+
+                <Link 
+                  href="/calculators/writing-assistant-calculator" 
+                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">📝 Writing Assistant Calculator</h3>
+                  <p className="text-gray-600">Estimate AI writing assistant savings across drafting, editing, research, and formatting.</p>
                 </Link>
               </div>
             </div>

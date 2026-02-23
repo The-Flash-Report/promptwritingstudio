@@ -85,7 +85,7 @@ export default function Home() {
         "@type": "Offer", 
         "name": "ChatGPT Templates",
         "description": "Ready-to-use ChatGPT templates for business and content creation",
-        "url": "https://promptwritingstudio.com/chatgpt-templates",
+        "url": "https://promptwritingstudio.com/chatgpt-prompt-templates",
         "price": "0",
         "priceCurrency": "USD"
       },

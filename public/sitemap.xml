@@ -25,6 +25,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://promptwritingstudio.com/join</loc>
+    <lastmod>2025-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- Education Pages -->
   <url>
@@ -162,6 +168,66 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://promptwritingstudio.com/calculators/content-editor-calculator</loc>
+    <lastmod>2025-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/customer-service-ai-savings</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/business-ai-readiness</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/copywriting-tools-calculator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/writing-assistant-calculator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/freelance-writer-rate-calculator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/blog-post-cost-calculator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/email-marketing-roi-calculator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/social-media-content-calculator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/ai-prompt-roi-calculator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://promptwritingstudio.com/business-name-generator</loc>
     <lastmod>2025-01-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -172,6 +238,18 @@
   <url>
     <loc>https://promptwritingstudio.com/ai-prompt-generator</loc>
     <lastmod>2025-01-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/smart-prompt-generator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/gemini-prompt-generator</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -331,6 +409,30 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/health</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/finance</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/education</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/chatgpt-prompts-for/productivity</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- AI Prompt Generator Pages - Dynamic Content -->
   <url>
@@ -360,6 +462,90 @@
   <url>
     <loc>https://promptwritingstudio.com/ai-prompt-generator/chatgpt-prompt</loc>
     <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/negative-prompts-for-ai</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/gemini-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/claude-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/midjourney-ai-prompts</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/ai-image-prompts</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/ai-writing-prompts</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/free-prompt-generator</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/image-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/writing-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/blog-post-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/marketing-copy-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/social-media-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/product-description-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-prompt-generator/video-prompt</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -4,7 +4,7 @@ import Footer from './Footer'
 import FloatingCTA from '../ui/FloatingCTA'
 import CookieConsent from '../ui/CookieConsent'
 
-export default function Layout({ children, title, description }) {
+export default function Layout({ children, title, description, canonicalUrl }) {
   return (
     <>
       <Head>
@@ -13,8 +13,9 @@ export default function Layout({ children, title, description }) {
         <meta property="og:title" content={title || 'PromptWritingStudio - Master AI Prompts'} />
         <meta property="og:description" content={description || 'Learn to write effective AI prompts with PromptWritingStudio.'} />
         <meta property="og:image" content="/images/og-image.jpg" />
-        <meta property="og:url" content="https://promptwritingstudio.com" />
+        {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
         <meta property="og:type" content="website" />
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
