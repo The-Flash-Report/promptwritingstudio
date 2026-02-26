@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
 import { seoUseCases } from '../../data/seo-use-cases'
+import { generateFAQSchema, generateHowToSchema, generateArticleSchema } from '../../lib/schemaGenerator'
 
 export default function UseCasePromptPage() {
   const router = useRouter();
@@ -48,15 +50,63 @@ export default function UseCasePromptPage() {
       title={useCaseData.title}
       description={useCaseData.description}
     >
+      <Head>
+        {/* Article Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema({
+            title: useCaseData.h1,
+            description: useCaseData.description,
+            url: `https://promptwritingstudio.com/ai-prompt-generator/${useCaseData.slug}`,
+            datePublished: '2024-06-01',
+            dateModified: '2026-02-01',
+            keywords: [useCaseData.parentKeyword, ...(useCaseData.relatedKeywords || [])]
+          })) }}
+        />
+        {/* FAQPage Schema */}
+        {useCaseData.faqs && useCaseData.faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(useCaseData.faqs)) }}
+          />
+        )}
+        {/* HowTo Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateHowToSchema(
+            useCaseData.h1,
+            [
+              { name: 'Copy the Prompt', text: 'Click the Copy Prompt button to save the prompt text to your clipboard.' },
+              { name: 'Paste in AI Tool', text: 'Paste the prompt into ChatGPT, Claude, Gemini, or your preferred AI platform.' },
+              { name: 'Customize & Use', text: 'Replace any bracketed sections with your specific information and execute the prompt.' }
+            ],
+            `https://promptwritingstudio.com/ai-prompt-generator/${useCaseData.slug}`
+          )) }}
+        />
+      </Head>
+
       {/* Hero Section */}
       <section className="bg-[#1A1A1A] text-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             {useCaseData.h1}
           </h1>
+
+          {/* Answer Block - AEO optimized */}
+          {useCaseData.answerBlock && (
+            <div className="max-w-3xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-6 mb-8 rounded-r-lg text-left">
+              <p className="text-lg leading-relaxed text-gray-100">
+                {useCaseData.answerBlock}
+              </p>
+            </div>
+          )}
+
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
             {useCaseData.intro}
           </p>
+
+          {/* Last Updated */}
+          <p className="text-sm text-gray-400 mb-6">Last updated: February 2026</p>
 
           
           {/* Course CTA Button */}
@@ -150,6 +200,26 @@ export default function UseCasePromptPage() {
               </div>
             </div>
           </div>
+
+          {/* FAQ Section - AEO optimized */}
+          {useCaseData.faqs && useCaseData.faqs.length > 0 && (
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+              <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+              <div className="max-w-4xl mx-auto space-y-4">
+                {useCaseData.faqs.map((faq, index) => (
+                  <details key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <summary className="p-5 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900 list-none flex justify-between items-center">
+                      <span>{faq.question}</span>
+                      <span className="text-gray-400 ml-4 text-xl">+</span>
+                    </summary>
+                    <div className="px-5 pb-5">
+                      <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Related Use Cases */}
           <div className="bg-white rounded-lg shadow-lg p-8">
