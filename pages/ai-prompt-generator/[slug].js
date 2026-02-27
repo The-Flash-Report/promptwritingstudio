@@ -201,6 +201,35 @@ export default function UseCasePromptPage() {
             </div>
           </div>
 
+          {/* Comparison Table - for platform pages */}
+          {useCaseData.comparisonTable && (
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+              <h2 className="text-2xl font-bold mb-6 text-center">{useCaseData.comparisonTable.title}</h2>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-[#1A1A1A] text-white">
+                      {useCaseData.comparisonTable.headers.map((header, i) => (
+                        <th key={i} className="p-4 text-left font-semibold">{header}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {useCaseData.comparisonTable.rows.map((row, rowIndex) => (
+                      <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                        {row.map((cell, cellIndex) => (
+                          <td key={cellIndex} className={`p-4 border-b border-gray-200 ${cellIndex === 0 ? 'font-semibold text-gray-900' : 'text-gray-600'}`}>
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
           {/* FAQ Section - AEO optimized */}
           {useCaseData.faqs && useCaseData.faqs.length > 0 && (
             <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
@@ -216,6 +245,27 @@ export default function UseCasePromptPage() {
                       <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
                     </div>
                   </details>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Authority Links - E-E-A-T signals */}
+          {useCaseData.authorityLinks && useCaseData.authorityLinks.length > 0 && (
+            <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+              <h2 className="text-2xl font-bold mb-6 text-center">Official Resources & Documentation</h2>
+              <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                {useCaseData.authorityLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-[#FFDE59] hover:bg-[#F9F9F9] transition-all duration-200"
+                  >
+                    <span className="text-[#FFDE59] mr-3 text-xl">&#8599;</span>
+                    <span className="font-semibold text-gray-900">{link.text}</span>
+                  </a>
                 ))}
               </div>
             </div>

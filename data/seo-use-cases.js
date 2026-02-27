@@ -31,6 +31,10 @@ export const seoUseCases = [
       { question: 'What is the difference between style and aesthetic in AI art prompts?', answer: 'Style refers to a specific artistic technique or movement like impressionism or pop art. Aesthetic describes the overall mood and visual feel, such as dark academia, vaporwave, or cottagecore. Combining both in prompts produces more coherent and intentional results.' },
       { question: 'Do AI art styles look different across DALL-E, Midjourney, and Stable Diffusion?', answer: 'Yes, each platform interprets style prompts differently. Midjourney tends toward artistic and stylized outputs. DALL-E 3 produces cleaner, more literal interpretations. Stable Diffusion varies by model but offers the widest range through community-trained checkpoints and LoRAs.' }
     ],
+    authorityLinks: [
+      { text: 'DALL-E Documentation', url: 'https://platform.openai.com/docs/guides/images' },
+      { text: 'Midjourney Documentation', url: 'https://docs.midjourney.com' }
+    ],
   },
   {
     slug: 'how-to-write-effective-ai-prompts',
@@ -134,6 +138,10 @@ export const seoUseCases = [
       { question: 'How do I fix bad AI image generations?', answer: 'Use inpainting to fix specific areas, adjust your prompt to be more or less specific, try different seed numbers, change the art style or quality modifiers, and use negative prompts to exclude unwanted elements. Iterating on prompts with small changes produces better results than starting over each time.' },
       { question: 'What is prompt weighting in AI image generation?', answer: 'Prompt weighting assigns importance to different parts of your prompt. In Midjourney, use :: to separate and weight elements. In Stable Diffusion, use parentheses and numbers like (subject:1.5). Higher weights make that element more prominent in the generated image.' }
     ],
+    authorityLinks: [
+      { text: 'DALL-E Documentation', url: 'https://platform.openai.com/docs/guides/images' },
+      { text: 'Midjourney Documentation', url: 'https://docs.midjourney.com' }
+    ],
   },
   {
     slug: 'ai-art-prompts',
@@ -161,6 +169,10 @@ export const seoUseCases = [
       { question: 'What are seed numbers in AI art generation?', answer: 'Seed numbers are random starting points that determine the initial composition of generated images. Using the same seed with the same prompt produces similar results, allowing you to make incremental changes. Seeds are essential in Stable Diffusion and Midjourney for reproducible, iterative art creation.' },
       { question: 'How do I create consistent characters across multiple AI images?', answer: 'Use detailed character descriptions in every prompt, reference the same style and lighting, and use seed numbers for consistency. Midjourney\'s character reference feature and Stable Diffusion\'s IP-Adapter are specifically designed for character consistency across multiple generations.' },
       { question: 'What resolution should I use for AI art?', answer: 'Start with 1024x1024 for most platforms. Midjourney supports up to 2048x2048 natively. For print-quality art, generate at the highest resolution available then upscale using tools like Topaz Gigapixel or Stable Diffusion upscalers. Most AI art platforms produce web-quality images by default.' }
+    ],
+    authorityLinks: [
+      { text: 'DALL-E Documentation', url: 'https://platform.openai.com/docs/guides/images' },
+      { text: 'Midjourney Documentation', url: 'https://docs.midjourney.com' }
     ],
   },
   {
@@ -1134,6 +1146,10 @@ export const seoUseCases = [
       { question: 'What is the ideal email length for marketing?', answer: 'Promotional emails perform best at 50-125 words. Newsletter content emails work well at 200-500 words. Educational sequences can be 300-800 words per email. Mobile optimization is critical since 60% of emails are opened on mobile devices. Ask AI to write within these length constraints.' },
       { question: 'How often should I send marketing emails?', answer: 'Most businesses see optimal results with 2-4 emails per week. New subscribers benefit from daily emails during the first week of a welcome sequence. Use AI to maintain consistent quality at higher sending frequencies, which is the main advantage of AI-assisted email marketing.' }
     ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'ChatGPT Official Documentation', url: 'https://help.openai.com/en/collections/3742473-chatgpt' }
+    ],
   },
   {
     slug: 'image-prompt',
@@ -1160,6 +1176,10 @@ export const seoUseCases = [
       { question: 'What is the ideal length for an image generation prompt?', answer: 'For Midjourney, 20-60 words works best. DALL-E 3 handles longer prompts up to 400 words effectively. Stable Diffusion performs well with 30-75 word prompts. Generally, medium-length prompts with specific details outperform both very short and very long descriptions.' },
       { question: 'Can I use AI image prompts for commercial projects?', answer: 'Yes, images generated with DALL-E 3, Midjourney (paid plans), and Stable Diffusion can be used commercially. Always check the specific terms of service for your chosen platform. Midjourney requires a paid subscription for commercial rights. DALL-E grants full usage rights to generated images.' },
       { question: 'What are negative prompts and how do I use them?', answer: 'Negative prompts tell the AI what to exclude from generated images. Common negative prompts include blurry, low quality, deformed hands, extra limbs, and watermark. They are essential in Stable Diffusion and optional in Midjourney. DALL-E 3 does not support negative prompts directly.' }
+    ],
+    authorityLinks: [
+      { text: 'DALL-E Documentation', url: 'https://platform.openai.com/docs/guides/images' },
+      { text: 'Midjourney Documentation', url: 'https://docs.midjourney.com' }
     ],
   },
   {
@@ -1188,6 +1208,10 @@ export const seoUseCases = [
       { question: 'Can AI help with writer\'s block?', answer: 'Yes, AI is excellent for overcoming writer\'s block. Use it to generate outlines, brainstorm angles, write rough first paragraphs, or suggest alternative approaches to your topic. Many writers use AI to produce a messy first draft they can then reshape, which is faster than staring at a blank page.' },
       { question: 'How do I make AI-generated writing more engaging?', answer: 'Prompt for specific storytelling elements: hooks, anecdotes, data points, questions, and transitions. Ask for conversational tone with short paragraphs. Request analogies and examples. After generation, add your personal experiences, replace generic examples with specific ones, and vary sentence structure.' }
     ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Anthropic Prompt Engineering Guide', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' }
+    ],
   },
   {
     slug: 'chatgpt-prompt',
@@ -1215,6 +1239,23 @@ export const seoUseCases = [
       { question: 'How do I use ChatGPT for content creation?', answer: 'Assign ChatGPT a writer role with specific expertise, provide your target audience and tone, specify the content format and length, and include SEO keywords if needed. Start with an outline prompt, then expand sections individually. Always edit AI-generated content for accuracy, voice, and brand alignment.' },
       { question: 'What are ChatGPT custom instructions?', answer: 'Custom instructions let you set persistent preferences that apply to every ChatGPT conversation. You can specify your profession, communication style, preferred response format, and context about your work. This eliminates repeating the same setup in every new chat and produces more relevant responses automatically.' }
     ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'ChatGPT Official Documentation', url: 'https://help.openai.com/en/collections/3742473-chatgpt' }
+    ],
+    comparisonTable: {
+      title: 'AI Platform Comparison',
+      headers: ['Feature', 'ChatGPT', 'Claude', 'Gemini'],
+      rows: [
+        ['Best For', 'General tasks, coding, plugins', 'Long documents, nuanced analysis', 'Research, multimodal, Google integration'],
+        ['Free Tier', 'GPT-3.5 + limited GPT-4o', 'Limited daily messages', 'Yes, with Gemini model'],
+        ['Paid Price', '$20/month (Plus)', '$20/month (Pro)', '$20/month (Advanced)'],
+        ['Context Window', '128K tokens', '200K tokens', '1M tokens'],
+        ['Image Generation', 'Yes (DALL-E 3)', 'No', 'Yes (Imagen)'],
+        ['Web Access', 'With browsing plugin', 'No', 'Yes, built-in'],
+        ['Best Prompt Style', 'Conversational, iterative', 'Detailed instructions, structured', 'Natural language, research queries']
+      ]
+    },
   },
   {
     slug: 'claude-prompt',
@@ -1242,6 +1283,23 @@ export const seoUseCases = [
       { question: 'Does Claude remember previous conversations?', answer: 'Claude does not retain memory between separate conversations. Each new conversation starts fresh. However, within a single conversation, Claude maintains context across the entire exchange. For persistent context, include key information in your system prompt or at the start of each new conversation.' },
       { question: 'Can Claude generate images?', answer: 'Claude cannot generate images directly. It focuses on text-based tasks including writing, analysis, coding, and reasoning. For image generation, use DALL-E, Midjourney, or Stable Diffusion. Claude can write detailed image generation prompts for these platforms, combining its writing strength with visual AI tools.' }
     ],
+    authorityLinks: [
+      { text: 'Anthropic Prompt Engineering Guide', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' },
+      { text: 'Claude Documentation', url: 'https://docs.anthropic.com/en/docs' }
+    ],
+    comparisonTable: {
+      title: 'AI Platform Comparison',
+      headers: ['Feature', 'ChatGPT', 'Claude', 'Gemini'],
+      rows: [
+        ['Best For', 'General tasks, coding, plugins', 'Long documents, nuanced analysis', 'Research, multimodal, Google integration'],
+        ['Free Tier', 'GPT-3.5 + limited GPT-4o', 'Limited daily messages', 'Yes, with Gemini model'],
+        ['Paid Price', '$20/month (Plus)', '$20/month (Pro)', '$20/month (Advanced)'],
+        ['Context Window', '128K tokens', '200K tokens', '1M tokens'],
+        ['Image Generation', 'Yes (DALL-E 3)', 'No', 'Yes (Imagen)'],
+        ['Web Access', 'With browsing plugin', 'No', 'Yes, built-in'],
+        ['Best Prompt Style', 'Conversational, iterative', 'Detailed instructions, structured', 'Natural language, research queries']
+      ]
+    },
   },
   {
     slug: 'gemini-prompt',
@@ -1269,6 +1327,23 @@ export const seoUseCases = [
       { question: 'Can Gemini search the web for current information?', answer: 'Yes, Gemini can access real-time web information during conversations, unlike ChatGPT which has a knowledge cutoff. This makes Gemini ideal for research, current events analysis, and fact-checking. Specify when you want current data versus general knowledge in your prompts.' },
       { question: 'How do I write effective prompts for Gemini Advanced?', answer: 'Leverage Gemini\'s strengths: request web research with citations, upload images for analysis, ask for Google Workspace integration tasks, and utilize the large context window for complex documents. Be specific about output format and always specify whether you want real-time or general knowledge responses.' }
     ],
+    authorityLinks: [
+      { text: 'Google Gemini API Documentation', url: 'https://ai.google.dev/gemini-api/docs' },
+      { text: 'Google AI Prompt Design Guide', url: 'https://ai.google.dev/gemini-api/docs/prompting-intro' }
+    ],
+    comparisonTable: {
+      title: 'AI Platform Comparison',
+      headers: ['Feature', 'ChatGPT', 'Claude', 'Gemini'],
+      rows: [
+        ['Best For', 'General tasks, coding, plugins', 'Long documents, nuanced analysis', 'Research, multimodal, Google integration'],
+        ['Free Tier', 'GPT-3.5 + limited GPT-4o', 'Limited daily messages', 'Yes, with Gemini model'],
+        ['Paid Price', '$20/month (Plus)', '$20/month (Pro)', '$20/month (Advanced)'],
+        ['Context Window', '128K tokens', '200K tokens', '1M tokens'],
+        ['Image Generation', 'Yes (DALL-E 3)', 'No', 'Yes (Imagen)'],
+        ['Web Access', 'With browsing plugin', 'No', 'Yes, built-in'],
+        ['Best Prompt Style', 'Conversational, iterative', 'Detailed instructions, structured', 'Natural language, research queries']
+      ]
+    },
   },
   {
     slug: 'video-prompt',
@@ -1292,6 +1367,10 @@ export const seoUseCases = [
       { question: 'Can AI create professional marketing videos?', answer: 'AI video tools can generate B-roll footage, product visualizations, social media clips, and animated backgrounds. They are not yet reliable for talking-head videos or complex narratives. Best results come from combining AI-generated clips with human-directed editing and voiceover.' },
       { question: 'What is the maximum video length AI can generate?', answer: 'Most AI video tools generate 4-16 second clips. Runway Gen-3 creates up to 10-second clips. Pika generates 3-4 second clips. Longer videos require generating multiple clips and editing them together. AI video length is expanding rapidly with each model update.' },
       { question: 'How much do AI video generators cost?', answer: 'Runway offers a free tier with limited generations and paid plans starting at $12 per month. Pika has a free tier with paid plans from $8 per month. Most tools use credit-based systems where each video generation costs a certain number of credits based on duration and quality.' }
+    ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Google AI Prompt Design Guide', url: 'https://ai.google.dev/gemini-api/docs/prompting-intro' }
     ],
   },
   {
@@ -1320,6 +1399,10 @@ export const seoUseCases = [
       { question: 'How do free prompt generators improve AI output quality?', answer: 'They apply proven prompt engineering frameworks including role assignment, context setting, output formatting, and constraint specification. These structured prompts give AI models clearer instructions, resulting in 3-5x more relevant, accurate, and useful responses compared to simple, unstructured requests.' },
       { question: 'Is my data safe when using a free prompt generator?', answer: 'Our generator processes everything in your browser with no data sent to external servers. Your prompts, inputs, and generated content remain private on your device. We do not store, track, or share any user-generated content.' }
     ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Google AI Prompt Design Guide', url: 'https://ai.google.dev/gemini-api/docs/prompting-intro' }
+    ],
   },
   {
     slug: 'blog-post-prompt',
@@ -1346,6 +1429,10 @@ export const seoUseCases = [
       { question: 'Will Google penalize AI-generated blog content?', answer: 'Google does not penalize AI content specifically. Google penalizes low-quality, unhelpful content regardless of how it was created. AI-generated blogs that are edited for accuracy, add original insights, and genuinely help readers perform well in search. The key is adding human expertise and E-E-A-T signals.' },
       { question: 'How do I add my personal voice to AI-generated blogs?', answer: 'Provide writing samples in your prompt, specify your tone and style preferences, and edit the output to include personal anecdotes and opinions. Use AI for structure and research, then rewrite key sections in your own voice. The most effective approach uses AI as a first draft, not the final product.' },
       { question: 'How many blog posts can AI help me write per week?', answer: 'With AI assistance, most creators can produce 3-5 quality blog posts per week compared to 1-2 without AI. The time savings come from faster research, outline generation, and first drafts. Editing and adding personal expertise typically takes 30-60 minutes per post after AI drafting.' }
+    ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Anthropic Prompt Engineering Guide', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' }
     ],
   },
   {
@@ -1374,6 +1461,10 @@ export const seoUseCases = [
       { question: 'Can AI write product descriptions in multiple languages?', answer: 'Yes, ChatGPT and Claude can write product descriptions in 50+ languages. For best results, prompt in the target language or request translation with localization. Native speaker review is recommended for market-specific nuances, idioms, and cultural appropriateness before publishing.' },
       { question: 'What tone works best for e-commerce product descriptions?', answer: 'The best tone depends on your brand and audience. Luxury products need sophisticated, aspirational language. Tech products benefit from clear, authoritative descriptions. Casual consumer goods work well with friendly, conversational copy. Always specify your brand voice in the AI prompt for consistent results.' }
     ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Anthropic Prompt Engineering Guide', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' }
+    ],
   },
   {
     slug: 'marketing-copy-prompt',
@@ -1400,6 +1491,10 @@ export const seoUseCases = [
       { question: 'How do I make AI copy sound less robotic?', answer: 'Use prompts that specify conversational tone, include brand voice examples, request short sentences mixed with longer ones, ask for rhetorical questions and power words, and instruct the AI to write as if speaking to one person. Edit outputs to add personal touches and remove generic phrases.' },
       { question: 'What is the best AI for writing marketing copy?', answer: 'ChatGPT-4 and Claude both produce excellent marketing copy. ChatGPT is faster for short-form ads and social posts. Claude writes more nuanced long-form sales pages and email sequences. Jasper AI is purpose-built for marketing but costs more. For most users, ChatGPT or Claude with good prompts suffices.' },
       { question: 'How do I prompt AI for different marketing channels?', answer: 'Each channel needs different prompt specifications. For Google Ads, specify character limits. For Facebook ads, include audience targeting context. For email, specify subject line and preview text. For landing pages, include above-the-fold requirements. Always match the prompt format to the platform constraints.' }
+    ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Anthropic Prompt Engineering Guide', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' }
     ],
   },
   {
@@ -1428,13 +1523,17 @@ export const seoUseCases = [
       { question: 'How often should I post on social media using AI content?', answer: 'Recommended frequencies: LinkedIn 3-5 times per week, Instagram 4-7 times, Twitter/X 1-3 times daily, Facebook 3-5 times per week. AI makes higher frequency achievable by reducing content creation time from 2-3 hours to 30 minutes per day while maintaining quality.' },
       { question: 'How do I make AI social media content sound authentic?', answer: 'Share personal stories and opinions in your prompts, specify your unique voice characteristics, reference real experiences, and always edit AI drafts to add genuine personality. Mix AI-generated posts with fully original content. Audiences connect with authenticity, so never post AI content without personalization.' }
     ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Anthropic Prompt Engineering Guide', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' }
+    ],
   },
   {
-    slug: 'prompts-for-ai',
-    id: 'promptsForAi',
-    title: 'Prompts for AI | Effective Prompt Templates for ChatGPT, Claude & Gemini',
-    description: 'Discover effective prompts for AI models. Our free prompts for AI guide helps you create better prompts for ChatGPT, Claude, and Gemini with examples and best practices.',
-    h1: 'Prompts for AI',
+    slug: 'effective-prompts-for-ai',
+    id: 'effectivePromptsForAi',
+    title: 'Effective Prompts for AI | Proven Templates for Better AI Results',
+    description: 'Discover proven and effective prompts for AI models. Our free guide helps you craft better prompts for ChatGPT, Claude, and Gemini with practical examples.',
+    h1: 'Effective Prompts for AI',
     intro: 'Learn how to create effective prompts for AI models like ChatGPT, Claude, and Gemini. Our guide includes templates, examples, and best practices to help you get better results.',
     searchVolume: 200,
     parentKeyword: 'ai prompts',
@@ -1478,11 +1577,11 @@ export const seoUseCases = [
     ],
   },
   {
-    slug: 'how-to-write-prompts-for-ai',
-    id: 'howToWritePromptsForAi',
-    title: 'How to Write Prompts for AI | Effective Prompt Engineering Guide',
-    description: 'Learn how to write effective prompts for AI models. Our comprehensive guide teaches you prompt engineering techniques for ChatGPT, Claude, and Gemini.',
-    h1: 'How to Write Prompts for AI',
+    slug: 'guide-to-writing-prompts-for-ai',
+    id: 'guideToWritingPromptsForAi',
+    title: 'Guide to Writing Prompts for AI | Step-by-Step Prompt Engineering',
+    description: 'A comprehensive guide to writing prompts for AI models. Learn step-by-step prompt engineering techniques for ChatGPT, Claude, and Gemini.',
+    h1: 'Guide to Writing Prompts for AI',
     intro: 'Master the art of prompt engineering with our comprehensive guide on how to write effective prompts for AI models like ChatGPT, Claude, and Gemini.',
     searchVolume: 150,
     parentKeyword: 'ai prompt',
@@ -1502,11 +1601,11 @@ export const seoUseCases = [
     ],
   },
   {
-    slug: 'ai-prompts-for-images',
-    id: 'aiPromptsForImages',
-    title: 'AI Prompts for Images | Create Effective Prompts for AI Image Generation',
-    description: 'Discover effective AI prompts for images. Our free guide helps you create better prompts for DALL-E, Midjourney, and other AI image generation tools.',
-    h1: 'AI Prompts for Images',
+    slug: 'best-ai-prompts-for-image-creation',
+    id: 'bestAiPromptsForImageCreation',
+    title: 'Best AI Prompts for Image Creation | Top Prompts for AI Image Tools',
+    description: 'Explore the best AI prompts for image creation. Our curated guide helps you craft top prompts for DALL-E, Midjourney, and other AI image generation tools.',
+    h1: 'Best AI Prompts for Image Creation',
     intro: 'Create effective prompts for AI image generation tools like DALL-E, Midjourney, and Stable Diffusion. Our guide includes templates, examples, and best practices.',
     searchVolume: 100,
     parentKeyword: 'ai prompts',
@@ -1550,11 +1649,11 @@ export const seoUseCases = [
     ],
   },
   {
-    slug: 'ai-prompts-for-resume',
-    id: 'aiPromptsForResume',
-    title: 'AI Prompts for Resume | Create an Effective Resume with AI Assistance',
-    description: 'Discover effective AI prompts for resume writing. Our free guide helps you create better prompts for crafting professional resumes with ChatGPT and other AI tools.',
-    h1: 'AI Prompts for Resume',
+    slug: 'chatgpt-prompts-for-resume-writing',
+    id: 'chatgptPromptsForResumeWriting',
+    title: 'ChatGPT Prompts for Resume Writing | Build a Professional Resume with AI',
+    description: 'Use ChatGPT prompts for resume writing to build a professional resume. Our free guide helps you craft standout resumes with AI-powered templates and techniques.',
+    h1: 'ChatGPT Prompts for Resume Writing',
     intro: 'Create an effective resume with AI assistance using our curated prompts for ChatGPT and other AI tools. Our guide helps you craft professional resumes that stand out.',
     conceptDescription: 'AI prompts for resume writing are specialized instructions that guide AI models to transform your work experience and skills into professionally formatted, ATS-friendly resume content that highlights your qualifications effectively.',
     searchVolume: 100,
@@ -1575,11 +1674,11 @@ export const seoUseCases = [
     ],
   },
   {
-    slug: 'how-to-write-prompts-for-ai-art',
-    id: 'howToWritePromptsForAiArt',
-    title: 'How to Write Prompts for AI Art | Effective Prompt Engineering Guide',
-    description: 'Learn how to write effective prompts for AI art generation. Our comprehensive guide teaches you prompt engineering techniques for DALL-E, Midjourney, and Stable Diffusion.',
-    h1: 'How to Write Prompts for AI Art',
+    slug: 'guide-to-ai-art-prompt-writing',
+    id: 'guideToAiArtPromptWriting',
+    title: 'Guide to AI Art Prompt Writing | Master Prompt Techniques for Image Generation',
+    description: 'Master AI art prompt writing with our in-depth guide. Learn prompt techniques for creating stunning images with DALL-E, Midjourney, and Stable Diffusion.',
+    h1: 'Guide to AI Art Prompt Writing',
     intro: 'Master the art of prompt engineering for AI image generation with our comprehensive guide on how to write effective prompts for DALL-E, Midjourney, and Stable Diffusion.',
     searchVolume: 100,
     parentKeyword: 'how to prompt ai image generator',
@@ -1599,11 +1698,11 @@ export const seoUseCases = [
     ],
   },
   {
-    slug: 'ai-prompts-for-marketing',
-    id: 'aiPromptsForMarketing',
-    title: 'AI Prompts for Marketing | Create Effective Marketing Content with AI',
-    description: 'Discover effective AI prompts for marketing. Our free guide helps you create better prompts for crafting compelling marketing content with ChatGPT and other AI tools.',
-    h1: 'AI Prompts for Marketing',
+    slug: 'chatgpt-prompts-for-digital-marketing',
+    id: 'chatgptPromptsForDigitalMarketing',
+    title: 'ChatGPT Prompts for Digital Marketing | AI-Powered Marketing Content Creation',
+    description: 'Use ChatGPT prompts for digital marketing to create compelling content. Our free guide helps you craft AI-powered marketing campaigns and strategies.',
+    h1: 'ChatGPT Prompts for Digital Marketing',
     intro: 'Create effective marketing content with AI assistance using our curated prompts for ChatGPT and other AI tools. Our guide helps you craft compelling marketing materials.',
     searchVolume: 70,
     parentKeyword: 'ai prompts for marketing',
@@ -1623,11 +1722,11 @@ export const seoUseCases = [
     ],
   },
   {
-    slug: 'ai-prompts-for-business',
-    id: 'aiPromptsForBusiness',
-    title: 'AI Prompts for Business | Create Effective Business Content with AI',
-    description: 'Discover effective AI prompts for business. Our free guide helps you create better prompts for crafting professional business content with ChatGPT and other AI tools.',
-    h1: 'AI Prompts for Business',
+    slug: 'chatgpt-prompts-for-business-growth',
+    id: 'chatgptPromptsForBusinessGrowth',
+    title: 'ChatGPT Prompts for Business Growth | AI Strategies for Professional Success',
+    description: 'Use ChatGPT prompts for business growth to drive professional success. Our free guide helps you leverage AI for crafting business content and strategies.',
+    h1: 'ChatGPT Prompts for Business Growth',
     intro: 'Create effective business content with AI assistance using our curated prompts for ChatGPT and other AI tools. Our guide helps you craft professional business materials.',
     searchVolume: 60,
     parentKeyword: 'ai prompts',
