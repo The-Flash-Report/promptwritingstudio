@@ -475,7 +475,7 @@ export default function AIModels() {
 
   return (
     <Layout 
-      title="AI Models: Complete Guide to Latest LLMs & Features"
+      title="AI Models Compared — GPT-5, Claude 4, Gemini 2, Llama 4 & More (2026)"
       description="Comprehensive overview of all major AI models including GPT-5, Claude 4.5, Gemini 3.0, Perplexity Pro, Meta Llama 4, and more with detailed specifications, pricing, and benchmarks."
     >
       <script
@@ -998,6 +998,27 @@ export default function AIModels() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Internal Links Section */}
+      <div className="bg-[#F9F9F9] py-12">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-2xl font-bold text-center mb-8">Explore More AI Resources</h2>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <a href="/ai-prompt-generator" className="bg-white rounded-lg p-6 border border-[#E5E5E5] hover:border-[#FFDE59] transition-colors">
+              <h3 className="font-bold mb-2">AI Prompt Generator</h3>
+              <p className="text-sm text-gray-600">Generate optimised prompts for any of these models — free, no signup required.</p>
+            </a>
+            <a href="/ai-prompt-examples" className="bg-white rounded-lg p-6 border border-[#E5E5E5] hover:border-[#FFDE59] transition-colors">
+              <h3 className="font-bold mb-2">AI Prompt Examples</h3>
+              <p className="text-sm text-gray-600">Browse 500+ tested prompts for ChatGPT, Claude, Gemini, and more.</p>
+            </a>
+            <a href="/ai-glossary" className="bg-white rounded-lg p-6 border border-[#E5E5E5] hover:border-[#FFDE59] transition-colors">
+              <h3 className="font-bold mb-2">AI Glossary</h3>
+              <p className="text-sm text-gray-600">Understand the terms and concepts behind every model on this page.</p>
+            </a>
           </div>
         </div>
       </div>

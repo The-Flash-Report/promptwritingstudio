@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { getModifierSlugs, getModifierData } from '../../lib/modifiers'
+import { generateFAQSchema } from '../../lib/schemaGenerator'
 
 export default function ModifierPage({ modifierData }) {
   const router = useRouter()
@@ -34,11 +36,38 @@ export default function ModifierPage({ modifierData }) {
       })
   }
 
+  const faqSchema = generateFAQSchema(faqs)
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${modifierName} ChatGPT Prompt Templates`,
+    "numberOfItems": promptTemplates.length,
+    "itemListElement": promptTemplates.map((t, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": t.title,
+      "description": t.description
+    }))
+  }
+
   return (
     <Layout
       title={seoData.title}
       description={seoData.description}
     >
+      <Head>
+        {faqs && faqs.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+      </Head>
+
       {/* Hero Section */}
       <section className="gradient-bg text-white py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
@@ -528,13 +557,35 @@ export default function ModifierPage({ modifierData }) {
               >
                 View Pricing Plans
               </Link>
-              <Link 
-                href="/chatgpt-prompt-templates" 
+              <Link
+                href="/chatgpt-prompt-templates"
                 className="border border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] hover:border-[#FFDE59] transition"
               >
                 Browse All Templates
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Generator CTA */}
+      <section className="py-12 bg-[#F9F9F9]">
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl text-center">
+          <h2 className="text-2xl font-bold mb-4">Need a Custom {modifierName} Prompt?</h2>
+          <p className="text-gray-600 mb-6">Use our free AI prompt generator to build a prompt tailored exactly to your task — no signup required.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/ai-prompt-generator"
+              className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block"
+            >
+              Generate Custom Prompts
+            </Link>
+            <Link
+              href="/ai-prompt-examples"
+              className="border border-[#333333] text-[#333333] px-8 py-3 rounded-lg font-bold hover:bg-[#333333] hover:text-white transition inline-block"
+            >
+              Browse Prompt Examples
+            </Link>
           </div>
         </div>
       </section>

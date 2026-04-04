@@ -1,0 +1,125 @@
+{
+  "modifierName": "Coding",
+  "searchVolume": 1200,
+  "keywordDifficulty": 38,
+  "seoData": {
+    "title": "50+ ChatGPT Coding Prompts — Debug, Explain & Write Code Faster (2026)",
+    "description": "Copy-paste ChatGPT prompts for coding tasks: debugging, code review, writing functions, explaining concepts, refactoring, and learning new languages."
+  },
+  "promptTemplates": [
+    {
+      "title": "Code Debugger & Error Explainer",
+      "description": "Diagnose and fix bugs with a clear explanation of what went wrong and why.",
+      "prompt": "I have a bug in my [language] code. Here is the code:\n\n[paste your code]\n\nThe error message I'm getting is:\n\n[paste the error]\n\nExpected behaviour: [describe what it should do]\nActual behaviour: [describe what it does instead]\n\nPlease: 1) Identify the root cause of the bug, 2) Explain why this error occurs in plain language, 3) Provide the corrected code with the fix highlighted, 4) Explain what change you made and why it works, 5) Suggest how to prevent this type of error in future code.",
+      "wordCount": 155,
+      "category": "Debugging",
+      "example": "BUG ANALYSIS\n\nRoot cause: You're comparing a string to an integer using == in Python. The variable `user_input` from input() returns a string, but you're comparing it to the integer 5.\n\nWhy it fails: In Python 3, '5' == 5 evaluates to False because they're different types.\n\nFIX:\n# Before\nif user_input == 5:\n\n# After\nif int(user_input) == 5:\n\nExplanation: Wrap user_input in int() to convert it before comparison.\n\nPrevention: Always validate and type-convert user input at the point of entry. Use type hints to catch these errors earlier.",
+      "tips": [
+        "Paste the full error message including the traceback",
+        "Include the exact code that's failing, not a summary",
+        "Mention which version of the language you're using"
+      ]
+    },
+    {
+      "title": "Code Review & Improvement Analyst",
+      "description": "Get a thorough code review covering quality, performance, security, and best practices.",
+      "prompt": "Please review the following [language] code and provide detailed feedback:\n\n[paste your code]\n\nContext: This code is for [describe what it does and where it's used].\nExperience level: I'm a [beginner/intermediate/senior] developer.\n\nPlease evaluate: 1) Code correctness and potential bugs, 2) Performance and efficiency improvements, 3) Security vulnerabilities or risks, 4) Readability and naming conventions, 5) Adherence to [language] best practices and idioms, 6) Error handling and edge cases, 7) Test coverage recommendations. Provide specific line-by-line suggestions where relevant and rate the overall code quality on a scale of 1–10 with justification.",
+      "wordCount": 160,
+      "category": "Code Review",
+      "example": "CODE REVIEW — Python Flask Route\nOverall rating: 6/10\n\nISSUES FOUND:\n\n1. SQL Injection Risk (Critical)\nLine 12: cursor.execute(f\"SELECT * FROM users WHERE id = {user_id}\")\nFix: Use parameterised queries: cursor.execute(\"SELECT * FROM users WHERE id = %s\", (user_id,))\n\n2. No Input Validation (High)\nLine 8: user_id = request.args.get('id') — not validated\nFix: Add: if not user_id or not user_id.isdigit(): return abort(400)\n\n3. Missing Error Handling (Medium)\nDatabase calls have no try/except. If the DB connection fails, the app will crash.\n\n4. Naming (Low)\nVariable 'r' on line 15 is unclear. Rename to 'result' or 'user_record'.",
+      "tips": [
+        "Include the context of where this code runs (API, script, frontend)",
+        "Mention any specific concerns you have",
+        "Specify whether you want performance or readability prioritised"
+      ]
+    },
+    {
+      "title": "Function & Feature Writer",
+      "description": "Generate a well-structured function or feature with documentation and tests.",
+      "prompt": "Write a [language] function that [describe exactly what the function should do].\n\nRequirements:\n- Input: [describe the input parameters and their types]\n- Output: [describe what it should return]\n- Edge cases to handle: [list edge cases like empty input, null values, max limits]\n- Performance requirements: [any speed or memory constraints]\n- Dependencies I can use: [list available libraries or frameworks]\n\nPlease provide: 1) The complete function with type hints/annotations, 2) Inline comments explaining non-obvious logic, 3) A docstring following [Google/NumPy/JSDoc] format, 4) 3–5 unit tests covering normal cases and edge cases, 5) One usage example showing how to call the function.",
+      "wordCount": 165,
+      "category": "Code Writing",
+      "example": "def calculate_reading_time(text: str, words_per_minute: int = 200) -> dict:\n    \"\"\"\n    Calculate estimated reading time for a given text.\n    \n    Args:\n        text: The input text to analyse.\n        words_per_minute: Average reading speed. Defaults to 200.\n    \n    Returns:\n        dict with 'minutes', 'seconds', and 'word_count' keys.\n    \n    Raises:\n        ValueError: If words_per_minute is not positive.\n    \"\"\"\n    if words_per_minute <= 0:\n        raise ValueError(\"words_per_minute must be positive\")\n    \n    word_count = len(text.split())\n    total_seconds = (word_count / words_per_minute) * 60\n    \n    return {\n        'word_count': word_count,\n        'minutes': int(total_seconds // 60),\n        'seconds': int(total_seconds % 60)\n    }",
+      "tips": [
+        "Be precise about input types and expected output format",
+        "List all edge cases you know about upfront",
+        "Specify which testing framework you want (pytest, Jest, etc.)"
+      ]
+    },
+    {
+      "title": "Concept Explainer for Developers",
+      "description": "Get a clear, practical explanation of any coding concept with examples at your experience level.",
+      "prompt": "Explain [programming concept, pattern, or technology] to me. My background: I am comfortable with [what you already know] but new to [what you are trying to learn].\n\nPlease cover: 1) What it is in plain language (no jargon until I understand the concept), 2) The problem it solves and why it exists, 3) A simple example in [preferred language], 4) A more realistic real-world use case, 5) Common mistakes beginners make with this concept, 6) How it compares to [related concept I already know], 7) When you would and would not use it, 8) Three resources for learning more (official docs + one tutorial + one article).",
+      "wordCount": 155,
+      "category": "Learning",
+      "example": "TOPIC: Promises vs Async/Await in JavaScript\n\nWhat it is: Both handle asynchronous operations — code that takes time to complete (API calls, file reads). Think of it like ordering food: you don't wait at the counter, you get a buzzer (Promise) and come back when ready.\n\nThe problem: JavaScript runs one thing at a time. Without async tools, slow operations would freeze your entire app.\n\nSimple example:\n// Promise\nfetch('/api/data').then(res => res.json()).then(data => console.log(data))\n\n// Async/Await (same thing, cleaner to read)\nasync function getData() {\n  const res = await fetch('/api/data')\n  const data = await res.json()\n  console.log(data)\n}\n\nWhen to use: Async/await for new code (cleaner). Promises when chaining multiple async operations or using Promise.all().",
+      "tips": [
+        "Name the concept exactly as you know it (the term you searched)",
+        "Describe what you already understand so the explanation starts at the right level",
+        "Mention which language you want examples in"
+      ]
+    },
+    {
+      "title": "Code Refactoring Assistant",
+      "description": "Refactor existing code to improve readability, reduce complexity, and follow best practices without changing behaviour.",
+      "prompt": "Please refactor the following [language] code to improve its quality without changing its functionality:\n\n[paste your code]\n\nRefactoring goals (ranked by priority): [e.g., readability, reduce duplication, improve naming, reduce complexity, add error handling, improve performance].\n\nConstraints: [e.g., must remain compatible with Python 3.8, cannot add new dependencies, must keep the same function signatures for backward compatibility].\n\nPlease: 1) Show the refactored code in full, 2) List the specific changes you made and why each improves the code, 3) Highlight any remaining issues you chose not to fix and explain why, 4) Note if any changes could affect performance.",
+      "wordCount": 150,
+      "category": "Refactoring",
+      "example": "REFACTORING SUMMARY\n\nCHANGES MADE:\n1. Extracted magic numbers to named constants\n   MAX_RETRIES = 3 instead of the literal 3 scattered across the function\n\n2. Replaced nested if-else with early returns\n   Reduces indentation from 4 levels to 2, improving readability\n\n3. Renamed variables for clarity\n   'x' → 'user_count', 'd' → 'api_response'\n\n4. Extracted duplicated logic to helper function\n   _validate_email() called 3 times instead of 3 copies of the same code\n\n5. Added list comprehension for filter operation\n   Replaces 5-line for loop with single readable line\n\nNOT CHANGED:\n- Function signature kept identical for backward compatibility\n- Database query kept as-is (optimisation is a separate task)",
+      "tips": [
+        "Specify your highest priority goal (readability vs performance vs DRY)",
+        "List any constraints like language version or API compatibility",
+        "Include the context of where this code is used"
+      ]
+    }
+  ],
+  "useCases": [
+    {
+      "title": "Developers & Software Engineers",
+      "icon": "fas fa-code",
+      "description": "Professional developers use these prompts to accelerate debugging, get second opinions on code quality, generate boilerplate code, and explore unfamiliar parts of a language or framework.",
+      "recommendedPrompt": "Code Review & Improvement Analyst"
+    },
+    {
+      "title": "Students & Self-Taught Coders",
+      "icon": "fas fa-graduation-cap",
+      "description": "Learners use these prompts to get explanations tailored to their level, understand error messages, get working examples of concepts, and get unstuck when tutorials run out.",
+      "recommendedPrompt": "Concept Explainer for Developers"
+    },
+    {
+      "title": "Non-Technical Founders & Managers",
+      "icon": "fas fa-briefcase",
+      "description": "Business people use these prompts to read and understand code written by their team, write simple scripts for data tasks, and communicate more precisely with developers.",
+      "recommendedPrompt": "Concept Explainer for Developers"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can ChatGPT write production-ready code?",
+      "answer": "ChatGPT can write functional code that works well for many use cases, but it should always be reviewed by a developer before going into production. AI-generated code can contain subtle bugs, security vulnerabilities, or miss edge cases. Use it to accelerate your workflow — for generating boilerplate, exploring solutions, or getting a working starting point — but treat the output as a draft that needs review. For critical systems handling payments, authentication, or sensitive data, always have a senior developer review any AI-generated code."
+    },
+    {
+      "question": "Which programming languages does ChatGPT work best with?",
+      "answer": "ChatGPT performs best with languages that have large amounts of public training data: Python, JavaScript, TypeScript, Java, C#, Go, and Ruby. It is particularly strong with Python and JavaScript due to the volume of open-source code available. It is weaker with niche, proprietary, or newer languages with less public documentation. For any language, providing specific version information and including your exact error messages dramatically improves the quality of the response."
+    },
+    {
+      "question": "How do I get better code from ChatGPT?",
+      "answer": "The key is specificity. Always include: the programming language and version, the exact error message if debugging, what the code should do and what it actually does, the libraries or frameworks available, and any constraints like backward compatibility. Paste the actual code rather than describing it. If the first response is not quite right, iterate by saying what is wrong rather than starting over. Providing 1-2 examples of the style or pattern you want also significantly improves results."
+    },
+    {
+      "question": "Are ChatGPT coding prompts suitable for beginners?",
+      "answer": "Yes — the Concept Explainer prompt is specifically designed for learners at any level. Tell ChatGPT your current experience level and what you already know, and it will calibrate the explanation accordingly. For debugging, paste your exact error message and code and ask for an explanation in plain language before a fix. The biggest beginner mistake is describing what they think the problem is rather than pasting the actual code and error. Always paste the real code — ChatGPT cannot help with summaries."
+    },
+    {
+      "question": "How do I use ChatGPT for code review?",
+      "answer": "Copy the Code Review & Improvement Analyst prompt from this page, paste it into ChatGPT, and replace the placeholder with your actual code. Specify the context (what the code does, where it runs), your experience level, and any specific concerns you have. For large files, break the code into logical sections and review each separately. Ask specifically about security if the code handles user input, authentication, or database queries. ChatGPT will flag SQL injection risks, missing error handling, and common vulnerability patterns."
+    }
+  ],
+  "relatedModifiers": [
+    "Business",
+    "Education",
+    "Productivity",
+    "Writing",
+    "Marketing"
+  ]
+}

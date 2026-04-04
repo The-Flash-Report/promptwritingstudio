@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
+import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
+import { generateCalculatorSchema, generateFAQSchema } from '../../lib/schemaGenerator'
 import { seoUseCases } from '../../data/seo-use-cases'
 import { 
   promptComponents, 
@@ -206,11 +208,41 @@ export default function AIPromptGenerator() {
     return { ...builtInTemplates, ...customTemplateMap };
   };
   
+  const webAppSchema = generateCalculatorSchema({
+    name: 'Free AI Prompt Generator',
+    description: 'Generate expert-level AI prompts in seconds. Choose your task, tone, and model — get a ready-to-use prompt for ChatGPT, Claude, or Gemini. Free, no signup required.',
+    url: 'https://promptwritingstudio.com/ai-prompt-generator',
+    keywords: ['ai prompt generator', 'chatgpt prompt generator', 'claude prompt generator', 'gemini prompt generator', 'free prompt generator'],
+    category: 'AI Productivity'
+  })
+
+  const generatorFAQs = [
+    { question: 'How does the AI prompt generator work?', answer: 'Select your target AI platform (ChatGPT, Claude, or Gemini), choose a prompt template for your task type, fill in the specific details for your use case, and click Generate. The tool applies proven prompt engineering frameworks from OpenAI, Anthropic, and Google to structure your prompt for maximum effectiveness.' },
+    { question: 'Is the AI prompt generator free to use?', answer: 'Yes, the prompt generator is completely free with no signup required. You can generate unlimited prompts for ChatGPT, Claude, Gemini, and other AI platforms.' },
+    { question: 'Which AI platforms does the generator support?', answer: 'The generator creates optimised prompts for OpenAI (ChatGPT, GPT-4), Anthropic (Claude), Google (Gemini), Meta (Llama), and general-purpose prompts that work across all major AI tools.' },
+    { question: 'What makes a good AI prompt?', answer: 'Effective prompts include five elements: a clear role for the AI, relevant context and background, a specific task description, the desired output format, and any constraints. The most effective structure is Role + Context + Task + Format + Constraints. This approach consistently produces better results than vague, unstructured requests.' },
+    { question: 'Can I save my generated prompts?', answer: 'You can copy any generated prompt to your clipboard with one click and save it to your preferred notes app, document, or prompt manager. We recommend keeping a personal prompt library of your best-performing prompts for reuse.' },
+    { question: 'What types of prompts can I generate?', answer: 'The generator covers content writing, business communications, code generation, data analysis, research, brainstorming, customer service, marketing copy, educational content, and more. Use the template categories to find the right starting point for your task.' },
+    { question: 'How is this different from just asking ChatGPT directly?', answer: 'Most people type casual requests and get generic results. This generator applies prompt engineering principles to structure your request with proper role assignment, context framing, output format specification, and constraints — the same techniques professional prompt engineers use. The result is typically 3-5x more specific and useful than an unstructured request.' },
+    { question: 'Do the same prompts work for ChatGPT and Claude?', answer: 'Core prompt principles work across all major AI platforms, but each has strengths. ChatGPT excels at conversational and creative tasks. Claude handles long documents and nuanced instructions particularly well. Gemini is strong for research and Google Workspace tasks. The generator has platform-specific templates optimised for each.' }
+  ]
+
   return (
     <Layout
-      title="AI Prompt Generator | Create Optimized Prompts for ChatGPT, Claude & Gemini"
-      description="Build effective AI prompts using best practices from OpenAI, Anthropic, and Google. Our AI prompt generator helps you create optimized prompts for ChatGPT, Claude, and Gemini."
+      title="Free AI Prompt Generator — Create Perfect Prompts for ChatGPT, Gemini & Claude"
+      description="Generate expert-level AI prompts in seconds. Choose your task, tone, and model — get a ready-to-use prompt. Free, no signup required."
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(generatorFAQs)) }}
+        />
+      </Head>
+
       {/* Hero Section */}
       <section className="gradient-bg text-white py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
@@ -1035,6 +1067,96 @@ export default function AIPromptGenerator() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-12">How the AI Prompt Generator Works</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-[#FFDE59] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
+              <h3 className="font-bold mb-3">Choose Your Platform & Task</h3>
+              <p className="text-gray-600">Select the AI tool you are using (ChatGPT, Claude, Gemini) and the type of task — writing, coding, analysis, research, or business communications.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-[#FFDE59] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
+              <h3 className="font-bold mb-3">Fill In Your Specifics</h3>
+              <p className="text-gray-600">Complete the guided fields with your specific details. The generator structures your input using proven prompt engineering frameworks from OpenAI, Anthropic, and Google.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-[#FFDE59] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
+              <h3 className="font-bold mb-3">Copy & Use Immediately</h3>
+              <p className="text-gray-600">Copy your generated prompt with one click and paste it directly into your AI tool. No account needed, no waiting — results in seconds.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes a Good Prompt */}
+      <section className="py-16 bg-[#F9F9F9]">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-4">What Makes a Good AI Prompt?</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Most people get generic results because their prompts are too vague. These five principles separate expert prompts from casual requests.</p>
+          <div className="space-y-6">
+            <div className="bg-white rounded-lg p-6 border-l-4 border-[#FFDE59]">
+              <h3 className="font-bold text-lg mb-2">1. Assign a Clear Role</h3>
+              <p className="text-gray-600">Start your prompt by telling the AI who it is: "Act as an expert copywriter with 10 years of B2B SaaS experience." This primes the model to draw on relevant knowledge and adopt the right tone. Generic requests get generic responses — role assignment changes everything.</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border-l-4 border-[#FFDE59]">
+              <h3 className="font-bold text-lg mb-2">2. Provide Specific Context</h3>
+              <p className="text-gray-600">Include the background information the AI needs to give a relevant answer. Who is the audience? What platform or format is the output for? What do they already know? Context reduces the AI having to guess, which is where hallucinations and generic responses come from.</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border-l-4 border-[#FFDE59]">
+              <h3 className="font-bold text-lg mb-2">3. Describe the Output Format</h3>
+              <p className="text-gray-600">Specify exactly what you want back: a numbered list, a 500-word article, a JSON object, a table, bullet points with sub-bullets. Without format instructions, the AI picks whatever feels natural — which may not be what you need. Formatting instructions also prevent the AI from padding with unnecessary preamble.</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border-l-4 border-[#FFDE59]">
+              <h3 className="font-bold text-lg mb-2">4. Set Constraints</h3>
+              <p className="text-gray-600">Tell the AI what NOT to do as well as what to do. "Do not use jargon. Do not start with 'Certainly!'. Avoid passive voice. Keep it under 200 words." Constraints dramatically tighten the output and reduce the need for editing. Think of them as guardrails that keep the AI on track.</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border-l-4 border-[#FFDE59]">
+              <h3 className="font-bold text-lg mb-2">5. Iterate, Do Not Start Over</h3>
+              <p className="text-gray-600">Treat prompt writing as a conversation. If the first response is close but not quite right, refine it: "Good structure, but make the tone more casual and add two more examples." Iterating builds on context the AI already has. Starting fresh loses that context and often produces worse results.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {generatorFAQs.map((faq, i) => (
+              <div key={i} className="border border-[#E5E5E5] rounded-lg p-6">
+                <h3 className="font-bold mb-3">{faq.question}</h3>
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Internal Links */}
+      <section className="py-12 bg-[#F9F9F9]">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <h2 className="text-2xl font-bold text-center mb-8">More AI Prompt Resources</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Link href="/ai-prompt-examples" className="bg-white rounded-lg p-6 border border-[#E5E5E5] hover:border-[#FFDE59] transition-colors block">
+              <h3 className="font-bold mb-2">AI Prompt Examples</h3>
+              <p className="text-sm text-gray-600">Browse 500+ tested prompts across every category — copy and use instantly.</p>
+            </Link>
+            <Link href="/chatgpt-prompt-templates" className="bg-white rounded-lg p-6 border border-[#E5E5E5] hover:border-[#FFDE59] transition-colors block">
+              <h3 className="font-bold mb-2">ChatGPT Templates</h3>
+              <p className="text-sm text-gray-600">100+ prompt templates organised by profession and use case.</p>
+            </Link>
+            <Link href="/ai-prompt-generator/how-to-write-effective-ai-prompts" className="bg-white rounded-lg p-6 border border-[#E5E5E5] hover:border-[#FFDE59] transition-colors block">
+              <h3 className="font-bold mb-2">How to Write AI Prompts</h3>
+              <p className="text-sm text-gray-600">A step-by-step guide to prompt engineering for beginners.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
@@ -1043,13 +1165,13 @@ export default function AIPromptGenerator() {
             <p className="text-lg text-gray-700 mb-8">
               Join PromptWritingStudio to access our complete library of expert-crafted prompts, advanced techniques, and personalized guidance.
             </p>
-            <a 
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" 
+            <a
+              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
               className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Join PromptWritingStudio - $197 one-time
+              Join Now
             </a>
           </div>
         </div>

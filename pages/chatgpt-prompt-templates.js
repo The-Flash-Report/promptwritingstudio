@@ -1,14 +1,35 @@
+import Head from 'next/head'
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
 import Script from 'next/script'
 import { getAllModifiers } from '../lib/modifiers'
 
 export default function ChatGPTPromptTemplates({ modifiers }) {
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "ChatGPT Prompt Templates by Category",
+    "description": "A comprehensive library of expert-crafted ChatGPT prompt templates organised by profession and use case.",
+    "numberOfItems": modifiers.length,
+    "itemListElement": modifiers.map((m, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `ChatGPT Prompts for ${m.modifierName}`,
+      "url": `https://promptwritingstudio.com/chatgpt-prompts-for/${m.slug}`
+    }))
+  }
+
   return (
     <Layout
-      title="ChatGPT Prompt Templates - Expert-Crafted Templates for Better Results | PromptWritingStudio"
-      description="Browse our comprehensive library of expert-crafted ChatGPT prompt templates for various use cases. Get better results from ChatGPT with our tested prompts."
+      title="100+ ChatGPT Prompt Templates — Free, Copy-Paste Ready (2026)"
+      description="Download and copy free ChatGPT prompt templates for business, writing, coding, marketing, and more. Organised by category with one-click copy."
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+      </Head>
       {/* Hero Section */}
       <section className="gradient-bg text-white py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
@@ -17,14 +38,14 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
               ChatGPT Prompt Templates
             </h1>
             <p className="text-xl mb-8">
-              Browse our comprehensive library of expert-crafted ChatGPT prompt templates based on OpenAI's best practices. Get better results and maintain your authentic voice with our tested and optimized prompts.
+              100+ free, copy-paste ChatGPT prompt templates organised by profession and use case. Based on OpenAI best practices — tested for business, writing, coding, marketing, and more.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="#prompt-categories" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block">
                 Browse Templates
               </a>
-              <Link href="/ai-prompt-generator/chatgpt-prompt" className="bg-white text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors duration-200 inline-block">
-                Try ChatGPT Prompt Generator
+              <Link href="/ai-prompt-generator" className="bg-white text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-colors duration-200 inline-block">
+                Generate Custom Prompts
               </Link>
             </div>
           </div>

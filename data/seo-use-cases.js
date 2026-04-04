@@ -7,10 +7,10 @@ export const seoUseCases = [
   {
     slug: 'art-styles-for-ai-prompts',
     id: 'artStylesForAiPrompts',
-    title: 'Art Styles for AI Prompts | Guide to Creating Stylized AI Art',
-    description: 'Discover effective art styles for AI prompts. Our guide helps you create better stylized images with DALL-E, Midjourney, and Stable Diffusion.',
+    title: '50+ AI Art Styles for Prompts — Visual Guide for Midjourney, DALL-E & Stable Diffusion',
+    description: 'Browse every major AI art style with prompt examples and visual comparisons. From impressionism to cyberpunk — find the perfect style for your AI image.',
     h1: 'Art Styles for AI Prompts',
-    intro: 'Create stunning stylized artwork with our comprehensive guide to art styles for AI prompts. Learn how to effectively communicate artistic styles to AI image generators.',
+    intro: 'Choosing the right art style is the single biggest factor in getting consistently great AI images. This guide covers 50+ art styles you can use in Midjourney, DALL-E, and Stable Diffusion — with ready-to-copy prompts for each one. Whether you want the moody atmosphere of film noir, the clean lines of art nouveau, or the vivid colours of impressionism, the right style keyword transforms a generic image into something striking.\n\nArt style terms work differently across platforms. Midjourney is highly responsive to movement names and visual aesthetic terms. DALL-E 3 interprets style descriptions more literally. Stable Diffusion benefits most from combining style keywords with specific model checkpoints. This guide covers the best approaches for each platform so you can get results regardless of which tool you use.',
     conceptDescription: 'Art styles for AI prompts are specific descriptive terms that guide AI image generators to create artwork in particular visual aesthetics, from impressionism to cyberpunk, allowing for precise stylistic control of the generated images.',
     searchVolume: 3600,
     parentKeyword: 'ai art prompts',
@@ -18,18 +18,84 @@ export const seoUseCases = [
       'ai art styles',
       'midjourney art styles',
       'stable diffusion art styles',
-      'dall-e art styles'
+      'dall-e art styles',
+      'best art styles for ai',
+      'ai image style prompts'
     ],
     answerBlock: 'Art styles for AI prompts are descriptive keywords and phrases that direct AI image generators like Midjourney, DALL-E, and Stable Diffusion to produce artwork in specific visual aesthetics. Common styles include impressionism, cyberpunk, watercolor, art nouveau, and photorealism. Using precise style references in your prompts gives you greater creative control and more consistent, professional results from any AI art platform.',
+    examplePrompts: [
+      {
+        title: 'Photorealism — Portrait',
+        description: 'Create a photorealistic portrait with professional studio lighting and depth of field.',
+        prompt: 'A photorealistic portrait of a woman in her 40s with grey-streaked hair, shot on a Canon 5D Mark IV with an 85mm lens, f/1.8 aperture, shallow depth of field, soft studio lighting with a white background, natural skin texture, highly detailed, professional headshot photography'
+      },
+      {
+        title: 'Impressionism — Landscape',
+        description: 'Render a landscape in the style of Monet or Renoir with painterly brushwork.',
+        prompt: 'A rolling countryside at golden hour in the style of French impressionism, oil on canvas, visible brushstrokes, dappled light filtering through trees, soft colour palette of ochre and sage green, inspired by Claude Monet, painterly texture, museum quality'
+      },
+      {
+        title: 'Cyberpunk — Cityscape',
+        description: 'Generate a neon-lit cyberpunk urban scene with rain-slicked streets.',
+        prompt: 'A rain-soaked cyberpunk city street at night, towering neon signs in Japanese and English, holographic advertisements, steam rising from grates, a lone figure in a trench coat walking away, cinematic lighting, blade runner aesthetic, 4K, highly detailed, volumetric fog'
+      },
+      {
+        title: 'Watercolour — Botanical',
+        description: 'Create soft, translucent watercolour illustrations of plants and flowers.',
+        prompt: 'A delicate watercolour illustration of wild British wildflowers — foxglove, cow parsley, and bluebells — soft washes of colour bleeding into wet paper, white negative space, fine ink line details, botanical illustration style, light and airy, transparent layers'
+      },
+      {
+        title: 'Art Nouveau — Decorative Portrait',
+        description: 'Combine flowing organic lines and decorative borders in the art nouveau style.',
+        prompt: 'A woman surrounded by flowing roses and vines in the art nouveau style, sinuous organic lines, muted gold and forest green palette, ornate decorative border, inspired by Alphonse Mucha, poster design, highly detailed linework, elegant and symmetrical composition'
+      },
+      {
+        title: 'Anime — Character Design',
+        description: 'Design an anime-style character with expressive features and clean cel shading.',
+        prompt: 'An anime-style young woman with long silver hair and violet eyes, wearing a school uniform, expressive large eyes with detailed irises, clean cel shading, soft pastel background with cherry blossoms, studio ghibli inspired, high quality anime art, detailed character design'
+      },
+      {
+        title: 'Oil Painting — Still Life',
+        description: 'Recreate the rich textures and drama of old master oil painting techniques.',
+        prompt: 'A dramatic Dutch Golden Age oil painting still life — copper bowl, scattered pomegranates, dark velvet cloth, candlelight, chiaroscuro lighting, old master technique, visible impasto brushwork, rich jewel tones, Rembrandt-style lighting, museum quality fine art'
+      },
+      {
+        title: 'Minimalism — Abstract',
+        description: 'Create clean, geometric abstract compositions with a minimalist aesthetic.',
+        prompt: 'A minimalist abstract composition of simple geometric shapes — circles, rectangles, and lines — in a primary colour palette on a white background, Bauhaus design principles, clean edges, flat colour, no gradients, Swiss graphic design style, balanced asymmetry'
+      },
+      {
+        title: 'Surrealism — Dreamscape',
+        description: 'Blend impossible elements in a Salvador Dali-inspired surrealist scene.',
+        prompt: 'A surrealist dreamscape with melting clocks draped over a barren desert landscape, giant hourglasses filled with ocean water, a staircase leading into the clouds, inspired by Salvador Dali, highly detailed, photorealistic surrealism, impossible physics, warm amber and cerulean blue palette'
+      },
+      {
+        title: 'Ukiyo-e — Japanese Woodblock',
+        description: 'Generate images in the style of traditional Japanese woodblock prints.',
+        prompt: 'Mount Fuji at dawn viewed through a wave breaking in the foreground, in the style of Japanese ukiyo-e woodblock printing, flat areas of colour, bold black outlines, indigo and white colour scheme inspired by Hokusai, decorative and graphic, traditional Japanese art'
+      },
+      {
+        title: 'Concept Art — Environment Design',
+        description: 'Create professional-level environment concept art for games or film.',
+        prompt: 'A sweeping fantasy environment concept art of an ancient elven city built into the roots of a giant tree, waterfalls cascading between platforms, warm golden light filtering through the forest canopy, matte painting style, professional game concept art, highly detailed, epic scale, unreal engine rendering'
+      },
+      {
+        title: 'Vaporwave — Retro Aesthetic',
+        description: 'Capture the nostalgic neon aesthetic of vaporwave digital art.',
+        prompt: 'A vaporwave aesthetic digital scene featuring a neon-lit grid landscape stretching to the horizon, a giant pink sun with horizontal lines, floating Roman busts, pastel purple and pink sky, retro 80s computer graphics style, synthwave vibes, glitch effects, nostalgic and dreamy'
+      }
+    ],
     faqs: [
       { question: 'What are the most popular art styles for AI prompts?', answer: 'The most popular art styles include photorealism, anime, watercolor, oil painting, cyberpunk, art nouveau, impressionism, and digital art. Midjourney and DALL-E respond well to specific art movement names like baroque or surrealism combined with quality modifiers like highly detailed or 4K resolution.' },
-      { question: 'How do I specify an art style in an AI prompt?', answer: 'Include the style name directly in your prompt, such as in the style of impressionism or watercolor painting style. For best results, combine the style with quality modifiers like highly detailed, professional, or masterpiece. Place style keywords near the end of your prompt after describing the subject.' },
+      { question: 'How do I specify an art style in an AI prompt?', answer: 'Include the style name directly in your prompt, such as "in the style of impressionism" or "watercolor painting style". For best results, combine the style with quality modifiers like highly detailed, professional, or masterpiece. Place style keywords near the end of your prompt after describing the subject.' },
       { question: 'Which AI tool is best for generating art in specific styles?', answer: 'Midjourney excels at artistic styles and aesthetic quality. DALL-E 3 is best for precise prompt following and text rendering. Stable Diffusion offers the most style control through models and LoRAs. For photorealism, Midjourney v6 leads. For anime styles, Stable Diffusion with custom models is preferred.' },
-      { question: 'Can I combine multiple art styles in one AI prompt?', answer: 'Yes, you can blend styles by listing them together, such as cyberpunk meets art nouveau or watercolor impressionism. Most AI tools handle 2-3 style combinations well. Adding weight modifiers or parentheses helps prioritize which style dominates the final output.' },
+      { question: 'Can I combine multiple art styles in one AI prompt?', answer: 'Yes, you can blend styles by listing them together, such as "cyberpunk meets art nouveau" or "watercolor impressionism". Most AI tools handle 2-3 style combinations well. Adding weight modifiers or parentheses helps prioritize which style dominates the final output.' },
       { question: 'What art style keywords work best for Midjourney?', answer: 'Midjourney responds strongly to cinematic lighting, octane render, unreal engine, studio photography, concept art, and matte painting. Adding version-specific flags like --style raw or --stylize values between 0-1000 also controls artistic interpretation significantly.' },
       { question: 'How do negative prompts affect art style in AI images?', answer: 'Negative prompts exclude unwanted elements from generated images. For art styles, common negative prompts include blurry, low quality, deformed, and cartoon when seeking realism. In Stable Diffusion, negative prompts are essential for style control and preventing artifacts.' },
       { question: 'What is the difference between style and aesthetic in AI art prompts?', answer: 'Style refers to a specific artistic technique or movement like impressionism or pop art. Aesthetic describes the overall mood and visual feel, such as dark academia, vaporwave, or cottagecore. Combining both in prompts produces more coherent and intentional results.' },
-      { question: 'Do AI art styles look different across DALL-E, Midjourney, and Stable Diffusion?', answer: 'Yes, each platform interprets style prompts differently. Midjourney tends toward artistic and stylized outputs. DALL-E 3 produces cleaner, more literal interpretations. Stable Diffusion varies by model but offers the widest range through community-trained checkpoints and LoRAs.' }
+      { question: 'Do AI art styles look different across DALL-E, Midjourney, and Stable Diffusion?', answer: 'Yes, each platform interprets style prompts differently. Midjourney tends toward artistic and stylized outputs. DALL-E 3 produces cleaner, more literal interpretations. Stable Diffusion varies by model but offers the widest range through community-trained checkpoints and LoRAs.' },
+      { question: 'How do I get consistent style results across multiple AI images?', answer: 'Use identical style descriptors, colour palette terms, and quality modifiers in every prompt. In Midjourney, use the --sref (style reference) flag with a reference image URL for consistency. In Stable Diffusion, use the same checkpoint model and seed. Document your successful style prompts in a personal library and reuse the exact wording.' },
+      { question: 'What style keywords produce the most professional-looking AI art?', answer: 'For professional results, combine a style name with lighting descriptors and quality modifiers: "professional concept art, octane render, trending on ArtStation, highly detailed, 8K resolution". Lighting terms like "golden hour", "studio lighting", "rim lighting", and "volumetric fog" dramatically improve perceived quality across all platforms.' }
     ],
     authorityLinks: [
       { text: 'DALL-E Documentation', url: 'https://platform.openai.com/docs/guides/images' },
@@ -227,25 +293,89 @@ export const seoUseCases = [
   {
     slug: 'best-ai-art-prompts',
     id: 'bestAiArtPrompts',
-    title: 'Best AI Art Prompts | Curated Collection for Stunning AI-Generated Artwork',
-    description: 'Discover our curated collection of the best AI art prompts. Create stunning AI-generated artwork with these expert-crafted prompts for DALL-E, Midjourney, and Stable Diffusion.',
+    title: 'Best AI Art Prompts — 30+ Tested Prompts for Midjourney, DALL-E & Stable Diffusion',
+    description: 'Discover 30+ of the best AI art prompts, tested across Midjourney, DALL-E, and Stable Diffusion. Copy-paste prompts for landscapes, portraits, abstract art, and more.',
     h1: 'Best AI Art Prompts',
-    intro: 'Explore our curated collection of the best AI art prompts that consistently produce stunning results. From photorealistic landscapes to abstract compositions, these prompts will help you create impressive AI artwork.',
+    intro: 'These are the AI art prompts that consistently produce stunning results — tested across Midjourney, DALL-E 3, and Stable Diffusion. Each prompt is structured to include subject, style, lighting, composition, and quality modifiers: the five elements that separate mediocre AI images from genuinely impressive ones.\n\nBrowse by category below and copy any prompt directly into your preferred AI art tool. For each prompt, small adjustments to the subject or colour palette can produce dramatically different results while keeping the quality high.',
     searchVolume: 90,
     parentKeyword: 'ai art prompts',
     relatedKeywords: [
       'top ai art prompts',
       'effective ai art prompts',
       'ai art prompt examples',
-      'ai art prompt collection'
+      'ai art prompt collection',
+      'best prompts for midjourney',
+      'best prompts for dall-e'
     ],
-    answerBlock: 'The best ai art prompts combine clear instructions with specific context, formatting requirements, and quality constraints. Our curated collection includes templates tested across ChatGPT, Claude, and Gemini for business, creative, and professional use cases. Each prompt follows proven engineering frameworks that consistently produce high-quality AI outputs.',
+    answerBlock: 'The best AI art prompts combine five elements: a clear subject, a specific art style, lighting description, composition details, and quality modifiers like "highly detailed" or "8K resolution". This structure consistently produces professional-quality outputs across Midjourney, DALL-E 3, and Stable Diffusion. Start with subject + style + lighting, then add composition and quality terms to refine.',
+    examplePrompts: [
+      {
+        title: 'Epic Fantasy Landscape',
+        description: 'A sweeping fantasy environment with dramatic lighting and rich atmosphere.',
+        prompt: 'An epic fantasy landscape featuring a medieval castle perched on a cliff edge above swirling clouds, golden sunset light breaking through storm clouds, distant mountains dusted with snow, a lone dragon silhouette in the sky, matte painting style, concept art, cinematic composition, highly detailed, 8K resolution, trending on ArtStation'
+      },
+      {
+        title: 'Photorealistic Ocean Sunset',
+        description: 'A stunning photorealistic coastal scene with perfect golden hour lighting.',
+        prompt: 'A photorealistic ocean sunset, turquoise waves crashing on a rocky shore, warm golden and amber light reflecting on wet rocks, sea foam, dramatic clouds on the horizon, shot on a Sony A7R IV with a 24mm wide-angle lens, long exposure effect, highly detailed, professional landscape photography, National Geographic quality'
+      },
+      {
+        title: 'Cinematic Portrait — Dramatic Lighting',
+        description: 'A high-fashion portrait with moody, cinematic studio lighting.',
+        prompt: 'A cinematic close-up portrait of a young woman with sharp cheekbones, dramatic Rembrandt lighting creating deep shadows on one side of her face, smoke rising behind her, desaturated film photography aesthetic, grain texture, professional studio photography, 85mm lens, shallow depth of field, editorial fashion photography'
+      },
+      {
+        title: 'Abstract Geometric Composition',
+        description: 'A bold, vibrant abstract piece with geometric shapes and vivid colour.',
+        prompt: 'A bold abstract composition with overlapping geometric shapes — triangles, circles, and hexagons — in a vibrant colour palette of electric blue, magenta, and gold, dynamic diagonal composition, Kandinsky inspired, fluid paint textures blending with sharp geometric edges, contemporary fine art, gallery quality, high contrast'
+      },
+      {
+        title: 'Neon Cityscape at Night',
+        description: 'A moody, rain-soaked urban night scene with neon reflections.',
+        prompt: 'A rain-soaked Tokyo street at 2am, neon signs in Japanese reflected in puddles on the wet asphalt, steam rising from a ramen shop doorway, a woman with an umbrella in the foreground, bokeh lights behind her, cyberpunk atmosphere, cinematic colour grading, anamorphic lens flares, f/1.4 depth of field, street photography aesthetic, Blade Runner inspired'
+      },
+      {
+        title: 'Watercolour Wildlife Portrait',
+        description: 'A delicate, expressive watercolour portrait of a wild animal.',
+        prompt: 'A watercolour portrait of a great horned owl, soft washes of amber and brown blending at the feather edges, intense yellow eyes with fine pen detail, white negative space background, botanical illustration style, loose and expressive brushwork, fine art print quality, warm earth tones'
+      },
+      {
+        title: 'Art Nouveau Poster Design',
+        description: 'A decorative art nouveau poster with flowing organic lines and golden details.',
+        prompt: 'An art nouveau poster design featuring a woman with flowing auburn hair entwined with lily pads and lotus flowers, sinuous organic lines, gold foil accents on a deep teal background, ornate decorative border, Alphonse Mucha style, Art Nouveau typography, elegant and symmetrical, print-ready poster design'
+      },
+      {
+        title: 'Studio Ghibli Inspired Scene',
+        description: 'A whimsical, hand-painted scene in the style of Studio Ghibli animation.',
+        prompt: 'A lush green hillside covered in wildflowers on a warm summer afternoon, a small stone cottage with smoke rising from the chimney, a child running through the field, soft cloud shadows moving across the grass, Studio Ghibli animation style, hand-painted background art, warm and nostalgic colour palette, Hayao Miyazaki inspired'
+      },
+      {
+        title: 'Macro Photography — Nature',
+        description: 'An extreme close-up nature photograph with incredible detail.',
+        prompt: 'An extreme macro photograph of a dewdrop on a spider web at dawn, each droplet perfectly spherical and reflecting the forest behind it, soft bokeh background of green leaves, golden morning light, Canon MP-E 65mm macro lens, f/8 aperture, focus stacking technique, tack sharp, national geographic quality nature photography'
+      },
+      {
+        title: 'Ancient Architecture — Golden Hour',
+        description: 'Majestic ancient ruins bathed in warm golden hour light.',
+        prompt: 'The ancient ruins of a Greek temple at golden hour, warm amber light casting long shadows across cracked marble columns, wild poppies growing between the stones, a lone archaeologist examining an inscription in the distance, wide angle dramatic composition, architectural photography, highly detailed stonework, Sony A7 III'
+      },
+      {
+        title: 'Ethereal Forest — Fantasy',
+        description: 'A magical glowing forest scene with otherworldly atmosphere.',
+        prompt: 'An ethereal ancient forest at twilight, bioluminescent mushrooms and flowers casting soft blue and violet light on the mossy ground, shafts of silver moonlight through the canopy, translucent fairy-like creatures visible in the mist, fantasy concept art, atmospheric perspective, volumetric light rays, highly detailed, dreamlike and magical'
+      },
+      {
+        title: 'Retro Sci-Fi — Space Opera',
+        description: 'A vintage-inspired space opera illustration with retro colour palettes.',
+        prompt: 'A retro science fiction illustration of a space opera scene — a chrome rocket ship launching from a desert planet with two moons on the horizon, a space station in orbit above, inspired by 1950s pulp sci-fi magazine covers, bold graphic design, limited colour palette of orange, teal, and cream, vintage print texture, Frank R Paul inspired'
+      }
+    ],
     faqs: [
-      { question: 'What are the best best ai art prompts?', answer: 'The best best ai art prompts combine clear subject descriptions with specific style keywords, lighting details, and quality modifiers. Start with your main subject, add an artistic style like watercolor or cyberpunk, include lighting and mood, then finish with quality terms like highly detailed or 8K resolution.' },
-      { question: 'Which AI tool is best for best ai art prompts?', answer: 'Midjourney v6 produces the highest artistic quality for most styles. DALL-E 3 follows complex prompts most accurately and renders text well. Stable Diffusion SDXL offers the most customization through community models. Choose based on your specific style needs and budget.' },
-      { question: 'How do I improve my AI art prompt results?', answer: 'Add specific details about lighting (golden hour, studio lighting), composition (rule of thirds, close-up), and quality (highly detailed, professional). Use negative prompts to exclude unwanted elements. Iterate by changing one variable at a time. Study successful prompts from AI art communities for inspiration.' },
-      { question: 'Can I use AI-generated art commercially?', answer: 'Yes, most platforms allow commercial use on paid plans. Midjourney requires a paid subscription. DALL-E grants full rights to all generations. Stable Diffusion has no restrictions on outputs. Always verify current terms of service and consider copyright implications for your specific use case.' },
-      { question: 'How do I get started with best ai art prompts?', answer: 'Start with simple prompts describing your subject and desired style. Use our prompt generator to create structured prompts with proper formatting. Experiment with different AI platforms to find which produces your preferred aesthetic. Join AI art communities to learn from other creators and discover new techniques.' }
+      { question: 'What makes a great AI art prompt?', answer: 'The best AI art prompts combine five elements: a specific subject, an art style, lighting description, composition details, and quality modifiers. A weak prompt says "a forest at night". A strong prompt says "an ancient forest at blue hour, bioluminescent mushrooms, volumetric fog, concept art, highly detailed, trending on ArtStation". The more specific and layered your prompt, the more control you have over the final image.' },
+      { question: 'Which AI tool is best for generating art?', answer: 'Midjourney v6 produces the highest artistic quality for most styles. DALL-E 3 follows complex prompts most accurately and renders text in images well. Stable Diffusion SDXL offers the most customisation through community models and is free to run locally. Choose Midjourney for aesthetic quality, DALL-E for accuracy, and Stable Diffusion for customisation and cost.' },
+      { question: 'How do I improve my AI art prompt results?', answer: 'Add specific details about lighting (golden hour, studio lighting, rim lighting), composition (rule of thirds, wide angle, close-up, bird\'s eye view), and quality (highly detailed, professional, 8K, trending on ArtStation). Reference specific artists or photography styles. Use negative prompts to exclude unwanted elements. Iterate by changing one variable at a time rather than rewriting the whole prompt.' },
+      { question: 'Can I use AI-generated art commercially?', answer: 'Most platforms allow commercial use on paid plans. Midjourney requires a paid subscription for commercial rights. DALL-E grants full usage rights to all generated images. Stable Diffusion outputs have no restrictions. Always verify current terms of service before using AI art in commercial projects, and be aware that copyright law around AI-generated art is still evolving.' },
+      { question: 'How do I get started if I have never used AI art tools before?', answer: 'Start with DALL-E 3 (free in ChatGPT) or Midjourney (free trial available). Pick one of the prompts from this page and paste it in exactly as written. Note what works and what does not. Then experiment by changing one element at a time — the style, the lighting, or the subject. Consistency improves as you build a personal library of style keywords that work for your aesthetic preferences.' }
     ],
   },
   {
@@ -1911,6 +2041,425 @@ export const seoUseCases = [
       { question: 'What are the most common prompt writing mistakes?', answer: 'The most common mistakes are being too vague, not providing context, asking multiple unrelated questions at once, not specifying output format, and failing to iterate. Writing prompts as if talking to a new employee who needs clear instructions produces much better results than casual requests.' },
       { question: 'Do I need technical skills to write good AI prompts?', answer: 'No technical skills are required. Effective prompt writing is about clear communication, not coding or engineering. If you can explain what you want to a colleague in a structured way, you can write excellent AI prompts. Our generator helps structure your ideas into optimized prompts automatically.' },
       { question: 'What resources help improve prompt writing skills?', answer: 'Official documentation from OpenAI, Anthropic, and Google provides platform-specific guidance. Practice with our free prompt generator to build skills. Join AI communities on Reddit and Discord for prompt sharing. The most effective learning comes from hands-on experimentation with your own use cases.' }
+    ],
+  },
+  {
+    slug: 'midjourney-prompts',
+    id: 'midjourneyPrompts',
+    title: 'Midjourney Prompts — 80+ Tested Prompts for Stunning AI Art (2026)',
+    description: 'Copy 80+ tested Midjourney prompts for portraits, landscapes, concept art, fantasy, and more. Includes parameters, style tips, and examples for every experience level.',
+    h1: 'Midjourney Prompts',
+    intro: 'These Midjourney prompts are structured to work with v6 and produce consistently high-quality results. Each one includes the subject, style, lighting, composition, and quality parameters that Midjourney responds best to. Copy any prompt directly into the Midjourney Discord bot or web app and adjust the subject to make it your own.\n\nMidjourney interprets prompts differently from ChatGPT-based tools — it responds strongly to visual descriptors, artist name references, and parameter flags like --ar (aspect ratio), --stylize, and --style raw. The prompts below are pre-formatted with these elements so you can get great results immediately.',
+    conceptDescription: 'Midjourney prompts are text instructions combined with optional parameters that guide the Midjourney AI to generate specific images. Effective prompts describe the subject, style, lighting, and mood, and use Midjourney-specific flags like --ar 16:9, --stylize 750, and --style raw for precise control.',
+    searchVolume: 12100,
+    parentKeyword: 'midjourney prompts',
+    relatedKeywords: [
+      'midjourney prompt guide',
+      'best midjourney prompts',
+      'midjourney prompt examples',
+      'midjourney v6 prompts',
+      'midjourney prompts for beginners',
+      'midjourney art prompts'
+    ],
+    answerBlock: 'The best Midjourney prompts combine a clear subject, specific art style or artist reference, lighting conditions, composition details, and Midjourney parameters. Structure: [subject], [style/artist], [lighting], [mood], [technical details], --ar [ratio] --stylize [0-1000]. Example: "a lone lighthouse on a rocky cliff at dusk, cinematic photography, golden hour light, dramatic storm clouds, wide angle, highly detailed --ar 16:9 --stylize 750".',
+    examplePrompts: [
+      {
+        title: 'Cinematic Landscape — Golden Hour',
+        description: 'A sweeping landscape with perfect golden hour cinematic lighting.',
+        prompt: 'a lone lighthouse on a rocky cliff at dusk, cinematic photography, golden hour light, dramatic storm clouds rolling in from the ocean, crashing waves below, wide angle composition, highly detailed, epic scale --ar 16:9 --stylize 750 --style raw'
+      },
+      {
+        title: 'Fantasy Portrait — Warrior',
+        description: 'A detailed fantasy character portrait with dramatic lighting.',
+        prompt: 'a female warrior in ornate silver armour, auburn hair braided with gold rings, piercing green eyes, dramatic rim lighting, dark fantasy aesthetic, Greg Rutkowski style, oil painting texture, epic fantasy character portrait, highly detailed --ar 2:3 --stylize 500'
+      },
+      {
+        title: 'Architectural Visualisation — Futuristic',
+        description: 'A sleek futuristic building exterior with professional render quality.',
+        prompt: 'a futuristic minimalist museum building with curved white concrete and floor-to-ceiling glass, surrounded by manicured gardens, golden hour light, architectural photography, Zaha Hadid inspired, ultra-realistic render, professional architectural visualisation --ar 16:9 --stylize 300 --style raw'
+      },
+      {
+        title: 'Abstract Art — Geometric',
+        description: 'A striking abstract geometric composition with bold colour.',
+        prompt: 'abstract geometric art, overlapping circles and hexagons, electric blue and magenta on a deep black background, neon glow effects, dynamic composition, Bauhaus inspired, high contrast, gallery quality fine art print --ar 1:1 --stylize 1000'
+      },
+      {
+        title: 'Nature Macro — Insect',
+        description: 'An extreme macro photograph of an insect with incredible detail.',
+        prompt: 'extreme macro photography of a dragonfly resting on a reed, iridescent wings with every vein visible, shallow depth of field, emerald green and gold colour palette, early morning dewdrops, award-winning nature photography, National Geographic quality --ar 3:2 --stylize 200 --style raw'
+      },
+      {
+        title: 'Anime Scene — Peaceful Moment',
+        description: 'A soft, atmospheric anime scene with studio Ghibli aesthetic.',
+        prompt: 'a girl sitting by a window reading a book on a rainy afternoon, warm lamplight, rain streaking the glass, cozy room with wooden shelves and plants, studio Ghibli animation style, soft pastel palette, peaceful and nostalgic, hand-painted background art --ar 16:9 --stylize 600'
+      },
+      {
+        title: 'Product Photography — Luxury Watch',
+        description: 'Professional product photography for a luxury timepiece.',
+        prompt: 'luxury Swiss watch on a dark marble surface, dramatic side lighting creating reflections, macro lens, tack sharp focus on the dial, dark grey and gold colour palette, professional product photography, commercial quality, studio setup --ar 1:1 --stylize 100 --style raw'
+      },
+      {
+        title: 'Sci-Fi Environment — Space Station',
+        description: 'A vast, detailed interior of a space station concept art.',
+        prompt: 'interior of a massive space station, multiple levels of walkways and observation decks, stars visible through a curved glass ceiling, astronauts and transport pods in scale, concept art, Syd Mead inspired, cinematic lighting, highly detailed, 8K resolution --ar 16:9 --stylize 750'
+      }
+    ],
+    faqs: [
+      { question: 'What are the best parameters to use in Midjourney prompts?', answer: 'The most useful Midjourney parameters are --ar (aspect ratio, e.g. --ar 16:9 for widescreen), --stylize (controls artistic interpretation, 0-1000, default 100), --style raw (disables default Midjourney aesthetic for more literal prompt following), --quality (0.25, 0.5, or 1 for render time vs quality), and --no (negative prompts, e.g. --no text, watermark). For most use cases, --ar 16:9 --stylize 250 --style raw produces high-quality, prompt-accurate results.' },
+      { question: 'How do I write better Midjourney prompts?', answer: 'Structure your prompts as: subject description, art style or artist reference, lighting and mood, composition details, quality modifiers, then parameters. Be specific rather than vague — "a Victorian townhouse on a cobblestone street" outperforms "a house". Reference specific photographers, artists, or movements for style consistency. Use lighting terms like golden hour, studio lighting, and rim light to dramatically improve quality.' },
+      { question: 'What is the difference between Midjourney v5 and v6 prompts?', answer: 'Midjourney v6 is significantly more responsive to natural language prompts and less reliant on keyword-list style prompts. It follows detailed scene descriptions more accurately, handles text rendering (still limited but improved), and produces more photorealistic results. V6 also responds better to artist name references and cinematic language. Use --style raw with v6 for maximum prompt accuracy.' },
+      { question: 'Can I use Midjourney images commercially?', answer: 'Midjourney paid subscribers (Basic plan and above) have general commercial usage rights to their generations. Free tier users do not have commercial rights. Pro plan subscribers get additional privacy features. Always check Midjourney\'s current terms of service for the most up-to-date commercial licensing terms before using images in client work, products, or marketing.' },
+      { question: 'How do I get consistent characters across multiple Midjourney images?', answer: 'Use Midjourney\'s Character Reference feature (--cref) with an image URL of your character to maintain consistency. You can also use seed numbers (--seed) to create similar starting points. Describe your character in detail in every prompt and use identical clothing and style descriptors across prompts. The --sref (style reference) flag works similarly for maintaining consistent visual aesthetics.' }
+    ],
+    authorityLinks: [
+      { text: 'Midjourney Documentation', url: 'https://docs.midjourney.com' },
+      { text: 'Midjourney Parameter List', url: 'https://docs.midjourney.com/docs/parameter-list' }
+    ],
+  },
+  {
+    slug: 'stable-diffusion-prompts',
+    id: 'stableDiffusionPrompts',
+    title: 'Stable Diffusion Prompts — 80+ Tested Prompts & Negative Prompts (2026)',
+    description: 'Copy 80+ Stable Diffusion prompts with matching negative prompts for portraits, landscapes, fantasy art, and more. Includes model recommendations and CFG guidance.',
+    h1: 'Stable Diffusion Prompts',
+    intro: 'Stable Diffusion prompts work differently from Midjourney and DALL-E. They rely heavily on keyword weighting, negative prompts, and model-specific vocabulary. These prompts are structured for SDXL and common community checkpoint models, with matching negative prompts included for each one.\n\nStable Diffusion is unique in offering complete control: you can run it locally for free, use community-trained models for specific styles (anime, photorealism, illustration), and fine-tune outputs with CFG scale, sampling steps, and seed values. The prompts below take advantage of these capabilities.',
+    conceptDescription: 'Stable Diffusion prompts are comma-separated keyword lists or descriptive sentences used to guide the open-source image generation model. They include positive prompts (what to include), negative prompts (what to exclude), and optional weighting like (highly detailed:1.4) to emphasise specific elements.',
+    searchVolume: 8100,
+    parentKeyword: 'stable diffusion prompts',
+    relatedKeywords: [
+      'stable diffusion prompt guide',
+      'best stable diffusion prompts',
+      'stable diffusion negative prompts',
+      'sdxl prompts',
+      'stable diffusion prompt examples',
+      'stable diffusion art prompts'
+    ],
+    answerBlock: 'Effective Stable Diffusion prompts combine a clear subject with quality booster terms, style descriptors, and detailed negative prompts. A strong positive prompt: "(masterpiece:1.2), best quality, [subject], [art style], [lighting], [composition], highly detailed, 8K". Negative prompt: "(worst quality:1.4), (low quality:1.4), blurry, deformed, watermark, text, signature". CFG scale 7-9 and 30-50 sampling steps work well for most models.',
+    examplePrompts: [
+      {
+        title: 'Photorealistic Portrait — Female',
+        description: 'A highly detailed photorealistic female portrait with professional lighting.',
+        prompt: '(masterpiece:1.2), best quality, photorealistic portrait of a woman in her 30s with dark curly hair, hazel eyes, natural makeup, white linen blouse, soft window light from the left, shallow depth of field, 85mm portrait lens, f/1.8, skin pores visible, highly detailed\n\nNegative: (worst quality:1.4), (low quality:1.4), blurry, deformed hands, extra fingers, watermark, text, anime, cartoon, illustration'
+      },
+      {
+        title: 'Fantasy Landscape — Ancient Forest',
+        description: 'An atmospheric ancient forest with magical lighting and rich detail.',
+        prompt: '(masterpiece:1.2), best quality, ancient forest at twilight, massive gnarled oak trees, bioluminescent mushrooms glowing blue and violet, shafts of silver moonlight, misty atmosphere, fantasy art, concept art, matte painting, ArtStation trending, highly detailed, 8K\n\nNegative: (worst quality:1.4), (low quality:1.4), blurry, watermark, text, modern elements, cars, power lines'
+      },
+      {
+        title: 'Anime Character — Study Scene',
+        description: 'A clean anime-style character illustration with expressive features.',
+        prompt: '(masterpiece:1.2), best quality, anime style, 1girl, student uniform, long brown hair with ahoge, large expressive brown eyes, sitting at a wooden desk studying, warm afternoon sunlight through window, dust motes in the air, cozy aesthetic, soft colour palette\n\nNegative: (worst quality:1.4), (low quality:1.4), blurry, extra limbs, deformed, bad anatomy, watermark, text, western art style'
+      },
+      {
+        title: 'Product Shot — Perfume Bottle',
+        description: 'A luxury product photography style perfume bottle on a minimal background.',
+        prompt: '(masterpiece:1.2), best quality, luxury perfume bottle, hexagonal crystal glass with gold cap, on a white marble surface, soft diffused studio lighting, reflections and caustics on marble, professional product photography, commercial quality, tack sharp, macro detail\n\nNegative: (worst quality:1.4), low quality, blurry, overexposed, harsh shadows, watermark'
+      },
+      {
+        title: 'Concept Art — Sci-Fi Soldier',
+        description: 'A detailed sci-fi character concept with futuristic armour design.',
+        prompt: '(masterpiece:1.2), best quality, futuristic soldier in sleek black powered armour with blue energy accents, battle damaged, standing in ruined city, dramatic backlit sky, concept art, character design sheet, ArtStation, Warhammer 40K aesthetic, highly detailed, cinematic\n\nNegative: (worst quality:1.4), (low quality:1.4), blurry, chibi, anime, cartoon, watermark, text, multiple characters'
+      }
+    ],
+    faqs: [
+      { question: 'What are negative prompts in Stable Diffusion?', answer: 'Negative prompts tell Stable Diffusion what to exclude from generated images. They are as important as positive prompts for quality control. Common negative prompts include: "(worst quality:1.4), (low quality:1.4), blurry, deformed, extra fingers, watermark, text, signature, bad anatomy". The numbers in parentheses like (worst quality:1.4) are weight values — higher numbers give that term more influence. A good negative prompt prevents the most common SD artifacts.' },
+      { question: 'What CFG scale should I use?', answer: 'CFG scale (Classifier Free Guidance) controls how strictly the model follows your prompt. A value of 7 is a good all-round starting point. Lower values (4-6) produce more creative, less literal results. Higher values (10-15) follow the prompt more strictly but can produce oversaturated or distorted images. For photorealism, try 6-8. For artistic styles, 7-10. Start at 7 and adjust based on results.' },
+      { question: 'Which Stable Diffusion model should I use?', answer: 'For photorealism: Realistic Vision, CyberRealistic, or epiCRealism. For anime: Anything V5, CounterfeitXL, or BlueBerrymix. For general art: DreamShaper or RevAnimated. For concept art and illustration: Juggernaut XL or RealVisXL. For portraits: epiCRealism or Photon. All are available on CivitAI. SDXL base models produce higher resolution and detail than SD 1.5 models.' },
+      { question: 'How many sampling steps should I use?', answer: 'Most samplers produce excellent results in 20-30 steps. DPM++ 2M Karras at 25 steps is a fast, high-quality default. Euler a at 20-25 steps is good for creative variety. Going above 50 steps rarely improves quality and just increases render time. For final high-quality renders, try 35-40 steps. Start at 25 and only increase if you notice quality issues.' },
+      { question: 'Can I run Stable Diffusion for free?', answer: 'Yes. Stable Diffusion is open-source and free to run locally on your own computer. You need a GPU with at least 4GB VRAM for SD 1.5 models and 8GB+ for SDXL models. AUTOMATIC1111 and ComfyUI are the two most popular free interfaces. Google Colab also offers free GPU access for running SD in a browser with no installation. Alternatively, services like DreamStudio offer credits-based cloud access.' }
+    ],
+    authorityLinks: [
+      { text: 'Stable Diffusion GitHub', url: 'https://github.com/Stability-AI/stablediffusion' },
+      { text: 'AUTOMATIC1111 Web UI', url: 'https://github.com/AUTOMATIC1111/stable-diffusion-webui' }
+    ],
+  },
+  {
+    slug: 'prompt-engineering-guide',
+    id: 'promptEngineeringGuide',
+    title: 'Prompt Engineering Guide — Complete Techniques for ChatGPT, Claude & Gemini (2026)',
+    description: 'Master prompt engineering with this comprehensive guide. Covers zero-shot, few-shot, chain-of-thought, role prompting, and advanced techniques for all major AI models.',
+    h1: 'Prompt Engineering Guide',
+    intro: 'Prompt engineering is the practice of crafting inputs to AI language models to reliably produce high-quality, relevant outputs. This guide covers every major technique used by professional prompt engineers — from basic role assignment to advanced chain-of-thought reasoning — with real examples you can copy and test immediately.\n\nYou do not need a technical background to benefit from prompt engineering. The techniques here are applied communication skills: how to give clear instructions, provide useful context, and structure requests so the AI understands exactly what you need. Mastering even the first three techniques in this guide will dramatically improve your everyday AI results.',
+    conceptDescription: 'Prompt engineering is the practice of designing and optimising text inputs to AI language models to reliably produce accurate, relevant, and high-quality outputs. It covers techniques ranging from basic instruction formatting to advanced methods like chain-of-thought reasoning, few-shot learning, and retrieval-augmented generation.',
+    searchVolume: 27100,
+    parentKeyword: 'prompt engineering',
+    relatedKeywords: [
+      'prompt engineering techniques',
+      'how to do prompt engineering',
+      'advanced prompt engineering',
+      'prompt engineering for beginners',
+      'chatgpt prompt engineering',
+      'llm prompt engineering',
+      'prompt engineering examples'
+    ],
+    answerBlock: 'Prompt engineering is the practice of structuring AI inputs to produce better outputs. The five core techniques are: (1) Role prompting — assign the AI a specific expert persona; (2) Few-shot prompting — show 2-3 examples of the output you want; (3) Chain-of-thought — ask the AI to reason step by step; (4) Output formatting — specify exactly how results should be structured; (5) Constraint setting — define what to exclude. Combining these techniques consistently produces 3-5x better results than unstructured requests.',
+    examplePrompts: [
+      {
+        title: 'Role Prompting — Expert Persona',
+        description: 'Assign the AI a specific expert identity to improve response quality and relevance.',
+        prompt: 'You are a senior UX researcher with 12 years of experience at top technology companies. You specialise in user interview techniques and behavioural analysis. Your recommendations are evidence-based and actionable.\n\nTask: Review the following user interview questions and identify which ones are leading questions that might bias responses. Suggest improved versions for each.\n\nInterview questions: [paste your questions here]'
+      },
+      {
+        title: 'Few-Shot Prompting — Email Tone',
+        description: 'Show the AI 2-3 examples of the exact output style you want before asking for new content.',
+        prompt: 'Rewrite client emails in my house style. Here are three examples:\n\nOriginal: "I wanted to reach out to see if you had a chance to look at the proposal."\nRewritten: "Have you had a chance to review the proposal?"\n\nOriginal: "I hope this email finds you well. I am writing to follow up on our meeting."\nRewritten: "Following up on our meeting — here\'s what I need from you."\n\nOriginal: "Please do not hesitate to reach out if you have any questions or concerns."\nRewritten: "Questions? Reply here."\n\nNow rewrite this email in the same style:\n[paste your email]'
+      },
+      {
+        title: 'Chain-of-Thought — Business Decision',
+        description: 'Ask the AI to reason through a problem step by step before reaching a conclusion.',
+        prompt: 'I need to decide whether to hire a full-time content writer or work with a freelancer for my SaaS blog. Think through this decision step by step before giving your recommendation.\n\nContext: We publish 4 articles per month. Current budget: €3,000/month for content. We are a 12-person startup. Our content is technical (developer audience). We have no existing content team.\n\nStep through: 1) Cost comparison (full-time vs freelance for our volume), 2) Quality and consistency implications, 3) Management overhead, 4) Flexibility needs as a startup, 5) Recommendation with reasoning.'
+      },
+      {
+        title: 'Output Formatting — Structured Report',
+        description: 'Specify exactly how you want the output structured, including sections and format.',
+        prompt: 'Analyse the following customer feedback and produce a report in this exact format:\n\n## Executive Summary (2-3 sentences)\n\n## Top 3 Positive Themes\n- Theme: [name]\n- Frequency: [% of responses mentioning it]\n- Representative quote: "[quote]"\n\n## Top 3 Negative Themes\n(same format)\n\n## Priority Recommendations\n1. [Action] — [Expected impact] — [Effort: Low/Medium/High]\n2.\n3.\n\n## Data: [number] responses analysed\n\nFeedback to analyse:\n[paste feedback here]'
+      },
+      {
+        title: 'Constraint Setting — Content Brief',
+        description: 'Define clear constraints to prevent common AI failure modes and keep outputs on-target.',
+        prompt: 'Write a 600-word blog introduction for an article titled "How to Choose the Right CRM for a Small Business".\n\nConstraints:\n- Target reader: Business owner with 5-15 employees, non-technical\n- Do NOT use the word "leverage" or "utilise"\n- Do NOT open with a question\n- Do NOT start with a statistic\n- Do NOT use passive voice\n- Use second-person ("you/your") throughout\n- End with a clear statement of what the article will cover\n- Tone: Direct and practical, like advice from a trusted colleague'
+      }
+    ],
+    faqs: [
+      { question: 'What is prompt engineering?', answer: 'Prompt engineering is the practice of designing inputs to AI language models to produce better, more reliable outputs. It covers techniques from basic instruction formatting (being specific, providing context) to advanced methods like chain-of-thought reasoning, few-shot learning, and system prompt design. You do not need coding skills — effective prompt engineering is applied communication.' },
+      { question: 'What are the most important prompt engineering techniques?', answer: 'The five highest-impact techniques are: role prompting (assigning the AI an expert persona), few-shot prompting (showing 2-3 examples of desired output), chain-of-thought (asking for step-by-step reasoning), output format specification (defining exactly how results should be structured), and constraint setting (explicitly stating what to avoid). Mastering these five consistently produces dramatically better results than unstructured requests.' },
+      { question: 'Is prompt engineering still relevant with newer AI models?', answer: 'Yes. Newer models like GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro are more capable but still benefit significantly from well-structured prompts. The techniques shift slightly — newer models require less explicit hand-holding for basic tasks — but role prompting, few-shot examples, format specification, and constraint setting all still produce measurably better results. The highest-impact techniques remain consistent across model generations.' },
+      { question: 'What is the difference between a system prompt and a user prompt?', answer: 'A system prompt is set at the conversation level and defines the AI\'s persistent role, constraints, and context for the entire session. A user prompt is each individual message you send. System prompts are particularly useful for setting consistent personas, output formats, and behavioural constraints that apply to every response. In ChatGPT, you can use Custom Instructions for a persistent system prompt. In the API, system prompts are passed in the system parameter.' },
+      { question: 'How is prompt engineering different for Claude vs ChatGPT?', answer: 'Claude (by Anthropic) tends to follow nuanced instructions and constraints more precisely than ChatGPT, is more willing to say it does not know something, and handles very long documents well. ChatGPT (GPT-4 and above) is excellent for creative tasks, code generation, and conversational tasks. For prompt engineering, Claude responds especially well to clear constraint lists and explicit output format specifications. ChatGPT benefits from role prompting and few-shot examples. Core techniques work on both — differences are in emphasis.' },
+      { question: 'Can prompt engineering replace fine-tuning?', answer: 'For most business use cases, advanced prompt engineering (especially few-shot learning and system prompts) can achieve 80-90% of what fine-tuning delivers at a fraction of the cost and complexity. Fine-tuning is valuable when you need consistent style or domain knowledge baked into the model, have thousands of high-quality training examples, or need faster inference. For most applications, start with prompt engineering and only invest in fine-tuning if you have a clear quality gap that prompting cannot close.' }
+    ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Anthropic Prompt Engineering', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' }
+    ],
+  },
+  {
+    slug: 'how-to-write-ai-prompts',
+    id: 'howToWriteAiPrompts',
+    title: 'How to Write AI Prompts — Beginner\'s Guide for ChatGPT, Claude & Gemini (2026)',
+    description: 'Learn how to write AI prompts that actually work. A plain-language beginner\'s guide with step-by-step examples for ChatGPT, Claude, and Gemini.',
+    h1: 'How to Write AI Prompts',
+    intro: 'Most people type a quick question into ChatGPT and get a generic answer. This guide shows you a better way — a simple structure that works for any task and any AI tool, with no technical knowledge required.\n\nBy the end of this guide you will know how to assign a role, provide context, specify a format, and set constraints. These four steps take about 30 seconds longer than a casual request and consistently produce results that are 3-5 times more useful.',
+    conceptDescription: 'Writing AI prompts is the practice of structuring requests to AI language models so they produce specific, relevant, and high-quality outputs. Effective prompts assign the AI a role, provide context, describe the desired output, and set constraints — turning vague requests into precise instructions.',
+    searchVolume: 9900,
+    parentKeyword: 'ai prompts',
+    relatedKeywords: [
+      'how to prompt ai',
+      'writing prompts for ai',
+      'ai prompt writing tips',
+      'how to use chatgpt effectively',
+      'how to write better ai prompts',
+      'beginner ai prompts'
+    ],
+    answerBlock: 'To write effective AI prompts: (1) Assign a role — "Act as a marketing copywriter"; (2) Give context — describe the audience, product, and goal; (3) State the task clearly — exactly what you want produced; (4) Specify the format — word count, bullet points, tone; (5) Add constraints — what to avoid. This structure takes 30 extra seconds and produces dramatically better results than a vague request.',
+    examplePrompts: [
+      {
+        title: 'Before & After — Weak vs Strong Prompt',
+        description: 'See the difference between a vague prompt and a well-structured one.',
+        prompt: 'WEAK PROMPT:\n"Write me a bio."\n\nSTRONG PROMPT:\nAct as a professional copywriter. Write a 150-word third-person professional biography for [Name], a [job title] at [company]. They have [X years] of experience in [field]. Their key accomplishments are [1-2 achievements]. The tone should be confident but approachable — suitable for a conference speaker page. Do not use the phrase "passionate about". End with one sentence about their interests outside work.'
+      },
+      {
+        title: 'Step 1 — Assign a Role',
+        description: 'The simplest upgrade: tell the AI who to be before asking your question.',
+        prompt: 'Act as an experienced primary school teacher who specialises in making complex subjects understandable for 8-10 year olds.\n\nExplain how photosynthesis works. Use a simple analogy, keep it under 100 words, and end with one question a child could answer to check their understanding.'
+      },
+      {
+        title: 'Step 2 — Add Context',
+        description: 'Give the AI the background it needs to give a relevant answer.',
+        prompt: 'I run a small Irish accounting firm with 3 staff. We serve sole traders and small businesses with up to 10 employees. Our clients are not financially sophisticated and often find accountancy jargon confusing.\n\nWrite a one-paragraph explanation of what a P60 is and why it matters, written for our clients to read on our website. Plain English only. No jargon.'
+      },
+      {
+        title: 'Step 3 — Specify the Format',
+        description: 'Tell the AI exactly how you want the output structured.',
+        prompt: 'List 10 ideas for reducing food waste at home.\n\nFormat: A numbered list. Each item should have a bold heading (3-5 words) followed by one sentence of explanation. Do not include a preamble or conclusion — just the 10 items.'
+      },
+      {
+        title: 'Step 4 — Set Constraints',
+        description: 'Use constraints to prevent the most common AI failure modes.',
+        prompt: 'Write a subject line for a cold sales email promoting a time-tracking app to freelance designers.\n\nConstraints:\n- Maximum 8 words\n- Do not use the word "free" or "boost"\n- Do not use an exclamation mark\n- Do not start with "Introducing"\n- The reader should feel curious, not sold to\n\nGive me 5 options.'
+      }
+    ],
+    faqs: [
+      { question: 'What is the most important part of an AI prompt?', answer: 'Specificity. Vague prompts produce generic outputs — the AI has to guess what you actually want. The single biggest improvement most people can make is to add concrete details: the audience, the format, the length, the tone, and what to avoid. Even adding one specific constraint like "under 200 words" or "suitable for LinkedIn" measurably improves results.' },
+      { question: 'Do I need to write long prompts to get good results?', answer: 'Not necessarily. The best prompt is specific enough for the AI to produce exactly what you need — no longer. A 30-word prompt with clear role, task, and format beats a 300-word prompt full of vague instructions. That said, complex tasks like research reports or detailed analysis do benefit from more context. Start with the minimum and add detail only when the output is not specific enough.' },
+      { question: 'How do I know if my prompt is good?', answer: 'Test it. A good prompt produces an output you can use with minimal editing on the first or second attempt. If you are consistently rewriting or regenerating, the prompt needs more specificity — usually more context, clearer format instructions, or explicit constraints. Keep a log of prompts that worked well and study what made them effective.' },
+      { question: 'Can the same prompt work for ChatGPT and Claude?', answer: 'Core prompt structure works across all major AI tools. Role assignment, context, format specification, and constraints all improve results on ChatGPT, Claude, Gemini, and others. Minor differences: Claude tends to follow detailed constraint lists very precisely. ChatGPT responds especially well to role prompting. Gemini is strong for research and factual tasks. Start with one well-structured prompt and adjust based on the specific model\'s response patterns.' },
+      { question: 'How do I improve if the AI gives a bad first response?', answer: 'Do not start over — build on the response. Tell the AI specifically what to change: "Good structure, but make the tone more casual and reduce the length by half." Or: "The first paragraph is too formal — rewrite it to sound like a friendly email." Iterating is faster than re-prompting from scratch, and the AI retains your original context. Treat it as an editing conversation, not a one-shot request.' }
+    ],
+    authorityLinks: [
+      { text: 'OpenAI Prompt Engineering Guide', url: 'https://platform.openai.com/docs/guides/prompt-engineering' },
+      { text: 'Anthropic Prompting Guide', url: 'https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview' }
+    ],
+  },
+  {
+    slug: 'ai-prompt-tips',
+    id: 'aiPromptTips',
+    title: '25 AI Prompt Tips That Actually Work — Tested for ChatGPT, Claude & Gemini (2026)',
+    description: '25 actionable AI prompt tips to get better results immediately. Tested techniques for ChatGPT, Claude, and Gemini — from beginner fixes to advanced strategies.',
+    h1: 'AI Prompt Tips',
+    intro: 'These 25 tips are ranked by impact — the ones at the top will improve your results immediately, even if you only try one. Each tip includes an example showing a weak prompt and a stronger version so you can apply it straight away.',
+    conceptDescription: 'AI prompt tips are specific, actionable techniques for improving the instructions you give to AI language models. They cover role assignment, context provision, format specification, constraint setting, and iteration strategies that consistently produce better outputs from ChatGPT, Claude, Gemini, and other AI tools.',
+    searchVolume: 1300,
+    parentKeyword: 'ai prompts',
+    relatedKeywords: [
+      'chatgpt prompt tips',
+      'how to get better ai results',
+      'ai prompting tips',
+      'prompt writing tips',
+      'ai prompt hacks',
+      'tips for using chatgpt'
+    ],
+    answerBlock: 'The highest-impact AI prompt tips are: assign a specific role before asking your question; specify the exact output format you want; add constraints for what to avoid; provide audience context; ask for step-by-step reasoning on complex tasks; use "do not use passive voice" and similar style constraints; and iterate on responses rather than starting over. These techniques work across ChatGPT, Claude, and Gemini.',
+    examplePrompts: [
+      {
+        title: 'Tip 1 — Assign a Role First',
+        description: 'Always start with who the AI should be before what you want it to do.',
+        prompt: 'BEFORE: "Explain compound interest."\n\nAFTER: "Act as a financial educator who teaches complex concepts to teenagers. Explain compound interest using a simple analogy and keep it under 150 words."'
+      },
+      {
+        title: 'Tip 2 — Specify Output Format',
+        description: 'Tell the AI exactly what structure you want — list, table, paragraph, JSON.',
+        prompt: 'BEFORE: "Give me ideas for improving customer retention."\n\nAFTER: "Give me 8 ideas for improving customer retention. Format as a numbered list. Each item: bold heading (4 words max), followed by one sentence of explanation. No preamble."'
+      },
+      {
+        title: 'Tip 3 — Use Negative Constraints',
+        description: 'Explicitly state what to avoid — this prevents the most common AI failure modes.',
+        prompt: 'BEFORE: "Write an email subject line for our sale."\n\nAFTER: "Write 5 email subject lines for our summer sale. Do not use exclamation marks. Do not use the words \'amazing\', \'incredible\', or \'free\'. Do not use questions. Maximum 7 words each."'
+      },
+      {
+        title: 'Tip 4 — Ask for Reasoning First',
+        description: 'For complex decisions, ask the AI to think before answering.',
+        prompt: 'BEFORE: "Should I use React or Vue for my project?"\n\nAFTER: "Think through the decision of React vs Vue for a small e-commerce site with a 2-person team. Cover: learning curve, ecosystem maturity, job market, performance, and long-term maintenance. Then give your recommendation with a clear reason."'
+      },
+      {
+        title: 'Tip 5 — Provide Audience Context',
+        description: 'Describe who will read the output — this changes vocabulary, depth, and tone automatically.',
+        prompt: 'BEFORE: "Explain what an API is."\n\nAFTER: "Explain what an API is to a marketing manager who has no technical background but needs to brief developers. Use a non-technical analogy. Keep it under 100 words."'
+      }
+    ],
+    faqs: [
+      { question: 'What is the single most effective AI prompt tip?', answer: 'Assign a specific role before your request. Changing "explain X" to "Act as a [specific expert] and explain X to [specific audience]" is the single fastest way to improve AI output quality. It activates relevant knowledge, adjusts tone and vocabulary automatically, and produces more expert-level responses than any other single change.' },
+      { question: 'Why do my ChatGPT prompts give generic results?', answer: 'Generic prompts produce generic results. The most common causes are: no role assignment (the AI does not know who to be), no audience context (it does not know who it is writing for), no format specification (it picks the easiest format), and no constraints (it defaults to safe, average responses). Adding even one of these elements measurably improves specificity.' },
+      { question: 'How do I get the AI to write in my tone?', answer: 'Provide 2-3 examples of your writing style and ask the AI to match it (this is few-shot prompting). Alternatively, describe your tone explicitly: "Write in a direct, conversational tone — like a smart friend giving advice, not a formal report." Add constraints for what to avoid: "Do not use passive voice, corporate jargon, or bullet points." The more precisely you describe the target voice, the better the match.' },
+      { question: 'What should I do when the AI refuses my request?', answer: 'Rephrase the context. AI tools apply safety filters that can trigger on certain phrasings even for legitimate requests. Adding professional context often resolves this: "For a cybersecurity training course..." or "As a medical professional researching...". If a factual question is refused, try breaking it into smaller steps or asking for the academic or historical context of the topic first.' },
+      { question: 'Do these tips work with image AI tools like Midjourney?', answer: 'Some do and some do not. Role assignment, format specification (aspect ratio, style), and negative prompts (Stable Diffusion) all apply to image AI. However, few-shot examples and reasoning-based techniques are specific to language models. For Midjourney, the most impactful tips are: be specific about lighting and composition, reference specific artists or styles, use the --stylize and --ar parameters, and use negative prompts with --no.' }
+    ],
+  },
+  {
+    slug: 'gemini-prompts',
+    id: 'geminiPrompts',
+    title: 'Gemini Prompts — 50+ Tested Prompts for Google Gemini (2026)',
+    description: 'Copy 50+ tested Google Gemini prompts for research, writing, coding, data analysis, and Google Workspace. Includes tips for getting the most from Gemini 1.5 Pro.',
+    h1: 'Gemini Prompts',
+    intro: 'Google Gemini has unique strengths that make certain prompt styles work better than they do on ChatGPT or Claude. It excels at research synthesis, factual tasks, coding with Google tools, and long-document analysis. Gemini 1.5 Pro supports a 1 million token context window — larger than any other major model — making it ideal for analysing entire books, codebases, or document collections in a single prompt.\n\nThese prompts are tested on Gemini 1.5 Pro and Advanced and take advantage of these specific strengths. Each includes guidance on when Gemini is the right tool for the job.',
+    conceptDescription: 'Gemini prompts are text instructions for Google\'s Gemini AI models, optimised for their specific strengths in research, multimodal tasks (text + images), coding, and Google Workspace integration. Effective Gemini prompts leverage its long context window and factual retrieval capabilities.',
+    searchVolume: 2900,
+    parentKeyword: 'gemini prompts',
+    relatedKeywords: [
+      'google gemini prompts',
+      'gemini ai prompts',
+      'gemini 1.5 pro prompts',
+      'gemini prompt guide',
+      'best prompts for gemini',
+      'google ai prompts'
+    ],
+    answerBlock: 'The best Gemini prompts leverage its unique strengths: long-context document analysis, factual research, coding with Google tools, and multimodal tasks (analysing images and text together). Unlike ChatGPT, Gemini benefits from explicit research-style framing and works particularly well for tasks that require synthesising large amounts of information, Google Workspace automation, and tasks involving uploaded documents or images.',
+    examplePrompts: [
+      {
+        title: 'Long Document Analysis',
+        description: 'Analyse an entire document, report, or transcript and extract structured insights.',
+        prompt: 'I am going to paste a long document below. Read it carefully, then provide:\n\n1. Executive summary (3-4 sentences covering the main argument or findings)\n2. Key facts and data points (bullet list, 8-10 items with page references if available)\n3. Top 3 insights that are non-obvious or counterintuitive\n4. Gaps or limitations in the analysis\n5. 5 questions a critical reader should ask about this document\n\n[paste document here]'
+      },
+      {
+        title: 'Research Synthesis — Multiple Sources',
+        description: 'Synthesise findings from multiple sources into a coherent briefing.',
+        prompt: 'Synthesise the following research excerpts into a coherent briefing for a non-specialist audience. Identify: (1) areas of consensus across sources, (2) areas of disagreement or uncertainty, (3) the strongest evidence available, and (4) what remains unknown. Write at a level suitable for a senior manager with no specialist knowledge.\n\nSources:\n[paste source 1]\n[paste source 2]\n[paste source 3]'
+      },
+      {
+        title: 'Google Sheets Formula Helper',
+        description: 'Get Gemini to write and explain complex Google Sheets formulas.',
+        prompt: 'I need a Google Sheets formula for the following task:\n\nI have a spreadsheet with sales data. Column A contains dates, Column B contains salesperson names, Column C contains deal values in euros. I want a formula in a new column that: calculates each salesperson\'s running total for the current month only, resets to 0 at the start of each new month.\n\nPlease provide: 1) The exact formula, 2) A plain-language explanation of how it works, 3) Instructions for where to paste it.'
+      },
+      {
+        title: 'Competitive Research Brief',
+        description: 'Build a structured competitive intelligence brief on any company or product.',
+        prompt: 'Research [company/product name] and produce a competitive intelligence brief covering: 1) Business model and primary revenue streams, 2) Target customer segments, 3) Key product features and differentiators, 4) Pricing strategy (if public), 5) Recent news, funding, or strategic moves (last 12 months), 6) Perceived strengths and weaknesses based on public reviews and press, 7) How they position against [your company/product]. Format as a structured brief suitable for a leadership team.'
+      },
+      {
+        title: 'Image Analysis — Data Extraction',
+        description: 'Upload a chart, table, or diagram and ask Gemini to extract and analyse the data.',
+        prompt: 'I am uploading an image of [a chart/table/screenshot/diagram]. Please:\n\n1) Describe what the image shows\n2) Extract all numerical data visible in the image into a structured table\n3) Identify the key trend or insight shown by the data\n4) Note any limitations or caveats in interpreting this data\n\n[upload image]'
+      }
+    ],
+    faqs: [
+      { question: 'What is Gemini best at compared to ChatGPT and Claude?', answer: 'Gemini 1.5 Pro leads on: extremely long context (up to 1 million tokens — entire books or large codebases), multimodal tasks (analysing images, PDFs, and audio together), integration with Google Workspace (Docs, Sheets, Gmail), and factual research via Google Search integration. ChatGPT is generally stronger for creative writing and coding. Claude excels at following nuanced instructions and handling complex documents analytically. Use Gemini when you need Google tool integration or extremely long context.' },
+      { question: 'How do I access Google Gemini?', answer: 'Gemini is available at gemini.google.com. The free version includes Gemini 1.0. Gemini Advanced (paid, included in Google One AI Premium) gives access to Gemini 1.5 Pro with the 1 million token context window. Gemini is also integrated into Google Workspace (Docs, Gmail, Sheets) via the Gemini for Workspace add-on. The Gemini API is available through Google AI Studio for developers.' },
+      { question: 'Do ChatGPT prompts work on Gemini?', answer: 'Most well-structured prompts work across all major AI tools including Gemini. Role assignment, context provision, format specification, and constraint setting all improve Gemini outputs. However, Gemini responds particularly well to research-framing language and benefits from explicit synthesis instructions when working with multiple sources. It is also worth leveraging its multimodal capabilities — uploading images or documents alongside your prompt.' },
+      { question: 'What is the Gemini context window and why does it matter?', answer: 'The context window is how much text a model can process in a single conversation. Gemini 1.5 Pro\'s 1 million token context window (roughly 750,000 words) is the largest among major commercial models. This means you can paste an entire book, a full codebase, or hundreds of pages of documents and ask questions across all of it in one prompt — without the information dropping out as the conversation progresses. For long-document analysis, this is a significant advantage over ChatGPT and Claude.' },
+      { question: 'Is Gemini better than ChatGPT for coding?', answer: 'It depends on the task. For general coding, Python, and JavaScript, GPT-4o is generally stronger. For Google-specific tools (Apps Script, Google Cloud APIs, Sheets formulas), Gemini has a clear advantage due to training on Google\'s own documentation. For analysing large codebases in a single context window, Gemini 1.5 Pro has no rival. For debugging and iterative development, Claude 3.5 Sonnet is currently considered the strongest coding assistant.' }
+    ],
+    authorityLinks: [
+      { text: 'Google Gemini', url: 'https://gemini.google.com' },
+      { text: 'Google AI Studio', url: 'https://aistudio.google.com' }
+    ],
+  },
+  {
+    slug: 'claude-prompts',
+    id: 'claudePrompts',
+    title: 'Claude Prompts — 50+ Tested Prompts for Anthropic\'s Claude AI (2026)',
+    description: 'Copy 50+ tested Claude prompts for writing, analysis, coding, and research. Includes tips for Claude 3.5 Sonnet and Opus — and what makes Claude different from ChatGPT.',
+    h1: 'Claude Prompts',
+    intro: 'Claude (by Anthropic) is increasingly the preferred AI tool for tasks requiring nuanced instruction-following, careful analysis, and long-document work. Claude 3.5 Sonnet leads benchmarks for coding, and Claude responds especially well to detailed constraint lists — making it ideal for tasks where the exact format and tone of the output matter.\n\nThese prompts are designed for Claude\'s strengths: careful reasoning, document analysis, writing with a specific voice, and tasks that benefit from explicit constraints. They work on Claude.ai and via the Anthropic API.',
+    conceptDescription: 'Claude prompts are text instructions for Anthropic\'s Claude AI models, optimised for their specific strengths in nuanced instruction-following, long-document analysis, careful reasoning, and coding. Claude responds particularly well to detailed constraints, explicit output format specifications, and tasks requiring accurate, calibrated responses.',
+    searchVolume: 2400,
+    parentKeyword: 'claude prompts',
+    relatedKeywords: [
+      'claude ai prompts',
+      'anthropic claude prompts',
+      'claude 3.5 prompts',
+      'claude vs chatgpt prompts',
+      'best prompts for claude',
+      'claude sonnet prompts'
+    ],
+    answerBlock: 'Claude excels at nuanced instruction-following, long-document analysis, and coding tasks. The best Claude prompts use detailed constraint lists (Claude follows these more precisely than most models), specify exact output formats, and take advantage of its 200K token context window for long documents. Claude also tends to acknowledge uncertainty more honestly than other models — ask it to flag low-confidence claims explicitly for research tasks.',
+    examplePrompts: [
+      {
+        title: 'Document Analysis with Constraints',
+        description: 'Claude\'s strongest use case — analysing a long document with precise output requirements.',
+        prompt: 'Analyse the attached document and produce a structured summary following these exact requirements:\n\nFormat:\n- Title: [document title and date]\n- Type: [report/article/research paper/other]\n- Summary: 3 sentences maximum, covering the main argument and conclusion\n- Key claims: Numbered list of 5-7 specific claims made, each one sentence\n- Evidence quality: Rate the evidence for each claim as Strong/Moderate/Weak with one-sentence justification\n- Gaps: 2-3 things the document does not address but should\n- Reliability: Your overall assessment of the document\'s credibility (1-2 sentences)\n\nConstraints:\n- Do not use hedging language like "it could be argued" or "perhaps"\n- If you are uncertain about something, say "I am not certain" explicitly\n- Do not pad — use fewer words rather than more\n\n[paste document]'
+      },
+      {
+        title: 'Writing with a Specific Voice',
+        description: 'Use Claude\'s instruction-following precision to match a specific writing style.',
+        prompt: 'Here are three paragraphs written in my voice:\n\n[paste example 1]\n[paste example 2]\n[paste example 3]\n\nNow write [new content — e.g. an introduction to a blog post about X] in exactly this voice. Match: sentence length, vocabulary level, use of first person, any signature phrases, and structural patterns.\n\nConstraints:\n- Do not make it sound more formal than the examples\n- Do not add transitional phrases like "In conclusion" or "Furthermore"\n- If you are unsure about a voice element, match the most common pattern in the examples rather than guessing'
+      },
+      {
+        title: 'Code Review with Specific Focus',
+        description: 'Claude 3.5 Sonnet is currently the leading model for code review.',
+        prompt: 'Review the following [language] code with a focus on [security/performance/readability/correctness]. I am a [junior/mid-level/senior] developer.\n\n[paste code]\n\nProvide:\n1. Overall rating: [1-10] with one-sentence justification\n2. Critical issues (must fix before production): numbered list, each with the line number, the problem, and the corrected code\n3. Recommended improvements: numbered list, each with justification\n4. What is done well: 2-3 specific things\n\nConstraints:\n- Be direct — do not soften criticism\n- Flag if any issue is a security vulnerability explicitly\n- If the code is genuinely good, say so — do not invent issues'
+      },
+      {
+        title: 'Research with Uncertainty Flagging',
+        description: 'Leverage Claude\'s calibrated honesty for research tasks where accuracy matters.',
+        prompt: 'Research question: [your question]\n\nPlease answer this question drawing on your training data. For each factual claim you make:\n- Mark high-confidence claims with [HIGH]\n- Mark moderate-confidence claims with [MODERATE]\n- Mark low-confidence or uncertain claims with [UNCERTAIN: reason]\n\nAt the end, list 3-5 specific questions I should verify with current sources before relying on this information.\n\nDo not present uncertain information confidently. If you do not know something, say so explicitly.'
+      },
+      {
+        title: 'Editing with Tracked Changes Style',
+        description: 'Get precise edits with explanations — useful for improving your own writing.',
+        prompt: 'Edit the following text according to these priorities (in order): 1) Clarity, 2) Concision, 3) Active voice, 4) Specific over vague language.\n\n[paste your text]\n\nFormat your response as:\n\nEDITED VERSION:\n[the improved text]\n\nCHANGES MADE:\n- [original phrase] → [revised phrase] — [reason in 5 words or less]\n(list all significant changes)\n\nConstraints:\n- Do not change my meaning — only improve expression\n- Flag any sentence where you are unsure of my intended meaning\n- Preserve any deliberate stylistic choices (I will tell you if you changed something I wanted to keep)'
+      }
+    ],
+    faqs: [
+      { question: 'What is Claude best at compared to ChatGPT?', answer: 'Claude consistently outperforms ChatGPT on: following detailed constraint lists, long-document analysis (200K context window), coding tasks (Claude 3.5 Sonnet leads most coding benchmarks), acknowledging uncertainty rather than confabulating, and nuanced writing tasks where specific voice and tone constraints matter. ChatGPT tends to be stronger for creative brainstorming, image generation (DALL-E integration), and plugin/tool use. For analytical writing, document work, and coding, many professionals prefer Claude.' },
+      { question: 'Which Claude model should I use?', answer: 'Claude 3.5 Sonnet is the best all-round choice for most users — it balances capability, speed, and cost. It leads coding benchmarks and is excellent for writing and analysis. Claude 3 Opus is the most capable model for highly complex reasoning tasks but is slower and more expensive. Claude 3 Haiku is very fast and cost-effective for simple tasks and API use. For most everyday tasks, Claude 3.5 Sonnet is the right choice.' },
+      { question: 'How is prompting Claude different from prompting ChatGPT?', answer: 'Claude follows detailed instructions and constraint lists more precisely than ChatGPT — so it rewards longer, more specific prompts. Claude is also more willing to say "I don\'t know" or flag uncertainty, which is valuable for research tasks. Unlike ChatGPT, Claude does not have plugin or tool-use support in the free tier. Claude also does not have built-in image generation. For tasks where you need precise constraint-following and honest uncertainty, Claude is the stronger choice.' },
+      { question: 'Can I use Claude for free?', answer: 'Yes. Claude.ai offers a free tier with access to Claude 3.5 Sonnet with usage limits. Claude Pro ($20/month) gives higher usage limits, access to Claude 3 Opus, and priority access during peak hours. For developers, the Anthropic API is pay-per-token with no monthly fee. Free Claude.ai is sufficient for most everyday tasks — the limit is primarily on the number of messages per day.' },
+      { question: 'Is Claude safe to use for sensitive business information?', answer: 'Anthropic is one of the most safety-focused AI companies, with a Constitutional AI approach to model training. For sensitive business information: Claude.ai has a Privacy Mode that prevents your conversations from being used for model training (check your settings). Enterprise customers can sign a data processing agreement. As with any cloud AI service, avoid pasting personally identifiable information, confidential client data, or trade secrets unless you have reviewed the terms of service and data handling policies.' }
+    ],
+    authorityLinks: [
+      { text: 'Claude by Anthropic', url: 'https://claude.ai' },
+      { text: 'Anthropic Research', url: 'https://www.anthropic.com/research' }
     ],
   }
 ];

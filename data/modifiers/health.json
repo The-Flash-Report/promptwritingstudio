@@ -3,8 +3,8 @@
   "searchVolume": 700,
   "keywordDifficulty": 45,
   "seoData": {
-    "title": "Health ChatGPT Prompts - 15+ Wellness & Fitness Templates | PromptWritingStudio",
-    "description": "Optimize your health and wellness with expert ChatGPT prompts. Create fitness plans, nutrition strategies, and wellness routines for better health."
+    "title": "45+ ChatGPT Health Prompts — Fitness, Nutrition & Wellness (2026)",
+    "description": "Copy-paste ChatGPT prompts for health goals, meal planning, workout routines, mental health check-ins, and medical research summaries."
   },
   "promptTemplates": [
     {
@@ -71,6 +71,136 @@
         "Include any preferred stress management activities",
         "Mention your daily schedule and time constraints"
       ]
+    },
+    {
+      "title": "Meal Planning Assistant",
+      "description": "Build a week of healthy, balanced meals around your dietary needs and schedule.",
+      "prompt": "Create a 7-day meal plan for [dietary approach: Mediterranean, low-carb, plant-based, balanced]. I need approximately [X] calories per day, have [list any allergies or intolerances], and have [X] minutes for cooking on weekdays and [X] minutes on weekends. Please include: 1) Breakfast, lunch, dinner, and two snacks for each day, 2) Macro breakdown per meal (protein, carbs, fats, calories), 3) A consolidated shopping list organised by category, 4) Meal prep tips to save time, 5) Simple swaps for days when I have less time, and 6) How to adjust portions if I need more or fewer calories. Prioritise whole foods, minimise processed ingredients, and keep meals enjoyable.",
+      "wordCount": 160,
+      "category": "Nutrition",
+      "example": "7-DAY MEAL PLAN (2,000 calories/day, Mediterranean)\n\nMONDAY\nBreakfast: Greek yogurt parfait — 350 kcal | P:20g C:40g F:10g\nLunch: Chickpea & roasted veg salad with tahini — 450 kcal | P:15g C:50g F:18g\nDinner: Baked salmon, quinoa, steamed broccoli — 550 kcal | P:40g C:45g F:18g\nSnack 1: Apple + almond butter — 200 kcal\nSnack 2: Hummus & carrot sticks — 150 kcal\n\nSHOPPING LIST\nProduce: spinach, tomatoes, cucumber, broccoli, bell peppers...",
+      "tips": [
+        "List all allergies and intolerances upfront",
+        "Specify whether you prefer to cook in bulk or fresh each day",
+        "Mention your cooking skill level so recipes are appropriate"
+      ]
+    },
+    {
+      "title": "Mental Health Check-In Companion",
+      "description": "Process emotions, identify patterns, and build better mental health habits with a structured journalling prompt.",
+      "prompt": "Act as a compassionate mental wellness guide. Help me complete a structured mental health check-in for today. I want to reflect on: 1) My current emotional state and what triggered it, 2) Physical sensations I notice in my body, 3) Any recurring thoughts or worries, 4) What went well today and why, 5) What was challenging and how I responded, 6) One thing I can do differently tomorrow, and 7) A specific self-care action I'll take tonight. Ask me each question one at a time, acknowledge my answer with empathy, and help me identify any patterns or insights. End with a brief affirmation based on what I've shared. Note: This is for personal reflection only, not a substitute for professional mental health care.",
+      "wordCount": 175,
+      "category": "Mental Health",
+      "example": "Mental Health Check-In — [Date]\n\nEmotional State: Anxious and slightly overwhelmed\nTrigger: Back-to-back meetings with no breaks\n\nBody Sensations: Tension in shoulders, slight headache, shallow breathing\n\nRecurring Thoughts: 'I have too much to do' / 'I'm not keeping up'\n\nWhat Went Well: Completed the project draft despite interruptions\n\nChallenge & Response: Felt irritable at 3pm — took a 5-min walk instead of snapping\n\nTomorrow's Intention: Schedule a 10-min buffer between morning meetings\n\nSelf-Care Tonight: 20-min yoga and no screens after 9pm\n\nInsight: Your nervous system needs recovery time as much as your mind does...",
+      "tips": [
+        "Do this check-in at the same time each day for best results",
+        "Be honest — there are no wrong answers",
+        "Note any patterns across multiple days to spot trends"
+      ]
+    },
+    {
+      "title": "Supplement Research Evaluator",
+      "description": "Get an evidence-based evaluation of any supplement before you buy.",
+      "prompt": "I'm considering taking [supplement name] for [specific goal: sleep, energy, muscle recovery, immune support, etc.]. Please provide a research-based evaluation that covers: 1) What the current scientific evidence says about its effectiveness for my goal, 2) Typical dosage ranges used in studies versus common product doses, 3) Known side effects, contraindications, and drug interactions, 4) Quality markers to look for when choosing a product (third-party testing, forms, bioavailability), 5) How long it typically takes to see results if effective, 6) Lifestyle factors that may work as well or better, and 7) When I should consult a doctor before starting. Use plain language and cite the strength of evidence (strong, moderate, limited) for each claim.",
+      "wordCount": 170,
+      "category": "Nutrition",
+      "example": "SUPPLEMENT EVALUATION: Magnesium Glycinate for Sleep\n\nEvidence Strength: Moderate\n\nEffectiveness: Studies show magnesium supplementation improves sleep onset latency and subjective sleep quality, particularly in people with deficiency. Effect size is modest for healthy individuals.\n\nDosage: 200–400mg elemental magnesium/day in studies. Look for magnesium glycinate or malate (better absorbed than oxide).\n\nSide Effects: Generally well tolerated. High doses may cause loose stools. Avoid if you have kidney disease.\n\nDrug Interactions: May interact with antibiotics, diuretics, and diabetes medications — check with your pharmacist...",
+      "tips": [
+        "Include any medications you take to check for interactions",
+        "Specify whether you want plant-based or animal-derived options",
+        "Mention any existing health conditions"
+      ]
+    },
+    {
+      "title": "Injury Recovery Protocol Builder",
+      "description": "Create a safe, phased return-to-activity plan after an injury.",
+      "prompt": "I'm recovering from [specific injury or condition] and was cleared by my doctor/physio to start gentle rehabilitation [X] weeks ago. My current pain level is [0–10] and I can perform [describe current movement limitations]. Please help me build a phased recovery plan that: 1) Outlines safe activities for my current stage, 2) Provides a week-by-week progression schedule, 3) Lists warning signs that mean I should stop and consult my doctor, 4) Includes complementary strategies like ice/heat, compression, and elevation timing, 5) Recommends nutrition and sleep habits that support tissue healing, 6) Suggests when I can realistically return to [specific activity or sport], and 7) Includes mental strategies for staying patient during recovery. Emphasise safety over speed of recovery.",
+      "wordCount": 180,
+      "category": "Fitness Planning",
+      "example": "ANKLE SPRAIN RECOVERY PLAN (Grade II, Week 3)\n\nCurrent Clearances: Weight-bearing with mild discomfort, no running\n\nWEEK 3–4: Stability Foundation\n- Single-leg standing: 3x30 seconds each leg\n- Resistance band dorsiflexion/plantarflexion: 3x15\n- Calf raises (bilateral): 3x15\n- Swimming or pool walking: 20 min 3x/week\n\nSTOP and consult physio if: Sharp pain above 4/10, swelling increases, any instability during standing\n\nNutrition support: Increase vitamin C (collagen synthesis), zinc (tissue repair), adequate protein (1.6g/kg/day)...",
+      "tips": [
+        "Always follow your medical professional's specific guidance over general advice",
+        "Include the exact injury and any complications your doctor mentioned",
+        "Be honest about your current pain levels and limitations"
+      ]
+    },
+    {
+      "title": "Habit Tracker & Accountability Coach",
+      "description": "Design a realistic habit-stacking system to build lasting health routines.",
+      "prompt": "I want to build the following health habits: [list 3–5 habits you want to develop, e.g. daily exercise, drinking 2L water, 7+ hours sleep, daily meditation]. My current routine is [describe your typical weekday and weekend schedule]. I've tried and failed at these habits before because [explain what went wrong]. Please help me create a sustainable habit system by: 1) Stacking new habits onto existing anchors (morning coffee, lunch break, etc.), 2) Designing a minimum viable version of each habit for low-energy days, 3) Creating environmental design tips to make habits easier, 4) Building a simple daily tracking system I'll actually use, 5) Planning for obstacle scenarios (travel, late nights, illness), 6) Setting a realistic 30/60/90-day progression plan, and 7) Identifying the single most impactful habit to start with first. Prioritise consistency over perfection.",
+      "wordCount": 190,
+      "category": "Wellness",
+      "example": "HABIT SYSTEM DESIGN\n\nAnchor Habit: Morning coffee\n\nHABIT STACK:\n7:00 — Make coffee → 5 min stretching while it brews (anchor: coffee)\n7:10 — Drink coffee → Journal 3 gratitudes (anchor: coffee drinking)\n12:30 — Lunch break → 10-min walk outside (anchor: lunch)\n21:30 — Brush teeth → Drink final glass of water (anchor: teeth)\n\nMINIMUM VIABLE VERSIONS:\n- Exercise: 10 push-ups (on low-energy days)\n- Hydration: 1 extra glass with each meal\n- Sleep: Phones out of bedroom by 10pm\n\nEnvironmental design: Fill water bottle the night before and leave on desk...",
+      "tips": [
+        "Be specific about what has made habits fail in the past",
+        "List your existing daily anchors (wake time, meals, commute, routines)",
+        "Start with 1–2 habits maximum before adding more"
+      ]
+    },
+    {
+      "title": "Medical Research Summariser",
+      "description": "Translate complex medical information into clear, actionable summaries.",
+      "prompt": "I need help understanding [medical topic, condition, treatment, or test result]. Please provide a clear, jargon-free explanation that covers: 1) What this condition or treatment is in plain language, 2) The most common causes or risk factors, 3) Standard diagnostic criteria or what tests are typically used, 4) Evidence-based treatment options (from most to least common), 5) Lifestyle factors that can improve or worsen the condition, 6) Questions I should ask my doctor at my next appointment, 7) Reliable resources for further reading (major medical organisations only), and 8) What red flag symptoms require urgent medical attention. Write for someone with no medical background. Always note that this is for general information only and does not replace professional medical advice.",
+      "wordCount": 185,
+      "category": "Health Education",
+      "example": "TOPIC: Type 2 Diabetes — Plain Language Summary\n\nWhat it is: Your body can't use insulin properly, causing blood sugar to build up. Over time this damages blood vessels, nerves, and organs.\n\nRisk factors: Excess weight (especially belly fat), physical inactivity, family history, age 45+, previously high blood sugar\n\nDiagnosis: HbA1c test (measures 3-month average blood sugar). Diabetes: ≥6.5%. Pre-diabetes: 5.7–6.4%\n\nTreatment options: Lifestyle changes first (diet + exercise), then Metformin, then other medications if needed\n\nQuestions for your doctor: What's my target HbA1c? Should I see a dietitian? Do I need to monitor at home?...",
+      "tips": [
+        "Include any test results or numbers you've been given",
+        "Mention medications you currently take",
+        "Note whether you want information about conventional, complementary, or both approaches"
+      ]
+    },
+    {
+      "title": "Sleep Debt Recovery Plan",
+      "description": "Calculate your sleep debt and build a realistic recovery strategy.",
+      "prompt": "I've been [describe sleep situation: averaging X hours/night for the past Y weeks/months, dealing with insomnia, jet lag, shift work, newborn disruptions, etc.]. My ideal sleep amount is approximately [X] hours but I'm currently getting [X] hours. I feel [describe daytime symptoms: fatigue, brain fog, mood changes, poor concentration]. Please help me: 1) Estimate my current sleep debt and realistic recovery timeline, 2) Create a safe catch-up strategy (naps vs. extended night sleep), 3) Identify the highest-impact changes to my sleep environment, 4) Design a wind-down routine that suits my schedule, 5) Address specific disruptors I mentioned, 6) Explain which symptoms should prompt a doctor visit, and 7) Provide a 2-week recovery schedule I can follow. Base advice on sleep science, not just tips.",
+      "wordCount": 175,
+      "category": "Sleep Health",
+      "example": "SLEEP RECOVERY ASSESSMENT\n\nEstimated debt: ~14 hours (2 hrs/night deficit x 7 nights)\nRecovery timeline: 2–3 weeks of consistent full-night sleep\n\nRECOVERY STRATEGY:\nWeek 1: Target 8.5 hrs in bed (30 min more than usual)\nWeek 2: Maintain 8 hrs + one 20-min nap before 3pm if needed\nWeek 3: Return to normal 7.5-hr schedule if symptoms resolve\n\nDo NOT: Sleep in more than 1 extra hour on weekends (disrupts circadian rhythm)\n\nWIND-DOWN ROUTINE (60 min):\n9:00pm — Dim lights, stop eating\n9:20pm — Warm shower\n9:40pm — Read paper book or journalling\n10:00pm — Lights out\n\nSee a doctor if: Fatigue persists after 3 weeks of good sleep, you stop breathing at night, or mood symptoms worsen...",
+      "tips": [
+        "Track your actual sleep for one week before starting the plan",
+        "Include any stress or anxiety factors affecting your sleep",
+        "Mention your work schedule and when you must wake up"
+      ]
+    },
+    {
+      "title": "Preventive Health Checklist Builder",
+      "description": "Generate a personalised schedule of health screenings and preventive care based on your age, sex, and risk factors.",
+      "prompt": "I am [age] years old, [biological sex], with the following health background: [list any diagnosed conditions, family history of major diseases, smoking status, BMI range, activity level]. Please create a personalised preventive health checklist that includes: 1) Recommended health screenings with frequency (blood pressure, cholesterol, cancer screenings, etc.), 2) Vaccines I may need as an adult, 3) Dental and eye care schedule, 4) Mental health check-in recommendations, 5) Lifestyle risk factors I should discuss with my doctor, 6) What to track between doctor visits (metrics, symptoms, logs), and 7) Red flag symptoms that should prompt an unscheduled doctor visit. Base recommendations on major health authority guidelines (NHS, CDC, or equivalent) and note where recommendations differ by individual risk.",
+      "wordCount": 170,
+      "category": "Preventive Care",
+      "example": "PREVENTIVE HEALTH PLAN — 45-year-old Female\n\nSCREENINGS\nEvery visit: Blood pressure, weight/BMI\nAnnually: Blood glucose, cholesterol panel, thyroid (if symptoms)\nEvery 2 years: Skin check (dermatologist, higher risk)\nAge 40+: Mammogram every 1–2 years\nAge 45+: Colorectal cancer screening\n\nVACCINES\nFlu: Annually\nTdap booster: Every 10 years\nShingles (Shingrix): Ages 50+ (2 doses)\nCOVID-19: Per current guidance\n\nDENTAL: Every 6 months\nEYE: Every 2 years (annually if wearing glasses/contacts)\n\nDiscuss with your doctor: Family history of breast cancer (BRCA testing?), perimenopause symptoms...",
+      "tips": [
+        "Include family history of heart disease, cancer, diabetes, or mental health conditions",
+        "Mention your country so guidelines can be region-appropriate",
+        "Note any screenings you've already completed and when"
+      ]
+    },
+    {
+      "title": "Post-Workout Recovery Optimizer",
+      "description": "Design a science-backed recovery protocol for your training type and goals.",
+      "prompt": "I just completed [describe workout: type, duration, intensity level, muscle groups targeted]. My goal is [muscle gain / fat loss / endurance / general health] and I train [X] days per week. I currently do the following for recovery: [describe current post-workout routine]. Please create an optimised recovery protocol covering: 1) The ideal post-workout nutrition window and what to eat, 2) Hydration and electrolyte replenishment strategy, 3) Active recovery options vs. complete rest (with criteria for choosing), 4) Targeted stretching or mobility work for the muscles I trained, 5) Sleep quality tips specifically for recovery nights, 6) Supplements with evidence for recovery (if any), and 7) How to tell if I'm under-recovering (signs to watch for). Focus on practical, immediately actionable steps.",
+      "wordCount": 180,
+      "category": "Fitness Planning",
+      "example": "POST-WORKOUT RECOVERY: Heavy Leg Day\n\nNUTRITION (within 30–45 min):\n- Protein: 30–40g (chicken, Greek yogurt, protein shake)\n- Carbs: 50–70g (rice, sweet potato, banana) to replenish glycogen\n- Avoid high-fat meals immediately post-workout (slows absorption)\n\nHYDRATION:\n- Replace 150% of fluid lost: weigh before/after or use urine colour guide\n- Add electrolytes if session exceeded 60 min or was in heat\n\nMOBILITY (10–15 min):\n- Hip flexor stretch: 60 sec each side\n- Pigeon pose: 90 sec each side\n- Foam roll quads and IT band: 60 sec each\n\nSLEEP: Target 8+ hrs tonight. Avoid alcohol (disrupts REM + muscle protein synthesis)...",
+      "tips": [
+        "Note whether your goal is strength, hypertrophy, endurance, or fat loss",
+        "Include your training frequency so recovery advice is appropriate",
+        "Mention any supplements you already take"
+      ]
+    },
+    {
+      "title": "Chronic Condition Daily Management Guide",
+      "description": "Build a sustainable daily management system for living well with a chronic health condition.",
+      "prompt": "I have been diagnosed with [chronic condition: e.g., Type 2 diabetes, hypertension, hypothyroidism, IBS, chronic pain, autoimmune condition]. My current management includes [medications, treatments, lifestyle changes already in place]. I struggle most with [describe your biggest challenges: adherence, energy, symptoms, social situations, etc.]. Please help me design a daily management system that: 1) Structures my day to minimise symptom triggers and maximise energy, 2) Creates simple monitoring routines (what to track, how often), 3) Designs meal timing and content guidelines specific to my condition, 4) Builds movement and rest patterns that work with my symptoms, 5) Prepares me for high-symptom days with a contingency plan, 6) Identifies when to contact my healthcare team versus manage at home, and 7) Addresses the emotional and mental health aspects of chronic illness. Personalise to my specific condition and note when professional guidance is essential.",
+      "wordCount": 195,
+      "category": "Chronic Health",
+      "example": "DAILY MANAGEMENT: Type 2 Diabetes\n\nMORNING ROUTINE:\n7:00 — Check blood glucose (target: 80–130 mg/dL fasting)\n7:15 — Medication with breakfast (if prescribed)\n7:30 — Breakfast: protein + fibre first, carbs last (reduces glucose spike)\n\nMONITORING:\n- Blood glucose: before meals + 2 hrs after largest meal\n- Blood pressure: weekly (if also hypertensive)\n- Weight: weekly, same time, same conditions\n\nHIGH-SYMPTOM DAY PLAN (glucose >180 or <70):\n- Above 180: Light walk, increase water, check for illness or stress\n- Below 70: 15g fast carbs immediately, retest in 15 min\n\nContact healthcare team if: Glucose consistently above 250, any hypoglycaemic episode below 54, new symptoms...",
+      "tips": [
+        "Include your exact diagnosis and any comorbidities",
+        "List your current medications and any known triggers",
+        "Note whether you have a specialist or only a GP managing your care"
+      ]
     }
   ],
   "useCases": [
@@ -96,15 +226,35 @@
   "faqs": [
     {
       "question": "How long does it take to see results from a new fitness routine?",
-      "answer": "Most people start feeling better within 1-2 weeks of starting a new fitness routine, with noticeable physical changes appearing in 4-8 weeks. You'll typically experience improved energy, better sleep, and reduced stress within the first few weeks. Visible changes like muscle tone, weight loss, or strength gains usually take 4-8 weeks of consistent effort. Remember that fitness is a journey, not a destination - focus on building sustainable habits rather than quick fixes. Consistency is more important than intensity, so start with manageable workouts and gradually increase difficulty. Track your progress with photos, measurements, or performance metrics to stay motivated during the initial weeks when changes might be subtle."
+      "answer": "Most people start feeling better within 1-2 weeks of starting a new fitness routine, with noticeable physical changes appearing in 4-8 weeks. You'll typically experience improved energy, better sleep, and reduced stress within the first few weeks. Visible changes like muscle tone, weight loss, or strength gains usually take 4-8 weeks of consistent effort. Remember that fitness is a journey, not a destination — focus on building sustainable habits rather than quick fixes. Consistency is more important than intensity, so start with manageable workouts and gradually increase difficulty. Track your progress with photos, measurements, or performance metrics to stay motivated during the initial weeks when changes might be subtle."
     },
     {
       "question": "What's the best time of day to work out?",
-      "answer": "The best time to work out is when you can be most consistent and when your energy levels are highest. Many people prefer morning workouts because they're done before other commitments interfere, and morning exercise can boost metabolism and energy throughout the day. Afternoon workouts (2-6 PM) often coincide with peak physical performance when body temperature and hormone levels are optimal. Evening workouts can help relieve stress and improve sleep quality, but should be completed at least 2-3 hours before bedtime. The key is finding a time that fits your schedule and energy patterns consistently. If you're not a morning person, forcing early workouts often leads to inconsistency. Choose the time when you feel most energetic and can maintain a regular routine."
+      "answer": "The best time to work out is when you can be most consistent and when your energy levels are highest. Many people prefer morning workouts because they're done before other commitments interfere, and morning exercise can boost metabolism and energy throughout the day. Afternoon workouts (2-6 PM) often coincide with peak physical performance when body temperature and hormone levels are optimal. Evening workouts can help relieve stress but should be completed at least 2-3 hours before bedtime to avoid disrupting sleep. The key is finding a time that fits your schedule and energy patterns consistently — whichever time you can stick to is the best time for you."
     },
     {
       "question": "How important is nutrition compared to exercise for health goals?",
-      "answer": "Both nutrition and exercise are crucial for health, but they serve different purposes. Nutrition is often considered 70-80% of the equation for weight management because you can't out-exercise a poor diet. Exercise is essential for building strength, improving cardiovascular health, and maintaining muscle mass, especially as you age. For optimal health, focus on creating sustainable habits in both areas. Start with nutrition basics like eating whole foods, controlling portions, and staying hydrated. Then add regular movement that you enjoy. Remember that small, consistent changes in both areas create better results than perfect adherence to extreme diets or workout programs. The goal is a balanced lifestyle that supports your health goals while being enjoyable and sustainable long-term."
+      "answer": "Both nutrition and exercise are crucial for health, but they serve different purposes. Nutrition is often considered 70-80% of the equation for weight management because you can't out-exercise a poor diet. Exercise is essential for building strength, improving cardiovascular health, and maintaining muscle mass, especially as you age. For optimal health, focus on creating sustainable habits in both areas — start with nutrition basics like eating whole foods, controlling portions, and staying hydrated, then add regular movement that you enjoy. Small, consistent changes in both areas create better results than perfect adherence to extreme programs."
+    },
+    {
+      "question": "Can ChatGPT replace a personal trainer or dietitian?",
+      "answer": "ChatGPT is a powerful tool for generating personalised fitness plans, meal ideas, and health education, but it does not replace qualified professionals. A certified personal trainer can assess your form, prevent injuries, and adjust plans in real time — something AI cannot do. A registered dietitian provides medical nutrition therapy for specific health conditions, which requires clinical training and individual assessment. Use these health prompts to get started, build knowledge, and prepare better questions for your appointments. For chronic conditions, eating disorders, or rehabilitation, always work with a qualified healthcare professional alongside any AI-generated guidance."
+    },
+    {
+      "question": "How do I use these health prompts effectively?",
+      "answer": "For best results, be as specific as possible when filling in the prompt placeholders. Include your age, goals, any health conditions or medications, dietary restrictions, and your typical schedule. The more context you provide, the more relevant and actionable the output. Copy the prompt, paste it into ChatGPT or Claude, personalise the bracketed sections with your details, and review the response critically. Use the output as a starting framework and ask follow-up questions to refine it. Save the best responses to refer back to, and always cross-check health information with your doctor or other reliable sources before making significant changes."
+    },
+    {
+      "question": "What are the most important health habits to build first?",
+      "answer": "Research consistently points to four foundational health habits that provide the greatest return: adequate sleep (7-9 hours for most adults), regular physical activity (150 minutes of moderate movement per week), whole-food nutrition (minimising ultra-processed foods), and stress management (any consistent practice that works for you). Start with sleep if you're unsure — poor sleep undermines every other health effort. Once sleep is solid, add daily movement, then improve nutrition incrementally. Trying to change everything at once leads to burnout. Pick the one area where you're furthest from the baseline and focus there for 4-6 weeks before adding more habits."
+    },
+    {
+      "question": "How do I track my health progress effectively?",
+      "answer": "Effective health tracking should be simple enough to sustain long-term. Choose 2-3 metrics relevant to your goal rather than tracking everything. For fitness: strength benchmarks (how much you can lift or how far you can run), weekly activity minutes, and resting heart rate. For nutrition: energy levels, hunger patterns, and weekly food quality rather than daily calorie counting. For wellness: sleep duration and quality, daily mood rating, and stress levels. Review weekly rather than daily to spot trends without obsessing over fluctuations. Use a simple notes app, spreadsheet, or habit tracking app — the best tracking system is one you'll actually use consistently."
+    },
+    {
+      "question": "Are these health prompts suitable for people with chronic conditions?",
+      "answer": "These prompts provide a helpful starting framework for general wellness and education, but people with diagnosed chronic conditions should use them with caution and always involve their healthcare team. The prompts include specific templates for conditions like diabetes and injury recovery, but these are educational tools, not medical treatment plans. Use the outputs to become a more informed patient — to better understand your condition, prepare questions for appointments, and explore lifestyle strategies. Always confirm AI-generated health recommendations with your doctor, especially regarding medication, symptoms, or anything that would significantly change your current treatment plan."
     }
   ],
   "relatedModifiers": [
