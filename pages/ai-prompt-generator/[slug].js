@@ -230,6 +230,52 @@ export default function UseCasePromptPage() {
             </div>
           )}
 
+          {/* Content Sections - rendered if data entry has sections array */}
+          {useCaseData.sections && useCaseData.sections.length > 0 && (
+            <div className="mb-16 space-y-10">
+              {useCaseData.sections.map((section, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-lg p-8">
+                  <h2 className="text-2xl font-bold mb-4">{section.heading}</h2>
+                  {section.body && (
+                    <div className="prose max-w-none text-gray-700 leading-relaxed space-y-4">
+                      {section.body.map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                    </div>
+                  )}
+                  {section.items && section.items.length > 0 && (
+                    <ul className="mt-4 space-y-3">
+                      {section.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="mt-1 w-2 h-2 rounded-full bg-[#FFDE59] flex-shrink-0"></span>
+                          <span className="text-gray-700"><strong>{item.term}</strong>{item.description ? ` — ${item.description}` : ''}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Internal Links */}
+          {useCaseData.internalLinks && useCaseData.internalLinks.length > 0 && (
+            <div className="bg-[#F9F9F9] rounded-lg p-6 mb-16">
+              <h3 className="font-bold mb-4 text-gray-900">Related Guides</h3>
+              <div className="flex flex-wrap gap-3">
+                {useCaseData.internalLinks.map((link, i) => (
+                  <Link
+                    key={i}
+                    href={link.url}
+                    className="bg-white border border-[#E5E5E5] hover:border-[#FFDE59] px-4 py-2 rounded-lg text-sm text-gray-700 hover:text-[#1A1A1A] transition-colors"
+                  >
+                    {link.anchor}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* FAQ Section - AEO optimized */}
           {useCaseData.faqs && useCaseData.faqs.length > 0 && (
             <div className="bg-white rounded-lg shadow-lg p-8 mb-16">

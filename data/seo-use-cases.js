@@ -23,6 +23,99 @@ export const seoUseCases = [
       'ai image style prompts'
     ],
     answerBlock: 'Art styles for AI prompts are descriptive keywords and phrases that direct AI image generators like Midjourney, DALL-E, and Stable Diffusion to produce artwork in specific visual aesthetics. Common styles include impressionism, cyberpunk, watercolor, art nouveau, and photorealism. Using precise style references in your prompts gives you greater creative control and more consistent, professional results from any AI art platform.',
+    sections: [
+      {
+        heading: 'How to Use Art Styles in Your AI Prompts',
+        body: [
+          'Adding an art style to your prompt is straightforward: place the style keyword either at the beginning or end of your description. "A lighthouse at dusk, impressionist painting style" works just as well as "impressionist painting style, a lighthouse at dusk". Most models weight earlier terms slightly higher, so lead with the style if it is the primary goal.',
+          'For strongest results, follow this six-step process: first define your subject and composition; then browse the style categories below and shortlist two or three candidates; insert your chosen style keyword into the prompt; consider combining two complementary styles for a hybrid aesthetic; iterate by adjusting style weight (in Midjourney use --stylize, in Stable Diffusion use parenthesis weighting like (impressionism:1.3)); and finally save successful style combinations as reusable templates.'
+        ]
+      },
+      {
+        heading: 'Classical and Fine Art Styles for AI Prompts',
+        body: [
+          'Traditional art movements translate exceptionally well to AI image generation because they are well-represented in training data. These styles produce rich, painterly results with strong aesthetic character.'
+        ],
+        items: [
+          { term: 'Impressionism', description: 'soft, visible brushstrokes, dappled light, atmospheric colour. Reference Monet, Renoir, or Pissarro for specific tonal palettes. Works beautifully for landscapes and outdoor scenes.' },
+          { term: 'Baroque', description: 'dramatic chiaroscuro lighting, rich detail, high contrast between light and shadow. Reference Caravaggio for maximum drama. Ideal for portraits and still life.' },
+          { term: 'Art Nouveau', description: 'flowing organic lines, decorative motifs, pastel and gold palettes. Reference Alphonse Mucha for decorative poster aesthetics. Excellent for portraits surrounded by floral or natural elements.' },
+          { term: 'Renaissance', description: 'balanced composition, realistic human proportions, oil painting texture, warm earthy tones. Reference Leonardo da Vinci or Raphael. Best for portraits and figurative work.' },
+          { term: 'Surrealism', description: 'dreamlike impossible scenes, juxtaposed unrelated objects, hyperrealistic rendering of unreal subjects. Reference Salvador Dali or René Magritte. Produces some of the most striking AI art.' },
+          { term: 'Romanticism', description: 'dramatic landscapes, emotional intensity, sublime nature, stormy skies. Reference Caspar David Friedrich for atmospheric wilderness scenes.' },
+          { term: 'Pointillism', description: 'tiny dots of pure colour creating an image when viewed from distance. Reference Georges Seurat. Works well for nature scenes and portraits with vibrant colour fields.' },
+          { term: 'Cubism', description: 'fragmented geometric forms showing multiple perspectives simultaneously. Reference Picasso or Braque. Creates distinctive abstract character studies and still life compositions.' }
+        ]
+      },
+      {
+        heading: 'Modern and Digital Art Styles for AI Image Generation',
+        body: [
+          'Contemporary and digital-native styles are among the best-supported in AI image generators because they originate from digital workflows. These styles tend to produce highly shareable, visually striking results.'
+        ],
+        items: [
+          { term: 'Cyberpunk', description: 'neon-lit dystopian cityscapes, rain-soaked streets, holographic advertisements, high contrast warm/cool colour splits. Reference Blade Runner or Ghost in the Shell. Best for urban environments and character portraits.' },
+          { term: 'Vaporwave', description: 'pastel gradients (pink, purple, teal), retro tech aesthetics, Roman busts, palm trees, 80s–90s nostalgia. Immediately recognisable aesthetic with strong social media appeal.' },
+          { term: 'Low Poly', description: 'geometric minimalism using flat triangular facets, like a 3D model with visible polygons. Clean, modern look ideal for landscapes and abstract portraits.' },
+          { term: 'Pixel Art', description: 'retro video game aesthetic with visible square pixels and limited colour palettes. Reference early Nintendo or Sega art. Great for character designs and iconic scenes.' },
+          { term: 'Concept Art', description: 'professional-grade environmental and character design for games or film. Add "ArtStation trending" or "Unreal Engine render" for maximum quality signals. The most-used style on AI art platforms.' },
+          { term: 'Matte Painting', description: 'cinematic background art combining photography and painting. Creates epic, filmic environments. Reference Guild Wars 2 or Star Wars concept art.' },
+          { term: 'Cel Shading', description: 'cartoon-like rendering with flat colours and bold outlines, mimicking animated series like Spider-Man: Into the Spider-Verse.' }
+        ]
+      },
+      {
+        heading: 'Illustration and Graphic Art Styles',
+        body: [
+          'Illustration styles cover the broad spectrum from editorial design to manga and children\'s books. These are particularly strong in Midjourney and in Stable Diffusion with the right checkpoint model.'
+        ],
+        items: [
+          { term: 'Anime and Manga', description: 'expressive eyes, clean linework, dynamic poses, cel-shaded colour. Reference Studio Ghibli for softer palettes or Demon Slayer for more dramatic action styling.' },
+          { term: 'Watercolour Illustration', description: 'soft colour washes bleeding at the edges, visible paper texture, white negative space. Classic book illustration aesthetic, excellent for botanical and nature subjects.' },
+          { term: 'Editorial Illustration', description: 'bold simplified shapes, limited colour palettes, strong graphic design principles, narrative focus. Think New Yorker cover or NYT Magazine. Strong for conceptual and figurative subjects.' },
+          { term: 'Storybook Illustration', description: 'warm tones, whimsical details, slightly soft focus, inviting and safe aesthetic. Reference Beatrix Potter or Eric Carle for specific sub-styles.' },
+          { term: 'Comic Book', description: 'bold ink outlines, Ben-Day dot shading, primary colour palette, action lines. Reference Jack Kirby for classic Marvel aesthetic or Frank Miller for noir graphic novel.' },
+          { term: 'Ukiyo-e', description: 'traditional Japanese woodblock print style with flat areas of colour, bold black outlines, and graphic compositions. Reference Hokusai or Hiroshige.' }
+        ]
+      },
+      {
+        heading: 'Photographic and Hyperrealistic Styles',
+        body: [
+          'Photorealistic prompts work best when you include camera and lighting specifications. AI models have been trained on millions of photographs with EXIF metadata, so technical photography terms dramatically improve realism.'
+        ],
+        items: [
+          { term: 'Photorealistic', description: 'pair with camera model (Canon 5D, Sony A7R IV), lens (85mm, 24mm wide), aperture (f/1.8 for shallow depth of field, f/8 for landscapes), and lighting conditions (golden hour, overcast, studio).' },
+          { term: 'Film Photography', description: 'grain, colour cast, and tonal characteristics of specific film stocks. Use "Kodak Portra 400" for warm skin tones, "Fuji Velvia" for saturated landscapes, "Ilford HP5" for black and white.' },
+          { term: 'Macro Photography', description: 'extreme close-ups with shallow depth of field. Specify lens type (macro 100mm) and lighting (ring flash, diffused natural). Best for insects, plants, and textures.' },
+          { term: 'Long Exposure', description: 'motion blur in moving elements (water, clouds, traffic light trails) against sharp static subjects. Specify "30-second exposure" or "light painting".' },
+          { term: 'Tilt-Shift', description: 'miniaturisation effect with selective focus plane. Makes real scenes look like scale models. Specify "tilt-shift lens, miniature effect".' }
+        ]
+      },
+      {
+        heading: 'How to Combine Multiple Art Styles',
+        body: [
+          'Blending two styles often produces results that are more distinctive than either style alone. The key is choosing styles that share some visual vocabulary — combining wildly different styles can confuse the model.',
+          'Strong combinations: Art Deco + Cyberpunk (geometric glamour with neon); Ukiyo-e + Sci-Fi (flat graphic style with futuristic subjects); Watercolour + Editorial Illustration (soft colour with bold composition); Impressionism + Fantasy (atmospheric light with magical subjects).',
+          'In Midjourney, use double-colon weighting to control the balance: "art nouveau::2 cyberpunk::1" gives more weight to art nouveau. In Stable Diffusion, use parenthesis weighting: "(art nouveau:1.5), (cyberpunk:0.8)". Start with a 2:1 ratio and adjust based on results.'
+        ]
+      },
+      {
+        heading: 'Best AI Tools for Art Style Prompts',
+        items: [
+          { term: 'Midjourney', description: 'the strongest for painterly and artistic styles. Use --stylize (0–1000) to control how much the model applies its own aesthetic interpretation. Higher values produce more stylised, less literal results.' },
+          { term: 'DALL-E 3', description: 'best for following natural language style descriptions accurately. Write full sentences rather than keyword lists. Strong at rendering style descriptions that reference art movements.' },
+          { term: 'Stable Diffusion (SDXL)', description: 'most control through custom checkpoint models trained on specific styles. CivitAI hosts thousands of style-specific models. Best for anime, photorealism, and illustration styles.' },
+          { term: 'Leonardo AI', description: 'provides preset style modes for quick experimentation without deep prompt knowledge. Good starting point for beginners exploring different aesthetics.' },
+          { term: 'Adobe Firefly', description: 'for commercially safe style-guided generation. Trained only on licensed content, making it the safest choice for client and commercial work.' }
+        ]
+      },
+      {
+        heading: 'Legal and Ethical Considerations',
+        body: [
+          'Art styles and movements (impressionism, cubism, art nouveau) are not copyrightable — they are part of the shared cultural vocabulary. You can freely reference these in prompts.',
+          'Referencing specific living artists by name is more nuanced. Generating images "in the style of" a living artist raises ethical concerns even where it may be legally permissible in some jurisdictions. The EU AI Act (which affects all European users) requires transparency about AI-generated content. Best practice: credit the AI tool used and disclose AI generation, particularly in commercial contexts.',
+          'For commercial work, use platforms with clear commercial licensing (Midjourney paid, DALL-E, Adobe Firefly) and verify current terms of service before client delivery.'
+        ]
+      }
+    ],
     examplePrompts: [
       {
         title: 'Photorealism — Portrait',
@@ -86,20 +179,24 @@ export const seoUseCases = [
       }
     ],
     faqs: [
-      { question: 'What are the most popular art styles for AI prompts?', answer: 'The most popular art styles include photorealism, anime, watercolor, oil painting, cyberpunk, art nouveau, impressionism, and digital art. Midjourney and DALL-E respond well to specific art movement names like baroque or surrealism combined with quality modifiers like highly detailed or 4K resolution.' },
-      { question: 'How do I specify an art style in an AI prompt?', answer: 'Include the style name directly in your prompt, such as "in the style of impressionism" or "watercolor painting style". For best results, combine the style with quality modifiers like highly detailed, professional, or masterpiece. Place style keywords near the end of your prompt after describing the subject.' },
-      { question: 'Which AI tool is best for generating art in specific styles?', answer: 'Midjourney excels at artistic styles and aesthetic quality. DALL-E 3 is best for precise prompt following and text rendering. Stable Diffusion offers the most style control through models and LoRAs. For photorealism, Midjourney v6 leads. For anime styles, Stable Diffusion with custom models is preferred.' },
-      { question: 'Can I combine multiple art styles in one AI prompt?', answer: 'Yes, you can blend styles by listing them together, such as "cyberpunk meets art nouveau" or "watercolor impressionism". Most AI tools handle 2-3 style combinations well. Adding weight modifiers or parentheses helps prioritize which style dominates the final output.' },
-      { question: 'What art style keywords work best for Midjourney?', answer: 'Midjourney responds strongly to cinematic lighting, octane render, unreal engine, studio photography, concept art, and matte painting. Adding version-specific flags like --style raw or --stylize values between 0-1000 also controls artistic interpretation significantly.' },
-      { question: 'How do negative prompts affect art style in AI images?', answer: 'Negative prompts exclude unwanted elements from generated images. For art styles, common negative prompts include blurry, low quality, deformed, and cartoon when seeking realism. In Stable Diffusion, negative prompts are essential for style control and preventing artifacts.' },
-      { question: 'What is the difference between style and aesthetic in AI art prompts?', answer: 'Style refers to a specific artistic technique or movement like impressionism or pop art. Aesthetic describes the overall mood and visual feel, such as dark academia, vaporwave, or cottagecore. Combining both in prompts produces more coherent and intentional results.' },
-      { question: 'Do AI art styles look different across DALL-E, Midjourney, and Stable Diffusion?', answer: 'Yes, each platform interprets style prompts differently. Midjourney tends toward artistic and stylized outputs. DALL-E 3 produces cleaner, more literal interpretations. Stable Diffusion varies by model but offers the widest range through community-trained checkpoints and LoRAs.' },
-      { question: 'How do I get consistent style results across multiple AI images?', answer: 'Use identical style descriptors, colour palette terms, and quality modifiers in every prompt. In Midjourney, use the --sref (style reference) flag with a reference image URL for consistency. In Stable Diffusion, use the same checkpoint model and seed. Document your successful style prompts in a personal library and reuse the exact wording.' },
-      { question: 'What style keywords produce the most professional-looking AI art?', answer: 'For professional results, combine a style name with lighting descriptors and quality modifiers: "professional concept art, octane render, trending on ArtStation, highly detailed, 8K resolution". Lighting terms like "golden hour", "studio lighting", "rim lighting", and "volumetric fog" dramatically improve perceived quality across all platforms.' }
+      { question: 'What are the most popular art styles for AI prompts?', answer: 'The most popular styles include photorealistic, anime, cyberpunk, watercolour, oil painting, Art Nouveau, and concept art. Photorealistic and anime are the most frequently used across all major AI image generators. Cyberpunk and vaporwave are the most popular modern digital styles.' },
+      { question: 'How do I add an art style to my AI prompt?', answer: 'Place the style keyword at the beginning or end of your prompt. For example: "a majestic castle on a cliff, impressionist painting style" or prepend the style: "impressionist oil painting, a majestic castle on a cliff". Most AI tools respond well to either position, though leading with the style gives it slightly more weight.' },
+      { question: 'Can I combine multiple art styles in one AI prompt?', answer: 'Yes, combining styles often produces unique results. Use two complementary styles such as Art Deco plus cyberpunk, or ukiyo-e plus sci-fi. In Midjourney, use double-colon weighting (art nouveau::2 cyberpunk::1) to control the balance. In Stable Diffusion, use parenthesis weighting: (art nouveau:1.5), (cyberpunk:0.8). Avoid combining more than two or three styles — too many will produce confused results.' },
+      { question: 'Which AI tool is best for artistic styles?', answer: 'Midjourney is widely regarded as the best for painterly and artistic styles, with its --stylize parameter giving fine control over aesthetic intensity. Stable Diffusion offers the most control through custom checkpoint models trained on specific styles. DALL-E 3 excels at interpreting natural language style descriptions accurately and is the most beginner-friendly.' },
+      { question: 'Do art style prompts work differently across AI tools?', answer: 'Yes, each tool interprets style keywords differently. Midjourney uses a --stylize parameter (0–1000) to control artistic intensity and responds well to artist name references. Stable Diffusion relies on model checkpoints and prompt weighting for style control. DALL-E 3 prefers full descriptive sentences over keyword lists and follows style descriptions more literally.' },
+      { question: 'Is it legal to use art style names in AI prompts?', answer: 'Art styles and movements such as impressionism or cubism are not copyrightable. However, generating images that closely replicate a specific living artist\'s distinctive style may raise ethical and legal concerns depending on your jurisdiction. For commercial work, use platforms with clear licensing terms and avoid prompting for outputs that mimic identifiable living artists.' },
+      { question: 'What style keywords make AI images look more realistic?', answer: 'Use keywords like photorealistic, hyperrealistic, 8K, RAW photo, DSLR, and specific camera or lens references (Canon 5D, 85mm lens, f/1.8). Adding lighting descriptors such as "studio lighting", "golden hour", or "Rembrandt lighting" dramatically improves realism. Specifying film stock names like "Kodak Portra 400" adds authentic film photography character.' }
     ],
     authorityLinks: [
       { text: 'DALL-E Documentation', url: 'https://platform.openai.com/docs/guides/images' },
       { text: 'Midjourney Documentation', url: 'https://docs.midjourney.com' }
+    ],
+    internalLinks: [
+      { url: '/ai-prompt-generator/how-to-write-ai-prompts', anchor: 'how to write effective AI prompts' },
+      { url: '/ai-prompt-generator/midjourney-prompts', anchor: 'Midjourney prompt guide' },
+      { url: '/ai-prompt-generator/stable-diffusion-prompts', anchor: 'Stable Diffusion prompt techniques' },
+      { url: '/ai-prompt-generator/best-ai-art-prompts', anchor: 'best AI art prompts' },
+      { url: '/ai-prompt-generator/prompt-engineering-guide', anchor: 'prompt engineering fundamentals' }
     ],
   },
   {
