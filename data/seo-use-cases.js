@@ -467,12 +467,66 @@ export const seoUseCases = [
         prompt: 'A retro science fiction illustration of a space opera scene — a chrome rocket ship launching from a desert planet with two moons on the horizon, a space station in orbit above, inspired by 1950s pulp sci-fi magazine covers, bold graphic design, limited colour palette of orange, teal, and cream, vintage print texture, Frank R Paul inspired'
       }
     ],
+    sections: [
+      {
+        heading: 'How to Write Better AI Art Prompts — 7 Expert Tips',
+        body: [
+          'The difference between a mediocre AI image and a stunning one usually comes down to prompt structure. These seven techniques are ranked by impact — apply them in order and you will see immediate improvements.'
+        ],
+        items: [
+          { term: 'Lead with subject, then style, then details', description: 'Structure your prompt: [what it is] + [art style] + [lighting] + [composition] + [quality modifiers]. "A lone wolf in a snowy forest, oil painting style, golden hour light, dramatic composition, highly detailed" outperforms a list of keywords every time.' },
+          { term: 'Reference specific artists and art movements', description: 'Vague style terms produce vague results. "Impressionist painting" is weaker than "Claude Monet impressionism". "Fantasy art" is weaker than "concept art by Greg Rutkowski, ArtStation trending". Specific references activate well-defined stylistic knowledge in the model.' },
+          { term: 'Control aspect ratio and resolution with parameters', description: 'In Midjourney use --ar 16:9 for widescreen, --ar 2:3 for portrait, --ar 1:1 for square. Always add resolution quality terms: "8K", "highly detailed", "sharp focus". These signals tell the model to prioritise detail and clarity.' },
+          { term: 'Use negative prompts to exclude common artifacts', description: 'In Stable Diffusion, add a negative prompt: "(worst quality:1.4), (low quality:1.4), blurry, deformed, extra limbs, watermark, text". In Midjourney use --no watermark, text, blurry. Negative prompts are one of the fastest ways to improve output quality.' },
+          { term: 'Add lighting descriptors for professional quality', description: '"Golden hour", "studio lighting", "rim lighting", "volumetric fog", "Rembrandt lighting", "soft diffused light" — lighting terms dramatically improve perceived quality and mood. Always include at least one lighting descriptor in art prompts.' },
+          { term: 'Iterate by changing one variable at a time', description: 'When refining a prompt, change a single element per iteration: the style, the lighting, or the composition. Rewriting everything at once makes it impossible to know what improved the output. Small, targeted changes compound into much better results.' },
+          { term: 'Save your best prompts as reusable templates', description: 'When a prompt produces outstanding results, save the structural pattern (not just the subject). Replace the subject while keeping the style, lighting, and quality modifiers. Over time you build a personal prompt library that consistently delivers high-quality outputs.' }
+        ]
+      },
+      {
+        heading: 'Our Top 5 AI Art Prompts — The Best Overall Performers',
+        body: [
+          'After testing across Midjourney, DALL-E 3, and Stable Diffusion, these five prompts from the collection above produced the most consistently impressive results across all three platforms.'
+        ],
+        items: [
+          { term: 'Best overall', description: 'Epic Fantasy Landscape — the combination of concept art style, dramatic lighting, and cinematic composition works exceptionally well on all platforms. Easily personalised by changing the subject.' },
+          { term: 'Best for photorealism', description: 'Photorealistic Ocean Sunset — camera specification, lens type, and lighting details produce reliable photorealistic results. Use --style raw in Midjourney for maximum realism.' },
+          { term: 'Best for creative / abstract', description: 'Abstract Geometric Composition — the Kandinsky reference gives the model a precise artistic anchor while allowing significant creative freedom. Excellent on Midjourney with --stylize 800+.' },
+          { term: 'Best for beginners', description: 'Studio Ghibli Inspired Scene — the Ghibli reference is so well-defined in training data that even minimal prompts produce recognisable, high-quality results. A safe starting point for anyone new to AI art.' },
+          { term: 'Best for commercial use', description: 'Product Photography — Luxury Watch — clean, professional output that requires minimal editing for commercial use. Works best on DALL-E 3 with --style raw for accuracy.' }
+        ]
+      }
+    ],
+    comparisonTable: {
+      title: 'Which Prompts Work Best on Each Platform',
+      headers: ['Prompt Type', 'Midjourney', 'DALL-E 3', 'Stable Diffusion', 'Best For'],
+      rows: [
+        ['Fantasy Landscape', '★★★★★', '★★★★', '★★★★', 'Midjourney'],
+        ['Photorealistic Portrait', '★★★★', '★★★★★', '★★★★★', 'DALL-E / SD'],
+        ['Anime Character', '★★★★', '★★★', '★★★★★', 'Stable Diffusion'],
+        ['Abstract / Geometric', '★★★★★', '★★★★', '★★★', 'Midjourney'],
+        ['Neon Cityscape', '★★★★★', '★★★★', '★★★★', 'Midjourney'],
+        ['Watercolour Illustration', '★★★★', '★★★★★', '★★★★', 'DALL-E 3'],
+        ['Art Nouveau Poster', '★★★★★', '★★★★', '★★★', 'Midjourney'],
+        ['Product Photography', '★★★', '★★★★★', '★★★★', 'DALL-E 3'],
+        ['Macro Nature', '★★★★', '★★★★★', '★★★★★', 'DALL-E / SD'],
+        ['Retro Sci-Fi', '★★★★★', '★★★★', '★★★★', 'Midjourney']
+      ]
+    },
     faqs: [
-      { question: 'What makes a great AI art prompt?', answer: 'The best AI art prompts combine five elements: a specific subject, an art style, lighting description, composition details, and quality modifiers. A weak prompt says "a forest at night". A strong prompt says "an ancient forest at blue hour, bioluminescent mushrooms, volumetric fog, concept art, highly detailed, trending on ArtStation". The more specific and layered your prompt, the more control you have over the final image.' },
-      { question: 'Which AI tool is best for generating art?', answer: 'Midjourney v6 produces the highest artistic quality for most styles. DALL-E 3 follows complex prompts most accurately and renders text in images well. Stable Diffusion SDXL offers the most customisation through community models and is free to run locally. Choose Midjourney for aesthetic quality, DALL-E for accuracy, and Stable Diffusion for customisation and cost.' },
-      { question: 'How do I improve my AI art prompt results?', answer: 'Add specific details about lighting (golden hour, studio lighting, rim lighting), composition (rule of thirds, wide angle, close-up, bird\'s eye view), and quality (highly detailed, professional, 8K, trending on ArtStation). Reference specific artists or photography styles. Use negative prompts to exclude unwanted elements. Iterate by changing one variable at a time rather than rewriting the whole prompt.' },
-      { question: 'Can I use AI-generated art commercially?', answer: 'Most platforms allow commercial use on paid plans. Midjourney requires a paid subscription for commercial rights. DALL-E grants full usage rights to all generated images. Stable Diffusion outputs have no restrictions. Always verify current terms of service before using AI art in commercial projects, and be aware that copyright law around AI-generated art is still evolving.' },
-      { question: 'How do I get started if I have never used AI art tools before?', answer: 'Start with DALL-E 3 (free in ChatGPT) or Midjourney (free trial available). Pick one of the prompts from this page and paste it in exactly as written. Note what works and what does not. Then experiment by changing one element at a time — the style, the lighting, or the subject. Consistency improves as you build a personal library of style keywords that work for your aesthetic preferences.' }
+      { question: 'What makes a good AI art prompt?', answer: 'A good AI art prompt includes a clear subject, specific art style, lighting and mood descriptors, and technical modifiers like resolution and rendering engine. Structure and specificity matter more than length — "a lone wolf, oil painting, golden hour, highly detailed" outperforms a generic paragraph.' },
+      { question: 'Do the same prompts work on Midjourney and DALL-E?', answer: 'Not always. Midjourney responds well to artistic style keywords, artist name references, and parameter flags like --stylize. DALL-E 3 excels with natural language descriptions and follows complex scene descriptions more literally. You may need to adapt prompts for each platform — the structure above works across all three, but results vary by style type.' },
+      { question: 'How long should an AI art prompt be?', answer: 'Most effective prompts are 20 to 75 words. Too short and you lack the detail needed for consistent quality. Too long and the model may ignore parts of the prompt. Focus on the highest-impact descriptors: subject, style, lighting, and quality modifiers. Cut any word that does not change the image.' },
+      { question: 'Can I use AI-generated art commercially?', answer: 'It depends on the platform. Midjourney paid plans allow commercial use. DALL-E grants usage rights to the creator for all generated images. Stable Diffusion outputs have no restrictions. Adobe Firefly is trained on licensed content making it the safest for commercial work. Always check current terms of service before selling AI art or using it for clients.' },
+      { question: 'What are negative prompts and should I use them?', answer: 'Negative prompts tell the AI what to exclude from the image — blurry, low quality, extra limbs, watermark. They are essential in Stable Diffusion and can dramatically improve output quality. In Midjourney use the --no flag. DALL-E 3 does not support traditional negative prompts but responds well to "do not include X" instructions in natural language.' },
+      { question: 'How do I get consistent style across multiple AI art pieces?', answer: 'Use a seed number if the platform supports it (--seed in Midjourney), keep your style modifiers and artist references identical across prompts, and use prompt templates with a fixed structure while changing only the subject. In Midjourney, the --sref (style reference) flag with an image URL is the most reliable method for visual consistency.' }
+    ],
+    internalLinks: [
+      { url: '/ai-prompt-generator/how-to-write-ai-prompts', anchor: 'how to write effective AI prompts' },
+      { url: '/ai-prompt-generator/midjourney-prompts', anchor: 'Midjourney prompt guide' },
+      { url: '/ai-prompt-generator/stable-diffusion-prompts', anchor: 'Stable Diffusion prompt techniques' },
+      { url: '/ai-prompt-generator/art-styles-for-ai-prompts', anchor: 'AI art styles guide' },
+      { url: '/ai-prompt-generator/prompt-engineering-guide', anchor: 'prompt engineering fundamentals' }
     ],
   },
   {

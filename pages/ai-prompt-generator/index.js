@@ -217,14 +217,13 @@ export default function AIPromptGenerator() {
   })
 
   const generatorFAQs = [
-    { question: 'How does the AI prompt generator work?', answer: 'Select your target AI platform (ChatGPT, Claude, or Gemini), choose a prompt template for your task type, fill in the specific details for your use case, and click Generate. The tool applies proven prompt engineering frameworks from OpenAI, Anthropic, and Google to structure your prompt for maximum effectiveness.' },
-    { question: 'Is the AI prompt generator free to use?', answer: 'Yes, the prompt generator is completely free with no signup required. You can generate unlimited prompts for ChatGPT, Claude, Gemini, and other AI platforms.' },
-    { question: 'Which AI platforms does the generator support?', answer: 'The generator creates optimised prompts for OpenAI (ChatGPT, GPT-4), Anthropic (Claude), Google (Gemini), Meta (Llama), and general-purpose prompts that work across all major AI tools.' },
-    { question: 'What makes a good AI prompt?', answer: 'Effective prompts include five elements: a clear role for the AI, relevant context and background, a specific task description, the desired output format, and any constraints. The most effective structure is Role + Context + Task + Format + Constraints. This approach consistently produces better results than vague, unstructured requests.' },
-    { question: 'Can I save my generated prompts?', answer: 'You can copy any generated prompt to your clipboard with one click and save it to your preferred notes app, document, or prompt manager. We recommend keeping a personal prompt library of your best-performing prompts for reuse.' },
-    { question: 'What types of prompts can I generate?', answer: 'The generator covers content writing, business communications, code generation, data analysis, research, brainstorming, customer service, marketing copy, educational content, and more. Use the template categories to find the right starting point for your task.' },
-    { question: 'How is this different from just asking ChatGPT directly?', answer: 'Most people type casual requests and get generic results. This generator applies prompt engineering principles to structure your request with proper role assignment, context framing, output format specification, and constraints — the same techniques professional prompt engineers use. The result is typically 3-5x more specific and useful than an unstructured request.' },
-    { question: 'Do the same prompts work for ChatGPT and Claude?', answer: 'Core prompt principles work across all major AI platforms, but each has strengths. ChatGPT excels at conversational and creative tasks. Claude handles long documents and nuanced instructions particularly well. Gemini is strong for research and Google Workspace tasks. The generator has platform-specific templates optimised for each.' }
+    { question: 'What is an AI prompt generator?', answer: 'An AI prompt generator is a tool that helps you create structured, optimised instructions for AI models like ChatGPT, Claude, or Gemini to produce higher-quality outputs. Instead of typing a vague request, you fill in guided fields and the generator applies proven prompt engineering frameworks automatically.' },
+    { question: 'Are AI prompt generators free?', answer: 'Many prompt generators offer free tiers with basic features. Tools like AIPRM and FlowGPT have free plans, while advanced features typically require a paid subscription. The Prompt Writing Studio generator is completely free with no signup required.' },
+    { question: 'Can I use an AI prompt generator for ChatGPT?', answer: 'Yes. Most prompt generators are designed to work with ChatGPT and other major LLMs. You can also use ChatGPT itself as a meta-prompt generator by asking it to write prompts for a specific task.' },
+    { question: 'How is a prompt generator different from prompt engineering?', answer: 'A prompt generator automates the creation of prompts using templates and variables, while prompt engineering is the broader skill of manually crafting and refining prompts for optimal results. Generators are a tool that supports prompt engineering — they speed up the process but do not replace the underlying skill.' },
+    { question: 'Do prompt generators work for image generation AI?', answer: 'Yes. Many generators support image AI tools like Midjourney, DALL-E, and Stable Diffusion with specialised templates for visual prompt creation, including style, lighting, composition, and negative prompt fields.' },
+    { question: 'Is it safe to use AI prompt generators with business data?', answer: 'Exercise caution. Avoid entering sensitive or personal data into third-party tools. Check each tool\'s data retention policy and ensure GDPR compliance before use. For confidential business prompts, use a local or self-hosted generator rather than a public web tool.' },
+    { question: 'What makes a good AI-generated prompt?', answer: 'A good prompt includes a clear role, specific context, defined output format, tone guidance, and explicit constraints. The best generators build all of these elements in automatically using frameworks like RICE (Role, Instructions, Context, Examples) or CRISPE.' }
   ]
 
   return (
@@ -1067,8 +1066,21 @@ export default function AIPromptGenerator() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* What Is an AI Prompt Generator */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-6">What Is an AI Prompt Generator?</h2>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <p>An AI prompt generator is a tool that creates structured, optimised instructions for AI models like ChatGPT, Claude, and Gemini. Rather than typing a casual request and hoping for a useful response, a prompt generator walks you through the key inputs — role, context, tone, format, and constraints — and assembles them into a properly engineered prompt.</p>
+            <p>The gap between a vague AI request and a well-crafted prompt is significant. "Write a blog post about nutrition" produces a generic 500-word article. A structured prompt that specifies the target audience, desired word count, tone, key points to cover, and SEO angle produces something closer to a finished draft. Prompt generators close that gap automatically.</p>
+            <p>Adoption of AI tools is accelerating across every industry. Marketers use prompt generators to create campaign briefs, ad copy, and social content at scale. Developers use them to generate boilerplate code, documentation, and test cases. Writers use them to overcome blank-page paralysis and produce first drafts faster. Educators use them to create lesson plans, quizzes, and explanations tailored to specific age groups.</p>
+            <p>Whatever your use case, the underlying principle is the same: a more precise prompt produces a more useful output. Prompt generators make precision the default rather than the exception.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 bg-[#F9F9F9]">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-12">How the AI Prompt Generator Works</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -1121,8 +1133,118 @@ export default function AIPromptGenerator() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Best AI Prompt Generator Tools */}
       <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-4">Best AI Prompt Generator Tools in 2025</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Not all prompt generators are equal. Here is how the leading tools compare on price, features, model support, and ease of use.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="bg-[#1A1A1A] text-white">
+                  <th className="text-left p-4">Tool</th>
+                  <th className="text-left p-4">Price</th>
+                  <th className="text-left p-4">Key Features</th>
+                  <th className="text-left p-4">Model Support</th>
+                  <th className="text-left p-4">Ease of Use</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-[#E5E5E5] bg-[#FFFBEA]">
+                  <td className="p-4 font-semibold">Prompt Writing Studio</td>
+                  <td className="p-4">Free</td>
+                  <td className="p-4">Template library, guided wizard, use-case generators</td>
+                  <td className="p-4">ChatGPT, Claude, Gemini</td>
+                  <td className="p-4">Beginner-friendly</td>
+                </tr>
+                <tr className="border-b border-[#E5E5E5]">
+                  <td className="p-4 font-semibold">ChatGPT Custom Instructions</td>
+                  <td className="p-4">Free / Plus $20/mo</td>
+                  <td className="p-4">System-level context, memory, GPT Builder</td>
+                  <td className="p-4">ChatGPT only</td>
+                  <td className="p-4">Moderate</td>
+                </tr>
+                <tr className="border-b border-[#E5E5E5] bg-[#F9F9F9]">
+                  <td className="p-4 font-semibold">PromptPerfect</td>
+                  <td className="p-4">Free tier / $9.99/mo</td>
+                  <td className="p-4">Automated prompt optimisation, A/B testing</td>
+                  <td className="p-4">GPT-4, Claude, Midjourney, Stable Diffusion</td>
+                  <td className="p-4">Intermediate</td>
+                </tr>
+                <tr className="border-b border-[#E5E5E5]">
+                  <td className="p-4 font-semibold">FlowGPT</td>
+                  <td className="p-4">Free</td>
+                  <td className="p-4">Community prompt library, discovery, sharing</td>
+                  <td className="p-4">ChatGPT, Claude, Gemini, Llama</td>
+                  <td className="p-4">Beginner-friendly</td>
+                </tr>
+                <tr className="border-b border-[#E5E5E5] bg-[#F9F9F9]">
+                  <td className="p-4 font-semibold">AIPRM for ChatGPT</td>
+                  <td className="p-4">Free / $9/mo</td>
+                  <td className="p-4">Chrome extension, 4000+ community templates, SEO focus</td>
+                  <td className="p-4">ChatGPT (browser only)</td>
+                  <td className="p-4">Beginner-friendly</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Build Your Own AI Prompt Generator */}
+      <section className="py-16 bg-[#F9F9F9]">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-4">How to Build Your Own AI Prompt Generator</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Advanced users can create custom prompt generation systems tailored to their specific workflows — no coding required.</p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-lg p-6 border border-[#E5E5E5]">
+              <h3 className="font-bold text-lg mb-3">Spreadsheet Method</h3>
+              <p className="text-gray-600">Build a Google Sheets or Notion database with columns for Role, Context, Task, Format, and Constraints. Use dropdown menus to select values and a CONCATENATE formula to assemble the final prompt. This gives you a reusable library that your whole team can contribute to.</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-[#E5E5E5]">
+              <h3 className="font-bold text-lg mb-3">Meta-Prompting with ChatGPT or Claude</h3>
+              <p className="text-gray-600">Use AI to generate prompts for AI. Ask ChatGPT or Claude: "Write an expert-level prompt for [task] that includes role assignment, context, output format, and constraints." Iterate on the output until you have a reusable template. This is the fastest way to build a prompt library from scratch.</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-[#E5E5E5]">
+              <h3 className="font-bold text-lg mb-3">No-Code Web Generator</h3>
+              <p className="text-gray-600">Tools like Softr, Glide, or Webflow allow you to build a simple form-based prompt generator without writing code. Connect it to an Airtable or Google Sheets backend containing your prompt templates. This works well for teams that need a shared, branded prompt tool.</p>
+            </div>
+            <div className="bg-white rounded-lg p-6 border border-[#E5E5E5]">
+              <h3 className="font-bold text-lg mb-3">Team Prompt Framework Library</h3>
+              <p className="text-gray-600">Structure your best prompts using a consistent framework (RICE: Role, Instructions, Context, Examples; or CRISPE: Capacity, Role, Insight, Statement, Personality, Experiment). Store them in Notion or Confluence with tags for use case, platform, and output type. A shared library cuts prompt-writing time by 60–80% for repeat tasks.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance and GDPR */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <h2 className="text-3xl font-bold text-center mb-4">Ethical and Compliance Considerations</h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">Using AI prompt generators responsibly means understanding the regulatory and ethical implications — especially for EU users.</p>
+          <div className="space-y-4">
+            <div className="flex items-start gap-4 p-5 border border-[#E5E5E5] rounded-lg">
+              <div className="w-3 h-3 rounded-full bg-[#FFDE59] mt-1.5 flex-shrink-0"></div>
+              <div><strong className="block mb-1">GDPR and Personal Data</strong><span className="text-gray-600">Never input personal data (names, emails, health information, financial details) into third-party prompt tools. Under GDPR, processing personal data through an external service without a Data Processing Agreement can constitute a breach. Use anonymised or fictional data when testing prompts.</span></div>
+            </div>
+            <div className="flex items-start gap-4 p-5 border border-[#E5E5E5] rounded-lg">
+              <div className="w-3 h-3 rounded-full bg-[#FFDE59] mt-1.5 flex-shrink-0"></div>
+              <div><strong className="block mb-1">EU AI Act Implications</strong><span className="text-gray-600">The EU AI Act (effective 2025) introduces transparency requirements for AI-generated content. If you are using prompt generators to produce content for publication, clearly label AI-assisted work. Automated content generation workflows may fall under the Act's transparency obligations depending on use case and scale.</span></div>
+            </div>
+            <div className="flex items-start gap-4 p-5 border border-[#E5E5E5] rounded-lg">
+              <div className="w-3 h-3 rounded-full bg-[#FFDE59] mt-1.5 flex-shrink-0"></div>
+              <div><strong className="block mb-1">Bias Amplification</strong><span className="text-gray-600">Poorly structured prompts can amplify biases present in the underlying model. When generating content about people, groups, or sensitive topics, review outputs critically and use constraints to reduce stereotyping. Explicit instructions like "avoid generalisations" and "present balanced perspectives" significantly reduce bias in AI outputs.</span></div>
+            </div>
+            <div className="flex items-start gap-4 p-5 border border-[#E5E5E5] rounded-lg">
+              <div className="w-3 h-3 rounded-full bg-[#FFDE59] mt-1.5 flex-shrink-0"></div>
+              <div><strong className="block mb-1">Data Retention Policies</strong><span className="text-gray-600">Each AI provider has different data retention and training policies. OpenAI, Anthropic, and Google all allow opting out of model training via account settings. For business use, review each tool's Enterprise terms and use the API rather than consumer products wherever sensitive prompts are involved.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-[#F9F9F9]">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
           <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6">

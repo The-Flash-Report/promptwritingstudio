@@ -9,13 +9,15 @@ import { generateFAQSchema } from '../../lib/schemaGenerator'
 export default function ModifierPage({ modifierData }) {
   const router = useRouter()
   const [activePromptIndex, setActivePromptIndex] = useState(null)
-  const { 
-    modifierName, 
-    promptTemplates, 
-    useCases, 
-    faqs, 
+  const {
+    modifierName,
+    promptTemplates,
+    useCases,
+    faqs,
     relatedModifiers,
-    seoData
+    seoData,
+    sections,
+    internalLinks
   } = modifierData
 
   const togglePrompt = (index) => {
@@ -417,6 +419,59 @@ export default function ModifierPage({ modifierData }) {
         </div>
       </section>
       
+      {/* Content Sections */}
+      {sections && sections.length > 0 && (
+        <section className="py-16 bg-[#F9F9F9]">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl space-y-8">
+            {sections.map((section, index) => (
+              <div key={index} className="bg-white rounded-lg p-8">
+                <h2 className="text-2xl font-bold mb-4 text-[#1A1A1A]">{section.heading}</h2>
+                {section.body && (
+                  <div className="space-y-4 mb-4">
+                    {section.body.map((para, i) => (
+                      <p key={i} className="text-gray-700 leading-relaxed">{para}</p>
+                    ))}
+                  </div>
+                )}
+                {section.items && section.items.length > 0 && (
+                  <ul className="space-y-3">
+                    {section.items.map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="mt-1.5 w-2 h-2 rounded-full bg-[#FFDE59] flex-shrink-0"></span>
+                        <span className="text-gray-700">
+                          {item.term && <strong>{item.term}</strong>}
+                          {item.description ? (item.term ? ` — ${item.description}` : item.description) : ''}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Internal Links */}
+      {internalLinks && internalLinks.length > 0 && (
+        <section className="py-6 bg-[#F9F9F9]">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+            <p className="font-bold mb-3 text-gray-900">Related Guides</p>
+            <div className="flex flex-wrap gap-3">
+              {internalLinks.map((link, i) => (
+                <Link
+                  key={i}
+                  href={link.url}
+                  className="bg-white border border-[#E5E5E5] hover:border-[#FFDE59] px-4 py-2 rounded-lg text-sm text-gray-700 transition-colors"
+                >
+                  {link.anchor}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
