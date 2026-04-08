@@ -81,7 +81,7 @@ const CustomerServiceAIPage = () => {
           keywords="customer service AI calculator, support automation savings, AI chatbot ROI, customer service costs, help desk automation"
           ogTitle="Customer Service AI Savings Calculator - See Your Potential Cost Reduction"
           ogDescription="Discover how much you can save with AI-powered customer service. Calculate ticket automation, response time improvements, and agent cost savings."
-          canonicalUrl="https://promptwritingstudio.com/calculators/customer-service-ai-savings"
+          url="https://promptwritingstudio.com/calculators/customer-service-ai-savings"
         />
         <script
           type="application/ld+json"

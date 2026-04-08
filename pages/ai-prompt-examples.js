@@ -560,7 +560,7 @@ export default function AIPromptExamples() {
                 <Link href="/ai-prompt-generator" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                   Try Our Prompt Generator
                 </Link>
-                <Link href="/pricing" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                <Link href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
                   Get Full Course Access
                 </Link>
               </div>

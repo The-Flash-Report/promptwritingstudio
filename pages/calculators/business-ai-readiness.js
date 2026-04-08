@@ -81,7 +81,7 @@ const BusinessAIReadinessPage = () => {
           keywords="business AI readiness assessment, AI implementation score, AI adoption evaluation, business AI strategy, AI readiness calculator"
           ogTitle="Business AI Readiness Assessment - Get Your AI Implementation Score"
           ogDescription="Discover how ready your business is for AI implementation. Take our comprehensive assessment and get a personalized roadmap."
-          canonicalUrl="https://promptwritingstudio.com/calculators/business-ai-readiness"
+          url="https://promptwritingstudio.com/calculators/business-ai-readiness"
         />
         <script
           type="application/ld+json"
