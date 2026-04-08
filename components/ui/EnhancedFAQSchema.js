@@ -25,8 +25,6 @@ export default function EnhancedFAQSchema({ faqs, calculatorName, showExpanded =
       "acceptedAnswer": {
         "@type": "Answer",
         "text": faq.answer,
-        "dateCreated": new Date().toISOString(),
-        "upvoteCount": Math.floor(Math.random() * 50) + 10, // Simulated engagement
         "author": {
           "@type": "Organization",
           "name": "Prompt Writing Studio"

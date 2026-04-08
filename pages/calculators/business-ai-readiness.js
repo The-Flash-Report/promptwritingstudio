@@ -63,7 +63,6 @@ const BusinessAIReadinessPage = () => {
         "@type": "Answer",
         "text": faq.answer,
         "dateCreated": new Date().toISOString(),
-        "upvoteCount": Math.floor(Math.random() * 50) + 10,
         "author": {
           "@type": "Organization",
           "name": "Prompt Writing Studio"
