@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hook": "if echo \"$TOOL_INPUT\" | grep -q '\\-\\-no-verify'; then echo 'BLOCKED: Do not skip git hooks with --no-verify' >&2; exit 2; fi",
+        "description": "Block --no-verify flag on git commands"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hook": "FILE=$(echo \"$TOOL_INPUT\" | grep -o '\"file_path\":\"[^\"]*\"' | head -1 | cut -d'\"' -f4); if [ -n \"$FILE\" ] && echo \"$FILE\" | grep -qE '\\.(js|jsx)$'; then grep -n 'console\\.log' \"$FILE\" 2>/dev/null && echo 'WARNING: console.log detected in edited file — remove before committing' || true; fi",
+        "description": "Warn about console.log in edited JS files"
+      }
+    ]
+  }
+}
