@@ -4,7 +4,7 @@ import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { getModifierSlugs, getModifierData } from '../../lib/modifiers'
-import { generateFAQSchema } from '../../lib/schemaGenerator'
+import { generateFAQSchema, generateBreadcrumbSchema } from '../../lib/schemaGenerator'
 
 export default function ModifierPage({ modifierData }) {
   const router = useRouter()
@@ -19,6 +19,8 @@ export default function ModifierPage({ modifierData }) {
     sections,
     internalLinks
   } = modifierData
+
+  const pageUrl = `https://promptwritingstudio.com/chatgpt-prompts-for/${modifierData.modifier}`
 
   const togglePrompt = (index) => {
     if (activePromptIndex === index) {
@@ -52,10 +54,17 @@ export default function ModifierPage({ modifierData }) {
     }))
   }
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://promptwritingstudio.com' },
+    { name: 'ChatGPT Prompt Templates', url: 'https://promptwritingstudio.com/chatgpt-prompt-templates' },
+    { name: `ChatGPT Prompts for ${modifierName}`, url: pageUrl }
+  ])
+
   return (
     <Layout
       title={seoData.title}
       description={seoData.description}
+      canonicalUrl={pageUrl}
     >
       <Head>
         {faqs && faqs.length > 0 && (
@@ -67,6 +76,29 @@ export default function ModifierPage({ modifierData }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+        {/* Breadcrumb Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Prompt Writing Studio",
+            "url": "https://promptwritingstudio.com",
+            "logo": "https://promptwritingstudio.com/images/logo.png",
+            "sameAs": [
+              "https://twitter.com/bryaborern",
+              "https://www.linkedin.com/company/prompt-writing-studio",
+              "https://www.youtube.com/@BryanCollinsAuthor",
+              "https://www.instagram.com/becomeawritertoday",
+              "https://www.facebook.com/becomeawritertoday"
+            ]
+          }) }}
         />
       </Head>
 

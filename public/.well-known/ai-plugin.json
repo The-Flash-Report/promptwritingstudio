@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Prompt Writing Studio",
+  "name_for_model": "prompt_writing_studio",
+  "description_for_human": "Access 200+ AI prompt templates and generators for ChatGPT, Claude, Gemini, Midjourney, and more. Free tools for business, marketing, writing, and education.",
+  "description_for_model": "Prompt Writing Studio provides expert-crafted AI prompt templates organized by category (business, marketing, coding, education, etc.) and platform (ChatGPT, Claude, Gemini, Midjourney, DALL-E, Stable Diffusion). Use this to find ready-to-use prompts, learn prompt engineering techniques, and access AI business calculators. The site covers text prompts, image generation prompts, and video prompts with detailed guides on how to customize them for specific use cases.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://promptwritingstudio.com/api/openapi.json"
+  },
+  "logo_url": "https://promptwritingstudio.com/images/logo.png",
+  "contact_email": "hello@promptwritingstudio.com",
+  "legal_info_url": "https://promptwritingstudio.com/terms-of-service"
+}

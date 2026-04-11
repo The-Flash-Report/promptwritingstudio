@@ -1,54 +1,46 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useState } from 'react'
 import Head from 'next/head'
 import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
 import { seoUseCases } from '../../data/seo-use-cases'
-import { generateFAQSchema, generateHowToSchema, generateArticleSchema } from '../../lib/schemaGenerator'
+import { generateFAQSchema, generateHowToSchema, generateArticleSchema, generateBreadcrumbSchema } from '../../lib/schemaGenerator'
 
-export default function UseCasePromptPage() {
-  const router = useRouter();
-  const { slug } = router.query;
-  
-  const [useCaseData, setUseCaseData] = useState(null);
+export default function UseCasePromptPage({ useCaseData, relatedUseCases }) {
   const [copiedPrompt, setCopiedPrompt] = useState(null);
-  
-  // Set use case data based on slug
-  useEffect(() => {
-    if (slug) {
-      const data = seoUseCases.find(useCase => useCase.slug === slug);
-      if (data) {
-        setUseCaseData(data);
-      }
-    }
-  }, [slug]);
-  
+
   // Copy prompt to clipboard
   const copyToClipboard = (prompt, promptTitle) => {
     navigator.clipboard.writeText(prompt);
     setCopiedPrompt(promptTitle);
     setTimeout(() => setCopiedPrompt(null), 2000);
   };
-  
-  // If page is not yet loaded or use case not found
-  if (!useCaseData) {
-    return (
-      <Layout
-        title="AI Prompt Generator | Create Optimized Prompts for ChatGPT, Claude & Gemini"
-        description="Build effective AI prompts using best practices from OpenAI, Anthropic, and Google. Our AI prompt generator helps you create optimized prompts for ChatGPT, Claude, and Gemini."
-      >
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="text-3xl font-bold mb-4">Loading...</h1>
-          <p>Please wait while we prepare your prompt generator.</p>
-        </div>
-      </Layout>
-    );
-  }
-  
+
+  const pageUrl = `https://promptwritingstudio.com/ai-prompt-generator/${useCaseData.slug}`;
+
+  // Breadcrumb schema
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://promptwritingstudio.com' },
+    { name: 'AI Prompt Generator', url: 'https://promptwritingstudio.com/ai-prompt-generator' },
+    { name: useCaseData.h1, url: pageUrl }
+  ]);
+
+  // Speakable schema for AEO answer block
+  const speakableSchema = useCaseData.answerBlock ? {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": useCaseData.h1,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".answer-block", "h1"]
+    },
+    "url": pageUrl
+  } : null;
+
   return (
     <Layout
       title={useCaseData.title}
       description={useCaseData.description}
+      canonicalUrl={pageUrl}
     >
       <Head>
         {/* Article Schema */}
@@ -57,11 +49,16 @@ export default function UseCasePromptPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(generateArticleSchema({
             title: useCaseData.h1,
             description: useCaseData.description,
-            url: `https://promptwritingstudio.com/ai-prompt-generator/${useCaseData.slug}`,
+            url: pageUrl,
             datePublished: '2024-06-01',
-            dateModified: '2026-02-01',
+            dateModified: '2026-04-01',
             keywords: [useCaseData.parentKeyword, ...(useCaseData.relatedKeywords || [])]
           })) }}
+        />
+        {/* Breadcrumb Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
         {/* FAQPage Schema */}
         {useCaseData.faqs && useCaseData.faqs.length > 0 && (
@@ -80,8 +77,33 @@ export default function UseCasePromptPage() {
               { name: 'Paste in AI Tool', text: 'Paste the prompt into ChatGPT, Claude, Gemini, or your preferred AI platform.' },
               { name: 'Customize & Use', text: 'Replace any bracketed sections with your specific information and execute the prompt.' }
             ],
-            `https://promptwritingstudio.com/ai-prompt-generator/${useCaseData.slug}`
+            pageUrl
           )) }}
+        />
+        {/* Speakable Schema for voice search / AEO */}
+        {speakableSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
+          />
+        )}
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Prompt Writing Studio",
+            "url": "https://promptwritingstudio.com",
+            "logo": "https://promptwritingstudio.com/images/logo.png",
+            "sameAs": [
+              "https://twitter.com/bryaborern",
+              "https://www.linkedin.com/company/prompt-writing-studio",
+              "https://www.youtube.com/@BryanCollinsAuthor",
+              "https://www.instagram.com/becomeawritertoday",
+              "https://www.facebook.com/becomeawritertoday"
+            ]
+          }) }}
         />
       </Head>
 
@@ -92,9 +114,9 @@ export default function UseCasePromptPage() {
             {useCaseData.h1}
           </h1>
 
-          {/* Answer Block - AEO optimized */}
+          {/* Answer Block - AEO optimized with speakable markup */}
           {useCaseData.answerBlock && (
-            <div className="max-w-3xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-6 mb-8 rounded-r-lg text-left">
+            <div className="answer-block max-w-3xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-6 mb-8 rounded-r-lg text-left" data-source="Prompt Writing Studio" data-attribution="Bryan Collins, Prompt Writing Studio">
               <p className="text-lg leading-relaxed text-gray-100">
                 {useCaseData.answerBlock}
               </p>
@@ -321,10 +343,7 @@ export default function UseCasePromptPage() {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-6 text-center">Explore More AI Prompt Use Cases</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {seoUseCases
-                .filter(useCase => useCase.slug !== slug)
-                .slice(0, 6)
-                .map((useCase) => (
+              {relatedUseCases.map((useCase) => (
                   <Link
                     key={useCase.slug}
                     href={`/ai-prompt-generator/${useCase.slug}`}
@@ -433,4 +452,42 @@ function getGenericPrompts(slug) {
       prompt: "I'm facing this challenge: [DESCRIBE YOUR PROBLEM]. Context: [ADDITIONAL CONTEXT]. Please help me brainstorm solutions and provide actionable steps to resolve this."
     }
   ];
-} 
+}
+
+export async function getStaticPaths() {
+  // Exclude slugs that have dedicated static pages in this directory
+  // (ai-art-prompts.js, enhanced.js, index.js are handled by their own files)
+  const excludedSlugs = new Set(['ai-art-prompts', 'enhanced', 'index']);
+
+  const paths = seoUseCases
+    .filter(useCase => !excludedSlugs.has(useCase.slug))
+    .map(useCase => ({
+      params: { slug: useCase.slug }
+    }));
+
+  return {
+    paths,
+    fallback: false
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const useCaseData = seoUseCases.find(useCase => useCase.slug === params.slug);
+
+  if (!useCaseData) {
+    return { notFound: true };
+  }
+
+  // Pre-compute related use cases (6 items, excluding current)
+  const relatedUseCases = seoUseCases
+    .filter(useCase => useCase.slug !== params.slug)
+    .slice(0, 6)
+    .map(({ slug, h1, intro }) => ({ slug, h1, intro: intro.substring(0, 150) }));
+
+  return {
+    props: {
+      useCaseData,
+      relatedUseCases
+    }
+  };
+}
