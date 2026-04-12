@@ -17,7 +17,8 @@ export default function ModifierPage({ modifierData }) {
     relatedModifiers,
     seoData,
     sections,
-    internalLinks
+    internalLinks,
+    answerBlock
   } = modifierData
 
   const pageUrl = `https://promptwritingstudio.com/chatgpt-prompts-for/${modifierData.modifier}`
@@ -113,6 +114,11 @@ export default function ModifierPage({ modifierData }) {
             <p className="text-xl mb-8">
               Save hours and get better results with our tested and optimized prompts specifically designed for {modifierName.toLowerCase()} professionals and enthusiasts.
             </p>
+            {answerBlock && (
+              <div className="answer-block max-w-2xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-5 mb-8 rounded-r-lg text-left" data-source="Prompt Writing Studio" data-attribution="Bryan Collins, Prompt Writing Studio">
+                <p className="text-base leading-relaxed text-gray-100">{answerBlock}</p>
+              </div>
+            )}
             <a href="#prompt-templates" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block">
               View Prompt Templates
             </a>

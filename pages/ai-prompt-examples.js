@@ -189,8 +189,11 @@ export default function AIPromptExamples() {
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 AI Prompt Examples: 500+ Free ChatGPT Prompts That Work
               </h1>
+              <div className="answer-block max-w-3xl mx-auto bg-gray-50 border-l-4 border-[#FFDE59] p-5 mb-6 rounded-r-lg text-left" data-source="Prompt Writing Studio" data-attribution="Bryan Collins, Prompt Writing Studio">
+                <p className="text-base leading-relaxed text-gray-700">AI prompt examples are real, tested instructions that show you exactly what to type into ChatGPT, Claude, or Gemini to get useful results. Unlike vague prompts, effective examples follow a structured format — specifying role, context, task, and output format. The 500+ examples below are copy-paste ready and organised by category.</p>
+              </div>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Copy-paste ready AI prompt examples for ChatGPT, Claude, Gemini & more. 
+                Copy-paste ready AI prompt examples for ChatGPT, Claude, Gemini & more.
                 Proven templates for business, content creation & creativity. Start saving 10+ hours weekly today.
               </p>
               

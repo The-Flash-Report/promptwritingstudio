@@ -249,6 +249,9 @@ export default function AIPromptGenerator() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               AI Prompt Generator
             </h1>
+            <div className="answer-block max-w-2xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-5 mb-6 rounded-r-lg text-left" data-source="Prompt Writing Studio" data-attribution="Bryan Collins, Prompt Writing Studio">
+              <p className="text-base leading-relaxed text-gray-100">An AI prompt generator is a tool that helps you write structured, effective instructions for ChatGPT, Claude, and Gemini. It turns a vague idea into a complete prompt using proven frameworks — including role assignment, context, task specification, and output format — to produce consistently better AI responses.</p>
+            </div>
             <p className="text-xl mb-8">
               Create effective prompts for ChatGPT, Claude, and Gemini using official best practices from OpenAI, Anthropic, and Google.
             </p>

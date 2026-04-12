@@ -6,6 +6,7 @@
     "title": "ChatGPT Prompts for Image Creation - 15+ Expert Templates | PromptWritingStudio",
     "description": "Discover 15+ effective ChatGPT prompts for creating stunning AI images. Our expert-crafted templates help you generate detailed image descriptions for DALL-E, Midjourney, and other AI image generators."
   },
+  "answerBlock": "ChatGPT image prompts are detailed text descriptions that direct AI image generators — including DALL-E, Midjourney, and Stable Diffusion — to create specific visuals. Effective prompts combine a clear subject, art style, lighting, and composition. The templates below are structured to work across all major AI image platforms with minimal editing required.",
   "promptTemplates": [
     {
       "title": "Detailed Scene Generator",
