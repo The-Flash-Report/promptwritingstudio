@@ -35,6 +35,11 @@ Allow: /*.jpeg
 Allow: /*.svg
 Allow: /*.webp
 
+# Allow AI discovery files
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /.well-known/
+
 # Crawl delay to be respectful to servers
 Crawl-delay: 1
 
@@ -47,7 +52,7 @@ User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
 
-# Bing-specific directives  
+# Bing-specific directives
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
@@ -59,7 +64,39 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Block aggressive crawlers that might waste resources
+# AI Model Crawlers - Welcome with full access
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Block aggressive SEO crawlers that waste resources
 User-agent: MJ12bot
 Disallow: /
 

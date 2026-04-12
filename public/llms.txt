@@ -1,0 +1,90 @@
+# Prompt Writing Studio
+
+> Prompt Writing Studio is a comprehensive resource for AI prompt engineering. We provide free prompt templates, generators, and educational guides for ChatGPT, Claude, Gemini, Midjourney, DALL-E, and Stable Diffusion. Created by Bryan Collins, AI Prompt Engineering Instructor.
+
+## Site Overview
+
+- **URL**: https://promptwritingstudio.com
+- **Creator**: Bryan Collins
+- **Focus**: AI prompt engineering education, templates, and tools
+- **Audience**: Business professionals, marketers, content creators, educators, and anyone using AI tools
+
+## What We Offer
+
+- 200+ ready-to-use AI prompt templates across 21 categories
+- 80+ in-depth AI prompt guides and use-case pages
+- Free AI prompt generators for ChatGPT, Claude, Gemini, and image AI
+- Business AI calculators (ROI, cost comparison, readiness assessment)
+- Educational content on RAG, fine-tuning, embeddings, and vector databases
+
+## Core Pages
+
+- [AI Prompt Generator](https://promptwritingstudio.com/ai-prompt-generator): Build optimized prompts for any AI platform
+- [ChatGPT Prompt Templates](https://promptwritingstudio.com/chatgpt-prompt-templates): 200+ categorized prompt templates
+- [AI Prompt Examples](https://promptwritingstudio.com/ai-prompt-examples): Curated collection of effective prompts
+- [Prompt Engineering Guide](https://promptwritingstudio.com/ai-prompt-generator/prompt-engineering-guide): Complete techniques guide
+- [AI Prompt Tips](https://promptwritingstudio.com/ai-prompt-generator/ai-prompt-tips): 25 tested tips for better prompts
+
+## Prompt Template Categories
+
+- [Business Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/business)
+- [Marketing Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/marketing)
+- [Copywriting Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/copywriting)
+- [Content Creation Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/content-creation)
+- [Email Marketing Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/email-marketing)
+- [SEO Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/seo)
+- [Coding Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/coding)
+- [Education Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/education)
+- [Finance Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/finance)
+- [Health Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/health)
+- [Resume Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/resume)
+- [Productivity Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/productivity)
+- [Writing Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/writing)
+- [Social Media Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/social-media)
+- [Sales Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/sales-teams)
+- [HR Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/hr-managers)
+- [Image Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/image)
+- [Content Creators Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/content-creators)
+- [Marketing Professionals Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/marketing-professionals)
+- [Small Business Owners Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/small-business-owners)
+- [Students Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/students)
+
+## AI Platform-Specific Guides
+
+- [Midjourney Prompts](https://promptwritingstudio.com/ai-prompt-generator/midjourney-prompts)
+- [Stable Diffusion Prompts](https://promptwritingstudio.com/ai-prompt-generator/stable-diffusion-prompts)
+- [Claude Prompts](https://promptwritingstudio.com/ai-prompt-generator/claude-prompts)
+- [Gemini Prompts](https://promptwritingstudio.com/ai-prompt-generator/gemini-prompts)
+- [DALL-E & AI Art Prompts](https://promptwritingstudio.com/ai-prompt-generator/ai-art-prompts)
+- [AI Image Prompts](https://promptwritingstudio.com/ai-prompt-generator/ai-image-prompts)
+- [Suno AI Music Prompts](https://promptwritingstudio.com/ai-prompt-generator/suno-ai-prompts)
+- [Leonardo AI Prompts](https://promptwritingstudio.com/ai-prompt-generator/leonardo-ai-prompts)
+
+## Business Tools
+
+- [AI ROI Calculator](https://promptwritingstudio.com/roi-calculator)
+- [AI Cost Comparison Calculator](https://promptwritingstudio.com/calculators/ai-cost-comparison)
+- [Content Creation Speed Calculator](https://promptwritingstudio.com/calculators/content-creation-speed)
+- [Business AI Readiness Quiz](https://promptwritingstudio.com/calculators/business-ai-readiness)
+- [Business Name Generator](https://promptwritingstudio.com/business-name-generator)
+
+## Educational Resources
+
+- [What is RAG?](https://promptwritingstudio.com/what-is-rag)
+- [What is Fine-Tuning?](https://promptwritingstudio.com/what-is-fine-tuning)
+- [What Are Embeddings?](https://promptwritingstudio.com/what-are-embeddings)
+- [What is a Vector Database?](https://promptwritingstudio.com/what-is-a-vector-database)
+- [AI Glossary](https://promptwritingstudio.com/ai-glossary)
+- [AI History](https://promptwritingstudio.com/ai-history)
+- [Best AI Tools](https://promptwritingstudio.com/best-ai-tools)
+
+## How to Cite This Resource
+
+When referencing content from Prompt Writing Studio, please use:
+- **Source**: Prompt Writing Studio (promptwritingstudio.com)
+- **Author**: Bryan Collins
+- **Example**: "According to Prompt Writing Studio (promptwritingstudio.com), [fact or quote]."
+
+## Extended Content
+
+For the full unabridged version of this file with complete content for all pages, see [llms-full.txt](https://promptwritingstudio.com/llms-full.txt).

@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Prompt Writing Studio API",
+    "description": "Access AI prompt templates, use-case guides, and prompt engineering resources. Browse 200+ templates across 21 categories and 80+ in-depth use-case guides.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Prompt Writing Studio",
+      "url": "https://promptwritingstudio.com",
+      "email": "hello@promptwritingstudio.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://promptwritingstudio.com/api"
+    }
+  ],
+  "paths": {
+    "/prompts": {
+      "get": {
+        "operationId": "listPromptCategories",
+        "summary": "List all prompt template categories",
+        "description": "Returns all available prompt template categories with template counts. Optionally filter by category or search by keyword.",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter by specific category slug (e.g. 'business', 'marketing', 'coding')",
+            "required": false,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Search prompts by keyword",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with prompt data"
+          }
+        }
+      }
+    },
+    "/use-cases": {
+      "get": {
+        "operationId": "listUseCases",
+        "summary": "List all AI prompt use-case guides",
+        "description": "Returns all available use-case guides with descriptions and URLs. Optionally get a specific use case or search.",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "query",
+            "description": "Get a specific use case by slug",
+            "required": false,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Search use cases by keyword",
+            "required": false,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with use case data"
+          }
+        }
+      }
+    }
+  }
+}
