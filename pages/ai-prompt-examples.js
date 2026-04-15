@@ -62,6 +62,28 @@ export default function AIPromptExamples() {
     return matchesCategory && matchesSearch
   })
 
+  // Export visible prompts as Markdown
+  const exportAsMarkdown = () => {
+    const lines = [`# AI Prompt Examples — ${selectedCategory === 'all' ? 'All Categories' : selectedCategory}`, '']
+    filteredPrompts.forEach((prompt) => {
+      lines.push(`## ${prompt.title}`)
+      lines.push('')
+      if (prompt.description) lines.push(`> ${prompt.description}`)
+      lines.push('')
+      lines.push('```')
+      lines.push(customizedPrompts[prompt.id] || prompt.prompt)
+      lines.push('```')
+      lines.push('')
+    })
+    const blob = new Blob([lines.join('\n')], { type: 'text/markdown' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `prompts-${selectedCategory === 'all' ? 'all' : selectedCategory.toLowerCase().replace(/\s+/g, '-')}.md`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   // Toggle favorite
   const toggleFavorite = (promptId) => {
     setFavorites(prev => 
@@ -269,6 +291,18 @@ export default function AIPromptExamples() {
                       )
                     })}
                   </select>
+                </div>
+
+                {/* Export Button */}
+                <div>
+                  <button
+                    onClick={exportAsMarkdown}
+                    className="px-5 py-3 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 text-gray-700 text-sm font-medium flex items-center gap-2 whitespace-nowrap"
+                    title="Export visible prompts as Markdown"
+                  >
+                    <i className="fas fa-download"></i>
+                    Export .md ({filteredPrompts.length})
+                  </button>
                 </div>
               </div>
 
