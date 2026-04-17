@@ -1,0 +1,126 @@
+{
+  "_meta": {
+    "lastVerified": "2026-04-17",
+    "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+    "notes": "Single source of truth for Claude API model IDs, pricing, context, cutoffs. Update here, propagates to all calculators + content pages. Drift-check workflow runs weekly."
+  },
+  "current": [
+    {
+      "id": "claude-opus-4-7",
+      "alias": "claude-opus-4-7",
+      "name": "Claude Opus 4.7",
+      "tier": "flagship",
+      "inputPricePerMTok": 5,
+      "outputPricePerMTok": 25,
+      "contextTokens": 1000000,
+      "maxOutputTokens": 128000,
+      "knowledgeCutoff": "2026-01",
+      "trainingCutoff": "2026-01",
+      "extendedThinking": false,
+      "adaptiveThinking": true,
+      "latency": "moderate",
+      "description": "Most capable model for complex reasoning and agentic coding",
+      "useCase": "complex-reasoning"
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "alias": "claude-sonnet-4-6",
+      "name": "Claude Sonnet 4.6",
+      "tier": "workhorse",
+      "inputPricePerMTok": 3,
+      "outputPricePerMTok": 15,
+      "contextTokens": 1000000,
+      "maxOutputTokens": 64000,
+      "knowledgeCutoff": "2025-08",
+      "trainingCutoff": "2026-01",
+      "extendedThinking": true,
+      "adaptiveThinking": true,
+      "latency": "fast",
+      "description": "Best combination of speed and intelligence",
+      "useCase": "general-purpose"
+    },
+    {
+      "id": "claude-haiku-4-5-20251001",
+      "alias": "claude-haiku-4-5",
+      "name": "Claude Haiku 4.5",
+      "tier": "fast",
+      "inputPricePerMTok": 1,
+      "outputPricePerMTok": 5,
+      "contextTokens": 200000,
+      "maxOutputTokens": 64000,
+      "knowledgeCutoff": "2025-02",
+      "trainingCutoff": "2025-07",
+      "extendedThinking": true,
+      "adaptiveThinking": false,
+      "latency": "fastest",
+      "description": "Fastest model with near-frontier intelligence",
+      "useCase": "high-volume"
+    }
+  ],
+  "legacy": [
+    {
+      "id": "claude-opus-4-6",
+      "name": "Claude Opus 4.6",
+      "inputPricePerMTok": 5,
+      "outputPricePerMTok": 25,
+      "contextTokens": 1000000,
+      "status": "legacy"
+    },
+    {
+      "id": "claude-sonnet-4-5-20250929",
+      "alias": "claude-sonnet-4-5",
+      "name": "Claude Sonnet 4.5",
+      "inputPricePerMTok": 3,
+      "outputPricePerMTok": 15,
+      "contextTokens": 200000,
+      "status": "legacy"
+    },
+    {
+      "id": "claude-opus-4-5-20251101",
+      "alias": "claude-opus-4-5",
+      "name": "Claude Opus 4.5",
+      "inputPricePerMTok": 5,
+      "outputPricePerMTok": 25,
+      "contextTokens": 200000,
+      "status": "legacy"
+    },
+    {
+      "id": "claude-opus-4-1-20250805",
+      "alias": "claude-opus-4-1",
+      "name": "Claude Opus 4.1",
+      "inputPricePerMTok": 15,
+      "outputPricePerMTok": 75,
+      "contextTokens": 200000,
+      "status": "legacy"
+    },
+    {
+      "id": "claude-sonnet-4-20250514",
+      "alias": "claude-sonnet-4-0",
+      "name": "Claude Sonnet 4",
+      "inputPricePerMTok": 3,
+      "outputPricePerMTok": 15,
+      "contextTokens": 200000,
+      "status": "deprecated",
+      "retiresOn": "2026-06-15"
+    },
+    {
+      "id": "claude-opus-4-20250514",
+      "alias": "claude-opus-4-0",
+      "name": "Claude Opus 4",
+      "inputPricePerMTok": 15,
+      "outputPricePerMTok": 75,
+      "contextTokens": 200000,
+      "status": "deprecated",
+      "retiresOn": "2026-06-15"
+    },
+    {
+      "id": "claude-3-haiku-20240307",
+      "name": "Claude Haiku 3",
+      "inputPricePerMTok": 0.25,
+      "outputPricePerMTok": 1.25,
+      "contextTokens": 200000,
+      "status": "deprecated",
+      "retiresOn": "2026-04-19"
+    }
+  ]
+}

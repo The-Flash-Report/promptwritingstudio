@@ -1,0 +1,142 @@
+{
+  "_meta": {
+    "lastVerified": "2026-04-17",
+    "source": "https://claude.com/pricing",
+    "notes": "Consumer + team plan pricing. Limits are Anthropic's public-facing copy; actual message caps vary. Update when pricing page changes."
+  },
+  "consumer": [
+    {
+      "id": "free",
+      "name": "Free",
+      "pricePerMonth": 0,
+      "pricePerMonthAnnual": 0,
+      "billing": "free",
+      "usageLimit": "Limited daily messages",
+      "models": ["Opus", "Sonnet", "Haiku"],
+      "includesClaudeCode": false,
+      "features": [
+        "Web + mobile chat",
+        "Code generation",
+        "Text + image analysis",
+        "Web search",
+        "Memory",
+        "File creation",
+        "Desktop extensions",
+        "Slack + Google Workspace integration"
+      ],
+      "bestFor": "Evaluating Claude before committing"
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "pricePerMonth": 20,
+      "pricePerMonthAnnual": 17,
+      "billing": "monthly-or-annual",
+      "usageLimit": "~5x Free usage",
+      "models": ["Opus", "Sonnet", "Haiku"],
+      "includesClaudeCode": true,
+      "features": [
+        "Everything in Free",
+        "Claude Code (terminal)",
+        "Claude Cowork",
+        "Unlimited projects",
+        "Research access",
+        "Excel + PowerPoint beta integrations"
+      ],
+      "bestFor": "Individual heavy user, writer, solo developer"
+    },
+    {
+      "id": "max-5x",
+      "name": "Max (5x)",
+      "pricePerMonth": 100,
+      "pricePerMonthAnnual": 100,
+      "billing": "monthly",
+      "usageLimit": "5x more than Pro",
+      "models": ["Opus", "Sonnet", "Haiku"],
+      "includesClaudeCode": true,
+      "features": [
+        "Everything in Pro",
+        "Higher output limits",
+        "Early access to advanced features",
+        "Priority access during peak traffic"
+      ],
+      "bestFor": "Daily Claude Code user running multiple projects"
+    },
+    {
+      "id": "max-20x",
+      "name": "Max (20x)",
+      "pricePerMonth": 200,
+      "pricePerMonthAnnual": 200,
+      "billing": "monthly",
+      "usageLimit": "20x more than Pro",
+      "models": ["Opus", "Sonnet", "Haiku"],
+      "includesClaudeCode": true,
+      "features": [
+        "Everything in Max 5x",
+        "Highest consumer usage ceiling"
+      ],
+      "bestFor": "Agentic workflows, background agents, heavy parallel Claude Code sessions"
+    }
+  ],
+  "team": [
+    {
+      "id": "team-standard",
+      "name": "Team (Standard seat)",
+      "pricePerSeatPerMonth": 25,
+      "pricePerSeatPerMonthAnnual": 20,
+      "billing": "per-seat",
+      "minSeats": 5,
+      "usageLimit": "Baseline team usage",
+      "features": [
+        "Enterprise search",
+        "SSO",
+        "Domain verification",
+        "Central billing",
+        "Admin controls",
+        "Desktop app deployment"
+      ],
+      "bestFor": "Small teams wanting SSO + central billing"
+    },
+    {
+      "id": "team-premium",
+      "name": "Team (Premium seat)",
+      "pricePerSeatPerMonth": 125,
+      "pricePerSeatPerMonthAnnual": 100,
+      "billing": "per-seat",
+      "minSeats": 5,
+      "usageLimit": "5x standard seat",
+      "features": [
+        "Everything in Standard seat",
+        "5x usage ceiling",
+        "Higher concurrency"
+      ],
+      "bestFor": "Engineering teams running Claude Code on production work"
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "pricePerSeatPerMonth": 20,
+      "billing": "per-seat-plus-api-usage",
+      "usageLimit": "Usage-based, scales with API rates",
+      "features": [
+        "All Team features",
+        "Spend controls",
+        "Google Docs cataloging",
+        "Role-based access",
+        "SCIM",
+        "Audit logs",
+        "Compliance API",
+        "Custom data retention",
+        "IP allowlisting",
+        "HIPAA-ready option"
+      ],
+      "bestFor": "Regulated industries, large orgs with compliance requirements"
+    }
+  ],
+  "api": {
+    "id": "api",
+    "name": "Pay-as-you-go API",
+    "billing": "per-token",
+    "notes": "No monthly commitment. Prices vary by model — see claude-models.json. Best for apps, automation, and workloads where token consumption is predictable or measurable."
+  }
+}

@@ -1,0 +1,53 @@
+name: Claude pricing drift check
+
+on:
+  schedule:
+    # Mondays 08:00 UTC (weekly review cadence)
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  drift-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run drift check
+        id: drift
+        run: |
+          set +e
+          node scripts/check-claude-pricing-drift.js | tee drift-report.md
+          echo "exit_code=$?" >> $GITHUB_OUTPUT
+
+      - name: Open issue on drift
+        if: steps.drift.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const body = fs.readFileSync('drift-report.md', 'utf-8')
+            const today = new Date().toISOString().slice(0, 10)
+
+            // Close any existing open drift issues first so we don't stack
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'pricing-drift',
+              state: 'open'
+            })
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Claude pricing drift detected — ${today}`,
+              body: `${body}\n\n---\nOpened automatically by \`.github/workflows/claude-pricing-drift.yml\`. Review \`data/claude-models.json\` and \`data/claude-plans.json\`, update if needed, bump \`_meta.lastVerified\`, and close this issue.`,
+              labels: ['pricing-drift', 'content-freshness']
+            })

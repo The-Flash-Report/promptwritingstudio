@@ -2,18 +2,30 @@ import { useState, useMemo } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../../components/layout/Layout'
+import LastVerified from '../../components/LastVerified'
 import { generateFAQSchema } from '../../lib/schemaGenerator'
+import { getCurrentModelByTier, MODELS_META } from '../../lib/claude-data'
 
 const MIX_PROFILES = {
-  balanced: { label: 'Balanced (Sonnet 4 mostly)', sonnetShare: 0.85, opusShare: 0.10, haikuShare: 0.05 },
+  balanced: { label: 'Balanced (Sonnet 4.6 mostly)', sonnetShare: 0.85, opusShare: 0.10, haikuShare: 0.05 },
   heavy: { label: 'Heavy agentic (lots of Opus)', sonnetShare: 0.55, opusShare: 0.40, haikuShare: 0.05 },
   light: { label: 'Light (mostly Haiku + short Sonnet calls)', sonnetShare: 0.40, opusShare: 0.05, haikuShare: 0.55 }
 }
 
+const USAGE_PROFILE = {
+  sonnet: { inputTokensPerHour: 120000, outputTokensPerHour: 18000 },
+  opus:   { inputTokensPerHour: 80000,  outputTokensPerHour: 15000 },
+  haiku:  { inputTokensPerHour: 150000, outputTokensPerHour: 20000 }
+}
+
+const _sonnet = getCurrentModelByTier('workhorse')
+const _opus = getCurrentModelByTier('flagship')
+const _haiku = getCurrentModelByTier('fast')
+
 const MODELS = {
-  sonnet: { input: 3, output: 15, inputTokensPerHour: 120000, outputTokensPerHour: 18000 },
-  opus:   { input: 15, output: 75, inputTokensPerHour: 80000, outputTokensPerHour: 15000 },
-  haiku:  { input: 1, output: 5, inputTokensPerHour: 150000, outputTokensPerHour: 20000 }
+  sonnet: { input: _sonnet.inputPricePerMTok, output: _sonnet.outputPricePerMTok, ...USAGE_PROFILE.sonnet },
+  opus:   { input: _opus.inputPricePerMTok,   output: _opus.outputPricePerMTok,   ...USAGE_PROFILE.opus },
+  haiku:  { input: _haiku.inputPricePerMTok,  output: _haiku.outputPricePerMTok,  ...USAGE_PROFILE.haiku }
 }
 
 const faqs = [
@@ -27,7 +39,7 @@ const faqs = [
   },
   {
     question: "Why does Opus usage blow up the cost?",
-    answer: "Claude Opus 4 is 5x the price of Sonnet 4 per token. If your workflow leans heavily on Opus (complex reasoning, deep code review, long-document analysis), API costs scale fast. For Opus-heavy work, Claude Max's $100 or $200 flat tier is often the economical choice over pure API billing."
+    answer: "Claude Opus 4.7 is ~1.7x the price of Sonnet 4.6 per token ($5/$25 vs $3/$15 per MTok). If your workflow leans heavily on Opus (complex reasoning, deep code review, long-document analysis), API costs scale fast. For Opus-heavy work, Claude Max's $100 or $200 flat tier is often the economical choice over pure API billing."
   },
   {
     question: "Is the token-per-hour estimate realistic?",
@@ -109,6 +121,7 @@ export default function ClaudeCodeVsCursorCost() {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Set your actual coding hours and model mix. See which option — Claude Code on API, Claude Pro, or Cursor Pro — comes out cheapest for your workload.
             </p>
+            <LastVerified date={MODELS_META.lastVerified} source={MODELS_META.source} className="mt-4 text-gray-300" />
           </div>
         </section>
 

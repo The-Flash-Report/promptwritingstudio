@@ -2612,7 +2612,7 @@ export const seoUseCases = [
       { text: 'Claude by Anthropic', url: 'https://claude.ai' },
       { text: 'Anthropic Research', url: 'https://www.anthropic.com/research' }
     ],
-  }
+  },
   // ─── Prompt Engineering Techniques (from dair-ai guide gap analysis) ─────────
 
   {
