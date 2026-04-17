@@ -60,8 +60,17 @@ export default function CalculatorsHub() {
       benefits: ['Readiness assessment', 'Implementation roadmap', 'Priority recommendations']
     },
     {
+      title: 'Claude Plan Picker',
+      description: 'Pro, Max 5x, Max 20x, or pay-as-you-go API? Set your hours-per-day and model mix, get the cheapest plan',
+      url: '/calculators/claude-plan-picker',
+      keywords: ['Claude Pro', 'Claude Max', 'Claude plan comparison'],
+      color: 'from-orange-500 to-amber-500',
+      icon: '🎯',
+      benefits: ['Subscription vs API math', 'Usage-limit fit check', 'Recommendation by workload']
+    },
+    {
       title: 'Claude Model Selector',
-      description: 'Pick the right Claude model (Opus 4, Sonnet 4, Haiku 4.5) for your task with live monthly cost estimates',
+      description: 'Pick the right Claude model (Opus 4.7, Sonnet 4.6, Haiku 4.5) for your task with live monthly cost estimates',
       url: '/calculators/claude-model-selector',
       keywords: ['Claude model', 'Claude pricing', 'Opus vs Sonnet'],
       color: 'from-amber-500 to-yellow-400',
@@ -79,7 +88,7 @@ export default function CalculatorsHub() {
     },
     {
       title: 'Claude Prompt Cost Calculator',
-      description: 'Calculate the cost of a single Claude API call (or a million), across Haiku 4.5, Sonnet 4, and Opus 4',
+      description: 'Calculate the cost of a single Claude API call (or a million), across Haiku 4.5, Sonnet 4.6, and Opus 4.7',
       url: '/calculators/claude-prompt-cost',
       keywords: ['Claude API cost', 'token pricing', 'prompt cost'],
       color: 'from-emerald-500 to-teal-600',
