@@ -1,0 +1,53 @@
+{
+  "slug": "blog-post-intro",
+  "title": "Blog Post Introduction",
+  "technique": "Role Prompting + Structural Constraints",
+  "category": "Content Creation",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Blog Post Introduction | PromptWritingStudio",
+    "description": "See exactly how to transform a vague blog prompt into one that produces a compelling, on-brand introduction. Copy the improved version free."
+  },
+  "h1": "How to Write a Better Prompt for Blog Post Introductions",
+  "intro": "The difference between a generic AI-written intro and one that hooks real readers isn't the model — it's the prompt. Here's exactly what to change.",
+  "weakPrompt": {
+    "text": "Write a blog post introduction about productivity.",
+    "problems": [
+      "No target audience defined — AI defaults to generic 'everyone'",
+      "No word count — output length is unpredictable",
+      "No tone or voice guidance — defaults to formal and bland",
+      "No structural constraints — no hook, no promise, no direction",
+      "No context about what the article will actually cover"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "You are a productivity coach writing for remote workers who struggle with focus during deep work sessions. Write a 120-word blog post introduction for the article 'Why Your 90-Minute Work Blocks Are Destroying Your Focus'. Open with a relatable scenario (not a statistic), acknowledge the frustration, then end with a one-sentence promise of what readers will learn. Tone: empathetic but direct.",
+    "improvements": [
+      "Role context establishes expertise and voice",
+      "Specific audience narrows the reader picture — the model can now 'see' who it's writing for",
+      "Exact word count prevents padding and rambling",
+      "Structural template defines the arc: scenario → frustration → promise",
+      "Tone instruction eliminates generic corporate-speak"
+    ]
+  },
+  "outputComparison": {
+    "weak": "Productivity is important in today's fast-paced world. Many people struggle to get things done efficiently. In this article, we will explore some tips and strategies to help you become more productive in your daily life and achieve your goals.",
+    "improved": "It's 2pm. You've blocked off two hours, silenced your phone, and finally opened the document — but twenty minutes in, you're checking email again. Sound familiar? For remote workers, the 90-minute deep work block feels like the productivity holy grail. But for many people, it's exactly what's breaking their focus rather than protecting it. Here's what the research actually shows — and what works instead."
+  },
+  "whyItWorks": "The improved prompt gives the model a specific persona, a defined reader, a structural template, and a tonal constraint. Each constraint removes a degree of freedom and forces the output toward something useful. Role prompting activates relevant training patterns. The structural instructions act like a brief — the model knows what the three beats are and fills them in. Word count prevents the AI from padding to fill space.",
+  "technique_explained": "Role Prompting assigns the AI a specific identity ('You are a productivity coach') which shifts tone, vocabulary, and assumed knowledge. Structural Constraints provide a content blueprint — a sequence of beats the output must follow. Together they replace vague intent with a precise brief.",
+  "faqs": [
+    {
+      "question": "Does this technique work on Claude as well as ChatGPT?",
+      "answer": "Yes. Role prompting and structural constraints work across all major models — ChatGPT, Claude, Gemini, and Llama. The response may vary in style slightly, but the technique of defining role, audience, structure, and tone improves output quality on all of them."
+    },
+    {
+      "question": "How specific does the role need to be?",
+      "answer": "Specific enough to imply expertise and voice. 'You are a writer' is too vague. 'You are a productivity coach writing for remote workers' is better. The role should tell the model two things: what expertise to draw on, and who the intended reader is."
+    },
+    {
+      "question": "What if I don't know my exact word count?",
+      "answer": "Give a range like '100-130 words' or use a structural constraint instead: 'Three sentences: hook, conflict, promise.' Either approach bounds the output and prevents filler."
+    }
+  ],
+  "relatedSlugs": ["social-media-linkedin", "email-subject-line", "seo-meta-description"]
+}

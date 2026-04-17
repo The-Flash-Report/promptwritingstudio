@@ -3,13 +3,13 @@
   "searchVolume": 2100,
   "keywordDifficulty": 13,
   "seoData": {
-    "title": "AI Prompts for Sales Teams - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for sales teams. Boost prospecting, improve close rates, and automate follow-ups with our expert-crafted ChatGPT templates for sales professionals.",
+    "title": "Claude + ChatGPT Prompts for Sales Teams — Expert Templates | Prompt Writing Studio",
+    "description": "Discover 15+ specialized AI prompts for sales teams. Boost prospecting, improve close rates, and automate follow-ups with our expert-crafted Claude and ChatGPT templates for sales professionals.",
     "keywords": "AI prompts for sales, sales automation prompts, ChatGPT for sales teams, prospecting AI templates, sales follow-up prompts, closing techniques AI, sales outreach automation"
   },
   "heroSection": {
-    "title": "AI Prompts for Sales Teams",
-    "subtitle": "Boost prospecting, improve close rates, and automate sales follow-ups with our expert ChatGPT templates designed for sales professionals."
+    "title": "Claude + ChatGPT Prompts for Sales Teams",
+    "subtitle": "Prospecting, outreach, discovery notes, follow-ups, and objection handling — prompt templates sales reps use with Claude and ChatGPT to save hours a week."
   },
   "promptCategories": [
     {
@@ -30,7 +30,7 @@
     },
     {
       "name": "Sales Conversations",
-      "icon": "💬", 
+      "icon": "💬",
       "prompts": [
         {
           "title": "Objection Handling Scripts",
@@ -172,4 +172,4 @@
     "content-creators",
     "small-business-owners"
   ]
-} 
+}

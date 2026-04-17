@@ -1047,7 +1047,7 @@ export default function AIPromptGenerator() {
                   Do you have more advanced prompt templates?
                 </h3>
                 <p className="text-gray-700">
-                  Yes! Our PromptWritingStudio membership includes access to over 100 advanced prompt templates, personalized guidance, and a community of prompt engineers. <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="text-blue-600 hover:underline">Learn more about our membership</a>.
+                  Yes — our library of prompt examples, model-specific guides, and the Claude Code walkthrough go well beyond what this generator produces. Start with the <Link href="/ai-prompt-examples" className="text-blue-600 hover:underline">prompt examples library</Link> or the <Link href="/claude-code-guide" className="text-blue-600 hover:underline">Claude Code guide</Link>.
                 </p>
               </div>
             </div>
@@ -1286,18 +1286,17 @@ export default function AIPromptGenerator() {
       <section className="py-12 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Take Your AI Prompting to the Next Level</h2>
+            <h2 className="text-3xl font-bold mb-6">From prompts to working agents</h2>
             <p className="text-lg text-gray-700 mb-8">
-              Join PromptWritingStudio to access our complete library of expert-crafted prompts, advanced techniques, and personalized guidance.
+              Prompts are the first 10%. The real leverage is inside Claude Code — sub-agents, MCP servers,
+              hooks, and slash commands that run those prompts against your files, repos, and APIs.
             </p>
-            <a
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+            <Link
+              href="/claude-code-guide"
               className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Join Now
-            </a>
+              Read the Claude Code guide
+            </Link>
           </div>
         </div>
       </section>

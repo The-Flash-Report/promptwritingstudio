@@ -81,10 +81,10 @@ export default function SalesTeamsPage() {
                 View Prompts
               </a>
               <a
-                href="/tools/mad-libs-prompt-creator"
+                href="/claude-code-guide"
                 className="bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-900 transition-colors"
               >
-                Create Custom Prompts
+                Go Deeper with Claude Code
               </a>
             </div>
           </div>

@@ -47,6 +47,31 @@
     Content-Type = "application/json"
     Cache-Control = "public, max-age=86400"
 
+# Permanent redirects from killed off-topic pages → Claude Code hub
+[[redirects]]
+  from = "/best-telegram-ai-chatbots"
+  to = "/claude-code-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/build-telegram-ai-chatbot"
+  to = "/claude-code-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/telegram-ai-channel"
+  to = "/claude-code-guide"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/customgpt-ai-review"
+  to = "/claude-code-guide"
+  status = 301
+  force = true
+
 # Redirect all requests to the Next.js app
 [[redirects]]
   from = "/*"

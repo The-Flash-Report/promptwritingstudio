@@ -1,0 +1,53 @@
+{
+  "slug": "email-subject-line",
+  "title": "Email Subject Line",
+  "technique": "Goal Specification + Constraints + Variants",
+  "category": "Email Marketing",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Email Subject Lines | PromptWritingStudio",
+    "description": "Learn how to prompt AI for email subject lines that get opened. See the before/after comparison and copy the improved prompt."
+  },
+  "h1": "How to Prompt AI for Better Email Subject Lines",
+  "intro": "Subject lines written by AI without clear constraints tend to be safe, generic, and low-performing. One prompt change can turn 'here are some subject lines' into 5 testable variants with distinct angles.",
+  "weakPrompt": {
+    "text": "Write some email subject lines for my newsletter.",
+    "problems": [
+      "No information about the email's actual content or offer",
+      "No target audience — who is receiving this?",
+      "No character limit — some platforms cut off at 50 chars",
+      "No instruction for variety — output will be repetitive in style",
+      "No goal stated — is this for opens, clicks, urgency, or curiosity?"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write 5 email subject lines for a newsletter issue about why most people's morning routines are counterproductive. Target audience: knowledge workers aged 28-45 who have tried and failed at building consistent habits. Each subject line should use a different angle: curiosity gap, contrarian claim, specific number, personal challenge, and a question. Keep each under 50 characters. Do not use exclamation marks.",
+    "improvements": [
+      "States the email's content so subject lines are accurate, not generic",
+      "Defines the reader — the model can calibrate relevance and pain points",
+      "Character limit ensures mobile-friendly output",
+      "Named angles force five distinct approaches — useful for A/B testing",
+      "Tone constraint ('no exclamation marks') prevents hype-style output"
+    ]
+  },
+  "outputComparison": {
+    "weak": "1. Boost Your Productivity Today!\n2. Tips for a Better Morning Routine\n3. Improve Your Daily Habits\n4. Morning Routine Secrets Revealed!\n5. How to Start Your Day Right",
+    "improved": "1. The morning habit that's wasting your time (curiosity gap)\n2. Your routine is why you're tired (contrarian)\n3. 3 habits high performers quietly dropped (number)\n4. Still hitting snooze? This is why (challenge)\n5. What if your routine is the problem? (question)"
+  },
+  "whyItWorks": "The improved prompt transforms a request into a brief. The AI now knows the content, the reader, the format constraint, and the five distinct creative directions to explore. Specifying angles is the key move — without it, the model defaults to a single tonal register and produces five variations of the same line. Asking for labeled angles also makes it easier to pick and test.",
+  "technique_explained": "Goal Specification tells the model what success looks like for each output item. Constraints (character limit, no exclamation marks) prevent common AI failure modes — runaway length and hollow enthusiasm. Requesting named Variants forces genuine creative range rather than synonymous repetition.",
+  "faqs": [
+    {
+      "question": "Can I use this for cold outreach as well as newsletters?",
+      "answer": "Yes, with one adjustment: replace the newsletter context with the cold email's specific offer and the recipient's role. Cold outreach subject lines should lean on curiosity or a specific pain point rather than a content tease."
+    },
+    {
+      "question": "What's the best character limit to specify?",
+      "answer": "50 characters is safe for most email clients including mobile. Gmail shows about 60 characters on desktop, but mobile cuts it shorter. If you want to be conservative, use 45 characters. Always specify a limit — AI defaults to longer lines that get cut off."
+    },
+    {
+      "question": "Should I specify the sender name in the prompt?",
+      "answer": "Only if the sender name is unusual or if you want the subject line to reference it. Most of the time, the sender name is handled separately and the subject line should stand alone."
+    }
+  ],
+  "relatedSlugs": ["cold-sales-email", "blog-post-intro", "social-media-linkedin"]
+}

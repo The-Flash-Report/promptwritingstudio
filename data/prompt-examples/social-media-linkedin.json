@@ -1,0 +1,53 @@
+{
+  "slug": "social-media-linkedin",
+  "title": "LinkedIn Post",
+  "technique": "Platform Context + Hook Formula + Audience Mirror",
+  "category": "Social Media",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: LinkedIn Post | PromptWritingStudio",
+    "description": "See how to prompt AI for LinkedIn posts that get real engagement. Before/after comparison shows exactly what to change. Copy the improved prompt free."
+  },
+  "h1": "How to Prompt AI for Better LinkedIn Posts",
+  "intro": "Generic LinkedIn posts get ignored. The prompt is almost always the problem — not the AI. Here's the specific change that turns AI-written LinkedIn content from forgettable to shareable.",
+  "weakPrompt": {
+    "text": "Write a LinkedIn post about leadership.",
+    "problems": [
+      "Topic is too broad — 'leadership' produces advice anyone could have written",
+      "No personal angle — LinkedIn performs best with first-person observation",
+      "No hook structure — AI defaults to starting with the conclusion",
+      "No target reader — the post won't speak to anyone specifically",
+      "No format guidance — AI may write a block paragraph instead of a scroll-stopping format"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write a LinkedIn post from the perspective of an experienced engineering manager sharing a lesson about why their first instinct as a new manager — to fix problems immediately — was damaging their team. First-person voice throughout. Open with a one-sentence hook that creates tension or surprise (do not start with 'I'). Use short paragraphs of 1-2 sentences. End with a direct question to prompt comments. 150-200 words total. No hashtags in the body.",
+    "improvements": [
+      "Specific perspective and lesson — something observed, not generic advice",
+      "First-person voice matches LinkedIn's native performing format",
+      "Hook instruction prevents the AI from burying the lead",
+      "Short paragraph format is readable on mobile and matches what performs on the platform",
+      "Call to comment increases engagement signals that expand reach"
+    ]
+  },
+  "outputComparison": {
+    "weak": "Leadership is one of the most important skills in any organization. Great leaders inspire their teams, communicate clearly, and lead by example. Whether you are a new manager or a seasoned executive, there are always opportunities to improve your leadership skills and make a greater impact on the people around you.",
+    "improved": "The fastest way I damaged my team's trust was by being too helpful.\n\nWhen I became an engineering manager, I thought my job was to solve problems fast.\n\nSomeone hit a blocker? I'd jump in. A deadline at risk? I'd take over.\n\nI thought I was being supportive.\n\nI was actually sending a clear message: I don't think you can handle this.\n\nThe turnaround came when a senior engineer told me: 'Every time you step in, I feel like I failed.'\n\nThat conversation changed how I managed. I started asking questions instead of giving answers. I let people sit with the discomfort of a hard problem.\n\nThe team got stronger. Problems got solved faster — by them, not me.\n\nNew managers: what's the hardest habit you've had to break?"
+  },
+  "whyItWorks": "LinkedIn's algorithm rewards posts that generate comments in the first 30-60 minutes. The hook formula (tension/surprise in sentence one), short paragraphs, and a closing question all serve this goal. The specific perspective (new manager making a specific mistake) gives the AI a concrete story to tell rather than generic advice. The 'do not start with I' instruction forces a stronger opening.",
+  "technique_explained": "Platform Context tells the model what format norms apply to the specific distribution channel. Audience Mirror means writing from a specific perspective your reader recognises — 'experienced engineering manager' resonates with both people in that role and people who report to one. Hook Formula gives the AI a structural rule for sentence one, preventing the most common LinkedIn AI failure: starting with the conclusion.",
+  "faqs": [
+    {
+      "question": "Does this work for other platforms like Twitter/X or Instagram?",
+      "answer": "Yes, but you need to replace the platform-specific instructions. For X/Twitter, specify thread vs single post, character limits, and whether to use line breaks. For Instagram, specify caption length and whether to put hashtags in the caption or comment."
+    },
+    {
+      "question": "Why does telling the AI not to start with 'I' improve the hook?",
+      "answer": "Starting with 'I' on LinkedIn is extremely common and the eye skips past it. A hook that opens with a statement, observation, or provocative claim creates more pattern interruption. The constraint forces the AI to find a stronger entry point."
+    },
+    {
+      "question": "Should I include my actual experience in the prompt?",
+      "answer": "Yes — the more specific the story you give the AI, the better. Instead of 'an engineering manager' you could write 'an engineering manager at a 40-person SaaS company who moved from IC to manager six months ago.' Real detail produces authentic-sounding output."
+    }
+  ],
+  "relatedSlugs": ["blog-post-intro", "email-subject-line", "cold-sales-email"]
+}

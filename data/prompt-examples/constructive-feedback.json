@@ -1,0 +1,53 @@
+{
+  "slug": "constructive-feedback",
+  "title": "Constructive Feedback",
+  "technique": "SBI Framework + Calibrated Directness",
+  "category": "Communication",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Constructive Feedback | PromptWritingStudio",
+    "description": "See how to prompt AI for feedback messages that are honest and actionable — not softened to the point of uselessness. Copyable improved prompt included."
+  },
+  "h1": "How to Prompt AI for Feedback That's Honest Without Being Harsh",
+  "intro": "AI feedback without guidance defaults to over-softened language that obscures the actual problem. The goal isn't kindness at the expense of clarity — it's both at once.",
+  "weakPrompt": {
+    "text": "Write feedback for an employee who is underperforming.",
+    "problems": [
+      "No specific behaviour — AI can't give actionable feedback without knowing what happened",
+      "No context — feedback for a new hire differs from feedback for a senior employee",
+      "No tone calibration — 'constructive' ranges from gentle to very direct",
+      "No relationship context — manager/direct report, peer, mentor all need different registers",
+      "No outcome instruction — is this for a 1:1, a performance review, or a written warning?"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write a verbal feedback message (to be spoken in a 1:1) using the SBI framework: Situation, Behaviour, Impact. Context: a mid-level software engineer, 2 years in role, who consistently misses sprint commitments without raising blockers until the day before delivery. This has caused two missed client demos in the last quarter. Tone: direct and respectful — no softening language that obscures the seriousness. Do not use the phrase 'I just wanted to...' or 'I feel like...'. End with one specific, observable change you're asking for. Under 120 words.",
+    "improvements": [
+      "SBI framework gives the AI a proven structure: what happened, what they did, what it caused",
+      "Specific examples (missed demos) make the feedback credible and hard to dismiss",
+      "Tone instruction ('no softening language') prevents the feedback losing its weight",
+      "Banned phrases remove the hedging that makes feedback feel insincere",
+      "Specific close ('one observable change') makes the conversation actionable, not just critical"
+    ]
+  },
+  "outputComparison": {
+    "weak": "I wanted to touch base about your recent performance. I've noticed some challenges with meeting deadlines and I think there might be some areas where we could improve communication. It would be great if you could try to let me know earlier when you're facing any issues. I really appreciate your hard work and I know you're capable of great things.",
+    "improved": "In the last sprint, when you committed to delivering the API integration, you didn't flag that you were blocked until the day before the demo. That led to us having to cancel the client demo at 24 hours' notice — twice in Q3.\n\nI need one specific change: when you're more than a day behind where you planned to be, I need to hear about it that day, not the day before delivery. Not a long update — just a message. Can we agree on that?"
+  },
+  "whyItWorks": "The SBI framework (Situation, Behaviour, Impact) is the most widely validated feedback structure because it separates observable fact from interpretation. The improved prompt gives the AI specific events to reference, which makes the feedback specific rather than abstract. The no-softening instruction is the critical move — AI defaults to over-hedging because its training penalises text that sounds harsh, even when directness is appropriate.",
+  "technique_explained": "SBI Framework (Situation, Behaviour, Impact) structures feedback around observable facts: what was the context, what specifically did the person do, what was the measurable consequence. Calibrated Directness means specifying where on the directness spectrum the feedback should sit — 'direct and respectful, no softening' is very different from 'firm but empathetic.'",
+  "faqs": [
+    {
+      "question": "How do I adjust this for written performance reviews vs verbal feedback?",
+      "answer": "Add to the prompt: 'This is for a written performance review that will be shared with HR.' Written reviews need more precision, less conversational hedging, and should reference the performance period explicitly. For verbal 1:1s, the language can be slightly less formal."
+    },
+    {
+      "question": "What if I don't want to follow the SBI framework?",
+      "answer": "Replace it with another framework: STAR (Situation, Task, Action, Result), or simply 'Acknowledge what went wrong, explain the impact, state what needs to change.' The key is giving the AI a structure — without one, it will produce vague and over-diplomatic text."
+    },
+    {
+      "question": "How do I prompt AI for positive feedback without it sounding hollow?",
+      "answer": "Use the same specificity principle: give the AI the exact situation and behaviour you want to recognise. 'Write a positive recognition message for someone who proactively identified a security risk in a code review before it reached production — this saved us from a significant vulnerability' produces something worth saying."
+    }
+  ],
+  "relatedSlugs": ["customer-support-reply", "cold-sales-email", "code-explanation"]
+}

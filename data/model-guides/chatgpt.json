@@ -1,0 +1,91 @@
+{
+  "model": "chatgpt",
+  "modelName": "ChatGPT (GPT-4o)",
+  "seoData": {
+    "title": "How to Write Better Prompts for ChatGPT (GPT-4o) | PromptWritingStudio",
+    "description": "Specific prompting techniques for ChatGPT and GPT-4o. Learn what works, what doesn't, and how ChatGPT differs from Claude and Gemini."
+  },
+  "h1": "How to Write Better Prompts for ChatGPT (GPT-4o)",
+  "intro": "ChatGPT responds well to direct instructions, tolerates ambiguity better than most models, and performs particularly well on structured tasks. But it has specific failure modes that different prompting techniques can prevent.",
+  "modelPersonality": "GPT-4o is responsive, conversational, and confident. It will attempt any task and rarely declines with uncertainty. This is a double-edged trait: it produces fluent output even when it doesn't have strong grounding, so you need to build verification into your workflow for factual tasks.",
+  "keyStrengths": [
+    "Instruction-following on complex, multi-step structured tasks",
+    "Code generation and debugging across most languages",
+    "Document summarisation and data extraction",
+    "Adapting tone and style from examples",
+    "Web browsing and tool use in the ChatGPT interface"
+  ],
+  "promptingTips": [
+    {
+      "title": "Use the system prompt for persistent instructions",
+      "description": "ChatGPT's Custom Instructions (consumer) or system message (API) lets you set rules that apply to every response without repeating them. Use this for your preferred format, tone, response length, and any standing constraints.",
+      "example": {
+        "weak": "Write a short summary. (repeated in every prompt)",
+        "strong": "System: Always respond with bullet points unless I ask for prose. Keep responses under 200 words unless I ask for more. Never start a response with 'Certainly' or 'Of course'."
+      }
+    },
+    {
+      "title": "Specify format before content",
+      "description": "GPT-4o often decides on format before fully processing your content request. If you specify format first, it applies the constraint from the start rather than retrofitting it.",
+      "example": {
+        "weak": "Write a comparison of three pricing models and make it a table.",
+        "strong": "Create a comparison table with these columns: Model Name | Best For | Pricing Structure | Key Risk. Then fill it in for: per-seat SaaS, usage-based, and outcome-based pricing."
+      }
+    },
+    {
+      "title": "Use numbered steps for complex instructions",
+      "description": "When your prompt has multiple requirements, number them. ChatGPT processes numbered lists as sequential requirements more reliably than prose instructions.",
+      "example": {
+        "weak": "Write a landing page headline that's benefit-focused and short and not salesy.",
+        "strong": "Write a landing page headline.\n1. Focus on the primary outcome (time saved)\n2. Maximum 8 words\n3. No question marks\n4. No exclamation marks\n5. Avoid words: transform, unlock, powerful, seamless"
+      }
+    },
+    {
+      "title": "Provide examples to lock in style",
+      "description": "GPT-4o is a strong few-shot learner. If you want a specific writing style, tone, or format, show it one or two examples and it will match them more reliably than any description you could write.",
+      "example": {
+        "weak": "Write in a direct, punchy style.",
+        "strong": "Match this writing style:\n'Most productivity advice is designed for people who don't actually have jobs. Here's what works instead.'\n\nNow write an opening for an article about remote work communication."
+      }
+    },
+    {
+      "title": "Ask it to reason before answering",
+      "description": "For analytical or judgment tasks, adding 'Think through this step by step before giving your final answer' or 'First, list what you know and what you're uncertain about' improves accuracy significantly on complex problems.",
+      "example": {
+        "weak": "Is this marketing strategy likely to work?",
+        "strong": "Before giving your assessment, list: 1) The assumptions this strategy depends on, 2) Where it could fail, 3) What information is missing. Then give your overall judgment."
+      }
+    }
+  ],
+  "whatToAvoid": [
+    {
+      "mistake": "Trusting factual claims without verification",
+      "why": "GPT-4o generates confident text even when its grounding is weak. For anything factual — statistics, dates, quotes, specific claims — always verify with a primary source."
+    },
+    {
+      "mistake": "Very long, unstructured prompts",
+      "why": "GPT-4o can struggle with instruction-dense prompts written as one long paragraph. Use numbered lists or clear sections to separate different types of requirements."
+    },
+    {
+      "mistake": "Asking for exhaustive lists without a quantity target",
+      "why": "Without a number, GPT-4o will produce a list of uncertain length, often stopping arbitrarily. Always specify 'give me exactly N' for list-based tasks."
+    }
+  ],
+  "vsClaude": "Claude tends to be more cautious and will more explicitly flag uncertainty. If you want a model that pushes back on questionable premises, Claude is often better. GPT-4o is more compliant — useful when you want it to attempt tasks without hedging.",
+  "vsGemini": "Gemini has stronger real-time Google Search integration and is better for research tasks requiring current information. GPT-4o is generally stronger on code generation and complex multi-step reasoning tasks.",
+  "faqs": [
+    {
+      "question": "Does GPT-4o perform better with longer or shorter prompts?",
+      "answer": "Quality and structure matter more than length. A 50-word prompt with clear constraints outperforms a 300-word rambling prompt. That said, GPT-4o handles long, well-structured prompts (with numbered requirements, clear sections) better than most models."
+    },
+    {
+      "question": "When should I use GPT-4o vs GPT-4o mini?",
+      "answer": "GPT-4o mini is significantly faster and cheaper, and is sufficient for most formatting, summarisation, and simple content tasks. Use GPT-4o for complex reasoning, nuanced writing, code debugging, and tasks where subtle judgment matters."
+    },
+    {
+      "question": "Does adding 'please' or polite language help?",
+      "answer": "No. Politeness doesn't affect output quality. Clear, direct instructions work better than polite but vague ones. 'Write a summary in 3 bullet points' is better than 'Could you please possibly write a brief summary?'"
+    }
+  ],
+  "relatedModels": ["claude", "gemini"]
+}

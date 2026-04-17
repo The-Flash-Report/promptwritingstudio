@@ -336,12 +336,20 @@ export default function MarketingProfessionalsPage() {
             <p className="text-xl mb-8 text-blue-100">
               Get access to 100+ advanced marketing prompts, templates, and exclusive training
             </p>
-            <a
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
-            >
-              Upgrade to PromptWritingStudio Pro
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
+              >
+                Upgrade to PromptWritingStudio Pro
+              </a>
+              <Link
+                href="/claude-code-guide"
+                className="bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-900 transition-colors"
+              >
+                Go Deeper with Claude Code
+              </Link>
+            </div>
           </div>
         </section>
       </Layout>

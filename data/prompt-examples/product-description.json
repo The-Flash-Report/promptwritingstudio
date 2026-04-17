@@ -1,0 +1,53 @@
+{
+  "slug": "product-description",
+  "title": "Product Description",
+  "technique": "Buyer Psychology + Feature-to-Benefit Translation",
+  "category": "E-commerce",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Product Description | PromptWritingStudio",
+    "description": "See how to prompt AI for product descriptions that convert, not just inform. Before/after comparison with copyable improved prompt."
+  },
+  "h1": "How to Prompt AI for Product Descriptions That Convert",
+  "intro": "Most AI-generated product descriptions list features. Descriptions that convert sell outcomes. One prompt reframe changes everything.",
+  "weakPrompt": {
+    "text": "Write a product description for a standing desk.",
+    "problems": [
+      "No product specifics — AI invents features rather than describing your actual product",
+      "No target buyer — a gamer and a remote office worker need different messaging",
+      "No conversion goal — informational vs persuasive tone are very different",
+      "No format specified — paragraph vs bullet points serve different contexts (PDP vs Amazon vs email)",
+      "No word count — you may get 400 words when you needed 80"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write a product description for the FlexPro X2 standing desk. Specs: 48x24 inch surface, electric height adjustment (28-48 inches), 350lb capacity, built-in cable management tray, ships assembled. Target buyer: remote workers who have lower back pain from sitting all day and are skeptical about standing desks because they've tried cheap ones that wobbled. Lead with the outcome (back pain relief and sustained energy), then support with features. Format: one 40-word opening paragraph, then 4 bullet points. Avoid phrases like 'take your workspace to the next level'.",
+    "improvements": [
+      "Real product specs ensure accuracy — AI describes your product, not a fictional one",
+      "Buyer profile with specific skepticism gives the AI a psychological objection to address",
+      "Outcome-first instruction shifts from feature list to benefit framing",
+      "Format specification matches the actual placement (PDP layout)",
+      "Banning clichés prevents the output sounding like every other AI product page"
+    ]
+  },
+  "outputComparison": {
+    "weak": "Introducing our premium standing desk, designed to elevate your workspace and boost your productivity. With its sleek design and sturdy construction, this versatile desk is perfect for any home or office environment. Features adjustable height settings, spacious surface area, and modern aesthetics to transform your working experience.",
+    "improved": "The FlexPro X2 was built for people who gave up on standing desks — and want to try one more time. Electric height adjustment moves between sitting and standing in under three seconds, so the habit actually sticks.\n\n• Electric adjust from 28\" to 48\" — works for heights 5'2\" to 6'5\"\n• 350lb weight capacity with zero wobble at any height\n• Built-in cable tray keeps the surface clear without zip-tie hacks\n• Ships fully assembled — usable in 10 minutes, not two hours"
+  },
+  "whyItWorks": "The improved prompt gives the AI your actual product specs (no hallucination), a buyer with a specific objection (skepticism about quality after bad experiences), and a clear persuasion structure (outcome first, features second). The cliché ban forces original language. The format constraint ensures the output is usable in a real PDP without editing.",
+  "technique_explained": "Feature-to-Benefit Translation means explicitly instructing the AI to connect product features to outcomes a buyer cares about ('cable management tray' → 'keeps the surface clear without zip-tie hacks'). Buyer Psychology means giving the AI the emotional state and specific objection of the ideal buyer — not just demographics but mindset.",
+  "faqs": [
+    {
+      "question": "What if I don't have detailed specs ready?",
+      "answer": "Include whatever you have. Even partial specs improve output quality over nothing. The key is the buyer profile and the outcome-first instruction — those two changes alone will produce meaningfully better copy."
+    },
+    {
+      "question": "How do I adapt this for different platforms like Amazon vs my own site?",
+      "answer": "Specify the platform in the prompt. Amazon has strict format rules and keyword requirements; your own PDP can use storytelling. Tell the AI which platform and it will adjust accordingly — for Amazon, add 'optimized for Amazon search including keywords: [your keywords]'."
+    },
+    {
+      "question": "Should I include competitor comparisons in the prompt?",
+      "answer": "Only if you want the description to include a comparison. More useful is describing how your buyer has been burned before ('skeptical because they've tried cheap ones that wobbled') — this gets the objection handled without naming competitors."
+    }
+  ],
+  "relatedSlugs": ["cold-sales-email", "seo-meta-description", "ad-copy"]
+}

@@ -3,13 +3,13 @@
   "searchVolume": 2000,
   "keywordDifficulty": 12,
   "seoData": {
-    "title": "AI Prompts for HR Managers - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for HR managers. Streamline recruitment, boost employee engagement, and automate HR processes with our expert ChatGPT templates.",
+    "title": "Claude + ChatGPT Prompts for HR Managers — Expert Templates | Prompt Writing Studio",
+    "description": "Discover 15+ specialized AI prompts for HR managers. Streamline recruitment, boost employee engagement, and automate HR processes with our expert Claude and ChatGPT templates.",
     "keywords": "AI prompts for HR, human resources prompts, HR management AI, employee engagement prompts, recruitment AI templates, HR automation, ChatGPT for HR managers"
   },
   "heroSection": {
-    "title": "AI Prompts for HR Managers",
-    "subtitle": "Streamline recruitment, boost employee engagement, and automate HR processes with our expert ChatGPT templates for human resources professionals."
+    "title": "Claude + ChatGPT Prompts for HR Managers",
+    "subtitle": "Job specs, interview questions, onboarding plans, policy drafts, and comms — prompt templates HR teams actually use inside Claude and ChatGPT."
   },
   "promptCategories": [
     {
@@ -166,4 +166,4 @@
     "content-creators",
     "small-business-owners"
   ]
-} 
+}

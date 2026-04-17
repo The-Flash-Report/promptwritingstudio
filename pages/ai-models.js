@@ -13,11 +13,11 @@ export default function AIModels() {
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "Complete Guide to AI Models: Current & Upcoming LLMs, Features & Pricing",
-    "description": "Comprehensive overview of current and upcoming AI models including GPT-5, Claude 3.5, Gemini 2.0, Perplexity Pro, Meta Llama 3.1, and more with verified specifications, pricing, and benchmarks.",
-    "keywords": "AI models, GPT-5, Claude 3.5, Gemini 2.0, Perplexity Pro, Llama 3.1, Grok-2, Mistral, AI benchmarks, LLM comparison",
+    "headline": "AI Models Compared: Claude, GPT, Gemini, Llama, Mistral & More",
+    "description": "Up-to-date comparison of the major AI models — Claude Opus 4, Sonnet 4, Haiku 4.5, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral Large and more — with context windows, pricing, and feature differences.",
+    "keywords": "AI models, Claude Opus 4, Claude Sonnet 4, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral, LLM comparison",
     "datePublished": "2025-01-15T00:00:00+00:00",
-    "dateModified": "2025-12-15T00:00:00+00:00",
+    "dateModified": "2026-04-17T00:00:00+00:00",
     "author": {
       "@type": "Organization",
       "name": "PromptWritingStudio",
@@ -36,87 +36,17 @@ export default function AIModels() {
     { id: 'enterprise', name: 'Enterprise' }
   ];
 
-  // AI Models data - Updated regularly
+  // AI Models data - verified against vendor docs; benchmarks marked "Unknown" where not independently verified
   const models = [
-    // OpenAI Models - Latest
+    // Anthropic Models
     {
-      name: "GPT-5",
-      company: "OpenAI",
-      parameters: "10T+ (estimated)",
-      contextWindow: "1M tokens",
-      categories: ["text", "multimodal", "reasoning", "coding", "enterprise"],
-      pricing: "$20/1M tokens",
-      releaseDate: "December 2025",
-      architecture: "Next-Gen Transformer",
-      benchmarks: {
-        mmlu: "97.2%",
-        humanEval: "95.8%",
-        hellaswag: "98.3%"
-      },
-      features: [
-        "Revolutionary reasoning capabilities",
-        "Advanced multimodal understanding",
-        "Scientific research assistance",
-        "Human-level performance on many tasks",
-        "Enhanced safety and alignment"
-      ],
-      description: "OpenAI's latest flagship model achieving human-level performance across cognitive tasks with unprecedented reasoning capabilities."
-    },
-    {
-      name: "GPT-4o",
-      company: "OpenAI",
-      parameters: "Unknown",
-      contextWindow: "128K tokens",
-      categories: ["text", "multimodal", "reasoning", "coding"],
-      pricing: "$5/1M tokens",
-      releaseDate: "May 2024",
-      architecture: "Mixture-of-Experts",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Enhanced multimodal capabilities",
-        "Improved reasoning and coding",
-        "Better factual accuracy",
-        "Reduced hallucinations",
-        "Faster response times"
-      ],
-      description: "OpenAI's optimized GPT-4 model with improved performance, speed, and multimodal understanding."
-    },
-    // Anthropic Models - Current
-    {
-      name: "Claude 3.5 Sonnet",
-      company: "Anthropic",
-      parameters: "Unknown",
-      contextWindow: "200K tokens",
-      categories: ["text", "reasoning", "coding", "multimodal"],
-      pricing: "$3/1M tokens",
-      releaseDate: "March 2024",
-      architecture: "Constitutional AI",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Strong reasoning capabilities",
-        "Excellent coding performance",
-        "Multimodal understanding",
-        "Advanced safety measures",
-        "Fast inference speed"
-      ],
-      description: "Anthropic's current Sonnet model with strong performance across reasoning and coding tasks."
-    },
-    {
-      name: "Claude 3.5 Opus",
+      name: "Claude Opus 4",
       company: "Anthropic",
       parameters: "Unknown",
       contextWindow: "200K tokens",
       categories: ["text", "reasoning", "coding", "multimodal", "enterprise"],
-      pricing: "$15/1M tokens",
-      releaseDate: "March 2024",
+      pricing: "$15 / $75 per 1M tokens (input/output)",
+      releaseDate: "2025",
       architecture: "Constitutional AI",
       benchmarks: {
         mmlu: "Unknown",
@@ -124,23 +54,68 @@ export default function AIModels() {
         hellaswag: "Unknown"
       },
       features: [
-        "State-of-the-art reasoning",
-        "Superior safety alignment",
-        "Advanced multimodal capabilities",
-        "Complex task handling",
-        "Enterprise-grade performance"
+        "Anthropic's most capable model for complex reasoning",
+        "Strong performance on agentic coding tasks",
+        "Extended thinking mode for deliberate reasoning",
+        "Tool use and computer use",
+        "Used inside Claude Code"
       ],
-      description: "Anthropic's most capable current model with industry-leading safety and reasoning capabilities."
+      description: "Anthropic's flagship model for long-horizon agentic work, complex coding, and research-grade analysis."
     },
-    // Perplexity Models
     {
-      name: "Perplexity Pro",
-      company: "Perplexity AI",
+      name: "Claude Sonnet 4",
+      company: "Anthropic",
+      parameters: "Unknown",
+      contextWindow: "200K tokens",
+      categories: ["text", "reasoning", "coding", "multimodal", "enterprise"],
+      pricing: "$3 / $15 per 1M tokens (input/output)",
+      releaseDate: "2025",
+      architecture: "Constitutional AI",
+      benchmarks: {
+        mmlu: "Unknown",
+        humanEval: "Unknown",
+        hellaswag: "Unknown"
+      },
+      features: [
+        "Balanced speed, cost, and capability",
+        "Default model for most Claude Code workflows",
+        "Strong coding + tool-use performance",
+        "Vision input support",
+        "Prompt caching for large context reuse"
+      ],
+      description: "Anthropic's mainstream workhorse — the default for Claude.ai, API workloads, and Claude Code day-to-day."
+    },
+    {
+      name: "Claude Haiku 4.5",
+      company: "Anthropic",
+      parameters: "Unknown",
+      contextWindow: "200K tokens",
+      categories: ["text", "reasoning", "coding", "multimodal"],
+      pricing: "$1 / $5 per 1M tokens (input/output, approx)",
+      releaseDate: "2025",
+      architecture: "Constitutional AI",
+      benchmarks: {
+        mmlu: "Unknown",
+        humanEval: "Unknown",
+        hellaswag: "Unknown"
+      },
+      features: [
+        "Fastest Claude model at the lowest price point",
+        "Good for high-volume classification + extraction",
+        "Vision input support",
+        "Suitable for sub-agents and batched pipelines"
+      ],
+      description: "Anthropic's small, fast, cheap model — the right default for background agents and high-volume jobs."
+    },
+    // OpenAI Models
+    {
+      name: "GPT-5",
+      company: "OpenAI",
       parameters: "Unknown",
       contextWindow: "Unknown",
-      categories: ["text", "reasoning", "multimodal"],
-      pricing: "$20/month",
-      releaseDate: "Current",
+      categories: ["text", "multimodal", "reasoning", "coding", "enterprise"],
+      pricing: "See openai.com/api/pricing",
+      releaseDate: "2025",
       architecture: "Unknown",
       benchmarks: {
         mmlu: "Unknown",
@@ -148,92 +123,90 @@ export default function AIModels() {
         hellaswag: "Unknown"
       },
       features: [
-        "Real-time web search integration",
-        "Advanced reasoning capabilities",
-        "Multimodal understanding",
-        "Citation and source tracking",
-        "Research-focused optimization"
+        "OpenAI's current flagship",
+        "Multimodal (text, image, audio)",
+        "Strong reasoning + coding performance",
+        "Function calling and structured outputs",
+        "Available via API and ChatGPT"
       ],
-      description: "Perplexity's current model optimized for research and real-time information retrieval with web search capabilities."
+      description: "OpenAI's current flagship model. Check openai.com for up-to-date capability + pricing details before production use."
     },
-    // Google Models - Current & Coming Soon
     {
-      name: "Gemini 2.0 Pro",
+      name: "GPT-4o",
+      company: "OpenAI",
+      parameters: "Unknown",
+      contextWindow: "128K tokens",
+      categories: ["text", "multimodal", "reasoning", "coding"],
+      pricing: "~$2.50 / $10 per 1M tokens (input/output)",
+      releaseDate: "May 2024",
+      architecture: "Unknown",
+      benchmarks: {
+        mmlu: "Unknown",
+        humanEval: "Unknown",
+        hellaswag: "Unknown"
+      },
+      features: [
+        "Omni-modal: text + vision + audio in one model",
+        "Realtime audio via the Realtime API",
+        "Cheaper and faster than GPT-4",
+        "Still widely used for general tasks"
+      ],
+      description: "OpenAI's omni model — good multimodal default when latency and cost matter more than absolute reasoning quality."
+    },
+    // Google Models
+    {
+      name: "Gemini 2.5 Pro",
+      company: "Google",
+      parameters: "Unknown",
+      contextWindow: "1M+ tokens",
+      categories: ["text", "multimodal", "reasoning", "coding", "enterprise"],
+      pricing: "See Google AI Studio pricing",
+      releaseDate: "2025",
+      architecture: "Unknown",
+      benchmarks: {
+        mmlu: "Unknown",
+        humanEval: "Unknown",
+        hellaswag: "Unknown"
+      },
+      features: [
+        "Very long context window (1M+ tokens)",
+        "Native multimodal: text, image, audio, video",
+        "Strong performance on long-document + codebase tasks",
+        "Integrates with Google Workspace + Vertex AI"
+      ],
+      description: "Google's Gemini Pro line — the go-to when you need to stuff a whole codebase or long video into a single prompt."
+    },
+    {
+      name: "Gemini 2.5 Flash",
       company: "Google",
       parameters: "Unknown",
       contextWindow: "1M tokens",
       categories: ["text", "multimodal", "reasoning", "coding"],
-      pricing: "$7/1M tokens",
-      releaseDate: "February 2024",
-      architecture: "Mixture-of-Experts",
+      pricing: "See Google AI Studio pricing",
+      releaseDate: "2025",
+      architecture: "Unknown",
       benchmarks: {
         mmlu: "Unknown",
         humanEval: "Unknown",
         hellaswag: "Unknown"
       },
       features: [
-        "1M token context window",
-        "Advanced multimodal capabilities",
-        "Integration with Google Workspace",
-        "Real-time information access",
-        "Strong reasoning performance"
+        "Cheap + fast sibling of Gemini 2.5 Pro",
+        "Long context window",
+        "Good price-performance for high-volume tasks",
+        "Multimodal input"
       ],
-      description: "Google's current Gemini Pro model with large context window and multimodal capabilities."
-    },
-    {
-      name: "Gemini 3.0 Pro (Coming Soon)",
-      company: "Google",
-      parameters: "TBA",
-      contextWindow: "TBA",
-      categories: ["text", "multimodal", "reasoning", "coding"],
-      pricing: "TBA",
-      releaseDate: "Coming Soon",
-      architecture: "TBA",
-      benchmarks: {
-        mmlu: "TBA",
-        humanEval: "TBA",
-        hellaswag: "TBA"
-      },
-      features: [
-        "Enhanced multimodal capabilities",
-        "Improved reasoning performance",
-        "Better coding abilities",
-        "Google Workspace integration",
-        "Advanced safety features"
-      ],
-      description: "Google's upcoming Gemini 3.0 Pro model - specifications and benchmarks to be announced."
+      description: "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is 'good enough'."
     },
     // Meta Llama Models
     {
-      name: "Llama 3.1 8B",
-      company: "Meta",
-      parameters: "8B",
-      contextWindow: "8K tokens",
-      categories: ["text", "coding", "open-source"],
-      pricing: "Open Source",
-      releaseDate: "January 2024",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Efficient small model",
-        "Strong coding capabilities",
-        "Fast inference speed",
-        "Open source availability"
-      ],
-      description: "Meta's efficient 8B parameter model with strong coding performance for its size."
-    },
-    {
-      name: "Llama 3.1 70B",
+      name: "Llama 3.3 70B",
       company: "Meta",
       parameters: "70B",
-      contextWindow: "8K tokens",
+      contextWindow: "128K tokens",
       categories: ["text", "coding", "reasoning", "open-source"],
-      pricing: "Open Source",
-      releaseDate: "January 2024",
+      pricing: "Open weights (free to self-host)",
+      releaseDate: "December 2024",
       architecture: "Transformer",
       benchmarks: {
         mmlu: "Unknown",
@@ -241,22 +214,45 @@ export default function AIModels() {
         hellaswag: "Unknown"
       },
       features: [
-        "Strong reasoning capabilities",
-        "Excellent coding performance",
-        "Open source availability",
-        "Competitive with proprietary models"
+        "Open weights — run on your own hardware",
+        "Claimed performance close to Llama 3.1 405B",
+        "128K context window",
+        "Available via Together, Groq, Bedrock, and local runtimes"
       ],
-      description: "Meta's flagship 70B parameter model with strong performance across reasoning and coding tasks."
+      description: "Meta's open-weight workhorse — the default choice when you need an open model you can host, fine-tune, or air-gap."
     },
-    // xAI Grok Models
+    // xAI
     {
-      name: "Grok-2",
+      name: "Grok 3",
       company: "xAI",
       parameters: "Unknown",
-      contextWindow: "128K tokens",
+      contextWindow: "Unknown",
       categories: ["text", "reasoning"],
-      pricing: "$8/month",
-      releaseDate: "November 2023",
+      pricing: "Bundled with X Premium / API",
+      releaseDate: "2025",
+      architecture: "Unknown",
+      benchmarks: {
+        mmlu: "Unknown",
+        humanEval: "Unknown",
+        hellaswag: "Unknown"
+      },
+      features: [
+        "Access to real-time X (Twitter) data",
+        "Less restrictive content policy than peers",
+        "Reasoning mode available",
+        "API access via xAI"
+      ],
+      description: "xAI's flagship. Relevant mainly if you need real-time X data or a less filtered default tone."
+    },
+    // Mistral
+    {
+      name: "Mistral Large 2",
+      company: "Mistral AI",
+      parameters: "123B",
+      contextWindow: "128K tokens",
+      categories: ["text", "coding", "reasoning", "enterprise"],
+      pricing: "See mistral.ai/pricing",
+      releaseDate: "July 2024",
       architecture: "Transformer",
       benchmarks: {
         mmlu: "Unknown",
@@ -264,44 +260,22 @@ export default function AIModels() {
         hellaswag: "Unknown"
       },
       features: [
-        "Real-time internet access",
-        "Advanced reasoning capabilities",
-        "Humor and personality integration",
-        "X platform integration"
+        "European (France) model — data residency option",
+        "Strong multilingual + code performance",
+        "Function calling + JSON mode",
+        "Available via API and Azure"
       ],
-      description: "xAI's current Grok model with real-time web access and reasoning capabilities."
+      description: "Mistral's flagship. Common pick for EU customers that want non-US-hosted inference for GDPR + sovereignty reasons."
     },
-    // Mistral Models
+    // DeepSeek
     {
-      name: "Mistral Small",
-      company: "Mistral AI",
-      parameters: "7B",
-      contextWindow: "8K tokens",
-      categories: ["text", "coding", "reasoning"],
-      pricing: "$0.14/1M tokens",
-      releaseDate: "September 2023",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Excellent price-performance ratio",
-        "Strong coding capabilities",
-        "Multilingual support",
-        "Function calling support"
-      ],
-      description: "Mistral's efficient small model with exceptional performance per dollar."
-    },
-    {
-      name: "Mistral Medium",
-      company: "Mistral AI",
-      parameters: "Unknown",
-      contextWindow: "32K tokens",
-      categories: ["text", "coding", "reasoning"],
-      pricing: "$2.4/1M tokens",
-      releaseDate: "December 2023",
+      name: "DeepSeek V3",
+      company: "DeepSeek",
+      parameters: "671B (MoE, ~37B active)",
+      contextWindow: "128K tokens",
+      categories: ["text", "coding", "reasoning", "open-source"],
+      pricing: "Open weights; very low API pricing",
+      releaseDate: "December 2024",
       architecture: "Mixture-of-Experts",
       benchmarks: {
         mmlu: "Unknown",
@@ -309,127 +283,12 @@ export default function AIModels() {
         hellaswag: "Unknown"
       },
       features: [
-        "Advanced reasoning capabilities",
-        "Superior coding performance",
-        "Multimodal understanding",
-        "Function calling and tool use"
+        "Open weights",
+        "Mixture-of-Experts — large total / small active",
+        "Very competitive on coding + math benchmarks",
+        "Aggressive API pricing"
       ],
-      description: "Mistral's medium model with strong performance across reasoning and coding tasks."
-    },
-    // DeepSeek Models
-    {
-      name: "DeepSeek Coder",
-      company: "DeepSeek",
-      parameters: "33B",
-      contextWindow: "16K tokens",
-      categories: ["text", "coding", "reasoning", "open-source"],
-      pricing: "Open Source",
-      releaseDate: "November 2023",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "74.4%",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Exceptional coding performance",
-        "Open source availability",
-        "Strong mathematical reasoning",
-        "Multilingual capabilities"
-      ],
-      description: "DeepSeek's coding-focused model with outstanding performance on programming tasks."
-    },
-    // Amazon Models
-    {
-      name: "Titan Text",
-      company: "Amazon",
-      parameters: "Unknown",
-      contextWindow: "8K tokens",
-      categories: ["text", "enterprise"],
-      pricing: "$0.0008/1K tokens",
-      releaseDate: "April 2023",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "AWS ecosystem integration",
-        "Enterprise security features",
-        "Cost-effective pricing",
-        "Text generation capabilities"
-      ],
-      description: "Amazon's enterprise-focused text model optimized for AWS infrastructure."
-    },
-    // Microsoft Models
-    {
-      name: "Phi-2",
-      company: "Microsoft",
-      parameters: "2.7B",
-      contextWindow: "2K tokens",
-      categories: ["text", "coding", "reasoning"],
-      pricing: "Free",
-      releaseDate: "December 2023",
-      architecture: "Small Language Model",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Exceptional efficiency",
-        "Strong reasoning for size",
-        "Fast inference",
-        "Cost-effective deployment"
-      ],
-      description: "Microsoft's small but mighty model that punches above its weight class."
-    },
-    // Cohere Models
-    {
-      name: "Command",
-      company: "Cohere",
-      parameters: "Unknown",
-      contextWindow: "32K tokens",
-      categories: ["text", "reasoning", "enterprise"],
-      pricing: "$0.15/1M tokens",
-      releaseDate: "March 2023",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Enterprise-focused design",
-        "Strong reasoning capabilities",
-        "Multilingual support",
-        "Advanced safety features"
-      ],
-      description: "Cohere's enterprise-optimized model with excellent reasoning and safety features."
-    },
-    // Inflection Models
-    {
-      name: "Inflection-1",
-      company: "Inflection AI",
-      parameters: "Unknown",
-      contextWindow: "8K tokens",
-      categories: ["text", "reasoning"],
-      pricing: "$9.99/month",
-      releaseDate: "June 2023",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Advanced reasoning capabilities",
-        "Personal AI assistant focus",
-        "Enhanced safety measures",
-        "Conversational AI"
-      ],
-      description: "Inflection's current model designed for personal AI assistance with strong reasoning and safety."
+      description: "DeepSeek's flagship open-weights MoE model. Chosen when price and open weights matter more than vendor reputation."
     }
   ];
 
@@ -474,9 +333,9 @@ export default function AIModels() {
   };
 
   return (
-    <Layout 
-      title="AI Models Compared — GPT-5, Claude 4, Gemini 2, Llama 4 & More (2026)"
-      description="Comprehensive overview of all major AI models including GPT-5, Claude 4.5, Gemini 3.0, Perplexity Pro, Meta Llama 4, and more with detailed specifications, pricing, and benchmarks."
+    <Layout
+      title="AI Models Compared — Claude, GPT, Gemini, Llama & More (2026)"
+      description="Up-to-date comparison of the major AI models — Claude Opus 4, Sonnet 4, Haiku 4.5, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral Large, DeepSeek V3 — with context windows, pricing, and feature differences."
     >
       <script
         type="application/ld+json"
@@ -492,8 +351,8 @@ export default function AIModels() {
                 AI Models Guide
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Complete guide to current and upcoming AI models including GPT-5, Claude 3.5, Gemini 2.0, 
-                Perplexity Pro, Meta Llama 3.1, and more with verified specifications, pricing, and benchmarks.
+                Side-by-side look at the major AI models — Claude Opus 4, Sonnet 4, Haiku 4.5, GPT-5, GPT-4o,
+                Gemini 2.5 Pro, Llama 3.3, Mistral Large, DeepSeek V3 — with context windows, pricing, and what each is best at.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-lg">
                 <span className="bg-white/20 px-4 py-2 rounded-full">📊 {models.length} Models</span>
@@ -762,12 +621,12 @@ export default function AIModels() {
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="border border-gray-300 px-4 py-3 font-medium">Large Language Models</td>
-                      <td className="border border-gray-300 px-4 py-3">GPT-5, Claude 4.5, Gemini 3.0, Llama 4</td>
+                      <td className="border border-gray-300 px-4 py-3">Claude Opus 4, Claude Sonnet 4, GPT-5, Gemini 2.5 Pro, Llama 3.3</td>
                       <td className="border border-gray-300 px-4 py-3">Chatbots, research, text generation, code generation</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-300 px-4 py-3 font-medium">Multimodal Models</td>
-                      <td className="border border-gray-300 px-4 py-3">GPT-4o, Gemini 3.0, Claude 4.5, Perplexity Pro</td>
+                      <td className="border border-gray-300 px-4 py-3">GPT-4o, Gemini 2.5 Pro, Claude Sonnet 4</td>
                       <td className="border border-gray-300 px-4 py-3">Text + images + audio, cross-modal understanding, content creation</td>
                     </tr>
                     <tr className="bg-gray-50">
@@ -787,19 +646,19 @@ export default function AIModels() {
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border-l-4 border-blue-500">
                   <h4 className="text-lg font-semibold mb-3 text-blue-800">Text & Multimodal</h4>
                   <ul className="text-sm text-gray-700 space-y-2">
-                    <li><strong>GPT-5 (OpenAI):</strong> Revolutionary reasoning, human-level performance</li>
-                    <li><strong>Claude 4.5 Opus (Anthropic):</strong> Industry-leading safety and reasoning</li>
-                    <li><strong>Gemini 3.0 Ultra (Google):</strong> 10M token context, scientific capabilities</li>
-                    <li><strong>Perplexity Pro:</strong> Real-time web search integration</li>
+                    <li><strong>Claude Opus 4 (Anthropic):</strong> Agentic coding + long-horizon reasoning</li>
+                    <li><strong>Claude Sonnet 4 (Anthropic):</strong> Best price-performance for day-to-day</li>
+                    <li><strong>GPT-5 (OpenAI):</strong> Flagship multimodal model</li>
+                    <li><strong>Gemini 2.5 Pro (Google):</strong> 1M+ token context window</li>
                   </ul>
                 </div>
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg border-l-4 border-green-500">
                   <h4 className="text-lg font-semibold mb-3 text-green-800">Specialized & Open Source</h4>
                   <ul className="text-sm text-gray-700 space-y-2">
-                    <li><strong>Llama 4 Maverick (Meta):</strong> 10M token context, open source</li>
-                    <li><strong>Mistral Large 3:</strong> Exceptional coding and reasoning</li>
-                    <li><strong>DeepSeek-V3:</strong> Outstanding math and coding performance</li>
-                    <li><strong>Phi-4 (Microsoft):</strong> Efficient small model with strong reasoning</li>
+                    <li><strong>Llama 3.3 70B (Meta):</strong> Open weights, 128K context</li>
+                    <li><strong>Mistral Large 2:</strong> EU-hosted option for data residency</li>
+                    <li><strong>DeepSeek V3:</strong> Open-weights MoE with strong coding performance</li>
+                    <li><strong>Claude Haiku 4.5 (Anthropic):</strong> Fast, cheap, still strong on extraction</li>
                   </ul>
                 </div>
               </div>
@@ -978,23 +837,22 @@ export default function AIModels() {
             <h2 className="text-2xl font-bold mb-6">Key Insights</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-blue-600">🚀 Performance Breakthroughs</h3>
+                <h3 className="text-lg font-semibold mb-4 text-blue-600">What's changed</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• GPT-5 achieves state-of-the-art reasoning capabilities</li>
-                  <li>• Multiple models now exceed 90% on MMLU benchmarks</li>
-                  <li>• Large context windows (1M+ tokens) available on flagship models</li>
-                  <li>• Multimodal capabilities are now baseline features</li>
-                  <li>• Perplexity models bring real-time web search to mainstream AI</li>
+                  <li>• Claude, GPT, and Gemini families all now ship tiered lineups (flagship + mid + small)</li>
+                  <li>• Long context windows (200K–1M+ tokens) are now table stakes on flagship models</li>
+                  <li>• Multimodal (text + vision, and sometimes audio/video) is baseline, not a premium feature</li>
+                  <li>• Agentic tool use + computer use is pushing model choice toward Claude for coding workflows</li>
+                  <li>• Reasoning/thinking modes are a separate purchase decision from raw model size</li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-lg font-semibold mb-4 text-green-600">💰 Cost Efficiency</h3>
+                <h3 className="text-lg font-semibold mb-4 text-green-600">Cost efficiency</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• Open source models compete with proprietary alternatives</li>
-                  <li>• Significant price reductions across all model tiers</li>
-                  <li>• Smaller models achieve impressive performance per dollar</li>
-                  <li>• Enterprise pricing becomes more accessible</li>
-                  <li>• Subscription models (Perplexity, Inflection) offer predictable costs</li>
+                  <li>• Open-weight models (Llama 3.3, DeepSeek V3) are close to proprietary on many tasks</li>
+                  <li>• Mid-tier models (Sonnet, GPT-4o, Gemini Flash) handle 80%+ of real workloads</li>
+                  <li>• Small models (Haiku, Gemini Flash Lite) shine in high-volume pipelines</li>
+                  <li>• Prompt caching and batch APIs materially cut cost on repeated-context workloads</li>
                 </ul>
               </div>
             </div>

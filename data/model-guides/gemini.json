@@ -1,0 +1,91 @@
+{
+  "model": "gemini",
+  "modelName": "Gemini (Google)",
+  "seoData": {
+    "title": "How to Write Better Prompts for Gemini | PromptWritingStudio",
+    "description": "Specific prompting techniques for Google Gemini. Learn what makes Gemini different from ChatGPT and Claude, and how to get better outputs."
+  },
+  "h1": "How to Write Better Prompts for Gemini",
+  "intro": "Gemini is Google's flagship AI model, tightly integrated with Google's ecosystem. It has specific strengths around real-time information access, multimodal tasks, and Google Workspace integration — and specific prompting patterns that unlock those strengths.",
+  "modelPersonality": "Gemini tends to be organized and structured in its responses, often defaulting to headers and bullet points. It integrates with Google Search to provide real-time grounded answers, which makes it particularly useful for research tasks. It is strong at following formal, detailed prompts and benefits from clear task decomposition.",
+  "keyStrengths": [
+    "Real-time information via Google Search grounding",
+    "Google Workspace integration (Docs, Gmail, Sheets, Slides)",
+    "Multimodal tasks — images, PDFs, and text in the same prompt",
+    "Long-context document processing (up to 1M tokens in Gemini 1.5 Pro)",
+    "Structured data extraction and analysis"
+  ],
+  "promptingTips": [
+    {
+      "title": "Use Google grounding for research prompts",
+      "description": "Gemini can search Google in real time when grounding is enabled. For any research task involving current information, explicitly ask it to search and cite its sources. This prevents hallucination on recent data.",
+      "example": {
+        "weak": "What are the latest AI model releases?",
+        "strong": "Search for the most recent AI model announcements in the last 30 days. List each model with: name, company, release date, and the key capability it claims over previous models. Cite the source for each entry."
+      }
+    },
+    {
+      "title": "Leverage Google Workspace integration",
+      "description": "In Gemini for Google Workspace, you can reference your own documents, emails, and calendar directly in the prompt. Use @ mentions to pull in specific files rather than pasting content manually.",
+      "example": {
+        "weak": "(Copying and pasting a Google Doc into the chat)",
+        "strong": "@[your Google Doc] — Summarise the key decisions made and the open questions not yet resolved. Format as two lists: Decisions | Open Questions."
+      }
+    },
+    {
+      "title": "Specify output format explicitly — Gemini defaults to heavy structure",
+      "description": "Gemini tends to over-format responses with headers and sub-bullets. If you want prose, say so explicitly. If you want a specific structure, define it precisely to prevent Gemini from adding unnecessary hierarchy.",
+      "example": {
+        "weak": "Explain why the Fed raised interest rates.",
+        "strong": "Explain why the Fed raised interest rates in plain prose. No headers, no bullet points. Two paragraphs: first the proximate cause, second the longer-term context. Written for a general audience with no economics background."
+      }
+    },
+    {
+      "title": "Send images and PDFs alongside text prompts",
+      "description": "Gemini's multimodal capability is strong. For document review, data analysis from screenshots, or image interpretation, paste the visual directly into your prompt alongside the instruction.",
+      "example": {
+        "weak": "Here's a chart. What does it show?",
+        "strong": "[paste chart image] This is a monthly revenue chart for a B2B SaaS company. Identify: 1) Any months with anomalous growth or decline, 2) The apparent seasonality pattern, 3) The trend over the last 6 months vs the 6 months before."
+      }
+    },
+    {
+      "title": "Break complex tasks into explicit subtasks",
+      "description": "Gemini handles multi-step tasks well when the steps are explicitly numbered and each has a clear success condition. Vague multi-part prompts produce incomplete results more than with other models.",
+      "example": {
+        "weak": "Research competitors and give me an analysis.",
+        "strong": "Complete these steps in order:\n1. List the top 5 competitors to [company] in the UK SMB accounting software market.\n2. For each, identify: pricing model, primary differentiator, and one known weakness.\n3. Identify which competitor is most vulnerable to displacement and explain why in 2 sentences."
+      }
+    }
+  ],
+  "whatToAvoid": [
+    {
+      "mistake": "Treating it the same as ChatGPT for creative writing",
+      "why": "Gemini's creative writing tends to be more formal and structured than GPT-4o or Claude. For free-form creative work, be more explicit about tone, style, and what 'good' looks like — Gemini benefits from style examples more than the other models do."
+    },
+    {
+      "mistake": "Not specifying a source recency requirement",
+      "why": "Even with Google grounding, Gemini can return older information unless you specify a recency window. For time-sensitive topics, add 'only information published in the last 6 months' or a specific date range."
+    },
+    {
+      "mistake": "Assuming workspace integration works everywhere",
+      "why": "Gemini's Google Workspace integration requires Gemini for Google Workspace (a paid plan). The consumer Gemini app has different capabilities. Be clear about which interface you're using when following prompting guides."
+    }
+  ],
+  "vsChatGPT": "ChatGPT's plugin and tool ecosystem is broader, and GPT-4o generally produces more natural-sounding creative writing. Gemini's advantage is Google-native integration and real-time search grounding — if your workflow is in Google Workspace, Gemini is the practical choice.",
+  "vsClaude": "Claude has a stronger context window for pure text reasoning and produces more nuanced long-form writing. Gemini's advantage is multimodal breadth and Google ecosystem access — for research involving current information, Gemini with grounding is often better.",
+  "faqs": [
+    {
+      "question": "Which Gemini model should I use?",
+      "answer": "Gemini 2.5 Pro is the most capable for complex reasoning and long-document tasks. Gemini 2.5 Flash is significantly faster and cheaper, and is sufficient for most content and summarisation tasks. For Google Workspace users, Gemini for Workspace includes both depending on your subscription tier."
+    },
+    {
+      "question": "Is Gemini better than ChatGPT for research?",
+      "answer": "For research requiring current information, yes — Gemini's Google Search integration is more native and reliable than ChatGPT's web browsing. For research using documents you already have, Claude's context window and reasoning depth are often better."
+    },
+    {
+      "question": "How do I use Gemini for spreadsheet work?",
+      "answer": "In Google Sheets, Gemini is available via the side panel. For best results, describe the transformation you want in plain language and specify the input and output columns. For complex formulas, ask Gemini to write the formula first, then explain it, so you understand what it's doing before applying it."
+    }
+  ],
+  "relatedModels": ["chatgpt", "claude"]
+}

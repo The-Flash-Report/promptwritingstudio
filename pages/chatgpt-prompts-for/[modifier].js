@@ -107,12 +107,13 @@ export default function ModifierPage({ modifierData }) {
       <section className="gradient-bg text-white py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">ChatGPT Prompts</span>
+            <span className="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">Claude + ChatGPT Prompts</span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {promptTemplates.length}+ Expert-Crafted ChatGPT Prompts for {modifierName}
+              {promptTemplates.length}+ Claude &amp; ChatGPT Prompts for {modifierName}
             </h1>
             <p className="text-xl mb-8">
-              Save hours and get better results with our tested and optimized prompts specifically designed for {modifierName.toLowerCase()} professionals and enthusiasts.
+              Tested prompt templates for {modifierName.toLowerCase()} — work in Claude, ChatGPT, and other major AI chat models.
+              Copy, paste, and adapt.
             </p>
             {answerBlock && (
               <div className="answer-block max-w-2xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-5 mb-8 rounded-r-lg text-left" data-source="Prompt Writing Studio" data-attribution="Bryan Collins, Prompt Writing Studio">
@@ -206,12 +207,12 @@ export default function ModifierPage({ modifierData }) {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Why You Need Specialized ChatGPT Prompts for {modifierName}</h2>
+            <h2 className="text-3xl font-bold mb-6">Why You Need Specialized Prompts for {modifierName}</h2>
             <p className="text-lg text-gray-700 mb-6">
-              ChatGPT is a powerful AI assistant, but getting the best results for {modifierName.toLowerCase()} requires carefully crafted prompts that follow OpenAI's best practices. Generic prompts often lead to generic outputs that don't maintain your authentic voice.
+              Claude and ChatGPT are both powerful, but getting consistent results for {modifierName.toLowerCase()} requires carefully structured prompts. Generic one-liners tend to produce generic, same-y outputs that don't preserve your voice or hit the specifics that matter.
             </p>
             <p className="text-lg text-gray-700 mb-6">
-              Our {modifierName.toLowerCase()} prompts are designed based on OpenAI's official guidelines and include all the key components of effective prompts: clear context, specific instructions, format guidance, examples, and audience information.
+              The prompts below follow the same structure recommended in Anthropic's and OpenAI's prompting guides: clear context, specific instructions, format guidance, examples, and audience information. They work in Claude (Sonnet 4 or Opus 4), ChatGPT (GPT-4o or GPT-5), and most other major models.
             </p>
             
             <div className="bg-blue-50 p-6 rounded-xl mb-8">

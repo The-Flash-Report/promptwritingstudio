@@ -1,0 +1,53 @@
+{
+  "slug": "code-explanation",
+  "title": "Explaining Code",
+  "technique": "Audience Calibration + Output Format Specification",
+  "category": "Development",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Explaining Code to Others | PromptWritingStudio",
+    "description": "Learn how to prompt AI to explain code at exactly the right level for your audience. Before/after comparison with copyable improved prompt."
+  },
+  "h1": "How to Prompt AI to Explain Code at the Right Level",
+  "intro": "AI explains code at whatever level it guesses you need. If you don't tell it who the explanation is for, it defaults to a middle ground that satisfies nobody — too detailed for a manager, too shallow for a senior engineer.",
+  "weakPrompt": {
+    "text": "Explain this code to me.",
+    "problems": [
+      "No audience — explanation could target a beginner or an expert",
+      "No stated goal — is this for understanding, debugging, documentation, or a code review?",
+      "No format specified — could produce a wall of text when bullet points would be clearer",
+      "No depth instruction — should it explain line-by-line or just the high-level logic?",
+      "No context about what the code is supposed to do vs what it actually does"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Explain the following Python function to a non-technical product manager who needs to understand what it does and why it might be slow, without needing to understand the syntax. Format: first one sentence on what the function does overall, then 3-4 bullet points on what each major step accomplishes in plain English, then one sentence on why it could cause performance issues on large datasets. Do not use programming jargon without immediately defining it.\n\n[paste code here]",
+    "improvements": [
+      "Specific audience (non-technical PM) calibrates vocabulary and assumed knowledge",
+      "Stated goal (understand what it does and why it's slow) focuses the explanation",
+      "Structured format (1 sentence + bullets + 1 sentence) is scannable and usable in a meeting",
+      "Jargon instruction prevents the explanation from confusing the target reader",
+      "Explicit performance angle ensures the critical insight isn't buried"
+    ]
+  },
+  "outputComparison": {
+    "weak": "This Python function uses a nested loop to iterate over a list and performs operations on each element. The outer loop iterates over the main list while the inner loop searches for matching items. The function returns a filtered list based on the matching criteria. The time complexity is O(n²) which means it could be slow for large inputs.",
+    "improved": "What this does: Takes a list of customer records and finds every customer who has made more than one purchase — building a 'loyal customers' list.\n\n• Step 1: Goes through every customer one by one\n• Step 2: For each customer, scans the entire list again to check for repeat purchases\n• Step 3: If a match is found, adds that customer to the results list\n• Step 4: Returns the complete list of repeat buyers\n\nWhy it could be slow: It does a full re-scan of every record for every customer — so 10,000 customers means 100 million comparisons. This is why it's been timing out on the full dataset."
+  },
+  "whyItWorks": "The improved prompt tells the AI two things that completely change the output: who will read it (a non-technical PM) and what they need to know (what it does + why it's slow). The structured format ensures the explanation is usable in context — a PM can read the first sentence aloud in a meeting and share the bullets in a Slack message. Without audience calibration, the AI writes for itself.",
+  "technique_explained": "Audience Calibration means explicitly describing the reader's knowledge level so the AI can match vocabulary, depth, and assumptions. Output Format Specification defines the structure of the response — in this case, a hierarchy (summary → breakdown → implication) that works for non-technical stakeholders and mirrors how engineers naturally explain code.",
+  "faqs": [
+    {
+      "question": "How do I prompt AI to explain code to a senior engineer instead?",
+      "answer": "Shift the audience: 'Explain this to a senior backend engineer reviewing a PR. Focus on potential edge cases and why the author may have chosen this approach over the more obvious alternative. Use technical language freely.' The format changes too — a senior engineer wants depth, not a simplified summary."
+    },
+    {
+      "question": "Can I use this prompt for code review feedback?",
+      "answer": "Yes, with a small change: replace 'explain' with 'review' and add the reviewer's perspective: 'Review this as a senior engineer giving feedback to a mid-level developer. Be direct but constructive. Identify the most important issue first, then list other observations in priority order.'"
+    },
+    {
+      "question": "What if the code is very long?",
+      "answer": "Break it into sections and explain each one separately. For files over ~100 lines, ask the AI to first give a high-level architecture summary, then drill into specific functions. A single 'explain this entire file' prompt produces unfocused output."
+    }
+  ],
+  "relatedSlugs": ["brainstorm-ideas", "customer-support-reply", "tutorial-steps"]
+}

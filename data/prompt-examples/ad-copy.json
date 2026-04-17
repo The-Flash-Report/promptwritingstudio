@@ -1,0 +1,53 @@
+{
+  "slug": "ad-copy",
+  "title": "Ad Copy",
+  "technique": "Single Emotional Driver + Platform-Specific Constraints",
+  "category": "Advertising",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Ad Copy | PromptWritingStudio",
+    "description": "Learn how to prompt AI for ad copy that converts. See the before/after using the single emotional driver technique that outperforms generic prompts."
+  },
+  "h1": "How to Prompt AI for Ad Copy That Converts",
+  "intro": "AI ad copy without constraints reads like a brochure. The technique that changes this is forcing the AI to commit to a single emotional driver — not a list of benefits.",
+  "weakPrompt": {
+    "text": "Write a Facebook ad for my fitness app.",
+    "problems": [
+      "No target audience — age, life stage, specific pain point are all undefined",
+      "No single emotional driver — AI will try to cover multiple benefits at once",
+      "No ad objective — awareness, click, install, and purchase need different copy",
+      "No character limits — Facebook has specific limits for headline and body text",
+      "No offer or hook — what makes someone stop scrolling?"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write a Facebook feed ad for a fitness app targeting women aged 35-50 who have tried and quit gym memberships at least once and feel guilty about it. Ad objective: app install. The single emotional driver is relief from guilt — the app is designed for people who struggle with consistency, not athletes. Headline: max 40 characters. Primary text: max 125 characters. Do not use words like 'crush', 'transform', or 'journey'. The tone should feel like a friend who gets it, not a coach pushing you.",
+    "improvements": [
+      "Specific audience (35-50, lapsed gym member) gives AI the exact reader and their emotional state",
+      "Single emotional driver (guilt relief) prevents generic multi-benefit copy that speaks to no one",
+      "Character limits match Facebook's actual specs — output is usable without editing",
+      "Banned words prevent fitness industry clichés that read as inauthentic to this audience",
+      "Tone instruction ('friend who gets it') creates a voice that stands out from aspirational fitness ads"
+    ]
+  },
+  "outputComparison": {
+    "weak": "Transform Your Body Today! Our amazing fitness app has hundreds of workouts for all levels. Start your fitness journey now with personalized plans designed to help you crush your goals. Download free today and get 30 days premium access!",
+    "improved": "Headline: No gym guilt. Just 20 minutes.\n\nPrimary text: Made for people who keep starting over — not the ones who never stopped."
+  },
+  "whyItWorks": "The improved prompt forces the AI to choose one emotion and own it. The target reader is a specific person with a specific history (lapsed gym membership, guilt). The character limits ensure the output fits the platform. The banned words list removes the fitness marketing vocabulary that makes this audience roll their eyes. The tone instruction — 'friend who gets it, not a coach' — produces something that feels earned rather than performative.",
+  "technique_explained": "Single Emotional Driver means selecting one emotional state to create or relieve, and building the entire ad around it. Great ad copy doesn't try to trigger multiple emotions at once — it picks one and goes deep. Platform-Specific Constraints ensure the output respects the technical limits of the ad format, so the copy is usable without manual editing.",
+  "faqs": [
+    {
+      "question": "How do I identify the right single emotional driver for my product?",
+      "answer": "Read your 1-star reviews and your best testimonials. The 1-star reviews tell you what fears weren't addressed. The best testimonials tell you what emotion you actually delivered. The overlap is your emotional driver."
+    },
+    {
+      "question": "Does this technique work for Google Ads as well?",
+      "answer": "Yes, with different constraints. For Responsive Search Ads: 'Write 5 headlines (max 30 characters each) and 4 descriptions (max 90 characters each).' Include the keyword you're bidding on and the emotional driver. The character limits are critical — Google won't run oversized copy."
+    },
+    {
+      "question": "What if my product serves multiple audiences?",
+      "answer": "Write a separate ad for each audience. A single ad trying to speak to two different people speaks to neither. Use the prompt once per audience segment, each with its own emotional driver and banned words list."
+    }
+  ],
+  "relatedSlugs": ["product-description", "cold-sales-email", "email-subject-line"]
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "brainstorm-ideas",
+  "title": "Brainstorming Ideas",
+  "technique": "Constraint-Forced Creativity + Perspective Shifting",
+  "category": "Ideation",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Brainstorming with AI | PromptWritingStudio",
+    "description": "See how to prompt AI for genuinely original ideas instead of the obvious ones. Before/after comparison shows the constraint technique that works."
+  },
+  "h1": "How to Prompt AI for Ideas That Aren't Obvious",
+  "intro": "Asking AI to brainstorm without constraints produces a list of the most expected ideas about the topic. Here's the counter-intuitive technique: add more constraints, not fewer, to force genuine creativity.",
+  "weakPrompt": {
+    "text": "Give me ideas for a blog.",
+    "problems": [
+      "No topic or niche — AI cannot target any audience or differentiate",
+      "No constraints — freedom produces safe, predictable ideas",
+      "No quantity target — output length is arbitrary",
+      "No format for the ideas — headings vs summaries vs full concepts",
+      "No quality filter instruction — the AI won't distinguish between strong and weak ideas"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Generate 10 blog post ideas for a B2B SaaS content marketing blog targeting VP-level buyers at 100-500 person companies. Constraints: each idea must take a contrarian or counterintuitive angle on a conventional wisdom in the space. None of the ideas should be listicles or 'how-to' formats. Each idea should be based on a tension or contradiction that B2B buyers at this level actually debate. Format each idea as: Title | One sentence on why it challenges conventional wisdom | The core argument in 15 words.",
+    "improvements": [
+      "Specific niche and audience means ideas are relevant to real buyers, not generic",
+      "Contrarian constraint prevents the obvious list ('10 ways to improve your marketing')",
+      "Format exclusion (no listicles, no how-tos) forces more sophisticated angles",
+      "Tension-based framing produces ideas the audience will feel compelled to read",
+      "Structured output format (Title | Why | Core argument) makes ideas immediately usable"
+    ]
+  },
+  "outputComparison": {
+    "weak": "1. How to Write Great Blog Posts\n2. 10 Tips for Content Marketing Success\n3. Why Content Marketing is Important\n4. How to Grow Your Audience\n5. The Best Content Marketing Tools\n6. How to Create a Content Strategy\n7. Social Media for B2B Companies\n8. How to Measure Content Marketing ROI\n9. Email Marketing Best Practices\n10. Why Video Content is the Future",
+    "improved": "1. Most of Your Buyers Have Already Decided Before Talking to Sales | Challenges the 'educate to convert' model | Late-stage content strategy beats top-of-funnel volume every time\n\n2. The Marketing Attribution Model Your Board Loves Is Lying to You | Challenges last-touch attribution as a growth metric | Multi-touch models hide where buyers actually learn to trust you\n\n3. Your Best Customers Didn't Come From Your Best Content | Challenges content-as-pipeline thinking | Relationship-driven enterprise deals defy attribution, and that's a feature"
+  },
+  "whyItWorks": "Constraints force the AI out of its default pattern-matching mode. When you tell it 'no listicles, no how-tos, must be contrarian, must be tension-based,' the AI has to search its training data for more unusual connections. The structured output format (Title | Why | Core argument) makes each idea usable immediately — you can paste the title into a content calendar and the core argument into a brief.",
+  "technique_explained": "Constraint-Forced Creativity is the counter-intuitive insight that tighter constraints produce more original output — not less. With no constraints, AI defaults to the statistical center of all content it's seen. Constraints exclude that center and force it toward the edges. Perspective Shifting means asking the AI to adopt a specific viewpoint (VP-level buyer, contrarian thinker) rather than write from a neutral observer stance.",
+  "faqs": [
+    {
+      "question": "What if I want a mix of conventional and unconventional ideas?",
+      "answer": "Split the request: 'Give me 5 proven topic ideas for consistent search traffic and 5 contrarian ideas designed to generate discussion and backlinks.' You get both sets in one prompt without diluting the quality of either."
+    },
+    {
+      "question": "How do I evaluate which ideas are actually good?",
+      "answer": "Add an evaluation round: after the AI generates the list, send a follow-up prompt: 'Of these 10 ideas, which 3 are most likely to be shared by someone who disagrees with the premise? Why?' This surfaces the most provocative ideas and the AI's reasoning about them."
+    },
+    {
+      "question": "Can I use constraints to generate ideas in other formats?",
+      "answer": "Yes — this technique works for product features, startup ideas, campaign concepts, course modules, and podcast episodes. The key is always the same: state the audience, state the constraints that exclude the obvious, and specify a structured output format."
+    }
+  ],
+  "relatedSlugs": ["blog-post-intro", "social-media-linkedin", "ad-copy"]
+}

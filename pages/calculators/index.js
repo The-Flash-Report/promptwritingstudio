@@ -58,6 +58,33 @@ export default function CalculatorsHub() {
       color: 'from-red-500 to-pink-600',
       icon: '📊',
       benefits: ['Readiness assessment', 'Implementation roadmap', 'Priority recommendations']
+    },
+    {
+      title: 'Claude Model Selector',
+      description: 'Pick the right Claude model (Opus 4, Sonnet 4, Haiku 4.5) for your task with live monthly cost estimates',
+      url: '/calculators/claude-model-selector',
+      keywords: ['Claude model', 'Claude pricing', 'Opus vs Sonnet'],
+      color: 'from-amber-500 to-yellow-400',
+      icon: '🧭',
+      benefits: ['Task-to-model mapping', 'Live API cost estimate', 'Haiku / Sonnet / Opus side-by-side']
+    },
+    {
+      title: 'Claude Code vs Cursor Cost',
+      description: 'Compare monthly cost of Claude Code on API, Claude Pro, and Cursor Pro for your actual coding workload',
+      url: '/calculators/claude-code-vs-cursor-cost',
+      keywords: ['Claude Code cost', 'Cursor pricing', 'AI coding cost'],
+      color: 'from-slate-600 to-gray-800',
+      icon: '⚙️',
+      benefits: ['API vs flat-fee comparison', 'Break-even analysis', 'Model-mix sensitivity']
+    },
+    {
+      title: 'Claude Prompt Cost Calculator',
+      description: 'Calculate the cost of a single Claude API call (or a million), across Haiku 4.5, Sonnet 4, and Opus 4',
+      url: '/calculators/claude-prompt-cost',
+      keywords: ['Claude API cost', 'token pricing', 'prompt cost'],
+      color: 'from-emerald-500 to-teal-600',
+      icon: '💵',
+      benefits: ['Per-call pricing', 'Monthly projections', 'All three models side-by-side']
     }
   ]
 

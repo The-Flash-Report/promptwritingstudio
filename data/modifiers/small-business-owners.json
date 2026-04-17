@@ -3,13 +3,13 @@
   "searchVolume": 2400,
   "keywordDifficulty": 14,
   "seoData": {
-    "title": "AI Prompts for Small Business Owners - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for small business owners. Automate marketing, streamline operations, and boost growth with our expert ChatGPT templates for entrepreneurs.",
+    "title": "Claude + ChatGPT Prompts for Small Business Owners — Expert Templates | Prompt Writing Studio",
+    "description": "Discover 15+ specialized AI prompts for small business owners. Automate marketing, streamline operations, and boost growth with our expert Claude and ChatGPT templates for entrepreneurs.",
     "keywords": "AI prompts for small business, business automation prompts, ChatGPT for entrepreneurs, small business AI, marketing automation prompts, business growth AI, operations automation"
   },
   "heroSection": {
-    "title": "AI Prompts for Small Business Owners",
-    "subtitle": "Automate marketing, streamline operations, and boost growth with our expert ChatGPT templates designed specifically for small business owners and entrepreneurs."
+    "title": "Claude + ChatGPT Prompts for Small Business Owners",
+    "subtitle": "Marketing, customer comms, admin, hiring, and planning — prompt templates a small-business owner can run solo with Claude or ChatGPT."
   },
   "promptCategories": [
     {
@@ -166,4 +166,4 @@
     "hr-managers",
     "content-creators"
   ]
-} 
+}

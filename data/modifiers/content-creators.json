@@ -3,13 +3,13 @@
   "searchVolume": 2300,
   "keywordDifficulty": 15,
   "seoData": {
-    "title": "AI Prompts for Content Creators - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for content creators. Scale content production, grow your audience, and boost engagement with our expert ChatGPT templates for creators.",
+    "title": "Claude + ChatGPT Prompts for Content Creators — Expert Templates | Prompt Writing Studio",
+    "description": "Discover 15+ specialized AI prompts for content creators. Scale content production, grow your audience, and boost engagement with our expert Claude and ChatGPT templates for creators.",
     "keywords": "AI prompts for content creators, content creation prompts, ChatGPT for creators, social media prompts, content marketing AI, viral content prompts, audience growth AI"
   },
   "heroSection": {
-    "title": "AI Prompts for Content Creators",
-    "subtitle": "Scale content production, grow your audience, and boost engagement with our expert ChatGPT templates designed for content creators and influencers."
+    "title": "Claude + ChatGPT Prompts for Content Creators",
+    "subtitle": "Scale content production, grow your audience, and keep your voice on-brand — tested prompt templates that work in Claude (Sonnet 4, Opus 4) and ChatGPT (GPT-4o, GPT-5)."
   },
   "promptCategories": [
     {
@@ -186,4 +186,4 @@
     "hr-managers",
     "small-business-owners"
   ]
-} 
+}

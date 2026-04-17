@@ -1,0 +1,53 @@
+{
+  "slug": "seo-meta-description",
+  "title": "SEO Meta Description",
+  "technique": "Hard Constraints + Click Psychology",
+  "category": "SEO",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: SEO Meta Description | PromptWritingStudio",
+    "description": "Learn how to prompt AI for meta descriptions that rank and get clicked. Before/after with the exact prompt that produces search-ready copy."
+  },
+  "h1": "How to Prompt AI for Meta Descriptions That Get Clicked",
+  "intro": "Meta descriptions don't affect rankings directly, but they control whether someone clicks your result or the one below it. Here's the prompt structure that produces click-worthy, search-optimised descriptions.",
+  "weakPrompt": {
+    "text": "Write a meta description for my article about productivity tips.",
+    "problems": [
+      "No character limit — AI defaults to 200+ words, which Google truncates",
+      "No target keyword — the description may not match what users searched for",
+      "No click motivation — AI defaults to summaries, not reasons to click",
+      "No specificity about the article's content or unique angle",
+      "No instruction to include a soft CTA or benefit statement"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write a meta description for an article titled '7 Productivity Habits That High Performers Actually Use (Not the Ones You've Heard Before)'. Target keyword: productivity habits. Character limit: 145-155 characters including spaces. Include the target keyword naturally within the first 60 characters. The description should create curiosity by hinting at a contrarian angle without giving it away. End with an implicit reason to click. Do not start with the article title.",
+    "improvements": [
+      "Character range ensures it displays fully in search results without truncation",
+      "Keyword placement instruction improves visual match to search queries (Google bolds it)",
+      "Contrarian angle hint differentiates from the dozens of other productivity articles",
+      "Implicit CTA (reason to click) converts readers who are browsing multiple results",
+      "No-title-repeat instruction prevents wasted character space on duplicate content"
+    ]
+  },
+  "outputComparison": {
+    "weak": "This article covers productivity tips and strategies to help you get more done. Learn about time management, focus techniques, and habits that can improve your performance and help you achieve your goals more effectively every day.",
+    "improved": "The productivity habits that actually work aren't the ones in every listicle. Discover what high performers quietly do differently — and why most popular advice slows you down."
+  },
+  "whyItWorks": "The improved prompt solves three problems simultaneously: it fits in search results (character limit), it matches user intent (keyword placement), and it creates a reason to click over competing results (contrarian angle). The character constraint is the single most important instruction — without it, the AI will reliably produce something Google truncates mid-sentence.",
+  "technique_explained": "Hard Constraints are non-negotiable technical requirements (character counts, keyword placement) that the AI must respect. Click Psychology means understanding what motivates a user to choose your result — curiosity gaps, benefit statements, and contrarian angles all outperform neutral summaries. Together they produce descriptions that are both technically correct and compelling.",
+  "faqs": [
+    {
+      "question": "Does Google always use the meta description I write?",
+      "answer": "No. Google rewrites meta descriptions roughly 62% of the time, especially when the search query doesn't match your description well. Writing a strong description still matters — it's used for social sharing previews, and Google is more likely to use it when the keyword match is clear."
+    },
+    {
+      "question": "Should I include the keyword at the start of the description?",
+      "answer": "Within the first 60 characters is better than forcing it to the very start. Natural sentence flow that includes the keyword early reads better and Google bolds matching terms wherever they appear. Forced keyword-first placement often reads awkwardly."
+    },
+    {
+      "question": "How do I write meta descriptions for pages that don't have a clear hook?",
+      "answer": "Focus on the outcome the page delivers: what does the reader walk away knowing or able to do? Even a boring category page can have a description that focuses on range or quality rather than just listing what's there."
+    }
+  ],
+  "relatedSlugs": ["blog-post-intro", "ad-copy", "product-description"]
+}

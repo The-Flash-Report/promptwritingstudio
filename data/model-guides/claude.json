@@ -1,0 +1,91 @@
+{
+  "model": "claude",
+  "modelName": "Claude (Anthropic)",
+  "seoData": {
+    "title": "How to Write Better Prompts for Claude | PromptWritingStudio",
+    "description": "Specific prompting techniques for Claude by Anthropic. Learn what makes Claude different from ChatGPT and Gemini, and how to get better results."
+  },
+  "h1": "How to Write Better Prompts for Claude",
+  "intro": "Claude is designed to be honest, to push back on flawed premises, and to reason through problems rather than pattern-match to an expected answer. These traits make it different to work with — and often produce more reliable outputs when prompted correctly.",
+  "modelPersonality": "Claude tends toward careful reasoning and will often note uncertainty, flag assumptions, or ask a clarifying question if a task is ambiguous. It is less likely than GPT-4o to produce confident-sounding content that turns out to be wrong. It responds well to context-rich prompts and treats the conversation as a collaboration rather than a transaction.",
+  "keyStrengths": [
+    "Long-document analysis (200k+ token context window)",
+    "Nuanced writing tasks requiring judgment — tone, subtext, sensitivity",
+    "Structured reasoning and analysis where accuracy matters",
+    "Following complex, multi-constraint instructions reliably",
+    "Summarising and extracting insight from large documents"
+  ],
+  "promptingTips": [
+    {
+      "title": "Give Claude context, not just instructions",
+      "description": "Claude performs better when it understands why you want something, not just what you want. Adding a brief context sentence — 'This is for a board presentation' or 'The reader is skeptical' — lets Claude calibrate its response more accurately than instructions alone.",
+      "example": {
+        "weak": "Write a summary of this document.",
+        "strong": "This is a 40-page vendor proposal. Summarise it for a CFO who will spend 3 minutes reading it. Focus on cost, implementation timeline, and hidden risks. Ignore the vendor's background and case studies section."
+      }
+    },
+    {
+      "title": "Use XML tags for complex, multi-part prompts",
+      "description": "Claude responds well to structured prompts using XML-style tags to separate components: <context>, <task>, <constraints>, <output_format>. This prevents instructions from blending together in long prompts.",
+      "example": {
+        "weak": "Here is some background information and the document and the task I need you to do...",
+        "strong": "<context>I'm preparing a performance review for a mid-level engineer.</context>\n<document>[paste content]</document>\n<task>Identify the 3 strongest examples of impact and the 1 most important development area.</task>\n<format>Bullet points. No more than 2 sentences per point.</format>"
+      }
+    },
+    {
+      "title": "Ask Claude to flag its uncertainty",
+      "description": "Unlike models that project confidence regardless, Claude will acknowledge uncertainty when asked. Building this into your prompt is useful for research or analysis tasks where a wrong confident answer is worse than an honest 'I'm not sure.'",
+      "example": {
+        "weak": "What's the market size for AI in healthcare?",
+        "strong": "What's the market size for AI in healthcare? If you're citing a specific figure, state the source and year. If you're estimating, say so and explain the basis. If you don't know, say that directly rather than approximating."
+      }
+    },
+    {
+      "title": "Use the full context window for document work",
+      "description": "Claude's 200k token context window is one of its most practical advantages. You can paste an entire book, contract, or codebase and ask questions against it. Structure your prompt: paste the document first, then the task, so Claude reads the content before the instruction.",
+      "example": {
+        "weak": "Here's a question: what are the key terms? [document pasted after]",
+        "strong": "[Full contract text]\n\n---\n\nBased on the contract above: 1) List the three most unusual clauses compared to standard SaaS agreements. 2) Identify any automatic renewal terms with less than 30 days notice. 3) Flag any liability limitations that favour the vendor."
+      }
+    },
+    {
+      "title": "Let it push back",
+      "description": "Claude will sometimes challenge a premise or note a problem with your request. This is a feature, not a bug. When it happens, read its objection — it often catches a flaw in the question. You can override it ('I understand, but do it anyway'), but engage with the pushback first.",
+      "example": {
+        "weak": "(Ignoring Claude's 'this framing might mislead readers' note and asking it to proceed)",
+        "strong": "(Reading the objection: Claude noted the framing implies causation where you only have correlation. Update the prompt to say 'correlated with' rather than 'causes' and proceed.)"
+      }
+    }
+  ],
+  "whatToAvoid": [
+    {
+      "mistake": "Sparse, one-line prompts for complex tasks",
+      "why": "Claude is optimised for context-rich prompts. A one-line prompt for a nuanced task often produces a response that asks clarifying questions — useful, but slower. Give Claude the context it needs upfront."
+    },
+    {
+      "mistake": "Expecting it to skip its caveats by being forceful",
+      "why": "Claude's honesty principles mean it will include relevant caveats or uncertainty even if you phrase the request forcefully. Work with this by specifying upfront what caveats you already know about: 'I understand this is a simplified model. Give me the estimate anyway.'"
+    },
+    {
+      "mistake": "Using it for real-time information without a tool",
+      "why": "Claude's training data has a cutoff. For anything requiring current information (market data, recent news, live prices) you need to either paste the source content or use Claude with a web search tool enabled."
+    }
+  ],
+  "vsGPT4o": "GPT-4o is generally more compliant and will attempt tasks with less pushback. Claude is better for tasks where accuracy and reasoning quality matter more than response speed. For long documents, Claude's larger context window gives it a practical advantage.",
+  "vsGemini": "Gemini has tighter Google ecosystem integration (Docs, Gmail, Search). Claude is typically stronger on pure text reasoning, analysis, and writing tasks that require judgment rather than information retrieval.",
+  "faqs": [
+    {
+      "question": "Which version of Claude should I use?",
+      "answer": "Claude Sonnet 4.5 is the default for most tasks — strong reasoning, fast, and cost-effective. Use Claude Opus 4.6 for the most complex reasoning tasks where response quality is the priority over speed or cost. Haiku is for high-volume, simple tasks where speed and cost are paramount."
+    },
+    {
+      "question": "Why does Claude sometimes refuse to do things that seem harmless?",
+      "answer": "Claude has conservative defaults on certain content categories. If you're getting unexpected refusals on legitimate tasks, add context explaining the purpose: 'This is for a security training presentation' or 'I'm a medical professional writing patient education materials.' Context shifts its calibration."
+    },
+    {
+      "question": "Does Claude work well for coding tasks?",
+      "answer": "Yes — Claude is strong at code review, explaining code, and generating code for well-defined tasks. For iterative coding projects with many files, the large context window helps. For complex debugging, asking Claude to explain its reasoning before proposing a fix produces better results than asking for a fix directly."
+    }
+  ],
+  "relatedModels": ["chatgpt", "gemini"]
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "customer-support-reply",
+  "title": "Customer Support Reply",
+  "technique": "Tone Calibration + Policy Grounding + De-escalation Structure",
+  "category": "Customer Service",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Customer Support Reply | PromptWritingStudio",
+    "description": "See how to prompt AI for customer support replies that resolve issues and protect relationships. Before/after with copyable improved prompt."
+  },
+  "h1": "How to Prompt AI for Customer Support Replies That Actually Help",
+  "intro": "AI customer support replies without a strong prompt default to hollow apologies. The customer doesn't feel heard, and nothing gets resolved. Here's the prompt structure that changes that.",
+  "weakPrompt": {
+    "text": "Write a customer support reply to an angry customer.",
+    "problems": [
+      "No context about what the customer is angry about",
+      "No company policy on what can actually be offered (refund, replacement, credit)",
+      "No tone guidance — 'professional' and 'empathetic' produce very different responses",
+      "No resolution pathway — the reply may apologise without solving anything",
+      "No instruction on how to end the interaction — leave open or close the ticket?"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write a customer support reply for a SaaS company. The customer is angry because their account was incorrectly charged twice for their annual subscription and they've emailed three times without a response. Our policy: we can offer a full refund of the duplicate charge plus one month free as a goodwill gesture. Tone: genuinely apologetic (not scripted-apologetic), direct about what happened, and clear about the next steps. Structure: 1) Acknowledge the specific problem and the wait without excuses, 2) State what you're doing to fix it right now, 3) State the goodwill gesture, 4) Give a clear timeline. Under 150 words.",
+    "improvements": [
+      "Specific situation means the AI can acknowledge the exact problem, not a generic complaint",
+      "Policy grounding gives the AI the real resolution to offer — no invented promises",
+      "Tone distinction ('genuinely apologetic, not scripted') avoids hollow 'We apologise for the inconvenience'",
+      "Numbered structure ensures the reply covers all four stages of a resolution conversation",
+      "Word limit keeps the reply scannable — angry customers don't read walls of text"
+    ]
+  },
+  "outputComparison": {
+    "weak": "Dear Customer,\n\nThank you for reaching out to us. We sincerely apologise for any inconvenience you may have experienced. Your satisfaction is our top priority and we take all feedback very seriously. We will look into this matter and get back to you as soon as possible.\n\nBest regards,\nSupport Team",
+    "improved": "Hi Marcus,\n\nI'm sorry — you were charged twice and then had to email us three times to get a response. That's not acceptable, and I understand why you're frustrated.\n\nI've already processed a full refund of the duplicate $299 charge. You'll see it in your account within 3 business days. I've also added one month free to your subscription as an apology for the delays.\n\nYou'll get a confirmation email within the hour. If there's anything else wrong, reply directly to this email and I'll handle it personally.\n\nSorry again,\nJenna, Support"
+  },
+  "whyItWorks": "The improved prompt forces the AI to be specific about the problem, specific about the fix, and clear about the timeline. The policy grounding prevents the AI from making promises the company can't keep. The structure instruction mirrors how experienced support agents handle escalations: acknowledge → fix → compensate → close. The name and first-person sign-off humanises the response.",
+  "technique_explained": "Tone Calibration distinguishes between surface-level politeness and genuine empathy — the prompt specifies 'genuinely apologetic, not scripted-apologetic' which the AI interprets as: no boilerplate phrases, acknowledge the specific failure, use plain language. Policy Grounding provides the actual resolution options so the AI never invents promises. De-escalation Structure sequences the response to move the customer from anger toward resolution.",
+  "faqs": [
+    {
+      "question": "How do I handle a situation where I don't know yet what went wrong?",
+      "answer": "Include that uncertainty in the prompt: 'We don't yet know why the double charge happened. The reply should acknowledge this honestly, commit to investigating within 24 hours, and not make assumptions about the cause.' Honesty about unknowns builds more trust than false confidence."
+    },
+    {
+      "question": "Can I use this for live chat as well as email?",
+      "answer": "Yes, with length adjustments. For live chat, reduce to under 75 words and split into shorter messages rather than one block. Add to the prompt: 'Format for live chat — short messages, not paragraphs.'"
+    },
+    {
+      "question": "What if our policy doesn't allow refunds or compensation?",
+      "answer": "Include the constraint: 'Our policy does not allow refunds in this case. The reply must acknowledge the frustration, explain why the charge was correct without being defensive, and offer an alternative resolution (account credit, feature access, escalation to account manager).' The AI can work within constraints — it just needs to know what they are."
+    }
+  ],
+  "relatedSlugs": ["cold-sales-email", "constructive-feedback", "email-subject-line"]
+}

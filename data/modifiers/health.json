@@ -3,8 +3,8 @@
   "searchVolume": 700,
   "keywordDifficulty": 45,
   "seoData": {
-    "title": "45+ ChatGPT Health Prompts — Fitness, Nutrition & Wellness (2026)",
-    "description": "Copy-paste ChatGPT prompts for health goals, meal planning, workout routines, mental health check-ins, and medical research summaries."
+    "title": "Claude + ChatGPT Prompts for Health — Expert Templates | Prompt Writing Studio",
+    "description": "Copy-paste Claude and ChatGPT prompts for health goals, meal planning, workout routines, mental health check-ins, and medical research summaries."
   },
   "answerBlock": "ChatGPT prompts for health are structured instructions that guide ChatGPT to create personalised meal plans, workout routines, mental health check-ins, and wellness advice. Each prompt below is copy-paste ready and designed to produce specific, actionable health guidance rather than generic responses. They work with ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
@@ -231,13 +231,34 @@
         "The quality of your ChatGPT health output depends almost entirely on how well you structure your prompt. A vague request like 'help me get healthy' produces generic advice. A specific, well-structured prompt produces a plan you can actually follow. These seven steps will take you from vague question to actionable health guidance."
       ],
       "items": [
-        { "term": "Step 1 — Define your specific health topic", "description": "Choose one area: nutrition, fitness, sleep, stress management, mental health, or a chronic condition. Broad prompts produce broad answers. 'Help me improve my diet' is less useful than 'Help me build a low-sugar meal plan for a type 2 diabetic.'" },
-        { "term": "Step 2 — Set the role and context", "description": "Tell ChatGPT who to be: 'Act as a certified nutritionist with experience working with endurance athletes.' Role assignment activates relevant knowledge and adjusts the tone and depth of the response." },
-        { "term": "Step 3 — Include your personal specifics", "description": "Add age, activity level, dietary restrictions, health goals, and any relevant medical context. The more specific your input, the more relevant the output. You do not need to share identifying details — general parameters are enough." },
-        { "term": "Step 4 — Specify format and constraints", "description": "Tell ChatGPT how to structure the output: 'Give me a 7-day plan in table format', 'Keep each recommendation under two sentences', or 'Use plain language, no medical jargon.' Format instructions prevent padding and improve usability." },
-        { "term": "Step 5 — Use follow-up prompts to refine", "description": "The first response is a starting point, not the final answer. Follow up: 'Make the meal plan more budget-friendly', 'Add vegetarian options for Tuesdays', or 'Simplify the workout routine for someone with knee pain.'" },
-        { "term": "Step 6 — Cross-reference outputs with trusted sources", "description": "Always verify health information against authoritative sources: the HSE (Ireland), NHS (UK), WHO, or peer-reviewed research on PubMed. AI health content is a useful starting point, not a substitute for professional guidance." },
-        { "term": "Step 7 — Save and iterate on what works", "description": "Keep a document of your best-performing health prompts. When a prompt produces a particularly useful output, save the exact wording. Over time you build a personal prompt library that consistently delivers the health guidance you need." }
+        {
+          "term": "Step 1 — Define your specific health topic",
+          "description": "Choose one area: nutrition, fitness, sleep, stress management, mental health, or a chronic condition. Broad prompts produce broad answers. 'Help me improve my diet' is less useful than 'Help me build a low-sugar meal plan for a type 2 diabetic.'"
+        },
+        {
+          "term": "Step 2 — Set the role and context",
+          "description": "Tell ChatGPT who to be: 'Act as a certified nutritionist with experience working with endurance athletes.' Role assignment activates relevant knowledge and adjusts the tone and depth of the response."
+        },
+        {
+          "term": "Step 3 — Include your personal specifics",
+          "description": "Add age, activity level, dietary restrictions, health goals, and any relevant medical context. The more specific your input, the more relevant the output. You do not need to share identifying details — general parameters are enough."
+        },
+        {
+          "term": "Step 4 — Specify format and constraints",
+          "description": "Tell ChatGPT how to structure the output: 'Give me a 7-day plan in table format', 'Keep each recommendation under two sentences', or 'Use plain language, no medical jargon.' Format instructions prevent padding and improve usability."
+        },
+        {
+          "term": "Step 5 — Use follow-up prompts to refine",
+          "description": "The first response is a starting point, not the final answer. Follow up: 'Make the meal plan more budget-friendly', 'Add vegetarian options for Tuesdays', or 'Simplify the workout routine for someone with knee pain.'"
+        },
+        {
+          "term": "Step 6 — Cross-reference outputs with trusted sources",
+          "description": "Always verify health information against authoritative sources: the HSE (Ireland), NHS (UK), WHO, or peer-reviewed research on PubMed. AI health content is a useful starting point, not a substitute for professional guidance."
+        },
+        {
+          "term": "Step 7 — Save and iterate on what works",
+          "description": "Keep a document of your best-performing health prompts. When a prompt produces a particularly useful output, save the exact wording. Over time you build a personal prompt library that consistently delivers the health guidance you need."
+        }
       ]
     },
     {
@@ -246,11 +267,26 @@
         "ChatGPT works best as part of a broader health toolkit. These complementary tools make your AI health workflow more accurate, trackable, and actionable."
       ],
       "items": [
-        { "term": "ChatGPT Plus / GPT-4o", "description": "The paid tier is worth it for health tasks — GPT-4o handles nuanced health scenarios more carefully, follows complex constraint lists more precisely, and is less likely to give oversimplified advice." },
-        { "term": "Perplexity AI", "description": "Use Perplexity to cross-check health claims from ChatGPT with cited sources. It searches the live web and cites PubMed, NHS, and WHO documents — making it ideal for verifying specific health claims or medication information." },
-        { "term": "MyFitnessPal or Cronometer", "description": "Track your actual nutrition data in one of these apps and feed real numbers into your ChatGPT prompts: 'I averaged 1,800 calories and 60g protein last week. Help me adjust my plan to reach 120g protein without exceeding 2,000 calories.'" },
-        { "term": "Notion or Obsidian", "description": "Build a personal health prompt library in a note-taking app. Store your best prompts, tag them by health topic, and add notes on what worked and what needed refining." },
-        { "term": "Claude (Anthropic)", "description": "For health topics requiring careful, nuanced responses, Claude tends to follow constraint lists more precisely than ChatGPT and is more willing to flag uncertainty. Useful when you want the AI to explicitly say what it does not know." }
+        {
+          "term": "ChatGPT Plus / GPT-4o",
+          "description": "The paid tier is worth it for health tasks — GPT-4o handles nuanced health scenarios more carefully, follows complex constraint lists more precisely, and is less likely to give oversimplified advice."
+        },
+        {
+          "term": "Perplexity AI",
+          "description": "Use Perplexity to cross-check health claims from ChatGPT with cited sources. It searches the live web and cites PubMed, NHS, and WHO documents — making it ideal for verifying specific health claims or medication information."
+        },
+        {
+          "term": "MyFitnessPal or Cronometer",
+          "description": "Track your actual nutrition data in one of these apps and feed real numbers into your ChatGPT prompts: 'I averaged 1,800 calories and 60g protein last week. Help me adjust my plan to reach 120g protein without exceeding 2,000 calories.'"
+        },
+        {
+          "term": "Notion or Obsidian",
+          "description": "Build a personal health prompt library in a note-taking app. Store your best prompts, tag them by health topic, and add notes on what worked and what needed refining."
+        },
+        {
+          "term": "Claude (Anthropic)",
+          "description": "For health topics requiring careful, nuanced responses, Claude tends to follow constraint lists more precisely than ChatGPT and is more willing to flag uncertainty. Useful when you want the AI to explicitly say what it does not know."
+        }
       ]
     },
     {
@@ -259,11 +295,26 @@
         "Once you have mastered the basics, these techniques unlock significantly better health outputs from ChatGPT."
       ],
       "items": [
-        { "term": "Chain-of-thought prompting", "description": "Ask ChatGPT to reason through a health decision step by step before giving a recommendation: 'Think through the pros and cons of intermittent fasting for someone with a history of disordered eating before giving your recommendation.' This produces more considered, nuanced responses." },
-        { "term": "Few-shot prompting", "description": "Show ChatGPT two or three examples of the output format you want before asking for new content. Paste in an example meal plan or workout structure and say 'Create a new plan following exactly this format.'" },
-        { "term": "Prompt chaining", "description": "Break a complex health goal into a sequence of prompts, each building on the last. First generate a health assessment, then use that output to generate a meal plan, then use the meal plan to generate a shopping list." },
-        { "term": "System prompt personas", "description": "If you use the ChatGPT API or Custom Instructions, set a persistent health persona: 'You are a qualified fitness coach specialising in postpartum recovery. Always prioritise safety, always recommend consulting a GP for medical concerns.' This applies to every conversation automatically." },
-        { "term": "Explicit uncertainty requests", "description": "Add to any health prompt: 'Flag any claims you are less than highly confident about with [UNCERTAIN]. List three things I should verify with a doctor before acting on this advice.' This makes the AI's confidence level visible." }
+        {
+          "term": "Chain-of-thought prompting",
+          "description": "Ask ChatGPT to reason through a health decision step by step before giving a recommendation: 'Think through the pros and cons of intermittent fasting for someone with a history of disordered eating before giving your recommendation.' This produces more considered, nuanced responses."
+        },
+        {
+          "term": "Few-shot prompting",
+          "description": "Show ChatGPT two or three examples of the output format you want before asking for new content. Paste in an example meal plan or workout structure and say 'Create a new plan following exactly this format.'"
+        },
+        {
+          "term": "Prompt chaining",
+          "description": "Break a complex health goal into a sequence of prompts, each building on the last. First generate a health assessment, then use that output to generate a meal plan, then use the meal plan to generate a shopping list."
+        },
+        {
+          "term": "System prompt personas",
+          "description": "If you use the ChatGPT API or Custom Instructions, set a persistent health persona: 'You are a qualified fitness coach specialising in postpartum recovery. Always prioritise safety, always recommend consulting a GP for medical concerns.' This applies to every conversation automatically."
+        },
+        {
+          "term": "Explicit uncertainty requests",
+          "description": "Add to any health prompt: 'Flag any claims you are less than highly confident about with [UNCERTAIN]. List three things I should verify with a doctor before acting on this advice.' This makes the AI's confidence level visible."
+        }
       ]
     },
     {
@@ -276,10 +327,22 @@
     }
   ],
   "internalLinks": [
-    { "url": "/ai-prompt-generator/how-to-write-ai-prompts", "anchor": "how to write effective AI prompts" },
-    { "url": "/chatgpt-prompt-templates", "anchor": "ChatGPT prompt templates library" },
-    { "url": "/ai-prompt-generator", "anchor": "AI prompt generator" },
-    { "url": "/ai-prompt-generator/prompt-engineering-guide", "anchor": "prompt engineering guide" }
+    {
+      "url": "/ai-prompt-generator/how-to-write-ai-prompts",
+      "anchor": "how to write effective AI prompts"
+    },
+    {
+      "url": "/chatgpt-prompt-templates",
+      "anchor": "ChatGPT prompt templates library"
+    },
+    {
+      "url": "/ai-prompt-generator",
+      "anchor": "AI prompt generator"
+    },
+    {
+      "url": "/ai-prompt-generator/prompt-engineering-guide",
+      "anchor": "prompt engineering guide"
+    }
   ],
   "faqs": [
     {

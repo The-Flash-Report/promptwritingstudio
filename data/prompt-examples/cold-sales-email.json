@@ -1,0 +1,53 @@
+{
+  "slug": "cold-sales-email",
+  "title": "Cold Sales Email",
+  "technique": "Persona Specificity + Pain-First Structure",
+  "category": "Sales",
+  "seoData": {
+    "title": "Weak vs Strong Prompt: Cold Sales Email | PromptWritingStudio",
+    "description": "Learn how to prompt AI for cold emails that get replies. See the before/after and copy the improved prompt that uses pain-first structure."
+  },
+  "h1": "How to Prompt AI for Cold Sales Emails That Get Replies",
+  "intro": "AI-generated cold emails are easy to spot and easy to delete. The fix is a prompt that gives the model a real recipient, a real pain point, and a specific ask — not a generic company pitch.",
+  "weakPrompt": {
+    "text": "Write a cold email to sell my software to businesses.",
+    "problems": [
+      "No recipient — 'businesses' is too vague to write for",
+      "No product details — AI invents a generic software pitch",
+      "No pain point — the email leads with the product, not the problem",
+      "No call to action defined — will default to 'schedule a demo' regardless of sales stage",
+      "No length guidance — cold emails over 150 words get lower reply rates"
+    ]
+  },
+  "improvedPrompt": {
+    "text": "Write a cold email to the Head of Operations at a 50-100 person logistics company. My product is a route optimisation tool that reduces fuel costs by 15-20% on average. The recipient's likely pain point is rising fuel costs eating into margins in 2024-2025. Do not mention the product name in the subject line or first paragraph. Open with a specific observation about the pain (not a compliment about their company). The ask is a 20-minute call, not a demo. Maximum 120 words. No phrases like 'I hope this email finds you well' or 'I wanted to reach out'.",
+    "improvements": [
+      "Specific recipient title and company size lets the AI write to a real decision-maker",
+      "Concrete product benefit (15-20% fuel reduction) gives the AI a credible claim to build on",
+      "Pain-first instruction forces problem framing instead of product pitching",
+      "Specific CTA (20-min call vs demo) reduces commitment and increases reply rate",
+      "Word count and cliché bans prevent the output sounding like every other cold email"
+    ]
+  },
+  "outputComparison": {
+    "weak": "Hi [Name],\n\nI hope this email finds you well. I wanted to reach out about our innovative software solution that can help your business achieve its goals. Our platform offers cutting-edge features designed to streamline operations and improve efficiency.\n\nI would love to schedule a demo to show you how we can help take your business to the next level.\n\nBest regards,\n[Your Name]",
+    "improved": "Subject: Fuel costs eating into Q2 margins?\n\nHi Sarah,\n\nFuel now accounts for 28-35% of operating costs for most logistics companies your size — and the companies absorbing it without margin compression are rerouting dynamically, not statically.\n\nWe work with mid-size logistics teams to cut fuel spend 15-20% using route data they already collect.\n\nWould a 20-minute conversation this week make sense? No deck, just a quick look at your current routing and whether the numbers work.\n\n[Name]"
+  },
+  "whyItWorks": "The improved prompt forces the AI to open with the recipient's problem, not the sender's product. The word limit prevents padding. The specific CTA (20-min conversation) feels lower-commitment than 'book a demo.' The instruction to avoid clichés removes the signals that tell a recipient this is a templated email. The result reads like it was written by a thoughtful salesperson, not a bot.",
+  "technique_explained": "Pain-First Structure means explicitly telling the AI to lead with the problem the recipient is experiencing before mentioning your product. This mirrors how effective salespeople open calls. Persona Specificity gives the AI enough information to make assumptions about the reader's world — their industry pressures, their job title's concerns, and the kind of language they use.",
+  "faqs": [
+    {
+      "question": "Should I personalise every cold email or is one template enough?",
+      "answer": "One highly-specific template outperforms ten vague personalised ones. The key personalisation to include in your prompt is the recipient's role, their industry's specific pain point, and one contextual hook if you have it. Mass personalisation with weak pain points doesn't work."
+    },
+    {
+      "question": "What's the ideal length for a cold email?",
+      "answer": "100-150 words for cold outreach. The goal is to earn a reply, not close a deal. Every sentence beyond 150 words reduces the probability of a reply. Specify a word count in your prompt — AI will write longer without the constraint."
+    },
+    {
+      "question": "How do I get the AI to avoid the most common cold email clichés?",
+      "answer": "List them explicitly in the prompt: 'Do not use: I hope this email finds you well, I wanted to reach out, game-changer, cutting-edge, at your convenience.' The AI will honour the exclusion list reliably."
+    }
+  ],
+  "relatedSlugs": ["email-subject-line", "product-description", "customer-support-reply"]
+}

@@ -3,13 +3,13 @@
   "searchVolume": 2200,
   "keywordDifficulty": 14,
   "seoData": {
-    "title": "AI Prompts for Marketing Professionals - 15+ Expert Templates | PromptWritingStudio",
-    "description": "Discover 15+ specialized AI prompts for marketing professionals. Create campaigns, analyze data, write copy, and boost ROI with our expert-crafted ChatGPT templates for marketers.",
+    "title": "Claude + ChatGPT Prompts for Marketing Professionals — Expert Templates | Prompt Writing Studio",
+    "description": "Discover 15+ specialized AI prompts for marketing professionals. Create campaigns, analyze data, write copy, and boost ROI with our expert-crafted Claude and ChatGPT templates for marketers.",
     "keywords": "AI prompts for marketing, marketing automation prompts, ChatGPT for marketers, digital marketing AI, campaign optimization prompts, marketing analytics AI, content marketing prompts"
   },
   "heroSection": {
-    "title": "AI Prompts for Marketing Professionals",
-    "subtitle": "Create campaigns, analyze data, write copy, and boost ROI with our expert ChatGPT templates designed specifically for marketing professionals and agencies."
+    "title": "Claude + ChatGPT Prompts for Marketing Professionals",
+    "subtitle": "Ship campaigns, briefs, ad copy, and analyses faster — prompt templates tested on Claude and ChatGPT, designed for in-house and agency marketing teams."
   },
   "promptCategories": [
     {
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "title": "Marketing Copy Optimizer", 
+      "title": "Marketing Copy Optimizer",
       "description": "Transform existing copy into high-converting marketing materials.",
       "prompt": "Optimize this marketing copy for better conversion: [paste your current copy]. The copy is for [landing page/email/ad/social post] targeting [audience]. Goals: [increase CTR/improve conversion/boost engagement]. Please provide: 1) Analysis of current copy's strengths and weaknesses, 2) 3 optimized versions with different approaches (emotional/logical/social proof), 3) A/B testing recommendations, 4) Psychological triggers used in each version, 5) Suggested headlines and CTAs, 6) Mobile optimization tips. Focus on [specific outcome you want to achieve].",
       "wordCount": 140,
@@ -115,7 +115,7 @@
   "useCases": [
     {
       "title": "Digital Marketing Managers",
-      "icon": "fas fa-chart-line", 
+      "icon": "fas fa-chart-line",
       "description": "Marketing managers use these prompts to develop comprehensive campaign strategies, analyze performance data, and create data-driven optimization plans that improve ROI and team efficiency.",
       "recommendedPrompt": "Campaign Strategy Generator"
     },
@@ -140,7 +140,7 @@
   ],
   "benefits": [
     "Save 10+ hours weekly on campaign planning and analysis",
-    "Improve campaign ROI by 25-40% with data-driven strategies", 
+    "Improve campaign ROI by 25-40% with data-driven strategies",
     "Create professional marketing materials without hiring agencies",
     "Scale personalized marketing efforts across multiple segments",
     "Generate months of content ideas in minutes"
@@ -166,4 +166,4 @@
     "content-creators",
     "small-business-owners"
   ]
-} 
+}
