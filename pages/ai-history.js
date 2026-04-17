@@ -237,9 +237,9 @@ export default function AIHistory() {
       ]
     },
     {
-      period: "Deep Learning Revolution (2017 - 2020s)",
-      title: "Transformers and Foundation Models",
-      description: "Breakthrough architectures enable human-level language understanding and generation",
+      period: "Deep Learning Revolution (2017 - present)",
+      title: "Transformers, Foundation Models, and Agentic AI",
+      description: "Transformers enable human-level language. LLMs scale, then branch into reasoning models, multimodal models, and agentic coding tools.",
       color: "from-violet-600 to-violet-800",
       events: [
         {
@@ -263,9 +263,24 @@ export default function AIHistory() {
           detail: "Conversational AI reaches 100M users in 60 days, bringing AI to mainstream"
         },
         {
+          year: "2023",
+          event: "GPT-4 and Claude 2 ship as paid APIs",
+          detail: "Longer context windows (32K–100K), better reasoning, and the first wave of real production integrations via API"
+        },
+        {
           year: "2024",
-          event: "Multimodal AI agents emerge",
-          detail: "AI systems combine vision, language, and reasoning for complex real-world tasks"
+          event: "Claude 3 family and reasoning models arrive",
+          detail: "Anthropic ships Opus 3, Sonnet 3.5, Haiku 3; OpenAI ships o1 reasoning model; multimodal support becomes table stakes"
+        },
+        {
+          year: "2025",
+          event: "Agentic coding goes mainstream",
+          detail: "Claude Code, Cursor, and Aider reach production use. Anthropic ships MCP (Model Context Protocol) — a standard way for AI tools to talk to databases, filesystems, and APIs. Claude Sonnet 4 and 1M-token context windows ship."
+        },
+        {
+          year: "2026",
+          event: "Long-horizon agents and 1M context as baseline",
+          detail: "Claude Opus 4.7 and Sonnet 4.6 run overnight agent loops on 1M-token contexts. Sub-agents, hooks, and skills become part of the Claude Code workflow. Most new SaaS assumes model cost drops faster than workload grows."
         }
       ]
     }
@@ -328,7 +343,7 @@ export default function AIHistory() {
         image="https://promptwritingstudio.com/images/ai-history-preview.jpg"
         type="article"
         publishedTime="2024-01-22T00:00:00Z"
-        modifiedTime="2024-01-22T00:00:00Z"
+        modifiedTime="2026-04-17T00:00:00Z"
       />
       <OrganizationSchema />
 
@@ -617,22 +632,23 @@ export default function AIHistory() {
                 <div>
                   <h4 className="font-bold text-blue-200 mb-3">Foundation Models</h4>
                   <p className="text-sm opacity-90 leading-relaxed">
-                    Pre-trained models like GPT-4 and Claude provide general intelligence that can be adapted 
-                    for specific business needs without training from scratch.
+                    Pre-trained models like Claude Opus 4.7, GPT-5, and Gemini 2.5 Pro provide general intelligence
+                    adaptable for specific business needs without training from scratch — and now run on 1M-token contexts.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-bold text-blue-200 mb-3">Multimodal Capabilities</h4>
                   <p className="text-sm opacity-90 leading-relaxed">
-                    Modern AI can process text, images, audio, and video simultaneously, enabling 
-                    rich business applications across all media types.
+                    Modern AI processes text, images, audio, and video in a single model, enabling rich
+                    applications — document analysis, UI review, video summarisation — across every media type.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-200 mb-3">Agent-Based Systems</h4>
+                  <h4 className="font-bold text-blue-200 mb-3">Agentic Coding & MCP</h4>
                   <p className="text-sm opacity-90 leading-relaxed">
-                    AI agents can now perform complex multi-step tasks autonomously, from research 
-                    and analysis to content creation and customer service.
+                    Claude Code, Cursor, and the Model Context Protocol (MCP) let agents run multi-step
+                    work against real filesystems, databases, and APIs — from research and analysis to
+                    shipping whole features.
                   </p>
                 </div>
               </div>

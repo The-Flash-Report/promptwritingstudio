@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: "Which AI models support vision and image understanding?",
-    answer: "As of early 2026, the major models with strong vision capabilities are: GPT-4o and GPT-4 Vision (OpenAI/ChatGPT), Claude 3.5 Sonnet and Claude 3 Opus (Anthropic), and Gemini 1.5 Pro and Gemini 2.0 (Google). All three platforms allow you to upload images alongside text prompts. Each has slightly different strengths: GPT-4o is fast and versatile, Claude excels at detailed document analysis, and Gemini handles very large images and videos well."
+    answer: "As of 2026, the major models with strong vision capabilities are: GPT-5 and GPT-4o (OpenAI/ChatGPT), Claude Opus 4.7 and Claude Sonnet 4.6 (Anthropic), and Gemini 2.5 Pro (Google). All three platforms allow you to upload images alongside text prompts. Each has slightly different strengths: GPT-4o is fast and versatile, Claude excels at detailed document analysis, and Gemini handles very large images and videos well."
   },
   {
     question: "What types of images can vision AI analyze?",
@@ -145,13 +145,13 @@ export default function VisionAIPrompts() {
         {/* Hero Section */}
         <section className="gradient-bg py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <p className="text-[#FFDE59] font-semibold text-lg mb-4">Last updated: February 2026</p>
+            <p className="text-[#FFDE59] font-semibold text-lg mb-4">Last updated: April 2026</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Vision AI Prompts: Teach AI to
               <span className="block text-[#FFDE59]">See and Understand Your Images</span>
             </h1>
             <p className="text-xl md:text-2xl text-white mb-8 max-w-4xl mx-auto">
-              GPT-4 Vision, Claude, and Gemini can now analyze images, read documents, extract chart data, and review designs. The key to getting accurate results? Writing the right prompt. Learn how to craft vision prompts that turn any image into actionable information.
+              Claude, GPT, and Gemini can now analyze images, read documents, extract chart data, and review designs. The key to getting accurate results? Writing the right prompt. Learn how to craft vision prompts that turn any image into actionable information.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Link
@@ -161,15 +161,15 @@ export default function VisionAIPrompts() {
                 See Vision AI Prompts
               </Link>
               <Link
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                href="/ai-models"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
               >
-                Get the Full Course
+                Compare Vision Models
               </Link>
             </div>
             <div className="text-white text-lg">
               <p>Not about generating images. About using AI to understand them.</p>
-              <p>Works with GPT-4 Vision, Claude 3.5 Sonnet, and Gemini 2.0</p>
+              <p>Works with GPT-5/GPT-4o, Claude Opus 4.7 / Sonnet 4.6, and Gemini 2.5 Pro</p>
             </div>
           </div>
         </section>
@@ -199,7 +199,7 @@ export default function VisionAIPrompts() {
                 </div>
               </div>
               <p className="text-lg text-[#333333]">
-                Modern AI models from OpenAI (GPT-4o, GPT-4 Vision), Anthropic (Claude 3.5 Sonnet, Claude 3 Opus), and Google (Gemini 1.5 Pro, Gemini 2.0) all support multimodal input. This means you can upload an image alongside your text prompt and the AI will analyze both together. The quality of your results depends almost entirely on how well you write your vision prompt.
+                Modern AI models from OpenAI (GPT-5, GPT-4o), Anthropic (Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5), and Google (Gemini 2.5 Pro, Gemini 2.5 Flash) all support multimodal input. This means you can upload an image alongside your text prompt and the AI will analyze both together. The quality of your results depends almost entirely on how well you write your vision prompt.
               </p>
             </div>
           </div>
@@ -321,9 +321,9 @@ export default function VisionAIPrompts() {
                 <thead>
                   <tr className="bg-[#1A1A1A] text-white">
                     <th className="p-4 text-left">Capability</th>
-                    <th className="p-4 text-center">GPT-4o / GPT-4V</th>
-                    <th className="p-4 text-center">Claude 3.5 Sonnet</th>
-                    <th className="p-4 text-center">Gemini 2.0</th>
+                    <th className="p-4 text-center">GPT-5 / GPT-4o</th>
+                    <th className="p-4 text-center">Claude Sonnet 4.6</th>
+                    <th className="p-4 text-center">Gemini 2.5 Pro</th>
                   </tr>
                 </thead>
                 <tbody className="text-[#333333]">
@@ -367,7 +367,7 @@ export default function VisionAIPrompts() {
               </table>
             </div>
             <p className="text-sm text-[#666666] mt-4 text-center">
-              Model capabilities are evolving rapidly. Ratings based on testing as of February 2026.
+              Model capabilities are evolving rapidly. Ratings based on testing as of April 2026.
             </p>
           </div>
         </section>

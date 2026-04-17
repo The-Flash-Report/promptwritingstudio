@@ -11,9 +11,9 @@ export default function LiveChatTester({ initialPrompt = '', onClose }) {
   const [testPrompt, setTestPrompt] = useState(initialPrompt)
 
   const models = [
-    { id: 'claude', name: 'Claude 3 Sonnet', icon: '🧠', available: true },
+    { id: 'claude', name: 'Claude Haiku 4.5', icon: '🧠', available: true },
     { id: 'perplexity', name: 'Perplexity AI', icon: '🔍', available: true },
-    { id: 'openai', name: 'OpenAI GPT-4', icon: '🤖', available: false },
+    { id: 'openai', name: 'OpenAI GPT-5', icon: '🤖', available: false },
     { id: 'google', name: 'Google Gemini', icon: '✨', available: false }
   ]
 

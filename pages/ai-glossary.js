@@ -541,7 +541,7 @@ export default function AIGlossary() {
         image="https://promptwritingstudio.com/images/ai-glossary-preview.jpg"
         type="article"
         publishedTime="2024-01-22T00:00:00Z"
-        modifiedTime="2025-08-20T00:00:00Z"
+        modifiedTime="2026-04-17T00:00:00Z"
       />
       <OrganizationSchema />
 
