@@ -66,61 +66,12 @@ export default function ServiceBusinessAI() {
     }
   ]
 
-  // Note: Using real testimonials from homepage instead of placeholder examples
-
-  const consultingPackages = [
-    {
-      name: "AI Business Strategy Session",
-      price: "$750",
-      duration: "2 hours",
-      includes: [
-        "Business process audit & AI opportunity assessment",
-        "Custom AI prompt library for your industry",
-        "Automation workflow design",
-        "30-day implementation roadmap",
-        "Follow-up email support"
-      ],
-      cta: "Book Strategy Session",
-      popular: false
-    },
-    {
-      name: "AI Implementation & Training",
-      price: "$2,500",
-      duration: "6 weeks",
-      includes: [
-        "Everything in Strategy Session",
-        "Weekly 1-on-1 coaching calls",
-        "Custom AI tool setup & training",
-        "Team training sessions",
-        "Performance tracking & optimization",
-        "60-day post-implementation support"
-      ],
-      cta: "Start Implementation",
-      popular: true
-    },
-    {
-      name: "AI Business Transformation",
-      price: "$5,000",
-      duration: "12 weeks",
-      includes: [
-        "Everything in Implementation",
-        "Advanced AI prompt engineering",
-        "Business process optimization",
-        "Team scaling strategies",
-        "Revenue growth tactics",
-        "Lifetime access to updates"
-      ],
-      cta: "Start Transformation",
-      popular: false
-    }
-  ]
-
   return (
     <>
       <Head>
         <title>AI Business Automation for Service Businesses - Automate 80% of Tasks | PromptWritingStudio</title>
         <meta name="description" content="Automate 80% of your service business tasks with AI prompts. Generate proposals in minutes, handle client communication automatically, and scale without hiring. Join 1,500+ business owners who've automated their way to growth." />
-        <meta name="keywords" content="AI business automation, service business automation, AI proposals, client communication automation, business process automation, AI consulting" />
+        <meta name="keywords" content="AI business automation, service business automation, AI proposals, client communication automation, business process automation" />
       </Head>
       
       <Layout>
@@ -141,16 +92,15 @@ export default function ServiceBusinessAI() {
               >
                 Try Free AI Tools
               </Link>
-              <Link 
-                href="#consulting"
+              <Link
+                href="/roi-calculator"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
               >
-                Book AI Strategy Session
+                Run the ROI Calculator
               </Link>
             </div>
             <div className="text-white text-lg">
-              <p>🎯 Join 1,500+ business owners who've automated their way to growth</p>
-              <p>⚡ See results in weeks, not months</p>
+              <p>⚡ Free tools. No signup required.</p>
             </div>
           </div>
         </section>
@@ -241,52 +191,25 @@ export default function ServiceBusinessAI() {
           </div>
         </section>
 
-        {/* Consulting Services Section */}
-        <section id="consulting" className="py-16 bg-[#F9F9F9]">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
-                Ready to Automate Your Business with AI?
-              </h2>
-              <p className="text-xl text-[#333333] max-w-3xl mx-auto">
-                Choose the level of support that fits your business goals and budget
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {consultingPackages.map((pkg, index) => (
-                <div 
-                  key={index} 
-                  className={`bg-white p-8 rounded-lg shadow-lg border-2 ${
-                    pkg.popular ? 'border-[#FFDE59] relative' : 'border-[#E5E5E5]'
-                  }`}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#FFDE59] text-[#1A1A1A] py-2 px-6 rounded-lg font-bold text-sm">
-                      Most Popular
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{pkg.name}</h3>
-                    <div className="text-3xl font-bold text-[#1A1A1A] mb-1">{pkg.price}</div>
-                    <div className="text-[#333333]">{pkg.duration}</div>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.includes.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-[#FFDE59] mr-2 text-xl">✓</span>
-                        <span className="text-[#333333]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <button className="w-full bg-[#FFDE59] text-[#1A1A1A] py-3 px-6 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200">
-                    {pkg.cta}
-                  </button>
-                </div>
-              ))}
+        {/* Related Resources */}
+        <section className="py-16 bg-[#F9F9F9]">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8 text-center">
+              More AI resources for service businesses
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href="/roi-calculator" className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#FFDE59] transition">
+                <h3 className="font-bold text-[#1A1A1A] mb-2">AI ROI calculator</h3>
+                <p className="text-sm text-[#666666]">Quick estimate of what AI automation is worth to your operation.</p>
+              </Link>
+              <Link href="/prompts/small-business-owners" className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#FFDE59] transition">
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Small business prompt library</h3>
+                <p className="text-sm text-[#666666]">Curated prompts for proposals, onboarding, ops, and client comms.</p>
+              </Link>
+              <Link href="/ai-models" className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#FFDE59] transition">
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Which model to use?</h3>
+                <p className="text-sm text-[#666666]">Claude, GPT, Gemini compared on price, context, and quality.</p>
+              </Link>
             </div>
           </div>
         </section>
@@ -295,23 +218,23 @@ export default function ServiceBusinessAI() {
         <section className="py-16 bg-[#1A1A1A]">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Start Automating Your Business Today
+              Start automating your business with AI
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Join 1,500+ service business owners who've already transformed their operations with AI prompts
+              Free AI prompts, templates, and calculators — no signup required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
+              <Link
                 href="/ai-prompt-generator"
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
               >
-                Try Free AI Tools Now
+                Try the Prompt Generator
               </Link>
-              <Link 
-                href="#consulting"
+              <Link
+                href="/calculators"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
               >
-                Book AI Strategy Session
+                Browse Calculators
               </Link>
             </div>
           </div>

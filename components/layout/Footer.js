@@ -12,37 +12,39 @@ export default function Footer() {
             <Link href="/" className="text-xl font-bold">
               Prompt Writing Studio
             </Link>
-            <p className="mt-2 text-gray-400">Create better AI prompts for more effective results</p>
+            <p className="mt-2 text-gray-400">Practical guides for building with Claude — Claude Code, MCP, sub-agents, and hooks.</p>
           </div>
-          
-          {/* Business Tools & Calculators */}
+
+          {/* Claude Code Hub */}
           <div className="col-span-1">
-            <h4 className="text-lg font-bold mb-4">🔥 Business Tools</h4>
+            <h4 className="text-lg font-bold mb-4">⌨️ Claude Code Hub</h4>
             <ul className="space-y-2">
-              <li><Link href="/calculators" className="text-gray-400 hover:text-white transition">AI Calculators Hub</Link></li>
-              <li><Link href="/roi-calculator" className="text-gray-400 hover:text-white transition">AI ROI Calculator</Link></li>
-              <li><Link href="/calculators/ai-cost-comparison" className="text-gray-400 hover:text-white transition">AI vs Human Cost</Link></li>
-              <li><Link href="/calculators/content-creation-speed" className="text-gray-400 hover:text-white transition">Content Speed Calculator</Link></li>
-              <li><Link href="/calculators/ecommerce-ai-savings" className="text-gray-400 hover:text-white transition">E-commerce AI Calculator</Link></li>
-              <li><Link href="/business-name-generator" className="text-gray-400 hover:text-white transition">Business Name Generator</Link></li>
+              <li><Link href="/claude-code-guide" className="text-gray-400 hover:text-white transition">Claude Code Guide</Link></li>
+              <li><Link href="/claude-code-mcp-stack" className="text-gray-400 hover:text-white transition">Minimum Viable MCP Stack</Link></li>
+              <li><Link href="/claude-pro-vs-max-vs-api" className="text-gray-400 hover:text-white transition">Pro vs Max vs API</Link></li>
+              <li><Link href="/calculators/claude-plan-picker" className="text-gray-400 hover:text-white transition">Claude Plan Picker</Link></li>
+              <li><Link href="/claude-md-playbook" className="text-gray-400 hover:text-white transition">CLAUDE.md Playbook</Link></li>
+              <li><Link href="/claude-code-hooks-recipes" className="text-gray-400 hover:text-white transition">Claude Code Hooks</Link></li>
+              <li><Link href="/skills-vs-mcp-vs-hooks" className="text-gray-400 hover:text-white transition">Skills vs MCP vs Hooks</Link></li>
+              <li><Link href="/claude-code-vs-cursor" className="text-gray-400 hover:text-white transition">Claude Code vs Cursor</Link></li>
             </ul>
           </div>
-          
+
           {/* AI Resources & Learning */}
           <div className="col-span-1">
             <h4 className="text-lg font-bold mb-4">AI Resources</h4>
             <ul className="space-y-2">
+              <li><Link href="/ai-models" className="text-gray-400 hover:text-white transition">AI Models Compared</Link></li>
+              <li><Link href="/claude-vs-chatgpt" className="text-gray-400 hover:text-white transition">Claude vs ChatGPT</Link></li>
+              <li><Link href="/calculators" className="text-gray-400 hover:text-white transition">AI Calculators</Link></li>
               <li><Link href="/ai-prompt-generator" className="text-gray-400 hover:text-white transition">AI Prompt Generator</Link></li>
-              <li><Link href="/ai-prompt-quiz" className="text-gray-400 hover:text-white transition">Prompt Writing Quiz</Link></li>
               <li><Link href="/ai-prompt-examples" className="text-gray-400 hover:text-white transition">Prompt Examples</Link></li>
-              <li><Link href="/chatgpt-prompt-templates" className="text-gray-400 hover:text-white transition">ChatGPT Templates</Link></li>
               <li><Link href="/best-ai-tools" className="text-gray-400 hover:text-white transition">Best AI Tools</Link></li>
-              <li><Link href="/ai-models" className="text-gray-400 hover:text-white transition">AI Models Guide</Link></li>
-              <li><Link href="/ai-history" className="text-gray-400 hover:text-white transition">History of AI</Link></li>
               <li><Link href="/ai-glossary" className="text-gray-400 hover:text-white transition">AI Glossary</Link></li>
+              <li><Link href="/ai-history" className="text-gray-400 hover:text-white transition">History of AI</Link></li>
             </ul>
           </div>
-          
+
           {/* Company & Legal */}
           <div className="col-span-1">
             <h4 className="text-lg font-bold mb-4">Company</h4>
@@ -57,7 +59,7 @@ export default function Footer() {
               <li><Link href="/disclosure" className="text-gray-400 hover:text-white transition">Affiliate Disclosure</Link></li>
             </ul>
           </div>
-          
+
         </div>
         
         {/* Connect With Us - Full Width Section */}

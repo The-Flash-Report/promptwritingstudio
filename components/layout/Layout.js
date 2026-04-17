@@ -9,8 +9,8 @@ export default function Layout({ children, title, description, canonicalUrl }) {
   const router = useRouter()
   const siteUrl = 'https://promptwritingstudio.com'
   const currentUrl = canonicalUrl || `${siteUrl}${router.asPath.split('?')[0]}`
-  const pageTitle = title || 'PromptWritingStudio - Master AI Prompts for Better Results'
-  const pageDescription = description || 'Learn to write effective AI prompts with PromptWritingStudio for ChatGPT, Claude, and Gemini.'
+  const pageTitle = title || 'PromptWritingStudio — Practical Guides for Claude Code, MCP & Sub-agents'
+  const pageDescription = description || 'Working guides, templates, and comparisons for building real work with Claude — Claude Code, Projects, Artifacts, Skills, MCP, sub-agents, and hooks.'
 
   return (
     <>

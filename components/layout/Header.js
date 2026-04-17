@@ -12,19 +12,23 @@ const toolsItems = [
 ]
 
 const learnItems = [
-  { href: '/video-tutorials', label: '🎥 Video Tutorials', bold: true },
-  { href: '/ai-history', label: '📜 AI History', bold: true },
-  { href: '/ai-glossary', label: '📖 AI Glossary', bold: true },
+  { href: '/claude-code-guide', label: '⌨️ Claude Code Guide', bold: true },
+  { href: '/claude-code-mcp-stack', label: '🧩 Claude Code MCP Stack', bold: true },
+  { href: '/claude-pro-vs-max-vs-api', label: '💳 Claude Pro vs Max vs API', bold: true },
+  { type: 'divider' },
+  { href: '/claude-md-playbook', label: '📘 CLAUDE.md Playbook' },
+  { href: '/claude-code-hooks-recipes', label: '🪝 Claude Code Hooks' },
+  { href: '/skills-vs-mcp-vs-hooks', label: '🧠 Skills vs MCP vs Hooks' },
+  { href: '/claude-code-vs-cursor', label: '🆚 Claude Code vs Cursor' },
+  { href: '/claude-vs-chatgpt', label: '🆚 Claude vs ChatGPT' },
+  { type: 'divider' },
+  { href: '/ai-models', label: '📊 AI Models Compared', bold: true },
+  { href: '/video-tutorials', label: '🎥 Video Tutorials' },
+  { href: '/ai-glossary', label: '📖 AI Glossary' },
+  { href: '/ai-history', label: '📜 AI History' },
   { type: 'divider' },
   { href: '/ai-prompt-examples', label: '📚 Prompt Examples' },
   { href: '/chatgpt-prompt-templates', label: '📝 Templates' },
-  { type: 'divider' },
-  { href: '/prompts/marketing-professionals', label: '📊 Marketing Professionals' },
-  { href: '/prompts/sales-teams', label: '📞 Sales Teams' },
-  { href: '/prompts/hr-managers', label: '👥 HR Managers' },
-  { href: '/prompts/content-creators', label: '📱 Content Creators' },
-  { href: '/prompts/small-business-owners', label: '🏪 Small Business' },
-  { type: 'divider' },
   { href: '/best-ai-tools', label: '🛠️ AI Tools Guide' },
 ]
 
@@ -144,7 +148,7 @@ export default function Header() {
               {renderDropdownChevron()}
             </button>
             <div
-              className={`absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 transition-all duration-200 z-50 ${
+              className={`absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg border border-gray-200 transition-all duration-200 z-50 ${
                 openDropdown === 'learn'
                   ? 'visible opacity-100'
                   : 'invisible opacity-0 group-hover:visible group-hover:opacity-100'
@@ -172,8 +176,8 @@ export default function Header() {
           </div>
 
           {/* Direct Links - Most Important */}
-          <Link href="/#pricing" className="text-[#333333] hover:text-[#1A1A1A] transition font-semibold">
-            Pricing
+          <Link href="/claude-code-guide" className="text-[#333333] hover:text-[#1A1A1A] transition font-semibold">
+            Claude Code
           </Link>
           <Link href="/about" className="text-[#333333] hover:text-[#1A1A1A] transition font-semibold">
             About
@@ -182,14 +186,12 @@ export default function Header() {
 
         {/* Right side: CTA + Hamburger */}
         <div className="flex items-center space-x-3">
-          <a
-            href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+          <Link
+            href="/claude-code-guide"
             className="bg-[#FFDE59] text-[#1A1A1A] px-3 py-1.5 md:px-4 md:py-2 rounded-md font-bold hover:bg-[#E5C84F] transition text-sm md:text-base whitespace-nowrap"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            Get Started
-          </a>
+            Start with Claude Code
+          </Link>
 
           {/* Hamburger button - mobile only */}
           <button
@@ -273,11 +275,11 @@ export default function Header() {
               {/* Direct links */}
               <div className="mb-4">
                 <Link
-                  href="/#pricing"
+                  href="/claude-code-guide"
                   className="block py-2 text-[#333333] hover:text-[#1A1A1A] hover:bg-blue-50 rounded px-2 transition font-semibold"
                   onClick={closeMobileMenu}
                 >
-                  Pricing
+                  ⌨️ Claude Code
                 </Link>
                 <Link
                   href="/about"
@@ -291,15 +293,13 @@ export default function Header() {
               <div className="border-t border-gray-200 my-3"></div>
 
               {/* CTA */}
-              <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+              <Link
+                href="/claude-code-guide"
                 className="block w-full text-center bg-[#FFDE59] text-[#1A1A1A] px-4 py-3 rounded-md font-bold hover:bg-[#E5C84F] transition"
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={closeMobileMenu}
               >
-                Get Started
-              </a>
+                Start with Claude Code
+              </Link>
             </div>
           </div>
         </div>

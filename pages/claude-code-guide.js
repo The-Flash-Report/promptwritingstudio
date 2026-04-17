@@ -811,27 +811,69 @@ Next.js site with Tailwind CSS, deployed on Vercel.
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-[#1A1A1A]">
-          <div className="container mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Want to Write Better Prompts for Claude Code and Every Other AI Tool?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Claude Code responds to the same principles that make any AI prompt effective: clarity, specificity, and context. Learn the frameworks that work across Claude Code, ChatGPT, Gemini, and every other AI tool.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
-              >
-                Get the Prompt Writing Course
+        {/* Claude Code Hub — deeper guides */}
+        <section className="py-16 bg-white border-t border-gray-100">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
+                More Claude Code Resources
+              </h2>
+              <p className="text-lg text-[#333333] max-w-2xl mx-auto">
+                Every guide, comparison, and calculator on this site for people working with Claude Code day-to-day.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Link href="/claude-code-mcp-stack" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">🧩</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Minimum Viable MCP Stack</h3>
+                <p className="text-sm text-[#666666]">Five MCP servers that pull their weight, with copy-paste .mcp.json.</p>
               </Link>
-              <Link
-                href="/ai-prompt-generator"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
-              >
-                Try Free AI Prompt Generator
+              <Link href="/claude-pro-vs-max-vs-api" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">💳</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Claude Pro vs Max vs API</h3>
+                <p className="text-sm text-[#666666]">Which Claude plan fits your usage — Pro, Max 5x, Max 20x, or API.</p>
+              </Link>
+              <Link href="/calculators/claude-plan-picker" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">🎯</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Claude Plan Picker</h3>
+                <p className="text-sm text-[#666666]">Interactive calculator — recommends the cheapest plan that fits your actual usage.</p>
+              </Link>
+              <Link href="/claude-md-playbook" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">📘</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">CLAUDE.md Playbook</h3>
+                <p className="text-sm text-[#666666]">How to write a CLAUDE.md that keeps Claude Code on-rails.</p>
+              </Link>
+              <Link href="/claude-code-hooks-recipes" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">🪝</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Claude Code Hooks Recipes</h3>
+                <p className="text-sm text-[#666666]">Working hook examples — pre-commit checks, telemetry, guardrails.</p>
+              </Link>
+              <Link href="/skills-vs-mcp-vs-hooks" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">🧠</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Skills vs MCP vs Hooks</h3>
+                <p className="text-sm text-[#666666]">When to use each extension point — and when to skip it.</p>
+              </Link>
+              <Link href="/claude-code-vs-cursor" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">🆚</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Claude Code vs Cursor</h3>
+                <p className="text-sm text-[#666666]">Head-to-head on features, workflow, and price.</p>
+              </Link>
+              <Link href="/calculators/claude-code-vs-cursor-cost" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">🧮</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Cost Calculator: Claude Code vs Cursor</h3>
+                <p className="text-sm text-[#666666]">Monthly API + subscription cost at your usage.</p>
+              </Link>
+              <Link href="/calculators/claude-prompt-cost" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">💰</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Claude API Prompt Cost</h3>
+                <p className="text-sm text-[#666666]">Estimate the cost of a single Claude API call by model and token count.</p>
+              </Link>
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link href="/calculators" className="inline-flex items-center text-[#1A1A1A] font-semibold underline hover:no-underline">
+                See all Claude + AI calculators →
               </Link>
             </div>
           </div>

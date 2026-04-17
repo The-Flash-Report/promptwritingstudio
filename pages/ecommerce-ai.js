@@ -66,61 +66,12 @@ export default function EcommerceAI() {
     }
   ]
 
-  // Note: Using real testimonials from homepage instead of placeholder examples
-
-  const consultingPackages = [
-    {
-      name: "E-commerce AI Strategy Session",
-      price: "$1,000",
-      duration: "2 hours",
-      includes: [
-        "E-commerce audit & AI opportunity assessment",
-        "Custom AI prompt library for your products",
-        "Content automation workflow design",
-        "30-day implementation roadmap",
-        "Follow-up email support"
-      ],
-      cta: "Book Strategy Session",
-      popular: false
-    },
-    {
-      name: "E-commerce AI Implementation",
-      price: "$3,500",
-      duration: "8 weeks",
-      includes: [
-        "Everything in Strategy Session",
-        "Weekly 1-on-1 coaching calls",
-        "Custom AI tool setup & training",
-        "Product description optimization",
-        "Performance tracking & optimization",
-        "60-day post-implementation support"
-      ],
-      cta: "Start Implementation",
-      popular: true
-    },
-    {
-      name: "E-commerce AI Transformation",
-      price: "$7,500",
-      duration: "16 weeks",
-      includes: [
-        "Everything in Implementation",
-        "Advanced AI prompt engineering",
-        "Conversion rate optimization",
-        "Customer service automation",
-        "Marketing automation strategies",
-        "Lifetime access to updates"
-      ],
-      cta: "Start Transformation",
-      popular: false
-    }
-  ]
-
   return (
     <>
       <Head>
         <title>AI E-commerce Automation - Increase Sales 40% with AI Prompts | PromptWritingStudio</title>
         <meta name="description" content="Turn AI prompts into 40% more e-commerce sales. Generate product descriptions in minutes, automate customer service, and create engaging content. Join 1,000+ store owners who've automated their way to growth." />
-        <meta name="keywords" content="AI e-commerce, product description generator, e-commerce automation, AI customer service, e-commerce content creation, AI consulting" />
+        <meta name="keywords" content="AI e-commerce, product description generator, e-commerce automation, AI customer service, e-commerce content creation" />
       </Head>
       
       <Layout>
@@ -141,16 +92,15 @@ export default function EcommerceAI() {
               >
                 Try Free AI Tools
               </Link>
-              <Link 
-                href="#consulting"
+              <Link
+                href="/calculators/ecommerce-ai-savings"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
               >
-                Book AI Strategy Session
+                See the Savings Calculator
               </Link>
             </div>
             <div className="text-white text-lg">
-              <p>🎯 Join 1,000+ store owners who've automated their way to growth</p>
-              <p>⚡ See results in weeks, not months</p>
+              <p>⚡ Free tools. No signup required.</p>
             </div>
           </div>
         </section>
@@ -241,52 +191,25 @@ export default function EcommerceAI() {
           </div>
         </section>
 
-        {/* Consulting Services Section */}
-        <section id="consulting" className="py-16 bg-[#F9F9F9]">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-4">
-                Ready to Scale Your E-commerce Store with AI?
-              </h2>
-              <p className="text-xl text-[#333333] max-w-3xl mx-auto">
-                Choose the level of support that fits your business goals and budget
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {consultingPackages.map((pkg, index) => (
-                <div 
-                  key={index} 
-                  className={`bg-white p-8 rounded-lg shadow-lg border-2 ${
-                    pkg.popular ? 'border-[#FFDE59] relative' : 'border-[#E5E5E5]'
-                  }`}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-[#FFDE59] text-[#1A1A1A] py-2 px-6 rounded-lg font-bold text-sm">
-                      Most Popular
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{pkg.name}</h3>
-                    <div className="text-3xl font-bold text-[#1A1A1A] mb-1">{pkg.price}</div>
-                    <div className="text-[#333333]">{pkg.duration}</div>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.includes.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="text-[#FFDE59] mr-2 text-xl">✓</span>
-                        <span className="text-[#333333]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <button className="w-full bg-[#FFDE59] text-[#1A1A1A] py-3 px-6 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200">
-                    {pkg.cta}
-                  </button>
-                </div>
-              ))}
+        {/* Related Resources */}
+        <section className="py-16 bg-[#F9F9F9]">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-8 text-center">
+              More e-commerce AI resources
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Link href="/calculators/ecommerce-ai-savings" className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#FFDE59] transition">
+                <h3 className="font-bold text-[#1A1A1A] mb-2">E-commerce savings calculator</h3>
+                <p className="text-sm text-[#666666]">Estimate what AI on product descriptions and customer service is worth to your store.</p>
+              </Link>
+              <Link href="/ai-prompt-examples" className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#FFDE59] transition">
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Prompt examples library</h3>
+                <p className="text-sm text-[#666666]">Real prompts for product copy, email, and support — not fluff.</p>
+              </Link>
+              <Link href="/ai-models" className="block p-6 bg-white rounded-lg border border-gray-200 hover:border-[#FFDE59] transition">
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Which model to use?</h3>
+                <p className="text-sm text-[#666666]">Claude, GPT, Gemini compared on price and writing quality.</p>
+              </Link>
             </div>
           </div>
         </section>
@@ -295,23 +218,23 @@ export default function EcommerceAI() {
         <section className="py-16 bg-[#1A1A1A]">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Start Scaling Your E-commerce Store Today
+              Start scaling your store with AI
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Join 1,000+ e-commerce store owners who've already transformed their business with AI prompts
+              Free AI prompts, templates, and calculators — no signup required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
+              <Link
                 href="/ai-prompt-generator"
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
               >
-                Try Free AI Tools Now
+                Try the Prompt Generator
               </Link>
-              <Link 
-                href="#consulting"
+              <Link
+                href="/calculators"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
               >
-                Book AI Strategy Session
+                Browse Calculators
               </Link>
             </div>
           </div>
