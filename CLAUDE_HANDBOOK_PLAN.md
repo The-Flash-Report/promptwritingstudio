@@ -368,6 +368,55 @@ Build in this order (priority from §5):
 - Premium content (gated deep-dive guides, Claude Project templates, workflow masterclasses)
 - BAWT / Vendors.ie cross-promotion integrations
 
+### Phase 4 — Beyond content: slash-command registry (product-layer bet)
+
+**Gate: Phase 1 content live AND tools-strategy memory still holding AND ~30 min of curation effort per week available.**
+
+The risk with Phase 1–3 is ending up as "another content site with calculators." To cross into durable differentiation, PWS needs a data asset that compounds via community submissions and backlinks. Target: **a curated directory of Claude Code slash commands**, one page per command.
+
+**Why this specific bet:**
+- No dominant competitor exists; `awesome-claude-code` GitHub lists have no discovery/SEO/ratings
+- Supply is abundant: 46,080 `.claude/commands/*.md` files on public GitHub (searched 2026-04-17). Quality sample 5/5 publishable — polished frontmatter, real workflows, credit-able authors
+- Content compounds — every command = one long-tail URL ranking for "claude code /pr-review command" etc.
+- Backlink engine — each credited author links back from their repo README
+- AEO-native — structured schema (name, description, code block) is exactly what LLMs cite
+- Extends the existing brand position ("practical Claude hub") instead of pivoting off it
+- Bryan already has ~15 battle-tested slash commands in `~/.claude/commands/` as the launch inventory
+
+**V1 scope (weekend build):**
+- `data/slash-commands/*.md` with frontmatter schema (name, author, tags, works-with, license)
+- `pages/slash/[slug].js` — one page per command (getStaticPaths)
+- `pages/slash/index.js` — directory with tag filter
+- `pages/slash/category/[tag].js` — e.g. `/slash/category/git`
+- `pages/slash/submit.js` — PR-based submission flow
+- Seed: 15 (Bryan's) + 25-35 (curated from GitHub + practitioner blogs, with full attribution)
+- All static. No DB, no accounts, no auth.
+
+**Realistic curation funnel (verified):**
+| Stage | Count |
+|---|---|
+| Total GitHub matches | 46,080 |
+| Unique by content hash (est) | ~8,000 |
+| Quality filter (substantive + generic-enough) | ~1,000 |
+| Permissive-licensed (MIT/Apache) | ~500-700 |
+| Hand-curated launch set | 50-100 |
+
+**Risks:**
+- **Curation effort is the bottleneck, not supply.** Needs a tight rubric (generic or clearly-labelled stack-specific; >10 lines; standard frontmatter; clear license) and ruthless rejection
+- **Anthropic could build this themselves.** They haven't in 18 months; community-run directories historically outlast official ones
+- **Claude Code-specific ceiling.** Doesn't generalise to Cursor/other IDEs — intentional focused bet
+- **License review per entry** — most are MIT (fine); some AGPL (risky); some have no license (skip or ask)
+
+**Monetisation tiers (later, if traction):**
+- Sponsored category placement (e.g. "/deploy commands sponsored by Vercel")
+- Affiliate embeds inside commands (`/seo-audit` using Ahrefs → affiliate link)
+- Paid accounts for private team commands (only if V1 hits ~2K MAU)
+
+**Success metric:**
+- Launch: 50 curated commands, indexed, >5 external backlinks within 30 days
+- 90 days: first unsolicited community PR submission
+- 6 months: 150+ commands, ranking page-1 for "claude code slash commands", 25+ referring domains
+
 ---
 
 ## 9. SEO / AEO Operating Discipline
