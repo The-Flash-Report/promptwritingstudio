@@ -25,6 +25,7 @@ export default function Sitemap() {
   // Main site pages (not SEO use cases)
   const mainPages = [
     { title: 'Home', url: '/' },
+    { title: 'Claude Code Guide (Hub)', url: '/claude-code-guide' },
     { title: 'AI Prompt Generator', url: '/ai-prompt-generator' },
     { title: 'Gemini Prompt Generator', url: '/gemini-prompt-generator' },
     { title: 'AI Prompt Examples', url: '/ai-prompt-examples' },
@@ -58,11 +59,28 @@ export default function Sitemap() {
   // Calculator pages - high priority for SEO
   const calculatorPages = [
     { title: 'AI Business Calculators Hub', url: '/calculators', description: 'Complete collection of AI calculators for business' },
+    { title: 'Claude Plan Picker', url: '/calculators/claude-plan-picker', description: 'Pick the right Claude plan — Pro, Max, or API — for your usage' },
+    { title: 'Claude Prompt Cost Calculator', url: '/calculators/claude-prompt-cost', description: 'Estimate API cost per Claude prompt by model, input, and output tokens' },
+    { title: 'Claude Model Selector', url: '/calculators/claude-model-selector', description: 'Pick Opus, Sonnet, or Haiku by use case, quality, and price' },
+    { title: 'Claude Code vs Cursor Cost', url: '/calculators/claude-code-vs-cursor-cost', description: 'Compare monthly cost of Claude Code vs Cursor for your team' },
     { title: 'AI ROI Calculator', url: '/roi-calculator', description: 'Calculate time and money savings with AI automation' },
     { title: 'AI vs Human Cost Calculator', url: '/calculators/ai-cost-comparison', description: 'Compare costs of AI automation vs hiring' },
     { title: 'Content Creation Speed Calculator', url: '/calculators/content-creation-speed', description: 'Calculate time savings using AI for content creation' },
     { title: 'E-commerce AI Calculator', url: '/calculators/ecommerce-ai-savings', description: 'Calculate savings from automating product descriptions and customer service' },
     { title: 'Business Name Generator', url: '/business-name-generator', description: 'Generate unique business names with AI' }
+  ];
+
+  // Claude Code Hub pages - primary site focus
+  const claudeCodePages = [
+    { title: 'Claude Code Guide', url: '/claude-code-guide', description: 'Complete beginner-to-pro guide for Claude Code — install, config, sub-agents, hooks, MCP' },
+    { title: 'Claude Code MCP Stack', url: '/claude-code-mcp-stack', description: 'The MCP servers worth installing — with working configs' },
+    { title: 'Claude Pro vs Max vs API', url: '/claude-pro-vs-max-vs-api', description: 'Which Claude plan fits your usage — with real numbers' },
+    { title: 'CLAUDE.md Playbook', url: '/claude-md-playbook', description: 'Project-level instructions that actually change Claude Code behaviour' },
+    { title: 'Claude Code Hooks Recipes', url: '/claude-code-hooks-recipes', description: 'Pre-tool, post-tool, and stop hooks — with shell examples' },
+    { title: 'Skills vs MCP vs Hooks', url: '/skills-vs-mcp-vs-hooks', description: 'When to reach for each primitive — with decision tree' },
+    { title: 'Claude Code vs Cursor', url: '/claude-code-vs-cursor', description: 'Honest comparison of the two coding agents — strengths, weaknesses, pricing' },
+    { title: 'Claude vs ChatGPT', url: '/claude-vs-chatgpt', description: 'Side-by-side comparison for writers and builders' },
+    { title: 'Which Claude Model?', url: '/ai-models', description: 'Opus, Sonnet, Haiku — price, context window, and use cases' }
   ];
 
   // Tool pages
@@ -111,10 +129,29 @@ export default function Sitemap() {
             </ul>
           </div>
 
+          {/* Claude Code Hub Section - Primary site focus */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-gray-800">
+              Claude Code Hub
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {claudeCodePages.map(page => (
+                <div key={page.url} className="bg-gray-50 p-4 rounded-lg border border-gray-300">
+                  <Link href={page.url} className="text-blue-600 hover:underline font-semibold block mb-1">
+                    {page.title}
+                  </Link>
+                  {page.description && (
+                    <p className="text-sm text-gray-600">{page.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* AI Calculators Section - High Priority */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-yellow-400">
-              🔥 AI Business Calculators
+              AI Business Calculators
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {calculatorPages.map(page => (
@@ -186,7 +223,7 @@ export default function Sitemap() {
             </div>
           ))}
           
-          {/* Admin Section */}
+          {/* Technical Resources */}
           <div className="mt-16 p-6 bg-gray-50 rounded-lg">
             <h2 className="text-xl font-bold mb-4">Technical Resources</h2>
             <ul className="space-y-2">
@@ -197,10 +234,10 @@ export default function Sitemap() {
                 <span className="text-sm text-gray-500 ml-2">(For search engines)</span>
               </li>
               <li>
-                <a href="https://courses.becomeawritertoday.com/admin" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
-                  Course Admin Dashboard
-                </a>
-                <span className="text-sm text-gray-500 ml-2">(Login required)</span>
+                <Link href="/llms.txt" className="text-blue-600 hover:underline">
+                  llms.txt
+                </Link>
+                <span className="text-sm text-gray-500 ml-2">(For AI crawlers)</span>
               </li>
             </ul>
           </div>

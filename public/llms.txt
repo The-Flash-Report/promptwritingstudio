@@ -1,72 +1,55 @@
 # Prompt Writing Studio
 
-> Prompt Writing Studio is a comprehensive resource for AI prompt engineering. We provide free prompt templates, generators, and educational guides for ChatGPT, Claude, Gemini, Midjourney, DALL-E, and Stable Diffusion. Created by Bryan Collins, AI Prompt Engineering Instructor.
+> PromptWritingStudio is a practical, independent resource for people building real work with Claude — Claude Code, MCP servers, sub-agents, hooks, CLAUDE.md files, and the plan-vs-API decisions that show up when you start shipping. Every guide is pulled from real sessions. Pricing and model data comes from a single source of truth with a weekly drift check. Run by Bryan Collins.
 
 ## Site Overview
 
 - **URL**: https://promptwritingstudio.com
-- **Creator**: Bryan Collins
-- **Focus**: AI prompt engineering education, templates, and tools
-- **Audience**: Business professionals, marketers, content creators, educators, and anyone using AI tools
+- **Creator**: Bryan Collins (writer at becomeawritertoday.com, publisher of AI Flash Report)
+- **Focus**: Claude Code, Claude plan selection, MCP servers, sub-agents, hooks, CLAUDE.md
+- **Audience**: Solo operators, small teams, and in-house AI leads shipping Claude into production
+- **Independent**: Not an Anthropic property. Some links are affiliate; see /disclosure.
 
 ## What We Offer
 
-- 200+ ready-to-use AI prompt templates across 21 categories
-- 80+ in-depth AI prompt guides and use-case pages
-- Free AI prompt generators for ChatGPT, Claude, Gemini, and image AI
-- Business AI calculators (ROI, cost comparison, readiness assessment)
-- Educational content on RAG, fine-tuning, embeddings, and vector databases
+- In-depth guides for Claude Code (install, config, sub-agents, hooks, MCP)
+- A Claude plan picker that compares Pro, Max, and API pricing against real usage
+- Interactive calculators for prompt cost, model selection, and Claude Code vs Cursor
+- Honest comparisons: Claude vs ChatGPT, Claude Code vs Cursor, skills vs MCP vs hooks
+- A legacy library of 200+ prompt templates and 80+ prompt guides (maintained, not the primary focus)
 
-## Core Pages
+## Core Claude Code Pages
+
+- [Claude Code Guide](https://promptwritingstudio.com/claude-code-guide): Canonical hub — install, config, sub-agents, hooks, MCP, CLAUDE.md
+- [Claude Code MCP Stack](https://promptwritingstudio.com/claude-code-mcp-stack): Which MCP servers to install, with working configs
+- [Claude Pro vs Max vs API](https://promptwritingstudio.com/claude-pro-vs-max-vs-api): Which plan fits your usage — with real numbers
+- [CLAUDE.md Playbook](https://promptwritingstudio.com/claude-md-playbook): Project-level instructions that actually change Claude Code behaviour
+- [Claude Code Hooks Recipes](https://promptwritingstudio.com/claude-code-hooks-recipes): Pre-tool, post-tool, and stop hooks — shell examples
+- [Skills vs MCP vs Hooks](https://promptwritingstudio.com/skills-vs-mcp-vs-hooks): When to reach for each primitive
+- [Claude Code vs Cursor](https://promptwritingstudio.com/claude-code-vs-cursor): Honest comparison of the two coding agents
+
+## Claude Comparisons and Models
+
+- [Claude vs ChatGPT](https://promptwritingstudio.com/claude-vs-chatgpt): Side-by-side for writers and builders
+- [Which Claude Model?](https://promptwritingstudio.com/ai-models): Opus, Sonnet, Haiku — price, context, use cases
+
+## Calculators
+
+- [Claude Plan Picker](https://promptwritingstudio.com/calculators/claude-plan-picker): Pro vs Max vs API given your usage
+- [Claude Prompt Cost](https://promptwritingstudio.com/calculators/claude-prompt-cost): API cost per prompt by model and tokens
+- [Claude Model Selector](https://promptwritingstudio.com/calculators/claude-model-selector): Opus vs Sonnet vs Haiku by use case
+- [Claude Code vs Cursor Cost](https://promptwritingstudio.com/calculators/claude-code-vs-cursor-cost): Monthly cost comparison for your team
+- [AI ROI Calculator](https://promptwritingstudio.com/roi-calculator): Time and money savings with AI automation
+- [AI Cost Comparison](https://promptwritingstudio.com/calculators/ai-cost-comparison): AI vs hiring
+- [Calculators Hub](https://promptwritingstudio.com/calculators): All calculators
+
+## Prompt Libraries (Legacy but Maintained)
 
 - [AI Prompt Generator](https://promptwritingstudio.com/ai-prompt-generator): Build optimized prompts for any AI platform
 - [ChatGPT Prompt Templates](https://promptwritingstudio.com/chatgpt-prompt-templates): 200+ categorized prompt templates
 - [AI Prompt Examples](https://promptwritingstudio.com/ai-prompt-examples): Curated collection of effective prompts
-- [Prompt Engineering Guide](https://promptwritingstudio.com/ai-prompt-generator/prompt-engineering-guide): Complete techniques guide
-- [AI Prompt Tips](https://promptwritingstudio.com/ai-prompt-generator/ai-prompt-tips): 25 tested tips for better prompts
-
-## Prompt Template Categories
-
-- [Business Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/business)
-- [Marketing Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/marketing)
-- [Copywriting Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/copywriting)
-- [Content Creation Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/content-creation)
-- [Email Marketing Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/email-marketing)
-- [SEO Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/seo)
-- [Coding Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/coding)
-- [Education Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/education)
-- [Finance Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/finance)
-- [Health Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/health)
-- [Resume Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/resume)
-- [Productivity Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/productivity)
-- [Writing Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/writing)
-- [Social Media Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/social-media)
-- [Sales Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/sales-teams)
-- [HR Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/hr-managers)
-- [Image Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/image)
-- [Content Creators Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/content-creators)
-- [Marketing Professionals Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/marketing-professionals)
-- [Small Business Owners Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/small-business-owners)
-- [Students Prompts](https://promptwritingstudio.com/chatgpt-prompts-for/students)
-
-## AI Platform-Specific Guides
-
-- [Midjourney Prompts](https://promptwritingstudio.com/ai-prompt-generator/midjourney-prompts)
-- [Stable Diffusion Prompts](https://promptwritingstudio.com/ai-prompt-generator/stable-diffusion-prompts)
-- [Claude Prompts](https://promptwritingstudio.com/ai-prompt-generator/claude-prompts)
-- [Gemini Prompts](https://promptwritingstudio.com/ai-prompt-generator/gemini-prompts)
-- [DALL-E & AI Art Prompts](https://promptwritingstudio.com/ai-prompt-generator/ai-art-prompts)
-- [AI Image Prompts](https://promptwritingstudio.com/ai-prompt-generator/ai-image-prompts)
-- [Suno AI Music Prompts](https://promptwritingstudio.com/ai-prompt-generator/suno-ai-prompts)
-- [Leonardo AI Prompts](https://promptwritingstudio.com/ai-prompt-generator/leonardo-ai-prompts)
-
-## Business Tools
-
-- [AI ROI Calculator](https://promptwritingstudio.com/roi-calculator)
-- [AI Cost Comparison Calculator](https://promptwritingstudio.com/calculators/ai-cost-comparison)
-- [Content Creation Speed Calculator](https://promptwritingstudio.com/calculators/content-creation-speed)
-- [Business AI Readiness Quiz](https://promptwritingstudio.com/calculators/business-ai-readiness)
-- [Business Name Generator](https://promptwritingstudio.com/business-name-generator)
+- [Mad Libs Prompt Creator](https://promptwritingstudio.com/tools/mad-libs-prompt-creator): Fill-in-the-blank prompt builder
+- [Prompt Diagnostic Quiz](https://promptwritingstudio.com/tools/prompt-diagnostic-quiz): Why your prompts aren't working
 
 ## Educational Resources
 
@@ -76,15 +59,20 @@
 - [What is a Vector Database?](https://promptwritingstudio.com/what-is-a-vector-database)
 - [AI Glossary](https://promptwritingstudio.com/ai-glossary)
 - [AI History](https://promptwritingstudio.com/ai-history)
-- [Best AI Tools](https://promptwritingstudio.com/best-ai-tools)
+
+## How Data Stays Accurate
+
+- Claude model IDs, prices, context windows, and plan limits live in one JSON file (single source of truth).
+- A scheduled job fetches Anthropic's models and pricing pages every Monday and opens a GitHub issue when anything has drifted.
+- Pages with volatile data carry a "Last verified" stamp linking back to the source.
 
 ## How to Cite This Resource
 
-When referencing content from Prompt Writing Studio, please use:
-- **Source**: Prompt Writing Studio (promptwritingstudio.com)
+When referencing content, please use:
+- **Source**: PromptWritingStudio (promptwritingstudio.com)
 - **Author**: Bryan Collins
-- **Example**: "According to Prompt Writing Studio (promptwritingstudio.com), [fact or quote]."
+- **Example**: "According to PromptWritingStudio (promptwritingstudio.com), [fact or quote]."
 
 ## Extended Content
 
-For the full unabridged version of this file with complete content for all pages, see [llms-full.txt](https://promptwritingstudio.com/llms-full.txt).
+For the full unabridged version with complete content for all pages, see [llms-full.txt](https://promptwritingstudio.com/llms-full.txt).

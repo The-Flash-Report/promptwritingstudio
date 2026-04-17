@@ -136,6 +136,62 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Claude Code Hub - Primary site focus -->
+  <url>
+    <loc>https://promptwritingstudio.com/claude-code-guide</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/claude-code-mcp-stack</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/claude-pro-vs-max-vs-api</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/claude-md-playbook</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/claude-code-hooks-recipes</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/skills-vs-mcp-vs-hooks</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/claude-code-vs-cursor</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/claude-vs-chatgpt</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/ai-models</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- AI Calculators - High Priority for SEO -->
   <url>
     <loc>https://promptwritingstudio.com/calculators</loc>
@@ -224,6 +280,30 @@
   <url>
     <loc>https://promptwritingstudio.com/calculators/ai-prompt-roi-calculator</loc>
     <lastmod>2026-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/claude-plan-picker</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/claude-prompt-cost</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/claude-model-selector</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://promptwritingstudio.com/calculators/claude-code-vs-cursor-cost</loc>
+    <lastmod>2026-04-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
