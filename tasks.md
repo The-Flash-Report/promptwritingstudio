@@ -9,6 +9,42 @@
 
 ---
 
+## 🆕 CLAUDE PIVOT — SESSION LOG (April 17, 2026)
+
+Site has pivoted to a Claude-focused content hub. Key sweeps landed in commits `897d0c2`, `e925e96`, `3525885`, `71a79ec`:
+
+- Claude Code Hub IA, nav, and footer wiring
+- Sitemap / `llms.txt` / human sitemap reflect Claude pivot
+- 2024-era Claude / GPT references swept across site (ai-models, claude-vs-chatgpt, vision-ai-prompts, ai-history, LiveChatTester, API handlers now use `claude-haiku-4-5` / `claude-sonnet-4-6` aliases)
+- `/legal-disclaimer` page added and linked in footer next to Privacy Policy
+
+### Still Open (from the 14-item QA list)
+
+- [ ] **#37 — IA sanity review** after menu/footer changes (light touch; click every nav item, confirm nothing orphaned)
+- [ ] **#42 — Run `promptwritingstudio-qa` agent on the 3 new hubs** (`/claude-code-mcp-stack`, `/claude-pro-vs-max-vs-api`, `/calculators/claude-plan-picker`) for SEO/AEO/LLM coverage
+- [ ] **#38 — Final audit of course-push CTAs** on secondary pages (hero + FloatingCTA already done; ~27 pages still reference the course purchase URL in supplementary CTAs — triage which are fine vs which need replacing with newsletter/Claude-hub CTAs)
+- [ ] **#29 — Slash-command registry** page (deferred; future Phase 4 work)
+
+### New — `/legal-sweep` skill (portfolio-wide)
+
+Created at `~/.claude/skills/legal-sweep/SKILL.md` + `~/.claude/commands/legal-sweep.md`. Stack-aware (Next.js Pages Router, Astro, WordPress-skip). Audits for disclaimer page + footer-next-to-privacy-policy, creates/wires if missing, commits.
+
+Ran against **vendors.ie** (commit `ef31a5b` in `~/src/vendors`). Remaining sites to sweep:
+
+- [ ] `/legal-sweep` on **tenderwatch.ie** (`~/src/tenders` — Astro)
+- [ ] `/legal-sweep` on **fluentatdesk.com** (`~/src/fluentatdesk`)
+- [ ] `/legal-sweep` on **readingcurator.com** (`~/src/readingcurator`)
+- [ ] `/legal-sweep` on the flash reports (aiflashreport, cryptoflashreport, fitnessflashreport)
+- [ ] `/legal-sweep` on **glitchtexteffect.com** (`~/src/glitch-text-generator`)
+- [ ] `/legal-sweep` on **mytriathloncalculator.com** (`~/src/tri-fuel-magic`)
+- [ ] BAWT — handle in wp-admin (skill skips WordPress by design)
+
+### Vendors.ie follow-up (separate repo, flagged by subagent)
+
+Uncommitted WIP sitting in `~/src/vendors` from before the legal-sweep: header-nav restructure (About/AI Audit/List Your Software/Contact → Company dropdown), 9 deleted YAML briefs + 5 deleted `.mdx` posts, new `how-to-start-a-business-ireland.astro`, `revolut-business-review-ireland.astro`, `_redirects`, `.claude/content-profile.md`, `.claude/monetisation-profile.md`. Needs triage + commit separately from the legal work.
+
+---
+
 ## 🚀 MAJOR ACCOMPLISHMENTS (Completed)
 
 ### ✅ Advanced AI Integration Platform
