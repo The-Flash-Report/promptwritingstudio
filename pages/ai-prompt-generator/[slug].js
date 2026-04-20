@@ -131,18 +131,16 @@ export default function UseCasePromptPage({ useCaseData, relatedUseCases }) {
           <p className="text-sm text-gray-400 mb-6">Last updated: February 2026</p>
 
           
-          {/* Course CTA Button */}
+          {/* Claude Code CTA */}
           <div className="text-center">
-            <p className="text-lg mb-4 text-white">Want to master AI prompts like a pro?</p>
-            <Link 
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" 
+            <p className="text-lg mb-4 text-white">Want to put these prompts to work inside Claude Code?</p>
+            <Link
+              href="/claude-code-guide"
               className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 font-semibold inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Join Prompt Writing Studio
+              Start with Claude Code
             </Link>
-            <p className="text-sm text-gray-300 mt-3">Learn to create powerful AI prompts that get results</p>
+            <p className="text-sm text-gray-300 mt-3">The full guide to Claude Code, MCP, and hooks — free.</p>
           </div>
         </div>
       </section>

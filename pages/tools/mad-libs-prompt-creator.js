@@ -685,10 +685,10 @@ export default function MadLibsPromptCreator() {
               Get access to 100+ professional prompt templates, advanced techniques, and exclusive training
             </p>
             <a
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+              href="/claude-code-guide"
               className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
             >
-              Upgrade to PromptWritingStudio Pro
+              Start with Claude Code
             </a>
           </div>
         </section>

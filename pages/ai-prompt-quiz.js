@@ -304,15 +304,13 @@ export default function AIPromptQuiz() {
               </ul>
 
               <div className="bg-[#FFDE59] bg-opacity-20 border border-[#FFDE59] rounded-lg p-4">
-                <h4 className="font-bold text-[#1A1A1A] mb-2">Perfect Course Match:</h4>
-                <p className="text-[#333333] mb-4">{profile.courseMatch}</p>
-                <a 
-                  href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                <h4 className="font-bold text-[#1A1A1A] mb-2">Next step:</h4>
+                <p className="text-[#333333] mb-4">Put your prompt skills to work inside Claude Code — the complete guide covers setup, MCP, hooks, and the workflows that matter.</p>
+                <a
+                  href="/claude-code-guide"
                   className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  View Course Options
+                  Start with Claude Code
                 </a>
               </div>
             </div>

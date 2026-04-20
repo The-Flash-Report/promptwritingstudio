@@ -360,18 +360,18 @@ export default function VideoTutorialsPage() {
               </div>
               
               <div className="bg-white p-8 rounded-lg shadow-sm">
-                <div className="text-4xl mb-4">🎯</div>
+                <div className="text-4xl mb-4">⌨️</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Complete Course
+                  Claude Code Guide
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Get the full PromptWritingStudio course with lifetime access
+                  The full guide to Claude Code, MCP servers, sub-agents, and hooks — free.
                 </p>
-                <a 
-                  href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                <a
+                  href="/claude-code-guide"
                   className="text-yellow-600 font-semibold hover:text-yellow-700"
                 >
-                  Get the Course →
+                  Read the Guide →
                 </a>
               </div>
             </div>
@@ -389,10 +389,10 @@ export default function VideoTutorialsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                href="/claude-code-guide"
                 className="bg-white text-yellow-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
               >
-                Get the Complete Course
+                Start with Claude Code
               </a>
               <a
                 href="/ai-prompt-generator"

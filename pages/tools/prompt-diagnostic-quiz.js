@@ -402,10 +402,10 @@ export default function PromptDiagnosticQuiz() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                    href="/claude-code-guide"
                     className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors inline-block"
                   >
-                    🎯 Get Advanced AI Prompt Training
+                    ⌨️ Start with Claude Code
                   </a>
                   <p className="text-sm opacity-75">
                     Join 2,000+ professionals who've mastered AI prompting

@@ -164,10 +164,10 @@ export default function YouTubeVideoSection({
                   Join thousands of creators who've transformed their content with AI
                 </p>
                 <a
-                  href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                  href="/claude-code-guide"
                   className="inline-block bg-white text-yellow-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
                 >
-                  Get the Complete Course
+                  Start with Claude Code
                 </a>
               </div>
             </div>

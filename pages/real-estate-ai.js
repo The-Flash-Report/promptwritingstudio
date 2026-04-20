@@ -151,10 +151,10 @@ export default function RealEstateAI() {
                 See Real Estate AI Prompts
               </Link>
               <Link
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                href="/claude-code-guide"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
               >
-                Get the Full Course
+                Start with Claude Code
               </Link>
             </div>
             <div className="text-white text-lg">
@@ -220,10 +220,10 @@ export default function RealEstateAI() {
 
             <div className="text-center mt-12">
               <Link
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                href="/claude-code-guide"
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
               >
-                Get 100+ Real Estate AI Prompts in the Full Course
+                Start with Claude Code
               </Link>
             </div>
           </div>
@@ -292,10 +292,10 @@ export default function RealEstateAI() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                href="/claude-code-guide"
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
               >
-                Get the Full AI Prompt Course
+                Start with Claude Code
               </Link>
               <Link
                 href="/ai-prompt-generator"
