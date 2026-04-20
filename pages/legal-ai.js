@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "Which AI tool is best for legal professionals?",
-    answer: "For general legal writing and research tasks, Claude and ChatGPT (GPT-4) are both excellent. Claude tends to be more careful and nuanced with complex legal reasoning, while GPT-4 is strong at drafting and formatting. For firms needing enterprise security, tools like Harvey AI, CoCounsel (by Thomson Reuters), and Casetext are purpose-built for legal work with proper data handling. Our course teaches prompt techniques that work across all platforms."
+    answer: "For general legal writing and research tasks, Claude and ChatGPT (GPT-4) are both excellent. Claude tends to be more careful and nuanced with complex legal reasoning, while GPT-4 is strong at drafting and formatting. For firms needing enterprise security, tools like Harvey AI, CoCounsel (by Thomson Reuters), and Casetext are purpose-built for legal work with proper data handling. The prompt techniques on this page work across all platforms."
   },
   {
     question: "Can AI help with contract review and analysis?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "Do I need technical skills to use AI prompts for legal work?",
-    answer: "No. If you can write a clear email, you can write an effective AI prompt. Our course teaches legal professionals how to structure prompts using plain language. The key skills are being specific about what you need, providing relevant context, and knowing how to review and refine AI output. No coding, programming, or technical background is required."
+    answer: "No. If you can write a clear email, you can write an effective AI prompt. These templates show legal professionals how to structure prompts using plain language. The key skills are being specific about what you need, providing relevant context, and knowing how to review and refine AI output. No coding, programming, or technical background is required."
   }
 ]
 

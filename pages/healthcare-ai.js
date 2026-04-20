@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "What AI tools work best for healthcare professionals?",
-    answer: "ChatGPT (GPT-4) and Claude are the most versatile general-purpose AI tools for healthcare writing tasks. For clinical documentation specifically, tools like Nuance DAX, Abridge, and Suki are purpose-built. Our course teaches prompt engineering techniques that work across all major AI platforms so you can use whichever tool your organization approves."
+    answer: "ChatGPT (GPT-4) and Claude are the most versatile general-purpose AI tools for healthcare writing tasks. For clinical documentation specifically, tools like Nuance DAX, Abridge, and Suki are purpose-built. The prompt templates here work across all major AI platforms so you can use whichever tool your organization approves."
   },
   {
     question: "Can AI help with patient communication and education materials?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "Do I need technical skills to use AI prompts in healthcare?",
-    answer: "No. If you can type an email, you can use AI prompts. Our course is designed specifically for healthcare professionals with no programming or technical background. We teach you how to write clear, structured prompts that produce reliable, useful output for your specific clinical or administrative needs."
+    answer: "No. If you can type an email, you can use AI prompts. These templates are built for healthcare professionals with no programming or technical background — clear, structured prompts that produce reliable, useful output for your specific clinical or administrative needs."
   },
   {
     question: "How can AI help reduce physician burnout?",

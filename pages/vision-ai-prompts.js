@@ -402,7 +402,7 @@ export default function VisionAIPrompts() {
               Master Vision AI Prompting and Multimodal AI
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Vision prompting is one of the most underused AI capabilities. Learn how to write prompts that turn images into structured data, actionable insights, and professional analysis. Our course covers text prompting, vision prompting, and advanced techniques for every major AI platform.
+              Vision prompting is one of the most underused AI capabilities. Learn how to write prompts that turn images into structured data, actionable insights, and professional analysis. The prompt library on this site covers text prompting, vision prompting, and advanced techniques for every major AI platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link

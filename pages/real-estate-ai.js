@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     question: "What AI tools work best for real estate professionals?",
-    answer: "ChatGPT and Claude are the most versatile for real estate writing tasks like listings, emails, and content creation. For visual content, tools like Canva AI help create social media graphics and listing presentations. For market data analysis, tools that integrate with MLS data provide the best results. Our course teaches prompt engineering techniques that work across all major AI platforms so you can use whichever tool fits your workflow."
+    answer: "ChatGPT and Claude are the most versatile for real estate writing tasks like listings, emails, and content creation. For visual content, tools like Canva AI help create social media graphics and listing presentations. For market data analysis, tools that integrate with MLS data provide the best results. The prompt templates here work across all major AI platforms so you can use whichever tool fits your workflow."
   },
   {
     question: "How much time can AI save me on property listings?",
@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "Do I need technical skills to use AI prompts for real estate?",
-    answer: "No. If you can type a text message, you can use AI prompts. Our course is designed specifically for real estate professionals with no technical background. You copy a prompt template, fill in the details about your listing or client situation, paste it into ChatGPT or Claude, and get a polished draft in seconds. No coding, no special software, no learning curve beyond what we teach in the course."
+    answer: "No. If you can type a text message, you can use AI prompts. These templates are built for real estate professionals with no technical background. You copy a prompt template, fill in the details about your listing or client situation, paste it into ChatGPT or Claude, and get a polished draft in seconds. No coding, no special software, no steep learning curve."
   }
 ]
 

@@ -196,8 +196,8 @@ export default function ROICalculatorPage() {
               Ready to Start Saving Time and Money?
             </h2>
             <p className="text-lg text-gray-600 mb-4">
-              Our PromptWritingStudio course teaches you exactly how to implement 
-              these AI automations in your business, step by step.
+              The Claude Code guide shows you exactly how to implement these AI
+              automations in your business, step by step.
             </p>
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
               <p className="text-sm text-blue-700">

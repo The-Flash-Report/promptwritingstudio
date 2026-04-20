@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     question: "What AI tools work best for educators?",
-    answer: "ChatGPT (GPT-4) and Claude are the most versatile general-purpose AI tools for educators. ChatGPT is particularly strong at generating creative lesson activities, while Claude excels at producing nuanced, well-structured educational content. Google Gemini integrates well with Google Workspace tools many schools already use. For specialized needs, tools like MagicSchool AI, Diffit, and Curipod are purpose-built for educators. Our course teaches prompt techniques that work across all platforms."
+    answer: "ChatGPT (GPT-4) and Claude are the most versatile general-purpose AI tools for educators. ChatGPT is particularly strong at generating creative lesson activities, while Claude excels at producing nuanced, well-structured educational content. Google Gemini integrates well with Google Workspace tools many schools already use. For specialized needs, tools like MagicSchool AI, Diffit, and Curipod are purpose-built for educators. The prompt techniques on this page work across all platforms."
   },
   {
     question: "How can AI help with grading and feedback?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     question: "Can I use these prompts for any grade level or subject?",
-    answer: "Yes. The prompts in our course include placeholders for grade level, subject area, and specific learning objectives. They work for elementary through higher education, and across subjects including ELA, math, science, social studies, world languages, arts, and CTE. The prompt templates are designed to be adapted to your specific teaching context."
+    answer: "Yes. The prompts on this page include placeholders for grade level, subject area, and specific learning objectives. They work for elementary through higher education, and across subjects including ELA, math, science, social studies, world languages, arts, and CTE. The prompt templates are designed to be adapted to your specific teaching context."
   },
   {
     question: "What about student data privacy when using AI tools?",
