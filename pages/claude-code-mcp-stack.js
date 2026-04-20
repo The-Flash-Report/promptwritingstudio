@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import LastVerified from '../components/LastVerified'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
 const faqs = [
@@ -205,6 +206,14 @@ export default function ClaudeCodeMcpStack() {
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
               Five Model Context Protocol servers worth the context tokens — filesystem, github, playwright, postgres, sequential-thinking — and eleven I stopped installing.
             </p>
+            <div className="mt-6">
+              <LastVerified
+                date="2026-04-17"
+                source="https://code.claude.com/docs/en/mcp"
+                label="MCP ecosystem verified"
+                className="!text-white/70"
+              />
+            </div>
           </div>
         </section>
 
@@ -347,6 +356,9 @@ export default function ClaudeCodeMcpStack() {
               </table>
             </div>
             <p className="text-sm text-gray-500 mt-4">On Sonnet 4.6 (1M context) that's 0.8% of the window. On Haiku 4.5 (200K) it's 3.9%. Either way: trivial compared to a 15-server kitchen-sink stack eating 25K+ tokens before you type anything.</p>
+            <p className="text-sm text-gray-500 mt-2">
+              Wondering which Claude plan covers this stack? See the <Link href="/claude-pro-vs-max-vs-api" className="underline hover:text-[#1A1A1A]">Pro vs Max vs API comparison</Link>.
+            </p>
           </div>
         </section>
 
@@ -373,7 +385,7 @@ export default function ClaudeCodeMcpStack() {
             <ul className="text-sm space-y-2 text-[#333333]">
               <li>• <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#1A1A1A]">modelcontextprotocol.io</a> — official spec</li>
               <li>• <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#1A1A1A]">github.com/modelcontextprotocol/servers</a> — reference server implementations</li>
-              <li>• <a href="https://docs.claude.com/en/docs/claude-code/mcp" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#1A1A1A]">Claude Code MCP documentation</a> — setup + authentication</li>
+              <li>• <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#1A1A1A]">Claude Code MCP documentation</a> — setup + authentication</li>
             </ul>
           </div>
         </section>

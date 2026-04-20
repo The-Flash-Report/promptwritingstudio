@@ -20,9 +20,9 @@ Site has pivoted to a Claude-focused content hub. Key sweeps landed in commits `
 
 ### Still Open (from the 14-item QA list)
 
-- [ ] **#37 — IA sanity review** after menu/footer changes (light touch; click every nav item, confirm nothing orphaned)
-- [ ] **#42 — Run `promptwritingstudio-qa` agent on the 3 new hubs** (`/claude-code-mcp-stack`, `/claude-pro-vs-max-vs-api`, `/calculators/claude-plan-picker`) for SEO/AEO/LLM coverage
-- [ ] **#38 — Final audit of course-push CTAs** on secondary pages (hero + FloatingCTA already done; ~27 pages still reference the course purchase URL in supplementary CTAs — triage which are fine vs which need replacing with newsletter/Claude-hub CTAs)
+- [x] **#37 — IA sanity review** — all 31 nav + footer routes resolve, no 404s. Removed stale `pages/ai-prompt-examples.js.bak` backup file.
+- [x] **#42 — Run `promptwritingstudio-qa` agent on the 3 new hubs** — done 2026-04-20. QA quick-wins applied: added `LastVerified` stamp to `/claude-code-mcp-stack`, fixed `docs.claude.com` link to canonical `code.claude.com/docs/en/mcp`, added cross-link from MCP stack to Pro vs Max vs API, and moved Haiku 3 to `"status": "retired"` in `data/claude-models.json` (retired 2026-04-19). Remaining P2: course CTA hooks on the 3 hubs — deferred to #38 triage so policy is consistent.
+- [ ] **#38 — Final audit of course-push CTAs** on secondary pages (hero + FloatingCTA already done; 33 files still reference the course purchase URL in supplementary CTAs — triage completed 2026-04-20, awaiting policy call on which to keep/swap before mass-apply)
 - [ ] **#29 — Slash-command registry** page (deferred; future Phase 4 work)
 
 ### New — `/legal-sweep` skill (portfolio-wide)

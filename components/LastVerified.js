@@ -1,4 +1,4 @@
-export default function LastVerified({ date, source, className = '' }) {
+export default function LastVerified({ date, source, label = 'Pricing verified', className = '' }) {
   if (!date) return null
   const formatted = new Date(date + (date.length === 7 ? '-01' : '')).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -7,7 +7,7 @@ export default function LastVerified({ date, source, className = '' }) {
   })
   return (
     <p className={`text-xs text-gray-500 ${className}`}>
-      Pricing verified {formatted}
+      {label} {formatted}
       {source && (
         <>
           {' · '}

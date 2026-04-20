@@ -119,8 +119,8 @@
       "inputPricePerMTok": 0.25,
       "outputPricePerMTok": 1.25,
       "contextTokens": 200000,
-      "status": "deprecated",
-      "retiresOn": "2026-04-19"
+      "status": "retired",
+      "retiredOn": "2026-04-19"
     }
   ]
 }
