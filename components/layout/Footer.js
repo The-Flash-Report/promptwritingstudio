@@ -20,6 +20,7 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-4">⌨️ Claude Code Hub</h4>
             <ul className="space-y-2">
               <li><Link href="/claude-code-guide" className="text-gray-400 hover:text-white transition">Claude Code Guide</Link></li>
+              <li><Link href="/claude-code-skills" className="text-gray-400 hover:text-white transition">Skills Catalogue</Link></li>
               <li><Link href="/claude-code-mcp-stack" className="text-gray-400 hover:text-white transition">Minimum Viable MCP Stack</Link></li>
               <li><Link href="/claude-pro-vs-max-vs-api" className="text-gray-400 hover:text-white transition">Pro vs Max vs API</Link></li>
               <li><Link href="/calculators/claude-plan-picker" className="text-gray-400 hover:text-white transition">Claude Plan Picker</Link></li>

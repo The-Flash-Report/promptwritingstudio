@@ -13,6 +13,7 @@ const toolsItems = [
 
 const learnItems = [
   { href: '/claude-code-guide', label: '⌨️ Claude Code Guide', bold: true },
+  { href: '/claude-code-skills', label: '🧰 Claude Code Skills', bold: true },
   { href: '/claude-code-mcp-stack', label: '🧩 Claude Code MCP Stack', bold: true },
   { href: '/claude-pro-vs-max-vs-api', label: '💳 Claude Pro vs Max vs API', bold: true },
   { type: 'divider' },

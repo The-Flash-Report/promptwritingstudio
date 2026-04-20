@@ -1,0 +1,932 @@
+{
+  "_meta": {
+    "lastVerified": "2026-04-20",
+    "curationPolicy": "Only skills/subagents/slash-commands from repos with explicit permissive licences (MIT, Apache-2.0, BSD, CC0, Unlicense). Originals attributed to author. Anything unclear or NC/ND → excluded.",
+    "notes": "Single source of truth for the Claude Code Skills hub at /claude-code-skills. Every page reads from this file. Drift check in /pws-health should flag entries older than 90 days since lastChecked.",
+    "sources": [
+      {"repo": "anthropics/skills", "licence": "Apache-2.0", "url": "https://github.com/anthropics/skills"},
+      {"repo": "ComposioHQ/awesome-claude-skills", "licence": "Apache-2.0", "url": "https://github.com/ComposioHQ/awesome-claude-skills"},
+      {"repo": "wshobson/agents", "licence": "MIT", "url": "https://github.com/wshobson/agents"},
+      {"repo": "luongnv89/claude-howto", "licence": "MIT", "url": "https://github.com/luongnv89/claude-howto"},
+      {"repo": "alirezarezvani/claude-skills", "licence": "MIT", "url": "https://github.com/alirezarezvani/claude-skills"},
+      {"repo": "iannuttall/claude-agents", "licence": "MIT", "url": "https://github.com/iannuttall/claude-agents"},
+      {"repo": "daymade/claude-code-skills", "licence": "MIT", "url": "https://github.com/daymade/claude-code-skills"},
+      {"repo": "VoltAgent/awesome-claude-code-subagents", "licence": "MIT", "url": "https://github.com/VoltAgent/awesome-claude-code-subagents"}
+    ],
+    "excluded": [
+      {"repo": "hesreallyhim/awesome-claude-code", "licence": "CC BY-NC-ND 4.0", "reason": "No derivatives, no commercial reuse — safe to link, unsafe to republish entries."}
+    ]
+  },
+  "categories": [
+    {"id": "git", "name": "Git & version control", "description": "Skills that handle commits, PRs, branching, and code history."},
+    {"id": "qa", "name": "QA, review, security", "description": "Skills that review code, run tests, and catch bugs before they ship."},
+    {"id": "content", "name": "Content production", "description": "Skills that draft, edit, and repurpose written content."},
+    {"id": "seo", "name": "SEO, AEO, LLM-citability", "description": "Skills that improve search visibility and LLM citation rates."},
+    {"id": "infra", "name": "Deploy & infrastructure", "description": "Skills that handle builds, deploys, and runtime infra."},
+    {"id": "research", "name": "Research & analysis", "description": "Skills that gather, summarise, and synthesise information."},
+    {"id": "drift", "name": "Drift & regression monitoring", "description": "Skills that catch decay in data, copy, and content over time."},
+    {"id": "meta", "name": "Meta: skills that build skills", "description": "Skills that help you write, test, and maintain other skills."},
+    {"id": "legal", "name": "Legal & compliance", "description": "Skills that check disclaimers, licences, and compliance gaps."},
+    {"id": "domain", "name": "Domain & portfolio ops", "description": "Skills for managing multiple sites, vendors, or brand surfaces."}
+  ],
+  "tiers": {
+    "signal": {"label": "High signal", "description": "Battle-tested, used daily, high-impact."},
+    "solid": {"label": "Solid", "description": "Useful in the right context, worth knowing."},
+    "situational": {"label": "Situational", "description": "Niche or task-specific — add when the need arises."}
+  },
+  "skills": [
+    {
+      "slug": "commit-helper",
+      "name": "Commit Helper",
+      "category": "git",
+      "tier": "signal",
+      "tags": ["conventional-commits", "workflow", "daily"],
+      "purpose": "Stages relevant changes, writes a conventional-commit message, and pushes — in one command.",
+      "shortAnswer": "The single most-used slash command for solo developers. Replaces the 'stage, message, push' three-step with a turn-by-turn workflow that writes a conventional-commit message you'd actually approve.",
+      "whenToUse": "Every time you finish a chunk of work. Best when your changes span 2-10 files and need a semantic commit message, not 'wip'.",
+      "setup": [
+        "Save as ~/.claude/commands/commit.md with the instructions inline (git status, git diff, read recent commits for style, stage relevant files, commit, push).",
+        "Make sure your repo's commit-message convention is documented — the skill picks up context from .claude/rules/git-workflow.md or CLAUDE.md.",
+        "In Claude Code, type /commit when ready to ship."
+      ],
+      "exampleTranscript": "You: /commit\nClaude: [runs git status, git diff --staged, git log -3]\n       Staged 4 files. Change: CTAs swapped to /claude-code-guide on 18 learning pages.\n       Message: refactor: swap course CTAs → /claude-code-guide on 18 pages\n       Committed → pushed to main.",
+      "source": {"type": "original", "author": "Bryan Collins", "repo": "promptwritingstudio", "licence": "MIT (author's own work)"},
+      "caveats": "Don't combine with --no-verify. Skill should warn and refuse if hooks are skipped.",
+      "related": ["pr-open", "review-pr", "changelog"]
+    },
+    {
+      "slug": "pr-open",
+      "name": "PR Open",
+      "category": "git",
+      "tier": "signal",
+      "tags": ["github", "pull-request", "workflow"],
+      "purpose": "Opens a pull request with a structured description drawn from the full commit range, not just the latest commit.",
+      "shortAnswer": "The PR description is the single most-overlooked piece of shipping work. This skill reads the full diff between your branch and main, groups changes by theme, and produces a summary + test plan that's actually reviewable.",
+      "whenToUse": "Any PR with more than 2 commits. Especially valuable when the branch has been open for a few days and you've forgotten what the early commits did.",
+      "setup": [
+        "Install gh CLI and authenticate (gh auth login).",
+        "Save as ~/.claude/commands/pr.md. Skill should run: git status, git diff main...HEAD, git log main..HEAD --oneline, then draft title + body.",
+        "Uses heredoc to pass body so formatting survives."
+      ],
+      "exampleTranscript": "You: /pr\nClaude: [reads 11 commits + diff]\n       Title: Claude-pivot content sweep\n       Body: ## Summary (3 bullets) / ## Test plan (4 checkboxes)\n       Opens PR → returns URL.",
+      "source": {"type": "community", "author": "luongnv89", "authorUrl": "https://github.com/luongnv89", "repo": "luongnv89/claude-howto", "repoUrl": "https://github.com/luongnv89/claude-howto", "licence": "MIT"},
+      "caveats": "For huge PRs (30+ commits) the body can get unwieldy — consider splitting the PR instead.",
+      "related": ["commit-helper", "review-pr", "changelog"]
+    },
+    {
+      "slug": "review-pr",
+      "name": "PR Review",
+      "category": "qa",
+      "tier": "signal",
+      "tags": ["code-review", "quality", "collaboration"],
+      "purpose": "Runs a multi-angle review on an open PR: correctness, style, tests, security, and docs.",
+      "shortAnswer": "Most code-review skills are single-pass. This one fans out into parallel reviewers — correctness checker, style nit-picker, test-gap finder, security auditor — and synthesises their notes into one comment you paste into GitHub.",
+      "whenToUse": "Before merging your own PR, or before requesting review from a human. Catches 80% of what a colleague would flag.",
+      "setup": [
+        "Save as ~/.claude/commands/review-pr.md.",
+        "Skill spawns 4 sub-agents in parallel, each with a narrow remit, then merges findings.",
+        "Needs gh CLI to pull the PR diff."
+      ],
+      "exampleTranscript": "You: /review-pr 247\nClaude: [4 agents run in parallel]\n       Correctness: clean.\n       Style: 2 magic numbers on L89-L91.\n       Tests: missing happy-path test for the new branch.\n       Security: no secrets; input validation on /api/upload looks thin.",
+      "source": {"type": "community", "author": "luongnv89", "authorUrl": "https://github.com/luongnv89", "repo": "luongnv89/claude-howto", "repoUrl": "https://github.com/luongnv89/claude-howto", "licence": "MIT"},
+      "caveats": "Not a substitute for domain expert review on novel code. Use for hygiene, not architecture.",
+      "related": ["pr-open", "security-audit", "test-writer"]
+    },
+    {
+      "slug": "security-audit",
+      "name": "Security Audit",
+      "category": "qa",
+      "tier": "signal",
+      "tags": ["security", "owasp", "dependencies"],
+      "purpose": "Sweeps a repo for OWASP-top-10 issues, hardcoded secrets, insecure dependencies, and auth logic gaps.",
+      "shortAnswer": "A pragmatic security pass for indie projects that can't afford a real audit. Catches the stuff that actually shows up in breaches — leaked secrets, SQL injection, missing auth on admin routes.",
+      "whenToUse": "Before every public launch. Before adding third-party integrations. Quarterly on anything that handles user data.",
+      "setup": [
+        "Save the skill in ~/.claude/agents/security-auditor.md (it runs as a subagent).",
+        "Configure scan paths in a .securityrc or inline — exclude tests/, docs/, migrations that intentionally show placeholder secrets.",
+        "Run /security-review or invoke directly from Claude Code."
+      ],
+      "exampleTranscript": "You: /security-review\nClaude: 3 findings.\n       HIGH: .env.example contains a real-looking AWS key (leak risk if copied).\n       MED: Contact form /api/contact lacks rate limiting.\n       LOW: Next.js headers config missing strict-transport-security.",
+      "source": {"type": "community", "author": "VoltAgent", "authorUrl": "https://github.com/VoltAgent", "repo": "VoltAgent/awesome-claude-code-subagents", "repoUrl": "https://github.com/VoltAgent/awesome-claude-code-subagents", "licence": "MIT"},
+      "caveats": "Not a pen-test. Rule-based scanner with LLM judgement — can miss logic-level exploits.",
+      "related": ["review-pr", "dep-audit", "legal-sweep"]
+    },
+    {
+      "slug": "test-writer",
+      "name": "Test Writer",
+      "category": "qa",
+      "tier": "solid",
+      "tags": ["testing", "coverage", "jest-vitest"],
+      "purpose": "Generates unit tests for a specific function or module, with sensible edge cases.",
+      "shortAnswer": "The test-writing skill that bridges 'I should add tests' and 'I have tests'. Takes a function, produces a test file with happy-path, sad-path, and 2-3 edge cases. Not a replacement for thinking about tests — a replacement for the boilerplate around them.",
+      "whenToUse": "On pure functions (parsers, validators, formatters). On business-logic modules with clear I/O. Avoid for integration-heavy or UI-driven code.",
+      "setup": [
+        "Save as ~/.claude/commands/test-writer.md.",
+        "Skill reads the project's testing conventions (.claude/rules/testing.md or looks for jest/vitest/mocha config).",
+        "Invoke: /test-writer path/to/module.js"
+      ],
+      "exampleTranscript": "You: /test-writer lib/claude-data.js\nClaude: Writing tests/claude-data.test.js with 8 test cases covering getModelById happy path, legacy lookup, null input, and tier filter.",
+      "source": {"type": "original", "author": "Bryan Collins + community pattern", "licence": "MIT"},
+      "caveats": "Verify the tests actually fail when the code is broken — skill can produce tautological tests if the implementation leaks into the assertion.",
+      "related": ["review-pr", "security-audit"]
+    },
+    {
+      "slug": "content-writer",
+      "name": "Content Writer",
+      "category": "content",
+      "tier": "signal",
+      "tags": ["blog", "newsletter", "drafting"],
+      "purpose": "Drafts a blog post, newsletter, or landing page from a brief — using the site's established voice.",
+      "shortAnswer": "The subagent you reach for when you need a publishable draft, not a bulleted outline. Reads a content profile (voice, audience, do/don't), pulls research if a researcher agent ran first, and produces something you edit rather than rewrite.",
+      "whenToUse": "Daily, if you run a content site. Best when paired with a separate research pass so the skill isn't doing research and writing in the same turn.",
+      "setup": [
+        "Save as ~/.claude/agents/content-writer.md. Agent definition (frontmatter + instructions).",
+        "Feed it a .claude/content-profile.md per site — this is where voice, audience, monetisation live.",
+        "Invoke via /write <topic> from the site's repo."
+      ],
+      "exampleTranscript": "You: /write 'Claude vs ChatGPT for content editors'\nClaude: [reads profile, pulls research, drafts 1,800 words in the house voice, returns draft with suggested meta title + description]",
+      "source": {"type": "community", "author": "Ian Nuttall", "authorUrl": "https://github.com/iannuttall", "repo": "iannuttall/claude-agents", "repoUrl": "https://github.com/iannuttall/claude-agents", "licence": "MIT"},
+      "caveats": "Writers quality depends on the content profile. Thin profile → thin output. Invest in the profile.",
+      "related": ["content-researcher", "brand-voice", "copywriting-specialist", "newsletter-recycle"]
+    },
+    {
+      "slug": "content-researcher",
+      "name": "Content Researcher",
+      "category": "research",
+      "tier": "signal",
+      "tags": ["research", "sources", "competitive-analysis"],
+      "purpose": "Gathers sources, stats, frameworks, and competitive analysis for a topic — keeps research separate from writing.",
+      "shortAnswer": "The separation-of-concerns trick that levels up every content operation. Research and writing are different jobs; running them as one agent gets you mid-quality output. Run this first, then hand its output to a writer.",
+      "whenToUse": "Before every substantial content piece. Not needed for quick personal posts.",
+      "setup": [
+        "Save as ~/.claude/agents/content-researcher.md.",
+        "Give it web fetch + search tools. No write access — research only.",
+        "Output: markdown brief with sources, stats, counter-arguments, suggested angle."
+      ],
+      "exampleTranscript": "You: Research 'Claude Code for writers'\nResearcher: [fetches 12 sources, returns 600-word brief with 8 cited stats, 3 competitor angles, and 1 contrarian take]",
+      "source": {"type": "original", "author": "Bryan Collins (portfolio pattern)", "licence": "MIT"},
+      "caveats": "Web fetch can fail on paywalled sources. Configure fallback behaviour explicitly.",
+      "related": ["content-writer", "competitor-scan", "academic-brief"]
+    },
+    {
+      "slug": "brand-voice",
+      "name": "Brand Voice Analyzer",
+      "category": "content",
+      "tier": "solid",
+      "tags": ["voice", "consistency", "style-guide"],
+      "purpose": "Analyses existing content to extract the brand's voice patterns, then scores new drafts against them.",
+      "shortAnswer": "Voice drift is the silent killer of content brands. This skill extracts your voice fingerprint from 5-10 existing posts, then catches when a new draft doesn't match.",
+      "whenToUse": "After hiring a ghostwriter. After bringing on an AI drafting workflow. Quarterly, to check your own voice hasn't drifted.",
+      "setup": [
+        "Save as ~/.claude/skills/brand-voice.md.",
+        "Point it at 5-10 canonical examples in the site's /posts or /newsletter.",
+        "Produces a .claude/voice-fingerprint.json the writer skill can load."
+      ],
+      "exampleTranscript": "You: Score this draft against my voice.\nClaude: Voice match 62/100. Drift: too corporate. Uses 'leverage' (you never do), passive voice 4x (you average 0.5x/post), hedges on claims (you're direct).",
+      "source": {"type": "community", "author": "Alireza Rezvani", "authorUrl": "https://github.com/alirezarezvani", "repo": "alirezarezvani/claude-skills", "repoUrl": "https://github.com/alirezarezvani/claude-skills", "licence": "MIT"},
+      "caveats": "Works best for writers with a strong, distinctive voice. Less useful for corporate or neutral styles.",
+      "related": ["content-writer", "copywriting-specialist", "ghostwrite-in-voice"]
+    },
+    {
+      "slug": "copywriting-specialist",
+      "name": "Copywriting Specialist",
+      "category": "content",
+      "tier": "solid",
+      "tags": ["conversion", "landing-pages", "sales"],
+      "purpose": "Writes high-conversion short copy — headlines, CTAs, subject lines, hero copy — using classic copywriting frameworks (PAS, AIDA, 4Ps).",
+      "shortAnswer": "A different beast from the blog writer. Short copy is a discipline — tight, specific, benefit-first. This skill knows the frameworks and applies them instead of producing generic 'transform your business' filler.",
+      "whenToUse": "Landing page hero copy. Email subject lines. Ad creative. CTA button text.",
+      "setup": [
+        "Save as ~/.claude/skills/copywriting-specialist.md.",
+        "Frame each request with: audience, pain, offer, tone. Without that, output defaults to generic.",
+        "Ask for 5 variants — never ship the first."
+      ],
+      "exampleTranscript": "You: Hero copy for a Claude vs Cursor comparison page. Audience: devs deciding. Pain: wasting $20/mo on the wrong tool. Offer: opinionated side-by-side.\nClaude: [5 PAS-framework variants]",
+      "source": {"type": "community", "author": "Alireza Rezvani", "authorUrl": "https://github.com/alirezarezvani", "repo": "alirezarezvani/claude-skills", "repoUrl": "https://github.com/alirezarezvani/claude-skills", "licence": "MIT"},
+      "caveats": "Frameworks are scaffolding, not the creative work. Treat output as a starting point.",
+      "related": ["brand-voice", "headline-lab", "content-writer"]
+    },
+    {
+      "slug": "headline-lab",
+      "name": "Headline Lab",
+      "category": "content",
+      "tier": "solid",
+      "tags": ["headlines", "ctr", "ab-testing"],
+      "purpose": "Generates 10 headline variants against different frameworks (curiosity, benefit, controversy, listicle, how-to) and ranks them.",
+      "shortAnswer": "Most content dies on the headline. This skill forces you to see 10 angles before you ship, then ranks them for predicted CTR and LLM-citability — because LLMs are the new SERP.",
+      "whenToUse": "Every post headline. Every newsletter subject line. Every YouTube title.",
+      "setup": [
+        "Save as ~/.claude/commands/headline-lab.md.",
+        "Feed it: target keyword, audience, angle of the piece.",
+        "Returns 10 variants with a 1-line rationale each."
+      ],
+      "exampleTranscript": "You: /headline-lab 'claude code skills' — audience solo devs.\nClaude: 1. The 47 Claude Code skills that actually matter...\n       2. We ranked 200+ Claude Code skills by licence. Only 47 are safe to copy.\n       3. Your Claude Code setup is missing these 10 skills.\n       [...10 total, scored]",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "CTR predictions are directional, not data-backed. Don't ship without A/B testing for stakes-worthy pieces.",
+      "related": ["copywriting-specialist", "aeo-citability", "meta-rewrite"]
+    },
+    {
+      "slug": "ghostwrite-in-voice",
+      "name": "Ghostwrite In Voice",
+      "category": "content",
+      "tier": "situational",
+      "tags": ["ghostwriting", "voice-match", "client-work"],
+      "purpose": "Drafts in a specific author's voice after reading 3-5 of their pieces — attribution-safe for transparency.",
+      "shortAnswer": "For agencies, ghostwriters, and internal comms teams. Reads sample pieces, extracts voice DNA, drafts new content that reads like the author wrote it. The ethical use is stated-up-front ghostwriting — not deception.",
+      "whenToUse": "Client ghostwriting. Executive comms. Translating between a brand's founder voice and a new team member's draft.",
+      "setup": [
+        "Save as ~/.claude/commands/ghostwrite.md.",
+        "Feed sample pieces. Skill produces a voice brief + draft.",
+        "Add disclosure language to the output — 'draft ghostwritten per client brief'."
+      ],
+      "exampleTranscript": "You: /ghostwrite — attached: 3 Medium posts. Target: 1,200-word piece on vibe coding.\nClaude: [analyses voice → writes draft that matches cadence, vocab, punctuation habits]",
+      "source": {"type": "original", "author": "Bryan Collins (adapted from brand-voice pattern)", "licence": "MIT"},
+      "caveats": "Ethical concerns — use only where ghostwriting is known and consented. Never for impersonation.",
+      "related": ["brand-voice", "content-writer"]
+    },
+    {
+      "slug": "newsletter-recycle",
+      "name": "Newsletter Recycle",
+      "category": "content",
+      "tier": "signal",
+      "tags": ["repurposing", "distribution", "leverage"],
+      "purpose": "Turns one blog post into a newsletter + 5 social posts (LinkedIn, Twitter/X thread, Instagram caption) in one pass.",
+      "shortAnswer": "Distribution math: every piece of content should ship 5-10 times across formats. This skill does the repurposing so you're not manually reformatting one piece for the rest of the week.",
+      "whenToUse": "Immediately after publishing a blog post. Schedule the derivatives for the following 7 days.",
+      "setup": [
+        "Save as ~/.claude/commands/newsletter-recycle.md.",
+        "Configure per-channel tone + length in .claude/distribution-profile.md.",
+        "Feed: URL or markdown of the source post."
+      ],
+      "exampleTranscript": "You: /newsletter-recycle https://promptwritingstudio.com/claude-code-mcp-stack\nClaude: ✉️ newsletter (400 words) + 🐦 thread (7 tweets) + 💼 LinkedIn post + 📸 IG caption + 📺 YouTube short script",
+      "source": {"type": "community", "author": "ComposioHQ", "authorUrl": "https://github.com/ComposioHQ", "repo": "ComposioHQ/awesome-claude-skills", "repoUrl": "https://github.com/ComposioHQ/awesome-claude-skills", "licence": "Apache-2.0"},
+      "caveats": "Output needs human polish — per-channel tone drifts if you ship raw. Budget 10 min per piece to edit.",
+      "related": ["content-writer", "twitter-optimizer", "copywriting-specialist"]
+    },
+    {
+      "slug": "twitter-optimizer",
+      "name": "Twitter Algorithm Optimizer",
+      "category": "content",
+      "tier": "situational",
+      "tags": ["twitter-x", "social", "algorithm"],
+      "purpose": "Rewrites a tweet or thread for the current Twitter/X algorithm preferences — engagement bait avoidance, read-time, link handling.",
+      "shortAnswer": "Twitter's algorithm rewards native content, moderate length, and replies. This skill rewrites your draft to play nicer with it — without descending into bait.",
+      "whenToUse": "When your baseline engagement feels low. When a thread underperforms what you expected.",
+      "setup": [
+        "Save as ~/.claude/skills/twitter-optimizer.md.",
+        "Keep this skill updated quarterly — platform rules shift.",
+        "Invoke with the draft tweet or thread."
+      ],
+      "exampleTranscript": "You: Rewrite this tweet for better reach.\nClaude: 3 variants: (a) question hook, (b) pattern interrupt, (c) controversial take. Kept the link out of tweet 1.",
+      "source": {"type": "community", "author": "ComposioHQ", "authorUrl": "https://github.com/ComposioHQ", "repo": "ComposioHQ/awesome-claude-skills", "repoUrl": "https://github.com/ComposioHQ/awesome-claude-skills", "licence": "Apache-2.0"},
+      "caveats": "Algorithm advice decays fast. If the skill is older than 6 months, sanity-check against current platform guidance.",
+      "related": ["newsletter-recycle", "headline-lab"]
+    },
+    {
+      "slug": "seo-audit",
+      "name": "SEO Audit",
+      "category": "seo",
+      "tier": "signal",
+      "tags": ["on-page-seo", "technical-seo", "content-audit"],
+      "purpose": "Runs a full on-page SEO audit on a URL or page file — title, meta, H1, schema, internal links, content gaps.",
+      "shortAnswer": "A pragmatic SEO check that skips the 100-item generic checklists and focuses on what actually moves rankings: intent match, structured data, topical coverage, internal linking.",
+      "whenToUse": "Before publishing any page that targets a competitive query. Every 6 months on evergreen pages.",
+      "setup": [
+        "Save as ~/.claude/skills/seo-audit.md.",
+        "Pair with a keyword research tool (DataForSEO, Ahrefs) if available — skill can consume that data.",
+        "Invoke with page URL or file path."
+      ],
+      "exampleTranscript": "You: /seo-audit pages/claude-code-mcp-stack.js\nClaude: 7 findings. H1 missing year (target query has '2026' intent). FAQ schema present ✓. Internal links: 2, target is 5-8. Related pages not cross-linked.",
+      "source": {"type": "community", "author": "Alireza Rezvani", "authorUrl": "https://github.com/alirezarezvani", "repo": "alirezarezvani/claude-skills", "repoUrl": "https://github.com/alirezarezvani/claude-skills", "licence": "MIT"},
+      "caveats": "No substitute for keyword research with real volume data. Pair with a paid tool or the /seo toolkit.",
+      "related": ["aeo-citability", "schema-generator", "internal-link-mapper"]
+    },
+    {
+      "slug": "aeo-citability",
+      "name": "AEO Citability Check",
+      "category": "seo",
+      "tier": "signal",
+      "tags": ["aeo", "llm-search", "citations"],
+      "purpose": "Scores a page for LLM-citability — direct answers, quote-ready structure, source attribution, FAQ coverage.",
+      "shortAnswer": "LLM search is the new SERP. This skill checks whether your page answers the target query in a way an LLM would quote — clear claims, structured data, sources, no filler.",
+      "whenToUse": "Every new page targeting an informational query. Quarterly on evergreen pages as LLM search evolves.",
+      "setup": [
+        "Save as ~/.claude/skills/aeo-citability.md.",
+        "Give the skill the target query + the page.",
+        "Returns a 0-100 score with specific improvement suggestions."
+      ],
+      "exampleTranscript": "You: /aeo-citability 'what is a claude code skill' pages/claude-code-skills/index.js\nClaude: 68/100. Direct answer: strong (first 50 words). Structured data: FAQ only, add Article. Sources: 0 cited — add at least 3. No contrarian framing.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Scoring is heuristic; calibrate against actual citation data from your /llm toolkit runs.",
+      "related": ["seo-audit", "schema-generator", "headline-lab"]
+    },
+    {
+      "slug": "schema-generator",
+      "name": "Schema Generator",
+      "category": "seo",
+      "tier": "solid",
+      "tags": ["json-ld", "structured-data", "rich-results"],
+      "purpose": "Generates JSON-LD schema markup for a page — Article, FAQPage, HowTo, Product, SoftwareApplication, BreadcrumbList.",
+      "shortAnswer": "Schema is one of the highest-ROI SEO additions on modern sites — rich results, AEO boost, clearer LLM signals. This skill produces clean, spec-compliant JSON-LD from a page's content.",
+      "whenToUse": "On every new content page. Retrofitting schema on existing top-10-ranked pages.",
+      "setup": [
+        "Save as ~/.claude/skills/schema-generator.md.",
+        "Feed it: page type + page content. Returns JSON-LD block ready to drop into <head>.",
+        "Validate with Google's Rich Results Test before shipping."
+      ],
+      "exampleTranscript": "You: /schema-generator Article pages/claude-code-skills/commit-helper.js\nClaude: [Article schema with author, datePublished, dateModified, headline, description, image]",
+      "source": {"type": "original", "author": "Bryan Collins (promptwritingstudio pattern)", "licence": "MIT"},
+      "caveats": "Don't over-schema. Google penalises irrelevant or spammy structured data.",
+      "related": ["seo-audit", "aeo-citability"]
+    },
+    {
+      "slug": "internal-link-mapper",
+      "name": "Internal Link Mapper",
+      "category": "seo",
+      "tier": "solid",
+      "tags": ["internal-linking", "site-structure", "link-equity"],
+      "purpose": "Suggests contextual internal links for a page by scanning the rest of the site for topically-relevant anchors.",
+      "shortAnswer": "Internal linking is the lowest-effort SEO win most sites ignore. This skill scans your published posts for mentions of the current page's topic and suggests exact insertion points.",
+      "whenToUse": "After publishing a new page — add 3-5 inbound internal links. When ranking a specific page from position 20 → 10.",
+      "setup": [
+        "Save as ~/.claude/skills/internal-link-mapper.md.",
+        "Point at the site's /pages or /posts directory.",
+        "Invoke with the target page slug."
+      ],
+      "exampleTranscript": "You: /internal-link-mapper /claude-code-skills\nClaude: Found 12 candidate pages. Suggested 5 insertions — exact anchor text + sentence location.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Don't auto-apply — some suggestions are contextually wrong. Review each.",
+      "related": ["seo-audit", "hub-link-check"]
+    },
+    {
+      "slug": "meta-rewrite",
+      "name": "Meta Rewrite",
+      "category": "seo",
+      "tier": "solid",
+      "tags": ["meta-tags", "ctr", "snippet"],
+      "purpose": "Rewrites meta title and description for a page, optimised for CTR on target query.",
+      "shortAnswer": "Meta titles and descriptions decay — what won in 2023 loses in 2026. This skill rewrites both against current SERP patterns and your target query's intent.",
+      "whenToUse": "Every 6 months on top-traffic pages. After a ranking drop. When CTR from GSC is <2% on a position-3-10 page.",
+      "setup": [
+        "Save as ~/.claude/commands/meta-rewrite.md.",
+        "Skill needs: target keyword, page purpose, current meta.",
+        "Returns 3 variants of each."
+      ],
+      "exampleTranscript": "You: /meta-rewrite for /claude-code-mcp-stack, target 'claude code mcp servers'.\nClaude: 3 title variants (60 chars max), 3 description variants (155 chars max), each with a distinct angle.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "CTR requires real data to verify. Ship, measure in GSC, iterate.",
+      "related": ["seo-audit", "headline-lab"]
+    },
+    {
+      "slug": "deploy-netlify",
+      "name": "Deploy to Netlify",
+      "category": "infra",
+      "tier": "signal",
+      "tags": ["deploy", "netlify", "ci"],
+      "purpose": "Builds the site, validates output, and pushes to Netlify — with rollback if the build fails post-deploy.",
+      "shortAnswer": "The 'I just shipped' skill. Runs your build, checks the output dir exists, deploys, and waits for Netlify to confirm green. Rolls back on failure.",
+      "whenToUse": "Every production deploy. Replace manual netlify deploy commands.",
+      "setup": [
+        "Save as ~/.claude/commands/deploy.md.",
+        "Requires Netlify CLI installed and authenticated.",
+        "Configure the site ID + build command in the skill or .claude/settings.json."
+      ],
+      "exampleTranscript": "You: /deploy\nClaude: [runs npm run build → deploys to Netlify → polls for 'ready' status → reports URL]",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Don't auto-deploy on every push — use Netlify's GitHub integration for that. Use this skill for on-demand deploys.",
+      "related": ["netlify-status", "preview-server"]
+    },
+    {
+      "slug": "netlify-status",
+      "name": "Netlify Status",
+      "category": "infra",
+      "tier": "solid",
+      "tags": ["netlify", "monitoring", "portfolio"],
+      "purpose": "Checks the latest deploy status for all (or one) Netlify site — green/building/failed at a glance.",
+      "shortAnswer": "If you run multiple sites, deploy status is the first thing you check each morning. This skill reports them in one table.",
+      "whenToUse": "Morning portfolio check. After merging a PR to confirm the deploy landed.",
+      "setup": [
+        "Save as ~/.claude/commands/netlify-status.md.",
+        "Netlify CLI authed. Optionally feed a list of site IDs.",
+        "Invoke with no args for all sites, or /netlify-status <site-name>."
+      ],
+      "exampleTranscript": "You: /netlify-status\nClaude: 🟢 vendors.ie (2m ago) | 🟢 fluentatdesk.com (14h ago) | 🔴 readingcurator.com (1h ago — build failed)",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Only covers Netlify. Wrap for Vercel/Cloudflare Pages separately.",
+      "related": ["deploy-netlify", "actions-audit"]
+    },
+    {
+      "slug": "preview-server",
+      "name": "Preview Server",
+      "category": "infra",
+      "tier": "solid",
+      "tags": ["dev-server", "local", "workflow"],
+      "purpose": "Spins up the project's dev server — handles npm install if needed, picks an available port, opens the browser.",
+      "shortAnswer": "The 'I want to see this locally' skill. Handles the tiny-but-annoying setup steps (port conflicts, missing deps, stale build) so you skip straight to the browser.",
+      "whenToUse": "Starting local dev. After pulling a branch with dependency changes.",
+      "setup": [
+        "Save as ~/.claude/commands/preview.md.",
+        "Skill reads package.json for the dev script.",
+        "Invoke: /preview"
+      ],
+      "exampleTranscript": "You: /preview\nClaude: Running npm install (stale node_modules)... Starting dev server on :3001 (3000 in use). Opening browser.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "For monorepos, extend to target specific workspaces.",
+      "related": ["deploy-netlify"]
+    },
+    {
+      "slug": "kubernetes-architect",
+      "name": "Kubernetes Architect",
+      "category": "infra",
+      "tier": "situational",
+      "tags": ["kubernetes", "helm", "infrastructure"],
+      "purpose": "Designs Helm charts, K8s manifests, and GitOps workflows — with sensible defaults for indie/small-team deploys.",
+      "shortAnswer": "Most K8s tutorials over-engineer for a scale you don't have. This skill gives you the minimum-viable cluster: one ingress, one service, sensible resource limits, no premature complexity.",
+      "whenToUse": "Only if you actually need K8s. 95% of indie projects don't — Netlify/Vercel/Fly is enough. Bring this in when you hit real multi-service orchestration.",
+      "setup": [
+        "Save as ~/.claude/agents/kubernetes-architect.md.",
+        "Feed it your app's services list + traffic profile.",
+        "Invoke via /k8s-plan."
+      ],
+      "exampleTranscript": "You: /k8s-plan — 3 services, 50 RPS peak, single region.\nClaude: [produces Helm chart + service manifests + ingress + HPA with 2-5 replica range, cost-optimised]",
+      "source": {"type": "community", "author": "wshobson", "authorUrl": "https://github.com/wshobson", "repo": "wshobson/agents", "repoUrl": "https://github.com/wshobson/agents", "licence": "MIT"},
+      "caveats": "Production K8s is still its own discipline. Use this to accelerate, not replace, expertise.",
+      "related": ["deploy-netlify", "security-audit"]
+    },
+    {
+      "slug": "competitor-scan",
+      "name": "Competitor Scan",
+      "category": "research",
+      "tier": "solid",
+      "tags": ["competitive-analysis", "research", "positioning"],
+      "purpose": "Scrapes 3-5 competitor pages on the same topic, compares stance, and identifies content gaps + differentiation angles.",
+      "shortAnswer": "The 'why publish this?' check. Before writing on a competitive topic, see what the top pages actually say — then find an angle they miss.",
+      "whenToUse": "Before any new page in a competitive niche. Monthly on your top-3 competitors' recent posts.",
+      "setup": [
+        "Save as ~/.claude/agents/competitor-scan.md.",
+        "Pair with a web fetch tool.",
+        "Feed: target query + 3-5 competitor URLs."
+      ],
+      "exampleTranscript": "You: Competitor scan on 'claude vs chatgpt' — top 3 results.\nClaude: All 3 hedge on the verdict. None mention Claude Code. 2 have stale pricing. Gap: opinionated verdict + updated pricing + Claude Code angle.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Scrape politely — respect robots.txt and rate-limit.",
+      "related": ["content-researcher", "content-writer"]
+    },
+    {
+      "slug": "academic-brief",
+      "name": "Academic Brief",
+      "category": "research",
+      "tier": "situational",
+      "tags": ["research", "papers", "summarisation"],
+      "purpose": "Summarises 3-5 academic papers on a topic into a plain-English brief with the core claim, method, and limitations of each.",
+      "shortAnswer": "For non-academics writing on technical topics (ML, biotech, economics). Turns unreadable papers into defensible claims you can cite in your post.",
+      "whenToUse": "Tech/science content. Newsletter pieces that reference research. Avoiding hand-wavy 'studies show' claims.",
+      "setup": [
+        "Save as ~/.claude/agents/academic-brief.md.",
+        "Tool access: web fetch (for open-access papers), PDF parse.",
+        "Feed DOIs or arxiv links."
+      ],
+      "exampleTranscript": "You: /academic-brief — 3 papers on prompt chain-of-thought. [URLs]\nClaude: Paper 1: claim + method + limitation. Paper 2: same. Paper 3: contrarian — worth citing.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Closed-access papers need manual download. LLM summarisation ≠ expert review — pair with real domain knowledge for stakes-worthy claims.",
+      "related": ["content-researcher", "competitor-scan"]
+    },
+    {
+      "slug": "doc-to-markdown",
+      "name": "Doc to Markdown",
+      "category": "research",
+      "tier": "solid",
+      "tags": ["conversion", "markdown", "workflow"],
+      "purpose": "Converts Word, PDF, or HTML documents into clean markdown — preserving structure, tables, and code blocks.",
+      "shortAnswer": "The 'someone sent me a Word doc' fix. Converts to markdown so you can edit in your normal tools, paste into Claude, or drop into a blog post.",
+      "whenToUse": "Client briefs in .docx. Research papers in PDF. Old content in HTML export.",
+      "setup": [
+        "Save as ~/.claude/skills/doc-to-markdown.md.",
+        "Depends on pandoc being installed (brew install pandoc).",
+        "Invoke with file path."
+      ],
+      "exampleTranscript": "You: /doc-to-markdown brief.docx\nClaude: [produces brief.md — headings preserved, 2 tables converted, 1 footnote inline]",
+      "source": {"type": "community", "author": "daymade", "authorUrl": "https://github.com/daymade", "repo": "daymade/claude-code-skills", "repoUrl": "https://github.com/daymade/claude-code-skills", "licence": "MIT"},
+      "caveats": "Complex layout (multi-column, floats) loses fidelity. Review tables specifically.",
+      "related": ["content-writer", "academic-brief"]
+    },
+    {
+      "slug": "meeting-insights",
+      "name": "Meeting Insights Analyzer",
+      "category": "research",
+      "tier": "situational",
+      "tags": ["meetings", "transcripts", "team"],
+      "purpose": "Analyses a meeting transcript for key decisions, action items, sentiment shifts, and unanswered questions.",
+      "shortAnswer": "The post-meeting synthesis that nobody does well. Extracts: decisions made, actions assigned (with owner), questions left hanging, changes in tone that suggest unresolved friction.",
+      "whenToUse": "After any meeting where you have a transcript. Otter.ai, Fathom, Zoom AI Companion all produce one.",
+      "setup": [
+        "Save as ~/.claude/skills/meeting-insights.md.",
+        "Feed transcript text or file path.",
+        "Configure: attendees list, context (standup vs planning vs 1:1)."
+      ],
+      "exampleTranscript": "You: /meeting-insights standup-2026-04-20.txt\nClaude: 3 decisions, 5 action items (3 owners assigned / 2 unassigned), 1 unresolved — 'did we agree on the pricing tier?'",
+      "source": {"type": "community", "author": "ComposioHQ", "authorUrl": "https://github.com/ComposioHQ", "repo": "ComposioHQ/awesome-claude-skills", "repoUrl": "https://github.com/ComposioHQ/awesome-claude-skills", "licence": "Apache-2.0"},
+      "caveats": "Transcript quality drives output quality. Garbled auto-transcripts → garbled insights.",
+      "related": ["academic-brief", "doc-to-markdown"]
+    },
+    {
+      "slug": "pivot-sweep",
+      "name": "Pivot Sweep",
+      "category": "drift",
+      "tier": "signal",
+      "tags": ["refactor", "brand", "migration"],
+      "purpose": "Sweeps CTAs, URLs, or brand terms across a repo with tier-based policy — keep some, swap others, leave the rest.",
+      "shortAnswer": "When you pivot a product or brand, 20-50 files reference the old version. Manually hunting them is tedious and error-prone. This skill applies a tiered policy: Tier A keeps, Tier B swaps, Tier C needs judgement.",
+      "whenToUse": "After a brand change. After swapping an affiliate. After deprecating a product line and routing traffic elsewhere.",
+      "setup": [
+        "Save as ~/.claude/commands/pivot-sweep.md.",
+        "Configure tier allowlist (filepaths that keep the old URL/term) and the new URL/term.",
+        "Invoke: /pivot-sweep <old> <new>."
+      ],
+      "exampleTranscript": "You: /pivot-sweep courses.becomeawritertoday.com/purchase /claude-code-guide\nClaude: Found 33 files. Tier A (15 files): keep. Tier B (13 files): auto-swap. Tier C (5 files): need review — shown below. Confirm?",
+      "source": {"type": "original", "author": "Bryan Collins (pattern from PWS Claude pivot, 2026-04-20)", "licence": "MIT"},
+      "caveats": "Don't run unattended — button text often needs rewriting alongside URL swap.",
+      "related": ["copy-align", "drift-check", "hub-link-check"]
+    },
+    {
+      "slug": "copy-align",
+      "name": "Copy Align",
+      "category": "drift",
+      "tier": "signal",
+      "tags": ["copy", "regression", "pivot-cleanup"],
+      "purpose": "Greps for residual outdated copy across a repo after a pivot — catches prose that escaped the CTA sweep.",
+      "shortAnswer": "The under-appreciated follow-up to a pivot sweep. You replaced 'our course' CTAs but forgot about 10 FAQ answers that still say 'our course teaches...'. This finds those.",
+      "whenToUse": "Every time after /pivot-sweep completes. Before shipping a major rebrand.",
+      "setup": [
+        "Save as ~/.claude/commands/copy-align.md.",
+        "Configure a deny list of phrases that shouldn't appear on specific file groups.",
+        "Reports findings — doesn't auto-fix."
+      ],
+      "exampleTranscript": "You: /copy-align\nClaude: 10 findings across 6 files. FAQ answers on education-ai.js still say 'our course teaches'. Fix?",
+      "source": {"type": "original", "author": "Bryan Collins (pattern from PWS Claude pivot, 2026-04-20)", "licence": "MIT"},
+      "caveats": "Regex-based — prepare for false positives (legal text, schema.org fields).",
+      "related": ["pivot-sweep", "drift-check"]
+    },
+    {
+      "slug": "drift-check",
+      "name": "Drift Check",
+      "category": "drift",
+      "tier": "signal",
+      "tags": ["data-freshness", "automation", "weekly"],
+      "purpose": "Verifies a project's reference data (prices, models, deps) against upstream sources — flags staleness.",
+      "shortAnswer": "Reference data rots. Model pricing changes, products get deprecated, APIs move. This skill checks your data files against their upstream source and flags drift before it shows up in user-facing pages.",
+      "whenToUse": "Weekly as a scheduled run. Before shipping a page that depends on pricing or model data.",
+      "setup": [
+        "Save as ~/.claude/skills/drift-check.md.",
+        "Configure source pairs: local-file + upstream-URL + fields-to-check.",
+        "Can run as a GitHub Action on a cron schedule."
+      ],
+      "exampleTranscript": "You: /drift-check data/claude-models.json\nClaude: 2 findings. Opus 4.7 price matches upstream ✓. Haiku 3 retiresOn=2026-04-19 is past (today 2026-04-20) — move to status=retired.",
+      "source": {"type": "original", "author": "Bryan Collins (PWS pattern)", "licence": "MIT"},
+      "caveats": "Upstream scraping breaks when sites restructure. Build fallback for HTML parse failures.",
+      "related": ["retire-model", "pivot-sweep"]
+    },
+    {
+      "slug": "retire-model",
+      "name": "Retire Model",
+      "category": "drift",
+      "tier": "situational",
+      "tags": ["model-lifecycle", "deprecation", "automation"],
+      "purpose": "Automates the lifecycle: current → legacy → deprecated → retired as dates pass. Keeps model data in sync with vendor announcements.",
+      "shortAnswer": "Manual lifecycle management doesn't scale past 3-4 models. This skill checks today's date against each model's retiresOn, promotes statuses, and removes content-page references to models that are gone.",
+      "whenToUse": "Weekly. Automated as a scheduled run alongside /drift-check.",
+      "setup": [
+        "Save as ~/.claude/skills/retire-model.md.",
+        "Feed: data file with status + retiresOn fields.",
+        "Outputs a diff — you approve before apply."
+      ],
+      "exampleTranscript": "You: /retire-model\nClaude: 1 promotion: Haiku 3 → retired. Removes 3 references from FAQ on /ai-models. Apply?",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Don't auto-apply — a premature retirement flag (before vendor confirms) breaks pages.",
+      "related": ["drift-check", "site-health-check"]
+    },
+    {
+      "slug": "site-health-check",
+      "name": "Site Health Check",
+      "category": "drift",
+      "tier": "signal",
+      "tags": ["monitoring", "regression", "audit"],
+      "purpose": "Runs a battery of drift/regression checks on a site — CTA hygiene, data freshness, link health, cruft in pages/.",
+      "shortAnswer": "The weekly audit every content site needs but nobody sets up. Checks whatever's important for that site's business logic — not a generic 'is it up' monitor.",
+      "whenToUse": "Weekly. After major refactors. Before quarterly business reviews.",
+      "setup": [
+        "Save as ~/.claude/commands/<site>-health.md (e.g. /pws-health, /bawt-health).",
+        "Custom per site — each site has different drift risks.",
+        "Run manually or schedule."
+      ],
+      "exampleTranscript": "You: /pws-health\nClaude: [runs 6 checks] 3 findings: PROSE regression on best-ai-tools.js, HUB-LINK missing between 3 Claude hubs, data freshness 3d old (green).",
+      "source": {"type": "original", "author": "Bryan Collins (pattern: /bawt-health, /pws-health, 2026-04-20)", "licence": "MIT"},
+      "caveats": "Per-site bespoke — don't try to generalise into one skill. Every site has different drift.",
+      "related": ["drift-check", "retire-model", "pivot-sweep"]
+    },
+    {
+      "slug": "hub-link-check",
+      "name": "Hub Link Check",
+      "category": "drift",
+      "tier": "solid",
+      "tags": ["internal-linking", "hub-spoke", "site-structure"],
+      "purpose": "Verifies that a defined hub of pages all link to each other — catches missing cross-links that break SEO and UX.",
+      "shortAnswer": "Content hubs only work if the pages in them cross-link. This skill defines the hub explicitly (a list of URLs) and fails if any page doesn't link to the others.",
+      "whenToUse": "After adding a new page to an existing hub. Weekly as part of site-health.",
+      "setup": [
+        "Save as ~/.claude/skills/hub-link-check.md.",
+        "Configure: list of URLs that form each hub.",
+        "Runs as a grep-based check across hub files."
+      ],
+      "exampleTranscript": "You: /hub-link-check\nClaude: Hub 'Claude hubs' (3 pages): claude-code-mcp-stack missing link to /calculators/claude-plan-picker; claude-pro-vs-max-vs-api missing link to /claude-code-mcp-stack. Fix?",
+      "source": {"type": "original", "author": "Bryan Collins (PWS pattern, 2026-04-20)", "licence": "MIT"},
+      "caveats": "Grep-based, not semantic. A link in a footer counts even if it's not contextually useful.",
+      "related": ["site-health-check", "internal-link-mapper"]
+    },
+    {
+      "slug": "skill-creator",
+      "name": "Skill Creator",
+      "category": "meta",
+      "tier": "solid",
+      "tags": ["meta", "scaffolding", "templates"],
+      "purpose": "Scaffolds a new Claude Code skill with proper frontmatter, invocation block, and SKILL.md spec compliance.",
+      "shortAnswer": "The meta-skill. Writes other skills. Knows the SKILL.md frontmatter fields, the invocation patterns, and the file-location conventions so you don't have to look them up.",
+      "whenToUse": "Every time you're about to write a new skill. Replaces 'copy an existing one and edit'.",
+      "setup": [
+        "Save as ~/.claude/skills/skill-creator.md.",
+        "Needs access to your skills directory.",
+        "Invoke: /skill-creator <name>."
+      ],
+      "exampleTranscript": "You: /skill-creator pivot-sweep — refactor skill that sweeps CTAs with tier policy.\nClaude: Created ~/.claude/commands/pivot-sweep.md with frontmatter, description, invocation pattern, 3-step instructions. Review and fill in details.",
+      "source": {"type": "community", "author": "daymade", "authorUrl": "https://github.com/daymade", "repo": "daymade/claude-code-skills", "repoUrl": "https://github.com/daymade/claude-code-skills", "licence": "MIT"},
+      "caveats": "Template gets stale as the SKILL.md spec evolves — review quarterly against Anthropic docs.",
+      "related": ["skill-md-template", "skill-tester"]
+    },
+    {
+      "slug": "skill-md-template",
+      "name": "SKILL.md Template",
+      "category": "meta",
+      "tier": "signal",
+      "tags": ["reference", "template", "spec"],
+      "purpose": "The canonical SKILL.md template from Anthropic's official skills repo — frontmatter fields, trigger syntax, invocation patterns.",
+      "shortAnswer": "Anthropic's own reference. Start here before any community skill template — the spec changes, and Anthropic's repo is the source of truth.",
+      "whenToUse": "Before writing your first skill. When a community skill format doesn't work and you suspect it's out of date.",
+      "setup": [
+        "Clone anthropics/skills and use their SKILL.md as your template.",
+        "Keep it in sync — subscribe to the repo's releases.",
+        "Reference inline in your /skill-creator setup."
+      ],
+      "exampleTranscript": "[Not invocable — reference material, copy the template into your skill file.]",
+      "source": {"type": "official", "author": "Anthropic", "authorUrl": "https://github.com/anthropics", "repo": "anthropics/skills", "repoUrl": "https://github.com/anthropics/skills", "licence": "Apache-2.0 (core skills only; docx/pdf/pptx/xlsx are source-available, exclude from forks)"},
+      "caveats": "Check the repo's LICENSE and NOTICE files — Anthropic distinguishes between Apache-2.0 skills and source-available ones. Only fork the Apache ones.",
+      "related": ["skill-creator", "skill-tester"]
+    },
+    {
+      "slug": "skill-tester",
+      "name": "Skill Tester",
+      "category": "meta",
+      "tier": "situational",
+      "tags": ["testing", "dry-run", "validation"],
+      "purpose": "Dry-runs a skill against a test input to verify trigger detection, output shape, and side-effect safety before shipping.",
+      "shortAnswer": "The QA step for skill authors. Simulates invocation, checks the trigger matches, and verifies the skill doesn't accidentally write files or call APIs it shouldn't.",
+      "whenToUse": "Before adding a new skill to your .claude/ directory. Before sharing a skill publicly.",
+      "setup": [
+        "Save as ~/.claude/skills/skill-tester.md.",
+        "Needs a test-cases file (JSON or YAML) describing inputs + expected behaviour.",
+        "Invoke: /skill-tester <skill-name>."
+      ],
+      "exampleTranscript": "You: /skill-tester pivot-sweep\nClaude: 3 test cases. 2 pass ✓. 1 fails: tier-boundary case — treats a prompts/*.js file as Tier B instead of Tier A. Review regex.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Dry-run simulates but doesn't guarantee — ship to a test environment before production.",
+      "related": ["skill-creator", "skill-md-template"]
+    },
+    {
+      "slug": "legal-sweep",
+      "name": "Legal Sweep",
+      "category": "legal",
+      "tier": "signal",
+      "tags": ["disclaimer", "compliance", "footer"],
+      "purpose": "Audits a site for a legal disclaimer page + footer link; creates and wires up if missing.",
+      "shortAnswer": "Every affiliate/content site needs a disclaimer, privacy policy, and (depending on geography) cookie notice. This skill audits the state and fills gaps — stack-aware, so it works on Next.js, Astro, and WordPress.",
+      "whenToUse": "On every new site before public launch. When adding affiliate links to an existing site. Annually for compliance drift.",
+      "setup": [
+        "Save as ~/.claude/commands/legal-sweep.md.",
+        "Configure: site template detection (Next.js pages router vs Astro vs WP).",
+        "Invoke: /legal-sweep."
+      ],
+      "exampleTranscript": "You: /legal-sweep\nClaude: Disclaimer page ✓. Footer link ✗. Adding <Link href=/legal-disclaimer> next to privacy policy. Committed.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Not legal advice. A disclaimer template ≠ bespoke legal review. Use for hygiene, not stakes-worthy compliance.",
+      "related": ["security-audit", "dep-audit"]
+    },
+    {
+      "slug": "dep-audit",
+      "name": "Dependency Audit",
+      "category": "legal",
+      "tier": "solid",
+      "tags": ["licences", "dependencies", "compliance"],
+      "purpose": "Checks every dependency's licence — flags GPL contamination, commercial-incompatible licences, missing attribution.",
+      "shortAnswer": "The dependency sweep most projects never do. Flags licences that force your whole project to go GPL, or require attribution you haven't given, or are outright banned in commercial use.",
+      "whenToUse": "Before every major release. When adding new dependencies. Quarterly on active projects.",
+      "setup": [
+        "Save as ~/.claude/skills/dep-audit.md.",
+        "Uses npm ls / pip show / cargo tree to enumerate deps.",
+        "Cross-references with a licence-compatibility matrix."
+      ],
+      "exampleTranscript": "You: /dep-audit\nClaude: 247 deps. 2 flagged: react-awesome-reveal (MIT ✓), lodash (MIT ✓)... one CC BY-NC-SA (usable but triggers attribution requirement — add to credits).",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Licence detection is heuristic — read the LICENSE file for anything novel or suspect.",
+      "related": ["legal-sweep", "security-audit"]
+    },
+    {
+      "slug": "vendor-add",
+      "name": "Vendor Add",
+      "category": "domain",
+      "tier": "signal",
+      "tags": ["portfolio", "vendors", "b2b"],
+      "purpose": "Adds a new vendor to a vendor-directory site — creates the JSON data file, the detail page, the category listing, and cross-links.",
+      "shortAnswer": "If you run a directory site, adding a new vendor involves 6-10 coordinated edits. This skill handles all of them from one description.",
+      "whenToUse": "Every new vendor. Bulk imports via a CSV-to-skill pipeline.",
+      "setup": [
+        "Save as ~/.claude/commands/vendor.md.",
+        "Site-specific — configure schema + routing conventions in the skill.",
+        "Invoke: /vendor <vendor-name>."
+      ],
+      "exampleTranscript": "You: /vendor Xero Ireland\nClaude: [generates vendors/xero-ireland.json + pages/xero-ireland.astro + adds to category listing + cross-links 3 related vendors]",
+      "source": {"type": "original", "author": "Bryan Collins (Vendors.ie pattern)", "licence": "MIT"},
+      "caveats": "Tightly coupled to site schema — clone-and-adapt rather than reuse as-is.",
+      "related": ["vendor-verify", "site-picker"]
+    },
+    {
+      "slug": "vendor-verify",
+      "name": "Vendor Verify",
+      "category": "domain",
+      "tier": "solid",
+      "tags": ["qa", "verification", "directory"],
+      "purpose": "Verifies a vendor's data against their actual website — pricing, features, contact details.",
+      "shortAnswer": "Directory data rots faster than almost any content. This skill picks a vendor, fetches their site, compares against your stored data, and flags discrepancies.",
+      "whenToUse": "Quarterly on your top-50 vendors. Before publishing 'top-10' listicles.",
+      "setup": [
+        "Save as ~/.claude/commands/verify.md.",
+        "Web fetch tool required.",
+        "Invoke: /verify <vendor-slug>."
+      ],
+      "exampleTranscript": "You: /verify xero-ireland\nClaude: 2 drifts. Stored starter price €12/mo; live shows €14/mo (vendor raised April 2026). Features list identical.",
+      "source": {"type": "original", "author": "Bryan Collins (Vendors.ie pattern)", "licence": "MIT"},
+      "caveats": "Scraping can be flagged by anti-bot. Use a polite user agent + rate limit.",
+      "related": ["vendor-add", "drift-check"]
+    },
+    {
+      "slug": "site-picker",
+      "name": "Site Picker",
+      "category": "domain",
+      "tier": "signal",
+      "tags": ["portfolio", "workflow", "multi-site"],
+      "purpose": "Presents a menu of your sites, loads per-site memory + recent git log, surfaces a session brief.",
+      "shortAnswer": "Running 10+ sites means every session starts with 'which one am I working on?'. This skill handles the orientation — picks a site, loads its context, tells you where you left off.",
+      "whenToUse": "Every session start when working across a portfolio. Skip for single-project work.",
+      "setup": [
+        "Save as ~/.claude/commands/sites.md.",
+        "Configure: list of sites with per-site memory files + paths.",
+        "Invoke: /sites → pick a number."
+      ],
+      "exampleTranscript": "You: /sites\nClaude: [lists 20 sites] Pick a number.\nYou: 8\nClaude: Prompt Writing Studio. Path: ~/src/promptwritingstudio. Last 5 commits: [...]. Open work: #38 CTA triage. What do you want to work on?",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Requires manual maintenance of the site list as your portfolio grows/shrinks.",
+      "related": ["site-health-check", "netlify-status"]
+    },
+    {
+      "slug": "actions-audit",
+      "name": "GitHub Actions Audit",
+      "category": "drift",
+      "tier": "solid",
+      "tags": ["ci", "github", "monitoring"],
+      "purpose": "Audits GitHub Actions across all your repos for failures in the last 7 days — flags broken cron jobs, silent CI failures.",
+      "shortAnswer": "If you run 20 repos with scheduled Actions (scrapers, drift checks, builds), silent failures pile up. This skill asks gh api for the last 7 days and reports the red ones.",
+      "whenToUse": "Weekly. After a dependency update that might have broken CI.",
+      "setup": [
+        "Save as ~/.claude/commands/actions-audit.md.",
+        "gh CLI authed against all target orgs.",
+        "Invoke: /actions-audit."
+      ],
+      "exampleTranscript": "You: /actions-audit\nClaude: 3 red workflows. flashreport-scraper (3 consecutive failures, token expired?), bawt-deploy (1 failure, flaky). All green on 17 other repos.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Doesn't fix — just surfaces. Triage red workflows manually.",
+      "related": ["site-health-check", "netlify-status"]
+    },
+    {
+      "slug": "qa-swarm",
+      "name": "QA Swarm",
+      "category": "qa",
+      "tier": "solid",
+      "tags": ["parallel-agents", "content-qa", "swarm"],
+      "purpose": "Launches 3-5 parallel QA subagents against a site, each with a distinct remit (SEO, monetisation, freshness, accuracy), synthesises findings.",
+      "shortAnswer": "Content QA is not one job — it's 5 jobs (accuracy, freshness, SEO, monetisation, link health). Running them serially is slow; running them in parallel is what makes Claude Code's agent model actually earn its keep.",
+      "whenToUse": "After a content batch lands. Monthly on evergreen pages. Before a major rebrand.",
+      "setup": [
+        "Save as ~/.claude/commands/qa.md.",
+        "Skill spawns N agents with narrow briefs. Collects outputs, synthesises into ranked findings.",
+        "Invoke: /qa <scope>."
+      ],
+      "exampleTranscript": "You: /qa pages/claude-code-mcp-stack.js\nClaude: 5 agents dispatched. Synthesis: 2 P1s (stale link, missing schema), 4 P2s. Full report below.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Costs 5x tokens per run. Budget accordingly.",
+      "related": ["review-pr", "security-audit", "seo-audit"]
+    },
+    {
+      "slug": "smoke-test",
+      "name": "AI Endpoint Smoke Test",
+      "category": "qa",
+      "tier": "situational",
+      "tags": ["api-testing", "ai-endpoints", "monitoring"],
+      "purpose": "Fires a smoke test at AI-powered API endpoints (Claude, GPT, custom agents) on live sites — flags 5xx, timeouts, broken auth.",
+      "shortAnswer": "If your sites have AI features (Claude-powered tools, prompt optimisers), those endpoints break silently until a user complains. This skill tests them proactively.",
+      "whenToUse": "Daily or weekly scheduled run. After a provider pushes an SDK update.",
+      "setup": [
+        "Save as ~/.claude/commands/ai-smoke-test.md.",
+        "Configure: list of endpoints + expected response shape.",
+        "Invoke: /ai-smoke-test."
+      ],
+      "exampleTranscript": "You: /ai-smoke-test\nClaude: 3 endpoints tested. ✓ Vendors.ie /api/explain. ✓ FluentAtDesk /api/rewrite. 🔴 ReadingCurator /api/recommend — 500, Anthropic API key expired.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Don't include sensitive test inputs in the skill — inject from a separate secrets file.",
+      "related": ["security-audit", "dep-audit"]
+    },
+    {
+      "slug": "dead-links",
+      "name": "Dead Link Crawler",
+      "category": "drift",
+      "tier": "solid",
+      "tags": ["crawl", "404", "link-rot"],
+      "purpose": "Crawls a live site for 4xx/5xx responses — reports broken internal links and rotted outbound links.",
+      "shortAnswer": "The classic site-hygiene check. Outbound links rot at ~10%/year. Internal links break when you rename routes. Run quarterly.",
+      "whenToUse": "Quarterly. After a URL structure change. Before a full-site audit.",
+      "setup": [
+        "Save as ~/.claude/commands/dead-links.md.",
+        "Uses a headless fetch + simple crawl.",
+        "Invoke: /dead-links <site>."
+      ],
+      "exampleTranscript": "You: /dead-links promptwritingstudio.com\nClaude: Crawled 184 pages, 1,247 links. 3 broken. All 3 are outbound (rotted referenced articles). Fix list attached.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Respect robots.txt on outbound crawls. Heavy on big sites — rate-limit.",
+      "related": ["site-health-check", "actions-audit"]
+    },
+    {
+      "slug": "vitals",
+      "name": "Core Web Vitals Check",
+      "category": "infra",
+      "tier": "solid",
+      "tags": ["lighthouse", "performance", "cwv"],
+      "purpose": "Runs Lighthouse against homepages (or specific pages) across a portfolio — reports LCP, CLS, INP, and regressions.",
+      "shortAnswer": "Core Web Vitals are a ranking factor. This skill runs Lighthouse across your portfolio in one pass and flags anything that's regressed from your baseline.",
+      "whenToUse": "Monthly. After major frontend changes. Before a redesign ships.",
+      "setup": [
+        "Save as ~/.claude/commands/vitals.md.",
+        "Lighthouse CLI required (npm i -g lighthouse).",
+        "Invoke: /vitals [site-name]."
+      ],
+      "exampleTranscript": "You: /vitals\nClaude: 12 sites. Performance: 9 green, 2 orange, 1 red. Red: readingcurator.com LCP 4.2s (hero image not optimised). Fix list attached.",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Lighthouse scores vary between runs — trust trend, not single values.",
+      "related": ["seo-audit", "site-health-check"]
+    },
+    {
+      "slug": "licence-checker",
+      "name": "Licence Checker",
+      "category": "legal",
+      "tier": "solid",
+      "tags": ["licence", "legal", "content-curation"],
+      "purpose": "Verifies the licence of a GitHub repo (or specific file) before you fork, republish, or include content from it.",
+      "shortAnswer": "Before republishing anything from a public repo, run this skill. Fetches the repo's LICENSE, reports compatibility with MIT/Apache/commercial use. Saves you from accidental CC BY-NC-ND reuse.",
+      "whenToUse": "Every time you're about to curate, fork, or quote a public repo. Before building any catalogue page.",
+      "setup": [
+        "Save as ~/.claude/commands/licence-checker.md.",
+        "Fetches the LICENSE file + README licence statement.",
+        "Invoke: /licence-checker <repo-url>."
+      ],
+      "exampleTranscript": "You: /licence-checker github.com/hesreallyhim/awesome-claude-code\nClaude: Licence: CC BY-NC-ND 4.0. Verdict: DO NOT REPUBLISH. Link-to only; no derivatives, no commercial reuse.",
+      "source": {"type": "original", "author": "Bryan Collins (pattern from feedback_attribution memory, 2026-04-20)", "licence": "MIT"},
+      "caveats": "Some repos bury licence in the README instead of a LICENSE file — skill needs to check both.",
+      "related": ["dep-audit", "legal-sweep"]
+    },
+    {
+      "slug": "changelog",
+      "name": "Changelog Generator",
+      "category": "git",
+      "tier": "solid",
+      "tags": ["changelog", "release-notes", "documentation"],
+      "purpose": "Generates a human-readable changelog between two git tags — grouped by feat/fix/refactor, with author attribution.",
+      "shortAnswer": "Changelogs are tedious but high-value. This skill reads your conventional-commit history between two tags and produces a clean CHANGELOG.md entry in Keep-a-Changelog format.",
+      "whenToUse": "Every release. Before drafting release notes for a public repo.",
+      "setup": [
+        "Save as ~/.claude/commands/changelog.md.",
+        "Requires conventional-commit history to work well.",
+        "Invoke: /changelog v1.2.0 v1.3.0."
+      ],
+      "exampleTranscript": "You: /changelog v1.2.0 HEAD\nClaude: [produces Keep-a-Changelog section with Added / Changed / Fixed blocks, 23 commits grouped]",
+      "source": {"type": "original", "author": "Bryan Collins", "licence": "MIT"},
+      "caveats": "Only as good as your commit messages. 'wip' commits break the grouping.",
+      "related": ["commit-helper", "pr-open"]
+    }
+  ]
+}
