@@ -92,7 +92,7 @@ export default function SkillPage({ skill, category, lastVerified }) {
           </div>
         </section>
 
-        <section className="py-10 bg-[#F9F9F9]">
+        <section id="short-answer" className="py-10 bg-[#F9F9F9]">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <div className="bg-white rounded-lg border-l-4 border-[#FFDE59] p-6 md:p-8 shadow-sm">
               <h2 className="text-sm font-semibold text-[#1A1A1A] uppercase tracking-wide mb-2">The short answer</h2>
@@ -101,7 +101,7 @@ export default function SkillPage({ skill, category, lastVerified }) {
           </div>
         </section>
 
-        <section className="py-12 bg-white">
+        <section id="when-to-use" className="py-12 bg-white">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-2xl font-bold text-[#1A1A1A] mb-3">When to use it</h2>
             <p className="text-[#333333] leading-relaxed">{skill.whenToUse}</p>
@@ -109,7 +109,7 @@ export default function SkillPage({ skill, category, lastVerified }) {
         </section>
 
         {skill.setup && skill.setup.length > 0 && (
-          <section className="py-12 bg-[#F9F9F9]">
+          <section id="setup" className="py-12 bg-[#F9F9F9]">
             <div className="container mx-auto px-4 md:px-6 max-w-3xl">
               <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">Setup</h2>
               <ol className="space-y-3">
@@ -125,7 +125,7 @@ export default function SkillPage({ skill, category, lastVerified }) {
         )}
 
         {skill.exampleTranscript && (
-          <section className="py-12 bg-white">
+          <section id="example" className="py-12 bg-white">
             <div className="container mx-auto px-4 md:px-6 max-w-3xl">
               <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">Example</h2>
               <pre className="bg-[#1A1A1A] text-green-400 p-5 rounded-lg overflow-x-auto text-sm leading-relaxed whitespace-pre-wrap">{skill.exampleTranscript}</pre>
@@ -133,7 +133,7 @@ export default function SkillPage({ skill, category, lastVerified }) {
           </section>
         )}
 
-        <section className="py-12 bg-[#F9F9F9]">
+        <section id="source" className="py-12 bg-[#F9F9F9]">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-2xl font-bold text-[#1A1A1A] mb-4">Source &amp; attribution</h2>
             <div className="bg-white rounded-lg border border-gray-200 p-6">
@@ -179,7 +179,7 @@ export default function SkillPage({ skill, category, lastVerified }) {
         </section>
 
         {skill.caveats && (
-          <section className="py-12 bg-white">
+          <section id="caveats" className="py-12 bg-white">
             <div className="container mx-auto px-4 md:px-6 max-w-3xl">
               <h2 className="text-2xl font-bold text-[#1A1A1A] mb-3">Caveats</h2>
               <div className="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r">
@@ -190,7 +190,7 @@ export default function SkillPage({ skill, category, lastVerified }) {
         )}
 
         {related.length > 0 && (
-          <section className="py-12 bg-[#F9F9F9]">
+          <section id="related" className="py-12 bg-[#F9F9F9]">
             <div className="container mx-auto px-4 md:px-6 max-w-4xl">
               <h2 className="text-2xl font-bold text-[#1A1A1A] mb-5">Related skills</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

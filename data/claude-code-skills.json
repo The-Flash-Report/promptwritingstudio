@@ -203,13 +203,14 @@
         "quality",
         "collaboration"
       ],
-      "purpose": "Runs a multi-angle review on an open PR: correctness, style, tests, security, and docs.",
-      "shortAnswer": "Most code-review skills are single-pass. This one fans out into parallel reviewers — correctness checker, style nit-picker, test-gap finder, security auditor — and synthesises their notes into one comment you paste into GitHub.",
-      "whenToUse": "Before merging your own PR, or before requesting review from a human. Catches 80% of what a colleague would flag.",
+      "purpose": "Runs a complete pull request review covering security, test coverage, documentation, code quality, and performance impact in one workflow.",
+      "shortAnswer": "Part of the pr-review plugin. Fetches PR data via the GitHub MCP server, then delegates to specialised subagents — security-reviewer, test-checker, performance-analyzer — and synthesises their findings into a single comprehensive report.",
+      "whenToUse": "Before merging your own PR, or before requesting review from a human. Also exposes /check-security for a security-only pass and /check-tests for coverage analysis, so you can run a narrow sweep instead of the full review when scope is tight.",
       "setup": [
-        "Save as ~/.claude/commands/review-pr.md.",
-        "Skill spawns 4 sub-agents in parallel, each with a narrow remit, then merges findings.",
-        "Needs gh CLI to pull the PR diff."
+        "Install via /plugin install pr-review inside Claude Code 1.0+.",
+        "Export a GitHub token: export GITHUB_TOKEN=\"your_github_token\" so the GitHub MCP server can read PR data.",
+        "Runs pre-review.js hook to validate the git repo before fetching PR data.",
+        "Invoke /review-pr, /check-security, or /check-tests as needed."
       ],
       "exampleTranscript": "You: /review-pr 247\nClaude: [4 agents run in parallel]\n       Correctness: clean.\n       Style: 2 magic numbers on L89-L91.\n       Tests: missing happy-path test for the new branch.\n       Security: no secrets; input validation on /api/upload looks thin.",
       "source": {
@@ -237,13 +238,14 @@
         "owasp",
         "dependencies"
       ],
-      "purpose": "Sweeps a repo for OWASP-top-10 issues, hardcoded secrets, insecure dependencies, and auth logic gaps.",
-      "shortAnswer": "A pragmatic security pass for indie projects that can't afford a real audit. Catches the stuff that actually shows up in breaches — leaked secrets, SQL injection, missing auth on admin routes.",
-      "whenToUse": "Before every public launch. Before adding third-party integrations. Quarterly on anything that handles user data.",
+      "purpose": "Senior security auditor subagent for comprehensive security assessments, compliance audits, and risk evaluations across systems, infrastructure, and processes.",
+      "shortAnswer": "Runs systematic vulnerability analysis, compliance-gap identification, and evidence-based security findings. Covers SOC 2, ISO 27001/27002, HIPAA, PCI DSS, GDPR, NIST, and CIS benchmarks with a defined audit scope, thorough controls assessment, and actionable remediation recommendations.",
+      "whenToUse": "Invoke when you need a vulnerability assessment (network scanning, application testing, configuration review, patch management), an access-control audit (privilege analysis, segregation of duties, MFA, password policies), a data-security review (classification, encryption, retention, DLP), or an incident-response readiness check.",
       "setup": [
-        "Save the skill in ~/.claude/agents/security-auditor.md (it runs as a subagent).",
-        "Configure scan paths in a .securityrc or inline — exclude tests/, docs/, migrations that intentionally show placeholder secrets.",
-        "Run /security-review or invoke directly from Claude Code."
+        "Install from VoltAgent/awesome-claude-code-subagents — the security-auditor lives in categories/04-quality-security/.",
+        "Ships with model: opus and a restricted tool set (Read, Grep, Glob) so it audits without modifying the repo.",
+        "Expects a context manager to supply security policies and compliance requirements at invocation.",
+        "Output is a structured audit report: scope, controls assessed, vulnerabilities, compliance findings, and prioritised remediation steps with evidence."
       ],
       "exampleTranscript": "You: /security-review\nClaude: 3 findings.\n       HIGH: .env.example contains a real-looking AWS key (leak risk if copied).\n       MED: Contact form /api/contact lacks rate limiting.\n       LOW: Next.js headers config missing strict-transport-security.",
       "source": {
@@ -271,13 +273,14 @@
         "coverage",
         "jest-vitest"
       ],
-      "purpose": "Generates unit tests for a specific function or module, with sensible edge cases.",
-      "shortAnswer": "The test-writing skill that bridges 'I should add tests' and 'I have tests'. Takes a function, produces a test file with happy-path, sad-path, and 2-3 edge cases. Not a replacement for thinking about tests — a replacement for the boilerplate around them.",
-      "whenToUse": "On pure functions (parsers, validators, formatters). On business-logic modules with clear I/O. Avoid for integration-heavy or UI-driven code.",
+      "purpose": "Generates unit tests for a specific function or module with sensible edge cases — happy path, sad path, and 2-3 boundary cases.",
+      "shortAnswer": "The test-writing skill that bridges \"I should add tests\" and \"I have tests\". Takes a function, produces a test file covering the obvious paths plus a handful of edge cases. Not a replacement for thinking about tests — a replacement for the boilerplate around them.",
+      "whenToUse": "On pure functions (parsers, validators, formatters). On business-logic modules with clear inputs and outputs. Avoid for integration-heavy or UI-driven code where mocking cost exceeds the payoff.",
       "setup": [
-        "Save as ~/.claude/commands/test-writer.md.",
-        "Skill reads the project's testing conventions (.claude/rules/testing.md or looks for jest/vitest/mocha config).",
-        "Invoke: /test-writer path/to/module.js"
+        "Save the file as ~/.claude/commands/test-writer.md.",
+        "Skill reads the project's testing conventions — .claude/rules/testing.md if present, otherwise looks for a jest, vitest or mocha config.",
+        "Invoke: /test-writer path/to/module.js; skill writes the matching test file.",
+        "Verify the generated tests actually fail when the code is broken — otherwise you have tautological tests that pass regardless."
       ],
       "exampleTranscript": "You: /test-writer lib/claude-data.js\nClaude: Writing tests/claude-data.test.js with 8 test cases covering getModelById happy path, legacy lookup, null input, and tier filter.",
       "source": {
@@ -322,8 +325,7 @@
       "related": [
         "content-researcher",
         "brand-voice",
-        "copywriting-specialist",
-        "newsletter-recycle"
+        "copywriting-specialist"
       ]
     },
     {
@@ -336,13 +338,15 @@
         "sources",
         "competitive-analysis"
       ],
-      "purpose": "Gathers sources, stats, frameworks, and competitive analysis for a topic — keeps research separate from writing.",
-      "shortAnswer": "The separation-of-concerns trick that levels up every content operation. Research and writing are different jobs; running them as one agent gets you mid-quality output. Run this first, then hand its output to a writer.",
-      "whenToUse": "Before every substantial content piece. Not needed for quick personal posts.",
+      "purpose": "Deep research subagent for Bryan Collins' content operation — gathers sources, frameworks, statistics and competitive analysis for articles, newsletters and YouTube scripts. Research only, no writing.",
+      "shortAnswer": "Runs with Read, Glob, Grep, WebSearch and WebFetch — no write access. Handles credible stats, competitive analysis, framework research (Porter's, PESTLE), source vetting, and keyword intent. Returns a structured brief with core angle, key facts, coverage gaps, an H2 outline and source URLs.",
+      "whenToUse": "Use before substantial content pieces where the writer needs a vetted source pack. Useful when the topic risks hallucinated citations, or when running research in parallel with drafting.",
       "setup": [
-        "Save as ~/.claude/agents/content-researcher.md.",
-        "Give it web fetch + search tools. No write access — research only.",
-        "Output: markdown brief with sources, stats, counter-arguments, suggested angle."
+        "Save the file as ~/.claude/agents/content-researcher.md.",
+        "Frontmatter grants Read, Glob, Grep, WebSearch and WebFetch — deliberately no write tools.",
+        "Output is a five-part brief: core angle, key facts with sources and dates, gaps in coverage, suggested H2 outline, full URLs with access dates.",
+        "Tuned for Bryan's channels — newsletter (Tue/Thu), LinkedIn (Mon/Wed/Fri), YouTube — and the \"content is exhaust not engine\" philosophy.",
+        "Cite the actual study, not \"studies show\" — the agent is instructed to reject vague attribution."
       ],
       "exampleTranscript": "You: Research 'Claude Code for writers'\nResearcher: [fetches 12 sources, returns 600-word brief with 8 cited stats, 3 competitor angles, and 1 contrarian take]",
       "source": {
@@ -367,13 +371,14 @@
         "consistency",
         "style-guide"
       ],
-      "purpose": "Analyses existing content to extract the brand's voice patterns, then scores new drafts against them.",
-      "shortAnswer": "Voice drift is the silent killer of content brands. This skill extracts your voice fingerprint from 5-10 existing posts, then catches when a new draft doesn't match.",
-      "whenToUse": "After hiring a ghostwriter. After bringing on an AI drafting workflow. Quarterly, to check your own voice hasn't drifted.",
+      "purpose": "Applies, documents, or enforces brand guidelines — colour systems, typography, logo rules, imagery, and tone matrix — to keep marketing materials, products, and communications visually and verbally consistent.",
+      "shortAnswer": "Covers the full brand identity spectrum, not only voice. Assesses whether a team needs to apply existing guidelines or build a system from scratch, then checks copy against voice attributes and tone matrix rather than just grammar.",
+      "whenToUse": "Before creating any poster, slide, email, or social graphic — check if brand guidelines exist and, if not, establish a minimal system first. On copy review, cross-check against the tone matrix. When launching a new channel apply the brand rules to that format. Co-branded material triggers logo clear-space and colour-dominance rules.",
       "setup": [
-        "Save as ~/.claude/skills/brand-voice.md.",
-        "Point it at 5-10 canonical examples in the site's /posts or /newsletter.",
-        "Produces a .claude/voice-fingerprint.json the writer skill can load."
+        "Reads .claude/product-marketing-context.md if present to tailor recommendations to the brand.",
+        "Use the Quick Audit Checklist to score colours, fonts, logo clear space, contrast, imagery, and tone in one pass.",
+        "Outputs: Brand Audit Report, Colour System Reference, Tone Matrix, Typography Scale, and a condensed Mini-Doc for contractors.",
+        "Ask first: applying vs creating, output format, available assets, existing foundation document."
       ],
       "exampleTranscript": "You: Score this draft against my voice.\nClaude: Voice match 62/100. Drift: too corporate. Uses 'leverage' (you never do), passive voice 4x (you average 0.5x/post), hedges on claims (you're direct).",
       "source": {
@@ -401,13 +406,14 @@
         "landing-pages",
         "sales"
       ],
-      "purpose": "Writes high-conversion short copy — headlines, CTAs, subject lines, hero copy — using classic copywriting frameworks (PAS, AIDA, 4Ps).",
-      "shortAnswer": "A different beast from the blog writer. Short copy is a discipline — tight, specific, benefit-first. This skill knows the frameworks and applies them instead of producing generic 'transform your business' filler.",
-      "whenToUse": "Landing page hero copy. Email subject lines. Ad creative. CTA button text.",
+      "purpose": "Writes, rewrites, and improves marketing copy for homepage, landing, pricing, feature, about, and product pages — clear, compelling, action-driving copy grounded in conversion-copywriting principles.",
+      "shortAnswer": "An expert conversion copywriter that prioritises clarity over cleverness, benefits over features, specificity over vagueness, and customer language over company language. One idea per section, active voice, confident claims — no exclamation points, no \"streamline\" or \"utilise\".",
+      "whenToUse": "When the user asks to 'write copy for', 'improve this copy', 'rewrite this page', or needs headline or CTA help. Not for email copy (use email-sequence) or popup copy (use popup-cro). Gathers page purpose, audience objections, product differentiation, and traffic source before drafting.",
       "setup": [
-        "Save as ~/.claude/skills/copywriting-specialist.md.",
-        "Frame each request with: audience, pain, offer, tone. Without that, output defaults to generic.",
-        "Ask for 5 variants — never ship the first."
+        "Reads .claude/product-marketing-context.md first if it exists, then asks only for what's missing.",
+        "Provide the page type, primary action you want visitors to take, audience description, and key proof points.",
+        "For line-by-line polish after the draft, chain into the copy-editing skill in the same repo.",
+        "Expect short, specific copy — e.g. 'Cut your weekly reporting from 4 hours to 15 minutes' rather than 'Save time on your workflow'."
       ],
       "exampleTranscript": "You: Hero copy for a Claude vs Cursor comparison page. Audience: devs deciding. Pain: wasting $20/mo on the wrong tool. Offer: opinionated side-by-side.\nClaude: [5 PAS-framework variants]",
       "source": {
@@ -435,13 +441,14 @@
         "ctr",
         "ab-testing"
       ],
-      "purpose": "Generates 10 headline variants against different frameworks (curiosity, benefit, controversy, listicle, how-to) and ranks them.",
-      "shortAnswer": "Most content dies on the headline. This skill forces you to see 10 angles before you ship, then ranks them for predicted CTR and LLM-citability — because LLMs are the new SERP.",
-      "whenToUse": "Every post headline. Every newsletter subject line. Every YouTube title.",
+      "purpose": "Generates 10 headline variants against different frameworks (curiosity, benefit, controversy, listicle, how-to) and ranks them by predicted CTR and LLM-citability.",
+      "shortAnswer": "Most content dies on the headline. This skill forces you to see 10 angles before shipping, then ranks them for predicted CTR and LLM-citability — because LLMs are the new SERP. Output is 10 variants with a one-line rationale each, scored.",
+      "whenToUse": "Every post headline. Every newsletter subject line. Every YouTube title — anywhere a single line of copy gates whether the piece gets read.",
       "setup": [
-        "Save as ~/.claude/commands/headline-lab.md.",
-        "Feed it: target keyword, audience, angle of the piece.",
-        "Returns 10 variants with a 1-line rationale each."
+        "Save the file as ~/.claude/commands/headline-lab.md.",
+        "Feed: target keyword, audience, and the piece's angle.",
+        "Skill returns 10 variants, each with a one-line rationale, plus a predicted CTR + citability score.",
+        "Predictions are directional, not data-backed — for stakes-worthy pieces, A/B test rather than ship the top-ranked variant blind."
       ],
       "exampleTranscript": "You: /headline-lab 'claude code skills' — audience solo devs.\nClaude: 1. The 47 Claude Code skills that actually matter...\n       2. We ranked 200+ Claude Code skills by licence. Only 47 are safe to copy.\n       3. Your Claude Code setup is missing these 10 skills.\n       [...10 total, scored]",
       "source": {
@@ -466,13 +473,14 @@
         "voice-match",
         "client-work"
       ],
-      "purpose": "Drafts in a specific author's voice after reading 3-5 of their pieces — attribution-safe for transparency.",
-      "shortAnswer": "For agencies, ghostwriters, and internal comms teams. Reads sample pieces, extracts voice DNA, drafts new content that reads like the author wrote it. The ethical use is stated-up-front ghostwriting — not deception.",
-      "whenToUse": "Client ghostwriting. Executive comms. Translating between a brand's founder voice and a new team member's draft.",
+      "purpose": "Drafts in a specific author's voice after reading 3-5 of their pieces — with attribution-safe output for transparent ghostwriting.",
+      "shortAnswer": "For agencies, ghostwriters and internal comms teams. The skill reads sample pieces, extracts a voice brief, and drafts new content that reads like the named author wrote it. The ethical use is stated-up-front ghostwriting (client byline, consented) — not deception.",
+      "whenToUse": "Client ghostwriting. Executive comms and founder-voice pieces. Translating between a brand's founder voice and a new team member's draft so the house voice stays consistent.",
       "setup": [
-        "Save as ~/.claude/commands/ghostwrite.md.",
-        "Feed sample pieces. Skill produces a voice brief + draft.",
-        "Add disclosure language to the output — 'draft ghostwritten per client brief'."
+        "Save the file as ~/.claude/commands/ghostwrite.md.",
+        "Feed sample pieces from the target author; skill produces a voice brief plus a draft in that voice.",
+        "Add disclosure language to the output — e.g. \"draft ghostwritten per client brief\" — so the chain of authorship stays clear.",
+        "Use only where ghostwriting is known and consented; never for impersonation."
       ],
       "exampleTranscript": "You: /ghostwrite — attached: 3 Medium posts. Target: 1,200-word piece on vibe coding.\nClaude: [analyses voice → writes draft that matches cadence, vocab, punctuation habits]",
       "source": {
@@ -487,40 +495,6 @@
       ]
     },
     {
-      "slug": "newsletter-recycle",
-      "name": "Newsletter Recycle",
-      "category": "content",
-      "tier": "signal",
-      "tags": [
-        "repurposing",
-        "distribution",
-        "leverage"
-      ],
-      "purpose": "Turns one blog post into a newsletter + 5 social posts (LinkedIn, Twitter/X thread, Instagram caption) in one pass.",
-      "shortAnswer": "Distribution math: every piece of content should ship 5-10 times across formats. This skill does the repurposing so you're not manually reformatting one piece for the rest of the week.",
-      "whenToUse": "Immediately after publishing a blog post. Schedule the derivatives for the following 7 days.",
-      "setup": [
-        "Save as ~/.claude/commands/newsletter-recycle.md.",
-        "Configure per-channel tone + length in .claude/distribution-profile.md.",
-        "Feed: URL or markdown of the source post."
-      ],
-      "exampleTranscript": "You: /newsletter-recycle https://promptwritingstudio.com/claude-code-mcp-stack\nClaude: ✉️ newsletter (400 words) + 🐦 thread (7 tweets) + 💼 LinkedIn post + 📸 IG caption + 📺 YouTube short script",
-      "source": {
-        "type": "community",
-        "author": "ComposioHQ",
-        "authorUrl": "https://github.com/ComposioHQ",
-        "repo": "ComposioHQ/awesome-claude-skills",
-        "repoUrl": "https://github.com/ComposioHQ/awesome-claude-skills",
-        "licence": "Apache-2.0"
-      },
-      "caveats": "Output needs human polish — per-channel tone drifts if you ship raw. Budget 10 min per piece to edit.",
-      "related": [
-        "content-writer",
-        "twitter-optimizer",
-        "copywriting-specialist"
-      ]
-    },
-    {
       "slug": "twitter-optimizer",
       "name": "Twitter Algorithm Optimizer",
       "category": "content",
@@ -530,13 +504,14 @@
         "social",
         "algorithm"
       ],
-      "purpose": "Rewrites a tweet or thread for the current Twitter/X algorithm preferences — engagement bait avoidance, read-time, link handling.",
-      "shortAnswer": "Twitter's algorithm rewards native content, moderate length, and replies. This skill rewrites your draft to play nicer with it — without descending into bait.",
-      "whenToUse": "When your baseline engagement feels low. When a thread underperforms what you expected.",
+      "purpose": "Analyses and rewrites tweets for maximum reach using insights from Twitter's open-source recommendation algorithm.",
+      "shortAnswer": "Rewrites tweet drafts to align with Twitter's ranking mechanisms — Real-graph, SimClusters, TwHIN, and Tweepcred — and explains the reasoning using the algorithm's own engagement signals. Targets reply-worthy, community-resonant content over bait.",
+      "whenToUse": "When a tweet or thread is underperforming and you want to know why algorithmically, not just stylistically. Also when you want to debug low reach, understand which engagement signals matter (replies weigh heavier than likes, quote tweets signal discussion), or adapt content to stay within your follower niche so TwHIN keeps surfacing it.",
       "setup": [
-        "Save as ~/.claude/skills/twitter-optimizer.md.",
-        "Keep this skill updated quarterly — platform rules shift.",
-        "Invoke with the draft tweet or thread."
+        "Install from the ComposioHQ/awesome-claude-skills repo under twitter-algorithm-optimizer/.",
+        "Invoke with your draft tweet or thread — the skill scores it against engagement signals and rewrites for better ranking.",
+        "Keep a note of what changed: Real-graph (follower-interaction likelihood), SimClusters (community fit), TwHIN (topic coherence).",
+        "Re-run quarterly as the underlying algorithm is updated upstream."
       ],
       "exampleTranscript": "You: Rewrite this tweet for better reach.\nClaude: 3 variants: (a) question hook, (b) pattern interrupt, (c) controversial take. Kept the link out of tweet 1.",
       "source": {
@@ -549,7 +524,6 @@
       },
       "caveats": "Algorithm advice decays fast. If the skill is older than 6 months, sanity-check against current platform guidance.",
       "related": [
-        "newsletter-recycle",
         "headline-lab"
       ]
     },
@@ -563,13 +537,14 @@
         "technical-seo",
         "content-audit"
       ],
-      "purpose": "Runs a full on-page SEO audit on a URL or page file — title, meta, H1, schema, internal links, content gaps.",
-      "shortAnswer": "A pragmatic SEO check that skips the 100-item generic checklists and focuses on what actually moves rankings: intent match, structured data, topical coverage, internal linking.",
-      "whenToUse": "Before publishing any page that targets a competitive query. Every 6 months on evergreen pages.",
+      "purpose": "Audits, reviews, and diagnoses SEO issues across technical SEO, on-page SEO, and content — identifying what's blocking indexation or ranking and producing a prioritised action plan.",
+      "shortAnswer": "A full audit framework that starts from site context (SaaS, e-commerce, blog), scope (full site or specific pages), and current state before diving in. Each finding lists issue, impact, evidence, fix, and priority — not a generic 100-item checklist.",
+      "whenToUse": "When you need a technical SEO review, are investigating why a page is not ranking, or want an on-page sweep before publishing. Also when organic traffic drops after a migration, or when the audit needs to feed a programmatic-seo or content-strategy plan.",
       "setup": [
-        "Save as ~/.claude/skills/seo-audit.md.",
-        "Pair with a keyword research tool (DataForSEO, Ahrefs) if available — skill can consume that data.",
-        "Invoke with page URL or file path."
+        "Checks .claude/product-marketing-context.md first to avoid redundant questions.",
+        "Confirm scope upfront — full site vs specific pages, technical + on-page combined or one focus area, and Search Console access.",
+        "Produces an Executive Summary with top 3-5 priority issues plus Technical, On-Page, and Content finding sections.",
+        "Pairs with free tools (Search Console, PageSpeed Insights, Rich Results Test) and paid tools (Screaming Frog, Ahrefs, Semrush, Sitebulb)."
       ],
       "exampleTranscript": "You: /seo-audit pages/claude-code-mcp-stack.js\nClaude: 7 findings. H1 missing year (target query has '2026' intent). FAQ schema present ✓. Internal links: 2, target is 5-8. Related pages not cross-linked.",
       "source": {
@@ -597,13 +572,14 @@
         "llm-search",
         "citations"
       ],
-      "purpose": "Scores a page for LLM-citability — direct answers, quote-ready structure, source attribution, FAQ coverage.",
-      "shortAnswer": "LLM search is the new SERP. This skill checks whether your page answers the target query in a way an LLM would quote — clear claims, structured data, sources, no filler.",
-      "whenToUse": "Every new page targeting an informational query. Quarterly on evergreen pages as LLM search evolves.",
+      "purpose": "Scores a page for LLM-citability — direct answers, quote-ready structure, source attribution and FAQ coverage — on a 0-100 scale with specific improvement suggestions.",
+      "shortAnswer": "LLM search is the new SERP. This skill checks whether your page answers the target query in a way an LLM would actually quote: clear claims in the opening paragraph, structured data, cited sources, no filler. Returns a score plus a ranked list of what to fix.",
+      "whenToUse": "Every new page targeting an informational query. Quarterly on evergreen pages as LLM search patterns evolve and old winners start losing citations.",
       "setup": [
-        "Save as ~/.claude/skills/aeo-citability.md.",
-        "Give the skill the target query + the page.",
-        "Returns a 0-100 score with specific improvement suggestions."
+        "Save the file as ~/.claude/skills/aeo-citability.md.",
+        "Feed: the target query plus the page (file path or URL).",
+        "Skill returns a 0-100 score plus specific suggestions — e.g. add Article schema, cite three sources, sharpen the first 50 words.",
+        "Scoring is heuristic; calibrate against actual citation data from your own LLM-search monitoring."
       ],
       "exampleTranscript": "You: /aeo-citability 'what is a claude code skill' pages/claude-code-skills/index.js\nClaude: 68/100. Direct answer: strong (first 50 words). Structured data: FAQ only, add Article. Sources: 0 cited — add at least 3. No contrarian framing.",
       "source": {
@@ -629,12 +605,13 @@
         "rich-results"
       ],
       "purpose": "Generates JSON-LD schema markup for a page — Article, FAQPage, HowTo, Product, SoftwareApplication, BreadcrumbList.",
-      "shortAnswer": "Schema is one of the highest-ROI SEO additions on modern sites — rich results, AEO boost, clearer LLM signals. This skill produces clean, spec-compliant JSON-LD from a page's content.",
-      "whenToUse": "On every new content page. Retrofitting schema on existing top-10-ranked pages.",
+      "shortAnswer": "Schema is one of the highest-ROI SEO additions on modern sites — rich results, AEO boost, clearer LLM signals. This skill produces clean, spec-compliant JSON-LD from a page's existing content, ready to drop into the page's <head>.",
+      "whenToUse": "On every new content page. Retrofitting on existing pages already ranked in the top 10, where a schema upgrade can lift them further.",
       "setup": [
-        "Save as ~/.claude/skills/schema-generator.md.",
-        "Feed it: page type + page content. Returns JSON-LD block ready to drop into <head>.",
-        "Validate with Google's Rich Results Test before shipping."
+        "Save the file as ~/.claude/skills/schema-generator.md.",
+        "Feed: the page type plus the page's content; skill returns a JSON-LD block ready to drop into <head>.",
+        "Validate the output with Google's Rich Results Test before shipping.",
+        "Don't over-schema — Google penalises irrelevant or spammy structured data, so keep to the types the page actually fits."
       ],
       "exampleTranscript": "You: /schema-generator Article pages/claude-code-skills/commit-helper.js\nClaude: [Article schema with author, datePublished, dateModified, headline, description, image]",
       "source": {
@@ -658,13 +635,14 @@
         "site-structure",
         "link-equity"
       ],
-      "purpose": "Suggests contextual internal links for a page by scanning the rest of the site for topically-relevant anchors.",
-      "shortAnswer": "Internal linking is the lowest-effort SEO win most sites ignore. This skill scans your published posts for mentions of the current page's topic and suggests exact insertion points.",
-      "whenToUse": "After publishing a new page — add 3-5 inbound internal links. When ranking a specific page from position 20 → 10.",
+      "purpose": "Suggests contextual internal links for a page by scanning the rest of the site for topically-relevant anchors and proposing exact insertion points.",
+      "shortAnswer": "Internal linking is the lowest-effort SEO win most sites ignore. This skill scans your published posts for mentions of the current page's topic and suggests exact anchor text plus sentence-level insertion points. Review each one — some suggestions are contextually wrong.",
+      "whenToUse": "After publishing a new page — add three to five inbound internal links so it doesn't launch orphaned. When trying to push a specific page from position 20 up to position 10.",
       "setup": [
-        "Save as ~/.claude/skills/internal-link-mapper.md.",
-        "Point at the site's /pages or /posts directory.",
-        "Invoke with the target page slug."
+        "Save the file as ~/.claude/skills/internal-link-mapper.md.",
+        "Point the skill at the site's /pages or /posts directory so it can scan the published corpus.",
+        "Invoke with the target page slug; skill returns candidate pages plus suggested anchor text and sentence location per insertion.",
+        "Never auto-apply — review each suggestion in context before editing."
       ],
       "exampleTranscript": "You: /internal-link-mapper /claude-code-skills\nClaude: Found 12 candidate pages. Suggested 5 insertions — exact anchor text + sentence location.",
       "source": {
@@ -688,13 +666,14 @@
         "ctr",
         "snippet"
       ],
-      "purpose": "Rewrites meta title and description for a page, optimised for CTR on target query.",
-      "shortAnswer": "Meta titles and descriptions decay — what won in 2023 loses in 2026. This skill rewrites both against current SERP patterns and your target query's intent.",
-      "whenToUse": "Every 6 months on top-traffic pages. After a ranking drop. When CTR from GSC is <2% on a position-3-10 page.",
+      "purpose": "Rewrites a page's meta title and description for CTR on a specified target query — producing three variants of each with distinct angles.",
+      "shortAnswer": "Meta titles and descriptions decay. What won in 2023 loses in 2026 as SERP patterns and query intent shift. This skill takes the current meta plus the target keyword and page purpose, then proposes three title variants (60 characters max) and three description variants (155 characters max) against current SERP patterns.",
+      "whenToUse": "Every six months on top-traffic pages. Immediately after a ranking drop. When GSC shows CTR below 2% for a page ranked in positions 3-10.",
       "setup": [
-        "Save as ~/.claude/commands/meta-rewrite.md.",
-        "Skill needs: target keyword, page purpose, current meta.",
-        "Returns 3 variants of each."
+        "Save the file as ~/.claude/commands/meta-rewrite.md.",
+        "Feed: the target keyword, the page's purpose, and the current meta title + description.",
+        "Skill returns three variants of each with a one-line rationale per variant.",
+        "CTR uplift is only verifiable with real data — ship a variant, measure in GSC, iterate."
       ],
       "exampleTranscript": "You: /meta-rewrite for /claude-code-mcp-stack, target 'claude code mcp servers'.\nClaude: 3 title variants (60 chars max), 3 description variants (155 chars max), each with a distinct angle.",
       "source": {
@@ -718,13 +697,15 @@
         "netlify",
         "ci"
       ],
-      "purpose": "Builds the site, validates output, and pushes to Netlify — with rollback if the build fails post-deploy.",
-      "shortAnswer": "The 'I just shipped' skill. Runs your build, checks the output dir exists, deploys, and waits for Netlify to confirm green. Rolls back on failure.",
-      "whenToUse": "Every production deploy. Replace manual netlify deploy commands.",
+      "purpose": "Builds and deploys Vendors.ie via git push to main, which triggers Netlify's auto-deploy — no Netlify CLI used.",
+      "shortAnswer": "Runs npm run build in ~/src/vendors, commits any uncommitted work via the /commit pattern, pushes to main, and confirms the run landed on GitHub with gh run list. Reports build result, commit SHA and push confirmation — it never finishes silently.",
+      "whenToUse": "Use for every Vendors.ie production deploy. The skill replaces ad-hoc git push + dashboard checking with a single command that stops immediately on a build failure and verifies the push actually reached GitHub before declaring success.",
       "setup": [
-        "Save as ~/.claude/commands/deploy.md.",
-        "Requires Netlify CLI installed and authenticated.",
-        "Configure the site ID + build command in the skill or .claude/settings.json."
+        "Save the file as ~/.claude/commands/deploy.md.",
+        "Runs npm run build in ~/src/vendors and stops if the build fails.",
+        "Commits uncommitted changes using the /commit pattern, then runs git push to trigger Netlify auto-deploy.",
+        "Confirms with gh run list --repo The-Flash-Report/vendors --limit 3.",
+        "Netlify CLI is NOT used — deploys are triggered by git push to main, so there is no netlify deploy command."
       ],
       "exampleTranscript": "You: /deploy\nClaude: [runs npm run build → deploys to Netlify → polls for 'ready' status → reports URL]",
       "source": {
@@ -750,13 +731,15 @@
         "monitoring",
         "portfolio"
       ],
-      "purpose": "Checks the latest deploy status for all (or one) Netlify site — green/building/failed at a glance.",
-      "shortAnswer": "If you run multiple sites, deploy status is the first thing you check each morning. This skill reports them in one table.",
-      "whenToUse": "Morning portfolio check. After merging a PR to confirm the deploy landed.",
+      "purpose": "Checks the latest Netlify deploy for all sites (or a specific site if named) via the Netlify API and reports ready/building/error state.",
+      "shortAnswer": "Pulls the auth token from ~/Library/Preferences/netlify/config.json, then queries the deploys endpoint for each of the 17 catalogued sites. Reports OK for ready, ERROR with the error message, or BUILDING/UPLOADING in progress with an option to re-run.",
+      "whenToUse": "Run first thing in the morning as a portfolio check, after merging a PR to confirm the deploy landed, or when something feels off and you want to rule out a stuck build. Filter to one site by name, or pass all to scan every site in the list.",
       "setup": [
-        "Save as ~/.claude/commands/netlify-status.md.",
-        "Netlify CLI authed. Optionally feed a list of site IDs.",
-        "Invoke with no args for all sites, or /netlify-status <site-name>."
+        "Save as ~/.claude/skills/netlify-status/SKILL.md.",
+        "Token is read from /Users/bryancollins/Library/Preferences/netlify/config.json — no extra auth step.",
+        "Invoke: /netlify-status all to scan every site, or /netlify-status <name> to filter by substring.",
+        "With no argument, the skill asks which site(s) to check before running anything.",
+        "Covers 17 sites by site ID — tenderwatch, vendors, fluentatdesk, readingcurator, bawt, the flash reports, leinster pairs."
       ],
       "exampleTranscript": "You: /netlify-status\nClaude: 🟢 vendors.ie (2m ago) | 🟢 fluentatdesk.com (14h ago) | 🔴 readingcurator.com (1h ago — build failed)",
       "source": {
@@ -782,13 +765,15 @@
         "local",
         "workflow"
       ],
-      "purpose": "Spins up the project's dev server — handles npm install if needed, picks an available port, opens the browser.",
-      "shortAnswer": "The 'I want to see this locally' skill. Handles the tiny-but-annoying setup steps (port conflicts, missing deps, stale build) so you skip straight to the browser.",
-      "whenToUse": "Starting local dev. After pulling a branch with dependency changes.",
+      "purpose": "Starts the Vendors.ie Astro dev server for local preview on port 4321, killing any existing Astro dev server first.",
+      "shortAnswer": "A narrow, Vendors.ie-only skill that handles the awkward bits: kills stray Astro processes, runs npx astro dev on the right port, confirms the server is responding, and reports the URL. If the build errors, it diagnoses and fixes before handing back.",
+      "whenToUse": "Use when starting local work on Vendors.ie and you want a clean dev server without hunting down a port conflict or a ghost Astro process from an earlier session. Pair with /deploy once changes are ready to ship.",
       "setup": [
-        "Save as ~/.claude/commands/preview.md.",
-        "Skill reads package.json for the dev script.",
-        "Invoke: /preview"
+        "Save the file as ~/.claude/commands/preview.md.",
+        "Kills existing Astro dev servers with pkill -f \"astro dev\" before starting.",
+        "Runs cd ~/src/vendors && npx astro dev --port 4321.",
+        "Confirms the server is live by checking http://localhost:4321/ and reports the URL.",
+        "On build errors, the skill diagnoses and fixes them rather than handing back a broken server."
       ],
       "exampleTranscript": "You: /preview\nClaude: Running npm install (stale node_modules)... Starting dev server on :3001 (3000 in use). Opening browser.",
       "source": {
@@ -813,13 +798,14 @@
         "helm",
         "infrastructure"
       ],
-      "purpose": "Designs Helm charts, K8s manifests, and GitOps workflows — with sensible defaults for indie/small-team deploys.",
-      "shortAnswer": "Most K8s tutorials over-engineer for a scale you don't have. This skill gives you the minimum-viable cluster: one ingress, one service, sensible resource limits, no premature complexity.",
-      "whenToUse": "Only if you actually need K8s. 95% of indie projects don't — Netlify/Vercel/Fly is enough. Bring this in when you hit real multi-service orchestration.",
+      "purpose": "Expert Kubernetes architect for cloud-native infrastructure, GitOps workflows (ArgoCD/Flux), and enterprise container orchestration across EKS, AKS, GKE, and OKE.",
+      "shortAnswer": "Builds scalable, secure, cost-effective platform engineering solutions. Masters managed Kubernetes across all major clouds, self-managed clusters, multi-cluster management via Cluster API, progressive delivery with Argo Rollouts and Flagger, and policy-as-code with OPA, Gatekeeper, and Kyverno.",
+      "whenToUse": "Use proactively for K8s architecture decisions, GitOps implementation, service-mesh design (Istio, Linkerd, Cilium), or cloud-native platform design. Also for Pod Security Standards migration, supply-chain security (SLSA, Sigstore, SBOMs), multi-tenancy patterns, and developer-platform self-service provisioning.",
       "setup": [
-        "Save as ~/.claude/agents/kubernetes-architect.md.",
-        "Feed it your app's services list + traffic profile.",
-        "Invoke via /k8s-plan."
+        "Add the marketplace: /plugin marketplace add wshobson/agents.",
+        "Browse via /plugin and install kubernetes-operations, which includes the kubernetes-architect agent plus four specialised skills for production-grade configs.",
+        "Each plugin loads in isolation — installing kubernetes-operations only loads its agents, commands, and skills (progressive disclosure keeps token use down).",
+        "Invoke the agent directly or let Claude Code delegate when K8s architecture questions come up."
       ],
       "exampleTranscript": "You: /k8s-plan — 3 services, 50 RPS peak, single region.\nClaude: [produces Helm chart + service manifests + ingress + HPA with 2-5 replica range, cost-optimised]",
       "source": {
@@ -846,13 +832,14 @@
         "research",
         "positioning"
       ],
-      "purpose": "Scrapes 3-5 competitor pages on the same topic, compares stance, and identifies content gaps + differentiation angles.",
-      "shortAnswer": "The 'why publish this?' check. Before writing on a competitive topic, see what the top pages actually say — then find an angle they miss.",
-      "whenToUse": "Before any new page in a competitive niche. Monthly on your top-3 competitors' recent posts.",
+      "purpose": "Scrapes 3-5 competitor pages on the same topic, compares their stance, and identifies content gaps plus differentiation angles.",
+      "shortAnswer": "The \"why publish this?\" check. Before writing on a competitive topic, the skill fetches the top-ranking pages, summarises what each one actually argues, and points out the angle none of them take — so you don't publish the sixth near-identical post.",
+      "whenToUse": "Before any new page in a competitive niche. Monthly on your top three competitors' recent posts to spot trends you should respond to.",
       "setup": [
-        "Save as ~/.claude/agents/competitor-scan.md.",
-        "Pair with a web fetch tool.",
-        "Feed: target query + 3-5 competitor URLs."
+        "Save the file as ~/.claude/agents/competitor-scan.md.",
+        "Pair with a web fetch tool so the agent can pull each competitor page.",
+        "Feed: target query plus 3-5 competitor URLs.",
+        "Output is a per-competitor stance summary plus a shortlist of gaps worth claiming."
       ],
       "exampleTranscript": "You: Competitor scan on 'claude vs chatgpt' — top 3 results.\nClaude: All 3 hedge on the verdict. None mention Claude Code. 2 have stale pricing. Gap: opinionated verdict + updated pricing + Claude Code angle.",
       "source": {
@@ -876,13 +863,14 @@
         "papers",
         "summarisation"
       ],
-      "purpose": "Summarises 3-5 academic papers on a topic into a plain-English brief with the core claim, method, and limitations of each.",
-      "shortAnswer": "For non-academics writing on technical topics (ML, biotech, economics). Turns unreadable papers into defensible claims you can cite in your post.",
-      "whenToUse": "Tech/science content. Newsletter pieces that reference research. Avoiding hand-wavy 'studies show' claims.",
+      "purpose": "Summarises 3-5 academic papers on a single topic into a plain-English brief listing the core claim, method and limitations of each paper.",
+      "shortAnswer": "For non-academics writing on technical topics — ML, biotech, economics — where \"studies show\" hand-waving is the usual failure mode. Turns dense papers into a defensible set of claims you can cite in the post, with each paper's limitations explicit rather than buried.",
+      "whenToUse": "Tech and science content. Newsletter pieces that reference research. Any draft where the alternative is vague appeals to unnamed studies.",
       "setup": [
-        "Save as ~/.claude/agents/academic-brief.md.",
-        "Tool access: web fetch (for open-access papers), PDF parse.",
-        "Feed DOIs or arxiv links."
+        "Save the file as ~/.claude/agents/academic-brief.md.",
+        "Needs web fetch (for open-access papers) and PDF parsing tools available to the agent.",
+        "Feed DOIs or arXiv links; the agent returns one paragraph per paper: claim, method, limitation.",
+        "Closed-access papers need manual download before the agent can read them."
       ],
       "exampleTranscript": "You: /academic-brief — 3 papers on prompt chain-of-thought. [URLs]\nClaude: Paper 1: claim + method + limitation. Paper 2: same. Paper 3: contrarian — worth citing.",
       "source": {
@@ -906,13 +894,14 @@
         "markdown",
         "workflow"
       ],
-      "purpose": "Converts Word, PDF, or HTML documents into clean markdown — preserving structure, tables, and code blocks.",
-      "shortAnswer": "The 'someone sent me a Word doc' fix. Converts to markdown so you can edit in your normal tools, paste into Claude, or drop into a blog post.",
-      "whenToUse": "Client briefs in .docx. Research papers in PDF. Old content in HTML export.",
+      "purpose": "Converts DOCX, PDF, PPTX, and XLSX to high-quality markdown with automatic post-processing — fixing tables, image paths, code blocks, and CJK bold spacing that raw converters miss.",
+      "shortAnswer": "Combines Pandoc (best-in-class extraction) with eight post-processing fixes applied automatically. Benchmarked at 7.6/10 against Docling, MarkItDown, Pandoc raw, and Mammoth.",
+      "whenToUse": "When someone sends a .docx brief, PDF research paper, or PowerPoint deck and you need clean markdown to edit, paste into Claude, or publish. Quick mode is fast enough for drafts; Heavy mode runs multiple tools in parallel and merges the best segments for final documents with complex layouts.",
       "setup": [
-        "Save as ~/.claude/skills/doc-to-markdown.md.",
-        "Depends on pandoc being installed (brew install pandoc).",
-        "Invoke with file path."
+        "Install doc-to-markdown via the daymade-skills marketplace.",
+        "Requires Python with uv — the skill runs scripts/convert.py with pymupdf4llm and markitdown as extras.",
+        "Quick command: uv run --with pymupdf4llm --with markitdown scripts/convert.py document.docx -o output.md --assets-dir ./media.",
+        "Add --heavy for complex layouts; tests run via uv run --with pytest pytest scripts/test_convert.py -v."
       ],
       "exampleTranscript": "You: /doc-to-markdown brief.docx\nClaude: [produces brief.md — headings preserved, 2 tables converted, 1 footnote inline]",
       "source": {
@@ -939,13 +928,14 @@
         "transcripts",
         "team"
       ],
-      "purpose": "Analyses a meeting transcript for key decisions, action items, sentiment shifts, and unanswered questions.",
-      "shortAnswer": "The post-meeting synthesis that nobody does well. Extracts: decisions made, actions assigned (with owner), questions left hanging, changes in tone that suggest unresolved friction.",
-      "whenToUse": "After any meeting where you have a transcript. Otter.ai, Fathom, Zoom AI Companion all produce one.",
+      "purpose": "Analyses meeting transcripts and recordings to uncover behavioural patterns, communication habits, and actionable feedback on how you lead and listen.",
+      "shortAnswer": "Transforms meeting transcripts into insights about your communication patterns — conflict avoidance, speaking ratios, filler words, question-asking versus statement-making, and active-listening indicators. Provides timestamped examples with what happened, why it matters, and how to improve.",
+      "whenToUse": "When you want feedback on facilitation style, want to know how often you interrupt or dominate, or need to prepare for a performance review with concrete examples. Also useful for coaching team members or tracking improvement over time by comparing patterns across multiple meeting folders.",
       "setup": [
-        "Save as ~/.claude/skills/meeting-insights.md.",
-        "Feed transcript text or file path.",
-        "Configure: attendees list, context (standup vs planning vs 1:1)."
+        "Download transcripts (.txt, .md, .vtt, .srt, .docx) into a folder such as ~/meetings/.",
+        "Open Claude Code inside that folder so the skill can scan available files.",
+        "Ask in plain English: 'Analyse all meetings in this folder and tell me when I avoided conflict.'",
+        "For trend tracking, point at two folders and ask the skill to compare facilitation style between them."
       ],
       "exampleTranscript": "You: /meeting-insights standup-2026-04-20.txt\nClaude: 3 decisions, 5 action items (3 owners assigned / 2 unassigned), 1 unresolved — 'did we agree on the pricing tier?'",
       "source": {
@@ -972,13 +962,14 @@
         "brand",
         "migration"
       ],
-      "purpose": "Sweeps CTAs, URLs, or brand terms across a repo with tier-based policy — keep some, swap others, leave the rest.",
-      "shortAnswer": "When you pivot a product or brand, 20-50 files reference the old version. Manually hunting them is tedious and error-prone. This skill applies a tiered policy: Tier A keeps, Tier B swaps, Tier C needs judgement.",
-      "whenToUse": "After a brand change. After swapping an affiliate. After deprecating a product line and routing traffic elsewhere.",
+      "purpose": "Sweeps CTAs, URLs or brand terms across a repo under a tier-based policy — keep some, swap others, leave the rest for review.",
+      "shortAnswer": "When you pivot a product or brand, 20-50 files reference the old version. Manually hunting them is tedious and error-prone. This skill applies a tiered policy: Tier A files keep the old term (buyer-intent surfaces), Tier B auto-swap, Tier C flagged for human judgement.",
+      "whenToUse": "After a brand change. After swapping an affiliate. After deprecating a product line and routing traffic elsewhere — anywhere a stale string in 30 files would be easy to miss.",
       "setup": [
-        "Save as ~/.claude/commands/pivot-sweep.md.",
-        "Configure tier allowlist (filepaths that keep the old URL/term) and the new URL/term.",
-        "Invoke: /pivot-sweep <old> <new>."
+        "Save the file as ~/.claude/commands/pivot-sweep.md.",
+        "Configure the Tier A allowlist (filepaths that keep the old URL or term) plus the new URL or term.",
+        "Invoke: /pivot-sweep <old> <new>; skill reports Tier A / B / C counts and asks to confirm the Tier B swap.",
+        "Don't run unattended — button text often needs rewriting alongside a URL swap, and only a human catches those."
       ],
       "exampleTranscript": "You: /pivot-sweep courses.becomeawritertoday.com/purchase /claude-code-guide\nClaude: Found 33 files. Tier A (15 files): keep. Tier B (13 files): auto-swap. Tier C (5 files): need review — shown below. Confirm?",
       "source": {
@@ -1003,13 +994,14 @@
         "regression",
         "pivot-cleanup"
       ],
-      "purpose": "Greps for residual outdated copy across a repo after a pivot — catches prose that escaped the CTA sweep.",
-      "shortAnswer": "The under-appreciated follow-up to a pivot sweep. You replaced 'our course' CTAs but forgot about 10 FAQ answers that still say 'our course teaches...'. This finds those.",
-      "whenToUse": "Every time after /pivot-sweep completes. Before shipping a major rebrand.",
+      "purpose": "Greps for residual outdated copy across a repo after a pivot — catching prose that escaped the CTA sweep.",
+      "shortAnswer": "The under-appreciated follow-up to a pivot sweep. You replaced \"our course\" CTAs but 10 FAQ answers still say \"our course teaches…\". This skill greps a configured denylist of phrases against specific file groups and reports every residual mention so you can decide what to rewrite.",
+      "whenToUse": "Every time after /pivot-sweep completes. Before shipping a major rebrand, where one stray phrase in an FAQ undermines the rest of the cleanup.",
       "setup": [
-        "Save as ~/.claude/commands/copy-align.md.",
-        "Configure a deny list of phrases that shouldn't appear on specific file groups.",
-        "Reports findings — doesn't auto-fix."
+        "Save the file as ~/.claude/commands/copy-align.md.",
+        "Configure a denylist: phrases that shouldn't appear on specified file groups after the pivot.",
+        "Skill reports findings grouped by file — doesn't auto-fix.",
+        "Regex-based, so expect false positives on legal text and schema.org fields — review before editing."
       ],
       "exampleTranscript": "You: /copy-align\nClaude: 10 findings across 6 files. FAQ answers on education-ai.js still say 'our course teaches'. Fix?",
       "source": {
@@ -1033,13 +1025,14 @@
         "automation",
         "weekly"
       ],
-      "purpose": "Verifies a project's reference data (prices, models, deps) against upstream sources — flags staleness.",
-      "shortAnswer": "Reference data rots. Model pricing changes, products get deprecated, APIs move. This skill checks your data files against their upstream source and flags drift before it shows up in user-facing pages.",
-      "whenToUse": "Weekly as a scheduled run. Before shipping a page that depends on pricing or model data.",
+      "purpose": "Verifies a project's reference data — prices, models, dependencies — against upstream sources and flags staleness.",
+      "shortAnswer": "Reference data rots. Model pricing changes, products get deprecated, APIs move. This skill checks each configured data file against its upstream source and flags drift before it shows up in user-facing pages. Can run as a scheduled GitHub Action so drift is caught before the next content push, not after.",
+      "whenToUse": "Weekly as a scheduled run. Before shipping a page that depends on pricing or model data, where one stale value undermines trust.",
       "setup": [
-        "Save as ~/.claude/skills/drift-check.md.",
-        "Configure source pairs: local-file + upstream-URL + fields-to-check.",
-        "Can run as a GitHub Action on a cron schedule."
+        "Save the file as ~/.claude/skills/drift-check.md.",
+        "Configure source pairs per data file: the local file, the upstream URL, and the fields to compare.",
+        "Can run locally on demand or as a GitHub Action on a cron schedule.",
+        "Upstream scraping breaks when sites restructure — build a fallback path for HTML parse failures rather than silently skipping."
       ],
       "exampleTranscript": "You: /drift-check data/claude-models.json\nClaude: 2 findings. Opus 4.7 price matches upstream ✓. Haiku 3 retiresOn=2026-04-19 is past (today 2026-04-20) — move to status=retired.",
       "source": {
@@ -1063,13 +1056,14 @@
         "deprecation",
         "automation"
       ],
-      "purpose": "Automates the lifecycle: current → legacy → deprecated → retired as dates pass. Keeps model data in sync with vendor announcements.",
-      "shortAnswer": "Manual lifecycle management doesn't scale past 3-4 models. This skill checks today's date against each model's retiresOn, promotes statuses, and removes content-page references to models that are gone.",
-      "whenToUse": "Weekly. Automated as a scheduled run alongside /drift-check.",
+      "purpose": "Automates the model lifecycle — promoting entries from current to legacy to deprecated to retired as their dates pass, and stripping references from content pages once a model is gone.",
+      "shortAnswer": "Manual lifecycle management stops scaling past 3-4 models. This skill checks today's date against each model's retiresOn field, proposes status promotions, and lists content-page references that need removing. Output is a diff you approve before anything is applied.",
+      "whenToUse": "Weekly. Ideal as a scheduled run alongside /drift-check so model staleness never sits past the next publishing cycle.",
       "setup": [
-        "Save as ~/.claude/skills/retire-model.md.",
-        "Feed: data file with status + retiresOn fields.",
-        "Outputs a diff — you approve before apply."
+        "Save the file as ~/.claude/skills/retire-model.md.",
+        "Feed: a data file with status and retiresOn fields per model.",
+        "Skill outputs a diff — status changes plus reference removals — which you approve before apply.",
+        "Don't wire to auto-apply; a premature retirement flag, before the vendor confirms, breaks pages that still need to serve traffic."
       ],
       "exampleTranscript": "You: /retire-model\nClaude: 1 promotion: Haiku 3 → retired. Removes 3 references from FAQ on /ai-models. Apply?",
       "source": {
@@ -1093,13 +1087,14 @@
         "regression",
         "audit"
       ],
-      "purpose": "Runs a battery of drift/regression checks on a site — CTA hygiene, data freshness, link health, cruft in pages/.",
-      "shortAnswer": "The weekly audit every content site needs but nobody sets up. Checks whatever's important for that site's business logic — not a generic 'is it up' monitor.",
-      "whenToUse": "Weekly. After major refactors. Before quarterly business reviews.",
+      "purpose": "Runs a battery of drift and regression checks specific to one site — CTA routing, residual outdated prose, reference-data freshness, retired-model statuses, hub cross-linking and stray backup files under pages/.",
+      "shortAnswer": "Not a generic \"is it up\" monitor. Each site gets its own health skill (e.g. /pws-health, /bawt-health) encoding the drift risks that matter for that site — for PWS, course-push URLs outside the Tier A allowlist, stale claude-models.json data, and missing cross-links between the four Claude hub pages.",
+      "whenToUse": "Weekly as a portfolio sweep. After a major refactor or pivot. Before quarterly business reviews when regressions quietly accumulate.",
       "setup": [
-        "Save as ~/.claude/commands/<site>-health.md (e.g. /pws-health, /bawt-health).",
-        "Custom per site — each site has different drift risks.",
-        "Run manually or schedule."
+        "Save the file as ~/.claude/commands/<site>-health.md (e.g. pws-health.md) — custom per site.",
+        "Each check is a tight grep or jq snippet: course URL outside Tier A, residual course prose, lastVerified age on data files, deprecated models past their retiresOn, hub pages missing cross-links, .bak/.orig/.backup files under pages/ or components/.",
+        "Findings are grouped by severity — HIGH (regression / stale / cruft), MEDIUM (prose / missing hub-link), LOW (data >14 days old).",
+        "Report-only by default — the skill doesn't fix anything unless asked."
       ],
       "exampleTranscript": "You: /pws-health\nClaude: [runs 6 checks] 3 findings: PROSE regression on best-ai-tools.js, HUB-LINK missing between 3 Claude hubs, data freshness 3d old (green).",
       "source": {
@@ -1124,13 +1119,14 @@
         "hub-spoke",
         "site-structure"
       ],
-      "purpose": "Verifies that a defined hub of pages all link to each other — catches missing cross-links that break SEO and UX.",
-      "shortAnswer": "Content hubs only work if the pages in them cross-link. This skill defines the hub explicitly (a list of URLs) and fails if any page doesn't link to the others.",
-      "whenToUse": "After adding a new page to an existing hub. Weekly as part of site-health.",
+      "purpose": "Verifies that every page in a defined content hub links to the other pages in that hub — catches missing cross-links that break SEO topical authority and user journeys.",
+      "shortAnswer": "Content hubs only work if the pages cross-link. This skill defines each hub as an explicit list of URLs and greps each hub page for links to the others, printing HUB-LINK: <file> missing link to <target> for any gap.",
+      "whenToUse": "After adding a new page to an existing hub. Weekly as part of site-health. Before a relaunch when hub topology has shifted during a pivot.",
       "setup": [
-        "Save as ~/.claude/skills/hub-link-check.md.",
-        "Configure: list of URLs that form each hub.",
-        "Runs as a grep-based check across hub files."
+        "Save the file as ~/.claude/skills/hub-link-check.md (often wrapped inside a site-health skill rather than invoked standalone).",
+        "Configure each hub as a list of page slugs — e.g. the four PWS Claude hubs: claude-code-mcp-stack, claude-pro-vs-max-vs-api, calculators/claude-plan-picker, claude-code-skills.",
+        "For each source page in the hub, grep the file for a link to every other hub page and report any missing link.",
+        "Handles routing variants — e.g. pages/claude-code-skills/index.js for a folder-based route vs pages/<slug>.js for a flat route."
       ],
       "exampleTranscript": "You: /hub-link-check\nClaude: Hub 'Claude hubs' (3 pages): claude-code-mcp-stack missing link to /calculators/claude-plan-picker; claude-pro-vs-max-vs-api missing link to /claude-code-mcp-stack. Fix?",
       "source": {
@@ -1154,13 +1150,14 @@
         "scaffolding",
         "templates"
       ],
-      "purpose": "Scaffolds a new Claude Code skill with proper frontmatter, invocation block, and SKILL.md spec compliance.",
-      "shortAnswer": "The meta-skill. Writes other skills. Knows the SKILL.md frontmatter fields, the invocation patterns, and the file-location conventions so you don't have to look them up.",
-      "whenToUse": "Every time you're about to write a new skill. Replaces 'copy an existing one and edit'.",
+      "purpose": "Creates new skills from scratch, iterates on existing ones, and runs evals to benchmark performance with variance analysis before you ship.",
+      "shortAnswer": "A skill for creating new skills and iteratively improving them. Walks you through drafting the skill, writing test prompts, running Claude against them in the background, reviewing qualitative and quantitative results, then rewriting based on what the evaluation surfaced.",
+      "whenToUse": "When you want to turn a workflow already in your conversation into a reusable skill — the creator extracts tools used, step sequence, corrections, and input/output formats from chat history. Also for optimising an existing skill's description for better trigger accuracy, or benchmarking two variants side by side.",
       "setup": [
-        "Save as ~/.claude/skills/skill-creator.md.",
-        "Needs access to your skills directory.",
-        "Invoke: /skill-creator <name>."
+        "Install via the daymade-skills marketplace (see QUICKSTART.md in the upstream repo).",
+        "Invoke by describing intent — 'I want to make a skill for X' — and the creator asks what it should do, when to trigger, and expected output.",
+        "Uses AskUserQuestion aggressively at each decision point; accept the recommended option or pick 'Other' to steer.",
+        "Runs eval-viewer/generate_review.py to show benchmark results you can review alongside the skill output."
       ],
       "exampleTranscript": "You: /skill-creator pivot-sweep — refactor skill that sweeps CTAs with tier policy.\nClaude: Created ~/.claude/commands/pivot-sweep.md with frontmatter, description, invocation pattern, 3-step instructions. Review and fill in details.",
       "source": {
@@ -1187,13 +1184,14 @@
         "template",
         "spec"
       ],
-      "purpose": "The canonical SKILL.md template from Anthropic's official skills repo — frontmatter fields, trigger syntax, invocation patterns.",
-      "shortAnswer": "Anthropic's own reference. Start here before any community skill template — the spec changes, and Anthropic's repo is the source of truth.",
-      "whenToUse": "Before writing your first skill. When a community skill format doesn't work and you suspect it's out of date.",
+      "purpose": "The canonical SKILL.md template from Anthropic's official skills repo — a folder with YAML frontmatter (name + description) plus the markdown instructions Claude follows when the skill is active.",
+      "shortAnswer": "Anthropic's reference implementation. A skill is a folder containing SKILL.md with two required frontmatter fields (name, description) and markdown instructions below. The anthropics/skills repo bundles the template plus open-source example skills (Apache-2.0) and the document-creation skills (docx/pdf/pptx/xlsx) which are source-available.",
+      "whenToUse": "Before writing your first skill. Any time a community template produces odd behaviour and you suspect it's drifted from the spec.",
       "setup": [
-        "Clone anthropics/skills and use their SKILL.md as your template.",
-        "Keep it in sync — subscribe to the repo's releases.",
-        "Reference inline in your /skill-creator setup."
+        "Clone anthropics/skills — the /template folder holds the starting point, /spec holds the Agent Skills specification, /skills holds concrete examples.",
+        "Or register the repo as a Claude Code plugin marketplace via /plugin marketplace add anthropics/skills and install example-skills or document-skills.",
+        "Keep the template in sync by subscribing to the repo's releases — the frontmatter spec can evolve.",
+        "Reference inline when scaffolding a new skill via /skill-creator so the generated file uses the current required fields."
       ],
       "exampleTranscript": "[Not invocable — reference material, copy the template into your skill file.]",
       "source": {
@@ -1220,13 +1218,14 @@
         "dry-run",
         "validation"
       ],
-      "purpose": "Dry-runs a skill against a test input to verify trigger detection, output shape, and side-effect safety before shipping.",
-      "shortAnswer": "The QA step for skill authors. Simulates invocation, checks the trigger matches, and verifies the skill doesn't accidentally write files or call APIs it shouldn't.",
-      "whenToUse": "Before adding a new skill to your .claude/ directory. Before sharing a skill publicly.",
+      "purpose": "Dry-runs a skill against a test input to verify trigger detection, output shape and side-effect safety before you ship it.",
+      "shortAnswer": "The QA step for skill authors. Simulates invocation, checks that the skill's trigger matches the test input, and verifies the skill doesn't accidentally write files or call APIs it shouldn't. Catches problems in your own shell before anyone else runs the skill.",
+      "whenToUse": "Before adding a new skill to your .claude/ directory. Before sharing a skill publicly, where a silent misfire affects more than one machine.",
       "setup": [
-        "Save as ~/.claude/skills/skill-tester.md.",
-        "Needs a test-cases file (JSON or YAML) describing inputs + expected behaviour.",
-        "Invoke: /skill-tester <skill-name>."
+        "Save the file as ~/.claude/skills/skill-tester.md.",
+        "Needs a test-cases file (JSON or YAML) describing inputs and the expected behaviour for each.",
+        "Invoke as /skill-tester <skill-name>; the skill reports pass/fail per case plus the first failure details.",
+        "Dry-runs simulate but don't guarantee — still ship to a test environment before production."
       ],
       "exampleTranscript": "You: /skill-tester pivot-sweep\nClaude: 3 test cases. 2 pass ✓. 1 fails: tier-boundary case — treats a prompts/*.js file as Tier B instead of Tier A. Review regex.",
       "source": {
@@ -1250,13 +1249,15 @@
         "compliance",
         "footer"
       ],
-      "purpose": "Audits a site for a legal disclaimer page + footer link; creates and wires up if missing.",
-      "shortAnswer": "Every affiliate/content site needs a disclaimer, privacy policy, and (depending on geography) cookie notice. This skill audits the state and fills gaps — stack-aware, so it works on Next.js, Astro, and WordPress.",
-      "whenToUse": "On every new site before public launch. When adding affiliate links to an existing site. Annually for compliance drift.",
+      "purpose": "Audits a site for a legal disclaimer page and footer link, creates /legal-disclaimer and wires it in immediately after Privacy Policy when missing. Stack-agnostic across Next.js Pages Router, Astro and WordPress (WP skipped).",
+      "shortAnswer": "Resolves target from cwd, path, or /sites number, then detects the stack from package.json and config files. Either patches missing sections of an existing disclaimer or creates one covering the 12 required areas (AI drift, affiliate links, Ireland jurisdiction, limitation of liability).",
+      "whenToUse": "Run on every new site before public launch, when affiliate links are added, or as a periodic compliance check when copy or partnerships have drifted.",
       "setup": [
-        "Save as ~/.claude/commands/legal-sweep.md.",
-        "Configure: site template detection (Next.js pages router vs Astro vs WP).",
-        "Invoke: /legal-sweep."
+        "Save the file as ~/.claude/commands/legal-sweep.md — full instructions live in ~/.claude/skills/legal-sweep/SKILL.md.",
+        "Invoke: /legal-sweep with an optional site path or /sites number; no argument uses the current working directory.",
+        "Uses pages/legal-disclaimer.js in ~/src/promptwritingstudio as the canonical content template, adapted per site.",
+        "Wires the footer link immediately after Privacy Policy and commits with feat: add legal disclaimer page + footer link.",
+        "If the disclaimer exists, audits for the 12 required sections and patches missing ones with Edit rather than rewriting."
       ],
       "exampleTranscript": "You: /legal-sweep\nClaude: Disclaimer page ✓. Footer link ✗. Adding <Link href=/legal-disclaimer> next to privacy policy. Committed.",
       "source": {
@@ -1282,13 +1283,14 @@
         "dependencies",
         "compliance"
       ],
-      "purpose": "Checks every dependency's licence — flags GPL contamination, commercial-incompatible licences, missing attribution.",
-      "shortAnswer": "The dependency sweep most projects never do. Flags licences that force your whole project to go GPL, or require attribution you haven't given, or are outright banned in commercial use.",
-      "whenToUse": "Before every major release. When adding new dependencies. Quarterly on active projects.",
+      "purpose": "Checks every project dependency's licence — flags GPL contamination, commercially-incompatible licences and missing attribution.",
+      "shortAnswer": "The dependency sweep most projects never do. Surfaces licences that force the whole project to go GPL, require attribution you haven't provided, or ban commercial use outright. One run before a major release, plus a quarterly repeat on active projects.",
+      "whenToUse": "Before every major release. When adding new dependencies, especially transitive ones you didn't install directly. Quarterly on projects that keep shipping.",
       "setup": [
-        "Save as ~/.claude/skills/dep-audit.md.",
-        "Uses npm ls / pip show / cargo tree to enumerate deps.",
-        "Cross-references with a licence-compatibility matrix."
+        "Save the file as ~/.claude/skills/dep-audit.md.",
+        "Enumerate dependencies with the native tooling — npm ls for Node, pip show for Python, cargo tree for Rust.",
+        "Cross-reference each licence against a compatibility matrix so incompatible combinations surface automatically.",
+        "Treat the output as a starting list — read the LICENSE file directly for anything novel or suspect."
       ],
       "exampleTranscript": "You: /dep-audit\nClaude: 247 deps. 2 flagged: react-awesome-reveal (MIT ✓), lodash (MIT ✓)... one CC BY-NC-SA (usable but triggers attribution requirement — add to credits).",
       "source": {
@@ -1312,13 +1314,14 @@
         "vendors",
         "b2b"
       ],
-      "purpose": "Adds a new vendor to a vendor-directory site — creates the JSON data file, the detail page, the category listing, and cross-links.",
-      "shortAnswer": "If you run a directory site, adding a new vendor involves 6-10 coordinated edits. This skill handles all of them from one description.",
-      "whenToUse": "Every new vendor. Bulk imports via a CSV-to-skill pipeline.",
+      "purpose": "Adds a new vendor to the Vendors.ie directory — generating the JSON data file, wiring it into the relevant category listing, and confirming the detail page renders.",
+      "shortAnswer": "A directory add is never one edit: it touches vendor data, category indices, and the live route. This skill runs the whole sequence from a single vendor name, leaves data_confidence as \"unverified\" and last_verified_at set to today, and stops once /software/[slug] loads.",
+      "whenToUse": "Every time a new vendor joins the directory. Also behind the scenes during bulk imports when each row in a CSV needs the same coordinated set of edits.",
       "setup": [
-        "Save as ~/.claude/commands/vendor.md.",
-        "Site-specific — configure schema + routing conventions in the skill.",
-        "Invoke: /vendor <vendor-name>."
+        "Save the file as ~/.claude/commands/vendor.md; invoke with the vendor name as the argument.",
+        "Skill reads an existing vendor JSON from src/data/vendors/ plus src/content.config.ts to confirm the full schema and required fields before generating anything.",
+        "Creates src/data/vendors/[slug].json with a lowercase hyphenated slug, a 150+ word Irish/GDPR-angled description, 3-4 pros and cons, and sensible alternatives drawn from existing vendors in the same category.",
+        "Adds the new slug to the matching category JSON in src/data/categories/, then verifies the vendor profile page loads at /software/[slug]."
       ],
       "exampleTranscript": "You: /vendor Xero Ireland\nClaude: [generates vendors/xero-ireland.json + pages/xero-ireland.astro + adds to category listing + cross-links 3 related vendors]",
       "source": {
@@ -1342,13 +1345,14 @@
         "verification",
         "directory"
       ],
-      "purpose": "Verifies a vendor's data against their actual website — pricing, features, contact details.",
-      "shortAnswer": "Directory data rots faster than almost any content. This skill picks a vendor, fetches their site, compares against your stored data, and flags discrepancies.",
-      "whenToUse": "Quarterly on your top-50 vendors. Before publishing 'top-10' listicles.",
+      "purpose": "Verifies a vendor's stored data against their live website — pricing, Revenue/ROS integration, PAYE Modernisation, Irish bank feeds, GDPR data residency, Irish support and free trial availability.",
+      "shortAnswer": "Directory data rots faster than almost any content. This skill reads the stored JSON, fetches the vendor's referral_url plus their pricing, features and compliance pages, compares each field, and reports discrepancies as field / stored value / website value.",
+      "whenToUse": "Quarterly across the top-ranked vendor pages. Also before publishing a \"best of\" listicle, where one stale price or missing compliance claim undermines the whole piece.",
       "setup": [
-        "Save as ~/.claude/commands/verify.md.",
-        "Web fetch tool required.",
-        "Invoke: /verify <vendor-slug>."
+        "Save the file as ~/.claude/commands/verify.md; invoke with the vendor slug, e.g. /verify xero-ireland.",
+        "Skill reads src/data/vendors/[slug].json, pulls the referral_url, and fetches the vendor's pricing, features and compliance pages.",
+        "Compares pricing_from, pricing_model, revenue_integration, paye_modernisation, irish_bank_feeds, gdpr_data_residency, irish_support and free_trial against what the live site shows.",
+        "If everything matches, updates data_confidence to \"verified\" and last_verified_at to today; if not, lists discrepancies and asks whether to update the JSON."
       ],
       "exampleTranscript": "You: /verify xero-ireland\nClaude: 2 drifts. Stored starter price €12/mo; live shows €14/mo (vendor raised April 2026). Features list identical.",
       "source": {
@@ -1372,13 +1376,15 @@
         "workflow",
         "multi-site"
       ],
-      "purpose": "Presents a menu of your sites, loads per-site memory + recent git log, surfaces a session brief.",
-      "shortAnswer": "Running 10+ sites means every session starts with 'which one am I working on?'. This skill handles the orientation — picks a site, loads its context, tells you where you left off.",
-      "whenToUse": "Every session start when working across a portfolio. Skip for single-project work.",
+      "purpose": "Presents a numbered list of 20 sites, loads the relevant memory file, and runs parallel git and gh checks to surface a session brief with sync status, open PRs and recent activity.",
+      "shortAnswer": "Shows the 20-site list (13 with local clones, 7 remote-only), waits for a number, then runs git fetch + git status -sb, git log --oneline -5 and gh pr/issue list in parallel against the matching repo. Flags local-behind-remote prominently so the wrong base isn't edited.",
+      "whenToUse": "Every session start when portfolio-hopping. Especially valuable after work on web Claude or another machine — the unpulled-commits check catches that before editing.",
       "setup": [
-        "Save as ~/.claude/commands/sites.md.",
-        "Configure: list of sites with per-site memory files + paths.",
-        "Invoke: /sites → pick a number."
+        "Save the file as ~/.claude/commands/sites.md.",
+        "Invoke: /sites — the skill prints the numbered list and waits for a number.",
+        "Per-site memory files live under /Users/bryancollins/.claude/projects/... so the session brief can load project context.",
+        "Parallel checks run git fetch, git status -sb, git log --oneline HEAD..@{u}, gh pr list and gh issue list.",
+        "Sites 14-20 are remote-only — the skill skips local git steps for those."
       ],
       "exampleTranscript": "You: /sites\nClaude: [lists 20 sites] Pick a number.\nYou: 8\nClaude: Prompt Writing Studio. Path: ~/src/promptwritingstudio. Last 5 commits: [...]. Open work: #38 CTA triage. What do you want to work on?",
       "source": {
@@ -1404,13 +1410,15 @@
         "github",
         "monitoring"
       ],
-      "purpose": "Audits GitHub Actions across all your repos for failures in the last 7 days — flags broken cron jobs, silent CI failures.",
-      "shortAnswer": "If you run 20 repos with scheduled Actions (scrapers, drift checks, builds), silent failures pile up. This skill asks gh api for the last 7 days and reports the red ones.",
-      "whenToUse": "Weekly. After a dependency update that might have broken CI.",
+      "purpose": "Audits GitHub Actions across 18 Flash Report and bryancollins99 repos for failures, timeouts and cancellations in the last 7 days.",
+      "shortAnswer": "Calls gh run list for each repo, keeps runs newer than 7 days, then groups results into FAILURES, CLEAN and NO RECENT RUNS. For every failure it prints the gh run view command so you can drop into the log immediately — cron failures are flagged as higher priority than push-triggered ones.",
+      "whenToUse": "Run weekly to catch silent cron failures — scrapers that quietly stopped publishing, scheduled digests that never ran. Also useful after a shared dependency update that could have broken CI across multiple repos at once.",
       "setup": [
-        "Save as ~/.claude/commands/actions-audit.md.",
-        "gh CLI authed against all target orgs.",
-        "Invoke: /actions-audit."
+        "Save the file as ~/.claude/commands/actions-audit.md.",
+        "Requires the gh CLI authed against the relevant orgs (The-Flash-Report, bryancollins99).",
+        "Invoke: /actions-audit — no arguments.",
+        "Scans 18 repos including vendors, tenderwatch, the flash reports, readingcurator, promptwritingstudio, wheelhouse-cli, glitch-text-generator and tri-fuel-magic.",
+        "Prints a ready-to-run gh run view <id> --repo <repo> command for every failure so inspection is one paste away."
       ],
       "exampleTranscript": "You: /actions-audit\nClaude: 3 red workflows. flashreport-scraper (3 consecutive failures, token expired?), bawt-deploy (1 failure, flaky). All green on 17 other repos.",
       "source": {
@@ -1436,13 +1444,15 @@
         "content-qa",
         "swarm"
       ],
-      "purpose": "Launches 3-5 parallel QA subagents against a site, each with a distinct remit (SEO, monetisation, freshness, accuracy), synthesises findings.",
-      "shortAnswer": "Content QA is not one job — it's 5 jobs (accuracy, freshness, SEO, monetisation, link health). Running them serially is slow; running them in parallel is what makes Claude Code's agent model actually earn its keep.",
-      "whenToUse": "After a content batch lands. Monthly on evergreen pages. Before a major rebrand.",
+      "purpose": "Launches 3-5 QA subagents in parallel against the current project, each auditing a distinct dimension, then synthesises findings into one report ranked by severity.",
+      "shortAnswer": "Three specialists run side-by-side: an SEO agent (H1s, meta descriptions, schema, robots, internal linking); a content quality agent (thin content, placeholders, Irish specificity, editorial verdicts); a UX/data integrity agent (navigation, dead links, demo pages, vendor data consistency). Output ranks CRITICAL > HIGH > MEDIUM > LOW with a Quick Wins section.",
+      "whenToUse": "Run after a content batch lands, monthly against evergreen pages, or before a major rebrand. Each agent returns a prioritised list independently, so the synthesised report catches issues that siloed checks would miss.",
       "setup": [
-        "Save as ~/.claude/commands/qa.md.",
-        "Skill spawns N agents with narrow briefs. Collects outputs, synthesises into ranked findings.",
-        "Invoke: /qa <scope>."
+        "Save the file as ~/.claude/commands/qa.md.",
+        "Invoke: /qa against the current project — the skill dispatches the agents in parallel.",
+        "Each agent returns a prioritised list, which the skill synthesises into one combined report.",
+        "Final report is ranked CRITICAL > HIGH > MEDIUM > LOW, with a Quick Wins section of fixes under 30 minutes each.",
+        "Spawning 3-5 agents multiplies token spend — scope the project path tightly before running."
       ],
       "exampleTranscript": "You: /qa pages/claude-code-mcp-stack.js\nClaude: 5 agents dispatched. Synthesis: 2 P1s (stale link, missing schema), 4 P2s. Full report below.",
       "source": {
@@ -1469,13 +1479,15 @@
         "ai-endpoints",
         "monitoring"
       ],
-      "purpose": "Fires a smoke test at AI-powered API endpoints (Claude, GPT, custom agents) on live sites — flags 5xx, timeouts, broken auth.",
-      "shortAnswer": "If your sites have AI features (Claude-powered tools, prompt optimisers), those endpoints break silently until a user complains. This skill tests them proactively.",
-      "whenToUse": "Daily or weekly scheduled run. After a provider pushes an SDK update.",
+      "purpose": "Fires a Python urllib smoke test at the AI API endpoints on Vendors.ie, ReadingCurator and FluentAtDesk, flagging 500s and timeouts.",
+      "shortAnswer": "Hits seven endpoints across three sites with minimal valid payloads — vendors.ie /api/recommend, /api/smart-compare, /api/true-cost; readingcurator /api/what-to-read-after, /api/check-availability; fluentatdesk /.netlify/functions/submission-created. 400/401/405 are treated as live-but-rejecting-test-payload, not failures.",
+      "whenToUse": "Run as a scheduled check or after a Claude SDK update. Useful when you need confidence the Claude-powered tools are still up without triggering real user traffic — 500s or timeouts are the only results worth paging on; 400s just mean the endpoint is live and rejecting the stub payload.",
       "setup": [
-        "Save as ~/.claude/commands/ai-smoke-test.md.",
-        "Configure: list of endpoints + expected response shape.",
-        "Invoke: /ai-smoke-test."
+        "Save the file as ~/.claude/commands/ai-smoke-test.md.",
+        "Invoke: /ai-smoke-test — no arguments.",
+        "Uses urllib only, with a 15-second timeout per endpoint.",
+        "OK = 200, WARN = 400/401/405 (endpoint live, payload rejected), FAIL = 500 or timeout.",
+        "Do NOT flag 400s as failures — the endpoints require real auth or data to return 200."
       ],
       "exampleTranscript": "You: /ai-smoke-test\nClaude: 3 endpoints tested. ✓ Vendors.ie /api/explain. ✓ FluentAtDesk /api/rewrite. 🔴 ReadingCurator /api/recommend — 500, Anthropic API key expired.",
       "source": {
@@ -1501,13 +1513,15 @@
         "404",
         "link-rot"
       ],
-      "purpose": "Crawls a live site for 4xx/5xx responses — reports broken internal links and rotted outbound links.",
-      "shortAnswer": "The classic site-hygiene check. Outbound links rot at ~10%/year. Internal links break when you rename routes. Run quarterly.",
-      "whenToUse": "Quarterly. After a URL structure change. Before a full-site audit.",
+      "purpose": "Crawls a live site using a Python stdlib crawler and reports internal links returning 4xx/5xx status codes.",
+      "shortAnswer": "Point it at one site name, or run against all Netlify-hosted sites with no argument. It walks up to 40 internal pages per site, follows same-domain anchors, and groups broken links by site so you can triage 404s fast.",
+      "whenToUse": "Run after a URL-structure change or a site restructure (e.g. Vendors.ie or BAWT) when internal links are most likely to snap. Also useful as a pre-audit sweep before a full QA pass, or when outbound references have had time to rot and need a spot-check.",
       "setup": [
-        "Save as ~/.claude/commands/dead-links.md.",
-        "Uses a headless fetch + simple crawl.",
-        "Invoke: /dead-links <site>."
+        "Save the file as ~/.claude/commands/dead-links.md.",
+        "Invoke with an optional site name or number from the /sites list: /dead-links <site>.",
+        "With no argument, the crawler runs against all sites in the built-in list (vendors.ie, tenderwatch.ie, fluentatdesk.com, the flash reports, readingcurator.com, glitchtexteffect.com, mytriathloncalculator.com).",
+        "Uses urllib only — no external dependencies, no wget required.",
+        "For deeper crawls, run against a single site since the 40-page cap keeps batch runs reasonable."
       ],
       "exampleTranscript": "You: /dead-links promptwritingstudio.com\nClaude: Crawled 184 pages, 1,247 links. 3 broken. All 3 are outbound (rotted referenced articles). Fix list attached.",
       "source": {
@@ -1533,13 +1547,15 @@
         "performance",
         "cwv"
       ],
-      "purpose": "Runs Lighthouse against homepages (or specific pages) across a portfolio — reports LCP, CLS, INP, and regressions.",
-      "shortAnswer": "Core Web Vitals are a ranking factor. This skill runs Lighthouse across your portfolio in one pass and flags anything that's regressed from your baseline.",
-      "whenToUse": "Monthly. After major frontend changes. Before a redesign ships.",
+      "purpose": "Runs Lighthouse against the homepage of each live site and reports Performance, Accessibility, Best Practices, SEO, plus LCP, CLS and TBT for any flagged site.",
+      "shortAnswer": "One Python wrapper drives the Lighthouse CLI across the full portfolio (takes about five minutes). Scores under Performance 70, SEO 80, or Accessibility 80 get flagged, and the LCP, CLS and TBT values — the metrics Google weights most — are printed for any flagged site.",
+      "whenToUse": "Run monthly as a portfolio sweep, after a major frontend change, or before a redesign ships. Useful when you suspect a regression but want confirmation before chasing it, since scores across vendors.ie, tenderwatch.ie, fluentatdesk.com and the flash reports all surface in one pass.",
       "setup": [
-        "Save as ~/.claude/commands/vitals.md.",
-        "Lighthouse CLI required (npm i -g lighthouse).",
-        "Invoke: /vitals [site-name]."
+        "Save the file as ~/.claude/commands/vitals.md.",
+        "Install Lighthouse globally (the script expects it at /Users/bryancollins/.npm-global/bin/lighthouse).",
+        "Invoke with no argument for the full portfolio, or /vitals <site-name> to filter to one site.",
+        "Runs Lighthouse with --quiet and headless Chrome flags, timing out after 120 seconds per site.",
+        "Treat single runs as directional — Lighthouse scores vary, so watch the trend."
       ],
       "exampleTranscript": "You: /vitals\nClaude: 12 sites. Performance: 9 green, 2 orange, 1 red. Red: readingcurator.com LCP 4.2s (hero image not optimised). Fix list attached.",
       "source": {
@@ -1565,13 +1581,14 @@
         "legal",
         "content-curation"
       ],
-      "purpose": "Verifies the licence of a GitHub repo (or specific file) before you fork, republish, or include content from it.",
-      "shortAnswer": "Before republishing anything from a public repo, run this skill. Fetches the repo's LICENSE, reports compatibility with MIT/Apache/commercial use. Saves you from accidental CC BY-NC-ND reuse.",
-      "whenToUse": "Every time you're about to curate, fork, or quote a public repo. Before building any catalogue page.",
+      "purpose": "Verifies the licence of a public repo (or a specific file within it) before you fork, republish or include content from it.",
+      "shortAnswer": "Before republishing anything from a public repo, run this skill. It fetches the repo's LICENSE file plus the README licence statement and reports compatibility with MIT, Apache and general commercial reuse. Saves you from accidentally building on CC BY-NC-ND or an unlicenced repo.",
+      "whenToUse": "Every time you're about to curate, fork or quote a public repo. Before building any catalogue page that aggregates third-party work.",
       "setup": [
-        "Save as ~/.claude/commands/licence-checker.md.",
-        "Fetches the LICENSE file + README licence statement.",
-        "Invoke: /licence-checker <repo-url>."
+        "Save the file as ~/.claude/commands/licence-checker.md.",
+        "Skill fetches the LICENSE file and the README licence statement — some repos bury the licence in the README rather than a dedicated file.",
+        "Invoke: /licence-checker <repo-url>.",
+        "Output is a verdict — republish / link-only / do-not-use — against MIT, Apache and commercial compatibility."
       ],
       "exampleTranscript": "You: /licence-checker github.com/hesreallyhim/awesome-claude-code\nClaude: Licence: CC BY-NC-ND 4.0. Verdict: DO NOT REPUBLISH. Link-to only; no derivatives, no commercial reuse.",
       "source": {
@@ -1595,13 +1612,14 @@
         "release-notes",
         "documentation"
       ],
-      "purpose": "Generates a human-readable changelog between two git tags — grouped by feat/fix/refactor, with author attribution.",
-      "shortAnswer": "Changelogs are tedious but high-value. This skill reads your conventional-commit history between two tags and produces a clean CHANGELOG.md entry in Keep-a-Changelog format.",
-      "whenToUse": "Every release. Before drafting release notes for a public repo.",
+      "purpose": "Generates a human-readable changelog between two git tags — grouped by feat, fix and refactor, with author attribution.",
+      "shortAnswer": "Changelogs are tedious but high-value. This skill reads the conventional-commit history between two refs and produces a clean CHANGELOG.md entry in Keep-a-Changelog format, so you start a release with a proper Added / Changed / Fixed draft instead of a blank file.",
+      "whenToUse": "Every release. Before drafting release notes for a public repo, where a neat changelog is often what the reader sees before the code.",
       "setup": [
-        "Save as ~/.claude/commands/changelog.md.",
-        "Requires conventional-commit history to work well.",
-        "Invoke: /changelog v1.2.0 v1.3.0."
+        "Save the file as ~/.claude/commands/changelog.md.",
+        "Works best on repos that already follow conventional commits — the feat/fix/refactor prefixes drive the grouping.",
+        "Invoke with two refs, e.g. /changelog v1.2.0 v1.3.0 or /changelog v1.2.0 HEAD.",
+        "Output is a ready-to-paste Keep-a-Changelog block — review once, then drop into CHANGELOG.md."
       ],
       "exampleTranscript": "You: /changelog v1.2.0 HEAD\nClaude: [produces Keep-a-Changelog section with Added / Changed / Fixed blocks, 23 commits grouped]",
       "source": {
