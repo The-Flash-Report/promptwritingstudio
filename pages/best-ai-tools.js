@@ -745,15 +745,15 @@ export default function BestAITools() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]">Want to Master AI Prompts?</h2>
+            <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]">Get More Out of Claude Code</h2>
             <p className="text-lg text-gray-700 mb-8">
-              Learn how to get the most out of these AI tools with our expert-crafted prompt templates and training.
+              Our Claude Code guide covers install, configuration, sub-agents, hooks, and MCP — the full playbook for using Claude in your daily workflow.
             </p>
-            <a 
-              href="/#pricing" 
+            <a
+              href="/claude-code-guide"
               className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block"
             >
-              Explore Our Courses
+              Read the Claude Code Guide
             </a>
           </div>
         </div>
