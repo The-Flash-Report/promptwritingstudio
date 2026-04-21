@@ -43,6 +43,12 @@
         "repo": "VoltAgent/awesome-claude-code-subagents",
         "licence": "MIT",
         "url": "https://github.com/VoltAgent/awesome-claude-code-subagents"
+      },
+      {
+        "author": "Bryan Collins",
+        "repo": "bryancollins99/claude-config",
+        "url": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT"
       }
     ],
     "excluded": [
@@ -1610,10 +1616,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Shared repos: check with collaborators before deleting branches others may be using. Never run with --force.",
       "related": [
@@ -1644,10 +1650,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Never rebase branches already pushed to shared remotes — it rewrites history other people have cloned.",
       "related": [
@@ -1678,10 +1684,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Complex renames + refactors may still need human judgment — the skill explains its reasoning but shouldn’t be trusted blindly.",
       "related": [
@@ -1712,10 +1718,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "If the skill is published publicly, issue a README note with the old slug as a redirect — don’t silently break other people’s muscle memory.",
       "related": [
@@ -1746,10 +1752,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "The scaffold is a starting point, not a finished skill — always review the failure-modes section before trusting it with mutating actions (git push, deploy, delete).",
       "related": [
@@ -1780,10 +1786,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "This is a presence-and-freshness check, not a legal review — policy wording is a lawyer job, not a skill.",
       "related": [
@@ -1814,10 +1820,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Disclosure wording requirements vary by jurisdiction (FTC in US, ASA in UK, DSA in EU). This skill checks presence, not wording — verify against your compliance policy.",
       "related": [
@@ -1848,10 +1854,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Requires discipline to keep the profile files updated — stale profile = inconsistent content. Review every 6 months.",
       "related": [
@@ -1882,10 +1888,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Reports what’s missing; does not auto-insert CTAs — conversion copy is a judgment call, not a find-replace.",
       "related": [
@@ -1916,10 +1922,10 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "authorUrl": "https://promptwritingstudio.com",
-        "repo": "promptwritingstudio",
-        "repoUrl": "https://github.com/The-Flash-Report/promptwritingstudio",
-        "licence": "MIT (author’s own work)"
+        "authorUrl": "https://github.com/bryancollins99",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config",
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Proposes links — doesn’t write them. Over-linking kills reader flow, so cap at 2–3 cross-site links per post.",
       "related": [
