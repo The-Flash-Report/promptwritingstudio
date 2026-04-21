@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Layout from '../components/layout/Layout'
 import { FaCheckCircle, FaTimesCircle, FaShare, FaTwitter, FaLinkedin, FaFacebook } from 'react-icons/fa'
+import EmailCapture from '../components/ui/EmailCapture'
 
 const quizQuestions = [
   {
@@ -306,12 +307,7 @@ export default function AIPromptQuiz() {
               <div className="bg-[#FFDE59] bg-opacity-20 border border-[#FFDE59] rounded-lg p-4">
                 <h4 className="font-bold text-[#1A1A1A] mb-2">Next step:</h4>
                 <p className="text-[#333333] mb-4">Put your prompt skills to work inside Claude Code — the complete guide covers setup, MCP, hooks, and the workflows that matter.</p>
-                <a
-                  href="/claude-code-guide"
-                  className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition inline-block"
-                >
-                  Start with Claude Code
-                </a>
+                <EmailCapture source="ai-prompt-quiz" theme="light" />
               </div>
             </div>
 

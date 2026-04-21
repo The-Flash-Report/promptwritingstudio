@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
+import EmailCapture from '../components/ui/EmailCapture'
 
 const faqs = [
   {
@@ -768,12 +769,7 @@ export default function ReplitVsLovable() {
               Whether you use Replit, Lovable, ChatGPT, or Claude, the quality of your prompts determines the quality of your results. Learn the frameworks that work across every AI tool.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/claude-code-guide"
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </Link>
+              <EmailCapture source="replit-vs-lovable" />
               <Link
                 href="/ai-prompt-generator"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"

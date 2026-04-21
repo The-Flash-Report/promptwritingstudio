@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Layout from '../components/layout/Layout'
 import YouTubeVideoSection from '../components/ui/YouTubeVideoSection'
 import Link from 'next/link'
+import EmailCapture from '../components/ui/EmailCapture'
 
 export default function VideoTutorialsPage() {
   // Featured videos from your channel
@@ -387,13 +388,8 @@ export default function VideoTutorialsPage() {
             <p className="text-xl text-yellow-100 mb-8">
               Join thousands of creators who've mastered AI prompt writing and automated their content creation
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/claude-code-guide"
-                className="bg-white text-yellow-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
-              >
-                Start with Claude Code
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <EmailCapture source="video-tutorials" theme="light" />
               <a
                 href="/ai-prompt-generator"
                 className="bg-yellow-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-800 transition-colors"

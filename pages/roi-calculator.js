@@ -6,6 +6,7 @@ import CalculatorSchema from '../components/ui/CalculatorSchema'
 import OrganizationSchema from '../components/ui/OrganizationSchema'
 import RichSnippets from '../components/ui/RichSnippets'
 import Link from 'next/link'
+import EmailCapture from '../components/ui/EmailCapture'
 
 export default function ROICalculatorPage() {
   return (
@@ -208,13 +209,8 @@ export default function ROICalculatorPage() {
                 to compare automation costs vs hiring decisions.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/claude-code-guide"
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <EmailCapture source="roi-calculator" theme="light" />
               <Link
                 href="/ai-prompt-generator"
                 className="border border-[#1A1A1A] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#1A1A1A] hover:text-white transition-colors duration-200"

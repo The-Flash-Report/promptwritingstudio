@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Layout from '../../components/layout/Layout'
 import Head from 'next/head'
+import EmailCapture from '../../components/ui/EmailCapture'
 
 // Filter categories
 const filterCategories = ['All', 'Business', 'Marketing', 'Career', 'Content', 'Academic'];
@@ -684,12 +685,9 @@ export default function MadLibsPromptCreator() {
             <p className="text-xl mb-8 text-purple-100">
               Get access to 100+ professional prompt templates, advanced techniques, and exclusive training
             </p>
-            <a
-              href="/claude-code-guide"
-              className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block"
-            >
-              Start with Claude Code
-            </a>
+            <div className="flex justify-center">
+              <EmailCapture source="mad-libs-prompt-creator" />
+            </div>
           </div>
         </section>
       </Layout>

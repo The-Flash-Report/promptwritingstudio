@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
+import EmailCapture from '../components/ui/EmailCapture'
 
 const faqs = [
   {
@@ -150,12 +151,7 @@ export default function LegalAI() {
               >
                 See Legal AI Prompts
               </Link>
-              <Link
-                href="/claude-code-guide"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </Link>
+              <EmailCapture source="legal-ai" />
             </div>
             <div className="text-white text-lg">
               <p>Trusted by attorneys, paralegals, and in-house counsel</p>
@@ -218,13 +214,8 @@ export default function LegalAI() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <Link
-                href="/claude-code-guide"
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </Link>
+            <div className="text-center mt-12 flex justify-center">
+              <EmailCapture source="legal-ai" theme="light" />
             </div>
           </div>
         </section>
@@ -289,12 +280,7 @@ export default function LegalAI() {
               Join thousands of legal professionals who are using AI prompts to draft faster, research smarter, and spend more time on the work that truly requires their expertise.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/claude-code-guide"
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </Link>
+              <EmailCapture source="legal-ai" />
               <Link
                 href="/ai-prompt-generator"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"

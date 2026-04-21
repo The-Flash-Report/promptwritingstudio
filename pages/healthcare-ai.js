@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
+import EmailCapture from '../components/ui/EmailCapture'
 
 const faqs = [
   {
@@ -150,12 +151,7 @@ export default function HealthcareAI() {
               >
                 See Healthcare AI Prompts
               </Link>
-              <Link
-                href="/claude-code-guide"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </Link>
+              <EmailCapture source="healthcare-ai" />
             </div>
             <div className="text-white text-lg">
               <p>Used by physicians, nurses, and healthcare administrators worldwide</p>
@@ -218,13 +214,8 @@ export default function HealthcareAI() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <Link
-                href="/claude-code-guide"
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </Link>
+            <div className="text-center mt-12 flex justify-center">
+              <EmailCapture source="healthcare-ai" theme="light" />
             </div>
           </div>
         </section>
@@ -294,12 +285,7 @@ export default function HealthcareAI() {
               Join thousands of healthcare professionals who are using AI prompts to reduce documentation burden, improve patient communication, and focus on what they do best: caring for patients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/claude-code-guide"
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
-              >
-                Start with Claude Code
-              </Link>
+              <EmailCapture source="healthcare-ai" />
               <Link
                 href="/ai-prompt-generator"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200"

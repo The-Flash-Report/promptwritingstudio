@@ -4,6 +4,7 @@ import Layout from '../../components/layout/Layout'
 import Link from 'next/link'
 import { seoUseCases } from '../../data/seo-use-cases'
 import { generateFAQSchema, generateHowToSchema, generateArticleSchema, generateBreadcrumbSchema } from '../../lib/schemaGenerator'
+import EmailCapture from '../../components/ui/EmailCapture'
 
 export default function UseCasePromptPage({ useCaseData, relatedUseCases }) {
   const [copiedPrompt, setCopiedPrompt] = useState(null);
@@ -132,14 +133,9 @@ export default function UseCasePromptPage({ useCaseData, relatedUseCases }) {
 
           
           {/* Claude Code CTA */}
-          <div className="text-center">
+          <div className="flex flex-col items-center">
             <p className="text-lg mb-4 text-white">Want to put these prompts to work inside Claude Code?</p>
-            <Link
-              href="/claude-code-guide"
-              className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 font-semibold inline-block"
-            >
-              Start with Claude Code
-            </Link>
+            <EmailCapture source="ai-prompt-generator" />
             <p className="text-sm text-gray-300 mt-3">The full guide to Claude Code, MCP, and hooks — free.</p>
           </div>
         </div>

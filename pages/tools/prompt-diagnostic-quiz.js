@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Layout from '../../components/layout/Layout'
 import Head from 'next/head'
+import EmailCapture from '../../components/ui/EmailCapture'
 
 // Quiz questions data
 const quizQuestions = [
@@ -401,12 +402,9 @@ export default function PromptDiagnosticQuiz() {
                   Get step-by-step training, templates, and advanced techniques to transform your AI results
                 </p>
                 <div className="space-y-4">
-                  <a
-                    href="/claude-code-guide"
-                    className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors inline-block"
-                  >
-                    ⌨️ Start with Claude Code
-                  </a>
+                  <div className="flex justify-center">
+                    <EmailCapture source="prompt-diagnostic-quiz" />
+                  </div>
                   <p className="text-sm opacity-75">
                     Join 2,000+ professionals who've mastered AI prompting
                   </p>

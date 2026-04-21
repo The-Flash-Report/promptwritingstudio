@@ -1,5 +1,6 @@
 import Layout from '../components/layout/Layout'
 import BusinessNameGenerator from '../components/tools/BusinessNameGenerator'
+import EmailCapture from '../components/ui/EmailCapture'
 
 export default function BusinessNameGeneratorPage() {
   return (
@@ -184,12 +185,9 @@ export default function BusinessNameGeneratorPage() {
             <p className="text-lg text-[#1A1A1A] mb-8">
               Once you have your perfect business name, learn how to create compelling content with AI prompts that convert visitors into customers.
             </p>
-            <a
-              href="/claude-code-guide"
-              className="bg-[#1A1A1A] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors duration-200 inline-block"
-            >
-              Start with Claude Code
-            </a>
+            <div className="flex justify-center">
+              <EmailCapture source="business-name-generator" theme="light" />
+            </div>
           </div>
         </div>
       </section>

@@ -3,6 +3,7 @@ import EnhancedMeta from '../components/ui/EnhancedMeta'
 import OrganizationSchema from '../components/ui/OrganizationSchema'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import EmailCapture from '../components/ui/EmailCapture'
 
 export default function AIGlossary() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -993,12 +994,9 @@ export default function AIGlossary() {
               </div>
             </div>
             
-            <Link
-              href="/claude-code-guide"
-              className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 inline-block"
-            >
-              Start with Claude Code
-            </Link>
+            <div className="flex justify-center">
+              <EmailCapture source="ai-glossary" theme="light" />
+            </div>
           </div>
         </div>
       </section>

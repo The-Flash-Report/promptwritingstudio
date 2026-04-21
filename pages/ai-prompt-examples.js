@@ -5,6 +5,7 @@ import { allAuthenticCreatorPrompts } from '../data/all-authentic-creator-prompt
 import { categories } from '../data/sample-prompts'
 import EnhancedMeta from '../components/ui/EnhancedMeta'
 import YouTubeVideoSection from '../components/ui/YouTubeVideoSection'
+import EmailCapture from '../components/ui/EmailCapture'
 
 export default function AIPromptExamples() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -593,13 +594,11 @@ export default function AIPromptExamples() {
               <p className="text-xl mb-6 opacity-90">
                 Get our complete library of 1000+ prompts plus weekly updates with new examples.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link href="/ai-prompt-generator" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                   Try Our Prompt Generator
                 </Link>
-                <Link href="/claude-code-guide" className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                  Start with Claude Code
-                </Link>
+                <EmailCapture source="ai-prompt-examples" />
               </div>
             </div>
           </div>
