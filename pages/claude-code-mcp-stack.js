@@ -391,11 +391,12 @@ export default function ClaudeCodeMcpStack() {
         </section>
 
         <section className="py-16 bg-[#1A1A1A] text-center">
-          <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-3xl font-bold text-white mb-4">Related reading</h2>
-            <p className="text-gray-300 mb-6">Hooks complement MCP — MCP adds capabilities, hooks enforce rules about how Claude uses them. The decision tree explains when each extension type fits.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <p className="text-gray-300 mb-6">MCP adds capabilities. Hooks enforce rules about how Claude uses them. Skills package repeatable workflows on top. The links below cover the full extension stack.</p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Link href="/claude-code-hooks-recipes" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Claude Code hooks: 7 recipes</Link>
+              <Link href="/claude-code-skills" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Claude Code Skills catalogue</Link>
               <Link href="/skills-vs-mcp-vs-hooks" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Skills vs MCP vs Hooks</Link>
             </div>
           </div>

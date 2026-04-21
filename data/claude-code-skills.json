@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastVerified": "2026-04-20",
+    "lastVerified": "2026-04-21",
     "curationPolicy": "Only skills/subagents/slash-commands from repos with explicit permissive licences (MIT, Apache-2.0, BSD, CC0, Unlicense). Originals attributed to author. Anything unclear or NC/ND → excluded.",
     "notes": "Single source of truth for the Claude Code Skills hub at /claude-code-skills. Every page reads from this file. Drift check in /pws-health should flag entries older than 90 days since lastChecked.",
     "sources": [

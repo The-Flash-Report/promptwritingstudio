@@ -21,7 +21,9 @@
 ## Core Claude Code Pages
 
 - [Claude Code Guide](https://promptwritingstudio.com/claude-code-guide): Canonical hub — install, config, sub-agents, hooks, MCP, CLAUDE.md
-- [Claude Code Skills Catalogue](https://promptwritingstudio.com/claude-code-skills): 45+ skills, subagents, and slash commands curated from permissive-licence repos (MIT / Apache-2.0 / BSD / CC0). Filter by category, tier, and licence.
+- [Claude Code Skills Catalogue](https://promptwritingstudio.com/claude-code-skills): Skills, subagents, and slash commands curated from permissive-licence repos (MIT / Apache-2.0 / BSD / CC0). Filter by category, tier, and licence.
+- [Install a Claude Code Skill (60-second walkthrough)](https://promptwritingstudio.com/claude-code-skills/install-guide): Where each file type lives, how to invoke them, how to preserve attribution.
+- [Build Your Own Claude Code Skill](https://promptwritingstudio.com/claude-code-skills/build-your-own): SKILL.md template walkthrough — frontmatter, body structure, testing loop.
 - [Claude Code MCP Stack](https://promptwritingstudio.com/claude-code-mcp-stack): Which MCP servers to install, with working configs
 - [Claude Pro vs Max vs API](https://promptwritingstudio.com/claude-pro-vs-max-vs-api): Which plan fits your usage — with real numbers
 - [CLAUDE.md Playbook](https://promptwritingstudio.com/claude-md-playbook): Project-level instructions that actually change Claude Code behaviour
