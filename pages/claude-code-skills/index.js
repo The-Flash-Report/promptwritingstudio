@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../../components/layout/Layout'
 import LastVerified from '../../components/LastVerified'
-import { generateFAQSchema, generateArticleSchema } from '../../lib/schemaGenerator'
+import { generateFAQSchema } from '../../lib/schemaGenerator'
 import skillsData from '../../data/claude-code-skills.json'
 
 const faqs = [
@@ -95,12 +95,31 @@ export default function ClaudeCodeSkillsHub() {
   }, [skills])
 
   const faqSchema = generateFAQSchema(faqs)
-  const article = generateArticleSchema({
-    title: 'Claude Code Skills Catalogue — Licence-Safe Skills, Subagents & Slash Commands',
-    description: `${stats.total} Claude Code skills curated from ${stats.repoCount} permissive-licence repos. Every entry verified for MIT/Apache-2.0/BSD/CC0 licence so you can copy without legal friction.`,
-    slug: 'claude-code-skills',
-    datePublished: _meta.lastVerified
-  })
+  const hubUrl = 'https://promptwritingstudio.com/claude-code-skills'
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": 'Claude Code Skills Catalogue — Licence-Safe Skills, Subagents & Slash Commands',
+    "description": `${stats.total} Claude Code skills curated from ${stats.repoCount} permissive-licence repos. Every entry verified for MIT/Apache-2.0/BSD/CC0 licence so you can copy without legal friction.`,
+    "url": hubUrl,
+    "dateModified": _meta.lastVerified,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Prompt Writing Studio",
+      "url": "https://promptwritingstudio.com"
+    },
+    "about": { "@type": "Thing", "name": "Claude Code Skills" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": stats.total,
+      "itemListElement": skills.map((s, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "url": `${hubUrl}/${s.slug}`,
+        "name": s.purpose
+      }))
+    }
+  }
 
   return (
     <>
@@ -108,7 +127,7 @@ export default function ClaudeCodeSkillsHub() {
         <title>Claude Code Skills Catalogue — {stats.total} Licence-Safe Skills & Subagents | PromptWritingStudio</title>
         <meta name="description" content={`${stats.total} Claude Code skills, subagents, and slash commands — every entry from a repo with MIT, Apache-2.0, BSD, or CC0 licence. Safe to copy, fork, and ship.`} />
         <link rel="canonical" href="https://promptwritingstudio.com/claude-code-skills" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(article) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
 
@@ -298,12 +317,18 @@ export default function ClaudeCodeSkillsHub() {
         </section>
 
         <section className="py-16 bg-[#1A1A1A] text-center">
-          <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-3xl font-bold text-white mb-4">Related reading</h2>
             <p className="text-gray-300 mb-6">Skills complement MCP servers and hooks. The decision tree below walks through which extension type fits which problem.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center mb-10">
               <Link href="/skills-vs-mcp-vs-hooks" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Skills vs MCP vs Hooks</Link>
               <Link href="/claude-code-guide" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Claude Code Guide</Link>
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-4">More Claude hubs</h3>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center">
+              <Link href="/claude-code-mcp-stack" className="bg-[#2A2A2A] border border-gray-700 text-gray-100 px-5 py-2 rounded-lg text-sm font-semibold hover:border-[#FFDE59] hover:text-white transition">MCP stack</Link>
+              <Link href="/claude-pro-vs-max-vs-api" className="bg-[#2A2A2A] border border-gray-700 text-gray-100 px-5 py-2 rounded-lg text-sm font-semibold hover:border-[#FFDE59] hover:text-white transition">Pro vs Max vs API</Link>
+              <Link href="/calculators/claude-plan-picker" className="bg-[#2A2A2A] border border-gray-700 text-gray-100 px-5 py-2 rounded-lg text-sm font-semibold hover:border-[#FFDE59] hover:text-white transition">Plan picker calculator</Link>
             </div>
           </div>
         </section>

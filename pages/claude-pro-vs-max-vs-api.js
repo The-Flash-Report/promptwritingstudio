@@ -286,6 +286,7 @@ export default function ClaudeProVsMaxVsApi() {
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Link href="/calculators/claude-plan-picker" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Open the plan picker</Link>
               <Link href="/claude-code-skills" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Claude Code Skills catalogue</Link>
+              <Link href="/claude-code-mcp-stack" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">MCP stack guide</Link>
               <Link href="/calculators/claude-code-vs-cursor-cost" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Claude Code vs Cursor cost</Link>
             </div>
           </div>
