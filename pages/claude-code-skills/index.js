@@ -278,6 +278,25 @@ export default function ClaudeCodeSkillsHub() {
           </div>
         </section>
 
+        <section className="py-16 bg-white border-t border-gray-200">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 className="text-3xl font-bold text-[#1A1A1A] mb-2">Next steps</h2>
+            <p className="text-[#333333] mb-8">Two companion walkthroughs — one for installing, one for writing your own.</p>
+            <div className="grid md:grid-cols-2 gap-5">
+              <Link href="/claude-code-skills/install-guide" className="bg-[#F9F9F9] border border-gray-200 rounded-lg p-6 hover:border-[#FFDE59] hover:shadow-sm transition">
+                <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Install a skill in 60 seconds</h3>
+                <p className="text-sm text-[#333333] mb-3">Where each file lives (<code className="bg-gray-100 px-1 py-0.5 rounded">~/.claude/commands/</code>, <code className="bg-gray-100 px-1 py-0.5 rounded">agents/</code>, <code className="bg-gray-100 px-1 py-0.5 rounded">skills/</code>), how to invoke, and how to keep attribution clean.</p>
+                <span className="text-sm font-semibold text-[#1A1A1A]">Read the install guide →</span>
+              </Link>
+              <Link href="/claude-code-skills/build-your-own" className="bg-[#F9F9F9] border border-gray-200 rounded-lg p-6 hover:border-[#FFDE59] hover:shadow-sm transition">
+                <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Build your own skill</h3>
+                <p className="text-sm text-[#333333] mb-3">The SKILL.md walkthrough — frontmatter fields, body structure, copy-paste template, and the three-pass testing loop before you trust it with real work.</p>
+                <span className="text-sm font-semibold text-[#1A1A1A]">Read the template walkthrough →</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 bg-[#1A1A1A] text-center">
           <div className="container mx-auto px-4 md:px-6 max-w-2xl">
             <h2 className="text-3xl font-bold text-white mb-4">Related reading</h2>

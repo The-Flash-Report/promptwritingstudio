@@ -73,7 +73,9 @@ export default function Sitemap() {
   // Claude Code Hub pages - primary site focus
   const claudeCodePages = [
     { title: 'Claude Code Guide', url: '/claude-code-guide', description: 'Complete beginner-to-pro guide for Claude Code — install, config, sub-agents, hooks, MCP' },
-    { title: 'Claude Code Skills Catalogue', url: '/claude-code-skills', description: '45+ Claude Code skills, subagents and slash commands — every entry from a permissive-licence repo' },
+    { title: 'Claude Code Skills Catalogue', url: '/claude-code-skills', description: 'Claude Code skills, subagents and slash commands — every entry from a permissive-licence repo' },
+    { title: 'Install a Claude Code Skill', url: '/claude-code-skills/install-guide', description: 'The 60-second install walkthrough for slash commands, subagents, and bundled skills' },
+    { title: 'Build Your Own Claude Code Skill', url: '/claude-code-skills/build-your-own', description: 'SKILL.md template walkthrough — frontmatter, body structure, testing loop' },
     { title: 'Claude Code MCP Stack', url: '/claude-code-mcp-stack', description: 'The MCP servers worth installing — with working configs' },
     { title: 'Claude Pro vs Max vs API', url: '/claude-pro-vs-max-vs-api', description: 'Which Claude plan fits your usage — with real numbers' },
     { title: 'CLAUDE.md Playbook', url: '/claude-md-playbook', description: 'Project-level instructions that actually change Claude Code behaviour' },

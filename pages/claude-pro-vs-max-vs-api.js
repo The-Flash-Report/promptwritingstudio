@@ -280,11 +280,12 @@ export default function ClaudeProVsMaxVsApi() {
         </section>
 
         <section className="py-16 bg-[#1A1A1A] text-center">
-          <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-3xl font-bold text-white mb-4">Run the numbers on your workload</h2>
-            <p className="text-gray-300 mb-6">The plan picker calculator takes your actual hours-per-day and model mix and recommends Pro, Max 5x, Max 20x, or API with the monthly cost for each.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <p className="text-gray-300 mb-6">The plan picker calculator takes your actual hours-per-day and model mix and recommends Pro, Max 5x, Max 20x, or API with the monthly cost for each. Once you've picked, the Claude Code Skills catalogue is the next stop — reusable slash commands that pay for themselves inside the first billing cycle.</p>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Link href="/calculators/claude-plan-picker" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Open the plan picker</Link>
+              <Link href="/claude-code-skills" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Claude Code Skills catalogue</Link>
               <Link href="/calculators/claude-code-vs-cursor-cost" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Claude Code vs Cursor cost</Link>
             </div>
           </div>
