@@ -148,8 +148,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "repo": "promptwritingstudio",
-        "licence": "MIT (author's own work)"
+        "repo": "claude-config",
+        "licence": "MIT (author's own work)",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Don't combine with --no-verify. Skill should warn and refuse if hooks are skipped.",
       "related": [
@@ -729,7 +730,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Don't auto-deploy on every push — use Netlify's GitHub integration for that. Use this skill for on-demand deploys.",
       "related": [
@@ -759,7 +762,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Only covers Netlify. Wrap for Vercel/Cloudflare Pages separately.",
       "related": [
@@ -789,7 +794,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "For monorepos, extend to target specific workspaces.",
       "related": [
@@ -1255,7 +1262,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Not legal advice. A disclaimer template ≠ bespoke legal review. Use for hygiene, not stakes-worthy compliance.",
       "related": [
@@ -1375,7 +1384,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Requires manual maintenance of the site list as your portfolio grows/shrinks.",
       "related": [
@@ -1405,7 +1416,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Doesn't fix — just surfaces. Triage red workflows manually.",
       "related": [
@@ -1435,7 +1448,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Costs 5x tokens per run. Budget accordingly.",
       "related": [
@@ -1466,7 +1481,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Don't include sensitive test inputs in the skill — inject from a separate secrets file.",
       "related": [
@@ -1496,7 +1513,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Respect robots.txt on outbound crawls. Heavy on big sites — rate-limit.",
       "related": [
@@ -1526,7 +1545,9 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT"
+        "licence": "MIT (author's own work)",
+        "repo": "claude-config",
+        "repoUrl": "https://github.com/bryancollins99/claude-config"
       },
       "caveats": "Lighthouse scores vary between runs — trust trend, not single values.",
       "related": [
