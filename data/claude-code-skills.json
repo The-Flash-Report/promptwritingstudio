@@ -148,9 +148,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "repo": "claude-config",
-        "licence": "MIT (author's own work)",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Don't combine with --no-verify. Skill should warn and refuse if hooks are skipped.",
       "related": [
@@ -711,9 +709,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Don't auto-deploy on every push — use Netlify's GitHub integration for that. Use this skill for on-demand deploys.",
       "related": [
@@ -745,9 +741,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Only covers Netlify. Wrap for Vercel/Cloudflare Pages separately.",
       "related": [
@@ -779,9 +773,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "For monorepos, extend to target specific workspaces.",
       "related": [
@@ -1263,9 +1255,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Not legal advice. A disclaimer template ≠ bespoke legal review. Use for hygiene, not stakes-worthy compliance.",
       "related": [
@@ -1390,9 +1380,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Requires manual maintenance of the site list as your portfolio grows/shrinks.",
       "related": [
@@ -1424,9 +1412,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Doesn't fix — just surfaces. Triage red workflows manually.",
       "related": [
@@ -1458,9 +1444,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Costs 5x tokens per run. Budget accordingly.",
       "related": [
@@ -1493,9 +1477,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Don't include sensitive test inputs in the skill — inject from a separate secrets file.",
       "related": [
@@ -1527,9 +1509,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Respect robots.txt on outbound crawls. Heavy on big sites — rate-limit.",
       "related": [
@@ -1561,9 +1541,7 @@
       "source": {
         "type": "original",
         "author": "Bryan Collins",
-        "licence": "MIT (author's own work)",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config"
+        "licence": "MIT (author's own work)"
       },
       "caveats": "Lighthouse scores vary between runs — trust trend, not single values.",
       "related": [
@@ -1656,8 +1634,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "Shared repos: check with collaborators before deleting branches others may be using. Never run with --force.",
@@ -1690,8 +1666,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "Never rebase branches already pushed to shared remotes — it rewrites history other people have cloned.",
@@ -1724,8 +1698,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "Complex renames + refactors may still need human judgment — the skill explains its reasoning but shouldn’t be trusted blindly.",
@@ -1758,8 +1730,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "If the skill is published publicly, issue a README note with the old slug as a redirect — don’t silently break other people’s muscle memory.",
@@ -1792,8 +1762,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "The scaffold is a starting point, not a finished skill — always review the failure-modes section before trusting it with mutating actions (git push, deploy, delete).",
@@ -1826,8 +1794,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "This is a presence-and-freshness check, not a legal review — policy wording is a lawyer job, not a skill.",
@@ -1860,8 +1826,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "Disclosure wording requirements vary by jurisdiction (FTC in US, ASA in UK, DSA in EU). This skill checks presence, not wording — verify against your compliance policy.",
@@ -1894,8 +1858,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "Requires discipline to keep the profile files updated — stale profile = inconsistent content. Review every 6 months.",
@@ -1928,8 +1890,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "Reports what’s missing; does not auto-insert CTAs — conversion copy is a judgment call, not a find-replace.",
@@ -1962,8 +1922,6 @@
         "type": "original",
         "author": "Bryan Collins",
         "authorUrl": "https://github.com/bryancollins99",
-        "repo": "claude-config",
-        "repoUrl": "https://github.com/bryancollins99/claude-config",
         "licence": "MIT (author's own work)"
       },
       "caveats": "Proposes links — doesn’t write them. Over-linking kills reader flow, so cap at 2–3 cross-site links per post.",
