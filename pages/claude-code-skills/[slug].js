@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../../components/layout/Layout'
 import LastVerified from '../../components/LastVerified'
+import EmailCapture from '../../components/ui/EmailCapture'
 import { generateFAQSchema, generateArticleSchema } from '../../lib/schemaGenerator'
 import skillsData from '../../data/claude-code-skills.json'
 
@@ -209,13 +210,22 @@ export default function SkillPage({ skill, category, lastVerified }) {
           </section>
         )}
 
-        <section className="py-14 bg-[#1A1A1A] text-center">
+        <section id="newsletter" className="py-14 bg-[#1A1A1A]">
           <div className="container mx-auto px-4 md:px-6 max-w-2xl">
-            <h2 className="text-2xl font-bold text-white mb-3">Browse more skills</h2>
-            <p className="text-gray-300 mb-6">{skillsData.skills.length} skills across {skillsData.categories.length} categories, all licence-verified.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/claude-code-skills" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Back to catalogue</Link>
-              <Link href={`/claude-code-skills/category/${skill.category}`} className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">More in {category?.name}</Link>
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-2xl font-bold text-white mb-3">New skills, explained plainly.</h2>
+              <p className="text-gray-300 mb-6">One short email when a new Claude Code skill is worth installing — and when to skip the hype. No spam.</p>
+              <EmailCapture source={`skill:${skill.slug}`} label="" buttonText="Subscribe" theme="dark" />
+            </div>
+          </div>
+        </section>
+
+        <section className="py-10 bg-white text-center border-t border-gray-200">
+          <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+            <p className="text-[#333333] mb-4">{skillsData.skills.length} skills across {skillsData.categories.length} categories, all licence-verified.</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/claude-code-skills" className="bg-[#FFDE59] text-[#1A1A1A] px-5 py-2.5 rounded-lg font-bold hover:bg-[#E5C84F] transition">Back to catalogue</Link>
+              <Link href={`/claude-code-skills/category/${skill.category}`} className="border-2 border-[#1A1A1A] text-[#1A1A1A] px-5 py-2.5 rounded-lg font-bold hover:bg-[#1A1A1A] hover:text-white transition">More in {category?.name}</Link>
             </div>
           </div>
         </section>

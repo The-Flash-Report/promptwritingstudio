@@ -208,8 +208,6 @@ export default function AIPromptQuiz() {
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [showExplanation, setShowExplanation] = useState(false)
   const [score, setScore] = useState(0)
-  const [email, setEmail] = useState('')
-  const [emailSubmitted, setEmailSubmitted] = useState(false)
 
   const handleAnswerSelect = (answerIndex) => {
     setSelectedAnswer(answerIndex)
@@ -244,13 +242,6 @@ export default function AIPromptQuiz() {
     return resultProfiles.beginner
   }
 
-  const handleEmailSubmit = async (e) => {
-    e.preventDefault()
-    // Here you would integrate with your email service
-    console.log('Email submitted:', email)
-    setEmailSubmitted(true)
-  }
-
   const restartQuiz = () => {
     setCurrentQuestion(0)
     setAnswers([])
@@ -258,8 +249,6 @@ export default function AIPromptQuiz() {
     setSelectedAnswer(null)
     setShowExplanation(false)
     setScore(0)
-    setEmail('')
-    setEmailSubmitted(false)
   }
 
   const shareUrl = typeof window !== 'undefined' ? window.location.href : ''
@@ -310,44 +299,6 @@ export default function AIPromptQuiz() {
                 <EmailCapture source="ai-prompt-quiz" theme="light" />
               </div>
             </div>
-
-            {/* Email Capture */}
-            {!emailSubmitted ? (
-              <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border border-[#E5E5E5]">
-                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">Get Your Detailed Results</h3>
-                <p className="text-[#333333] mb-6">
-                  Enter your email to receive a detailed breakdown of your results, personalized prompt templates, 
-                  and exclusive tips to improve your AI prompt writing skills.
-                </p>
-                <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    className="flex-1 px-4 py-3 border border-[#E5E5E5] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFDE59] focus:border-[#FFDE59]"
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition"
-                  >
-                    Get Results
-                  </button>
-                </form>
-              </div>
-            ) : (
-              <div className="bg-[#F9F9F9] border border-[#E5E5E5] rounded-xl p-8 mb-8">
-                <div className="flex items-center mb-4">
-                  <FaCheckCircle className="text-[#333333] text-2xl mr-3" />
-                  <h3 className="text-2xl font-bold text-[#1A1A1A]">Thank You!</h3>
-                </div>
-                <p className="text-[#333333]">
-                  Check your email for detailed results and personalized recommendations. 
-                  Your prompt writing journey starts now! 🚀
-                </p>
-              </div>
-            )}
 
             {/* Social Sharing */}
             <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border border-[#E5E5E5]">
