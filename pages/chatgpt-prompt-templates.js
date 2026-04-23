@@ -288,6 +288,24 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
         </div>
       </section>
       
+      {/* Teachable Course CTA */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center border border-[#E5E5E5] rounded-lg p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1A1A1A]">Want ChatGPT prompts that actually convert?</h2>
+            <p className="text-lg text-[#333333] mb-8">
+              Prompt Writing Studio teaches you how to turn these templates into repeatable ChatGPT workflows for your writing, marketing, and client work.
+            </p>
+            <a
+              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+              className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-md font-bold hover:bg-[#E5C84F] transition inline-block"
+            >
+              Join Now
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 md:py-24 gradient-bg text-white">
         <div className="container mx-auto px-4 md:px-6">

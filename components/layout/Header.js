@@ -189,7 +189,7 @@ export default function Header() {
         <div className="flex items-center space-x-3">
           <Link
             href="/claude-code-guide"
-            className="bg-[#FFDE59] text-[#1A1A1A] px-3 py-1.5 md:px-4 md:py-2 rounded-md font-bold hover:bg-[#E5C84F] transition text-sm md:text-base whitespace-nowrap"
+            className="hidden md:inline-flex bg-[#FFDE59] text-[#1A1A1A] px-4 py-2 rounded-md font-bold hover:bg-[#E5C84F] transition text-base whitespace-nowrap"
           >
             Start with Claude Code
           </Link>
