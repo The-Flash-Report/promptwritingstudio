@@ -337,18 +337,17 @@ Create dedicated section showcasing AI expertise and integrating relevant email 
 Follow-ups captured from the April 21, 2026 Skills hub + email capture session. None are blocking — park until ROI or triggering event warrants pulling them into IMMEDIATE.
 
 ### Skills hub follow-ups
-- [ ] **Make `bryancollins99/claude-config` public** OR strip `source.repoUrl` from the ~21 entries attributing to it. Currently a private repo link = 404 for anonymous visitors on per-skill detail pages. *Trigger: any time — 30-sec fix. Keep until resolved.*
+- **`bryancollins99/claude-config` private + 10 undefined source.repo skills** — moved to GitHub Issue #18 (label `qa`).
 - [ ] **Add course / guide CTA block to per-skill detail pages** (`pages/claude-code-skills/[slug].js`). 56 Tier-A-intent pages currently exit only via "Back to catalogue" and "More in category". Funnel gap. *Trigger: first skill-page impressions > 100/mo in GSC.*
-- [ ] **Consolidate the two email capture forms on `ai-prompt-quiz.js`** — the new `<EmailCapture>` component now sits above a pre-existing bespoke form. Either remove one or turn them into a single multi-step flow. *Trigger: next time the page gets content work.*
-- [ ] **Give the 10 `undefined` source.repo skills a real home** — `headline-lab`, `aeo-citability`, `internal-link-mapper`, `meta-rewrite`, `competitor-scan`, `academic-brief`, `retire-model`, `skill-tester`, `dep-audit`, `changelog`. Either commit them to `claude-config` or mark them explicitly as "personal pattern, not distributed".
+- **Consolidate the two email capture forms on `ai-prompt-quiz.js`** — moved to GitHub Issue #17 (label `qa`).
 
 ### Lead-gen infrastructure
-- [ ] **Wire Mailgun welcome email on `pws-newsletter` form submissions** via `netlify/functions/submission-created.js` — same pattern as `tenderwatch.ie`. Current state: submissions land only in Netlify dashboard. Needs `MAILGUN_API_KEY` + `MAILGUN_DOMAIN` + `ALERT_FROM_EMAIL` env vars. *Trigger: first 10 submissions captured.*
+- **Wire Mailgun welcome email on `pws-newsletter` form submissions** — moved to GitHub Issue #19 (label `qa`).
 - [ ] **Decide whether to swap the homepage Hero CTA** (`components/sections/Hero.js`) from "Start with Claude Code" button to email capture. Deliberately left untouched — it's the primary top-of-funnel entry. *Trigger: post-deploy analytics — if email capture elsewhere outperforms the /claude-code-guide click-through on the homepage.*
 - [ ] **Add a lead magnet** (e.g. "Free Claude Code starter prompt pack") to pair with the email capture. Current form copy is generic "practical Claude Code tips" — converts worse than a specific promised asset. *Trigger: first nurture sequence ready.*
 
 ### Schema / technical SEO polish
-- [ ] **Fix pre-existing `generateArticleSchema` slug/url bug** in `lib/schemaGenerator.js:181-217`. The function destructures `url` but every caller passes `slug`, so `url` is `undefined` in the output JSON-LD. Affects other pages still using this function (skills hub now uses inline `CollectionPage`, but at least `pages/claude-code-skills/[slug].js:40` and others still call `generateArticleSchema`). *Trigger: next schema audit or before the next major SEO push.*
+- **`generateArticleSchema` slug/url bug** — moved to GitHub Issue #16 (label `qa`).
 
 ---
 
