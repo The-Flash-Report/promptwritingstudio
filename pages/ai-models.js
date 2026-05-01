@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 import LastVerified from '../components/LastVerified';
 import { MODELS_META } from '../lib/claude-data';
+import { generateFAQSchema } from '../lib/schemaGenerator';
 
 export default function AIModels() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -26,6 +27,41 @@ export default function AIModels() {
       "url": "https://promptwritingstudio.com"
     }
   };
+
+  // FAQPage schema — mirrors visible content on this page (section headings + body copy).
+  // Each Q&A maps to a section the user can read on the page.
+  const faqs = [
+    {
+      question: "What are supervised learning models?",
+      answer: "Supervised learning models are trained with labeled data for specific tasks. They are used for speech recognition, text classification, fraud detection, regression analysis, and include algorithms like KNN, K-means, and Random Forest."
+    },
+    {
+      question: "What are unsupervised learning models?",
+      answer: "Unsupervised learning models discover patterns in unlabeled data. They are used for trend analysis, clustering algorithms, traffic pattern recognition, anomaly detection, and dimensionality reduction."
+    },
+    {
+      question: "What are reinforcement learning models?",
+      answer: "Reinforcement learning models learn by trial-and-error and are goal-oriented. They are used in robotics control, stock trading strategies, gaming AI, autonomous systems, and resource optimization."
+    },
+    {
+      question: "What are the notable flagship text and multimodal AI models?",
+      answer: "Claude Opus 4.7 (Anthropic) for agentic coding and long-horizon reasoning with a 1M context window; Claude Sonnet 4.6 (Anthropic) for the best price-performance day-to-day with a 1M context window; GPT-5 (OpenAI) as a flagship multimodal model; and Gemini 2.5 Pro (Google) with a 1M+ token context window."
+    },
+    {
+      question: "What are the notable specialized and open-source AI models?",
+      answer: "Llama 3.3 70B (Meta) with open weights and a 128K context window; Mistral Large 2 as an EU-hosted option for data residency; DeepSeek V3, an open-weights MoE with strong coding performance; and Claude Haiku 4.5 (Anthropic), which is fast, cheap, and still strong on extraction."
+    },
+    {
+      question: "What's changed in the AI model landscape?",
+      answer: "Claude, GPT, and Gemini families all now ship tiered lineups (flagship, mid, and small). Long context windows (200K–1M+ tokens) are now table stakes on flagship models. Multimodal (text plus vision, and sometimes audio/video) is baseline, not a premium feature. Agentic tool use and computer use is pushing model choice toward Claude for coding workflows. Reasoning and thinking modes are a separate purchase decision from raw model size."
+    },
+    {
+      question: "How do AI models compare on cost efficiency?",
+      answer: "Open-weight models (Llama 3.3, DeepSeek V3) are close to proprietary on many tasks. Mid-tier models (Sonnet, GPT-4o, Gemini Flash) handle 80%+ of real workloads. Small models (Haiku, Gemini Flash Lite) shine in high-volume pipelines. Prompt caching and batch APIs materially cut cost on repeated-context workloads."
+    }
+  ];
+
+  const faqSchemaData = generateFAQSchema(faqs);
 
   // Categories for filtering
   const categories = [
@@ -343,7 +379,11 @@ export default function AIModels() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
+      />
+
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
         {/* Hero Section */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
@@ -861,6 +901,21 @@ export default function AIModels() {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section — mirrors FAQPage JSON-LD schema */}
+      <div className="bg-white py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+                <h3 className="text-lg font-semibold mb-3 text-gray-900">{faq.question}</h3>
+                <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
