@@ -129,7 +129,9 @@ export default function UseCasePromptPage({ useCaseData, relatedUseCases }) {
           </p>
 
           {/* Last Updated */}
-          <p className="text-sm text-gray-400 mb-6">Last updated: February 2026</p>
+          <p className="text-sm text-gray-400 mb-6">
+            Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+          </p>
 
           
           {/* Claude Code CTA */}
