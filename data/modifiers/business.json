@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Business — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for business strategy, operations, and growth. Our expert-crafted templates help you solve business challenges and save valuable time."
   },
+  "answerBlock": "ChatGPT prompts for business are reusable instructions that turn the model into a working analyst, strategist, or operations partner. Each template below is copy-paste ready and structured to produce specific outputs — SWOT analyses, plans, decks, frameworks — rather than generic advice. They work with ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "SWOT Analysis Generator",

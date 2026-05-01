@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Content Creation — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for content creation that save time and boost engagement. Our expert-crafted templates help you create blogs, social posts, and more."
   },
+  "answerBlock": "ChatGPT prompts for content creation are reusable instructions that turn the model into a writing partner for blog posts, social captions, scripts, and outlines. Each template below specifies the audience, tone, length, and goal so the output is publish-ready, not generic. The prompts work in ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "Blog Post Architect",

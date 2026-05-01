@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Students — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for students to improve essay writing, research, studying, and more. Our expert-crafted templates help you excel academically."
   },
+  "answerBlock": "ChatGPT prompts for students are structured instructions that help with essays, research, study planning, exam prep, and concept explanations. Each template below specifies the subject, level, and output format so the response is study-ready and adaptable to your assignment brief. The prompts work in ChatGPT, Claude, and Gemini, and complement — rather than replace — your own thinking.",
   "promptTemplates": [
     {
       "title": "Essay Structure Generator",

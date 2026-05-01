@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Email Marketing — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for email marketing campaigns. Our expert-crafted templates help you create better emails, improve open rates, and boost conversions."
   },
+  "answerBlock": "ChatGPT prompts for email marketing are reusable instructions that produce subject lines, welcome sequences, nurture flows, and broadcast emails calibrated to your list. Each template below specifies the offer, audience segment, and goal so you get send-ready copy rather than generic drafts. The prompts work in ChatGPT, Claude, and Gemini and slot into any ESP.",
   "promptTemplates": [
     {
       "title": "Email Subject Line Generator",

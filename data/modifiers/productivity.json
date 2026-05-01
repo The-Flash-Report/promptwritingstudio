@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Productivity — Expert Templates | Prompt Writing Studio",
     "description": "Boost your productivity with expert Claude and ChatGPT prompts for time management, task optimization, workflow automation, and efficiency improvement. Save hours every week."
   },
+  "answerBlock": "ChatGPT prompts for productivity are structured instructions that help you plan a week, batch tasks, design routines, and unblock decisions. Each template below specifies your role, constraints, and desired output so the result is a usable system rather than generic time-management advice. The prompts work in ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "Daily Productivity Framework",

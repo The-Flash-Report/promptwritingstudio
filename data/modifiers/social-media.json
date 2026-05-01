@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Social Media — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for social media content creation, engagement, and strategy. Our expert-crafted templates help you create compelling posts for any platform."
   },
+  "answerBlock": "ChatGPT prompts for social media are structured instructions that produce posts, captions, hooks, threads, and content calendars tailored to a platform and audience. Each template below specifies the network, format, and goal so the output drops straight into your scheduler instead of needing rewrites. The prompts work in ChatGPT, Claude, and Gemini for LinkedIn, X, Instagram, and TikTok.",
   "promptTemplates": [
     {
       "title": "Platform-Specific Content Adapter",

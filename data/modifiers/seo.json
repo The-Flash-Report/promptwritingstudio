@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for SEO — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for SEO to improve your rankings, content, and keyword research. Our expert-crafted templates help you optimize your website."
   },
+  "answerBlock": "ChatGPT prompts for SEO are structured instructions that produce keyword clusters, search-intent breakdowns, on-page briefs, meta descriptions, and content outlines aligned to a target query. Each template below specifies the keyword, intent, and audience so the output is brief-ready rather than generic. The prompts work in ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "Keyword Research Expander",

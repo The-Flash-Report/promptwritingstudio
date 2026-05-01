@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Finance — Expert Templates | Prompt Writing Studio",
     "description": "Master personal finance, investing, and money management with expert Claude and ChatGPT prompts. Create budgets, investment strategies, and financial plans."
   },
+  "answerBlock": "ChatGPT prompts for finance are structured instructions that help you build budgets, evaluate investments, model scenarios, and translate dense financial concepts into plain language. Each template below specifies the situation, numbers, and output format so the response is decision-grade — not generic advice. The prompts work in ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "Personal Budget Creator",

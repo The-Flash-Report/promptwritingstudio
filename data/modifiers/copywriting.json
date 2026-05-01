@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Copywriting — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for copywriting that convert. Our expert-crafted templates help you create compelling sales pages, emails, ads, and more."
   },
+  "answerBlock": "ChatGPT prompts for copywriting are structured instructions that produce headlines, sales pages, ads, and email copy that converts. Each template below specifies the offer, audience, voice, and proof so the output reads like a working copywriter wrote it. The prompts work in ChatGPT, Claude, and Gemini and adapt to any niche.",
   "promptTemplates": [
     {
       "title": "Sales Page Generator",

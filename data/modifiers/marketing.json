@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Marketing — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for marketing campaigns, content creation, and audience targeting. Our expert-crafted templates help you create compelling marketing materials that convert."
   },
+  "answerBlock": "ChatGPT prompts for marketing are reusable instructions that produce campaign concepts, taglines, ad variants, social posts, and audience research on demand. Each template below specifies the brand, audience, and goal so the output is ready to test rather than abstract. The prompts work in ChatGPT, Claude, and Gemini for solo founders and full marketing teams.",
   "promptTemplates": [
     {
       "title": "Content Calendar Generator",

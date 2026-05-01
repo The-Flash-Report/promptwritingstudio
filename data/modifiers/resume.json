@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Resume — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for resume writing and optimization. Our expert-crafted templates help you create better resumes and land more interviews."
   },
+  "answerBlock": "ChatGPT prompts for resumes are structured instructions that turn your work history into a tailored, role-specific CV — bullet points rewritten with strong verbs, summaries aligned to a job description, and ATS-friendly formatting. Each template below specifies the role, seniority, and target company type so the output reads like a hiring manager wants to read. The prompts work in ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "ATS-Optimized Resume Generator",

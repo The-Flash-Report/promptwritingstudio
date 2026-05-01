@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Coding — Expert Templates | Prompt Writing Studio",
     "description": "Copy-paste Claude and ChatGPT prompts for coding tasks: debugging, code review, writing functions, explaining concepts, refactoring, and learning new languages."
   },
+  "answerBlock": "ChatGPT prompts for coding are structured instructions that direct the model to write, debug, refactor, or explain code. Each template below specifies the language, context, and output format so you get production-ready snippets instead of generic answers. The prompts work in ChatGPT, Claude, Gemini, and most code-aware AI assistants.",
   "promptTemplates": [
     {
       "title": "Code Debugger & Error Explainer",

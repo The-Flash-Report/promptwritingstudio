@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Education — Expert Templates | Prompt Writing Studio",
     "description": "Create engaging educational content, lesson plans, and learning materials with expert Claude and ChatGPT prompts. Perfect for teachers, trainers, and content creators."
   },
+  "answerBlock": "ChatGPT prompts for education are structured instructions that help teachers, trainers, and learners build lesson plans, quizzes, study guides, and explanations tailored to a level and subject. Each template below specifies grade, learning goal, and format so the output is classroom-ready. The prompts work in ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "Lesson Plan Creator",

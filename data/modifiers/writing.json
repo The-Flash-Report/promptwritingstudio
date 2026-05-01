@@ -6,6 +6,7 @@
     "title": "Claude + ChatGPT Prompts for Writing — Expert Templates | Prompt Writing Studio",
     "description": "Discover 15+ effective Claude and ChatGPT prompts for writing articles, blog posts, stories, and more. Our expert-crafted templates help you overcome writer's block and create engaging content."
   },
+  "answerBlock": "ChatGPT prompts for writing are structured instructions that help you draft articles, stories, outlines, and revisions in your voice rather than the model's default. Each template below specifies audience, tone, length, and structure so the output reads like a starting draft you can shape, not generic AI prose. The prompts work in ChatGPT, Claude, and Gemini.",
   "promptTemplates": [
     {
       "title": "Blog Post Generator",
