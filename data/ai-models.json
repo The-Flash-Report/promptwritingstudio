@@ -1,0 +1,283 @@
+{
+  "_meta": {
+    "schemaVersion": 1,
+    "lastVerified": "2026-05-07",
+    "stalenessThresholdDays": 60,
+    "notes": "Multi-vendor AI model facts. Single source of truth for /ai-models, /claude-vs-chatgpt, and any page that quotes pricing or capability claims for non-Claude models. For Claude-only API model IDs and detailed plan data, see data/claude-models.json. This file mirrors top-level facts and adds non-Claude vendors. Update each entry's last_verified_at when you re-check it against the source. Monthly GitHub Actions cron flags entries older than stalenessThresholdDays."
+  },
+  "models": [
+    {
+      "id": "claude-opus-4-7",
+      "vendor": "Anthropic",
+      "display_name": "Claude Opus 4.7",
+      "tier": "flagship",
+      "categories": ["text", "reasoning", "coding", "multimodal", "enterprise"],
+      "input_per_million": 5.00,
+      "output_per_million": 25.00,
+      "pricing_label": "$5 / $25 per 1M tokens (input/output)",
+      "context_window": 1000000,
+      "context_window_label": "1M tokens",
+      "released": "2026-01",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://claude.com/pricing",
+      "description": "Anthropic's flagship model for long-horizon agentic work, complex coding, and research-grade analysis.",
+      "features": [
+        "Anthropic's most capable model for complex reasoning",
+        "Strong performance on agentic coding tasks",
+        "Adaptive thinking mode for deliberate reasoning",
+        "Tool use and computer use",
+        "Used inside Claude Code"
+      ]
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "vendor": "Anthropic",
+      "display_name": "Claude Sonnet 4.6",
+      "tier": "workhorse",
+      "categories": ["text", "reasoning", "coding", "multimodal", "enterprise"],
+      "input_per_million": 3.00,
+      "output_per_million": 15.00,
+      "pricing_label": "$3 / $15 per 1M tokens (input/output)",
+      "context_window": 1000000,
+      "context_window_label": "1M tokens",
+      "released": "2025-09",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://claude.com/pricing",
+      "description": "Anthropic's mainstream workhorse — the default for Claude.ai, API workloads, and Claude Code day-to-day.",
+      "features": [
+        "Balanced speed, cost, and capability",
+        "Default model for most Claude Code workflows",
+        "Strong coding and tool-use performance",
+        "Vision input support",
+        "Prompt caching for large context reuse"
+      ]
+    },
+    {
+      "id": "claude-haiku-4-5-20251001",
+      "vendor": "Anthropic",
+      "display_name": "Claude Haiku 4.5",
+      "tier": "fast",
+      "categories": ["text", "reasoning", "coding", "multimodal"],
+      "input_per_million": 1.00,
+      "output_per_million": 5.00,
+      "pricing_label": "$1 / $5 per 1M tokens (input/output)",
+      "context_window": 200000,
+      "context_window_label": "200K tokens",
+      "released": "2025-10",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://claude.com/pricing",
+      "description": "Anthropic's small, fast, cheap model — the right default for background agents and high-volume jobs.",
+      "features": [
+        "Fastest Claude model at the lowest price point",
+        "Good for high-volume classification and extraction",
+        "Vision input support",
+        "Suitable for sub-agents and batched pipelines"
+      ]
+    },
+    {
+      "id": "gpt-5",
+      "vendor": "OpenAI",
+      "display_name": "GPT-5",
+      "tier": "flagship",
+      "categories": ["text", "multimodal", "reasoning", "coding", "enterprise"],
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_label": "Tiered pricing — see openai.com/api/pricing",
+      "context_window": 400000,
+      "context_window_label": "Up to 400K tokens",
+      "released": "2025",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://openai.com/api/pricing/",
+      "verification_notes": "OpenAI pricing page blocks automated fetches; tier pricing varies by mode (standard / mini / nano). Confirm at source before quoting per-token cost.",
+      "description": "OpenAI's current flagship model. Check openai.com for up-to-date capability and pricing details before production use.",
+      "features": [
+        "OpenAI's current flagship",
+        "Multimodal (text, image, audio)",
+        "Strong reasoning and coding performance",
+        "Function calling and structured outputs",
+        "Available via API and ChatGPT"
+      ]
+    },
+    {
+      "id": "gpt-4o",
+      "vendor": "OpenAI",
+      "display_name": "GPT-4o",
+      "tier": "workhorse",
+      "categories": ["text", "multimodal", "reasoning", "coding"],
+      "input_per_million": 2.50,
+      "output_per_million": 10.00,
+      "pricing_label": "~$2.50 / $10 per 1M tokens (input/output)",
+      "context_window": 128000,
+      "context_window_label": "128K tokens",
+      "released": "2024-05",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://openai.com/api/pricing/",
+      "description": "OpenAI's omni model — good multimodal default when latency and cost matter more than absolute reasoning quality.",
+      "features": [
+        "Omni-modal: text, vision, and audio in one model",
+        "Realtime audio via the Realtime API",
+        "Cheaper and faster than GPT-4",
+        "Still widely used for general tasks"
+      ]
+    },
+    {
+      "id": "gpt-4o-mini",
+      "vendor": "OpenAI",
+      "display_name": "GPT-4o mini",
+      "tier": "fast",
+      "categories": ["text", "multimodal", "coding"],
+      "input_per_million": 0.15,
+      "output_per_million": 0.60,
+      "pricing_label": "~$0.15 / $0.60 per 1M tokens (input/output)",
+      "context_window": 128000,
+      "context_window_label": "128K tokens",
+      "released": "2024-07",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://openai.com/api/pricing/",
+      "description": "OpenAI's small, cheap multimodal sibling of GPT-4o — strong default for high-volume tasks where latency and cost dominate.",
+      "features": [
+        "Lowest-cost multimodal OpenAI model",
+        "Vision input support",
+        "Function calling and structured outputs",
+        "Good price-performance for classification and extraction"
+      ]
+    },
+    {
+      "id": "gemini-2-5-pro",
+      "vendor": "Google",
+      "display_name": "Gemini 2.5 Pro",
+      "tier": "flagship",
+      "categories": ["text", "multimodal", "reasoning", "coding", "enterprise"],
+      "input_per_million": 1.25,
+      "output_per_million": 10.00,
+      "pricing_label": "$1.25–$2.50 / $10–$15 per 1M tokens (tiered by context length)",
+      "context_window": 2000000,
+      "context_window_label": "1M+ tokens (up to 2M)",
+      "released": "2025",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://ai.google.dev/pricing",
+      "verification_notes": "Pricing tiered by context length (≤200K vs >200K). Lower bound applies under 200K input.",
+      "description": "Google's Gemini Pro line — the go-to when you need to stuff a whole codebase or long video into a single prompt.",
+      "features": [
+        "Very long context window (1M+ tokens)",
+        "Native multimodal: text, image, audio, video",
+        "Strong performance on long-document and codebase tasks",
+        "Integrates with Google Workspace and Vertex AI"
+      ]
+    },
+    {
+      "id": "gemini-2-5-flash",
+      "vendor": "Google",
+      "display_name": "Gemini 2.5 Flash",
+      "tier": "workhorse",
+      "categories": ["text", "multimodal", "reasoning", "coding"],
+      "input_per_million": 0.30,
+      "output_per_million": 2.50,
+      "pricing_label": "$0.30–$1.80 / $2.50–$4.50 per 1M tokens (tiered by mode)",
+      "context_window": 1000000,
+      "context_window_label": "1M tokens",
+      "released": "2025",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://ai.google.dev/pricing",
+      "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority).",
+      "description": "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is good enough.",
+      "features": [
+        "Cheap and fast sibling of Gemini 2.5 Pro",
+        "Long context window",
+        "Good price-performance for high-volume tasks",
+        "Multimodal input"
+      ]
+    },
+    {
+      "id": "llama-3-3-70b",
+      "vendor": "Meta",
+      "display_name": "Llama 3.3 70B",
+      "tier": "open-source",
+      "categories": ["text", "coding", "reasoning", "open-source"],
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_label": "Open weights (free to self-host); hosted pricing varies by provider",
+      "context_window": 128000,
+      "context_window_label": "128K tokens",
+      "parameters": "70B",
+      "released": "2024-12",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://www.llama.com/",
+      "description": "Meta's open-weight workhorse — the default choice when you need an open model you can host, fine-tune, or air-gap.",
+      "features": [
+        "Open weights — run on your own hardware",
+        "Claimed performance close to Llama 3.1 405B",
+        "128K context window",
+        "Available via Together, Groq, Bedrock, and local runtimes"
+      ]
+    },
+    {
+      "id": "grok-3",
+      "vendor": "xAI",
+      "display_name": "Grok 3",
+      "tier": "flagship",
+      "categories": ["text", "reasoning"],
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_label": "Bundled with X Premium / API — see x.ai/api",
+      "context_window": null,
+      "context_window_label": "See x.ai documentation",
+      "released": "2025",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://x.ai/api",
+      "description": "xAI's flagship. Relevant mainly if you need real-time X data or a less filtered default tone.",
+      "features": [
+        "Access to real-time X (Twitter) data",
+        "Less restrictive content policy than peers",
+        "Reasoning mode available",
+        "API access via xAI"
+      ]
+    },
+    {
+      "id": "mistral-large-2",
+      "vendor": "Mistral AI",
+      "display_name": "Mistral Large 2",
+      "tier": "flagship",
+      "categories": ["text", "coding", "reasoning", "enterprise"],
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_label": "See mistral.ai/pricing",
+      "context_window": 128000,
+      "context_window_label": "128K tokens",
+      "parameters": "123B",
+      "released": "2024-07",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://mistral.ai/pricing",
+      "description": "Mistral's flagship. Common pick for EU customers that want non-US-hosted inference for GDPR and sovereignty reasons.",
+      "features": [
+        "European (France) model — data residency option",
+        "Strong multilingual and code performance",
+        "Function calling and JSON mode",
+        "Available via API and Azure"
+      ]
+    },
+    {
+      "id": "deepseek-v3",
+      "vendor": "DeepSeek",
+      "display_name": "DeepSeek V3",
+      "tier": "open-source",
+      "categories": ["text", "coding", "reasoning", "open-source"],
+      "input_per_million": null,
+      "output_per_million": null,
+      "pricing_label": "Open weights; very low API pricing — see api-docs.deepseek.com",
+      "context_window": 128000,
+      "context_window_label": "128K tokens",
+      "parameters": "671B (MoE, ~37B active)",
+      "released": "2024-12",
+      "last_verified_at": "2026-05-07",
+      "verification_source": "https://api-docs.deepseek.com/quick_start/pricing",
+      "description": "DeepSeek's flagship open-weights MoE model. Chosen when price and open weights matter more than vendor reputation.",
+      "features": [
+        "Open weights",
+        "Mixture-of-Experts — large total / small active",
+        "Very competitive on coding and math benchmarks",
+        "Aggressive API pricing"
+      ]
+    }
+  ]
+}
