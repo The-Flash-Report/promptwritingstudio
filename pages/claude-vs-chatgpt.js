@@ -2,6 +2,22 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
+import { getAIModelById } from '../lib/ai-models'
+
+// Pull current model facts from the central JSON so prices/names update in one place.
+const opus = getAIModelById('claude-opus-4-7')
+const sonnet = getAIModelById('claude-sonnet-4-6')
+const haiku = getAIModelById('claude-haiku-4-5-20251001')
+const gpt5 = getAIModelById('gpt-5')
+const gpt4o = getAIModelById('gpt-4o')
+const gpt4oMini = getAIModelById('gpt-4o-mini')
+
+function pricePerMTokens(m) {
+  if (m.input_per_million == null || m.output_per_million == null) {
+    return m.pricing_label
+  }
+  return `$${m.input_per_million} / $${m.output_per_million} per M tokens`
+}
 
 const faqs = [
   {
@@ -47,10 +63,10 @@ const faqs = [
 ]
 
 const modelRows = [
-  { tier: 'Flagship', claude: 'Claude Opus 4.7 ($5 / $25 per M tokens)', chatgpt: 'GPT-5 (tiered pricing)' },
-  { tier: 'Workhorse', claude: 'Claude Sonnet 4.6 ($3 / $15 per M tokens)', chatgpt: 'GPT-4o (~$2.50 / $10 per M tokens)' },
-  { tier: 'Fast/cheap', claude: 'Claude Haiku 4.5 ($1 / $5 per M tokens)', chatgpt: 'GPT-4o-mini (~$0.15 / $0.60 per M tokens)' },
-  { tier: 'Context window', claude: '1M tokens on Opus 4.7 and Sonnet 4.6; 200K on Haiku 4.5', chatgpt: 'Varies by model/tier, up to 400K on GPT-5' },
+  { tier: 'Flagship', claude: `${opus.display_name} (${pricePerMTokens(opus)})`, chatgpt: `${gpt5.display_name} (${pricePerMTokens(gpt5)})` },
+  { tier: 'Workhorse', claude: `${sonnet.display_name} (${pricePerMTokens(sonnet)})`, chatgpt: `${gpt4o.display_name} (~${pricePerMTokens(gpt4o)})` },
+  { tier: 'Fast/cheap', claude: `${haiku.display_name} (${pricePerMTokens(haiku)})`, chatgpt: `${gpt4oMini.display_name} (~${pricePerMTokens(gpt4oMini)})` },
+  { tier: 'Context window', claude: `${opus.context_window_label} on ${opus.display_name} and ${sonnet.display_name}; ${haiku.context_window_label} on ${haiku.display_name}`, chatgpt: `Varies by model/tier, up to ${gpt5.context_window_label.replace('Up to ', '')} on ${gpt5.display_name}` },
   { tier: 'Knowledge cutoff', claude: 'Early 2026', chatgpt: 'Late 2024 – 2025, depends on model' }
 ]
 

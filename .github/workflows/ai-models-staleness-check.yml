@@ -1,0 +1,159 @@
+name: AI models staleness check
+
+# Monthly check on data/ai-models.json. Flags any model entry whose
+# last_verified_at is older than the staleness threshold (default 60 days).
+# Idempotent: updates the existing open issue with the same title rather
+# than creating a duplicate each month.
+
+on:
+  schedule:
+    - cron: '0 9 1 * *'  # First of every month, 09:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-staleness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compute stale entries
+        id: staleness
+        run: |
+          set -euo pipefail
+          node <<'EOF'
+            const fs = require('fs')
+            const path = require('path')
+
+            const dataPath = path.join('data', 'ai-models.json')
+            const raw = fs.readFileSync(dataPath, 'utf-8')
+            const data = JSON.parse(raw)
+
+            const threshold = (data._meta && data._meta.stalenessThresholdDays) || 60
+            const now = new Date()
+
+            const stale = (data.models || []).map(m => {
+              if (!m.last_verified_at) {
+                return { id: m.id, vendor: m.vendor, name: m.display_name, ageDays: null, source: m.verification_source || null }
+              }
+              const verified = new Date(m.last_verified_at)
+              const ageDays = Math.floor((now - verified) / (1000 * 60 * 60 * 24))
+              return { id: m.id, vendor: m.vendor, name: m.display_name, ageDays, last_verified_at: m.last_verified_at, source: m.verification_source || null }
+            }).filter(e => e.ageDays === null || e.ageDays > threshold)
+
+            const lines = []
+            lines.push(`# AI models data staleness report`)
+            lines.push('')
+            lines.push(`Threshold: **${threshold} days**.`)
+            lines.push(`Run: ${now.toISOString()}.`)
+            lines.push('')
+
+            if (stale.length === 0) {
+              lines.push('All entries are within threshold. No action needed.')
+            } else {
+              lines.push(`**${stale.length} entr${stale.length === 1 ? 'y is' : 'ies are'} stale** in \`data/ai-models.json\`:`)
+              lines.push('')
+              lines.push('| Vendor | Model | Age (days) | Last verified | Source |')
+              lines.push('|---|---|---|---|---|')
+              for (const e of stale) {
+                const age = e.ageDays === null ? 'missing' : String(e.ageDays)
+                const verified = e.last_verified_at || 'missing'
+                const source = e.source ? `[link](${e.source})` : 'n/a'
+                lines.push(`| ${e.vendor} | ${e.name} | ${age} | ${verified} | ${source} |`)
+              }
+              lines.push('')
+              lines.push('## How to fix')
+              lines.push('')
+              lines.push('1. Open the `verification_source` URL for each stale entry and confirm pricing, context window, and capability claims.')
+              lines.push('2. Update the relevant fields in `data/ai-models.json`.')
+              lines.push('3. Bump `last_verified_at` to today (YYYY-MM-DD) on every entry you re-verified.')
+              lines.push('4. Bump `_meta.lastVerified` to today as well so the on-page "verified" date refreshes.')
+              lines.push('5. Commit, open a PR, merge. This issue will auto-close on the next monthly run if all entries are within threshold.')
+            }
+
+            const body = lines.join('\n')
+            fs.writeFileSync('staleness-report.md', body)
+
+            const hasStale = stale.length > 0 ? '1' : '0'
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `has_stale=${hasStale}\n`)
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `stale_count=${stale.length}\n`)
+          EOF
+
+      - name: Open or update staleness issue
+        if: steps.staleness.outputs.has_stale == '1'
+        uses: actions/github-script@v7
+        env:
+          STALE_COUNT: ${{ steps.staleness.outputs.stale_count }}
+        with:
+          script: |
+            const fs = require('fs')
+            const body = fs.readFileSync('staleness-report.md', 'utf-8')
+            const staleCount = parseInt(process.env.STALE_COUNT, 10)
+            const title = `AI models data is stale (${staleCount} entr${staleCount === 1 ? 'y' : 'ies'} > 60 days)`
+
+            // Look for any existing open issue with the same title to update in place.
+            // Search by label first, then exact title match — labels are cheaper to filter on.
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'drift',
+              state: 'open',
+              per_page: 100
+            })
+
+            const match = existing.data.find(i => i.title === title)
+
+            if (match) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: match.number,
+                body: `${body}\n\n---\nUpdated automatically by \`.github/workflows/ai-models-staleness-check.yml\`.`
+              })
+              core.notice(`Updated existing issue #${match.number}`)
+            } else {
+              const created = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: `${body}\n\n---\nOpened automatically by \`.github/workflows/ai-models-staleness-check.yml\`.`,
+                labels: ['qa', 'drift']
+              })
+              core.notice(`Opened new issue #${created.data.number}`)
+            }
+
+      - name: Auto-close stale issue when all entries are fresh
+        if: steps.staleness.outputs.has_stale == '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'drift',
+              state: 'open',
+              per_page: 100
+            })
+
+            const stalenessIssues = existing.data.filter(i =>
+              i.title.startsWith('AI models data is stale')
+            )
+
+            for (const issue of stalenessIssues) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: 'All entries in `data/ai-models.json` are within the staleness threshold. Closing automatically.'
+              })
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              })
+              core.notice(`Closed resolved issue #${issue.number}`)
+            }
