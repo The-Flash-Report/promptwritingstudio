@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Layout from '../components/layout/Layout';
 import LastVerified from '../components/LastVerified';
-import { MODELS_META } from '../lib/claude-data';
+import { AI_MODELS, AI_MODELS_META } from '../lib/ai-models';
 import { generateFAQSchema } from '../lib/schemaGenerator';
 
 export default function AIModels() {
@@ -20,7 +20,7 @@ export default function AIModels() {
     "description": "Up-to-date comparison of the major AI models — Claude Opus 4.7, Sonnet 4.6, Haiku 4.5, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral Large and more — with context windows, pricing, and feature differences.",
     "keywords": "AI models, Claude Opus 4.7, Claude Sonnet 4.6, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral, LLM comparison",
     "datePublished": "2025-01-15T00:00:00+00:00",
-    "dateModified": `${MODELS_META.lastVerified}T00:00:00+00:00`,
+    "dateModified": `${AI_MODELS_META.lastVerified}T00:00:00+00:00`,
     "author": {
       "@type": "Organization",
       "name": "PromptWritingStudio",
@@ -74,261 +74,25 @@ export default function AIModels() {
     { id: 'enterprise', name: 'Enterprise' }
   ];
 
-  // AI Models data - verified against vendor docs; benchmarks marked "Unknown" where not independently verified
-  const models = [
-    // Anthropic Models (current — values mirrored from data/claude-models.json)
-    {
-      name: "Claude Opus 4.7",
-      company: "Anthropic",
-      parameters: "Unknown",
-      contextWindow: "1M tokens",
-      categories: ["text", "reasoning", "coding", "multimodal", "enterprise"],
-      pricing: "$5 / $25 per 1M tokens (input/output)",
-      releaseDate: "2026",
-      architecture: "Constitutional AI",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Anthropic's most capable model for complex reasoning",
-        "Strong performance on agentic coding tasks",
-        "Adaptive thinking mode for deliberate reasoning",
-        "Tool use and computer use",
-        "Used inside Claude Code"
-      ],
-      description: "Anthropic's flagship model for long-horizon agentic work, complex coding, and research-grade analysis."
+  // AI Models data - sourced from data/ai-models.json (single source of truth across the site).
+  // Update there, not here. Benchmarks default to "Unknown" because we don't independently re-run them.
+  const models = AI_MODELS.map(m => ({
+    name: m.display_name,
+    company: m.vendor,
+    parameters: m.parameters || "Unknown",
+    contextWindow: m.context_window_label || "Unknown",
+    categories: m.categories || [],
+    pricing: m.pricing_label,
+    releaseDate: m.released,
+    architecture: m.architecture || "Unknown",
+    benchmarks: {
+      mmlu: "Unknown",
+      humanEval: "Unknown",
+      hellaswag: "Unknown"
     },
-    {
-      name: "Claude Sonnet 4.6",
-      company: "Anthropic",
-      parameters: "Unknown",
-      contextWindow: "1M tokens",
-      categories: ["text", "reasoning", "coding", "multimodal", "enterprise"],
-      pricing: "$3 / $15 per 1M tokens (input/output)",
-      releaseDate: "2025",
-      architecture: "Constitutional AI",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Balanced speed, cost, and capability",
-        "Default model for most Claude Code workflows",
-        "Strong coding + tool-use performance",
-        "Vision input support",
-        "Prompt caching for large context reuse"
-      ],
-      description: "Anthropic's mainstream workhorse — the default for Claude.ai, API workloads, and Claude Code day-to-day."
-    },
-    {
-      name: "Claude Haiku 4.5",
-      company: "Anthropic",
-      parameters: "Unknown",
-      contextWindow: "200K tokens",
-      categories: ["text", "reasoning", "coding", "multimodal"],
-      pricing: "$1 / $5 per 1M tokens (input/output, approx)",
-      releaseDate: "2025",
-      architecture: "Constitutional AI",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Fastest Claude model at the lowest price point",
-        "Good for high-volume classification + extraction",
-        "Vision input support",
-        "Suitable for sub-agents and batched pipelines"
-      ],
-      description: "Anthropic's small, fast, cheap model — the right default for background agents and high-volume jobs."
-    },
-    // OpenAI Models
-    {
-      name: "GPT-5",
-      company: "OpenAI",
-      parameters: "Unknown",
-      contextWindow: "Unknown",
-      categories: ["text", "multimodal", "reasoning", "coding", "enterprise"],
-      pricing: "See openai.com/api/pricing",
-      releaseDate: "2025",
-      architecture: "Unknown",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "OpenAI's current flagship",
-        "Multimodal (text, image, audio)",
-        "Strong reasoning + coding performance",
-        "Function calling and structured outputs",
-        "Available via API and ChatGPT"
-      ],
-      description: "OpenAI's current flagship model. Check openai.com for up-to-date capability + pricing details before production use."
-    },
-    {
-      name: "GPT-4o",
-      company: "OpenAI",
-      parameters: "Unknown",
-      contextWindow: "128K tokens",
-      categories: ["text", "multimodal", "reasoning", "coding"],
-      pricing: "~$2.50 / $10 per 1M tokens (input/output)",
-      releaseDate: "May 2024",
-      architecture: "Unknown",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Omni-modal: text + vision + audio in one model",
-        "Realtime audio via the Realtime API",
-        "Cheaper and faster than GPT-4",
-        "Still widely used for general tasks"
-      ],
-      description: "OpenAI's omni model — good multimodal default when latency and cost matter more than absolute reasoning quality."
-    },
-    // Google Models
-    {
-      name: "Gemini 2.5 Pro",
-      company: "Google",
-      parameters: "Unknown",
-      contextWindow: "1M+ tokens",
-      categories: ["text", "multimodal", "reasoning", "coding", "enterprise"],
-      pricing: "See Google AI Studio pricing",
-      releaseDate: "2025",
-      architecture: "Unknown",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Very long context window (1M+ tokens)",
-        "Native multimodal: text, image, audio, video",
-        "Strong performance on long-document + codebase tasks",
-        "Integrates with Google Workspace + Vertex AI"
-      ],
-      description: "Google's Gemini Pro line — the go-to when you need to stuff a whole codebase or long video into a single prompt."
-    },
-    {
-      name: "Gemini 2.5 Flash",
-      company: "Google",
-      parameters: "Unknown",
-      contextWindow: "1M tokens",
-      categories: ["text", "multimodal", "reasoning", "coding"],
-      pricing: "See Google AI Studio pricing",
-      releaseDate: "2025",
-      architecture: "Unknown",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Cheap + fast sibling of Gemini 2.5 Pro",
-        "Long context window",
-        "Good price-performance for high-volume tasks",
-        "Multimodal input"
-      ],
-      description: "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is 'good enough'."
-    },
-    // Meta Llama Models
-    {
-      name: "Llama 3.3 70B",
-      company: "Meta",
-      parameters: "70B",
-      contextWindow: "128K tokens",
-      categories: ["text", "coding", "reasoning", "open-source"],
-      pricing: "Open weights (free to self-host)",
-      releaseDate: "December 2024",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Open weights — run on your own hardware",
-        "Claimed performance close to Llama 3.1 405B",
-        "128K context window",
-        "Available via Together, Groq, Bedrock, and local runtimes"
-      ],
-      description: "Meta's open-weight workhorse — the default choice when you need an open model you can host, fine-tune, or air-gap."
-    },
-    // xAI
-    {
-      name: "Grok 3",
-      company: "xAI",
-      parameters: "Unknown",
-      contextWindow: "Unknown",
-      categories: ["text", "reasoning"],
-      pricing: "Bundled with X Premium / API",
-      releaseDate: "2025",
-      architecture: "Unknown",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Access to real-time X (Twitter) data",
-        "Less restrictive content policy than peers",
-        "Reasoning mode available",
-        "API access via xAI"
-      ],
-      description: "xAI's flagship. Relevant mainly if you need real-time X data or a less filtered default tone."
-    },
-    // Mistral
-    {
-      name: "Mistral Large 2",
-      company: "Mistral AI",
-      parameters: "123B",
-      contextWindow: "128K tokens",
-      categories: ["text", "coding", "reasoning", "enterprise"],
-      pricing: "See mistral.ai/pricing",
-      releaseDate: "July 2024",
-      architecture: "Transformer",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "European (France) model — data residency option",
-        "Strong multilingual + code performance",
-        "Function calling + JSON mode",
-        "Available via API and Azure"
-      ],
-      description: "Mistral's flagship. Common pick for EU customers that want non-US-hosted inference for GDPR + sovereignty reasons."
-    },
-    // DeepSeek
-    {
-      name: "DeepSeek V3",
-      company: "DeepSeek",
-      parameters: "671B (MoE, ~37B active)",
-      contextWindow: "128K tokens",
-      categories: ["text", "coding", "reasoning", "open-source"],
-      pricing: "Open weights; very low API pricing",
-      releaseDate: "December 2024",
-      architecture: "Mixture-of-Experts",
-      benchmarks: {
-        mmlu: "Unknown",
-        humanEval: "Unknown",
-        hellaswag: "Unknown"
-      },
-      features: [
-        "Open weights",
-        "Mixture-of-Experts — large total / small active",
-        "Very competitive on coding + math benchmarks",
-        "Aggressive API pricing"
-      ],
-      description: "DeepSeek's flagship open-weights MoE model. Chosen when price and open weights matter more than vendor reputation."
-    }
-  ];
+    features: m.features || [],
+    description: m.description
+  }));
 
   // Filter models based on category and search term
   const filteredModels = models.filter(model => {
@@ -402,7 +166,7 @@ export default function AIModels() {
                 <span className="bg-white/20 px-4 py-2 rounded-full">⚡ Interactive Comparison</span>
               </div>
               <div className="mt-6 text-white/80">
-                <LastVerified date={MODELS_META.lastVerified} source={MODELS_META.source} className="!text-white/80" />
+                <LastVerified date={AI_MODELS_META.lastVerified} source="https://github.com/The-Flash-Report/promptwritingstudio/blob/main/data/ai-models.json" className="!text-white/80" />
               </div>
             </div>
           </div>
