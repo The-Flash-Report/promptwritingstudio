@@ -1,0 +1,38 @@
+{
+  "id": "legal-clause-rewrite",
+  "category": "legal",
+  "title": "Rewrite a legal clause in plain English without losing meaning",
+  "prompt": "Rewrite the following legal clause in plain English so that a non-lawyer can understand it. Preserve the legal intent exactly — do not omit any obligations, rights, or limitations. Do not give legal advice.\n\nClause:\n{{clause}}\n\nOutput format: (1) Plain-English version, (2) a one-sentence note on anything you simplified that a reader should verify with a lawyer.",
+  "test_inputs": [
+    {
+      "id": "limitation-of-liability",
+      "vars": {
+        "clause": "IN NO EVENT SHALL EITHER PARTY BE LIABLE TO THE OTHER FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO THIS AGREEMENT, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY, WITH THE EXCEPTION OF CLAIMS ARISING FROM GROSS NEGLIGENCE OR WILLFUL MISCONDUCT."
+      }
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      "Plain-English version accurately reflects the limitation on indirect/consequential damages and the gross negligence/wilful misconduct carve-out",
+      "Does not give legal advice (no 'you should', 'this means you are safe', or equivalent advisory statements)",
+      "Includes a one-sentence verification note flagging what was simplified"
+    ],
+    "scoring_per_criterion": "0-3",
+    "pass_threshold": 7,
+    "judge_prompt_template": "default"
+  },
+  "models": [
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "claude-haiku-4-5",
+    "gpt-4o",
+    "gpt-4o-mini",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash",
+    "llama-3.3-70b"
+  ],
+  "affiliate_tool_default": "claude",
+  "needs_premium_verification": false,
+  "added_date": "2026-05-23",
+  "schema_version": 1
+}

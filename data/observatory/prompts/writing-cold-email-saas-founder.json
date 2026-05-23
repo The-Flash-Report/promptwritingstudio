@@ -1,0 +1,40 @@
+{
+  "id": "writing-cold-email-saas-founder",
+  "category": "writing",
+  "title": "Write a cold outreach email for a SaaS founder",
+  "prompt": "Write a cold outreach email for a SaaS founder.\n\nProduct: {{product_name}}\nProspect role: {{prospect_role}}\nPain point to address: {{pain_point}}\n\nRequirements: under 120 words, one clear CTA, no buzzwords, personalised opening line.",
+  "test_inputs": [
+    {
+      "id": "project-management-to-eng-head",
+      "vars": {
+        "product_name": "Taskline — async project tracking for remote engineering teams",
+        "prospect_role": "Head of Engineering at a 40-person startup",
+        "pain_point": "Sprint reviews are blocked by status updates scattered across Slack threads"
+      }
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      "Email is under 120 words and includes exactly one clear call to action",
+      "Opening line references the prospect's role or context specifically rather than using a generic greeting",
+      "No buzzwords (e.g. synergy, leverage, game-changer) and tone is conversational not salesy"
+    ],
+    "scoring_per_criterion": "0-3",
+    "pass_threshold": 7,
+    "judge_prompt_template": "default"
+  },
+  "models": [
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "claude-haiku-4-5",
+    "gpt-4o",
+    "gpt-4o-mini",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash",
+    "llama-3.3-70b"
+  ],
+  "affiliate_tool_default": "claude",
+  "needs_premium_verification": false,
+  "added_date": "2026-05-23",
+  "schema_version": 1
+}

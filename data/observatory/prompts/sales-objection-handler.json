@@ -1,0 +1,39 @@
+{
+  "id": "sales-objection-handler",
+  "category": "sales",
+  "title": "Handle a common sales objection without being pushy",
+  "prompt": "You are a sales rep. A prospect just said: \"{{objection}}\"\n\nThe product is: {{product}}\n\nWrite a response that acknowledges the concern, reframes it with one concrete benefit, and ends with a low-pressure next step. Keep it under 80 words. Do not promise discounts or make claims you cannot verify.",
+  "test_inputs": [
+    {
+      "id": "too-expensive-crm",
+      "vars": {
+        "objection": "This is too expensive. We already pay for three tools that overlap with what you do.",
+        "product": "A CRM that consolidates contact management, email sequences, and deal tracking into one platform"
+      }
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      "Explicitly acknowledges the cost concern rather than dismissing or ignoring it",
+      "Reframes with a specific benefit (e.g. consolidation saving tool costs) rather than a vague value claim",
+      "Ends with a low-pressure next step (e.g. a short call, a trial, a cost comparison) without pressuring or offering unverified discounts"
+    ],
+    "scoring_per_criterion": "0-3",
+    "pass_threshold": 7,
+    "judge_prompt_template": "default"
+  },
+  "models": [
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "claude-haiku-4-5",
+    "gpt-4o",
+    "gpt-4o-mini",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash",
+    "llama-3.3-70b"
+  ],
+  "affiliate_tool_default": "claude",
+  "needs_premium_verification": false,
+  "added_date": "2026-05-23",
+  "schema_version": 1
+}
