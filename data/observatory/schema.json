@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://promptwritingstudio.com/data/observatory/schema.json",
+  "title": "PWS Prompt Observatory schemas",
+  "description": "JSON Schema validating prompt corpus, run results, and report frontmatter. Mirrors ~/.claude/support/prompt-observatory-contract.md §4 (v1).",
+
+  "$defs": {
+    "category": {
+      "type": "string",
+      "enum": ["code", "writing", "analysis", "sales", "legal", "image", "ops"]
+    },
+    "model_id": {
+      "type": "string",
+      "enum": [
+        "claude-opus-4-7",
+        "claude-sonnet-4-6",
+        "claude-haiku-4-5",
+        "gpt-4o",
+        "gpt-4o-mini",
+        "gemini-2.5-pro",
+        "gemini-2.5-flash",
+        "llama-3.3-70b"
+      ]
+    },
+    "iso_date": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "iso_datetime": {
+      "type": "string",
+      "format": "date-time"
+    },
+
+    "prompt": {
+      "type": "object",
+      "description": "One file per prompt under data/observatory/prompts/. Additive only; id is stable forever.",
+      "required": [
+        "id",
+        "category",
+        "title",
+        "prompt",
+        "test_inputs",
+        "rubric",
+        "models",
+        "affiliate_tool_default",
+        "added_date",
+        "schema_version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "kebab-case, stable, never reused"
+        },
+        "category": { "$ref": "#/$defs/category" },
+        "title": { "type": "string", "minLength": 4 },
+        "prompt": { "type": "string", "minLength": 4 },
+        "test_inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "vars"],
+            "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+              "vars": { "type": "object" }
+            }
+          }
+        },
+        "rubric": {
+          "type": "object",
+          "required": ["criteria", "scoring_per_criterion", "pass_threshold", "judge_prompt_template"],
+          "additionalProperties": false,
+          "properties": {
+            "criteria": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "minLength": 4 }
+            },
+            "scoring_per_criterion": { "const": "0-3" },
+            "pass_threshold": { "type": "integer", "minimum": 1 },
+            "judge_prompt_template": { "type": "string", "default": "default" }
+          }
+        },
+        "models": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/model_id" },
+          "uniqueItems": true
+        },
+        "affiliate_tool_default": { "type": "string", "minLength": 2 },
+        "needs_premium_verification": { "type": "boolean", "default": false },
+        "added_date": { "$ref": "#/$defs/iso_date" },
+        "schema_version": { "const": 1 }
+      }
+    },
+
+    "run": {
+      "type": "object",
+      "description": "One file per (run_date, prompt_id) under data/observatory/runs/YYYY-MM-DD/. Immutable once written.",
+      "required": [
+        "schema_version",
+        "run_id",
+        "prompt_id",
+        "prompt_schema_version_at_run",
+        "started_at",
+        "completed_at",
+        "results_by_input",
+        "totals"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": 1 },
+        "run_id": { "$ref": "#/$defs/iso_date" },
+        "prompt_id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "prompt_schema_version_at_run": { "type": "integer", "minimum": 1 },
+        "started_at": { "$ref": "#/$defs/iso_datetime" },
+        "completed_at": { "$ref": "#/$defs/iso_datetime" },
+        "results_by_input": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["test_input_id", "results_by_model"],
+            "additionalProperties": false,
+            "properties": {
+              "test_input_id": { "type": "string" },
+              "results_by_model": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": ["model", "output", "judge", "tokens_in", "tokens_out", "cost_usd", "completed_at"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "model": { "$ref": "#/$defs/model_id" },
+                    "output": { "type": "string" },
+                    "judge": {
+                      "type": "object",
+                      "required": ["primary"],
+                      "additionalProperties": false,
+                      "properties": {
+                        "primary": {
+                          "type": "object",
+                          "required": ["criteria_scores", "total", "pass", "judge_model", "judge_run_at"],
+                          "additionalProperties": false,
+                          "properties": {
+                            "criteria_scores": {
+                              "type": "array",
+                              "items": { "type": "integer", "minimum": 0, "maximum": 3 }
+                            },
+                            "total": { "type": "integer", "minimum": 0 },
+                            "pass": { "type": "boolean" },
+                            "judge_model": { "$ref": "#/$defs/model_id" },
+                            "judge_run_at": { "$ref": "#/$defs/iso_datetime" }
+                          }
+                        },
+                        "cross_check": {
+                          "anyOf": [
+                            { "type": "null" },
+                            {
+                              "type": "object",
+                              "required": ["criteria_scores", "total", "judge_model", "disagreement_with_primary"],
+                              "additionalProperties": false,
+                              "properties": {
+                                "criteria_scores": {
+                                  "type": "array",
+                                  "items": { "type": "integer", "minimum": 0, "maximum": 3 }
+                                },
+                                "total": { "type": "integer", "minimum": 0 },
+                                "judge_model": { "$ref": "#/$defs/model_id" },
+                                "disagreement_with_primary": { "type": "integer", "minimum": 0 }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "tokens_in": { "type": "integer", "minimum": 0 },
+                    "tokens_out": { "type": "integer", "minimum": 0 },
+                    "cost_usd": { "type": "number", "minimum": 0 },
+                    "provider_response_id": { "type": ["string", "null"] },
+                    "completed_at": { "$ref": "#/$defs/iso_datetime" },
+                    "error": { "type": ["string", "null"] }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delta_vs_previous_run": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["previous_run_id", "by_model"],
+              "additionalProperties": false,
+              "properties": {
+                "previous_run_id": { "$ref": "#/$defs/iso_date" },
+                "by_model": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object",
+                    "required": ["score_change", "output_diff_ratio", "flagged"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "score_change": { "type": "integer" },
+                      "output_diff_ratio": { "type": "number", "minimum": 0, "maximum": 1 },
+                      "flagged": { "type": "boolean" }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "totals": {
+          "type": "object",
+          "required": ["calls", "successful_calls", "failed_calls", "cost_usd"],
+          "additionalProperties": false,
+          "properties": {
+            "calls": { "type": "integer", "minimum": 0 },
+            "successful_calls": { "type": "integer", "minimum": 0 },
+            "failed_calls": { "type": "integer", "minimum": 0 },
+            "cost_usd": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+
+    "report_frontmatter": {
+      "type": "object",
+      "description": "YAML frontmatter of data/observatory/reports/YYYY-MM-DD.md. Deterministic — NO LLM call generates this.",
+      "required": [
+        "schema_version",
+        "run_id",
+        "generated_at",
+        "total_prompts_run",
+        "total_models",
+        "total_calls",
+        "total_cost_usd"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": { "const": 1 },
+        "run_id": { "$ref": "#/$defs/iso_date" },
+        "generated_at": { "$ref": "#/$defs/iso_datetime" },
+        "total_prompts_run": { "type": "integer", "minimum": 0 },
+        "total_models": { "type": "integer", "minimum": 0 },
+        "total_calls": { "type": "integer", "minimum": 0 },
+        "total_cost_usd": { "type": "number", "minimum": 0 },
+        "top_movers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["prompt_id", "model", "score_change", "direction"],
+            "additionalProperties": false,
+            "properties": {
+              "prompt_id": { "type": "string" },
+              "model": { "$ref": "#/$defs/model_id" },
+              "score_change": { "type": "integer" },
+              "direction": { "type": "string", "enum": ["improved", "degraded"] }
+            }
+          }
+        },
+        "broken": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["prompt_id", "model"],
+            "additionalProperties": false,
+            "properties": {
+              "prompt_id": { "type": "string" },
+              "model": { "$ref": "#/$defs/model_id" }
+            }
+          }
+        },
+        "newly_passing": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["prompt_id", "model"],
+            "additionalProperties": false,
+            "properties": {
+              "prompt_id": { "type": "string" },
+              "model": { "$ref": "#/$defs/model_id" }
+            }
+          }
+        },
+        "judge_flags": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["prompt_id", "model", "primary_score", "cross_check_score"],
+            "additionalProperties": false,
+            "properties": {
+              "prompt_id": { "type": "string" },
+              "model": { "$ref": "#/$defs/model_id" },
+              "primary_score": { "type": "integer" },
+              "cross_check_score": { "type": "integer" }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "oneOf": [
+    { "$ref": "#/$defs/prompt" },
+    { "$ref": "#/$defs/run" },
+    { "$ref": "#/$defs/report_frontmatter" }
+  ]
+}
