@@ -1,0 +1,38 @@
+{
+  "id": "analysis-financial-summary",
+  "category": "analysis",
+  "title": "Summarise quarterly revenue data and surface key insights",
+  "prompt": "You are a financial analyst. Review the following quarterly revenue data and produce a summary that includes: (1) overall trend direction, (2) the single largest growth driver, (3) the single biggest risk, and (4) one actionable recommendation.\n\nData:\n{{raw_data}}\n\nKeep your response under 200 words. Use plain language, not financial jargon.",
+  "test_inputs": [
+    {
+      "id": "saas-q1-q4-2025",
+      "vars": {
+        "raw_data": "Q1 2025: $820k ARR, 210 customers, churn 2.1%, new logos 38\nQ2 2025: $910k ARR, 230 customers, churn 1.8%, new logos 42\nQ3 2025: $970k ARR, 245 customers, churn 2.4%, new logos 35\nQ4 2025: $1.05M ARR, 258 customers, churn 1.9%, new logos 29"
+      }
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      "Correctly identifies the overall trend as positive growth and notes the churn spike in Q3",
+      "Surfaces a specific, evidence-backed growth driver or risk rather than a generic statement",
+      "Provides one concrete actionable recommendation tied to the data"
+    ],
+    "scoring_per_criterion": "0-3",
+    "pass_threshold": 7,
+    "judge_prompt_template": "default"
+  },
+  "models": [
+    "claude-opus-4-7",
+    "claude-sonnet-4-6",
+    "claude-haiku-4-5",
+    "gpt-4o",
+    "gpt-4o-mini",
+    "gemini-2.5-pro",
+    "gemini-2.5-flash",
+    "llama-3.3-70b"
+  ],
+  "affiliate_tool_default": "claude",
+  "needs_premium_verification": false,
+  "added_date": "2026-05-23",
+  "schema_version": 1
+}
