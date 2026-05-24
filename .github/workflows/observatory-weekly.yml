@@ -1,0 +1,99 @@
+name: Observatory weekly run
+
+# Per contract §2: Sunday 03:00 UTC. Calls the 7 cron scripts in order.
+# Step 6 (draft_report) and step 7 (open_pr) MUST NOT call any LLM.
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'  # Sunday 03:00 UTC
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Override run-id (YYYY-MM-DD). Defaults to today UTC.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: observatory-weekly
+  cancel-in-progress: false
+
+jobs:
+  weekly-run:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      COST_ALERT_EMAIL: ${{ secrets.COST_ALERT_EMAIL }}
+      OBSERVATORY_PR_TOKEN: ${{ secrets.OBSERVATORY_PR_TOKEN }}
+      GH_TOKEN: ${{ secrets.OBSERVATORY_PR_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.OBSERVATORY_PR_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/observatory/requirements.txt
+
+      - name: Compute run id
+        id: runid
+        run: |
+          if [ -n "${{ inputs.run_id }}" ]; then
+            echo "run_id=${{ inputs.run_id }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_id=$(date -u +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check cost-disable flag
+        run: |
+          if [ -f data/observatory/cost-disable.flag ]; then
+            echo "::error::cost-disable.flag is present — observatory cron disabled. Inspect data/observatory/cost-log.json and remove the flag manually."
+            cat data/observatory/cost-disable.flag
+            exit 7
+          fi
+
+      - name: '[1/7] fetch_corpus'
+        run: python scripts/observatory/fetch_corpus.py --run-id "${{ steps.runid.outputs.run_id }}"
+
+      - name: '[2/7] run_models'
+        run: python scripts/observatory/run_models.py --run-id "${{ steps.runid.outputs.run_id }}"
+
+      - name: '[3/7] score_with_judge'
+        run: python scripts/observatory/score_with_judge.py --run-id "${{ steps.runid.outputs.run_id }}"
+
+      - name: '[4/7] compute_delta'
+        run: python scripts/observatory/compute_delta.py --run-id "${{ steps.runid.outputs.run_id }}"
+
+      - name: '[5/7] write_runs'
+        run: python scripts/observatory/write_runs.py --run-id "${{ steps.runid.outputs.run_id }}"
+
+      - name: '[6/7] draft_report (deterministic — NO LLM)'
+        run: |
+          GENERATED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          python scripts/observatory/draft_report.py \
+            --run-id "${{ steps.runid.outputs.run_id }}" \
+            --generated-at "$GENERATED_AT"
+
+      - name: '[7/7] open_pr'
+        run: python scripts/observatory/open_pr.py --run-id "${{ steps.runid.outputs.run_id }}"
+
+      - name: Surface cost-disable on failure
+        if: failure()
+        run: |
+          if [ -f data/observatory/cost-disable.flag ]; then
+            echo "::error::Run aborted by cost cap. cost-disable.flag written. Bryan: remove manually after reviewing data/observatory/cost-log.json."
+            cat data/observatory/cost-disable.flag
+          fi

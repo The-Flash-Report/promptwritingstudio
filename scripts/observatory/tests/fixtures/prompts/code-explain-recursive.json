@@ -1,0 +1,30 @@
+{
+  "id": "code-explain-recursive",
+  "category": "code",
+  "title": "Explain a recursive function in plain English",
+  "prompt": "Explain this function in plain English: {{code}}",
+  "test_inputs": [
+    {
+      "id": "fibonacci-python",
+      "vars": {
+        "code": "def fib(n): return n if n<2 else fib(n-1)+fib(n-2)"
+      }
+    }
+  ],
+  "rubric": {
+    "criteria": [
+      "Identifies the base case correctly",
+      "Explains the recursion in plain English"
+    ],
+    "scoring_per_criterion": "0-3",
+    "pass_threshold": 4,
+    "judge_prompt_template": "default"
+  },
+  "models": [
+    "claude-haiku-4-5",
+    "gpt-4o-mini"
+  ],
+  "affiliate_tool_default": "claude",
+  "added_date": "2026-05-23",
+  "schema_version": 1
+}
