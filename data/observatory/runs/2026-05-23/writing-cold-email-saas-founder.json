@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-05-23",
+  "prompt_id": "writing-cold-email-saas-founder",
+  "prompt_schema_version_at_run": 1,
+  "started_at": "2026-05-23T03:00:14Z",
+  "completed_at": "2026-05-23T03:11:52Z",
+  "results_by_input": [
+    {
+      "test_input_id": "hr-director-payroll",
+      "results_by_model": [
+        {
+          "model": "claude-opus-4-7",
+          "output": "Subject: 60% faster payroll for manufacturing teams\n\nHi [Name],\n\nMost manufacturing HR Directors I talk to spend 2–3 days each payroll cycle on manual reconciliation. Our AI cuts that to under half a day.\n\nWorth a 2-minute look? I can send a short demo video.\n\n[Founder Name]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:10:18Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 76,
+          "cost_usd": 0.0038,
+          "provider_response_id": "msg_023B1",
+          "completed_at": "2026-05-23T03:03:22Z",
+          "error": null
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "output": "Subject: Payroll complexity in manufacturing — we solve it\n\nHi [Name],\n\nOur AI tool reduces payroll processing time by 60% for manufacturing companies. No data migration, no long setup.\n\nMind if I send a short case study?\n\n[Founder Name]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:10:24Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 51,
+          "cost_usd": 0.001,
+          "provider_response_id": "msg_023B2",
+          "completed_at": "2026-05-23T03:03:48Z",
+          "error": null
+        },
+        {
+          "model": "gpt-4o",
+          "output": "Subject: Cutting payroll time for manufacturers\n\nHi [Name],\n\nI founded [Product], which helps mid-sized manufacturing companies reduce payroll processing time by 60% using AI — without changing your existing HR system.\n\nWould you be open to a quick 15-minute call?\n\nBest,\n[Founder Name]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 2, 2],
+              "total": 7,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:10:31Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 65,
+          "cost_usd": 0.0025,
+          "provider_response_id": "chatcmpl-023B3",
+          "completed_at": "2026-05-23T03:04:14Z",
+          "error": null
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "output": "Subject: Smarter payroll for manufacturing HR teams\n\nHi [Name],\n\nPayroll in manufacturing involves shift differentials, overtime rules, and union agreements — and it eats up HR time. Our AI reduces processing by 60% and fits around your existing workflow.\n\nWorth a quick look?\n\n[Founder]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:10:38Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 72,
+          "cost_usd": 0.0032,
+          "provider_response_id": "gen-023B4",
+          "completed_at": "2026-05-23T03:04:38Z",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "delta_vs_previous_run": {
+    "previous_run_id": "2026-05-17",
+    "by_model": {
+      "claude-opus-4-7": { "score_change": 0, "output_diff_ratio": 0.22, "flagged": false },
+      "claude-sonnet-4-6": { "score_change": 0, "output_diff_ratio": 0.18, "flagged": false },
+      "gpt-4o": { "score_change": 0, "output_diff_ratio": 0.15, "flagged": false },
+      "gemini-2.5-pro": { "score_change": 1, "output_diff_ratio": 0.28, "flagged": false }
+    }
+  },
+  "totals": {
+    "calls": 4,
+    "successful_calls": 4,
+    "failed_calls": 0,
+    "cost_usd": 0.0105
+  }
+}

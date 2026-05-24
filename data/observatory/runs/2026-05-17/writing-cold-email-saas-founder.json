@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-05-17",
+  "prompt_id": "writing-cold-email-saas-founder",
+  "prompt_schema_version_at_run": 1,
+  "started_at": "2026-05-17T03:00:14Z",
+  "completed_at": "2026-05-17T03:12:08Z",
+  "results_by_input": [
+    {
+      "test_input_id": "hr-director-payroll",
+      "results_by_model": [
+        {
+          "model": "claude-opus-4-7",
+          "output": "Subject: Cut payroll processing time by 60% — worth 15 minutes?\n\nHi [Name],\n\nRunning payroll for a manufacturing team is time-consuming. Our AI tool cuts processing time by 60% — most HR Directors see results in the first pay cycle.\n\nWorth a quick look? I can send a 2-minute demo video.\n\n[Founder Name]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:10:55Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 82,
+          "cost_usd": 0.0041,
+          "provider_response_id": "msg_017B1",
+          "completed_at": "2026-05-17T03:03:30Z",
+          "error": null
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "output": "Subject: Payroll taking too long? We fix that.\n\nHi [Name],\n\nManufacturing payroll is complex. Our AI reduces processing time by 60% without changing your existing workflow.\n\nCould I send you a short case study from a similar company?\n\n[Founder Name]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:11:02Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 54,
+          "cost_usd": 0.0011,
+          "provider_response_id": "msg_017B2",
+          "completed_at": "2026-05-17T03:03:55Z",
+          "error": null
+        },
+        {
+          "model": "gpt-4o",
+          "output": "Subject: 60% less time on payroll — how we do it\n\nHi [Name],\n\nI'm the founder of [Product], an AI tool that cuts payroll processing time by 60% for manufacturing companies like yours. No migration headaches.\n\nOpen to a 10-minute call this week?\n\nBest,\n[Founder Name]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 2, 2],
+              "total": 7,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:11:08Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 68,
+          "cost_usd": 0.0026,
+          "provider_response_id": "chatcmpl-017B3",
+          "completed_at": "2026-05-17T03:04:22Z",
+          "error": null
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "output": "Subject: A smarter way to handle manufacturing payroll\n\nHi [Name],\n\nPayroll complexity in manufacturing is a real time sink. Our AI tool reduces processing time by 60%, and it integrates with most existing HR stacks.\n\nWould a quick overview be useful?\n\n[Founder]",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 2],
+              "total": 8,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:11:14Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 168,
+          "tokens_out": 60,
+          "cost_usd": 0.003,
+          "provider_response_id": "gen-017B4",
+          "completed_at": "2026-05-17T03:04:48Z",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "delta_vs_previous_run": null,
+  "totals": {
+    "calls": 4,
+    "successful_calls": 4,
+    "failed_calls": 0,
+    "cost_usd": 0.0108
+  }
+}

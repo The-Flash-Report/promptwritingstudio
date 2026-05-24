@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-05-17",
+  "prompt_id": "analysis-financial-summary",
+  "prompt_schema_version_at_run": 1,
+  "started_at": "2026-05-17T03:00:14Z",
+  "completed_at": "2026-05-17T03:12:08Z",
+  "results_by_input": [
+    {
+      "test_input_id": "q1-saas-example",
+      "results_by_model": [
+        {
+          "model": "claude-opus-4-7",
+          "output": "- Revenue grew 18% year-over-year to $4.2M, showing solid momentum for a company at this stage.\n- The business is becoming more profitable, with net losses narrowing significantly from $620K to $380K in a single quarter.\n- With $16.8M in ARR and a 2.1% churn rate, the company appears well-positioned for continued growth if it can maintain its recent new-logo momentum.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:11:28Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 95,
+          "cost_usd": 0.0046,
+          "provider_response_id": "msg_017C1",
+          "completed_at": "2026-05-17T03:05:10Z",
+          "error": null
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "output": "- The company grew revenue 18% year-over-year to $4.2M, reflecting healthy top-line momentum.\n- Profitability is improving: the net loss narrowed from $620K to $380K, suggesting the business is trending toward breakeven.\n- At $16.8M ARR with 2.1% churn, near-term revenue visibility looks stable, though sustaining the $1.4M in new-logo ARR will be the key growth driver to watch.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:11:35Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 98,
+          "cost_usd": 0.0014,
+          "provider_response_id": "msg_017C2",
+          "completed_at": "2026-05-17T03:05:38Z",
+          "error": null
+        },
+        {
+          "model": "gpt-4o",
+          "output": "• Revenue reached $4.2M this quarter, up 18% from the same period last year.\n• The company cut its net loss nearly in half — from $620K to $380K — signalling improving cost discipline.\n• With $16.8M in recurring revenue and low churn at 2.1%, the outlook is cautiously positive if new customer acquisition holds.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [2, 3, 2],
+              "total": 7,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:11:42Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 90,
+          "cost_usd": 0.0034,
+          "provider_response_id": "chatcmpl-017C3",
+          "completed_at": "2026-05-17T03:06:04Z",
+          "error": null
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "output": "- Revenue is growing strongly at 18% YoY, reaching $4.2M, indicating solid market demand.\n- The company is on a clear path to profitability, with net losses shrinking by 39% in a single quarter.\n- With ARR at $16.8M and churn below 2.5%, the business has a stable recurring revenue base, though continued investment in new logos will determine whether growth accelerates or plateaus.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:11:48Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 102,
+          "cost_usd": 0.0036,
+          "provider_response_id": "gen-017C4",
+          "completed_at": "2026-05-17T03:06:30Z",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "delta_vs_previous_run": null,
+  "totals": {
+    "calls": 4,
+    "successful_calls": 4,
+    "failed_calls": 0,
+    "cost_usd": 0.013
+  }
+}

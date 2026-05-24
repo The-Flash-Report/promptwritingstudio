@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-05-23",
+  "prompt_id": "code-explain-recursive",
+  "prompt_schema_version_at_run": 1,
+  "started_at": "2026-05-23T03:00:14Z",
+  "completed_at": "2026-05-23T03:11:52Z",
+  "results_by_input": [
+    {
+      "test_input_id": "fibonacci-python",
+      "results_by_model": [
+        {
+          "model": "claude-opus-4-7",
+          "output": "This function computes Fibonacci numbers. Its base cases are n=0 and n=1 — for those it returns n directly. For any larger number, it adds the results of two smaller versions of itself, working recursively down until both reach a base case.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 2, 3],
+              "total": 8,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:09:44Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 62,
+          "cost_usd": 0.0036,
+          "provider_response_id": "msg_023A1",
+          "completed_at": "2026-05-23T03:01:38Z",
+          "error": null
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "output": "This function calculates the nth Fibonacci number. The base case is n < 2 — returning 0 or 1 directly. For any larger n, it adds the two preceding Fibonacci values by calling itself with n-1 and n-2, continuing until both chains hit a base case.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:09:51Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 65,
+          "cost_usd": 0.0012,
+          "provider_response_id": "msg_023A2",
+          "completed_at": "2026-05-23T03:02:04Z",
+          "error": null
+        },
+        {
+          "model": "gpt-4o",
+          "output": "This function computes Fibonacci numbers using recursion. The base case (n < 2) returns n directly — 0 for n=0 and 1 for n=1. For any n>=2, it calls itself with n-1 and n-2, adding the results. It works by breaking the problem down repeatedly until reaching the base case.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 1, 2],
+              "total": 6,
+              "pass": false,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:09:58Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 72,
+          "cost_usd": 0.0026,
+          "provider_response_id": "chatcmpl-023A3",
+          "completed_at": "2026-05-23T03:02:28Z",
+          "error": null
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "output": "This function finds Fibonacci numbers. It stops when n is 0 or 1 — those are the base cases — and returns n directly. For anything larger, it adds together the results of two calls with smaller inputs, building the answer from the smallest possible cases upward.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:10:04Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 68,
+          "cost_usd": 0.0028,
+          "provider_response_id": "gen-023A4",
+          "completed_at": "2026-05-23T03:02:52Z",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "delta_vs_previous_run": {
+    "previous_run_id": "2026-05-17",
+    "by_model": {
+      "claude-opus-4-7": { "score_change": 0, "output_diff_ratio": 0.12, "flagged": false },
+      "claude-sonnet-4-6": { "score_change": 0, "output_diff_ratio": 0.08, "flagged": false },
+      "gpt-4o": { "score_change": -2, "output_diff_ratio": 0.38, "flagged": true },
+      "gemini-2.5-pro": { "score_change": 1, "output_diff_ratio": 0.14, "flagged": false }
+    }
+  },
+  "totals": {
+    "calls": 4,
+    "successful_calls": 4,
+    "failed_calls": 0,
+    "cost_usd": 0.0102
+  }
+}

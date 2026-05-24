@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-05-23",
+  "prompt_id": "analysis-financial-summary",
+  "prompt_schema_version_at_run": 1,
+  "started_at": "2026-05-23T03:00:14Z",
+  "completed_at": "2026-05-23T03:11:52Z",
+  "results_by_input": [
+    {
+      "test_input_id": "q1-saas-example",
+      "results_by_model": [
+        {
+          "model": "claude-opus-4-7",
+          "output": "- Revenue grew 18% year-over-year to $4.2M, demonstrating consistent demand.\n- The company cut its net loss by 39% in one quarter, from $620K to $380K, a strong signal of improving unit economics.\n- With ARR at $16.8M and churn holding below 2.5%, near-term revenue is well-protected, and the pace of new logo wins will determine whether growth accelerates in the next two quarters.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:10:52Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 100,
+          "cost_usd": 0.0048,
+          "provider_response_id": "msg_023C1",
+          "completed_at": "2026-05-23T03:05:00Z",
+          "error": null
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "output": "- Revenue is growing at 18% year-over-year, reaching $4.2M — healthy for a SaaS business at this scale.\n- Net losses narrowed from $620K to $380K in a single quarter, indicating the business is burning less to grow each dollar of revenue.\n- Churn at 2.1% and $16.8M ARR provide a stable base, making new logo acquisition the clearest lever for accelerating growth.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:10:58Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 96,
+          "cost_usd": 0.0014,
+          "provider_response_id": "msg_023C2",
+          "completed_at": "2026-05-23T03:05:28Z",
+          "error": null
+        },
+        {
+          "model": "gpt-4o",
+          "output": "- Revenue increased 18% year-over-year to $4.2M.\n- Net loss improved significantly, falling from $620K to $380K.\n- The company looks well-positioned for continued growth with $16.8M in ARR and a low 2.1% churn.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 2],
+              "total": 8,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:11:04Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 62,
+          "cost_usd": 0.0028,
+          "provider_response_id": "chatcmpl-023C3",
+          "completed_at": "2026-05-23T03:05:54Z",
+          "error": null
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "output": "- Revenue grew 18% year-over-year to $4.2M, reflecting strong and consistent demand growth.\n- The net loss nearly halved in one quarter (from $620K to $380K), suggesting the business is moving toward profitability faster than expected.\n- $16.8M ARR combined with 2.1% churn gives the company a stable recurring base; sustaining the current new-logo ARR of $1.4M per quarter is the key watch metric for investors.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-23T03:11:10Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 196,
+          "tokens_out": 108,
+          "cost_usd": 0.0038,
+          "provider_response_id": "gen-023C4",
+          "completed_at": "2026-05-23T03:06:18Z",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "delta_vs_previous_run": {
+    "previous_run_id": "2026-05-17",
+    "by_model": {
+      "claude-opus-4-7": { "score_change": 0, "output_diff_ratio": 0.14, "flagged": false },
+      "claude-sonnet-4-6": { "score_change": 0, "output_diff_ratio": 0.11, "flagged": false },
+      "gpt-4o": { "score_change": 1, "output_diff_ratio": 0.32, "flagged": false },
+      "gemini-2.5-pro": { "score_change": 0, "output_diff_ratio": 0.09, "flagged": false }
+    }
+  },
+  "totals": {
+    "calls": 4,
+    "successful_calls": 4,
+    "failed_calls": 0,
+    "cost_usd": 0.0128
+  }
+}

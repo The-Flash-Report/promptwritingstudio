@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "run_id": "2026-05-17",
+  "prompt_id": "code-explain-recursive",
+  "prompt_schema_version_at_run": 1,
+  "started_at": "2026-05-17T03:00:14Z",
+  "completed_at": "2026-05-17T03:12:08Z",
+  "results_by_input": [
+    {
+      "test_input_id": "fibonacci-python",
+      "results_by_model": [
+        {
+          "model": "claude-opus-4-7",
+          "output": "This function calculates the nth Fibonacci number. Starting from any number, it keeps calling itself with smaller values until it reaches 0 or 1 — those are its base cases, which it returns directly without any further calls. For any larger number, it adds together the results of the two calls below it, working its way back up the chain until the original answer is assembled.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 2, 3],
+              "total": 8,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:10:22Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 78,
+          "cost_usd": 0.0038,
+          "provider_response_id": "msg_017A1",
+          "completed_at": "2026-05-17T03:01:44Z",
+          "error": null
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "output": "This function finds the nth Fibonacci number. Its base case is when n is less than 2 — for n=0 it returns 0 and for n=1 it returns 1. For any larger n, it adds the results of two smaller calculations of the same function, continuing until the base cases are reached.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 3, 3],
+              "total": 9,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:10:28Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 67,
+          "cost_usd": 0.0012,
+          "provider_response_id": "msg_017A2",
+          "completed_at": "2026-05-17T03:02:11Z",
+          "error": null
+        },
+        {
+          "model": "gpt-4o",
+          "output": "This function computes Fibonacci numbers. The base case is n < 2 — it returns n directly (0 for n=0, 1 for n=1). For anything larger, it recursively sums the two previous Fibonacci numbers until reaching the base.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 2, 2],
+              "total": 7,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:10:35Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 55,
+          "cost_usd": 0.0022,
+          "provider_response_id": "chatcmpl-017A3",
+          "completed_at": "2026-05-17T03:02:34Z",
+          "error": null
+        },
+        {
+          "model": "gemini-2.5-pro",
+          "output": "This function generates Fibonacci numbers. It stops calling itself (base case) when n is 0 or 1, returning n as-is. For all other values, it calls itself twice with smaller inputs and adds the results, building up the answer from the smallest cases.",
+          "judge": {
+            "primary": {
+              "criteria_scores": [3, 2, 3],
+              "total": 8,
+              "pass": true,
+              "judge_model": "claude-opus-4-7",
+              "judge_run_at": "2026-05-17T03:10:42Z"
+            },
+            "cross_check": null
+          },
+          "tokens_in": 142,
+          "tokens_out": 62,
+          "cost_usd": 0.0028,
+          "provider_response_id": "gen-017A4",
+          "completed_at": "2026-05-17T03:03:02Z",
+          "error": null
+        }
+      ]
+    }
+  ],
+  "delta_vs_previous_run": null,
+  "totals": {
+    "calls": 4,
+    "successful_calls": 4,
+    "failed_calls": 0,
+    "cost_usd": 0.01
+  }
+}
