@@ -1,9 +1,9 @@
 [build]
   command = "npm run build"
   publish = ".next"
-  # Skip build when only docs/workflow/script-only paths changed (Netlify credit hygiene, 2026-05-07).
-  # If a skip looks wrong, push an empty commit: git commit --allow-empty -m "trigger preview" && git push
-  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- ':(exclude)*.md' ':(exclude).github/**' ':(exclude)scripts/**' ':(exclude).claude/**' ':(exclude)docs/**'"
+  # Ignore rule removed 2026-05-24: was false-cancelling main builds after rapid back-to-back
+  # merges (3 consecutive errors on legitimate trigger-path changes). Credit savings not worth the
+  # missed deploys. If credit hygiene becomes a problem again, prefer [skip ci] in commit messages.
 
 # Handle Next.js routing
 [[plugins]]
