@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { seoUseCases } from '../../data/seo-use-cases'
+import { listPromptIds } from '../../lib/observatory/loadRuns'
 
 export default function handler(req, res) {
   const baseUrl = 'https://promptwritingstudio.com'
@@ -47,6 +48,10 @@ export default function handler(req, res) {
   // Dynamic use case pages
   const useCaseSlugs = seoUseCases.map(uc => uc.slug)
 
+  // Observatory pages — only emitted when prompt corpus exists (conditional emit,
+  // so we don't add 404 URLs before Cluster 3 pages are deployed)
+  const observatoryPromptIds = listPromptIds()
+
   // Build XML
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -80,6 +85,24 @@ export default function handler(req, res) {
     xml += `    <priority>0.8</priority>\n`
     xml += `  </url>\n`
   })
+
+  // Observatory URLs — emits nothing until corpus is populated
+  if (observatoryPromptIds.length > 0) {
+    xml += `  <url>\n`
+    xml += `    <loc>${baseUrl}/observatory</loc>\n`
+    xml += `    <lastmod>${today}</lastmod>\n`
+    xml += `    <changefreq>weekly</changefreq>\n`
+    xml += `    <priority>0.8</priority>\n`
+    xml += `  </url>\n`
+    observatoryPromptIds.forEach(id => {
+      xml += `  <url>\n`
+      xml += `    <loc>${baseUrl}/observatory/${id}</loc>\n`
+      xml += `    <lastmod>${today}</lastmod>\n`
+      xml += `    <changefreq>weekly</changefreq>\n`
+      xml += `    <priority>0.7</priority>\n`
+      xml += `  </url>\n`
+    })
+  }
 
   xml += '</urlset>'
 
