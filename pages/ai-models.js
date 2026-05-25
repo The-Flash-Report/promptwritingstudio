@@ -4,6 +4,8 @@ import Layout from '../components/layout/Layout';
 import LastVerified from '../components/LastVerified';
 import { AI_MODELS, AI_MODELS_META } from '../lib/ai-models';
 import { generateFAQSchema } from '../lib/schemaGenerator';
+import MarketShareSection from '../components/sections/MarketShareSection';
+import marketShareSnapshot from '../data/ai-models-market-share/2026-05.json';
 
 export default function AIModels() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -26,6 +28,24 @@ export default function AIModels() {
       "name": "PromptWritingStudio",
       "url": "https://promptwritingstudio.com"
     }
+  };
+
+  const datasetSchema = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "AI Model Market Share - Monthly Snapshots",
+    "description": "Monthly estimated market share of major AI models by API call volume, derived from public usage signals including OpenRouter leaderboard data, Hugging Face download counts, and Stack Overflow Developer Survey data.",
+    "url": "https://promptwritingstudio.com/ai-models",
+    "creator": {
+      "@type": "Organization",
+      "name": "PromptWritingStudio",
+      "url": "https://promptwritingstudio.com"
+    },
+    "dateModified": marketShareSnapshot._meta.snapshot_date,
+    "temporalCoverage": `${marketShareSnapshot._meta.trend_months[0]}/${marketShareSnapshot._meta.period}`,
+    "variableMeasured": "AI model API call share (estimated percentage)",
+    "measurementTechnique": marketShareSnapshot._meta.methodology,
+    "license": "https://creativecommons.org/licenses/by/4.0/"
   };
 
   // FAQPage schema — mirrors visible content on this page (section headings + body copy).
@@ -146,6 +166,10 @@ export default function AIModels() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -666,6 +690,8 @@ export default function AIModels() {
               </div>
             </div>
           </div>
+
+          <MarketShareSection snapshotData={marketShareSnapshot} />
         </div>
       </div>
 
