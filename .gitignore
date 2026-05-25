@@ -37,3 +37,6 @@ yarn-error.log*
 next-env.d.ts
 
 /lib/generated/prisma
+
+# Per-session worktree dirs (orchestrator dispatch isolation)
+.claude/worktrees/
