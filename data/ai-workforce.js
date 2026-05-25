@@ -1,0 +1,434 @@
+export const AI_WORKFORCE_META = {
+  lastUpdated: '2026-05-25',
+  sourceNote: 'Impact estimates drawn from published ranges: McKinsey Global Institute (2023-2025), OECD Employment Outlook (2023), Goldman Sachs Global Economics (2023). Ranges cited, not point estimates.',
+}
+
+export const AI_WORKFORCE_MODULES = [
+  {
+    slug: 'ai-capability-boundaries',
+    title: 'What AI Can and Cannot Do',
+    shortTitle: 'Capability Boundaries',
+    description: 'A plain-language map of where current AI systems perform reliably, where they struggle, and why those lines move over time.',
+    lastUpdated: '2026-05-25',
+    readingTime: '8 min',
+    content: [
+      {
+        type: 'lead',
+        text: 'Published ranges suggest that between 25% and 40% of current work tasks could be automated using AI at current capability levels (McKinsey, 2023; Goldman Sachs, 2023). That range matters: the difference between 25% and 40% is a different plan of action. This module explains what is driving that uncertainty and how to read it usefully.',
+      },
+      {
+        type: 'h2',
+        text: 'Where AI performs reliably today',
+      },
+      {
+        type: 'p',
+        text: 'Current AI systems (large language models, vision models, speech-to-text) are reliable for a specific class of task: pattern completion across language, image, and structured data. In practice this covers: summarising documents, drafting structured text from a brief, classifying inputs into predefined categories, extracting structured data from unstructured text, translating between languages, and generating code from a specification.',
+      },
+      {
+        type: 'p',
+        text: 'The common thread is that these tasks have a large amount of prior examples to learn from and the output can be checked by a human quickly. When both conditions hold, AI performance is high and error cost is manageable.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example',
+        text: 'A financial analyst receives 80 earnings call transcripts per quarter and needs key metrics from each. Extracting numbers and categorising management commentary is a pattern-completion task. An AI tool cuts that from 3 hours to 20 minutes. The analyst spends the freed time on the judgment layer: what do those numbers mean for the portfolio?',
+      },
+      {
+        type: 'h2',
+        text: 'Where AI struggles',
+      },
+      {
+        type: 'p',
+        text: 'AI systems fail in predictable ways. They struggle with tasks that require: maintaining a coherent plan over many steps without explicit tracking; genuine novelty (problems outside their training distribution); sensorimotor work that requires physical feedback; ethical judgment in novel situations; real-time information not present in training data; and interpersonal dynamics -- reading a room, negotiating under pressure, building long-term trust.',
+      },
+      {
+        type: 'p',
+        text: 'These are not temporary gaps that will close next quarter. Some reflect hard constraints in current architectures. Others may close, but on a multi-year timeline. Plan around the capabilities that exist now, not forecasts.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example',
+        text: 'A sales manager asks an AI tool to generate a strategy for recovering a key account after a service failure. The tool produces a plausible-looking plan. But it does not know the client contact\'s personality, the political dynamics inside the client organisation, the informal history of the relationship, or what the client actually said in the last call. The plan sounds reasonable and is missing the most important context. The manager needs to supply all of that and substantially rewrite the output.',
+      },
+      {
+        type: 'h2',
+        text: 'Why capability boundaries move -- and what to watch',
+      },
+      {
+        type: 'p',
+        text: 'AI capability is not static. Model releases in 2023-2025 expanded reliable performance on coding, multimodal tasks, and long-document reasoning. But progress is uneven. Some tasks that seemed close to automation (complex legal analysis, medical diagnosis) remain heavily human-dependent because error cost is high and edge cases are structurally important.',
+      },
+      {
+        type: 'p',
+        text: 'The most useful signal to watch is not "AI is getting smarter" in general but specific task-level claims from published evaluations: model cards from Anthropic, OpenAI, and Google; the Stanford HAI AI Index Report (annual); and OECD occupation-level analysis. These cite what changed, with evidence. Industry forecasts without specific task grounding are less useful for planning.',
+      },
+      {
+        type: 'h2',
+        text: 'How to use this',
+      },
+      {
+        type: 'p',
+        text: 'The practical question is not "will AI replace my job" but "which of my tasks fit the pattern-completion profile, and which require judgment, novelty, or interpersonal skill?" The next module walks through a structured way to answer that for your specific role.',
+      },
+      {
+        type: 'sources',
+        items: [
+          'McKinsey Global Institute: "The economic potential of generative AI" (2023)',
+          'Goldman Sachs Global Economics: "The Potentially Large Effects of Artificial Intelligence on Economic Growth" (2023)',
+          'Stanford HAI: AI Index Report 2024',
+          'Anthropic model cards: claude.ai/model-card',
+          'OECD Employment Outlook 2023: Chapter on AI and the labour market',
+        ],
+      },
+    ],
+    next: 'audit-your-role',
+    prev: null,
+  },
+
+  {
+    slug: 'audit-your-role',
+    title: 'Audit Your Role: Task-Level AI Exposure',
+    shortTitle: 'Role Audit',
+    description: 'A structured method for mapping your daily tasks against AI capability -- so you can see what is genuinely at risk and where your value compounds.',
+    lastUpdated: '2026-05-25',
+    readingTime: '9 min',
+    content: [
+      {
+        type: 'lead',
+        text: 'Job-level automation risk figures are less useful than task-level analysis. The same job title can have very different exposure depending on which tasks dominate your week. This module walks through a method for doing that analysis on your own role.',
+      },
+      {
+        type: 'h2',
+        text: 'Step 1: List your actual tasks (not your job description)',
+      },
+      {
+        type: 'p',
+        text: 'Most job descriptions describe outcomes, not tasks. Start with a log of what you actually do in a typical week. Aim for 15-25 discrete task types. "Prepare monthly report" is too coarse -- break it into "pull data from system", "format into tables", "write narrative commentary", "present to stakeholders". Each of those has different AI exposure.',
+      },
+      {
+        type: 'h2',
+        text: 'Step 2: Apply four filters to each task',
+      },
+      {
+        type: 'p',
+        text: 'For each task, answer four questions: (1) Is there a large body of similar prior examples that an AI could have learned from? (2) Can the output be checked for correctness quickly by a non-expert? (3) Does the task require current information not available before mid-2024? (4) Does performance depend on real-time interpersonal context -- a specific person, their mood, the history of your relationship?',
+      },
+      {
+        type: 'p',
+        text: 'Tasks that score yes on (1) and (2), and no on (3) and (4), are highest exposure. Tasks with yes on (3) or (4) are substantially protected, at current AI capability levels.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: Marketing Manager',
+        text: 'Task list excerpt: writing campaign briefs (high exposure -- pattern completion), reviewing agency creative (medium -- requires taste + brand knowledge), presenting results to board (low -- interpersonal, high-stakes, context-dependent), managing agency relationships (low -- relationship history, trust, negotiation).',
+      },
+      {
+        type: 'h2',
+        text: 'Step 3: Estimate time share',
+      },
+      {
+        type: 'p',
+        text: 'Note what percentage of your working week each task type takes. High-exposure tasks that are also high time-share warrant the most attention -- they are both automatable and currently consuming significant effort. Low-exposure tasks that take most of your time are your current structural advantage.',
+      },
+      {
+        type: 'h2',
+        text: 'Step 4: Separate exposure from risk',
+      },
+      {
+        type: 'p',
+        text: 'High exposure does not automatically mean job risk. It may mean the task will be augmented (you do it faster with AI help), delegated to a junior role, or genuinely automated away. The difference depends on whether your employer can redeploy the time savings productively and whether your role shifts toward higher-judgment work. The module on augmented roles covers this in more detail.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: Customer Support',
+        text: 'A support specialist finds that 60% of tickets are L1 issues with well-known resolutions. That 60% is high AI exposure. But the remaining 40% involves escalations, unhappy customers, product edge cases, and internal coordination -- all low exposure. If the employer deploys AI on L1 tickets, the specialist role may shift almost entirely to the 40%. That is a different job, not necessarily a lost job.',
+      },
+      {
+        type: 'h2',
+        text: 'What to do with your results',
+      },
+      {
+        type: 'p',
+        text: 'Your audit gives you three outputs: a list of tasks to start automating yourself (capture the productivity gain before someone else does); a list of high-exposure tasks to actively skill away from as a primary value driver; and a clear picture of where your irreplaceable value currently sits, which informs how you position yourself in the module on conversations with your employer.',
+      },
+      {
+        type: 'sources',
+        items: [
+          'OECD: "OECD Employment Outlook 2023: Artificial Intelligence and the Labour Market"',
+          'Accenture: "A New Era of Generative AI for Everyone" (2023) -- task-level decomposition methodology',
+          'Harvard Business Review: "How to Protect Your Job in the Age of AI" (2023)',
+        ],
+      },
+    ],
+    next: 'augmented-roles',
+    prev: 'ai-capability-boundaries',
+  },
+
+  {
+    slug: 'augmented-roles',
+    title: 'AI-Augmented Versions of Common Roles',
+    shortTitle: 'Augmented Roles',
+    description: 'What the accountant, marketer, writer, customer support specialist, and designer role looks like when AI handles the pattern work -- and where human judgment becomes the bottleneck.',
+    lastUpdated: '2026-05-25',
+    readingTime: '10 min',
+    content: [
+      {
+        type: 'lead',
+        text: 'The augmented version of a role is not a reduced version. It typically involves less volume work and more judgment, communication, and taste -- the things AI cannot reliably do. This module maps five common roles through that transition.',
+      },
+      {
+        type: 'h2',
+        text: 'Accountant / Finance Analyst',
+      },
+      {
+        type: 'p',
+        text: 'Routine data extraction, reconciliation, and standard report formatting are high AI-exposure tasks. The augmented version shifts time toward: interpreting anomalies, advising on tax strategy for novel situations, communicating financial risk to non-finance stakeholders, and managing relationships with auditors and regulators. Technical accounting knowledge stays essential -- the AI produces outputs that still need a qualified professional to validate.',
+      },
+      {
+        type: 'example',
+        label: 'What changes',
+        text: 'Pulling quarterly numbers from the ERP and formatting them into board templates: mostly automated. Explaining why margin compressed despite revenue growth, and recommending a specific response: still human. The ratio of "format and assemble" to "interpret and advise" shifts dramatically.',
+      },
+      {
+        type: 'h2',
+        text: 'Marketing Manager',
+      },
+      {
+        type: 'p',
+        text: 'First-draft copy, A/B test variants, audience segmentation from structured data, and campaign performance summaries are high exposure. The augmented role concentrates on: brand judgment (what is on-brand when an AI can only produce plausible-sounding copy), strategy (which channels and messages for which audience at which stage), and relationships with agencies, media partners, and sales teams.',
+      },
+      {
+        type: 'example',
+        label: 'What changes',
+        text: 'Writing ten variations of an email subject line: AI does this in seconds. Deciding which one reflects the brand accurately and will land with the specific audience segment at this moment in the campaign: human judgment. The marketer role moves toward creative direction and strategic orchestration.',
+      },
+      {
+        type: 'h2',
+        text: 'Writer / Content Strategist',
+      },
+      {
+        type: 'p',
+        text: 'Formulaic content (product descriptions, FAQs, templated articles on known topics) has high AI exposure. The augmented writer concentrates on: original research and reporting, distinctive voice and point of view, editorial judgment about what to cover and how, and structured persuasion that requires understanding a specific reader\'s situation.',
+      },
+      {
+        type: 'example',
+        label: 'What changes',
+        text: 'A first draft of a blog post from a detailed brief: AI can produce this faster than any human. Whether the post says something true and interesting that the reader will act on: that depends on research, editorial judgment, and voice that the AI cannot supply from a brief alone. The writer role shifts toward the judgment and editorial layer.',
+      },
+      {
+        type: 'h2',
+        text: 'Customer Support Specialist',
+      },
+      {
+        type: 'p',
+        text: 'L1 ticket resolution, FAQ responses, and status updates on known issues are high exposure. The augmented support specialist handles: escalations that require empathy and de-escalation, complex product issues with no prior resolution path, internal escalation and coordination, and identifying systemic issues from patterns in customer feedback.',
+      },
+      {
+        type: 'example',
+        label: 'What changes',
+        text: 'A customer whose subscription renewal failed due to a payment processor error: AI can identify the issue and trigger the fix. A customer who has been having problems for three months, is angry, and is about to cancel: AI can draft a response, but the specialist\'s judgment about what to say and offer is what saves the account.',
+      },
+      {
+        type: 'h2',
+        text: 'Designer',
+      },
+      {
+        type: 'p',
+        text: 'Generating visual variations, resizing assets for multiple formats, and producing stock-style imagery are high exposure. The augmented designer focuses on: concept development and creative direction, understanding a brief well enough to evaluate AI output against it, brand consistency judgment, and communication with stakeholders who cannot evaluate AI output themselves.',
+      },
+      {
+        type: 'example',
+        label: 'What changes',
+        text: 'Producing 20 logo variations from a brief: AI tools can do this. Deciding which one captures what the client actually meant -- and presenting that choice with a clear rationale -- is design judgment. The designer becomes more of a director of AI-generated options and less a producer of individual assets.',
+      },
+      {
+        type: 'h2',
+        text: 'The common pattern',
+      },
+      {
+        type: 'p',
+        text: 'Across all five roles, the shift is similar: volume work and pattern work moves toward AI; judgment, communication, and taste become the primary value. That does not make roles easier -- those skills are harder to develop and less commoditised. It does mean the skills worth investing in are different from the ones that got most of the professional development attention in the pre-AI era.',
+      },
+      {
+        type: 'sources',
+        items: [
+          'McKinsey Global Institute: "A new future of work: The race to deploy AI and raise skills" (2023)',
+          'World Economic Forum: "Future of Jobs Report 2023"',
+          'HBR: "In the Age of AI, You Need Both Artificial Intelligence and Human Intelligence" (2023)',
+        ],
+      },
+    ],
+    next: 'defensive-skill-stack',
+    prev: 'audit-your-role',
+  },
+
+  {
+    slug: 'defensive-skill-stack',
+    title: 'The Defensive Skill Stack',
+    shortTitle: 'Defensive Skills',
+    description: 'The skills that compound in an AI-augmented workplace -- judgment, communication, taste, and context -- and why they are durable compared to technical skills.',
+    lastUpdated: '2026-05-25',
+    readingTime: '8 min',
+    content: [
+      {
+        type: 'lead',
+        text: 'If you have read the previous modules, a pattern is visible: the skills most protected from AI substitution are judgment, communication, taste, and real-world context. This module explains what those mean in practice and how to develop them deliberately.',
+      },
+      {
+        type: 'h2',
+        text: 'Why these skills compound',
+      },
+      {
+        type: 'p',
+        text: 'Technical skills have a predictable decay curve: a skill tied to a specific tool or format loses value when the tool is superseded. Judgment, communication, and taste compound differently. They improve with experience, transfer across contexts, and become more valuable as the volume and quality of AI output rises -- because someone has to evaluate and direct that output.',
+      },
+      {
+        type: 'p',
+        text: 'As AI produces more first drafts, more summaries, more options, the bottleneck shifts from production to evaluation. The person who can reliably tell a good output from a plausible-but-wrong one becomes more valuable, not less.',
+      },
+      {
+        type: 'h2',
+        text: 'Judgment: making decisions with incomplete information',
+      },
+      {
+        type: 'p',
+        text: 'Judgment is the ability to reach a good decision when the information is ambiguous, incomplete, or contested. AI systems optimise for plausibility; they do not have a stake in the outcome and cannot hold the full context of a specific situation. Developing judgment means deliberately taking on decisions, tracking what happened, and updating your model of how similar situations play out.',
+      },
+      {
+        type: 'example',
+        label: 'How to develop it',
+        text: 'Ask to own decisions rather than execute on them. After each significant decision, note what you expected and what happened. Over time this builds a calibrated sense of where your intuitions are reliable and where they need more information. That is a skill an AI cannot acquire for you.',
+      },
+      {
+        type: 'h2',
+        text: 'Communication: being understood by specific people',
+      },
+      {
+        type: 'p',
+        text: 'AI can produce grammatically correct, reasonably well-structured text. It cannot know your audience -- their priorities, their blind spots, what they said in last week\'s meeting, what framing will land and what will trigger defensiveness. Communication as a skill is not about grammar; it is about understanding a specific person or group and choosing the words, sequence, and emphasis that work for them.',
+      },
+      {
+        type: 'example',
+        label: 'How to develop it',
+        text: 'After each important communication (presentation, negotiation, difficult conversation), assess what landed and what did not. Explicitly build a mental model of the people you communicate with regularly: what they care about, what they react poorly to, how they process information. AI can help you draft; it cannot build that model.',
+      },
+      {
+        type: 'h2',
+        text: 'Taste: knowing good from plausible',
+      },
+      {
+        type: 'p',
+        text: 'Taste is the ability to distinguish between an output that is technically adequate and one that is genuinely good. As AI makes technically adequate output cheap, taste becomes the scarce resource. It applies to writing, design, product decisions, customer interactions, and strategy.',
+      },
+      {
+        type: 'p',
+        text: 'Taste is developed by exposure to high-quality examples across a domain and by the discipline of asking "why is this better than that" rather than just noting a preference. It is slow to develop and difficult to transfer -- which is exactly what makes it durable.',
+      },
+      {
+        type: 'h2',
+        text: 'Context: knowing what the numbers mean in this specific situation',
+      },
+      {
+        type: 'p',
+        text: 'AI systems can process data but they do not have the lived context of a specific organisation, client, or market. Context means knowing that the margin drop in Q3 is because of a contract renegotiation you were in the room for; that the client\'s apparent resistance is because of a failed implementation three years ago; that this market reacts differently to price changes than the category average suggests.',
+      },
+      {
+        type: 'p',
+        text: 'Context is accumulated through sustained attention to one domain or relationship over time. It cannot be transferred to an AI in a prompt.',
+      },
+      {
+        type: 'h2',
+        text: 'How to invest in this stack',
+      },
+      {
+        type: 'p',
+        text: 'Deliberate practice looks different for each skill. For judgment: own more decisions and track outcomes. For communication: study the specific people you need to influence, not communication in general. For taste: read and study excellent examples in your domain, not just your own outputs. For context: stay in one domain long enough to accumulate the situational knowledge that is invisible to outsiders.',
+      },
+      {
+        type: 'sources',
+        items: [
+          'HBR: "The Skills That Will Help You Thrive in the Age of AI" (2023)',
+          'MIT Sloan Management Review: "Rethinking the Human-Machine Collaboration" (2024)',
+          'OECD: "AI and the Future of Skills" (2023)',
+        ],
+      },
+    ],
+    next: 'conversations-with-your-employer',
+    prev: 'augmented-roles',
+  },
+
+  {
+    slug: 'conversations-with-your-employer',
+    title: 'Conversations With Your Employer',
+    shortTitle: 'Positioning at Work',
+    description: 'How to position your AI skills usefully without inadvertently making yourself redundant -- what to say, what to avoid, and how to frame AI use as organisational value.',
+    lastUpdated: '2026-05-25',
+    readingTime: '7 min',
+    content: [
+      {
+        type: 'lead',
+        text: 'Demonstrating AI competence at work has a trap: if you show that AI can handle your tasks without making clear what you do with the freed time, you may accelerate the conversation about whether your role is still needed. This module covers how to frame AI use productively.',
+      },
+      {
+        type: 'h2',
+        text: 'The framing that works',
+      },
+      {
+        type: 'p',
+        text: 'The useful frame is not "I used AI to do X faster" but "I used AI to handle X, which freed me to do Y -- and here is the business result of Y." Y should be a higher-judgment activity: a decision you made, a relationship you developed, a problem you identified, an insight you surfaced. The argument is not speed, it is reallocation toward value.',
+      },
+      {
+        type: 'example',
+        label: 'Example conversation',
+        text: 'Weak: "I can produce the weekly report in half the time now that I\'m using AI." Stronger: "I have automated the data assembly on the weekly report, which means I have had time to build a more detailed model of our churn drivers. I found a segment pattern that the standard report was masking. Here is what it means and what I recommend."',
+      },
+      {
+        type: 'h2',
+        text: 'What to avoid',
+      },
+      {
+        type: 'p',
+        text: 'Avoid making productivity claims that invite the question "so we could have one person doing two jobs now?" Do not show that AI can replicate your entire role without describing what you contribute on top. Do not use AI output in client or stakeholder communications without reviewing it carefully -- if an error reaches a client, it came from you, not the tool.',
+      },
+      {
+        type: 'h2',
+        text: 'Proposing the augmented version of your role',
+      },
+      {
+        type: 'p',
+        text: 'The most direct approach is to use your role audit (module 2) to propose a revised role definition to your manager. Identify the tasks you can automate, describe what you will redirect that time toward, and show the business logic. This is more compelling than waiting for your employer to redesign roles and hoping the result works in your favour.',
+      },
+      {
+        type: 'example',
+        label: 'How to structure the proposal',
+        text: 'Three parts: (1) Here are the tasks I have identified where AI tools materially reduce time required. (2) Here is what I propose to do with that time -- specific higher-value activities tied to business outcomes. (3) Here is what I need to make this work -- tool access, a short upskilling period, a revised set of priorities.',
+      },
+      {
+        type: 'h2',
+        text: 'If your employer is moving faster than you',
+      },
+      {
+        type: 'p',
+        text: 'If your organisation is already deploying AI on your tasks without a clear conversation about what your role becomes, that is a signal. Ask directly: "As we deploy AI on [task category], what does this role look like in 12 months?" Getting a concrete answer -- even an uncertain one -- is more useful than avoiding the question.',
+      },
+      {
+        type: 'h2',
+        text: 'When to retrain, when to switch, when to stay',
+      },
+      {
+        type: 'p',
+        text: 'That question is covered in the next and final module. The short version: staying is viable when your role can credibly shift toward the defensive skill stack and your employer is aligned with that shift. Switching is worth considering when your current role is structurally high-exposure with no clear path to the augmented version. Retraining is worth the cost when it moves you to a role with lower structural exposure or higher skill-stack relevance.',
+      },
+      {
+        type: 'sources',
+        items: [
+          'HBR: "How to Have an Honest Conversation About AI With Your Boss" (2024)',
+          'MIT Sloan Management Review: "Navigating the AI Transition in Your Career" (2023)',
+          'World Economic Forum: "Human-Centred AI: A Framework for Action" (2023)',
+        ],
+      },
+    ],
+    next: null,
+    prev: 'defensive-skill-stack',
+  },
+]
