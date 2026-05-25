@@ -78,8 +78,8 @@ export default function MarketShareSection({ snapshotData }) {
       <p className="text-sm text-gray-600 mb-6">
         Directional share-of-usage estimates blended from three incommensurate developer-usage
         signals (OpenRouter API calls, Hugging Face downloads, Stack Overflow self-reports). Read
-        as a normalized index of developer-facing usage among the top 12 tracked models, not a
-        precise market-share figure - see methodology below. Click any column header to sort.
+        as a normalized index of developer-facing usage among the tracked models in this snapshot,
+        not a precise market-share figure - see methodology below. Click any column header to sort.
       </p>
 
       <div className="overflow-x-auto">
