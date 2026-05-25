@@ -636,35 +636,6 @@ export default function AIModels() {
             ))}
           </div>
 
-          {/* Summary Stats */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mt-12">
-            <h2 className="text-3xl font-bold text-center mb-8">Current AI Model Landscape</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-              <div className="p-6 bg-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-2">{models.length}</div>
-                <div className="text-gray-600">Total Models</div>
-              </div>
-              <div className="p-6 bg-green-50 rounded-lg">
-                <div className="text-3xl font-bold text-green-600 mb-2">
-                  {models.filter(m => m.categories.includes('open-source')).length}
-                </div>
-                <div className="text-gray-600">Open Source</div>
-              </div>
-              <div className="p-6 bg-purple-50 rounded-lg">
-                <div className="text-3xl font-bold text-purple-600 mb-2">
-                  {models.filter(m => m.categories.includes('multimodal')).length}
-                </div>
-                <div className="text-gray-600">Multimodal</div>
-              </div>
-              <div className="p-6 bg-orange-50 rounded-lg">
-                <div className="text-3xl font-bold text-orange-600 mb-2">
-                  {new Set(models.map(m => m.company)).size}
-                </div>
-                <div className="text-gray-600">Companies</div>
-              </div>
-            </div>
-          </div>
-
           {/* Key Insights */}
           <div className="bg-white rounded-lg shadow-lg p-8 mt-8">
             <h2 className="text-2xl font-bold mb-6">Key Insights</h2>
