@@ -25,7 +25,7 @@ A useful test: read your prompt back as if you were a new contractor seeing the 
 
 Three traps to avoid. First, stacking too many instructions in one prompt without ordering them, which causes the model to weight them equally when you meant some to dominate. Second, using soft words like "good" or "engaging" without defining what good means in your context. Third, asking for output and then immediately constraining it ("write a long article but keep it short"), which forces the model to pick a side and rarely picks the one you wanted.
 
-The rest of this resource builds on this foundation. Role prompting, structured output, few-shot examples — all of them are specialised forms of being clearer about what you want.`,
+The rest of this resource builds on this foundation. Role prompting, structured output, few-shot examples. All of them are specialised forms of being clearer about what you want.`,
     workedExample: {
       before:
         'Write a follow-up email to a client who has gone quiet.',
@@ -70,20 +70,20 @@ When role prompting fails, the fix is almost always to add what the role should 
     starterPrompt:
       'You are a senior B2B copy director reviewing landing page headlines for a SaaS startup. Your job is to flag vague claims and ask one sharp question that would force the founder to make the headline more specific. Critique this headline: "We help businesses grow with AI." Output: one sentence on what is vague, then one direct question. No reassurance, no praise.',
     tryItHint:
-      'Swap the role to "supportive marketing coach" and run it again. Same task, very different output — that is the role doing work.',
+      'Swap the role to "supportive marketing coach" and run it again. Same task, very different output. That is the role doing work.',
   },
   {
     slug: 'structured-output',
     order: 3,
     title: 'Structured output',
     summary:
-      'When you need to use AI output downstream — in a spreadsheet, a form, another prompt — ask for it in a structure, not prose.',
+      'When you need to use AI output downstream, ask for it in a structure, not prose.',
     learningGoals: [
       'Pick a structure (JSON, markdown table, bulleted fields) that matches the downstream use',
       'Lock the shape so the model cannot improvise extra fields',
       'Recover from malformed output without re-running the whole prompt',
     ],
-    concept: `If you are pasting AI output back into a tool — a CRM, a spreadsheet, another prompt — prose is the wrong format. You are forcing yourself to do parsing work that the model could have done for you. Structured output solves this.
+    concept: `If you are pasting AI output back into a tool (a CRM, a spreadsheet, another prompt), prose is the wrong format. You are forcing yourself to do parsing work that the model could have done for you. Structured output solves this.
 
 The first decision is the shape. JSON works when the consumer is another script or AI step. A markdown table works when the consumer is you, scanning a page. Numbered bullets with labelled fields work when the structure is shallow and you want the model to keep its reasoning visible. Pick the lightest structure that survives the use case.
 
@@ -98,7 +98,7 @@ When structured output goes wrong, it is almost always because the schema was im
       after:
         'Summarise the customer support ticket below. Return only a JSON object with these keys: summary (string, max 25 words), category (one of: billing, bug, feature_request, account_access, other), urgency (one of: low, medium, high), suggested_owner (one of: support, engineering, sales). No preamble, no markdown fences.\n\nTicket: [paste ticket text here]',
       whyItWorks:
-        'Every consumer of this output — a triage script, a dashboard — can rely on the same shape. The enum values prevent the model from inventing a new category. The "no preamble" rule prevents the response from breaking a JSON parser.',
+        'Every consumer of this output, whether a triage script or a dashboard, can rely on the same shape. The enum values prevent the model from inventing a new category. The "no preamble" rule prevents the response from breaking a JSON parser.',
     },
     starterPrompt:
       'Summarise the customer support ticket below. Return only a JSON object with these keys: summary (string, max 25 words), category (one of: billing, bug, feature_request, account_access, other), urgency (one of: low, medium, high), suggested_owner (one of: support, engineering, sales). No preamble, no markdown fences.\n\nTicket: Customer reports that the export button on the reporting dashboard has been failing for two days. They have a board meeting tomorrow and need the data tonight. They have already tried two browsers.',

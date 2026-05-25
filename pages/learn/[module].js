@@ -52,7 +52,7 @@ export default function LearnModulePage({ mod, prev, next }) {
 
   return (
     <Layout
-      title={`${mod.title} — Prompt-engineering modules | PromptWritingStudio`}
+      title={`${mod.title} | Prompt-engineering modules | PromptWritingStudio`}
       description={mod.summary}
       canonicalUrl={pageUrl}
     >
