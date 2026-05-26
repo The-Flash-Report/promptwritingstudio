@@ -215,16 +215,24 @@ export default function AIWorkforceModule({ module, moduleIndex, prevModule, nex
             <h2 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-4">Related</h2>
             <ul className="space-y-2 text-sm text-[#333333]">
               <li>
-                {/* TODO(vendors.ie): link to AI tools for workers category once V-IRISH-004 cluster URLs confirmed */}
-                <span className="font-medium">AI tools for Irish workers</span> -- tool comparisons on Vendors.ie (link forthcoming)
-              </li>
-              <li>
-                {/* TODO(P-LEARN-001): link to /learn once interactive prompt engineering resource ships */}
-                <span className="font-medium">Hands-on prompt engineering</span> -- interactive practice resource (coming soon)
+                <a
+                  href="https://vendors.ie/ai-tools-ireland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-600 hover:underline font-medium"
+                >
+                  AI tools for Irish workers
+                </a>{' '}
+                -- tool comparisons on Vendors.ie
               </li>
               <li>
                 <Link href="/best-ai-tools" className="text-indigo-600 hover:underline font-medium">
                   Best AI tools overview
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-models" className="text-indigo-600 hover:underline font-medium">
+                  AI models compared
                 </Link>
               </li>
             </ul>

@@ -11,7 +11,7 @@ export default function AIWorkforceIndex() {
         <title>AI Workforce Defensive Literacy -- Protect Your Career in an AI Economy | PromptWritingStudio</title>
         <meta
           name="description"
-          content="A free 5-module track for working professionals. Understand where AI capability boundaries sit, audit your role, and build the skills that compound in an AI-augmented workplace."
+          content="A free seven-module track for working professionals. Understand where AI capability boundaries sit, audit your role, build the skills that compound, and decide whether to stay, switch, or retrain."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://promptwritingstudio.com/ai-workforce" />
@@ -44,8 +44,8 @@ export default function AIWorkforceIndex() {
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-4">What this track covers</h2>
             <p className="text-[#333333] mb-10 text-lg">
-              Five modules designed for non-developer professionals. No jargon. Each module has worked examples from
-              common roles and links to primary sources for the claims it makes.
+              Seven modules designed for non-developer professionals. No jargon. Each module has worked examples from
+              common roles, a "what to do this week" action block, and links to primary sources for the claims it makes.
             </p>
 
             <div className="space-y-4">
@@ -94,20 +94,27 @@ export default function AIWorkforceIndex() {
             <h2 className="text-lg font-bold text-[#1A1A1A] mb-4">Related resources</h2>
             <ul className="space-y-3 text-sm text-[#333333]">
               <li>
-                {/* TODO(vendors.ie): link to AI tools for workers category once V-IRISH-004 cluster URLs confirmed */}
-                <span className="font-medium">AI tools for Irish workers</span> -- practical tool comparisons on Vendors.ie
-                (link forthcoming)
-              </li>
-              <li>
-                {/* TODO(P-LEARN-001): link to /learn once interactive prompt engineering resource is shipped */}
-                <span className="font-medium">Hands-on prompt engineering practice</span> -- the interactive learning
-                resource (coming soon)
+                <a
+                  href="https://vendors.ie/ai-tools-ireland"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-indigo-600 hover:underline font-medium"
+                >
+                  AI tools for Irish workers
+                </a>{' '}
+                -- practical tool comparisons on Vendors.ie, organised by use case (meetings, drafting, research)
               </li>
               <li>
                 <Link href="/best-ai-tools" className="text-indigo-600 hover:underline font-medium">
                   Best AI tools overview
                 </Link>{' '}
                 -- tools mentioned in this track and how they compare
+              </li>
+              <li>
+                <Link href="/ai-models" className="text-indigo-600 hover:underline font-medium">
+                  AI models compared
+                </Link>{' '}
+                -- the underlying model differences when picking a drafting or research tool
               </li>
             </ul>
           </div>
