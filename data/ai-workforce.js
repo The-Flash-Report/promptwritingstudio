@@ -684,4 +684,295 @@ export const AI_WORKFORCE_MODULES = [
     next: 'tool-of-the-month',
     prev: 'defensive-skill-stack',
   },
+
+  {
+    slug: 'tool-of-the-month',
+    title: 'Tool of the Month: Practical AI in Your Workflow',
+    shortTitle: 'Practical Tools',
+    description: 'Practical, category-by-category guidance on which AI tools to try in your week -- meetings, drafting, research, support -- with anti-hype framing and what to look for.',
+    lastUpdated: '2026-05-25',
+    readingTime: '13 min',
+    content: [
+      {
+        type: 'lead',
+        text: 'There are too many AI tools, every week brings a new one, and the marketing language is largely interchangeable. This module is a category-first guide rather than a brand-first one: here are the four or five workflow categories where AI tools deliver real value for working professionals, what to look for in each category, two or three options worth trying, and the failure modes that the demos do not show. No category here requires a paid subscription to test honestly; all of them have free tiers good enough to evaluate.',
+      },
+      {
+        type: 'h2',
+        text: 'The honest framing before you pick anything',
+      },
+      {
+        type: 'p',
+        text: 'A useful AI tool meets three criteria: it sits at a real bottleneck in your week (not a small annoyance); the output is verifiable in less time than producing it from scratch; and the failure modes are understood and survivable. A tool that satisfies all three is worth integrating. A tool that fails on any one of them is usually a waste of attention even if the demo is impressive.',
+      },
+      {
+        type: 'p',
+        text: 'A second filter: prefer tools that integrate with what you already use over tools that demand a new workflow. The integration tax of a separate dashboard, a new login, and a separate inbox is usually higher than the productivity gain. The MIT Sloan / BCG 2024 study on how people actually use generative AI found that adoption sticks where the tool sits inside existing surfaces (the email client, the document editor, the meeting platform) and falls off where it requires switching contexts.',
+      },
+      {
+        type: 'h2',
+        text: 'Category 1: Meeting capture and follow-up',
+      },
+      {
+        type: 'p',
+        text: 'This is the highest-leverage category for most knowledge workers. AI meeting assistants record, transcribe, summarise, and surface action items from your video calls. The realistic time saving is 30-60 minutes per meeting-heavy day across status meetings, customer calls, and internal planning sessions. The verifiable failure mode is that summaries occasionally hallucinate action items that nobody actually agreed to; check action lists against your own notes before sending them on.',
+      },
+      {
+        type: 'p',
+        text: 'Options worth testing (free tiers exist for each): Otter.ai, Fireflies.ai, Microsoft Teams Premium\'s built-in copilot, Zoom AI Companion, Granola. Otter and Fireflies are stand-alone and work across platforms. Microsoft and Zoom integrate natively with the meeting platform you may already use. Granola is a more recent entrant focused on letting you take live notes while the AI fills in around them. Test two against a normal meeting day and pick the one whose summary you would actually send to a colleague.',
+      },
+      {
+        type: 'p',
+        text: 'Privacy note worth taking seriously: if the meeting includes confidential or personal data, your organisation may have policies about which tools can record. Check before testing on customer calls. In some EU/UK contexts, recording requires explicit consent from all participants.',
+      },
+      {
+        type: 'h2',
+        text: 'Category 2: Drafting and editing',
+      },
+      {
+        type: 'p',
+        text: 'General-purpose chat assistants (Claude, ChatGPT, Gemini, Copilot) handle drafting tasks well across emails, documents, slide outlines, and structured plans. The realistic productivity claim is not 10x or 100x; it is closer to 30-50% on first-draft tasks where you have a clear brief and the output style is conventional. Tasks where you do not have a clear brief, or where the style is genuinely yours, see much less gain.',
+      },
+      {
+        type: 'p',
+        text: 'A practical pattern: use the assistant for the first draft only, then edit substantially. Drafts from these tools tend to be plausible but generic. The editing step is where your taste, context, and audience knowledge gets injected, and is what makes the output actually yours. Skipping the edit step is how AI-generated work develops the bland sameness that experienced readers can spot in under a paragraph.',
+      },
+      {
+        type: 'p',
+        text: 'Options: Claude (Anthropic) is widely considered strongest at long-document work, coding, and nuanced instruction-following. ChatGPT (OpenAI) has the largest plugin ecosystem and the most familiar UX. Gemini (Google) integrates natively with Google Workspace. Microsoft 365 Copilot is the obvious choice if your organisation runs Microsoft. Pick the one that integrates with your existing document workflow rather than the one with the best benchmark scores; the integration gain dominates the model gap at this point in the market.',
+      },
+      {
+        type: 'h2',
+        text: 'Category 3: Research and synthesis',
+      },
+      {
+        type: 'p',
+        text: 'This category covers asking specific questions, summarising long documents, and pulling structured information from messy sources. The category has two distinct sub-tools: answer engines (live web-grounded answers with citations) and document-synthesis tools (you supply the sources, the tool summarises them).',
+      },
+      {
+        type: 'p',
+        text: 'For answer engines, Perplexity and ChatGPT Search are the main options; both cite their sources, which is non-negotiable for any research use case. Treat citations as a starting point for verification, not as a finishing point -- AI answer engines still occasionally cite real-looking sources that turn out to be lightly wrong or out of date.',
+      },
+      {
+        type: 'p',
+        text: 'For document synthesis, NotebookLM (Google) is a strong free option that takes your uploaded sources and answers questions only from those sources, with explicit citations back to the source document. The constraint -- it will not invent material from outside your sources -- is the feature, not a limitation, and it makes the tool genuinely useful for analysing reports, policy documents, or research papers. Claude with Projects performs a similar function with broader file support.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example',
+        text: 'A pricing manager needs to understand how five competitors have moved on pricing in the last six months. Approach: gather the five public pricing pages and any press releases, upload to NotebookLM, ask structured questions ("which competitors moved on enterprise tier pricing"). The tool answers with direct citation to each pricing page. The work that used to be three hours of manual reading is now 30 minutes of structured questioning, and the citation trail makes verification fast.',
+      },
+      {
+        type: 'h2',
+        text: 'Category 4: Code and data automation',
+      },
+      {
+        type: 'p',
+        text: 'For non-developers, this category mostly means writing small scripts to automate repetitive tasks: extracting data from a spreadsheet into a different shape, scraping a known website on a schedule, reformatting a CSV. GitHub Copilot, Cursor, and Claude (via chat) all do this well and the threshold to use them is much lower than the equivalent skill of writing code from scratch. If your week has any meaningful share of "I do the same fiddly thing in Excel every Monday", this category has real value for you.',
+      },
+      {
+        type: 'p',
+        text: 'A grounded caveat: code that an AI writes works often enough to be useful and not often enough to be trusted blindly. Treat anything safety-critical, financial, or customer-facing as requiring the same review as code you wrote yourself. The tool removes the typing, not the thinking.',
+      },
+      {
+        type: 'h2',
+        text: 'Category 5: Internal knowledge and search',
+      },
+      {
+        type: 'p',
+        text: 'This is the slow-burn category that delivers value six months in rather than next week. AI tools that index your organisation\'s internal documents (Glean, Notion AI, Microsoft Copilot for SharePoint, Slack AI search) make it possible to ask "what was the decision on X" or "who worked on Y" and get a usable answer. The deployment is usually decided at organisation level rather than by individual users, so this is mostly a question of using what is offered well rather than picking a tool yourself.',
+      },
+      {
+        type: 'h2',
+        text: 'What to ignore',
+      },
+      {
+        type: 'p',
+        text: 'Three categories worth deprioritising at the working-professional level. (1) AI agents that promise full task autonomy: the failure modes are still too frequent for production work, and the time saved on the happy path is lost three times over when the agent goes wrong silently. (2) AI image and video generation, unless your role specifically needs visual output: the quality is impressive for demos and middling for actual marketing or design work. (3) AI tools that promise to "personalise outreach at scale": these mostly produce the spam that recipients can now spot, and the trust cost outweighs the time saving.',
+      },
+      {
+        type: 'h2',
+        text: 'How to test before you commit',
+      },
+      {
+        type: 'p',
+        text: 'A four-week test cycle works well. Week one: use the free tier on real work, not demos. Week two: try the alternative leading option in the same category. Week three: pick the better one and integrate it fully into your workflow. Week four: review honestly -- is the time saved real, or has the tool added new busywork? Reject any tool that fails the week-four honesty test, even if the demo was impressive.',
+      },
+      {
+        type: 'action',
+        label: 'What to do this month',
+        text: [
+          'Pick one category from this module where you have a real bottleneck. Do not start in two categories.',
+          'Test two leading options on real work for one week each. Free tiers only.',
+          'Week three, integrate the winner into your workflow. Notice where it adds friction as well as where it saves time.',
+          'Week four, do the honest review. Keep the tool only if the answer to "did this save real time" is yes without qualification.',
+        ],
+      },
+      {
+        type: 'links',
+        label: 'Next in this track',
+        items: [
+          { text: 'When to Retrain, When to Switch, When to Stay', url: '/ai-workforce/retrain-switch-stay', note: 'the final module: the bigger decision' },
+          { text: 'The Defensive Skill Stack', url: '/ai-workforce/defensive-skill-stack', note: 'why tools alone are not a strategy' },
+          { text: 'AI tools in Ireland', url: 'https://vendors.ie/ai-tools-ireland', note: 'detailed tool comparisons on Vendors.ie' },
+        ],
+      },
+      {
+        type: 'sources',
+        items: [
+          { text: 'MIT Sloan Management Review / BCG: How People Are Really Using GenAI (2024)', url: 'https://www.bcg.com/publications' },
+          { text: 'Stanford HAI AI Index Report 2024 -- adoption and enterprise use', url: 'https://aiindex.stanford.edu/report/' },
+          { text: 'Anthropic Claude product documentation', url: 'https://docs.anthropic.com/' },
+          { text: 'OpenAI ChatGPT product documentation', url: 'https://platform.openai.com/docs' },
+          { text: 'Google NotebookLM documentation', url: 'https://support.google.com/notebooklm' },
+          { text: 'European Data Protection Board: AI and GDPR guidance', url: 'https://www.edpb.europa.eu/' },
+        ],
+      },
+    ],
+    next: 'retrain-switch-stay',
+    prev: 'conversations-with-your-employer',
+  },
+
+  {
+    slug: 'retrain-switch-stay',
+    title: 'When to Retrain, When to Switch, When to Stay',
+    shortTitle: 'Retrain / Switch / Stay',
+    description: 'A decision framework for the bigger career question this track raises -- when to invest in retraining, when to switch role or employer, and when to stay and reshape what you have.',
+    lastUpdated: '2026-05-25',
+    readingTime: '14 min',
+    content: [
+      {
+        type: 'lead',
+        text: 'The previous six modules cover the diagnostic: capability boundaries, role audit, augmented versions, defensive skills, conversations with your employer, practical tools. This final module covers the synthesis: given all of that, do you stay and reshape what you have, switch role or employer, or invest seriously in retraining toward something different? The honest answer is rarely obvious in either direction. What follows is a framework -- not a formula -- for working through it without panic and without complacency, both of which are common failure modes.',
+      },
+      {
+        type: 'h2',
+        text: 'The three paths, defined sharply',
+      },
+      {
+        type: 'p',
+        text: 'Stay: remain in your current role and current employer, deliberately shifting your task mix toward the augmented version of the role and visibly building the defensive skill stack. Cost: low-moderate (time investment in skill building, some political capital in the conversations with employer module). Risk: depends entirely on whether your employer will support the shift; if not, you are accumulating skills in a role that is closing under you.',
+      },
+      {
+        type: 'p',
+        text: 'Switch: move to a different role or different employer that is structurally better positioned -- either lower AI exposure, higher skill-stack relevance, or both. Cost: moderate (job search effort, possible short-term pay cost, restart on team standing). Risk: you trade known unknowns for unknown unknowns. Switches into roles you do not understand well are how people make the AI transition worse, not better.',
+      },
+      {
+        type: 'p',
+        text: 'Retrain: invest seriously (6-24 months of part-time study, or a shorter intensive programme) to acquire a substantially different skill base, with the intention of moving into a role that requires it. Cost: high (time, often money, opportunity cost). Risk: returns to retraining are deeply uneven -- some retraining paths deliver clear new roles, others produce credentials that the market does not actually value. Pick the path by the destination role, not by the credential.',
+      },
+      {
+        type: 'h2',
+        text: 'When staying is the right call',
+      },
+      {
+        type: 'p',
+        text: 'Staying is right when three things are true. (1) Your role audit shows there is a credible augmented version of the role -- enough low-exposure work to anchor a senior identity, and a clear path to spend more time there. (2) Your employer is willing to support the shift, evidenced by their response to the conversations module (not by their public messaging on AI, which is universally optimistic). (3) The defensive skill stack you would build in this role transfers to your likely next role anyway. If all three are true, staying is the lowest-risk path and you should commit to it visibly, not as a default.',
+      },
+      {
+        type: 'p',
+        text: 'Staying becomes wrong when you are still telling yourself the same three statements but the evidence has been telling a different story for six to twelve months. The pattern: the augmented work you proposed has not materialised, the conversations with your manager have been polite-but-non-committal, your time mix is still 80% in the high-exposure tasks. At that point staying has become inertia, not strategy.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: senior finance analyst, staying is right',
+        text: 'Twelve years in the role at a mid-sized industrial. Audit shows 30% of the week is high-exposure (variance reports, monthly close formatting) and 40% is genuinely low-exposure (CFO advisory work, audit relationship, scenario modelling for the board). Manager has explicitly asked for more time on the scenario modelling and welcomes the AI-augmented variance work. Skill stack here -- finance judgement, executive communication, sector context -- transfers to any senior finance role anywhere. Stay, ship the proposal, redirect time.',
+      },
+      {
+        type: 'h2',
+        text: 'When switching is the right call',
+      },
+      {
+        type: 'p',
+        text: 'Switching is right when your current role is structurally high-exposure with no clear path to the augmented version, OR when your employer\'s response to the AI transition is misaligned with how you want to work. The two situations have different urgency. Structural high-exposure with no augmented version means you have 12-36 months in the role; the switch can be planned. Misaligned employer means you should be in active job-search mode within weeks, because their values and trajectory are not yours.',
+      },
+      {
+        type: 'p',
+        text: 'A common switching pattern that works: from a role inside an organisation that is using AI badly to a similar role inside an organisation that is using AI well. The skill stack transfers; the working environment improves; the AI exposure does not necessarily change but the organisational capacity to redeploy savings productively does. This is a much easier switch to execute than a switch across role categories.',
+      },
+      {
+        type: 'p',
+        text: 'A harder pattern: switching from a structurally high-exposure category (junior content production, basic data analysis, L1 support) to a category where your skills do not transfer cleanly. This is where many transitions go wrong -- the switch is real but the new role is harder than the demo suggested. If the new category requires capabilities you do not yet have, you are actually retraining, not switching, and the framework below applies.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: marketing coordinator, switching is right',
+        text: 'Three years in role at an SME. Audit shows 70% high-exposure (campaign asset production, email drafting, social variants) and limited low-exposure work. Manager would like more strategic input but has assigned the strategy work to an external agency, signalling that the role is seen as production. The augmented version of this role does not exist here. Switch target: marketing coordinator at a company where strategy lives in-house, with explicit interview question on how the role is evolving with AI. Same job title, structurally different position.',
+      },
+      {
+        type: 'h2',
+        text: 'When retraining is the right call',
+      },
+      {
+        type: 'p',
+        text: 'Retraining is right when you have made an honest assessment that no realistic in-place shift, and no realistic switch within adjacent roles, gets you to a position you actually want over the next five years. The honest assessment is the hard part. Retraining is expensive in time and often money; the most common failure mode is retraining into a credential rather than into a role that exists and pays.',
+      },
+      {
+        type: 'p',
+        text: 'The OECD\'s research on adult skills programmes finds that retraining returns are highest when three conditions hold: the destination role is clearly defined and in demand, the new skills are practiced on real work (not just course completion), and the transition is supported by existing professional identity (e.g. an accountant retraining into data analytics for finance teams is on stronger ground than an accountant retraining into UX design from a standing start). Pick the retraining path with the destination in view, not the course.',
+      },
+      {
+        type: 'p',
+        text: 'Two retraining paths that have produced real role transitions in the past two years: from production-heavy creative roles into product or content strategy roles; from operational roles into roles that combine domain knowledge with AI tooling competence (the so-called "AI-augmented domain expert"). Both work because they extend an existing skill stack rather than discarding it. Pure "I will become an AI engineer" pivots from non-technical backgrounds rarely land where the marketing suggests they will.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: paralegal, retraining is right',
+        text: 'Eight years in role at a mid-sized firm. Audit shows the role is becoming heavily automated at exactly the level the paralegal currently sits -- document review, citation work, basic drafting. No augmented version in this firm or visible at peers. Switch target: paralegal at a firm where the role is evolving toward client-facing case management. But the structural exposure persists across firms. Retraining target: legal operations / legal technology consultant, drawing on the eight years of legal context that any AI tool lacks. 12-18 month part-time programme, real consulting work alongside study. Destination is a role that already exists, pays well, and that the paralegal\'s domain knowledge accelerates dramatically.',
+      },
+      {
+        type: 'h2',
+        text: 'The Stoic frame -- and why it matters here',
+      },
+      {
+        type: 'p',
+        text: 'Stoic practice distinguishes carefully between what is in your control and what is not. The pace and direction of AI capability change is not in your control. Your employer\'s strategic response is not in your control. The labour market\'s adjustment is not in your control. Your task audit, your skill investment, your decision framework, your communication with your manager, and your willingness to switch when the evidence demands it -- all of those are in your control. The work of this track is concentrating attention on the controllable inputs and refusing to spend energy on the uncontrollable ones.',
+      },
+      {
+        type: 'p',
+        text: 'Apply this here: do not catastrophise about job loss in the abstract. Run the audit, do the skill work, have the conversations, decide on the path. If circumstances change, repeat the process. The first time through, the framework takes a few weeks of attention; the second time through, it takes a weekend. The defensive position is built by repetition, not by any single decision.',
+      },
+      {
+        type: 'h2',
+        text: 'A decision template you can complete this weekend',
+      },
+      {
+        type: 'p',
+        text: 'Five questions, answered honestly in writing. (1) From my audit, what percentage of my week is currently high-exposure? Is there a realistic augmented version of the role for me? (2) Has my employer demonstrated, through actions not statements, that they will support a shift in my role? (3) If I assume my current role looks structurally the same in five years, am I still in a strong professional position? (4) What is the closest viable switch -- same role at a structurally better employer, or adjacent role at the same employer? (5) Is there a retraining path with a defined destination role that builds on what I already know? Compare answers. Honest answers usually surface the right path; pretending the answer is "stay" when the evidence is screaming "switch" is the most common avoidable mistake in this transition.',
+      },
+      {
+        type: 'action',
+        label: 'What to do this weekend',
+        text: [
+          'Sit down with the audit from module 2 and the skill plan from module 4. Block 90 minutes.',
+          'Answer the five questions above in writing. Resist the temptation to skip any.',
+          'Pick one path -- stay, switch, retrain -- as your working hypothesis. Commit to revisiting in 90 days.',
+          'For each path, identify the first concrete step. Put it in the calendar this month. The first step for stay is the conversation; for switch, it is updating the CV; for retrain, it is researching three destination roles.',
+        ],
+      },
+      {
+        type: 'links',
+        label: 'Going back through the track',
+        items: [
+          { text: 'Module 1 -- What AI Can and Cannot Do', url: '/ai-workforce/ai-capability-boundaries', note: 'the capability baseline' },
+          { text: 'Module 2 -- Audit Your Role', url: '/ai-workforce/audit-your-role', note: 'the input to this decision' },
+          { text: 'Module 4 -- Defensive Skill Stack', url: '/ai-workforce/defensive-skill-stack', note: 'the skill investment plan' },
+          { text: 'AI tools in Ireland', url: 'https://vendors.ie/ai-tools-ireland', note: 'tool comparisons referenced across modules' },
+        ],
+      },
+      {
+        type: 'sources',
+        items: [
+          { text: 'OECD: Getting Skills Right -- Engaging Low-Skilled Adults in Learning (2019, updated 2023)', url: 'https://www.oecd.org/skills/' },
+          { text: 'McKinsey Global Institute: A new future of work -- the race to deploy AI and raise skills (2023)', url: 'https://www.mckinsey.com/mgi/our-research/a-new-future-of-work-the-race-to-deploy-ai-and-raise-skills-in-an-unequal-world' },
+          { text: 'World Economic Forum: Future of Jobs Report 2023 -- reskilling section', url: 'https://www.weforum.org/reports/the-future-of-jobs-report-2023/' },
+          { text: 'HBR: Career Pivots and the Cost of Retraining (2024)', url: 'https://hbr.org/' },
+          { text: 'Stanford HAI AI Index Report 2024 -- labour market and skills', url: 'https://aiindex.stanford.edu/report/' },
+          { text: 'Marcus Aurelius, Meditations -- specifically the dichotomy of control as a working tool', url: 'https://classics.mit.edu/Antoninus/meditations.html' },
+        ],
+      },
+    ],
+    next: null,
+    prev: 'tool-of-the-month',
+  },
 ]
