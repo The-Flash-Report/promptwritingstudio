@@ -421,11 +421,11 @@ export const AI_WORKFORCE_MODULES = [
     shortTitle: 'Defensive Skills',
     description: 'The skills that compound in an AI-augmented workplace -- judgment, communication, taste, and context -- and why they are durable compared to technical skills.',
     lastUpdated: '2026-05-25',
-    readingTime: '8 min',
+    readingTime: '13 min',
     content: [
       {
         type: 'lead',
-        text: 'If you have read the previous modules, a pattern is visible: the skills most protected from AI substitution are judgment, communication, taste, and real-world context. This module explains what those mean in practice and how to develop them deliberately.',
+        text: 'If you have read the previous modules, a pattern is visible: the skills most protected from AI substitution are judgement, communication, taste, and real-world context. This module explains what each of those means in practice, why they compound over time rather than depreciate, and how to develop them deliberately. The World Economic Forum Future of Jobs Report 2023 ranks analytical thinking, creative thinking, and resilience as the top three skills employers are prioritising; the LinkedIn Workforce Report and McKinsey skills research consistently surface a similar list. These are not abstract qualities -- they are practiceable.',
       },
       {
         type: 'h2',
@@ -433,24 +433,29 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Technical skills have a predictable decay curve: a skill tied to a specific tool or format loses value when the tool is superseded. Judgment, communication, and taste compound differently. They improve with experience, transfer across contexts, and become more valuable as the volume and quality of AI output rises -- because someone has to evaluate and direct that output.',
+        text: 'Technical skills have a predictable decay curve: a skill tied to a specific tool, framework, or format loses value when the tool is superseded. The half-life of named technical skills in the Stanford HAI 2024 data appears to be shortening across multiple categories, particularly anything tied to a particular software product. Judgement, communication, taste, and context compound differently. They improve with experience, transfer across contexts, and become more valuable as the volume and quality of AI output rises -- because someone still has to evaluate and direct that output. The person who can reliably tell a good output from a plausible-but-wrong one is more valuable when AI produces ten outputs an hour than when a colleague produces one.',
       },
       {
         type: 'p',
-        text: 'As AI produces more first drafts, more summaries, more options, the bottleneck shifts from production to evaluation. The person who can reliably tell a good output from a plausible-but-wrong one becomes more valuable, not less.',
+        text: 'A second reason these skills compound: they are difficult to transfer in a prompt. A new hire takes months or years to acquire judgement about your industry; an AI tool takes zero. If you have judgement and the AI does not, that gap holds while the AI gets cheaper and your value rises with it.',
       },
       {
         type: 'h2',
-        text: 'Judgment: making decisions with incomplete information',
+        text: 'Judgement: making decisions with incomplete information',
       },
       {
         type: 'p',
-        text: 'Judgment is the ability to reach a good decision when the information is ambiguous, incomplete, or contested. AI systems optimise for plausibility; they do not have a stake in the outcome and cannot hold the full context of a specific situation. Developing judgment means deliberately taking on decisions, tracking what happened, and updating your model of how similar situations play out.',
+        text: 'Judgement is the ability to reach a good decision when the information is ambiguous, incomplete, or contested. AI systems optimise for plausibility; they do not have a stake in the outcome and cannot hold the full context of a specific situation. They are also calibrated on what most people would say rather than what is true in this case, which is a structurally different objective. Developing judgement means deliberately taking on decisions, tracking what happened, and updating your model of how similar situations play out.',
       },
       {
         type: 'example',
-        label: 'How to develop it',
-        text: 'Ask to own decisions rather than execute on them. After each significant decision, note what you expected and what happened. Over time this builds a calibrated sense of where your intuitions are reliable and where they need more information. That is a skill an AI cannot acquire for you.',
+        label: 'How to develop judgement -- decision journal',
+        text: 'Keep a one-page decision journal. For each significant decision (every two weeks is a reasonable cadence), write: what I am deciding, what I expect to happen, what would change my mind, and what I will treat as evidence either way in 30/90/180 days. Review entries at those intervals. Over a year this builds a calibrated sense of where your intuitions are reliable and where they need more information. That is a skill an AI cannot acquire for you, and it is the input to almost every other defensive skill on this list.',
+      },
+      {
+        type: 'example',
+        label: 'How to develop judgement -- own the call',
+        text: 'In meetings, distinguish between contributing analysis and owning a decision. Ask explicitly to own one decision per quarter that you would normally only inform. Track what happened. The most common career trap is being technically excellent at analysis without ever taking the on-the-record positions that build judgement. AI is fine at analysis; it cannot make a call you are accountable for.',
       },
       {
         type: 'h2',
@@ -458,12 +463,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'AI can produce grammatically correct, reasonably well-structured text. It cannot know your audience -- their priorities, their blind spots, what they said in last week\'s meeting, what framing will land and what will trigger defensiveness. Communication as a skill is not about grammar; it is about understanding a specific person or group and choosing the words, sequence, and emphasis that work for them.',
+        text: 'AI can produce grammatically correct, reasonably well-structured text in almost any register. It cannot know your audience -- their priorities, blind spots, what they said in last week\'s meeting, what framing will land and what will trigger defensiveness, what they actually care about versus what they say they care about. Communication as a skill is not about grammar; it is about understanding a specific person or group and choosing the words, sequence, and emphasis that work for them.',
+      },
+      {
+        type: 'p',
+        text: 'The shift worth noting: as AI makes the average quality of written output rise, the differentiating skill becomes the strategic shape of communication, not the prose. What you choose to say, what you leave out, what order you put it in, what you put in the subject line and what you bury -- these matter more than sentence-level craft. The augmented communicator spends less time on drafting and more time on the architecture of the message.',
       },
       {
         type: 'example',
-        label: 'How to develop it',
-        text: 'After each important communication (presentation, negotiation, difficult conversation), assess what landed and what did not. Explicitly build a mental model of the people you communicate with regularly: what they care about, what they react poorly to, how they process information. AI can help you draft; it cannot build that model.',
+        label: 'How to develop communication -- the audience map',
+        text: 'For the five to ten people you most need to influence at work, write a one-paragraph profile of each: what they prioritise, what they react badly to, how they process information (slides? prose? numbers? stories?), what their boss measures them on. Update quarterly. Before any important communication, read the relevant profile. This explicit modelling is what good communicators do unconsciously; building it deliberately accelerates the skill by years.',
+      },
+      {
+        type: 'example',
+        label: 'How to develop communication -- the after-action review',
+        text: 'After each important communication (presentation, negotiation, difficult conversation, important email), assess what landed, what did not, and why. The two-minute reflection in your notebook compounds. AI can help you draft; it cannot tell you why your CFO went quiet after slide four.',
       },
       {
         type: 'h2',
@@ -471,11 +485,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Taste is the ability to distinguish between an output that is technically adequate and one that is genuinely good. As AI makes technically adequate output cheap, taste becomes the scarce resource. It applies to writing, design, product decisions, customer interactions, and strategy.',
+        text: 'Taste is the ability to distinguish between an output that is technically adequate and one that is genuinely good. As AI makes technically adequate output cheap, taste becomes the scarce resource. It applies to writing, design, product decisions, code, customer interactions, hiring, and strategy. Taste is hardest to define precisely -- which is part of why it is durable. Anything you can write down as a checklist, AI can be trained on; anything you can only demonstrate through choices is yours.',
       },
       {
         type: 'p',
-        text: 'Taste is developed by exposure to high-quality examples across a domain and by the discipline of asking "why is this better than that" rather than just noting a preference. It is slow to develop and difficult to transfer -- which is exactly what makes it durable.',
+        text: 'Taste is developed by sustained exposure to high-quality examples across a domain and by the discipline of asking "why is this better than that" rather than just noting a preference. It is slow to develop and difficult to transfer between domains, which is exactly what makes it durable. The designer with twenty years of taste in B2B SaaS interfaces does not have transferable taste in consumer fashion; the editor with sharp taste in long-form journalism may have blunt taste in technical documentation.',
+      },
+      {
+        type: 'example',
+        label: 'How to develop taste -- the comparison practice',
+        text: 'Pick two examples in your domain, one excellent and one mediocre, every week. Write 100-200 words on why one is better than the other. The act of articulating preference forces the implicit model to become explicit, which is what accelerates calibration. After a year you will see things in your domain that newer colleagues cannot, and you will be able to direct AI output more precisely because you have a clearer target.',
+      },
+      {
+        type: 'example',
+        label: 'How to develop taste -- learn from people whose taste you trust',
+        text: 'Identify the two or three people in your field whose judgement you most respect. Read what they read, watch what they choose to share, ask them why they liked a particular thing. Taste accretes through proximity to people who already have it. AI does not yet replace that mechanism; if anything, it makes the gap between people with calibrated taste and people without it more visible.',
       },
       {
         type: 'h2',
@@ -483,11 +507,15 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'AI systems can process data but they do not have the lived context of a specific organisation, client, or market. Context means knowing that the margin drop in Q3 is because of a contract renegotiation you were in the room for; that the client\'s apparent resistance is because of a failed implementation three years ago; that this market reacts differently to price changes than the category average suggests.',
+        text: 'AI systems can process data but they do not have the lived context of a specific organisation, client, or market. Context means knowing that the margin drop in Q3 was driven by a contract renegotiation you were in the room for; that the client\'s apparent resistance is because of a failed implementation three years ago that nobody mentions out loud; that this market reacts differently to price changes than the category average suggests because of a 2019 regulatory change that still distorts behaviour.',
       },
       {
         type: 'p',
-        text: 'Context is accumulated through sustained attention to one domain or relationship over time. It cannot be transferred to an AI in a prompt.',
+        text: 'Context is accumulated through sustained attention to one domain or relationship over time. It cannot be transferred to an AI in a prompt, and it usually cannot be transferred to a new hire either. That is why long tenure in one domain, which used to be considered low-status in fast-moving industries, is now visibly more valuable -- the institutional memory that lives in your head is structurally hard for the AI to replicate.',
+      },
+      {
+        type: 'p',
+        text: 'A practical warning: context only compounds if you stay engaged with it. Long tenure where you have stopped paying attention does not generate context; it generates rigidity. The defensive value is in active institutional knowledge, not seat-time.',
       },
       {
         type: 'h2',
@@ -495,14 +523,35 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Deliberate practice looks different for each skill. For judgment: own more decisions and track outcomes. For communication: study the specific people you need to influence, not communication in general. For taste: read and study excellent examples in your domain, not just your own outputs. For context: stay in one domain long enough to accumulate the situational knowledge that is invisible to outsiders.',
+        text: 'Deliberate practice looks different for each skill. For judgement: own more decisions, keep a decision journal, review at fixed intervals. For communication: build the audience map, do after-action reviews, focus on the architecture of messages rather than sentence craft. For taste: do weekly comparison writing, stay close to people with calibrated taste in your domain. For context: stay in one domain long enough to accumulate the situational knowledge that is invisible to outsiders, and stay actively engaged with it. Across all four: write things down. The unwritten version of these skills is harder to develop deliberately because the feedback loop is too slow.',
+      },
+      {
+        type: 'action',
+        label: 'What to do this week',
+        text: [
+          'Start a decision journal. One A4 page is enough. Write your first entry today on a decision you currently face.',
+          'Pick three people on your audience map (most-need-to-influence list). Write a one-paragraph profile of each.',
+          'Choose two examples in your domain -- one excellent, one mediocre -- and write 100-200 words on why one is better than the other.',
+          'Identify one place in the next month where you can ask to own a decision rather than just inform it. Put it in the calendar.',
+        ],
+      },
+      {
+        type: 'links',
+        label: 'Next in this track',
+        items: [
+          { text: 'Conversations With Your Employer', url: '/ai-workforce/conversations-with-your-employer', note: 'positioning the skill stack visibly without making yourself redundant' },
+          { text: 'When to Retrain, When to Switch, When to Stay', url: '/ai-workforce/retrain-switch-stay', note: 'using the skill audit to choose a path' },
+          { text: 'AI tools in Ireland', url: 'https://vendors.ie/ai-tools-ireland', note: 'tools that pair well with each skill -- not replacements' },
+        ],
       },
       {
         type: 'sources',
         items: [
-          'HBR: "The Skills That Will Help You Thrive in the Age of AI" (2023)',
-          'MIT Sloan Management Review: "Rethinking the Human-Machine Collaboration" (2024)',
-          'OECD: "AI and the Future of Skills" (2023)',
+          { text: 'World Economic Forum: Future of Jobs Report 2023 -- core skills ranking', url: 'https://www.weforum.org/reports/the-future-of-jobs-report-2023/' },
+          { text: 'HBR: The Skills That Will Help You Thrive in the Age of AI (2023)', url: 'https://hbr.org/' },
+          { text: 'MIT Sloan Management Review: Rethinking the Human-Machine Collaboration (2024)', url: 'https://sloanreview.mit.edu/' },
+          { text: 'OECD: AI and the Future of Skills (2023)', url: 'https://www.oecd.org/employment-outlook/' },
+          { text: 'Stanford HAI AI Index Report 2024 -- skills and labour market section', url: 'https://aiindex.stanford.edu/report/' },
         ],
       },
     ],
