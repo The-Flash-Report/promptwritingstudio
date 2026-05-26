@@ -137,11 +137,19 @@ export const AI_WORKFORCE_MODULES = [
     shortTitle: 'Role Audit',
     description: 'A structured method for mapping your daily tasks against AI capability -- so you can see what is genuinely at risk and where your value compounds.',
     lastUpdated: '2026-05-25',
-    readingTime: '9 min',
+    readingTime: '13 min',
     content: [
       {
         type: 'lead',
-        text: 'Job-level automation risk figures are less useful than task-level analysis. The same job title can have very different exposure depending on which tasks dominate your week. This module walks through a method for doing that analysis on your own role.',
+        text: 'Job-level automation risk figures are less useful than task-level analysis. The same job title can have very different exposure depending on which tasks dominate your week. A senior marketer running brand strategy has a different exposure profile to a coordinator producing campaign assets, even though both sit under "marketing". This module walks through a four-step method for doing that analysis on your own role, with two long worked examples that show how to apply it.',
+      },
+      {
+        type: 'h2',
+        text: 'Why task-level matters more than job-level',
+      },
+      {
+        type: 'p',
+        text: 'The OECD Employment Outlook 2023 chapter on AI and the labour market found that aggregate occupation-level risk scores hide enormous within-occupation variation. The OECD specifically warned that pre-LLM exposure indexes underestimate the exposure of cognitive and white-collar tasks, and overestimate exposure for manual work that requires physical adaptation. The practical implication: the index that says your job is "low exposure" may be wrong about your specific week, and vice versa. The only honest answer comes from auditing your own tasks.',
       },
       {
         type: 'h2',
@@ -149,7 +157,11 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Most job descriptions describe outcomes, not tasks. Start with a log of what you actually do in a typical week. Aim for 15-25 discrete task types. "Prepare monthly report" is too coarse -- break it into "pull data from system", "format into tables", "write narrative commentary", "present to stakeholders". Each of those has different AI exposure.',
+        text: 'Most job descriptions describe outcomes, not tasks. Start with a log of what you actually do in a typical week. Aim for 15-25 discrete task types. "Prepare monthly report" is too coarse -- break it into "pull data from system", "format into tables", "write narrative commentary", "answer follow-up questions from the FD", "present to stakeholders". Each of those has a different AI exposure score. If you started the task log in module 1, you already have most of this.',
+      },
+      {
+        type: 'p',
+        text: 'A good test: if a colleague could read your task list and predict roughly how you spend a week, the granularity is right. If it reads like a CV bullet list ("manage team", "deliver projects"), it is too coarse to audit.',
       },
       {
         type: 'h2',
@@ -157,24 +169,19 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'For each task, answer four questions: (1) Is there a large body of similar prior examples that an AI could have learned from? (2) Can the output be checked for correctness quickly by a non-expert? (3) Does the task require current information not available before mid-2024? (4) Does performance depend on real-time interpersonal context -- a specific person, their mood, the history of your relationship?',
+        text: 'For each task, answer four questions. (1) Pattern: is there a large body of similar prior examples that an AI could have learned from? (2) Verification: can the output be checked for correctness quickly by a non-expert, or by you in less time than producing it? (3) Currency: does the task require information that did not exist before the model\'s training cutoff -- this week\'s prices, today\'s call notes, last hour\'s ticket queue? (4) Interpersonal: does performance depend on the specific person you are working with -- their mood, history with you, internal politics, trust?',
       },
       {
         type: 'p',
-        text: 'Tasks that score yes on (1) and (2), and no on (3) and (4), are highest exposure. Tasks with yes on (3) or (4) are substantially protected, at current AI capability levels.',
-      },
-      {
-        type: 'example',
-        label: 'Worked example: Marketing Manager',
-        text: 'Task list excerpt: writing campaign briefs (high exposure -- pattern completion), reviewing agency creative (medium -- requires taste + brand knowledge), presenting results to board (low -- interpersonal, high-stakes, context-dependent), managing agency relationships (low -- relationship history, trust, negotiation).',
+        text: 'Tasks that score yes on pattern and verification, and no on currency and interpersonal, are highest exposure. Tasks with yes on currency or interpersonal are substantially protected at current capability levels. The diagonal cases -- yes on pattern but no on verification -- are the dangerous middle: AI can produce something plausible-looking that nobody can quickly check, which is where the most expensive errors live.',
       },
       {
         type: 'h2',
-        text: 'Step 3: Estimate time share',
+        text: 'Step 3: Estimate time share and value share',
       },
       {
         type: 'p',
-        text: 'Note what percentage of your working week each task type takes. High-exposure tasks that are also high time-share warrant the most attention -- they are both automatable and currently consuming significant effort. Low-exposure tasks that take most of your time are your current structural advantage.',
+        text: 'Two columns matter. Time share: what percentage of your working week each task type takes. Value share: how much of your perceived contribution each task represents in the eyes of your manager and skip-level. These are often misaligned, and the audit forces you to see it. High-exposure tasks that are also high time-share warrant the most attention -- they are both automatable and currently consuming significant effort. High-value tasks that are low exposure are your current structural advantage and deserve more time, not less.',
       },
       {
         type: 'h2',
@@ -182,12 +189,22 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'High exposure does not automatically mean job risk. It may mean the task will be augmented (you do it faster with AI help), delegated to a junior role, or genuinely automated away. The difference depends on whether your employer can redeploy the time savings productively and whether your role shifts toward higher-judgment work. The module on augmented roles covers this in more detail.',
+        text: 'High exposure does not automatically mean job risk. It may mean the task will be augmented (you do it faster with AI help), delegated to a junior role, batched and pushed off-shore, or genuinely automated away. The path depends on whether your employer can redeploy the time savings productively, whether your role can shift toward higher-judgment work, and whether the savings are big enough to justify reorganising. The module on augmented roles covers this in more detail; the module on conversations with your employer covers how to influence which path your role takes.',
       },
       {
         type: 'example',
-        label: 'Worked example: Customer Support',
-        text: 'A support specialist finds that 60% of tickets are L1 issues with well-known resolutions. That 60% is high AI exposure. But the remaining 40% involves escalations, unhappy customers, product edge cases, and internal coordination -- all low exposure. If the employer deploys AI on L1 tickets, the specialist role may shift almost entirely to the 40%. That is a different job, not necessarily a lost job.',
+        label: 'Worked example: Marketing Manager',
+        text: 'Task list excerpt with verdicts: writing campaign briefs (high exposure -- pattern + verifiable), drafting email subject lines (very high exposure), reviewing agency creative (medium -- needs brand judgement, but AI can suggest), presenting results to the board (low -- interpersonal, high-stakes, context-dependent), managing the agency relationship (low -- relationship history, trust, negotiation), competitive intelligence on new entrants (high exposure with currency caveat -- only useful if AI has access to current data via search), final sign-off on campaign launch (low -- you are accountable, the AI is not). Time share: 35% in the high-exposure tasks, 20% in low-exposure, the rest mixed. Verdict: the role is augmentable rather than replaceable, but the manager needs to redirect the freed time visibly toward the strategic and relationship layer.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: Customer Support Specialist',
+        text: 'A support specialist finds that 60% of tickets are L1 issues with well-known resolutions (password resets, billing queries, known product behaviours). That 60% is high AI exposure -- pattern and verifiable. The remaining 40% involves escalations, unhappy customers, product edge cases, and internal coordination with engineering -- all low exposure (interpersonal, novel, requires current context). If the employer deploys AI on L1 tickets, the specialist role may shift to almost entirely the 40%. That is a different job, not necessarily a lost job. But it does mean the specialist needs to be visibly competent at the harder 40% before the 60% goes away. Practical move: start working a small share of escalations now, before that becomes the only work.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: Project Coordinator in a consultancy',
+        text: 'Task audit: updating project plans (medium -- AI drafts, you adjust), formatting client status decks (high), drafting meeting minutes from transcripts (very high), chasing teams for status updates (low -- interpersonal, specific people), running weekly stand-ups (low -- live conversation), managing the change-request log (medium -- structured but currency-sensitive), preparing handover docs at project end (medium -- pattern-heavy). The role is heavily exposed at the document and formatting layer and lightly exposed at the coordination layer. The augmented version of this role spends much less time formatting and much more time spotting risks across projects, coaching less experienced PMs, and managing client relationships. Without that shift, the role is at structural risk; with it, the role becomes more senior.',
       },
       {
         type: 'h2',
@@ -195,14 +212,39 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Your audit gives you three outputs: a list of tasks to start automating yourself (capture the productivity gain before someone else does); a list of high-exposure tasks to actively skill away from as a primary value driver; and a clear picture of where your irreplaceable value currently sits, which informs how you position yourself in the module on conversations with your employer.',
+        text: 'Your audit gives you three outputs. First, a list of tasks to start automating yourself -- capture the productivity gain before someone else does, and use the freed time visibly. Second, a list of high-exposure tasks to actively skill away from as a primary value driver -- not by refusing to do them but by ensuring they are not the only thing you are known for. Third, a clear picture of where your irreplaceable value currently sits, which is the input to the module on conversations with your employer.',
+      },
+      {
+        type: 'p',
+        text: 'A common mistake at this point is to read the audit and panic. The audit is not a verdict; it is a map. The same map that shows where the risk is also shows where to invest your next twelve months of skill development. Use it that way.',
+      },
+      {
+        type: 'action',
+        label: 'What to do this week',
+        text: [
+          'Open a single document with two columns: Task | Verdict. Aim for 15-25 rows from your week.',
+          'For each row, apply the four filters (pattern / verification / currency / interpersonal) and assign a verdict: high / medium / low exposure.',
+          'Add two more columns: time share (rough percentage) and value share (perceived).',
+          'Mark three tasks you will automate yourself this month. Mark one task category you will move time toward.',
+          'Do not share this with your manager yet -- the conversations module covers framing. Sit with the audit for at least a week first.',
+        ],
+      },
+      {
+        type: 'links',
+        label: 'Next in this track',
+        items: [
+          { text: 'AI-Augmented Versions of Common Roles', url: '/ai-workforce/augmented-roles', note: 'see your role after the augmentation' },
+          { text: 'The Defensive Skill Stack', url: '/ai-workforce/defensive-skill-stack', note: 'the skills that compound when audit shows what to protect' },
+          { text: 'AI tools in Ireland', url: 'https://vendors.ie/ai-tools-ireland', note: 'tools mentioned in the worked examples, compared honestly' },
+        ],
       },
       {
         type: 'sources',
         items: [
-          'OECD: "OECD Employment Outlook 2023: Artificial Intelligence and the Labour Market"',
-          'Accenture: "A New Era of Generative AI for Everyone" (2023) -- task-level decomposition methodology',
-          'Harvard Business Review: "How to Protect Your Job in the Age of AI" (2023)',
+          { text: 'OECD Employment Outlook 2023: Artificial Intelligence and the Labour Market', url: 'https://www.oecd.org/employment-outlook/' },
+          { text: 'World Economic Forum: Future of Jobs Report 2023 -- task-level skill mix data', url: 'https://www.weforum.org/reports/the-future-of-jobs-report-2023/' },
+          { text: 'Harvard Business Review: How to Protect Your Job in the Age of AI (2023)', url: 'https://hbr.org/' },
+          { text: 'Accenture: A New Era of Generative AI for Everyone (2023) -- task decomposition methodology', url: 'https://www.accenture.com/us-en/insights/technology' },
         ],
       },
     ],
