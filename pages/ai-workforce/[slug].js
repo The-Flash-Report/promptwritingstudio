@@ -37,14 +37,74 @@ function ContentBlock({ block }) {
           <p className="text-[#333333]">{block.text}</p>
         </div>
       )
+    case 'action':
+      return (
+        <div className="bg-[#FFF9DB] border-l-4 border-[#FFDE59] rounded-r-lg p-5 mb-6">
+          <p className="text-xs font-bold uppercase tracking-wide text-[#1A1A1A] mb-2">{block.label || 'What to do this week'}</p>
+          {Array.isArray(block.text) ? (
+            <ul className="space-y-2 text-[#333333] list-disc pl-5">
+              {block.text.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-[#333333]">{block.text}</p>
+          )}
+        </div>
+      )
+    case 'links':
+      return (
+        <div className="mt-8 mb-6 p-5 border border-[#E5E5E5] rounded-lg bg-white">
+          <p className="text-xs font-bold uppercase tracking-wide text-gray-500 mb-3">{block.label || 'Read next'}</p>
+          <ul className="space-y-2 text-sm text-[#333333]">
+            {block.items.map((item, i) => {
+              const isExternal = item.url && /^https?:/.test(item.url)
+              return (
+                <li key={i}>
+                  {item.url ? (
+                    <Link
+                      href={item.url}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      className="text-indigo-600 hover:underline font-medium"
+                    >
+                      {item.text}
+                    </Link>
+                  ) : (
+                    <span className="font-medium">{item.text}</span>
+                  )}
+                  {item.note ? <span className="text-gray-600"> -- {item.note}</span> : null}
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )
     case 'sources':
       return (
         <div className="mt-10 pt-6 border-t border-[#E5E5E5]">
           <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">Sources</h3>
           <ul className="space-y-1 text-sm text-[#333333]">
-            {block.items.map((item, i) => (
-              <li key={i} className="text-gray-600">{item}</li>
-            ))}
+            {block.items.map((item, i) => {
+              if (typeof item === 'string') return <li key={i} className="text-gray-600">{item}</li>
+              const isExternal = item.url && /^https?:/.test(item.url)
+              return (
+                <li key={i} className="text-gray-600">
+                  {item.url ? (
+                    <a
+                      href={item.url}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      className="text-indigo-600 hover:underline"
+                    >
+                      {item.text}
+                    </a>
+                  ) : (
+                    item.text
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </div>
       )
