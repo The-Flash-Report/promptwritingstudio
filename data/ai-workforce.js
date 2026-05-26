@@ -565,11 +565,11 @@ export const AI_WORKFORCE_MODULES = [
     shortTitle: 'Positioning at Work',
     description: 'How to position your AI skills usefully without inadvertently making yourself redundant -- what to say, what to avoid, and how to frame AI use as organisational value.',
     lastUpdated: '2026-05-25',
-    readingTime: '7 min',
+    readingTime: '12 min',
     content: [
       {
         type: 'lead',
-        text: 'Demonstrating AI competence at work has a trap: if you show that AI can handle your tasks without making clear what you do with the freed time, you may accelerate the conversation about whether your role is still needed. This module covers how to frame AI use productively.',
+        text: 'Demonstrating AI competence at work has a trap: if you show that AI can handle your tasks without making clear what you do with the freed time, you may accelerate the conversation about whether your role is still needed. The 2024 MIT Sloan and BCG Workforce Surveys repeatedly found that workers who hide their AI use perform worse over time than those who make it visible -- but visibility done badly is its own risk. This module covers how to frame AI use productively, what to avoid saying, and how to propose the augmented version of your role before your employer designs one for you.',
       },
       {
         type: 'h2',
@@ -577,12 +577,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'The useful frame is not "I used AI to do X faster" but "I used AI to handle X, which freed me to do Y -- and here is the business result of Y." Y should be a higher-judgment activity: a decision you made, a relationship you developed, a problem you identified, an insight you surfaced. The argument is not speed, it is reallocation toward value.',
+        text: 'The useful frame is not "I used AI to do X faster" but "I used AI to handle X, which freed me to do Y -- and here is the business result of Y." Y should be a higher-judgement activity: a decision you made, a relationship you developed, a problem you identified, an insight you surfaced. The argument is not speed, it is reallocation toward value. Speed alone invites the response "good, do it for two roles." Reallocation toward value invites the response "what else could you take on at that level?"',
+      },
+      {
+        type: 'p',
+        text: 'This framing also forces the discipline that protects you. If you cannot complete the sentence "I used AI to handle X, which freed me to do Y" with a real Y, you have a problem -- and it is better to find out before your manager does. The augmented version of your role is not a slogan; it is something you have to actually be doing.',
       },
       {
         type: 'example',
-        label: 'Example conversation',
-        text: 'Weak: "I can produce the weekly report in half the time now that I\'m using AI." Stronger: "I have automated the data assembly on the weekly report, which means I have had time to build a more detailed model of our churn drivers. I found a segment pattern that the standard report was masking. Here is what it means and what I recommend."',
+        label: 'Example conversation -- weekly status meeting',
+        text: 'Weak: "I can produce the weekly report in half the time now that I\'m using AI." Stronger: "I have automated the data assembly on the weekly report, which means I have had time to build a more detailed model of our churn drivers. I found a segment pattern that the standard report was masking. Here is what it means, here is what I recommend, and here is what I plan to investigate next." Same time saved, completely different conversation.',
+      },
+      {
+        type: 'example',
+        label: 'Example conversation -- annual review',
+        text: 'Weak: "I have become much more efficient with AI tools this year." Stronger: "Three concrete examples of where AI has changed my work: (1) I handed off the X workflow to a standardised process and used the time to do Y, which produced Z business result. (2) I tried using AI on W and discovered it is not reliable enough yet for our error tolerance -- here is what I learned and what I now use it for. (3) I led an informal initiative on team prompt sharing that saved roughly N hours per week across the team." The first sounds like a productivity stat. The second sounds like a senior contributor.',
       },
       {
         type: 'h2',
@@ -590,7 +599,11 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Avoid making productivity claims that invite the question "so we could have one person doing two jobs now?" Do not show that AI can replicate your entire role without describing what you contribute on top. Do not use AI output in client or stakeholder communications without reviewing it carefully -- if an error reaches a client, it came from you, not the tool.',
+        text: 'Avoid making productivity claims that invite the question "so we could have one person doing two jobs now?" Do not show that AI can replicate your entire role without describing what you contribute on top of the AI output. Do not use AI output in client, board, or external stakeholder communications without reviewing it carefully -- if an error reaches a customer, it came from you, not the tool, and the trust cost is yours. Do not undersell your judgement: the temptation to attribute good outcomes to "the AI" rather than to your direction is real and is the wrong move politically.',
+      },
+      {
+        type: 'p',
+        text: 'A separate trap: avoid AI demos that make your role look like a button-press. Demos are not neutral. A manager watching you produce a polished output in three minutes will not internally model "I am watching three minutes of work" -- they will model "this role can be done in three minutes." Frame demos as showing the AI-assisted step inside a longer process, with explicit attention to the steps the AI cannot do.',
       },
       {
         type: 'h2',
@@ -598,12 +611,16 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'The most direct approach is to use your role audit (module 2) to propose a revised role definition to your manager. Identify the tasks you can automate, describe what you will redirect that time toward, and show the business logic. This is more compelling than waiting for your employer to redesign roles and hoping the result works in your favour.',
+        text: 'The most direct approach is to use your role audit (module 2) to propose a revised role definition to your manager. Identify the tasks you can automate or AI-augment, describe what you will redirect that time toward, and show the business logic. This is more compelling than waiting for your employer to redesign roles and hoping the result works in your favour. Most role redesigns done by management without employee input are blunter than the redesigns proposed by employees who understand the work.',
       },
       {
         type: 'example',
         label: 'How to structure the proposal',
-        text: 'Three parts: (1) Here are the tasks I have identified where AI tools materially reduce time required. (2) Here is what I propose to do with that time -- specific higher-value activities tied to business outcomes. (3) Here is what I need to make this work -- tool access, a short upskilling period, a revised set of priorities.',
+        text: 'Three parts. (1) Here are the tasks I have identified where AI tools materially reduce time required, with rough estimates of hours saved per week. (2) Here is what I propose to do with that time -- specific higher-value activities tied to business outcomes that this team is already trying to achieve. (3) Here is what I need to make this work -- tool access, a short upskilling period, a revised set of priorities, and a check-in cadence to evaluate whether the new shape is working. Keep the document to one page. The point is to start the conversation, not to dictate the outcome.',
+      },
+      {
+        type: 'p',
+        text: 'A pre-conversation move that helps: float two or three of the redirected tasks informally before the proposal meeting. If your manager has already seen you do the higher-value work and liked it, the proposal is just formalising something already in motion. This is much easier to approve than a pure pitch.',
       },
       {
         type: 'h2',
@@ -611,26 +628,60 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'If your organisation is already deploying AI on your tasks without a clear conversation about what your role becomes, that is a signal. Ask directly: "As we deploy AI on [task category], what does this role look like in 12 months?" Getting a concrete answer -- even an uncertain one -- is more useful than avoiding the question.',
-      },
-      {
-        type: 'h2',
-        text: 'When to retrain, when to switch, when to stay',
+        text: 'If your organisation is already deploying AI on your tasks without a clear conversation about what your role becomes, that is a signal -- and the signal is usually that the organisation has decided where this is going but has not told you. Ask directly: "As we deploy AI on [task category], what does this role look like in 12 months? What can I do now to be valuable in that shape?" Getting a concrete answer -- even an uncertain or uncomfortable one -- is more useful than avoiding the question. Silence is not friendly here; silence usually means the answer is being figured out without you in the room.',
       },
       {
         type: 'p',
-        text: 'That question is covered in the next and final module. The short version: staying is viable when your role can credibly shift toward the defensive skill stack and your employer is aligned with that shift. Switching is worth considering when your current role is structurally high-exposure with no clear path to the augmented version. Retraining is worth the cost when it moves you to a role with lower structural exposure or higher skill-stack relevance.',
+        text: 'If the answer is unsatisfying or evasive, that is information too. It does not necessarily mean the role is doomed; it does mean your employer is not actively planning to invest in your transition. That should weight your decision in the next module heavily toward switching or retraining rather than staying.',
+      },
+      {
+        type: 'h2',
+        text: 'When to bring the union, the works council, or external advice',
+      },
+      {
+        type: 'p',
+        text: 'In Ireland and across the EU, AI deployment is increasingly covered by collective consultation rights. The EU AI Act and the Irish Workplace Relations Commission have specific frameworks for high-risk AI in the workplace, particularly around hiring, performance evaluation, and monitoring. If your role is in scope, your union or employee representative has both standing and resources you should know exist. This is not a confrontational move -- it is using a structure designed for exactly this transition.',
+      },
+      {
+        type: 'h2',
+        text: 'Looking ahead',
+      },
+      {
+        type: 'p',
+        text: 'The next module covers practical tools you can try this month, with anti-hype framing. The final module covers the bigger decision -- retrain, switch, or stay -- once you have the audit, the skill investment plan, and the conversation framework in place.',
+      },
+      {
+        type: 'action',
+        label: 'What to do this week',
+        text: [
+          'Draft the one-page proposal described above using your module 2 audit. Do not send it yet.',
+          'Identify one or two of the redirected higher-value tasks you can start on informally this month, before the formal conversation.',
+          'Book a calendar slot with your manager for the formal conversation 4-6 weeks out. That gives you time for the informal tasks to land.',
+          'If your employer is already deploying AI on your tasks without consultation, schedule the direct "what does this role look like in 12 months" conversation sooner -- within two weeks.',
+        ],
+      },
+      {
+        type: 'links',
+        label: 'Next in this track',
+        items: [
+          { text: 'Tool of the Month: Practical AI in Your Workflow', url: '/ai-workforce/tool-of-the-month', note: 'specific tools by category, anti-hype framing' },
+          { text: 'When to Retrain, When to Switch, When to Stay', url: '/ai-workforce/retrain-switch-stay', note: 'the bigger decision after these conversations' },
+          { text: 'AI tools in Ireland', url: 'https://vendors.ie/ai-tools-ireland', note: 'tool comparisons referenced in the demos discussion' },
+        ],
       },
       {
         type: 'sources',
         items: [
-          'HBR: "How to Have an Honest Conversation About AI With Your Boss" (2024)',
-          'MIT Sloan Management Review: "Navigating the AI Transition in Your Career" (2023)',
-          'World Economic Forum: "Human-Centred AI: A Framework for Action" (2023)',
+          { text: 'HBR: How to Have an Honest Conversation About AI With Your Boss (2024)', url: 'https://hbr.org/' },
+          { text: 'MIT Sloan Management Review: Navigating the AI Transition in Your Career (2023)', url: 'https://sloanreview.mit.edu/' },
+          { text: 'BCG / MIT Sloan: How People Are Really Using GenAI (2024)', url: 'https://www.bcg.com/publications' },
+          { text: 'World Economic Forum: Human-Centred AI -- A Framework for Action (2023)', url: 'https://www.weforum.org/reports/' },
+          { text: 'EU AI Act overview -- workplace and high-risk categories', url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai' },
+          { text: 'Irish Workplace Relations Commission -- AI and the workplace guidance', url: 'https://www.workplacerelations.ie/' },
         ],
       },
     ],
-    next: null,
+    next: 'tool-of-the-month',
     prev: 'defensive-skill-stack',
   },
 ]
