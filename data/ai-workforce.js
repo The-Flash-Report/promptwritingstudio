@@ -10,11 +10,23 @@ export const AI_WORKFORCE_MODULES = [
     shortTitle: 'Capability Boundaries',
     description: 'A plain-language map of where current AI systems perform reliably, where they struggle, and why those lines move over time.',
     lastUpdated: '2026-05-25',
-    readingTime: '8 min',
+    readingTime: '12 min',
     content: [
       {
         type: 'lead',
-        text: 'Published ranges suggest that between 25% and 40% of current work tasks could be automated using AI at current capability levels (McKinsey, 2023; Goldman Sachs, 2023). That range matters: the difference between 25% and 40% is a different plan of action. This module explains what is driving that uncertainty and how to read it usefully.',
+        text: 'Published ranges from major labour research suggest that between 25% and 40% of current work tasks could be automated using AI at present capability levels (McKinsey, 2023; Goldman Sachs, 2023). That range matters more than the headline: the difference between the low and high end is a different plan of action for your career. This module explains what drives the uncertainty, where the lines actually sit today, and how to read capability claims usefully without panic or hype.',
+      },
+      {
+        type: 'h2',
+        text: 'Reading the headline numbers honestly',
+      },
+      {
+        type: 'p',
+        text: 'When you see "40% of jobs will be impacted by AI" in a headline, it is almost certainly a translation of a more careful underlying claim. McKinsey Global Institute estimated in 2023 that generative AI could automate work activities that absorb 60-70% of employee time -- but the same report distinguished between automating tasks and replacing jobs. Goldman Sachs separately estimated that 18% of global work could be automated by AI, with major variation by occupation and country. Stanford HAI tracks year-on-year shifts in what AI systems can actually do on benchmarks; the 2024 AI Index Report noted that AI surpassed humans on several reading and image classification benchmarks while still trailing badly on planning and multi-step reasoning.',
+      },
+      {
+        type: 'p',
+        text: 'None of these is a prediction that a specific role disappears. They are estimates of task-level exposure aggregated upward. Your job is a bundle of tasks, and the exposure of each task is what matters for your planning.',
       },
       {
         type: 'h2',
@@ -22,16 +34,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Current AI systems (large language models, vision models, speech-to-text) are reliable for a specific class of task: pattern completion across language, image, and structured data. In practice this covers: summarising documents, drafting structured text from a brief, classifying inputs into predefined categories, extracting structured data from unstructured text, translating between languages, and generating code from a specification.',
+        text: 'Current AI systems -- large language models, vision models, speech-to-text -- are reliable for a specific class of task: pattern completion across language, image, and structured data. In practice this covers summarising documents, drafting structured text from a brief, classifying inputs into predefined categories, extracting structured data from unstructured text, translating between languages, transcribing audio, and generating code from a specification.',
       },
       {
         type: 'p',
-        text: 'The common thread is that these tasks have a large amount of prior examples to learn from and the output can be checked by a human quickly. When both conditions hold, AI performance is high and error cost is manageable.',
+        text: 'The common thread across reliable tasks is two-fold: there is a large body of prior examples the model can learn from, and the output can be verified by a human quickly. When both conditions hold, AI performance is high and the cost of any individual error is small because the human catches it in the verification step.',
       },
       {
         type: 'example',
-        label: 'Worked example',
-        text: 'A financial analyst receives 80 earnings call transcripts per quarter and needs key metrics from each. Extracting numbers and categorising management commentary is a pattern-completion task. An AI tool cuts that from 3 hours to 20 minutes. The analyst spends the freed time on the judgment layer: what do those numbers mean for the portfolio?',
+        label: 'Worked example: financial analyst',
+        text: 'A financial analyst receives 80 earnings call transcripts per quarter and needs key metrics from each. Extracting numbers and categorising management commentary into bullish/bearish/neutral signals is pattern completion. An AI tool cuts that from 3 hours to 20 minutes, and the analyst spot-checks 8 outputs against the source transcript. The freed time goes to the judgment layer: what do these metrics mean for the portfolio, what to flag to the PM, which calls deserve a deeper second read.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: HR coordinator',
+        text: 'An HR coordinator screens 200 applications per role. Extracting structured fields (years of experience, named tools, location, education) into a comparable table is pattern completion. Whether a candidate would be a good cultural fit, whether the cover letter shows real interest, whether the gap year explanation is credible -- those are judgment calls. The augmented coordinator uses AI for the table and keeps every judgment call human, both for accuracy and because using AI for hiring decisions in the EU now sits under the EU AI Act as high-risk and demands a human-in-the-loop.',
       },
       {
         type: 'h2',
@@ -39,16 +56,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'AI systems fail in predictable ways. They struggle with tasks that require: maintaining a coherent plan over many steps without explicit tracking; genuine novelty (problems outside their training distribution); sensorimotor work that requires physical feedback; ethical judgment in novel situations; real-time information not present in training data; and interpersonal dynamics -- reading a room, negotiating under pressure, building long-term trust.',
+        text: 'AI systems fail in predictable ways. They struggle with tasks that require maintaining a coherent plan over many steps without explicit tracking, genuine novelty (problems outside their training distribution), sensorimotor work that requires physical feedback, ethical judgment in unfamiliar situations, real-time information not present in training data, and interpersonal dynamics -- reading a room, negotiating under pressure, building long-term trust through repeated small interactions.',
       },
       {
         type: 'p',
-        text: 'These are not temporary gaps that will close next quarter. Some reflect hard constraints in current architectures. Others may close, but on a multi-year timeline. Plan around the capabilities that exist now, not forecasts.',
+        text: 'These are not temporary gaps that close next quarter. Some reflect hard constraints in current architectures (the model has no body, no continuous memory, no stake in your meeting). Others may close, but on a multi-year timeline. The right move is to plan around the capabilities that exist now and the failure modes that will still exist 18 months from now, not around the forecasts.',
       },
       {
         type: 'example',
-        label: 'Worked example',
-        text: 'A sales manager asks an AI tool to generate a strategy for recovering a key account after a service failure. The tool produces a plausible-looking plan. But it does not know the client contact\'s personality, the political dynamics inside the client organisation, the informal history of the relationship, or what the client actually said in the last call. The plan sounds reasonable and is missing the most important context. The manager needs to supply all of that and substantially rewrite the output.',
+        label: 'Worked example: sales account recovery',
+        text: 'A sales manager asks an AI tool to generate a strategy for recovering a key account after a service failure. The tool produces a plausible-looking plan with bullet points about "active listening" and "transparent communication". It does not know the client contact\'s personality, the political dynamics inside the client organisation, the informal history of the relationship, or what the client actually said in the last call. The plan sounds reasonable and is missing the most important context. The manager has to supply all of that and substantially rewrite the output. The plan is faster than starting from a blank page, and useless as a final artefact.',
+      },
+      {
+        type: 'example',
+        label: 'Worked example: cross-functional project planning',
+        text: 'A project manager asks an AI tool to plan a six-month product launch involving marketing, engineering, legal, and three external vendors. The model produces a sensible-looking Gantt chart. But it cannot know that engineering is already over capacity, that legal has a backlog on a different launch, that the agency relationship is strained, or that the CFO has signalled a budget review in month three. Project planning at this level is a coordination problem under real organisational constraints, not a template task. The model can produce a useful first draft of the visible schedule, and a junior PM with a phone could produce the same. The senior PM\'s actual value is the constraint-juggling underneath.',
       },
       {
         type: 'h2',
@@ -56,28 +78,52 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'AI capability is not static. Model releases in 2023-2025 expanded reliable performance on coding, multimodal tasks, and long-document reasoning. But progress is uneven. Some tasks that seemed close to automation (complex legal analysis, medical diagnosis) remain heavily human-dependent because error cost is high and edge cases are structurally important.',
+        text: 'AI capability is not static. Model releases between 2023 and 2025 expanded reliable performance on coding, multimodal tasks, and long-document reasoning. But progress is uneven. Some tasks that looked close to automation (complex legal analysis, medical diagnosis, contract negotiation) remain heavily human-dependent because error cost is high and edge cases are structurally important. Others jumped faster than most forecasts expected, particularly anything involving code, translation, and structured extraction.',
       },
       {
         type: 'p',
-        text: 'The most useful signal to watch is not "AI is getting smarter" in general but specific task-level claims from published evaluations: model cards from Anthropic, OpenAI, and Google; the Stanford HAI AI Index Report (annual); and OECD occupation-level analysis. These cite what changed, with evidence. Industry forecasts without specific task grounding are less useful for planning.',
+        text: 'The most useful signal to watch is not "AI is getting smarter" in general but specific task-level claims from published evaluations: the system cards published with each model release from Anthropic, OpenAI, and Google; the Stanford HAI AI Index Report (annual); and OECD occupation-level analysis. These cite what changed, with evidence and benchmarks. Industry forecasts without specific task grounding -- "30% of work will be automated by 2030" without saying which tasks -- are less useful for planning your week, your year, or your next role.',
+      },
+      {
+        type: 'p',
+        text: 'A reliable filter: when a capability claim is made, ask "on what specific evaluation, scored how, against what baseline?" If the answer is "it impressed people in a demo", treat it as a leading indicator and nothing more. If the answer is "GPQA Diamond, scored 84%, human PhD baseline is 65%", you can plan around it.',
       },
       {
         type: 'h2',
-        text: 'How to use this',
+        text: 'How to use this in your role',
       },
       {
         type: 'p',
-        text: 'The practical question is not "will AI replace my job" but "which of my tasks fit the pattern-completion profile, and which require judgment, novelty, or interpersonal skill?" The next module walks through a structured way to answer that for your specific role.',
+        text: 'The practical question is not "will AI replace my job" but "which of my tasks fit the pattern-completion profile, and which require judgment, novelty, or interpersonal context?" The next module walks through a structured way to answer that for your specific role. Before you get there, the practice block below will get you started on a working map of your own week.',
+      },
+      {
+        type: 'action',
+        label: 'What to do this week',
+        text: [
+          'For three working days, keep a simple log of every distinct task you do (10 minutes per task or longer). Aim for 15-25 unique task types by end of the third day.',
+          'Against each task, write a one-word verdict: "pattern" (well-defined inputs and outputs), "judgment" (you weigh options), or "interpersonal" (a specific person\'s context matters).',
+          'Bookmark the Stanford HAI AI Index Report and the OECD Employment Outlook. Both are free and tracked annually -- they are your honest signal for capability changes.',
+          'Do not act on the log yet. Module 2 turns it into a role audit.',
+        ],
+      },
+      {
+        type: 'links',
+        label: 'Next in this track',
+        items: [
+          { text: 'Audit Your Role: Task-Level AI Exposure', url: '/ai-workforce/audit-your-role', note: 'turn your task log into a structured role audit' },
+          { text: 'AI-Augmented Versions of Common Roles', url: '/ai-workforce/augmented-roles', note: 'see what your role looks like after the augmentation' },
+          { text: 'AI tools in Ireland', url: 'https://vendors.ie/ai-tools-ireland', note: 'practical tool comparisons for working professionals' },
+        ],
       },
       {
         type: 'sources',
         items: [
-          'McKinsey Global Institute: "The economic potential of generative AI" (2023)',
-          'Goldman Sachs Global Economics: "The Potentially Large Effects of Artificial Intelligence on Economic Growth" (2023)',
-          'Stanford HAI: AI Index Report 2024',
-          'Anthropic model cards: claude.ai/model-card',
-          'OECD Employment Outlook 2023: Chapter on AI and the labour market',
+          { text: 'McKinsey Global Institute: The economic potential of generative AI (2023)', url: 'https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier' },
+          { text: 'Goldman Sachs Global Economics: The Potentially Large Effects of Artificial Intelligence on Economic Growth (2023)', url: 'https://www.goldmansachs.com/insights/articles/generative-ai-could-raise-global-gdp-by-7-percent' },
+          { text: 'Stanford HAI: AI Index Report 2024', url: 'https://aiindex.stanford.edu/report/' },
+          { text: 'OECD Employment Outlook 2023: AI and the labour market', url: 'https://www.oecd.org/employment-outlook/' },
+          { text: 'Anthropic model cards (system cards published with each release)', url: 'https://www.anthropic.com/news' },
+          { text: 'EU AI Act overview (relevant to high-risk task categories such as hiring)', url: 'https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai' },
         ],
       },
     ],
