@@ -258,11 +258,11 @@ export const AI_WORKFORCE_MODULES = [
     shortTitle: 'Augmented Roles',
     description: 'What the accountant, marketer, writer, customer support specialist, and designer role looks like when AI handles the pattern work -- and where human judgment becomes the bottleneck.',
     lastUpdated: '2026-05-25',
-    readingTime: '10 min',
+    readingTime: '15 min',
     content: [
       {
         type: 'lead',
-        text: 'The augmented version of a role is not a reduced version. It typically involves less volume work and more judgment, communication, and taste -- the things AI cannot reliably do. This module maps five common roles through that transition.',
+        text: 'The augmented version of a role is not a reduced version. It typically involves less volume work and more judgment, communication, and taste -- the things AI cannot reliably do. This module maps five common roles through that transition. McKinsey\'s 2023 work on AI and the future of work estimated that 60-70% of employee time across all occupations is currently spent on activities that could be partially automated; the World Economic Forum Future of Jobs Report 2023 estimated that 44% of worker skills will be disrupted over five years. Both ranges are aggregate. What follows is what those numbers actually mean at the desk level, role by role.',
       },
       {
         type: 'h2',
@@ -270,12 +270,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Routine data extraction, reconciliation, and standard report formatting are high AI-exposure tasks. The augmented version shifts time toward: interpreting anomalies, advising on tax strategy for novel situations, communicating financial risk to non-finance stakeholders, and managing relationships with auditors and regulators. Technical accounting knowledge stays essential -- the AI produces outputs that still need a qualified professional to validate.',
+        text: 'Routine data extraction, reconciliation, transaction categorisation, variance commentary, and standard report formatting are high AI-exposure tasks. Tools like Excel\'s Copilot, Microsoft 365 Copilot, and finance-specific platforms now produce useable first drafts of monthly management accounts from structured ledger data. The augmented version of the role shifts time toward interpreting anomalies, advising on tax strategy for novel situations, communicating financial risk to non-finance stakeholders, and managing relationships with auditors and regulators. Technical accounting knowledge stays essential -- the AI produces outputs that a qualified professional still has to validate, and in regulated contexts the human review is non-negotiable.',
+      },
+      {
+        type: 'p',
+        text: 'The augmented accountant is increasingly an internal advisor, not a producer of reports. The reports get produced anyway; the value is what gets said about them in the room. That requires presenting financial information in plain language to non-finance colleagues and helping them make better operational decisions.',
       },
       {
         type: 'example',
-        label: 'What changes',
-        text: 'Pulling quarterly numbers from the ERP and formatting them into board templates: mostly automated. Explaining why margin compressed despite revenue growth, and recommending a specific response: still human. The ratio of "format and assemble" to "interpret and advise" shifts dramatically.',
+        label: 'What changes -- monthly close',
+        text: 'Pulling quarterly numbers from the ERP and formatting them into board templates: mostly automated. Explaining why margin compressed despite revenue growth, and recommending a specific response: still human. The ratio of "format and assemble" to "interpret and advise" shifts dramatically. A finance analyst who spent 70% of the week on assembly and 30% on interpretation may move toward 25% assembly and 75% interpretation -- but only if they actively claim the interpretation work.',
+      },
+      {
+        type: 'example',
+        label: 'What changes -- audit preparation',
+        text: 'Pulling supporting documentation, sampling transactions for testing, generating audit trail summaries: these are AI-augmentable. Negotiating audit scope with the auditor, deciding which judgmental areas (revenue recognition, asset impairment, going-concern assessment) to defend with what evidence: human. The augmented audit prep team is leaner on documentation labour and heavier on partner-level conversations earlier in the cycle.',
       },
       {
         type: 'h2',
@@ -283,12 +292,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'First-draft copy, A/B test variants, audience segmentation from structured data, and campaign performance summaries are high exposure. The augmented role concentrates on: brand judgment (what is on-brand when an AI can only produce plausible-sounding copy), strategy (which channels and messages for which audience at which stage), and relationships with agencies, media partners, and sales teams.',
+        text: 'First-draft copy, A/B test variants, audience segmentation from structured data, campaign performance summaries, social-post variations, and ad-creative iterations are high exposure. Almost every modern marketing stack now has AI features generating exactly these outputs. The augmented role concentrates on brand judgement -- what is on-brand when an AI can produce plausible-sounding copy in any voice -- strategy (which channels and messages for which audience at which stage), and relationships with agencies, media partners, and sales teams.',
+      },
+      {
+        type: 'p',
+        text: 'The harder shift is in measurement. AI tools make it easy to run more experiments, generate more variants, and produce more reports. That increases the volume of data but not necessarily the volume of insight. The augmented marketer becomes better at choosing what not to measure, what experiments not to run, and which channel results to ignore as noise. Strategic restraint becomes more valuable as production becomes cheaper.',
       },
       {
         type: 'example',
-        label: 'What changes',
-        text: 'Writing ten variations of an email subject line: AI does this in seconds. Deciding which one reflects the brand accurately and will land with the specific audience segment at this moment in the campaign: human judgment. The marketer role moves toward creative direction and strategic orchestration.',
+        label: 'What changes -- a campaign launch',
+        text: 'Writing ten variations of an email subject line: AI does this in seconds. Deciding which one reflects the brand accurately, will land with the specific audience segment at this moment in the campaign, and will not erode trust with the long-term list: human judgement. The marketer role moves toward creative direction and strategic orchestration, with the team running smaller and the agency relationships getting more strategic.',
+      },
+      {
+        type: 'example',
+        label: 'What changes -- B2B account-based marketing',
+        text: 'AI tools can identify look-alike companies, surface intent signals from web data, and draft initial outreach at scale. They cannot judge whether the named contact at the prospect company is the right entry point given the political map of that organisation, or whether the timing is right relative to their fiscal year and recent leadership changes. The marketer\'s value is the political read on a specific account, supported by AI that handles the volume layer underneath.',
       },
       {
         type: 'h2',
@@ -296,12 +314,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Formulaic content (product descriptions, FAQs, templated articles on known topics) has high AI exposure. The augmented writer concentrates on: original research and reporting, distinctive voice and point of view, editorial judgment about what to cover and how, and structured persuasion that requires understanding a specific reader\'s situation.',
+        text: 'Formulaic content -- product descriptions, FAQs, templated articles on known topics, transcript-based summaries -- has high AI exposure. The augmented writer concentrates on original research and reporting (going to the source, not paraphrasing existing content), distinctive voice and point of view, editorial judgement about what to cover and how, and structured persuasion that requires understanding a specific reader\'s situation. SEO-driven content that exists only to capture queries is increasingly produced and ranked by AI on both sides; that whole layer is collapsing toward zero margin.',
+      },
+      {
+        type: 'p',
+        text: 'A different shift in publishing: AI Overviews on Google and answer engines on ChatGPT, Perplexity, and Claude are reducing the click-through rate on commodity informational content. The writer who survives the next two years is one whose work is being cited as the source by those engines, not paraphrased into them. That requires either original reporting, named expertise, or a position the engine cannot derive from scraping existing content.',
       },
       {
         type: 'example',
-        label: 'What changes',
-        text: 'A first draft of a blog post from a detailed brief: AI can produce this faster than any human. Whether the post says something true and interesting that the reader will act on: that depends on research, editorial judgment, and voice that the AI cannot supply from a brief alone. The writer role shifts toward the judgment and editorial layer.',
+        label: 'What changes -- a how-to article',
+        text: 'A first draft of a how-to article from a detailed brief: AI produces this faster than any human. Whether the article says something true and useful that the reader will act on, includes specific worked examples from real practice, and reflects a point of view the reader respects: this depends on research, editorial judgement, and voice that the AI cannot supply from a brief alone. The writer role shifts toward the judgement, sourcing, and editorial layer -- closer to the work of an editor with reporting skill than a producer of templated text.',
+      },
+      {
+        type: 'example',
+        label: 'What changes -- thought leadership for an executive',
+        text: 'AI can ghost-write a plausible LinkedIn post in any executive\'s past voice given enough samples. It cannot know what the executive actually thinks about a specific market event that happened this morning, what they want to be associated with strategically, or which of three positions they should take given what their CEO said last week. The ghost-writer role moves from producer to interviewer-strategist -- much more time in conversation with the executive, much less time at the keyboard.',
       },
       {
         type: 'h2',
@@ -309,12 +336,21 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'L1 ticket resolution, FAQ responses, and status updates on known issues are high exposure. The augmented support specialist handles: escalations that require empathy and de-escalation, complex product issues with no prior resolution path, internal escalation and coordination, and identifying systemic issues from patterns in customer feedback.',
+        text: 'L1 ticket resolution, FAQ responses, status updates on known issues, and standard refund processing are high exposure. Modern customer-support AI now resolves measurable shares of L1 volume without escalation -- Klarna publicly reported in 2024 that its AI assistant handled work equivalent to roughly 700 full-time agents on volume that was previously L1. The augmented support specialist handles escalations that require empathy and de-escalation, complex product issues with no prior resolution path, internal coordination with engineering, and identifying systemic issues from patterns in customer feedback that no individual ticket would surface.',
+      },
+      {
+        type: 'p',
+        text: 'A second shift: the augmented support function becomes a primary product-feedback loop. Specialists who can synthesise hundreds of conversations into a clear "here is what customers are actually struggling with this month" become more valuable, because that synthesis is a judgement task that AI assists but does not replace. Routing that signal to product and engineering with credibility is the new value layer.',
       },
       {
         type: 'example',
-        label: 'What changes',
-        text: 'A customer whose subscription renewal failed due to a payment processor error: AI can identify the issue and trigger the fix. A customer who has been having problems for three months, is angry, and is about to cancel: AI can draft a response, but the specialist\'s judgment about what to say and offer is what saves the account.',
+        label: 'What changes -- a churning account',
+        text: 'A customer whose subscription renewal failed due to a payment processor error: AI identifies the issue and triggers the fix in seconds. A customer who has had problems for three months, is angry, and is about to cancel: AI drafts a response, but the specialist\'s judgement about what to say and offer is what saves the account. The compensation level, the tone of the apology, the choice between a one-off concession and a multi-month account-management commitment -- these are decisions where the AI is wrong as often as right and the cost of being wrong is the account.',
+      },
+      {
+        type: 'example',
+        label: 'What changes -- a complex multi-product issue',
+        text: 'A B2B customer reporting an issue that spans authentication, billing, and the API: AI can quickly diagnose which subsystem is failing if the issue matches known patterns. When it does not, the specialist has to coordinate engineers across three teams, manage the customer\'s expectations through a multi-day investigation, and decide when to escalate to engineering leadership. Coordination under uncertainty across internal teams is high-trust work that the AI does not do.',
       },
       {
         type: 'h2',
@@ -322,27 +358,56 @@ export const AI_WORKFORCE_MODULES = [
       },
       {
         type: 'p',
-        text: 'Generating visual variations, resizing assets for multiple formats, and producing stock-style imagery are high exposure. The augmented designer focuses on: concept development and creative direction, understanding a brief well enough to evaluate AI output against it, brand consistency judgment, and communication with stakeholders who cannot evaluate AI output themselves.',
-      },
-      {
-        type: 'example',
-        label: 'What changes',
-        text: 'Producing 20 logo variations from a brief: AI tools can do this. Deciding which one captures what the client actually meant -- and presenting that choice with a clear rationale -- is design judgment. The designer becomes more of a director of AI-generated options and less a producer of individual assets.',
-      },
-      {
-        type: 'h2',
-        text: 'The common pattern',
+        text: 'Generating visual variations, resizing assets for multiple formats, producing stock-style imagery, drafting wireframes from a brief, and producing variations of a known layout are high exposure. The augmented designer focuses on concept development and creative direction, understanding a brief well enough to evaluate AI output against it, brand consistency judgement, and communication with stakeholders who cannot evaluate AI output themselves. Senior designers are spending more time on prompt-and-curate workflows and less time on production.',
       },
       {
         type: 'p',
-        text: 'Across all five roles, the shift is similar: volume work and pattern work moves toward AI; judgment, communication, and taste become the primary value. That does not make roles easier -- those skills are harder to develop and less commoditised. It does mean the skills worth investing in are different from the ones that got most of the professional development attention in the pre-AI era.',
+        text: 'A second shift specific to product designers: as AI lowers the cost of producing UI variations, the bottleneck moves to deciding which variation to ship based on user research, accessibility constraints, business logic, and engineering cost. Designers who pair tightly with PM and engineering on that decision become more central; designers whose value was production speed lose ground.',
+      },
+      {
+        type: 'example',
+        label: 'What changes -- brand identity work',
+        text: 'Producing 20 logo variations from a brief: AI tools do this. Deciding which one captures what the client actually meant, presenting that choice with a clear rationale, and defending it through three rounds of stakeholder feedback: design judgement. The designer becomes more of a director of AI-generated options and a defender of strategic choices, and less of a producer of individual assets.',
+      },
+      {
+        type: 'example',
+        label: 'What changes -- a product feature design',
+        text: 'AI can suggest layout patterns and produce variations against a design system. It cannot weigh the accessibility implications for screen-reader users against the business stakeholder\'s preference for a denser layout, or know that the engineering team is constrained on this sprint and the simpler pattern is the only realistically shippable one. The designer who can hold all three constraints in mind and make a defensible call is the one whose role survives.',
+      },
+      {
+        type: 'h2',
+        text: 'The common pattern across all five roles',
+      },
+      {
+        type: 'p',
+        text: 'Volume work and pattern work moves toward AI. Judgement, communication, and taste become the primary value. That does not make roles easier -- those skills are harder to develop, take longer to acquire, and are less commoditised. The skills worth investing in are different from the ones that got most of the professional development attention in the pre-AI era. The next module unpacks that skill stack in detail; the practice block below gets you started on the version specific to your role.',
+      },
+      {
+        type: 'action',
+        label: 'What to do this week',
+        text: [
+          'Identify the role on this list closest to yours (or the nearest analogue if yours is not here -- legal, engineering, operations, HR all follow similar patterns).',
+          'List three tasks you do that match the "high exposure" descriptions above. Pick one and try doing it with AI assistance this week -- log time saved and quality.',
+          'List three tasks that match the "augmented" descriptions (judgement, communication, coordination) and that you currently spend less than 20% of your time on. Pick one and book a 90-minute block to do it deliberately.',
+          'After two weeks of this, your task mix should already look more like the augmented version.',
+        ],
+      },
+      {
+        type: 'links',
+        label: 'Next in this track',
+        items: [
+          { text: 'The Defensive Skill Stack', url: '/ai-workforce/defensive-skill-stack', note: 'the skills that compound when production becomes cheap' },
+          { text: 'Conversations With Your Employer', url: '/ai-workforce/conversations-with-your-employer', note: 'how to make the augmented version of your role visible' },
+          { text: 'AI tools in Ireland', url: 'https://vendors.ie/ai-tools-ireland', note: 'compared by use case -- meetings, drafting, research, support' },
+        ],
       },
       {
         type: 'sources',
         items: [
-          'McKinsey Global Institute: "A new future of work: The race to deploy AI and raise skills" (2023)',
-          'World Economic Forum: "Future of Jobs Report 2023"',
-          'HBR: "In the Age of AI, You Need Both Artificial Intelligence and Human Intelligence" (2023)',
+          { text: 'McKinsey Global Institute: A new future of work -- the race to deploy AI and raise skills (2023)', url: 'https://www.mckinsey.com/mgi/our-research/a-new-future-of-work-the-race-to-deploy-ai-and-raise-skills-in-an-unequal-world' },
+          { text: 'World Economic Forum: Future of Jobs Report 2023', url: 'https://www.weforum.org/reports/the-future-of-jobs-report-2023/' },
+          { text: 'HBR: In the Age of AI, You Need Both Artificial Intelligence and Human Intelligence (2023)', url: 'https://hbr.org/' },
+          { text: 'Stanford HAI AI Index Report 2024 -- occupational impact section', url: 'https://aiindex.stanford.edu/report/' },
         ],
       },
     ],
