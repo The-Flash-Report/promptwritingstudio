@@ -1,0 +1,56 @@
+name: Observatory weekly email
+
+# Runs Tuesday 12:00 UTC — after the Sunday observatory run and time for Bryan
+# to merge the observatory PR before this cron fires.
+# Also available via workflow_dispatch for Bryan to trigger after a manual merge.
+
+on:
+  schedule:
+    - cron: '0 12 * * 2'  # Tuesday 12:00 UTC
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Observatory run date to use (YYYY-MM-DD). Defaults to latest in data/.'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Print payload without hitting Kit API (true/false).'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: observatory-weekly-email
+  cancel-in-progress: false
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    env:
+      CONVERTKIT_API_SECRET: ${{ secrets.CONVERTKIT_API_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Send best-mover email (or dry-run)
+        run: |
+          RUN_ID_ARG=""
+          if [ -n "${{ inputs.run_id }}" ]; then
+            RUN_ID_ARG="--run-id ${{ inputs.run_id }}"
+          fi
+
+          DRY_RUN_ARG=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_ARG="--dry-run"
+          fi
+
+          python3 scripts/observatory-email/send_weekly_email.py $RUN_ID_ARG $DRY_RUN_ARG

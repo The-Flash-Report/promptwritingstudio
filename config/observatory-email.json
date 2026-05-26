@@ -1,0 +1,16 @@
+{
+  "significance_threshold": 2,
+  "observatory_url": "https://promptwritingstudio.com/observatory",
+  "vendors_ie_fallback_url": "",
+  "model_vendor_links": {},
+  "model_display_names": {
+    "claude-opus-4-7": "Claude Opus 4",
+    "claude-sonnet-4-6": "Claude Sonnet 4",
+    "claude-haiku-4-5": "Claude Haiku 4",
+    "gpt-4o": "GPT-4o",
+    "gpt-4o-mini": "GPT-4o mini",
+    "gemini-2.5-pro": "Gemini 2.5 Pro",
+    "gemini-2.5-flash": "Gemini 2.5 Flash",
+    "llama-3.3-70b": "Llama 3.3 70B"
+  }
+}
