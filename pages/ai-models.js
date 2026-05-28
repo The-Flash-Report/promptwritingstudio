@@ -4,6 +4,8 @@ import Layout from '../components/layout/Layout';
 import LastVerified from '../components/LastVerified';
 import { AI_MODELS, AI_MODELS_META } from '../lib/ai-models';
 import { generateFAQSchema } from '../lib/schemaGenerator';
+import MarketShareSection from '../components/sections/MarketShareSection';
+import marketShareSnapshot from '../data/ai-models-market-share/2026-05.json';
 
 export default function AIModels() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -26,6 +28,24 @@ export default function AIModels() {
       "name": "PromptWritingStudio",
       "url": "https://promptwritingstudio.com"
     }
+  };
+
+  const datasetSchema = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "AI Model Market Share - Monthly Snapshots",
+    "description": "Monthly estimated market share of major AI models by API call volume, derived from public usage signals including OpenRouter leaderboard data, Hugging Face download counts, and Stack Overflow Developer Survey data.",
+    "url": "https://promptwritingstudio.com/ai-models",
+    "creator": {
+      "@type": "Organization",
+      "name": "PromptWritingStudio",
+      "url": "https://promptwritingstudio.com"
+    },
+    "dateModified": marketShareSnapshot._meta.snapshot_date,
+    "temporalCoverage": `${marketShareSnapshot._meta.trend_months[0]}/${marketShareSnapshot._meta.period}`,
+    "variableMeasured": "AI model API call share (estimated percentage)",
+    "measurementTechnique": marketShareSnapshot._meta.methodology,
+    "license": "https://creativecommons.org/licenses/by/4.0/"
   };
 
   // FAQPage schema — mirrors visible content on this page (section headings + body copy).
@@ -146,6 +166,10 @@ export default function AIModels() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
       />
 
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -612,35 +636,6 @@ export default function AIModels() {
             ))}
           </div>
 
-          {/* Summary Stats */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mt-12">
-            <h2 className="text-3xl font-bold text-center mb-8">Current AI Model Landscape</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-              <div className="p-6 bg-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-blue-600 mb-2">{models.length}</div>
-                <div className="text-gray-600">Total Models</div>
-              </div>
-              <div className="p-6 bg-green-50 rounded-lg">
-                <div className="text-3xl font-bold text-green-600 mb-2">
-                  {models.filter(m => m.categories.includes('open-source')).length}
-                </div>
-                <div className="text-gray-600">Open Source</div>
-              </div>
-              <div className="p-6 bg-purple-50 rounded-lg">
-                <div className="text-3xl font-bold text-purple-600 mb-2">
-                  {models.filter(m => m.categories.includes('multimodal')).length}
-                </div>
-                <div className="text-gray-600">Multimodal</div>
-              </div>
-              <div className="p-6 bg-orange-50 rounded-lg">
-                <div className="text-3xl font-bold text-orange-600 mb-2">
-                  {new Set(models.map(m => m.company)).size}
-                </div>
-                <div className="text-gray-600">Companies</div>
-              </div>
-            </div>
-          </div>
-
           {/* Key Insights */}
           <div className="bg-white rounded-lg shadow-lg p-8 mt-8">
             <h2 className="text-2xl font-bold mb-6">Key Insights</h2>
@@ -666,6 +661,8 @@ export default function AIModels() {
               </div>
             </div>
           </div>
+
+          <MarketShareSection snapshotData={marketShareSnapshot} />
         </div>
       </div>
 

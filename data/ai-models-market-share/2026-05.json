@@ -1,0 +1,106 @@
+{
+  "_meta": {
+    "snapshot_date": "2026-05-01",
+    "generated": "2026-05-25",
+    "period": "May 2026",
+    "data_sources": [
+      "OpenRouter public router leaderboard (proxied API call volumes)",
+      "Hugging Face open-weight checkpoint downloads",
+      "Stack Overflow 2025 Developer Survey (self-reported usage)"
+    ],
+    "methodology": "Share figures are directional estimates blended from three publicly available developer-usage signals that measure different things: OpenRouter's public router leaderboard tracks API call volumes, Hugging Face counts downloads of open-weight checkpoints, and the Stack Overflow 2025 Developer Survey records self-reported usage. Because these axes are incommensurate (an API call is not a download is not a survey response), the resulting figure is best read as a normalized index of developer-facing usage rather than a precise market-share percentage. Coverage is restricted to the 10 tracked models in this snapshot; long-tail and niche models, private self-hosted enterprise deployments, and consumer-app usage without an API equivalent are not included. Numbers are rounded to whole percentages; the visible sum approximates 100% of tracked usage rather than 100% of the broader AI model market.",
+    "trend_months": ["Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026"]
+  },
+  "models": [
+    {
+      "id": "gpt-4o",
+      "model": "GPT-4o",
+      "vendor": "OpenAI",
+      "share_pct": 26,
+      "change_pct": -2,
+      "note": "Declining as GPT-5 gains share; still largest single model by volume",
+      "trend": [30, 29, 28, 28, 27, 26]
+    },
+    {
+      "id": "gpt-4o-mini",
+      "model": "GPT-4o mini",
+      "vendor": "OpenAI",
+      "share_pct": 18,
+      "change_pct": -1,
+      "note": "High-volume low-cost workloads; slight pressure from Gemini Flash",
+      "trend": [19, 19, 19, 18, 18, 18]
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "model": "Claude Sonnet 4.6",
+      "vendor": "Anthropic",
+      "share_pct": 14,
+      "change_pct": 3,
+      "note": "Fastest growing in developer tooling and agentic coding pipelines",
+      "trend": [9, 10, 11, 12, 13, 14]
+    },
+    {
+      "id": "gemini-2-5-flash",
+      "model": "Gemini 2.5 Flash",
+      "vendor": "Google",
+      "share_pct": 12,
+      "change_pct": 2,
+      "note": "Growing share in Google Cloud and consumer app integrations",
+      "trend": [8, 9, 10, 11, 11, 12]
+    },
+    {
+      "id": "llama-3-3-70b",
+      "model": "Llama 3.3 70B",
+      "vendor": "Meta",
+      "share_pct": 10,
+      "change_pct": 1,
+      "note": "Open-weight deployments; dominant in self-hosted and on-premise use",
+      "trend": [8, 8, 9, 9, 10, 10]
+    },
+    {
+      "id": "gpt-5",
+      "model": "GPT-5",
+      "vendor": "OpenAI",
+      "share_pct": 6,
+      "change_pct": 3,
+      "note": "Recent launch; adoption accelerating",
+      "trend": [0, 1, 2, 3, 4, 6]
+    },
+    {
+      "id": "claude-opus-4-7",
+      "model": "Claude Opus 4.7",
+      "vendor": "Anthropic",
+      "share_pct": 5,
+      "change_pct": 2,
+      "note": "Premium segment; strong in agentic and long-context tasks",
+      "trend": [1, 2, 3, 4, 4, 5]
+    },
+    {
+      "id": "gemini-2-5-pro",
+      "model": "Gemini 2.5 Pro",
+      "vendor": "Google",
+      "share_pct": 4,
+      "change_pct": 1,
+      "note": "Growing enterprise adoption; strong multimodal capabilities",
+      "trend": [2, 2, 3, 3, 4, 4]
+    },
+    {
+      "id": "deepseek-v3",
+      "model": "DeepSeek V3",
+      "vendor": "DeepSeek",
+      "share_pct": 3,
+      "change_pct": 0,
+      "note": "Stable share; popular for cost-effective coding tasks",
+      "trend": [3, 3, 3, 3, 3, 3]
+    },
+    {
+      "id": "claude-haiku-4-5-20251001",
+      "model": "Claude Haiku 4.5",
+      "vendor": "Anthropic",
+      "share_pct": 2,
+      "change_pct": 0,
+      "note": "High-volume extraction and classification pipelines",
+      "trend": [2, 2, 2, 2, 2, 2]
+    }
+  ]
+}
