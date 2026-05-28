@@ -76,8 +76,10 @@ export default function MarketShareSection({ snapshotData }) {
       </div>
 
       <p className="text-sm text-gray-600 mb-6">
-        Estimated share of AI API calls across tracked public sources. All figures are rounded
-        estimates - see methodology below. Click any column header to sort.
+        Directional share-of-usage estimates blended from three incommensurate developer-usage
+        signals (OpenRouter API calls, Hugging Face downloads, Stack Overflow self-reports). Read
+        as a normalized index of developer-facing usage among the top 12 tracked models, not a
+        precise market-share figure - see methodology below. Click any column header to sort.
       </p>
 
       <div className="overflow-x-auto">
@@ -92,7 +94,7 @@ export default function MarketShareSection({ snapshotData }) {
               </th>
               <th className="py-3 px-3 text-right">
                 <SortButton col="share_pct" current={sortCol} dir={sortDir} onClick={handleSort}>
-                  Share (est.)
+                  Share signal (est.)
                 </SortButton>
               </th>
               <th className="py-3 px-3 text-right">
