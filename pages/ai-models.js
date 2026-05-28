@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import Head from 'next/head';
+import { useState } from 'react';
+import Link from 'next/link';
 import Layout from '../components/layout/Layout';
 import LastVerified from '../components/LastVerified';
 import { AI_MODELS, AI_MODELS_META } from '../lib/ai-models';
@@ -8,11 +8,14 @@ import MarketShareSection from '../components/sections/MarketShareSection';
 import marketShareSnapshot from '../data/ai-models-market-share/2026-05.json';
 
 export default function AIModels() {
+  const [selectedVendor, setSelectedVendor] = useState('all');
+  const [selectedTier, setSelectedTier] = useState('all');
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedYear, setSelectedYear] = useState('all');
   const [selectedModels, setSelectedModels] = useState([]);
   const [showComparison, setShowComparison] = useState(false);
   const [sortBy, setSortBy] = useState('name');
+  const [sortDir, setSortDir] = useState('asc');
 
   // Schema.org structured data
   const schemaData = {
@@ -83,63 +86,81 @@ export default function AIModels() {
 
   const faqSchemaData = generateFAQSchema(faqs);
 
-  // Categories for filtering
-  const categories = [
-    { id: 'all', name: 'All Models' },
-    { id: 'text', name: 'Text Generation' },
-    { id: 'multimodal', name: 'Multimodal' },
-    { id: 'coding', name: 'Code Generation' },
-    { id: 'reasoning', name: 'Advanced Reasoning' },
-    { id: 'open-source', name: 'Open Source' },
-    { id: 'enterprise', name: 'Enterprise' }
-  ];
+  const categoryLabels = {
+    text: 'Text Generation',
+    multimodal: 'Multimodal',
+    coding: 'Code Generation',
+    reasoning: 'Advanced Reasoning',
+    'open-source': 'Open Source',
+    enterprise: 'Enterprise'
+  };
 
   // AI Models data - sourced from data/ai-models.json (single source of truth across the site).
-  // Update there, not here. Benchmarks default to "Unknown" because we don't independently re-run them.
+  // Update there, not here.
   const models = AI_MODELS.map(m => ({
+    slug: m.id,
     name: m.display_name,
     company: m.vendor,
-    parameters: m.parameters || "Unknown",
-    contextWindow: m.context_window_label || "Unknown",
+    tier: m.tier || 'unknown',
+    parameters: m.parameters || 'Unknown',
+    contextWindow: m.context_window_label || 'Unknown',
+    contextTokens: m.context_window || 0,
     categories: m.categories || [],
     pricing: m.pricing_label,
     releaseDate: m.released,
-    architecture: m.architecture || "Unknown",
-    benchmarks: {
-      mmlu: "Unknown",
-      humanEval: "Unknown",
-      hellaswag: "Unknown"
-    },
+    releaseYear: (m.released || '').slice(0, 4) || 'Unknown',
     features: m.features || [],
     description: m.description
   }));
 
-  // Filter models based on category and search term
-  const filteredModels = models.filter(model => {
-    const matchesCategory = selectedCategory === 'all' || model.categories.includes(selectedCategory);
-    const matchesSearch = model.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         model.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         model.description.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
+  const vendors = [...new Set(models.map(m => m.company))].sort();
+  const tiers = [...new Set(models.map(m => m.tier))].sort();
+  const allCategories = [...new Set(models.flatMap(m => m.categories))].sort();
+  const years = [...new Set(models.map(m => m.releaseYear))].sort().reverse();
+
+  const filteredModels = models.filter(m => {
+    if (selectedVendor !== 'all' && m.company !== selectedVendor) return false;
+    if (selectedTier !== 'all' && m.tier !== selectedTier) return false;
+    if (selectedCategory !== 'all' && !m.categories.includes(selectedCategory)) return false;
+    if (selectedYear !== 'all' && m.releaseYear !== selectedYear) return false;
+    return true;
   });
 
-  // Sort models
   const sortedModels = [...filteredModels].sort((a, b) => {
+    const dir = sortDir === 'asc' ? 1 : -1;
     switch (sortBy) {
       case 'name':
-        return a.name.localeCompare(b.name);
+        return a.name.localeCompare(b.name) * dir;
       case 'company':
-        return a.company.localeCompare(b.company);
-      case 'parameters':
-        const aParams = parseFloat(a.parameters.replace(/[^\d.]/g, ''));
-        const bParams = parseFloat(b.parameters.replace(/[^\d.]/g, ''));
-        return bParams - aParams;
+        return a.company.localeCompare(b.company) * dir;
+      case 'tier':
+        return a.tier.localeCompare(b.tier) * dir;
+      case 'context':
+        return (a.contextTokens - b.contextTokens) * dir;
       case 'release':
-        return new Date(b.releaseDate) - new Date(a.releaseDate);
+        return (new Date(a.releaseDate) - new Date(b.releaseDate)) * dir;
       default:
         return 0;
     }
   });
+
+  const toggleSort = (column) => {
+    if (sortBy === column) {
+      setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortBy(column);
+      setSortDir('asc');
+    }
+  };
+
+  const resetFilters = () => {
+    setSelectedVendor('all');
+    setSelectedTier('all');
+    setSelectedCategory('all');
+    setSelectedYear('all');
+  };
+
+  const sortIndicator = (column) => sortBy === column ? (sortDir === 'asc' ? ' ↑' : ' ↓') : '';
 
   // Toggle model selection for comparison
   const toggleModelSelection = (model) => {
@@ -197,57 +218,62 @@ export default function AIModels() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          {/* Filters and Search */}
+          {/* Multi-axis Filter Row */}
           <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-            <div className="flex flex-col lg:flex-row gap-6">
-              {/* Search */}
-              <div className="flex-1">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Search Models
-                </label>
-                <input
-                  type="text"
-                  placeholder="Search by name, company, or description..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
+            <div className="flex flex-wrap items-end gap-4">
+              <div className="flex-1 min-w-[160px]">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Vendor</label>
+                <select
+                  value={selectedVendor}
+                  onChange={(e) => setSelectedVendor(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="all">All vendors</option>
+                  {vendors.map(v => <option key={v} value={v}>{v}</option>)}
+                </select>
               </div>
-
-              {/* Category Filter */}
-              <div className="lg:w-64">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Filter by Category
-                </label>
+              <div className="flex-1 min-w-[160px]">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Tier</label>
+                <select
+                  value={selectedTier}
+                  onChange={(e) => setSelectedTier(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="all">All tiers</option>
+                  {tiers.map(t => <option key={t} value={t}>{t}</option>)}
+                </select>
+              </div>
+              <div className="flex-1 min-w-[160px]">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  {categories.map(category => (
-                    <option key={category.id} value={category.id}>
-                      {category.name}
-                    </option>
-                  ))}
+                  <option value="all">All categories</option>
+                  {allCategories.map(c => <option key={c} value={c}>{categoryLabels[c] || c}</option>)}
                 </select>
               </div>
-
-              {/* Sort */}
-              <div className="lg:w-48">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Sort by
-                </label>
+              <div className="flex-1 min-w-[140px]">
+                <label className="block text-sm font-medium text-gray-700 mb-1">Release year</label>
                 <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  value={selectedYear}
+                  onChange={(e) => setSelectedYear(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  <option value="name">Name</option>
-                  <option value="company">Company</option>
-                  <option value="parameters">Parameters</option>
-                  <option value="release">Release Date</option>
+                  <option value="all">All years</option>
+                  {years.map(y => <option key={y} value={y}>{y}</option>)}
                 </select>
               </div>
+              <button
+                onClick={resetFilters}
+                className="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50"
+              >
+                Reset
+              </button>
+            </div>
+            <div className="mt-3 text-sm text-gray-500">
+              Showing {sortedModels.length} of {models.length} models
             </div>
 
             {/* Comparison Bar */}
@@ -511,129 +537,101 @@ export default function AIModels() {
             </div>
           </div>
 
-          {/* Models Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sortedModels.map((model, index) => (
-              <div
-                key={model.name}
-                className={`bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden ${
-                  selectedModels.find(m => m.name === model.name) 
-                    ? 'ring-2 ring-blue-500 ring-opacity-50' 
-                    : ''
-                }`}
-              >
-                {/* Model Header */}
-                <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-xl font-bold">{model.name}</h3>
-                    <button
-                      onClick={() => toggleModelSelection(model)}
-                      className={`w-6 h-6 rounded border-2 border-white flex items-center justify-center ${
-                        selectedModels.find(m => m.name === model.name)
-                          ? 'bg-white text-blue-500'
-                          : 'bg-transparent'
-                      }`}
+          {/* Sortable Filterable Model Table */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-12">
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-sm">
+                <thead className="bg-gray-50 text-left text-gray-700">
+                  <tr>
+                    <th className="px-3 py-3 w-12"></th>
+                    <th
+                      className="px-3 py-3 font-semibold cursor-pointer hover:bg-gray-100"
+                      onClick={() => toggleSort('name')}
                     >
-                      {selectedModels.find(m => m.name === model.name) && '✓'}
-                    </button>
-                  </div>
-                  <p className="text-blue-100">{model.company}</p>
-                  <div className="flex gap-2 mt-3">
-                    {model.categories.slice(0, 2).map(category => (
-                      <span
-                        key={category}
-                        className="bg-white/20 px-2 py-1 rounded text-xs"
+                      Model{sortIndicator('name')}
+                    </th>
+                    <th
+                      className="px-3 py-3 font-semibold cursor-pointer hover:bg-gray-100 hidden sm:table-cell"
+                      onClick={() => toggleSort('company')}
+                    >
+                      Vendor{sortIndicator('company')}
+                    </th>
+                    <th
+                      className="px-3 py-3 font-semibold cursor-pointer hover:bg-gray-100 hidden md:table-cell"
+                      onClick={() => toggleSort('tier')}
+                    >
+                      Tier{sortIndicator('tier')}
+                    </th>
+                    <th
+                      className="px-3 py-3 font-semibold cursor-pointer hover:bg-gray-100 hidden md:table-cell"
+                      onClick={() => toggleSort('context')}
+                    >
+                      Context{sortIndicator('context')}
+                    </th>
+                    <th className="px-3 py-3 font-semibold hidden lg:table-cell">Pricing</th>
+                    <th
+                      className="px-3 py-3 font-semibold cursor-pointer hover:bg-gray-100 hidden lg:table-cell"
+                      onClick={() => toggleSort('release')}
+                    >
+                      Released{sortIndicator('release')}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {sortedModels.map((model) => {
+                    const isSelected = !!selectedModels.find(m => m.name === model.name);
+                    return (
+                      <tr
+                        key={model.slug}
+                        data-vendor={model.company}
+                        data-tier={model.tier}
+                        data-categories={model.categories.join(',')}
+                        data-year={model.releaseYear}
+                        className={`hover:bg-gray-50 ${isSelected ? 'bg-blue-50' : ''}`}
                       >
-                        {categories.find(c => c.id === category)?.name || category}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Model Details */}
-                <div className="p-6">
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    {model.description}
-                  </p>
-
-                  {/* Key Specs */}
-                  <div className="space-y-3 mb-6">
-                    <div className="flex justify-between">
-                      <span className="text-gray-500 text-sm">Parameters:</span>
-                      <span className="font-semibold text-sm">{model.parameters}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500 text-sm">Context:</span>
-                      <span className="font-semibold text-sm">{model.contextWindow}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500 text-sm">Pricing:</span>
-                      <span className="font-semibold text-sm">{model.pricing}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-500 text-sm">Release:</span>
-                      <span className="font-semibold text-sm">{model.releaseDate}</span>
-                    </div>
-                  </div>
-
-                  {/* Benchmarks */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-gray-800 mb-3 text-sm">Benchmark Scores</h4>
-                    <div className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-xs text-gray-500">MMLU</span>
-                        <div className="flex items-center">
-                          <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
-                            <div
-                              className="bg-blue-500 h-2 rounded-full"
-                              style={{ width: model.benchmarks.mmlu }}
-                            ></div>
+                        <td className="px-3 py-3 align-top">
+                          <input
+                            type="checkbox"
+                            aria-label={`Compare ${model.name}`}
+                            checked={isSelected}
+                            onChange={() => toggleModelSelection(model)}
+                            className="h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                          />
+                        </td>
+                        <td className="px-3 py-3 align-top">
+                          <Link href={`/ai-models/${model.slug}`} className="font-semibold text-blue-700 hover:underline">
+                            {model.name}
+                          </Link>
+                          <div className="text-xs text-gray-500 mt-1 max-w-md">{model.description}</div>
+                          <div className="flex flex-wrap gap-1 mt-2">
+                            {model.categories.slice(0, 3).map(cat => (
+                              <span key={cat} className="text-xs bg-gray-100 text-gray-700 px-2 py-0.5 rounded">
+                                {categoryLabels[cat] || cat}
+                              </span>
+                            ))}
                           </div>
-                          <span className="text-xs font-medium">{model.benchmarks.mmlu}</span>
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-xs text-gray-500">HumanEval</span>
-                        <div className="flex items-center">
-                          <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
-                            <div
-                              className="bg-green-500 h-2 rounded-full"
-                              style={{ width: model.benchmarks.humanEval }}
-                            ></div>
-                          </div>
-                          <span className="text-xs font-medium">{model.benchmarks.humanEval}</span>
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-xs text-gray-500">HellaSwag</span>
-                        <div className="flex items-center">
-                          <div className="w-16 bg-gray-200 rounded-full h-2 mr-2">
-                            <div
-                              className="bg-purple-500 h-2 rounded-full"
-                              style={{ width: model.benchmarks.hellaswag }}
-                            ></div>
-                          </div>
-                          <span className="text-xs font-medium">{model.benchmarks.hellaswag}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Key Features */}
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-3 text-sm">Key Features</h4>
-                    <ul className="space-y-1">
-                      {model.features.slice(0, 3).map((feature, idx) => (
-                        <li key={idx} className="text-xs text-gray-600 flex items-start">
-                          <span className="text-green-500 mr-2 mt-0.5">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
+                        </td>
+                        <td className="px-3 py-3 align-top text-gray-700 hidden sm:table-cell">{model.company}</td>
+                        <td className="px-3 py-3 align-top text-gray-700 hidden md:table-cell capitalize">{model.tier}</td>
+                        <td className="px-3 py-3 align-top text-gray-700 hidden md:table-cell whitespace-nowrap">{model.contextWindow}</td>
+                        <td className="px-3 py-3 align-top text-gray-700 hidden lg:table-cell text-xs">{model.pricing}</td>
+                        <td className="px-3 py-3 align-top text-gray-700 hidden lg:table-cell whitespace-nowrap">{model.releaseDate}</td>
+                      </tr>
+                    );
+                  })}
+                  {sortedModels.length === 0 && (
+                    <tr>
+                      <td colSpan={7} className="px-3 py-8 text-center text-gray-500">
+                        No models match the current filters.{' '}
+                        <button onClick={resetFilters} className="text-blue-600 hover:underline">
+                          Reset filters
+                        </button>
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           {/* Key Insights */}

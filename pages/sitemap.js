@@ -1,6 +1,7 @@
 import Layout from '../components/layout/Layout'
 import Link from 'next/link'
 import { seoUseCases } from '../data/seo-use-cases'
+import { AI_MODELS } from '../lib/ai-models'
 
 export default function Sitemap() {
   // Group SEO use cases by category
@@ -87,6 +88,13 @@ export default function Sitemap() {
     { title: 'LLM API Pricing Calculator', url: '/api-pricing', description: 'Enter input/output tokens and cache hit ratio -- see cost per call across Claude, GPT-4o, and Gemini.' }
   ];
 
+  // AI Model profile pages (per-model detail routes under /ai-models/[slug])
+  const aiModelPages = AI_MODELS.map(m => ({
+    title: m.display_name,
+    url: `/ai-models/${m.id}`,
+    description: `${m.vendor}${m.tier ? ' · ' + m.tier : ''}${m.context_window_label ? ' · ' + m.context_window_label + ' context' : ''}`
+  }))
+
   // Tool pages
   const toolPages = [
     { title: 'Mad Libs AI Prompt Creator', url: '/tools/mad-libs-prompt-creator', description: 'Create custom AI prompts with our Mad Libs-style fill-in-the-blank tool' },
@@ -147,6 +155,24 @@ export default function Sitemap() {
                   {page.description && (
                     <p className="text-sm text-gray-600">{page.description}</p>
                   )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* AI Model Profiles Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 pb-2 border-b border-gray-200">
+              AI Model Profiles
+              <span className="text-sm font-normal text-gray-600 ml-2">({aiModelPages.length} models)</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {aiModelPages.map(page => (
+                <div key={page.url} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                  <Link href={page.url} className="text-blue-600 hover:underline font-semibold block mb-1">
+                    {page.title}
+                  </Link>
+                  <p className="text-sm text-gray-600">{page.description}</p>
                 </div>
               ))}
             </div>
