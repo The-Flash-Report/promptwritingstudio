@@ -32,6 +32,7 @@ export default function handler(req, res) {
     { url: '/ai-glossary', priority: '0.8', changefreq: 'monthly' },
     { url: '/ai-history', priority: '0.8', changefreq: 'monthly' },
     { url: '/ai-models', priority: '0.8', changefreq: 'monthly' },
+    { url: '/api-pricing', priority: '0.8', changefreq: 'monthly' },
     { url: '/best-ai-tools', priority: '0.8', changefreq: 'monthly' },
     { url: '/ai-prompt-quiz', priority: '0.7', changefreq: 'monthly' },
     { url: '/video-tutorials', priority: '0.7', changefreq: 'monthly' },

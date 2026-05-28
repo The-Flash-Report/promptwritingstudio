@@ -83,7 +83,8 @@ export default function Sitemap() {
     { title: 'Skills vs MCP vs Hooks', url: '/skills-vs-mcp-vs-hooks', description: 'When to reach for each primitive — with decision tree' },
     { title: 'Claude Code vs Cursor', url: '/claude-code-vs-cursor', description: 'Honest comparison of the two coding agents — strengths, weaknesses, pricing' },
     { title: 'Claude vs ChatGPT', url: '/claude-vs-chatgpt', description: 'Side-by-side comparison for writers and builders' },
-    { title: 'Which Claude Model?', url: '/ai-models', description: 'Opus, Sonnet, Haiku — price, context window, and use cases' }
+    { title: 'Which Claude Model?', url: '/ai-models', description: 'Opus, Sonnet, Haiku -- price, context window, and use cases' },
+    { title: 'LLM API Pricing Calculator', url: '/api-pricing', description: 'Enter input/output tokens and cache hit ratio -- see cost per call across Claude, GPT-4o, and Gemini.' }
   ];
 
   // Tool pages
