@@ -1,6 +1,6 @@
 name: Observatory weekly email
 
-# Runs Tuesday 12:00 UTC — after the Sunday observatory run and time for Bryan
+# Runs Tuesday 12:00 UTC - after the Sunday observatory run and time for Bryan
 # to merge the observatory PR before this cron fires.
 # Also available via workflow_dispatch for Bryan to trigger after a manual merge.
 
