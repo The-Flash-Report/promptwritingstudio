@@ -1,7 +1,7 @@
 {
   "_meta": {
     "schemaVersion": 1,
-    "lastVerified": "2026-05-07",
+    "lastVerified": "2026-05-28",
     "stalenessThresholdDays": 60,
     "notes": "Multi-vendor AI model facts. Single source of truth for /ai-models, /claude-vs-chatgpt, and any page that quotes pricing or capability claims for non-Claude models. For Claude-only API model IDs and detailed plan data, see data/claude-models.json. This file mirrors top-level facts and adds non-Claude vendors. Update each entry's last_verified_at when you re-check it against the source. Monthly GitHub Actions cron flags entries older than stalenessThresholdDays."
   },
@@ -154,7 +154,7 @@
       "context_window": 2000000,
       "context_window_label": "1M+ tokens (up to 2M)",
       "released": "2025",
-      "last_verified_at": "2026-05-07",
+      "last_verified_at": "2026-05-28",
       "verification_source": "https://ai.google.dev/pricing",
       "verification_notes": "Pricing tiered by context length (≤200K vs >200K). Lower bound applies under 200K input.",
       "description": "Google's Gemini Pro line — the go-to when you need to stuff a whole codebase or long video into a single prompt.",
@@ -177,7 +177,7 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2025",
-      "last_verified_at": "2026-05-07",
+      "last_verified_at": "2026-05-28",
       "verification_source": "https://ai.google.dev/pricing",
       "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority).",
       "description": "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is good enough.",
