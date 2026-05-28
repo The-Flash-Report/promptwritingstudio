@@ -51,11 +51,10 @@ export default function EnhancedMeta({
       <meta name="twitter:image" content={image} />
       <meta name="twitter:image:alt" content={`${title} - Free AI Calculator`} />
       
-      {/* LinkedIn specific */}
-      <meta property="og:type" content="article" />
-      <meta property="article:author" content="Bryan Collins" />
-      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
-      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {/* Article-specific Open Graph -- only emitted when type prop is "article" */}
+      {type === 'article' && <meta property="article:author" content="Bryan Collins" />}
+      {type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {type === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
       
       {/* Calculator-specific meta */}
       {calculator && (
