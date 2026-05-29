@@ -109,7 +109,7 @@ export default function ModifierPage({ modifierData }) {
           <div className="max-w-3xl mx-auto text-center">
             <span className="bg-white/20 text-white px-4 py-1 rounded-full text-sm font-medium mb-4 inline-block">Claude + ChatGPT Prompts</span>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {promptTemplates.length}+ Claude &amp; ChatGPT Prompts for {modifierName}
+              {seoData.h1 || `${promptTemplates.length}+ Claude & ChatGPT Prompts for ${modifierName}`}
             </h1>
             <h2 className="text-xl font-semibold mb-3 text-white/90">
               What are the best ChatGPT prompts for {modifierName}?

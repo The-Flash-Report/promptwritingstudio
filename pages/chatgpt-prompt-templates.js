@@ -35,7 +35,7 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              ChatGPT Prompt Templates
+              Free ChatGPT Prompt Templates
             </h1>
             <p className="text-xl mb-8">
               100+ free, copy-paste ChatGPT prompt templates organised by profession and use case. Based on OpenAI best practices — tested for business, writing, coding, marketing, and more.
