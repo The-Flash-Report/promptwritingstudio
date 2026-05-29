@@ -63,12 +63,7 @@ export default function Home() {
     "mainEntity": {
       "@type": "WebSite",
       "name": "Prompt Writing Studio",
-      "url": "https://promptwritingstudio.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://promptwritingstudio.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://promptwritingstudio.com"
     }
   }
 

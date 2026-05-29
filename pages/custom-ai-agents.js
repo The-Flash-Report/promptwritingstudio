@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "Do I need a paid subscription to create custom AI agents?",
-    answer: "Yes, all three platforms require a paid plan. Custom GPTs require ChatGPT Plus ($20 per month) or a Team or Enterprise plan. Gemini Gems require Gemini Advanced ($19.99 per month) as part of Google One AI Premium. Claude Projects require Claude Pro ($20 per month) or a Team plan. None of these features are available on free tiers."
+    answer: "Yes, all three platforms require a paid plan. Custom GPTs require ChatGPT Plus ($20 per month) or a Team or Enterprise plan. Gemini Gems require the Google AI Pro plan (see one.google.com/about/plans for current USD pricing). Claude Projects require Claude Pro ($20 per month) or a Team plan. None of these features are available on free tiers."
   },
   {
     question: "Can I share my custom GPT, Gem, or Claude Project with others?",
@@ -44,14 +44,14 @@ const faqs = [
   },
   {
     question: "Which platform offers the best value for money?",
-    answer: "All three platforms cost approximately $20 per month. The best value depends on your ecosystem. If you already pay for Google One, Gemini Advanced adds Gems at no additional cost. If you need the widest range of capabilities including image generation, web browsing, and code execution, ChatGPT Plus with custom GPTs offers the most features. If your primary need is writing, analysis, or working with large documents, Claude Pro with Projects gives you the largest context window and strongest reasoning capabilities."
+    answer: "All three platforms cost approximately $20 per month. The best value depends on your ecosystem. If you already pay for Google One, upgrading to Google AI Pro adds Gems to your plan. If you need the widest range of capabilities including image generation, web browsing, and code execution, ChatGPT Plus with custom GPTs offers the most features. If your primary need is writing, analysis, or working with large documents, Claude Pro with Projects gives you the largest context window and strongest reasoning capabilities."
   }
 ]
 
 const comparisonData = [
   { feature: "Platform", gpt: "OpenAI / ChatGPT", gem: "Google / Gemini", claude: "Anthropic / Claude" },
   { feature: "Feature Name", gpt: "Custom GPTs", gem: "Gems", claude: "Projects" },
-  { feature: "Required Plan", gpt: "ChatGPT Plus ($20/mo)", gem: "Gemini Advanced ($19.99/mo)", claude: "Claude Pro ($20/mo)" },
+  { feature: "Required Plan", gpt: "ChatGPT Plus ($20/mo)", gem: "Google AI Pro (see one.google.com)", claude: "Claude Pro ($20/mo)" },
   { feature: "Knowledge Upload", gpt: "Up to 20 files, ~512 MB total", gem: "Limited file support", claude: "Up to 200K tokens (~150K words)" },
   { feature: "Custom Instructions", gpt: "Detailed system prompt", gem: "System instructions", claude: "Custom instructions + style preferences" },
   { feature: "API / Actions", gpt: "Yes (OpenAPI spec)", gem: "No (Google integrations only)", claude: "No" },
@@ -588,7 +588,7 @@ export default function CustomAIAgents() {
 
             <div className="prose max-w-none">
               <p className="text-lg text-[#333333] mb-6">
-                Gemini Gems are Google's answer to custom AI agents. Introduced in 2024 as part of Gemini Advanced, Gems let you create custom AI personas with specific instructions that persist across conversations. Where Gems really stand out is their native integration with Google Workspace, making them the clear choice for anyone whose workflow lives in Google's ecosystem.
+                Gemini Gems are Google's answer to custom AI agents. Introduced in 2024 under the Google AI Pro plan, Gems let you create custom AI personas with specific instructions that persist across conversations. Where Gems really stand out is their native integration with Google Workspace, making them the clear choice for anyone whose workflow lives in Google's ecosystem.
               </p>
 
               <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">What Are Gemini Gems?</h3>
@@ -608,7 +608,8 @@ export default function CustomAIAgents() {
                     <div>
                       <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">Open Gem Manager</h4>
                       <p className="text-[#333333]">
-                        Go to <strong>gemini.google.com</strong> and look for the <strong>"Gem manager"</strong> option in the left sidebar. You need Gemini Advanced ($19.99 per month), which is part of the Google One AI Premium plan. This plan also includes 2 TB of Google storage and Gemini features across Google Workspace apps. Click <strong>"New Gem"</strong> to start building.
+                        Go to <strong>gemini.google.com</strong> and look for the <strong>"Gem manager"</strong> option in the left sidebar. {/* TODO: verify current USD pricing at one.google.com/about/plans -- page returned EUR only */}
+You need a Google AI Pro subscription (see one.google.com/about/plans for current pricing). This plan includes Gemini features across Google Workspace apps. Click <strong>"New Gem"</strong> to start building.
                       </p>
                     </div>
                   </div>
@@ -675,7 +676,7 @@ export default function CustomAIAgents() {
                     <div>
                       <h4 className="text-lg font-bold text-[#1A1A1A] mb-2">Share (Optional)</h4>
                       <p className="text-[#333333]">
-                        You can share your Gem with others via a direct link. Recipients need Gemini Advanced to use it. There is no public marketplace like the GPT Store, so sharing is limited to people you directly send the link to. This makes Gems more suited for internal team use than public-facing applications.
+                        You can share your Gem with others via a direct link. Recipients need a Google AI Pro subscription to use it. There is no public marketplace like the GPT Store, so sharing is limited to people you directly send the link to. This makes Gems more suited for internal team use than public-facing applications.
                       </p>
                     </div>
                   </div>
@@ -716,7 +717,7 @@ export default function CustomAIAgents() {
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <span className="text-red-600 mr-2 mt-1 flex-shrink-0">-</span>
-                    <span className="text-[#333333]"><strong>Requires Gemini Advanced ($19.99/mo).</strong> Part of Google One AI Premium. Free Gemini users cannot create or use Gems.</span>
+                    <span className="text-[#333333]"><strong>Requires Google AI Pro subscription.</strong> See one.google.com/about/plans for current USD pricing. Free Gemini users cannot create or use Gems.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-red-600 mr-2 mt-1 flex-shrink-0">-</span>
