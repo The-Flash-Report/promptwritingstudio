@@ -1,7 +1,7 @@
 # Prompt Studio — Gateway & Key-Handling Design (Phase 0)
 
-Status: **Phase 0 landed** (one model, BYOK, end-to-end). This is the
-report-back checkpoint before building Phase 1 (multi-model fan-out).
+Status: **Phase 0 + Phase 1 landed** (single-model BYOK end-to-end, plus
+parallel multi-model compare). Phase 2 (templates) is next.
 
 ## What this layer is
 
@@ -42,7 +42,9 @@ streaming + cancellation); production callers pass none of them.
 | `lib/gateway/cost.js` | Estimated cost from tokens × `data/api-pricing.json`. |
 | `lib/gateway/errors.js` | Typed errors carrying safe HTTP `status` + `code`. |
 | `lib/gateway/index.js` | `complete()` — validation, funding policy, routing, result assembly. |
+| `lib/gateway/compare.js` | `compareModels()` — parallel fan-out (bounded concurrency + backoff). |
 | `pages/api/studio/run.js` | Phase-0 HTTP endpoint (single model). |
+| `pages/api/studio/compare.js` | Phase-1 HTTP endpoint (N models side by side). |
 
 ## Key-handling design (decided: client-only BYOK)
 
@@ -86,18 +88,31 @@ that isn't installed). Rather than stand that up just to store secrets, keys are
 
 | Criterion | Status |
 |---|---|
-| Prompt runs vs ≥3 models via one OpenRouter integration | Gateway + registry ready (4 paid + 1 free registered); fan-out endpoint is Phase 1 |
+| Prompt runs vs ≥3 models via one OpenRouter integration | ✅ done (`compareModels`; test-verified) |
 | BYOK accepted, not stored, absent from logs/traces | ✅ done (client-only header; test-verified) |
-| Compare view returns output + tokens + est. cost + latency per model | Per-model result shape ✅ done; compare endpoint is Phase 1 |
+| Compare view returns output + tokens + est. cost + latency per model | ✅ done (per-model + batch totals) |
 | Swapping a model is config, not code | ✅ done (registry-only; test-verified) |
-| No studio-funded spend on a BYOK run | ✅ done (test-verified) |
+| No studio-funded spend on a BYOK run | ✅ done (single + fan-out test-verified) |
 
-## Next (Phase 1, after review)
+## Phase 1 — multi-model compare
 
-Add `pages/api/studio/compare.js` that fans the same `gateway.complete()` out
-across N models in parallel (bounded concurrency + backoff, mirroring the
-observatory's per-provider semaphore), returning an array of the same result
-objects for side-by-side display. **No gateway change required.**
+`compareModels({ prompt, models, params, userKey })` → `{ prompt, results[], totals }`:
+
+- Runs the same `gateway.complete()` across N models, **bounded concurrency**
+  (default 4) and **exponential backoff** retries on transient codes
+  (`rate_limited`, `upstream_error`). No gateway change — pure orchestration.
+- **Partial failure is isolated:** a model that errors comes back as
+  `{ ok: false, model, error, code }` next to the successes; the batch still
+  returns. Input order preserved; duplicate model ids de-duped.
+- `totals`: `{ models, succeeded, failed, costUsd (summed estimate),
+  maxLatencyMs (parallel wall-clock, not the sum) }`.
+- Endpoint `pages/api/studio/compare.js` meters the free tier per model in the
+  batch and caps at 8 models/request.
+
+## Next (Phase 2, after review)
+
+Wire the course-derived template library (`data/prompt-library.js`) as
+versioned, slot-filled prompts feeding `gateway.complete()` / `compareModels()`.
 
 ## Open items for Bryan
 
