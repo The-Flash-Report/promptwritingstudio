@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "Does Cursor use Claude models?",
-    answer: "Yes. Cursor supports Claude Opus 4, Claude Sonnet 4, GPT-5, GPT-4o, and others. You can pick the model per conversation. Which model drives the output matters more than whether you are in Claude Code or Cursor — same Claude model in both produces similar code quality. The interface and workflow around it are what differs."
+    answer: "Yes. Cursor supports the current Claude generation (as of June 2026: Claude Opus 4.8 and Claude Sonnet 4.6), GPT-5, GPT-4o, and others. You can pick the model per conversation. Which model drives the output matters more than whether you are in Claude Code or Cursor — same Claude model in both produces similar code quality. The interface and workflow around it are what differs."
   },
   {
     question: "Is Claude Code or Cursor cheaper?",
