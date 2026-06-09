@@ -36,7 +36,7 @@ const MODELS = ['fast', 'workhorse', 'flagship'].reduce((acc, tier) => {
 const faqs = [
   {
     question: "Which Claude model should I use by default?",
-    answer: "Claude Sonnet 4.6. It handles nearly every task with the right mix of speed, capability, and cost. Drop to Haiku 4.5 only when you are running high-volume, low-complexity tasks where per-call cost matters. Escalate to Opus 4.7 only when you have a specific hard-reasoning task that Sonnet is clearly struggling on."
+    answer: "Claude Sonnet 4.6. It handles nearly every task with the right mix of speed, capability, and cost. Drop to Haiku 4.5 only when you are running high-volume, low-complexity tasks where per-call cost matters. Escalate to Opus 4.8 only when you have a specific hard-reasoning task that Sonnet is clearly struggling on."
   },
   {
     question: "How do I estimate tokens per call?",
@@ -44,15 +44,15 @@ const faqs = [
   },
   {
     question: "Are these prices current?",
-    answer: "Prices shown here are Anthropic's public API pricing as of April 2026: Haiku 4.5 at $1/$5 per million input/output tokens, Sonnet 4.6 at $3/$15, Opus 4.7 at $5/$25. This page pulls from a central pricing data file that is verified weekly against platform.claude.com — verify against the source link above before committing to a production deployment."
+    answer: "Prices shown here are Anthropic's public API pricing as of June 2026: Haiku 4.5 at $1/$5 per million input/output tokens, Sonnet 4.6 at $3/$15, Opus 4.8 at $5/$25. This page pulls from a central pricing data file that is verified weekly against platform.claude.com — verify against the source link above before committing to a production deployment."
   },
   {
     question: "What about Claude Pro or Max subscriptions instead of the API?",
-    answer: "If you are using Claude through the web or Claude Code, subscriptions are often cheaper. Claude Pro at $20/month unlocks Opus 4.7, Sonnet 4.6, and Haiku 4.5 access with generous daily limits. Claude Max at $100 (5x) or $200 (20x) is for heavy daily users. The API is better when you are building something programmatic, running high volume, or need fine-grained cost control."
+    answer: "If you are using Claude through the web or Claude Code, subscriptions are often cheaper. Claude Pro at $20/month unlocks Opus 4.8, Sonnet 4.6, and Haiku 4.5 access with generous daily limits. Claude Max at $100 (5x) or $200 (20x) is for heavy daily users. The API is better when you are building something programmatic, running high volume, or need fine-grained cost control."
   },
   {
     question: "Why is Opus ~1.7x the price of Sonnet?",
-    answer: "Opus 4.7 is Anthropic's flagship reasoning model. At $5/$25 per MTok vs Sonnet 4.6 at $3/$15, Opus costs about 67% more than Sonnet. It runs more computation per token to deliver better results on hard tasks. For most tasks that extra capability is invisible — Sonnet would have produced an equally good answer. Use Opus when you can feel the difference."
+    answer: "Opus 4.8 is Anthropic's flagship reasoning model. At $5/$25 per MTok vs Sonnet 4.6 at $3/$15, Opus costs about 67% more than Sonnet. It runs more computation per token to deliver better results on hard tasks. For most tasks that extra capability is invisible — Sonnet would have produced an equally good answer. Use Opus when you can feel the difference."
   },
   {
     question: "Can I mix models in the same workflow?",
@@ -97,7 +97,7 @@ export default function ClaudeModelSelector() {
     <>
       <Head>
         <title>Claude Model Selector + Cost Calculator (Opus vs Sonnet vs Haiku) | PromptWritingStudio</title>
-        <meta name="description" content="Pick the right Claude model for your task and see the monthly cost. Compares Claude Opus 4.7, Sonnet 4.6, and Haiku 4.5 at Anthropic's current API pricing. Free, no signup." />
+        <meta name="description" content="Pick the right Claude model for your task and see the monthly cost. Compares Claude Opus 4.8, Sonnet 4.6, and Haiku 4.5 at Anthropic's current API pricing. Free, no signup." />
         <link rel="canonical" href="https://promptwritingstudio.com/calculators/claude-model-selector" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
@@ -212,7 +212,7 @@ export default function ClaudeModelSelector() {
               </div>
               <div className="bg-[#F9F9F9] p-5 rounded-lg border-l-4 border-[#FFDE59]">
                 <h3 className="font-bold text-[#1A1A1A] mb-1">Escalate to Opus only when Sonnet is struggling</h3>
-                <p className="text-[#333333]">If Sonnet consistently misses nuance on a hard task — legal analysis, research synthesis, subtle code review — Opus 4.7 earns its premium. Do not default to it; opt in when needed.</p>
+                <p className="text-[#333333]">If Sonnet consistently misses nuance on a hard task — legal analysis, research synthesis, subtle code review — Opus 4.8 earns its premium. Do not default to it; opt in when needed.</p>
               </div>
             </div>
           </div>

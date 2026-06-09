@@ -26,11 +26,11 @@ const faqs = [
   },
   {
     question: "Is Claude free like ChatGPT?",
-    answer: "Both have free tiers with daily message limits. Claude Free uses Sonnet with reduced capacity. ChatGPT Free uses GPT-4o with a daily cap. The paid tiers are where the capability gap shows. Claude Pro at $20/month unlocks Opus 4.7 and higher limits. ChatGPT Plus at $20/month unlocks GPT-5 and faster responses. Above that, both have higher tiers (Claude Max at $100/$200/mo and ChatGPT Pro at $200/mo) for heavy users."
+    answer: "Both have free tiers with daily message limits. Claude Free uses Sonnet with reduced capacity. ChatGPT Free uses GPT-4o with a daily cap. The paid tiers are where the capability gap shows. Claude Pro at $20/month unlocks Opus 4.8 and higher limits. ChatGPT Plus at $20/month unlocks GPT-5 and faster responses. Above that, both have higher tiers (Claude Max at $100/$200/mo and ChatGPT Pro at $200/mo) for heavy users."
   },
   {
     question: "What is the difference between Claude Opus, Sonnet, and Haiku?",
-    answer: "Opus 4.7 is Anthropic's most capable model — best for hard reasoning, long documents, and complex coding, with a 1M-token context window. Sonnet 4.6 is the workhorse — fast, cheap enough for daily use, capable enough for almost everything, also 1M context. Haiku 4.5 is the small/fast model — best for classification, quick lookups, and high-volume routine tasks. In most Claude products (claude.ai, Claude Code) the system routes your request to the right model automatically."
+    answer: "Fable 5 is Anthropic's most capable model — built for the most demanding reasoning and long-horizon agentic work, with a 1M-token context window. Opus 4.8 is the flagship for complex reasoning and coding, also 1M context. Sonnet 4.6 is the workhorse — fast, cheap enough for daily use, capable enough for almost everything, also 1M context. Haiku 4.5 is the small/fast model — best for classification, quick lookups, and high-volume routine tasks. In most Claude products (claude.ai, Claude Code) the system routes your request to the right model automatically."
   },
   {
     question: "Does Claude have a voice mode like ChatGPT?",
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: "Which has a bigger context window?",
-    answer: "Claude has had the longer context for a while — Opus 4.7 and Sonnet 4.6 now ship with 1M-token context windows as standard, Haiku 4.5 with 200K. GPT-5's context is also substantial but varies by tier. In practice, you only hit these limits when pasting large codebases or long documents; for that use case Claude is still the safer bet. For normal chat lengths, the difference does not matter."
+    answer: "Claude has had the longer context for a while — Fable 5, Opus 4.8, and Sonnet 4.6 now ship with 1M-token context windows as standard, Haiku 4.5 with 200K. GPT-5's context is also substantial but varies by tier. In practice, you only hit these limits when pasting large codebases or long documents; for that use case Claude is still the safer bet. For normal chat lengths, the difference does not matter."
   },
   {
     question: "Can ChatGPT and Claude both generate images?",
@@ -133,7 +133,7 @@ const useCases = [
 
 const pricingRows = [
   { tier: 'Free', claude: 'Daily cap on Sonnet; no Opus access', chatgpt: 'Daily cap on GPT-4o; limited image gen' },
-  { tier: 'Pro / Plus ($20/mo)', claude: 'Claude Pro: higher limits, Opus 4.7 access, Projects, Artifacts', chatgpt: 'ChatGPT Plus: GPT-5, Advanced Voice, faster responses, Custom GPTs' },
+  { tier: 'Pro / Plus ($20/mo)', claude: 'Claude Pro: higher limits, Opus 4.8 access, Projects, Artifacts', chatgpt: 'ChatGPT Plus: GPT-5, Advanced Voice, faster responses, Custom GPTs' },
   { tier: 'Team ($25–30/mo/user)', claude: 'Claude Team: shared projects, admin controls', chatgpt: 'ChatGPT Team: shared workspace, admin console' },
   { tier: 'Max / Pro ($100–$200/mo)', claude: 'Claude Max: highest limits, priority access', chatgpt: 'ChatGPT Pro: unlimited GPT-5, reasoning models, priority' },
   { tier: 'Enterprise', claude: 'Custom pricing, SSO, data controls', chatgpt: 'Custom pricing, SSO, long context, admin' }
@@ -300,7 +300,7 @@ export default function ClaudeVsChatGpt() {
               </table>
             </div>
             <div className="mt-6 bg-white border-l-4 border-[#FFDE59] p-6 rounded-r-lg">
-              <p className="text-[#333333]"><strong>Honest take on pricing:</strong> the Pro / Plus tiers at $20 are nearly identical value-for-money on paper. The difference is what they unlock. Claude Pro gives you Opus 4.7 and Artifacts. ChatGPT Plus gives you Advanced Voice, DALL-E, and the full Custom GPT experience. If your work is text-heavy, Claude Pro delivers more. If it is multimodal, ChatGPT Plus does.</p>
+              <p className="text-[#333333]"><strong>Honest take on pricing:</strong> the Pro / Plus tiers at $20 are nearly identical value-for-money on paper. The difference is what they unlock. Claude Pro gives you Opus 4.8 and Artifacts. ChatGPT Plus gives you Advanced Voice, DALL-E, and the full Custom GPT experience. If your work is text-heavy, Claude Pro delivers more. If it is multimodal, ChatGPT Plus does.</p>
             </div>
           </div>
         </section>
