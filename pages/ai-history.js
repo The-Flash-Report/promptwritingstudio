@@ -280,7 +280,7 @@ export default function AIHistory() {
         {
           year: "2026",
           event: "Long-horizon agents and 1M context as baseline",
-          detail: "Claude Opus 4.7 and Sonnet 4.6 run overnight agent loops on 1M-token contexts. Sub-agents, hooks, and skills become part of the Claude Code workflow. Most new SaaS assumes model cost drops faster than workload grows."
+          detail: "The current Opus and Sonnet generations (Opus 4.8, Sonnet 4.6) run overnight agent loops on 1M-token contexts. Sub-agents, hooks, and skills become part of the Claude Code workflow. Most new SaaS assumes model cost drops faster than workload grows."
         }
       ]
     }
@@ -632,7 +632,7 @@ export default function AIHistory() {
                 <div>
                   <h4 className="font-bold text-blue-200 mb-3">Foundation Models</h4>
                   <p className="text-sm opacity-90 leading-relaxed">
-                    Pre-trained models like Claude Opus 4.7, GPT-5, and Gemini 2.5 Pro provide general intelligence
+                    Pre-trained models like Claude Opus 4.8, GPT-5, and Gemini 2.5 Pro provide general intelligence
                     adaptable for specific business needs without training from scratch — and now run on 1M-token contexts.
                   </p>
                 </div>

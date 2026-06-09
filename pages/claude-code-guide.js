@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     question: "What models does Claude Code use?",
-    answer: "Claude Code is powered by Anthropic's Claude models. It primarily uses Claude Sonnet for fast operations and Claude Opus for complex reasoning tasks. The specific model version updates automatically as Anthropic releases improvements. As of February 2026, it uses Claude Opus 4 for its most capable mode and Claude Sonnet 4 for standard operations."
+    answer: "Claude Code is powered by Anthropic's Claude models. It primarily uses Claude Sonnet for fast operations and Claude Opus for complex reasoning tasks. The specific model version updates automatically as Anthropic releases improvements. It uses the current Opus and Sonnet generations — as of June 2026, Claude Opus 4.8 for its most capable mode and Claude Sonnet 4.6 for standard operations."
   },
   {
     question: "Can Claude Code access the internet?",
@@ -149,7 +149,7 @@ export default function ClaudeCodeGuide() {
         {/* Hero Section */}
         <section className="gradient-bg py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <p className="text-[#FFDE59] font-semibold text-lg mb-4">Last updated: February 2026</p>
+            <p className="text-[#FFDE59] font-semibold text-lg mb-4">Last updated: June 2026</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Claude Code Guide:
               <span className="block text-[#FFDE59]">Anthropic's Agentic Coding CLI</span>
