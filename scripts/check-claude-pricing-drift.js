@@ -55,8 +55,11 @@ async function main() {
     for (const m of models.current) {
       const aliasFound = modelsHtml.includes(m.alias)
       const idFound = modelsHtml.includes(m.id)
-      const inputPriceFound = modelsHtml.includes(`$${m.inputPricePerMTok} / input MTok`) || modelsHtml.includes(`\\$${m.inputPricePerMTok} / input MTok`)
-      const outputPriceFound = modelsHtml.includes(`$${m.outputPricePerMTok} / output MTok`) || modelsHtml.includes(`\\$${m.outputPricePerMTok} / output MTok`)
+      // The docs page uses two pricing formats: "$X / input MTok ... $Y / output MTok"
+      // (latest-models table) and "$X / $Y per MTok (input / output)" (Fable/Mythos table).
+      const combinedPriceFound = modelsHtml.includes(`$${m.inputPricePerMTok} / $${m.outputPricePerMTok} per MTok`) || modelsHtml.includes(`\\$${m.inputPricePerMTok} / \\$${m.outputPricePerMTok} per MTok`)
+      const inputPriceFound = combinedPriceFound || modelsHtml.includes(`$${m.inputPricePerMTok} / input MTok`) || modelsHtml.includes(`\\$${m.inputPricePerMTok} / input MTok`)
+      const outputPriceFound = combinedPriceFound || modelsHtml.includes(`$${m.outputPricePerMTok} / output MTok`) || modelsHtml.includes(`\\$${m.outputPricePerMTok} / output MTok`)
 
       const ok = (aliasFound || idFound) && inputPriceFound && outputPriceFound
       const icon = ok ? 'OK  ' : 'DRIFT'
