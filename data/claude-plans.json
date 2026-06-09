@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastVerified": "2026-04-17",
+    "lastVerified": "2026-06-09",
     "source": "https://claude.com/pricing",
     "notes": "Consumer + team plan pricing. Limits are Anthropic's public-facing copy; actual message caps vary. Update when pricing page changes."
   },
@@ -12,7 +12,12 @@
       "pricePerMonthAnnual": 0,
       "billing": "free",
       "usageLimit": "Limited daily messages",
-      "models": ["Opus", "Sonnet", "Haiku"],
+      "models": [
+        "Fable",
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ],
       "includesClaudeCode": false,
       "features": [
         "Web + mobile chat",
@@ -33,7 +38,12 @@
       "pricePerMonthAnnual": 17,
       "billing": "monthly-or-annual",
       "usageLimit": "~5x Free usage",
-      "models": ["Opus", "Sonnet", "Haiku"],
+      "models": [
+        "Fable",
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ],
       "includesClaudeCode": true,
       "features": [
         "Everything in Free",
@@ -41,7 +51,7 @@
         "Claude Cowork",
         "Unlimited projects",
         "Research access",
-        "Excel + PowerPoint beta integrations"
+        "Microsoft 365 integration"
       ],
       "bestFor": "Individual heavy user, writer, solo developer"
     },
@@ -52,7 +62,12 @@
       "pricePerMonthAnnual": 100,
       "billing": "monthly",
       "usageLimit": "5x more than Pro",
-      "models": ["Opus", "Sonnet", "Haiku"],
+      "models": [
+        "Fable",
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ],
       "includesClaudeCode": true,
       "features": [
         "Everything in Pro",
@@ -69,7 +84,12 @@
       "pricePerMonthAnnual": 200,
       "billing": "monthly",
       "usageLimit": "20x more than Pro",
-      "models": ["Opus", "Sonnet", "Haiku"],
+      "models": [
+        "Fable",
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ],
       "includesClaudeCode": true,
       "features": [
         "Everything in Max 5x",
@@ -128,7 +148,8 @@
         "Compliance API",
         "Custom data retention",
         "IP allowlisting",
-        "HIPAA-ready option"
+        "HIPAA-ready option",
+        "Claude Security (beta)"
       ],
       "bestFor": "Regulated industries, large orgs with compliance requirements"
     }

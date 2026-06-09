@@ -1,14 +1,28 @@
 {
   "_meta": {
-    "lastVerified": "2026-04-17",
+    "lastVerified": "2026-06-09",
     "source": "https://platform.claude.com/docs/en/about-claude/models/overview",
     "notes": "Single source of truth for Claude API model IDs, pricing, context, cutoffs. Update here, propagates to all calculators + content pages. Drift-check workflow runs weekly."
   },
   "current": [
     {
-      "id": "claude-opus-4-7",
-      "alias": "claude-opus-4-7",
-      "name": "Claude Opus 4.7",
+      "id": "claude-fable-5",
+      "alias": "claude-fable-5",
+      "name": "Claude Fable 5",
+      "tier": "frontier",
+      "inputPricePerMTok": 10,
+      "outputPricePerMTok": 50,
+      "contextTokens": 1000000,
+      "maxOutputTokens": 128000,
+      "extendedThinking": false,
+      "adaptiveThinking": true,
+      "description": "Most capable widely released model for the most demanding reasoning and long-horizon agentic work",
+      "useCase": "frontier-reasoning"
+    },
+    {
+      "id": "claude-opus-4-8",
+      "alias": "claude-opus-4-8",
+      "name": "Claude Opus 4.8",
       "tier": "flagship",
       "inputPricePerMTok": 5,
       "outputPricePerMTok": 25,
@@ -19,7 +33,7 @@
       "extendedThinking": false,
       "adaptiveThinking": true,
       "latency": "moderate",
-      "description": "Most capable model for complex reasoning and agentic coding",
+      "description": "Most capable Opus-tier model for complex reasoning and agentic coding",
       "useCase": "complex-reasoning"
     },
     {
@@ -59,6 +73,15 @@
   ],
   "legacy": [
     {
+      "id": "claude-opus-4-7",
+      "alias": "claude-opus-4-7",
+      "name": "Claude Opus 4.7",
+      "inputPricePerMTok": 5,
+      "outputPricePerMTok": 25,
+      "contextTokens": 1000000,
+      "status": "legacy"
+    },
+    {
       "id": "claude-opus-4-6",
       "name": "Claude Opus 4.6",
       "inputPricePerMTok": 5,
@@ -91,7 +114,8 @@
       "inputPricePerMTok": 15,
       "outputPricePerMTok": 75,
       "contextTokens": 200000,
-      "status": "legacy"
+      "status": "deprecated",
+      "retiresOn": "2026-08-05"
     },
     {
       "id": "claude-sonnet-4-20250514",
