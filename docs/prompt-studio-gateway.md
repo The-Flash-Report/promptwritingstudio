@@ -1,7 +1,8 @@
 # Prompt Studio — Gateway & Key-Handling Design (Phase 0)
 
-Status: **Phase 0 + Phase 1 landed** (single-model BYOK end-to-end, plus
-parallel multi-model compare). Phase 2 (templates) is next.
+Status: **Phase 0 + Phase 1 merged** (single-model BYOK end-to-end, plus
+parallel multi-model compare). Phase 2 (templates) in review (PR #45). This
+branch adds **Phase 3 — critique (LLM-as-judge)**.
 
 ## What this layer is
 
@@ -109,10 +110,35 @@ that isn't installed). Rather than stand that up just to store secrets, keys are
 - Endpoint `pages/api/studio/compare.js` meters the free tier per model in the
   batch and caps at 8 models/request.
 
-## Next (Phase 2, after review)
+## Phase 3 — critique (LLM-as-judge)
 
-Wire the course-derived template library (`data/prompt-library.js`) as
-versioned, slot-filled prompts feeding `gateway.complete()` / `compareModels()`.
+The teaching feature: critique a user's prompt against a rubric and return
+**grounded** per-criterion scores. A JS port of the observatory judge
+(`scripts/observatory/_lib/judge.py`), retargeted from "score a model's output"
+to "score a prompt".
+
+- `data/critique-rubrics.js` — the rubric config (course IP): `{ id, version,
+  scale (0–3), passThreshold, judgeInstructions, criteria: [{ id, name,
+  description, weight }] }`. Versioned by content hash. Default: `prompt-quality`
+  (role/context, task clarity, constraints, output format, examples/criteria).
+- `lib/critique/judge.js` — `renderJudgePrompt`, `parseJudgeResponse`,
+  `computeOverall`. Ports the observatory robustness (code-fence strip, shape +
+  range validation) and **adds the grounding contract**: every criterion needs a
+  non-empty justification, and any score > 0 must cite an `evidence_span` that
+  actually appears in the prompt — a fabricated or missing span is rejected, not
+  surfaced. "This is a 7/10" with no grounding is a parse error by construction.
+- `lib/critique/index.js` — `critiquePrompt({ targetPrompt, rubricId, judgeModel,
+  userKey })` runs the judge through the **same gateway** (temperature 0), so
+  BYOK / free tier / cost / key-safety all apply. Returns `{ rubricId,
+  rubricVersion, scale, criteria[{score,justification,evidenceSpan,weight}],
+  overall{score,max,percentage,pass}, summary, judge{model,tokens,cost,latency} }`.
+- `pages/api/studio/critique.js` — `POST` to critique; `GET` lists rubrics.
+  Client-only BYOK header; free tier metered.
+
+## Next (Phase 4, after review)
+
+Saved prompts/library per user + free-vs-paid gating. **Blocked on a persistence
+decision** (no DB/auth in the repo today — see Open items).
 
 ## Open items for Bryan
 
