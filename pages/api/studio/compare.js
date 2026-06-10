@@ -10,6 +10,7 @@
 
 import { compareModels } from '../../../lib/gateway'
 import { GatewayError } from '../../../lib/gateway/errors'
+import { getTier, isFeatureAllowed } from '../../../lib/studio/entitlements'
 import { checkRateLimit } from '../../../lib/observatory/rateLimit'
 
 const FREE_TIER_MAX_PER_HOUR = 20
@@ -19,6 +20,14 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
     return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  // Multi-model compare is a paid feature (free = single-model run).
+  if (!isFeatureAllowed('compare.multi', getTier(req))) {
+    return res.status(402).json({
+      error: 'Multi-model compare is on the paid plan. Upgrade to compare models side by side.',
+      code: 'upgrade_required',
+    })
   }
 
   const userKey = req.headers['x-user-api-key'] || null
