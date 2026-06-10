@@ -12,6 +12,7 @@
 
 import { gateway } from '../../../lib/gateway'
 import { GatewayError } from '../../../lib/gateway/errors'
+import { fillTemplate, TemplateError } from '../../../lib/templates'
 import { checkRateLimit } from '../../../lib/observatory/rateLimit'
 
 // Free-tier abuse cap (per IP/hour) for unauthenticated, studio-funded runs.
@@ -24,7 +25,25 @@ export default async function handler(req, res) {
   }
 
   const userKey = req.headers['x-user-api-key'] || null
-  const { prompt, model, params } = req.body || {}
+  const { prompt, model, params, templateId, inputs } = req.body || {}
+
+  // A request supplies either a raw `prompt` or a `templateId` + `inputs` to
+  // fill the template's slots. Resolve the template first so a missing-slot
+  // error short-circuits before any provider call.
+  let resolvedPrompt = prompt
+  let template = null
+  if (templateId) {
+    try {
+      const filled = fillTemplate(templateId, inputs || {})
+      resolvedPrompt = filled.prompt
+      template = { id: filled.templateId, version: filled.version }
+    } catch (err) {
+      if (err instanceof TemplateError) {
+        return res.status(err.status).json({ error: err.message, code: err.code })
+      }
+      throw err
+    }
+  }
 
   // Only meter the studio-funded free path. BYOK runs cost the studio nothing,
   // so the user's own key (and the provider's own limits) governs them.
@@ -39,8 +58,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const result = await gateway.complete({ prompt, model, params, userKey })
-    return res.status(200).json(result)
+    const result = await gateway.complete({ prompt: resolvedPrompt, model, params, userKey })
+    return res.status(200).json(template ? { ...result, template } : result)
   } catch (err) {
     if (err instanceof GatewayError) {
       return res.status(err.status).json({ error: err.message, code: err.code })

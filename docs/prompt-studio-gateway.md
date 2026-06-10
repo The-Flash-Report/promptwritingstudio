@@ -1,7 +1,8 @@
 # Prompt Studio — Gateway & Key-Handling Design (Phase 0)
 
-Status: **Phase 0 + Phase 1 landed** (single-model BYOK end-to-end, plus
-parallel multi-model compare). Phase 2 (templates) is next.
+Status: **Phases 0–2 landed** — single-model BYOK, parallel multi-model
+compare, and the versioned, slot-filled template library feeding the gateway.
+Phase 3 (critique / LLM-as-judge) is next.
 
 ## What this layer is
 
@@ -109,10 +110,30 @@ that isn't installed). Rather than stand that up just to store secrets, keys are
 - Endpoint `pages/api/studio/compare.js` meters the free tier per model in the
   batch and caps at 8 models/request.
 
-## Next (Phase 2, after review)
+## Phase 2 — templates
 
-Wire the course-derived template library (`data/prompt-library.js`) as
-versioned, slot-filled prompts feeding `gateway.complete()` / `compareModels()`.
+The course-derived library is exposed as versioned, slot-filled **Templates**
+that feed the gateway. File-based, no Langfuse (a content hash gives
+deterministic versioning with zero infra).
+
+- `lib/templates/index.js` — merges two sources into one normalized registry:
+  `data/studio-templates.js` (guided-builder prompts with real `{{slots}}`) and
+  `data/prompt-library.js` (the broader curated library). A Template is
+  `{ id, title, description, category, useCase, tags, difficulty, body, slots[],
+  version, sourceModule }`. `version` is `v1-<sha8(body)>` — any edit bumps it.
+- `extractSlots()` / `fillTemplate(id, inputs)` — slot-filling with strict
+  missing-slot validation (throws `TemplateError` before any provider call).
+- `pages/api/studio/templates.js` — `GET` list (summaries), `?category=`, or
+  `?id=` for one full template.
+- `run.js` / `compare.js` now accept `{ templateId, inputs }` as an alternative
+  to a raw `prompt`; the rendered prompt feeds the same `gateway.complete()` /
+  `compareModels()`, and the response echoes `{ template: { id, version } }`.
+
+## Next (Phase 3, after review)
+
+Port the existing observatory LLM-as-judge (`scripts/observatory/_lib/judge.py`
++ the `rubric` block in `data/observatory/prompts/*.json`) to JS: per-criterion
+grounded 0–3 scores with justifications, surfaced as the teaching feature.
 
 ## Open items for Bryan
 
