@@ -1,8 +1,8 @@
 # Prompt Studio — Gateway & Key-Handling Design (Phase 0)
 
-Status: **Phases 0–2 landed** — single-model BYOK, parallel multi-model
-compare, and the versioned, slot-filled template library feeding the gateway.
-Phase 3 (critique / LLM-as-judge) is next.
+Status: **Phases 0–3 landed** — single-model BYOK, parallel multi-model
+compare, the versioned slot-filled template library, and prompt critique
+(LLM-as-judge). Phase 4 (persistence + freemium gating) is next.
 
 ## What this layer is
 
@@ -129,11 +129,38 @@ deterministic versioning with zero infra).
   to a raw `prompt`; the rendered prompt feeds the same `gateway.complete()` /
   `compareModels()`, and the response echoes `{ template: { id, version } }`.
 
-## Next (Phase 3, after review)
+## Phase 3 — critique (LLM-as-judge)
 
-Port the existing observatory LLM-as-judge (`scripts/observatory/_lib/judge.py`
-+ the `rubric` block in `data/observatory/prompts/*.json`) to JS: per-criterion
-grounded 0–3 scores with justifications, surfaced as the teaching feature.
+The teaching feature: critique a user's prompt against a rubric and return
+**grounded** per-criterion scores. A JS port of the observatory judge
+(`scripts/observatory/_lib/judge.py`), retargeted from "score a model's output"
+to "score a prompt".
+
+- `data/critique-rubrics.js` — the rubric config (course IP): `{ id, version,
+  scale (0–3), passThreshold, judgeInstructions, criteria: [{ id, name,
+  description, weight }] }`. Versioned by content hash. Default: `prompt-quality`
+  (role/context, task clarity, constraints, output format, examples/criteria).
+- `lib/critique/judge.js` — `renderJudgePrompt`, `parseJudgeResponse`,
+  `computeOverall`. Ports the observatory robustness (code-fence strip, shape +
+  range validation) and **adds the grounding contract**: every criterion needs a
+  non-empty justification, and any score > 0 must cite an `evidence_span` that
+  actually appears in the prompt — a fabricated or missing span is rejected, not
+  surfaced. "This is a 7/10" with no grounding is a parse error by construction.
+- `lib/critique/index.js` — `critiquePrompt({ targetPrompt, rubricId, judgeModel,
+  userKey })` runs the judge through the **same gateway** (temperature 0), so
+  BYOK / free tier / cost / key-safety all apply. Returns `{ rubricId,
+  rubricVersion, scale, criteria[{score,justification,evidenceSpan,weight}],
+  overall{score,max,percentage,pass}, summary, judge{model,tokens,cost,latency} }`.
+- `pages/api/studio/critique.js` — `POST` to critique; `GET` lists rubrics.
+  Client-only BYOK header; free tier metered. **Critique is gated as a paid
+  feature** (`isFeatureAllowed('critique', getTier(req))` → 402
+  `upgrade_required` for free callers); listing rubrics stays open. The
+  `lib/studio/entitlements.js` module is shared with Phase 4 (PR #47) — an
+  identical add on both branches, so it merges cleanly in either order.
+
+## Next (Phase 4, after review)
+
+Saved prompts/library per user + free-vs-paid gating.
 
 ## Open items for Bryan
 
