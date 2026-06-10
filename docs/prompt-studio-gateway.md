@@ -133,7 +133,11 @@ to "score a prompt".
   rubricVersion, scale, criteria[{score,justification,evidenceSpan,weight}],
   overall{score,max,percentage,pass}, summary, judge{model,tokens,cost,latency} }`.
 - `pages/api/studio/critique.js` — `POST` to critique; `GET` lists rubrics.
-  Client-only BYOK header; free tier metered.
+  Client-only BYOK header; free tier metered. **Critique is gated as a paid
+  feature** (`isFeatureAllowed('critique', getTier(req))` → 402
+  `upgrade_required` for free callers); listing rubrics stays open. The
+  `lib/studio/entitlements.js` module is shared with Phase 4 (PR #47) — an
+  identical add on both branches, so it merges cleanly in either order.
 
 ## Next (Phase 4, after review)
 

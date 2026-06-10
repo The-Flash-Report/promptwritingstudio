@@ -10,17 +10,28 @@
 import { critiquePrompt, listRubrics } from '../../../lib/critique'
 import { CritiqueError } from '../../../lib/critique/errors'
 import { GatewayError } from '../../../lib/gateway/errors'
+import { getTier, isFeatureAllowed } from '../../../lib/studio/entitlements'
 import { checkRateLimit } from '../../../lib/observatory/rateLimit'
 
 const FREE_TIER_MAX_PER_HOUR = 20
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
+    // Listing rubrics is free (browsing the teaching surface); running a
+    // critique is paid (see the gate below).
     return res.status(200).json({ rubrics: listRubrics() })
   }
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'GET, POST')
     return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  // Critique is a paid feature. Gate before any rate-limit or provider work.
+  if (!isFeatureAllowed('critique', getTier(req))) {
+    return res.status(402).json({
+      error: 'Prompt critique is on the paid plan. Upgrade to get grounded, per-criterion feedback.',
+      code: 'upgrade_required',
+    })
   }
 
   const userKey = req.headers['x-user-api-key'] || null
