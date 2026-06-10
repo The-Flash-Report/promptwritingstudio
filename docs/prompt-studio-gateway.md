@@ -1,7 +1,8 @@
 # Prompt Studio — Gateway & Key-Handling Design (Phase 0)
 
-Status: **Phase 0 + Phase 1 landed** (single-model BYOK end-to-end, plus
-parallel multi-model compare). Phase 2 (templates) is next.
+Status: **Phases 0–4 landed** — single-model BYOK, parallel multi-model
+compare, the versioned slot-filled template library, prompt critique
+(LLM-as-judge), and client-side persistence + freemium gating.
 
 ## What this layer is
 
@@ -109,6 +110,54 @@ that isn't installed). Rather than stand that up just to store secrets, keys are
 - Endpoint `pages/api/studio/compare.js` meters the free tier per model in the
   batch and caps at 8 models/request.
 
+## Phase 2 — templates
+
+The course-derived library is exposed as versioned, slot-filled **Templates**
+that feed the gateway. File-based, no Langfuse (a content hash gives
+deterministic versioning with zero infra).
+
+- `lib/templates/index.js` — merges two sources into one normalized registry:
+  `data/studio-templates.js` (guided-builder prompts with real `{{slots}}`) and
+  `data/prompt-library.js` (the broader curated library). A Template is
+  `{ id, title, description, category, useCase, tags, difficulty, body, slots[],
+  version, sourceModule }`. `version` is `v1-<sha8(body)>` — any edit bumps it.
+- `extractSlots()` / `fillTemplate(id, inputs)` — slot-filling with strict
+  missing-slot validation (throws `TemplateError` before any provider call).
+- `pages/api/studio/templates.js` — `GET` list (summaries), `?category=`, or
+  `?id=` for one full template.
+- `run.js` / `compare.js` now accept `{ templateId, inputs }` as an alternative
+  to a raw `prompt`; the rendered prompt feeds the same `gateway.complete()` /
+  `compareModels()`, and the response echoes `{ template: { id, version } }`.
+
+## Phase 3 — critique (LLM-as-judge)
+
+The teaching feature: critique a user's prompt against a rubric and return
+**grounded** per-criterion scores. A JS port of the observatory judge
+(`scripts/observatory/_lib/judge.py`), retargeted from "score a model's output"
+to "score a prompt".
+
+- `data/critique-rubrics.js` — the rubric config (course IP): `{ id, version,
+  scale (0–3), passThreshold, judgeInstructions, criteria: [{ id, name,
+  description, weight }] }`. Versioned by content hash. Default: `prompt-quality`
+  (role/context, task clarity, constraints, output format, examples/criteria).
+- `lib/critique/judge.js` — `renderJudgePrompt`, `parseJudgeResponse`,
+  `computeOverall`. Ports the observatory robustness (code-fence strip, shape +
+  range validation) and **adds the grounding contract**: every criterion needs a
+  non-empty justification, and any score > 0 must cite an `evidence_span` that
+  actually appears in the prompt — a fabricated or missing span is rejected, not
+  surfaced. "This is a 7/10" with no grounding is a parse error by construction.
+- `lib/critique/index.js` — `critiquePrompt({ targetPrompt, rubricId, judgeModel,
+  userKey })` runs the judge through the **same gateway** (temperature 0), so
+  BYOK / free tier / cost / key-safety all apply. Returns `{ rubricId,
+  rubricVersion, scale, criteria[{score,justification,evidenceSpan,weight}],
+  overall{score,max,percentage,pass}, summary, judge{model,tokens,cost,latency} }`.
+- `pages/api/studio/critique.js` — `POST` to critique; `GET` lists rubrics.
+  Client-only BYOK header; free tier metered. **Critique is gated as a paid
+  feature** (`isFeatureAllowed('critique', getTier(req))` → 402
+  `upgrade_required` for free callers); listing rubrics stays open. The
+  `lib/studio/entitlements.js` module is shared with Phase 4 (PR #47) — an
+  identical add on both branches, so it merges cleanly in either order.
+
 ## Phase 4 — persistence + freemium gating
 
 Decided: **client-side saved library** (no DB/auth) + **gate per the brief**.
@@ -122,8 +171,8 @@ Decided: **client-side saved library** (no DB/auth) + **gate per the brief**.
   no `STUDIO_ENTITLEMENT_SECRET` ⇒ `free`. Honest best-effort gating: real for
   anyone holding a valid token; **issuing** tokens is an auth concern deferred.
 - `pages/api/studio/entitlement.js` — `GET` returns `{ tier, features }` for UX
-  gating. `compare.js` now returns **402 `upgrade_required`** for free callers.
-  `critique.js` (#46) gets the same one-line gate when it merges.
+  gating. `compare.js` and `critique.js` both return **402 `upgrade_required`**
+  for free callers.
 
 ## Open items for Bryan
 

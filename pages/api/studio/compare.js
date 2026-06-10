@@ -10,6 +10,7 @@
 
 import { compareModels } from '../../../lib/gateway'
 import { GatewayError } from '../../../lib/gateway/errors'
+import { fillTemplate, TemplateError } from '../../../lib/templates'
 import { getTier, isFeatureAllowed } from '../../../lib/studio/entitlements'
 import { checkRateLimit } from '../../../lib/observatory/rateLimit'
 
@@ -31,7 +32,23 @@ export default async function handler(req, res) {
   }
 
   const userKey = req.headers['x-user-api-key'] || null
-  const { prompt, models, params } = req.body || {}
+  const { prompt, models, params, templateId, inputs } = req.body || {}
+
+  // Resolve a template (if given) before fan-out so a bad input fails fast.
+  let resolvedPrompt = prompt
+  let template = null
+  if (templateId) {
+    try {
+      const filled = fillTemplate(templateId, inputs || {})
+      resolvedPrompt = filled.prompt
+      template = { id: filled.templateId, version: filled.version }
+    } catch (err) {
+      if (err instanceof TemplateError) {
+        return res.status(err.status).json({ error: err.message, code: err.code })
+      }
+      throw err
+    }
+  }
 
   if (!Array.isArray(models) || models.length === 0) {
     return res.status(400).json({ error: 'Provide a non-empty `models` array.', code: 'bad_request' })
@@ -61,8 +78,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const result = await compareModels({ prompt, models, params, userKey })
-    return res.status(200).json(result)
+    const result = await compareModels({ prompt: resolvedPrompt, models, params, userKey })
+    return res.status(200).json(template ? { ...result, template } : result)
   } catch (err) {
     if (err instanceof GatewayError) {
       return res.status(err.status).json({ error: err.message, code: err.code })
