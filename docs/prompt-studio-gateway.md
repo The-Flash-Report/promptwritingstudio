@@ -1,8 +1,8 @@
 # Prompt Studio — Gateway & Key-Handling Design (Phase 0)
 
-Status: **Phases 0–3 landed** — single-model BYOK, parallel multi-model
-compare, the versioned slot-filled template library, and prompt critique
-(LLM-as-judge). Phase 4 (persistence + freemium gating) is next.
+Status: **Phases 0–4 landed** — single-model BYOK, parallel multi-model
+compare, the versioned slot-filled template library, prompt critique
+(LLM-as-judge), and client-side persistence + freemium gating.
 
 ## What this layer is
 
@@ -158,17 +158,30 @@ to "score a prompt".
   `lib/studio/entitlements.js` module is shared with Phase 4 (PR #47) — an
   identical add on both branches, so it merges cleanly in either order.
 
-## Next (Phase 4, after review)
+## Phase 4 — persistence + freemium gating
 
-Saved prompts/library per user + free-vs-paid gating.
+Decided: **client-side saved library** (no DB/auth) + **gate per the brief**.
+
+- `lib/studio/savedLibrary.js` — localStorage-backed saved prompts (injectable
+  storage ⇒ SSR-safe + unit-testable). Immutable updates; `id`/`createdAt`/`rev`
+  not patchable. Pure storage — no secrets (BYOK keys never go here).
+- `lib/studio/entitlements.js` — feature gating. **Free** = `templates`,
+  `run.single`; **Paid** = `compare.multi`, `critique`, `library.saved`. Tier is
+  resolved from a signed (HMAC-SHA256) `x-studio-entitlement` header; no token or
+  no `STUDIO_ENTITLEMENT_SECRET` ⇒ `free`. Honest best-effort gating: real for
+  anyone holding a valid token; **issuing** tokens is an auth concern deferred.
+- `pages/api/studio/entitlement.js` — `GET` returns `{ tier, features }` for UX
+  gating. `compare.js` and `critique.js` both return **402 `upgrade_required`**
+  for free callers.
 
 ## Open items for Bryan
 
-1. **CLAUDE.md drift:** it documents Prisma/NextAuth/Postgres that aren't
-   installed. Phase 4 (saved library + freemium gating) needs a real decision on
-   persistence/auth. Flagging now; not blocking Phase 0/1.
-2. **OpenRouter slugs** in `models.js` are placeholders for the repo's
+1. **OpenRouter slugs** in `models.js` are placeholders for the repo's
    (fictional, 2026) model ids — verify against https://openrouter.ai/models
    before a live run.
-3. Set `OPENROUTER_FREE_KEY` in the environment to enable the free tier; without
-   it, the studio is pure BYOK (still fully functional).
+2. Set `OPENROUTER_FREE_KEY` to enable the free tier; without it the studio is
+   pure BYOK (still fully functional).
+3. Set `STUDIO_ENTITLEMENT_SECRET` and wire a billing webhook to mint paid
+   tokens (`signEntitlement`) once real auth/billing exists — until then every
+   caller is `free` and paid features are locked.
+4. CLAUDE.md drift is now fixed (no Prisma/NextAuth; client-only + localStorage).

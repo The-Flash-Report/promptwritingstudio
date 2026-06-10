@@ -11,8 +11,11 @@ Next.js 13 site for PromptWritingStudio — a programmatic SEO content site targ
 
 - **Framework**: Next.js 13 (Pages Router, not App Router)
 - **Styling**: Tailwind CSS
-- **Auth**: NextAuth.js with Prisma adapter
-- **DB**: PostgreSQL via Prisma (for auth/dashboard only)
+- **Auth**: None currently. (No NextAuth, no Prisma, no `/prisma` dir — these
+  were planned but never installed. Do not assume they exist.)
+- **DB**: None. The site is static/SSG content + serverless API routes. Any
+  per-user state (e.g. the Prompt Studio saved library) is **client-side
+  localStorage**, not a database.
 - **Deployment**: Netlify with `@netlify/plugin-nextjs`
 - **Build**: `npm run build` → `.next/` publish dir
 
@@ -30,8 +33,10 @@ Next.js 13 site for PromptWritingStudio — a programmatic SEO content site targ
 /data           — SEO content data and prompt templates
   /modifiers    — JSON files for /chatgpt-prompts-for/[modifier] pages
   seo-use-cases.js — Data for /ai-prompt-generator/[slug] pages
-/lib            — Utility functions
-/prisma         — Schema and migrations
+  /gateway      — Prompt Studio model gateway (OpenRouter, BYOK)
+  /critique     — Prompt Studio LLM-as-judge critique
+  /templates    — Prompt Studio template library + slot-filling
+  /studio       — Prompt Studio entitlements (gating) + saved library
 ```
 
 ## Programmatic SEO Routes
@@ -62,11 +67,38 @@ npm run build    # production build
 npm run lint     # ESLint
 ```
 
-## Env Vars Required
+## Env Vars
 
-- `DATABASE_URL` — PostgreSQL connection string
-- `NEXTAUTH_SECRET` — NextAuth secret
-- `NEXTAUTH_URL` — Site URL
+The core marketing site needs **no** env vars (it's static content). The Prompt
+Studio layer uses these, all optional — the studio degrades gracefully without
+them (pure BYOK, free tier off, everyone on the free plan):
+
+- `OPENROUTER_FREE_KEY` — studio key for the capped free tier (OpenRouter's
+  free/rate-limited models). Absent ⇒ studio is pure BYOK.
+- `STUDIO_ENTITLEMENT_SECRET` — HMAC secret for verifying paid-plan entitlement
+  tokens. Absent ⇒ every caller is treated as `free`.
+
+There is intentionally **no** `DATABASE_URL` / `NEXTAUTH_*` — there's no DB or
+auth (see Stack).
+
+## Prompt Studio
+
+The API/integration layer under `lib/` + `pages/api/studio/`. Sells structure,
+not inference. See `docs/prompt-studio-gateway.md` for the full design.
+
+- **BYOK, client-only keys.** A user's API key arrives per-request in the
+  `x-user-api-key` header, is used in-memory for one call, and is never stored,
+  logged, returned, or traced. Never persist or log a user key.
+- **One gateway interface.** All model calls go through `lib/gateway`
+  (`complete()` / `compareModels()`). Adding/swapping a model is a config change
+  in `lib/gateway/models.js`, never endpoint code.
+- **Critique is grounded.** Every rubric criterion needs a justification +
+  in-prompt evidence span; a bare score is rejected as malformed, never surfaced.
+- **Feature gating** lives in `lib/studio/entitlements.js` (free = templates +
+  single-model; paid = compare + critique + saved library). Tier comes from a
+  signed `x-studio-entitlement` header; no token ⇒ free.
+- **Saved library** is client-side localStorage (`lib/studio/savedLibrary.js`) —
+  no server state.
 
 ## Conventions
 
