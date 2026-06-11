@@ -242,13 +242,13 @@ export default function VibeCoding() {
               <div className="bg-indigo-50 p-6 rounded-lg mt-12">
                 <h3 className="text-xl font-bold mb-3">Ready to Enhance Your Coding Experience?</h3>
                 <p className="mb-4">
-                  Discover how AI can help you achieve the perfect coding vibe with our powerful prompt writing platform.
+                  Discover how AI can help you achieve the perfect coding vibe with our free Claude Code guide.
                 </p>
-                <Link 
-                  href="/#pricing" 
+                <Link
+                  href="/claude-code-guide"
                   className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition"
                 >
-                  Explore PromptWritingStudio
+                  Read the Claude Code Guide
                 </Link>
               </div>
             </article>

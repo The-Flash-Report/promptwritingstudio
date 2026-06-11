@@ -70,7 +70,7 @@ export default function CalculatorsHub() {
     },
     {
       title: 'Claude Model Selector',
-      description: 'Pick the right Claude model (Opus 4.7, Sonnet 4.6, Haiku 4.5) for your task with live monthly cost estimates',
+      description: 'Pick the right Claude model (Opus 4.8, Sonnet 4.6, Haiku 4.5) for your task with live monthly cost estimates',
       url: '/calculators/claude-model-selector',
       keywords: ['Claude model', 'Claude pricing', 'Opus vs Sonnet'],
       color: 'from-amber-500 to-yellow-400',
@@ -88,7 +88,7 @@ export default function CalculatorsHub() {
     },
     {
       title: 'Claude Prompt Cost Calculator',
-      description: 'Calculate the cost of a single Claude API call (or a million), across Haiku 4.5, Sonnet 4.6, and Opus 4.7',
+      description: 'Calculate the cost of a single Claude API call (or a million), across Haiku 4.5, Sonnet 4.6, and Opus 4.8',
       url: '/calculators/claude-prompt-cost',
       keywords: ['Claude API cost', 'token pricing', 'prompt cost'],
       color: 'from-emerald-500 to-teal-600',
@@ -430,21 +430,13 @@ export default function CalculatorsHub() {
               Ready to Implement Your AI Strategy?
             </h2>
             <p className="text-lg mb-8 opacity-90">
-              After calculating your potential savings, learn how to implement AI in your business 
-              with our comprehensive PromptWritingStudio course.
+              After calculating your potential savings, explore our free AI prompt tools
+              and guides to start implementing AI in your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Start Learning Now
-              </a>
               <Link
                 href="/ai-prompt-generator"
-                className="border border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200"
               >
                 Try Free Tools
               </Link>

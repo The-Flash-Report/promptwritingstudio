@@ -316,11 +316,11 @@ export default function GeminiPromptGenerator() {
               Learn advanced prompt engineering techniques for Gemini, ChatGPT, and Claude. 
               Get access to 100+ professional templates and expert strategies.
             </p>
-            <Link 
-              href="/#pricing"
+            <Link
+              href="/ai-prompt-examples"
               className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
             >
-              View Course Details
+              Browse Free Prompt Examples
             </Link>
           </div>
         </div>

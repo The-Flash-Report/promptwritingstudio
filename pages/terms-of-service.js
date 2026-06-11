@@ -54,13 +54,6 @@ export default function TermsOfService() {
                 <li><strong>Performance Analytics:</strong> Usage tracking and effectiveness metrics</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">2.3 Educational Courses</h3>
-              <ul className="mb-4">
-                <li><strong>Teachable Integration:</strong> Access to prompt writing courses and training materials</li>
-                <li><strong>Email Newsletter:</strong> Regular updates, tips, and course information</li>
-                <li><strong>Premium Content:</strong> Advanced guides and exclusive resources</li>
-              </ul>
-
               <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">3. User Accounts and Registration</h2>
 
               <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3.1 Account Creation</h3>
@@ -135,52 +128,37 @@ export default function TermsOfService() {
                 <li>We implement security measures to protect your data</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">7. Course Sales and Teachable Integration</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">7. Third-Party Services</h2>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">7.1 Course Enrollment</h3>
-              <p className="mb-4">
-                Course sales and enrollment are processed through our partner Teachable. When you purchase a course, you are subject to both our Terms and Teachable's Terms of Service.
-              </p>
-
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">7.2 Refund Policy</h3>
-              <ul className="mb-4">
-                <li><strong>Course Refunds:</strong> Governed by Teachable's refund policy</li>
-                <li><strong>Satisfaction Guarantee:</strong> We offer a 30-day money-back guarantee for courses</li>
-                <li><strong>Refund Process:</strong> Contact us or Teachable support for refund requests</li>
-                <li><strong>Digital Products:</strong> Courses are digital products delivered instantly</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">8. Third-Party Services</h2>
-
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">8.1 AI Service Providers</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">7.1 AI Service Providers</h3>
               <ul className="mb-4">
                 <li><strong>Anthropic (Claude):</strong> AI optimization and chat services</li>
                 <li><strong>Perplexity AI:</strong> Research and information services</li>
                 <li><strong>Future Integrations:</strong> OpenAI, Google, and other AI providers</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">8.2 Analytics and Marketing</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">7.2 Analytics and Marketing</h3>
               <ul className="mb-4">
                 <li><strong>Google Analytics:</strong> Website usage analysis</li>
-                <li><strong>Email Marketing:</strong> Newsletter and course promotion services</li>
+                <li><strong>Email Marketing:</strong> Newsletter services</li>
                 <li><strong>Social Media:</strong> Integration with social platforms</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">8.3 Disclaimer</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">7.3 Disclaimer</h3>
               <p className="mb-4">
                 We are not responsible for the availability, content, or practices of third-party services. Your use of third-party services is subject to their respective terms and conditions.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">9. Disclaimers and Limitations</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">8. Disclaimers and Limitations</h2>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">9.1 Service Availability</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">8.1 Service Availability</h3>
               <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg mb-4">
                 <p className="text-yellow-800">
                   Our Service is provided "as is" and "as available." We do not guarantee uninterrupted or error-free operation. We reserve the right to modify, suspend, or discontinue the Service at any time.
                 </p>
               </div>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">9.2 AI-Generated Content</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">8.2 AI-Generated Content</h3>
               <ul className="mb-4">
                 <li>AI optimization results are suggestions, not guarantees</li>
                 <li>Users are responsible for verifying AI-generated content</li>
@@ -188,15 +166,15 @@ export default function TermsOfService() {
                 <li>AI models may produce biased or inappropriate content</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">9.3 Educational Content</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">8.3 Educational Content</h3>
               <ul className="mb-4">
-                <li>Courses and content are for educational purposes only</li>
+                <li>Content is for educational purposes only</li>
                 <li>Results may vary based on individual effort and circumstances</li>
                 <li>We do not guarantee specific outcomes or earnings</li>
                 <li>Content is based on current best practices and may become outdated</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">10. Limitation of Liability</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">9. Limitation of Liability</h2>
 
               <div className="bg-gray-50 border border-gray-300 p-4 rounded-lg mb-6">
                 <p className="font-semibold mb-2">IMPORTANT LIMITATION:</p>
@@ -205,12 +183,12 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">10.1 Maximum Liability</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">9.1 Maximum Liability</h3>
               <p className="mb-4">
                 Our total liability to you for all claims arising from or relating to the Service shall not exceed the amount you paid us in the twelve (12) months preceding the claim, or $100, whichever is greater.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">11. Indemnification</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">10. Indemnification</h2>
 
               <p className="mb-4">
                 You agree to indemnify, defend, and hold harmless Prompt Writing Studio and its officers, directors, employees, and agents from any claims, damages, losses, or expenses arising from:
@@ -223,33 +201,33 @@ export default function TermsOfService() {
                 <li>Content you create or share using our tools</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">12. Termination</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">11. Termination</h2>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">12.1 Termination by You</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">11.1 Termination by You</h3>
               <p className="mb-4">
-                You may stop using our Service at any time. If you have a paid subscription or course access, termination does not automatically entitle you to a refund.
+                You may stop using our Service at any time. If you have a paid subscription, termination does not automatically entitle you to a refund.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">12.2 Termination by Us</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">11.2 Termination by Us</h3>
               <p className="mb-4">
                 We may suspend or terminate your access to the Service immediately, without prior notice, for any reason, including breach of these Terms.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">12.3 Effect of Termination</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">11.3 Effect of Termination</h3>
               <ul className="mb-4">
                 <li>Your right to use the Service ceases immediately</li>
                 <li>We may delete your account and associated data</li>
                 <li>Provisions regarding liability, indemnification, and dispute resolution survive</li>
               </ul>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">13. Dispute Resolution</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">12. Dispute Resolution</h2>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">13.1 Governing Law</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">12.1 Governing Law</h3>
               <p className="mb-4">
                 These Terms are governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to conflict of law principles.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">13.2 Dispute Resolution Process</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">12.2 Dispute Resolution Process</h3>
               <ol className="mb-4">
                 <li><strong>Informal Resolution:</strong> Contact us first to attempt informal resolution</li>
                 <li><strong>Mediation:</strong> If informal resolution fails, disputes may be subject to mediation</li>
@@ -257,7 +235,7 @@ export default function TermsOfService() {
                 <li><strong>Class Action Waiver:</strong> You waive the right to participate in class actions</li>
               </ol>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">14. Changes to Terms</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">13. Changes to Terms</h2>
 
               <p className="mb-4">
                 We reserve the right to modify these Terms at any time. We will notify users of material changes by:
@@ -274,29 +252,29 @@ export default function TermsOfService() {
                 Your continued use of the Service after changes take effect constitutes acceptance of the new Terms.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">15. Miscellaneous</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">14. Miscellaneous</h2>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">15.1 Entire Agreement</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">14.1 Entire Agreement</h3>
               <p className="mb-4">
                 These Terms, together with our Privacy Policy and Cookie Policy, constitute the entire agreement between you and Prompt Writing Studio.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">15.2 Severability</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">14.2 Severability</h3>
               <p className="mb-4">
                 If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">15.3 Waiver</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">14.3 Waiver</h3>
               <p className="mb-4">
                 Our failure to enforce any provision of these Terms does not constitute a waiver of that provision or any other provision.
               </p>
 
-              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">15.4 Assignment</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">14.4 Assignment</h3>
               <p className="mb-4">
                 You may not assign or transfer your rights under these Terms without our written consent. We may assign our rights and obligations under these Terms without restriction.
               </p>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">16. Contact Information</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">15. Contact Information</h2>
 
               <p className="mb-4">
                 If you have questions about these Terms, please contact us:
@@ -309,7 +287,7 @@ export default function TermsOfService() {
                 <p><strong>Response Time:</strong> We aim to respond within 48 hours</p>
               </div>
 
-              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">17. Acknowledgment</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">16. Acknowledgment</h2>
 
               <p className="mb-6">
                 By using our Service, you acknowledge that you have read these Terms, understand them, and agree to be bound by them. You also acknowledge that these Terms may be updated from time to time, and you are responsible for reviewing them periodically.

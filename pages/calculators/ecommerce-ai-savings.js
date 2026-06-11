@@ -25,7 +25,7 @@ export default function EcommerceAISavingsPage() {
     },
     {
       question: "Will AI-generated product descriptions hurt my SEO?",
-      answer: "No, when properly prompted, AI creates SEO-optimized, unique content that search engines love. The key is using the right prompts and review processes, which our course teaches in detail.",
+      answer: "No, when properly prompted, AI creates SEO-optimized, unique content that search engines love. The key is using the right prompts and review processes — our free AI prompt examples and ChatGPT templates show the patterns that work.",
       relatedLinks: [
         { text: "AI Prompt Examples", url: "/ai-prompt-examples" },
         { text: "ChatGPT Templates", url: "/chatgpt-prompt-templates" }
@@ -434,19 +434,17 @@ export default function EcommerceAISavingsPage() {
                   Ready to Implement E-commerce AI Automation?
                 </h2>
                 <p className="text-xl mb-6 opacity-90">
-                  Get the complete toolkit of AI prompts, workflows, and strategies specifically designed for e-commerce stores
+                  Browse free AI prompts, workflows, and strategies you can adapt for your e-commerce store
                 </p>
                 <div className="text-sm opacity-75 mb-6">
-                  ✓ Platform-Specific Prompts ✓ Automation Workflows ✓ Customer Service Scripts ✓ Marketing Templates
+                  ✓ Free Prompt Examples ✓ Automation Workflows ✓ Customer Service Scripts ✓ Marketing Templates
                 </div>
-                <a
-                  href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                <Link
+                  href="/ai-prompt-examples"
                   className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  Join Prompt Writing Studio
-                </a>
+                  Browse Free AI Prompts
+                </Link>
               </div>
             </div>
 

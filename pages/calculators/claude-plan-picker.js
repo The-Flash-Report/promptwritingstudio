@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: "What does 'API-equivalent cost' mean?",
-    answer: "It's the price you'd pay if you ran the same workload through the Anthropic API instead of a subscription. We calculate it from current Claude Opus 4.7, Sonnet 4.6, and Haiku 4.5 per-token rates. The subscription is only a good deal if the flat price is lower than your API-equivalent spend — otherwise you're subsidising Anthropic."
+    answer: "It's the price you'd pay if you ran the same workload through the Anthropic API instead of a subscription. We calculate it from current Claude Opus 4.8, Sonnet 4.6, and Haiku 4.5 per-token rates. The subscription is only a good deal if the flat price is lower than your API-equivalent spend — otherwise you're subsidising Anthropic."
   },
   {
     question: "Are Anthropic's usage limits really 5x / 25x / 100x?",

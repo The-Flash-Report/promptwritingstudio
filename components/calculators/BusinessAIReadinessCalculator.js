@@ -532,23 +532,21 @@ export default function BusinessAIReadinessCalculator() {
         <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg p-6 text-center">
           <h3 className="text-xl font-bold mb-3 text-[#1A1A1A]">Ready to Start Your AI Journey?</h3>
           <p className="text-gray-600 mb-4">
-            Get personalized guidance on implementing AI in your business.
+            Take the next step: see what AI could save your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-              onClick={() => trackCTAClick('course_purchase')}
-              className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Prompt Writing Studio
-            </a>
-            <a
               href="/calculators/ai-cost-comparison"
-              className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors"
+              onClick={() => trackCTAClick('ai_cost_comparison')}
+              className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors"
             >
               Calculate AI ROI
+            </a>
+            <a
+              href="/ai-prompt-examples"
+              className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-colors"
+            >
+              Browse Free AI Prompts
             </a>
           </div>
         </div>

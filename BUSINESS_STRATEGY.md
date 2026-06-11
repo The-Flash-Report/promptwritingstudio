@@ -1,3 +1,5 @@
+> **ARCHIVED — 2026-06-11.** The course described in this document is closed (PWS sunset, strategy v0.6 §0.7); this strategy is superseded by the Claude-resource pivot. Kept for history only — do not use it to guide site content, CTAs, or monetisation.
+
 # PromptWritingStudio - Business Strategy for Course Sales
 
 ## Primary Goal: #1 Business-Focused Prompt Engineering Resource

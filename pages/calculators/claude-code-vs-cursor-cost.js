@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: "Why does Opus usage blow up the cost?",
-    answer: "Claude Opus 4.7 is ~1.7x the price of Sonnet 4.6 per token ($5/$25 vs $3/$15 per MTok). If your workflow leans heavily on Opus (complex reasoning, deep code review, long-document analysis), API costs scale fast. For Opus-heavy work, Claude Max's $100 or $200 flat tier is often the economical choice over pure API billing."
+    answer: "Claude Opus 4.8 is ~1.7x the price of Sonnet 4.6 per token ($5/$25 vs $3/$15 per MTok). If your workflow leans heavily on Opus (complex reasoning, deep code review, long-document analysis), API costs scale fast. For Opus-heavy work, Claude Max's $100 or $200 flat tier is often the economical choice over pure API billing."
   },
   {
     question: "Is the token-per-hour estimate realistic?",

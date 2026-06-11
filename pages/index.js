@@ -243,7 +243,7 @@ export default function Home() {
       <Instructor />
       <TestimonialEmbed />
 
-      {/* Course CTA — single Teachable purchase path */}
+      {/* Free tools CTA */}
       <section className="py-16 md:py-24 bg-[#F9F9F9] border-t border-[#E5E5E5]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
@@ -251,17 +251,15 @@ export default function Home() {
               Ready to write better prompts that actually work?
             </h2>
             <p className="text-lg text-[#333333] mb-8">
-              The PromptWritingStudio course walks you through the same prompt patterns and workflows
-              used in the guides on this site — applied to real email, content, and business tasks.
+              The free guides and tools on this site walk you through proven prompt patterns and workflows
+              — applied to real email, content, and business tasks.
             </p>
-            <a
-              href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/ai-prompt-generator"
               className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
             >
-              Join Now
-            </a>
+              Try the Free Prompt Generator
+            </Link>
           </div>
         </div>
       </section>

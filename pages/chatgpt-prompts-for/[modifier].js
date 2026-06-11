@@ -645,14 +645,14 @@ export default function ModifierPage({ modifierData }) {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Master ChatGPT for {modifierName}?</h2>
             <p className="text-xl mb-8">
-              Get access to our full library of premium prompt templates and start creating content that truly sounds like you.
+              Get access to our full library of free prompt templates and start creating content that truly sounds like you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/#pricing" 
+              <Link
+                href="/ai-prompt-examples"
                 className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition"
               >
-                View Pricing Plans
+                Browse Free Prompt Examples
               </Link>
               <Link
                 href="/chatgpt-prompt-templates"

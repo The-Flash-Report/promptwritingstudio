@@ -31,7 +31,6 @@ export default function PrivacyPolicy() {
                 <li><strong>Contact Information:</strong> Email address, name when you subscribe to our newsletter or contact us</li>
                 <li><strong>Communication Data:</strong> Messages you send us through contact forms or email</li>
                 <li><strong>Survey Data:</strong> Responses to surveys or feedback forms you complete voluntarily</li>
-                <li><strong>Course Enrollment:</strong> Information provided when enrolling in courses through our partner Teachable</li>
               </ul>
 
               <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">1.2 Information Automatically Collected</h3>
@@ -55,13 +54,13 @@ export default function PrivacyPolicy() {
               <ul className="mb-4">
                 <li>Providing and improving our calculators and AI tools</li>
                 <li>Processing your requests and responding to inquiries</li>
-                <li>Delivering newsletter content and course information</li>
+                <li>Delivering newsletter content</li>
                 <li>Technical support and customer service</li>
               </ul>
 
               <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">2.2 Communication</h3>
               <ul className="mb-4">
-                <li>Sending educational content and course promotions</li>
+                <li>Sending educational content and newsletters</li>
                 <li>Notifying you about updates to our services</li>
                 <li>Responding to your questions and feedback</li>
               </ul>
@@ -77,7 +76,6 @@ export default function PrivacyPolicy() {
 
               <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3.1 Third-Party Service Providers</h3>
               <ul className="mb-4">
-                <li><strong>Teachable:</strong> Course platform for enrollment and delivery</li>
                 <li><strong>Email Service Providers:</strong> For newsletter and email marketing</li>
                 <li><strong>Google Analytics:</strong> For website analytics and performance tracking</li>
                 <li><strong>AI Services:</strong> Claude (Anthropic) and Perplexity for AI optimization features</li>

@@ -161,7 +161,7 @@ const resultProfiles = {
       "Learn basic prompt structure and formatting",
       "Experiment with different AI tools"
     ],
-    courseMatch: "Perfect for our Basic Plan - learn the fundamentals step by step."
+    courseMatch: "Next step: explore our free AI prompt examples library to learn the fundamentals step by step."
   },
   intermediate: {
     title: "🚀 Prompt Writing Practitioner", 
@@ -173,7 +173,7 @@ const resultProfiles = {
       "Practice iterative prompt refinement",
       "Develop your unique voice and style"
     ],
-    courseMatch: "Ready for our Pro Plan - advanced techniques and workflows."
+    courseMatch: "Next step: work through our free ChatGPT prompt templates to build advanced techniques and workflows."
   },
   advanced: {
     title: "⭐ Prompt Writing Expert",
@@ -185,7 +185,7 @@ const resultProfiles = {
       "Master brand voice consistency techniques",
       "Explore advanced AI model capabilities"
     ],
-    courseMatch: "Perfect for our Elite Plan - specialized business strategies and 1-on-1 coaching."
+    courseMatch: "Next step: dive into our free Claude Code guide for business-grade AI workflows."
   },
   expert: {
     title: "🏆 Prompt Writing Master",
@@ -197,7 +197,7 @@ const resultProfiles = {
       "Develop custom prompt frameworks",
       "Focus on industry-specific applications"
     ],
-    courseMatch: "You might enjoy our Elite Plan for the community and advanced business applications."
+    courseMatch: "Next step: explore the Prompt Observatory to see how top prompts are scored and benchmarked."
   }
 };
 

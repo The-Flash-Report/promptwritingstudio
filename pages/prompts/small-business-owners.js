@@ -212,16 +212,16 @@ export default function SmallBusinessOwnersPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                href="/tools/mad-libs-prompt-creator"
                 className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
               >
-                Get the Complete Course
+                Create Custom Prompts
               </a>
               <a
-                href="/tools/mad-libs-prompt-creator"
+                href="/ai-prompt-examples"
                 className="bg-orange-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-900 transition-colors"
               >
-                Create Custom Prompts
+                Browse Free Prompt Examples
               </a>
             </div>
           </div>
