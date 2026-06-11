@@ -37,7 +37,7 @@ export default function ContentCreationSpeedPage() {
     },
     {
       question: "What AI tools do I need to achieve these results?",
-      answer: "You can achieve significant results with ChatGPT, Claude, or similar AI writing assistants. The key is knowing the right prompts and workflows, which our course teaches in detail.",
+      answer: "You can achieve significant results with ChatGPT, Claude, or similar AI writing assistants. The key is knowing the right prompts and workflows — start with our free AI prompt examples and ChatGPT templates.",
       relatedLinks: [
         { text: "AI Prompt Examples", url: "/ai-prompt-examples" },
         { text: "ChatGPT Templates", url: "/chatgpt-prompt-templates" }

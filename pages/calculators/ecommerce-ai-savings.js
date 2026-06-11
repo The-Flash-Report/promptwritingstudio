@@ -25,7 +25,7 @@ export default function EcommerceAISavingsPage() {
     },
     {
       question: "Will AI-generated product descriptions hurt my SEO?",
-      answer: "No, when properly prompted, AI creates SEO-optimized, unique content that search engines love. The key is using the right prompts and review processes, which our course teaches in detail.",
+      answer: "No, when properly prompted, AI creates SEO-optimized, unique content that search engines love. The key is using the right prompts and review processes — our free AI prompt examples and ChatGPT templates show the patterns that work.",
       relatedLinks: [
         { text: "AI Prompt Examples", url: "/ai-prompt-examples" },
         { text: "ChatGPT Templates", url: "/chatgpt-prompt-templates" }
