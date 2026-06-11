@@ -106,10 +106,8 @@ Each page in `seo-use-cases.js` includes:
 - Use system fonts for optimal readability and performance
 
 ### Content Guidelines
-- Maintain "Join Now" as the primary CTA text throughout the site
-- All "Join Now" CTAs link directly to the single course purchase URL (https://courses.becomeawritertoday.com/purchase?product_id=6640678)
-- Purchase URL:
-  - Complete Course: https://courses.becomeawritertoday.com/purchase?product_id=6640678 ($197 one-time payment)
+- The Teachable course is CLOSED (checkout URL returns 404). Do NOT add course purchase CTAs.
+- CTAs point to on-site free resources: /ai-prompt-generator, /ai-prompt-examples, /claude-code-guide, /calculators
 - Use benefit-driven headlines and copy
 - Include social proof and credibility indicators
 - Each section should have a clear purpose and call-to-action

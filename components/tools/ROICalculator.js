@@ -271,15 +271,13 @@ export default function ROICalculator() {
                 Ready to start saving time and money?
               </h4>
               <p className="text-gray-600 mb-4">
-                Our PromptWritingStudio course shows you exactly how to implement these AI automations in your business.
+                Our free AI prompt examples show you exactly how to implement these AI automations in your business.
               </p>
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                href="/ai-prompt-examples"
                 className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
               >
-                Start Learning Now
+                Browse Free Prompt Examples
               </a>
             </div>
 

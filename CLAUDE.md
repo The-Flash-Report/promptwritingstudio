@@ -50,8 +50,8 @@ To add a new modifier page: create a JSON in `/data/modifiers/` and link it from
 
 ## Design System
 
-- **Primary CTA**: Yellow `#FFDE59` bg, black text, text "Join Now"
-- **CTA URL**: `https://courses.becomeawritertoday.com/purchase?product_id=6640678`
+- **Primary CTA**: Yellow `#FFDE59` bg, black text
+- **CTA targets**: on-site free resources only (`/ai-prompt-generator`, `/ai-prompt-examples`, `/claude-code-guide`, `/calculators`). The Teachable course is closed — its checkout URL 404s. Never link to `courses.becomeawritertoday.com/purchase`.
 - **Text**: `#1A1A1A` headings, `#333333` body
 - **Backgrounds**: white or `#F9F9F9` alternating
 - **Borders**: `#E5E5E5`

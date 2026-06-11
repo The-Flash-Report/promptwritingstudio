@@ -355,19 +355,17 @@ const BusinessAIReadinessPage = () => {
                 Ready to Begin Your AI Journey?
               </h2>
               <p className="text-xl mb-6 opacity-90">
-                Get expert guidance on AI implementation strategy and execution with Prompt Writing Studio.
+                Use our free AI prompts and guides to plan your implementation strategy and execution.
               </p>
               <div className="space-y-4">
                 <a
-                  href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+                  href="/ai-prompt-examples"
                   className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
                 >
-                  Join Prompt Writing Studio
+                  Browse Free AI Prompts
                 </a>
                 <div className="text-sm opacity-75">
-                  ✓ AI Strategy Development ✓ Implementation Roadmap ✓ Change Management ✓ ROI Tracking
+                  ✓ Free Prompt Examples ✓ Implementation Guides ✓ Business Calculators ✓ ROI Tracking
                 </div>
               </div>
             </div>

@@ -60,21 +60,12 @@ export default function ConversionOptimizer({
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-                onClick={() => handleCTAClick('course_purchase')}
-                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center justify-center"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                🚀 Start Saving Now - Get Course
-                {showUrgency && <span className="ml-2 text-sm">(Limited Time)</span>}
-              </a>
-              <button
+                href="/ai-prompt-examples"
                 onClick={() => handleCTAClick('free_prompts')}
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"
+                className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 inline-flex items-center justify-center"
               >
                 📝 Get Free AI Prompts
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -175,20 +166,18 @@ export function StickyMobileCTA({ calculatorName, hasResults = false }) {
             {hasResults ? '🎯 Ready to implement?' : '🚀 Start saving with AI'}
           </div>
           <div className="text-xs opacity-90">
-            {hasResults ? 'Get the course & prompts' : 'Calculate your savings first'}
+            {hasResults ? 'Get free prompts & guides' : 'Calculate your savings first'}
           </div>
         </div>
         <a
-          href={hasResults 
-            ? "https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+          href={hasResults
+            ? "/ai-prompt-examples"
             : "#calculator"
           }
-          onClick={() => handleCTAClick(hasResults ? 'mobile_sticky_course' : 'mobile_sticky_calculator')}
+          onClick={() => handleCTAClick(hasResults ? 'mobile_sticky_prompts' : 'mobile_sticky_calculator')}
           className="bg-[#FFDE59] text-[#1A1A1A] px-4 py-2 rounded-lg font-bold text-sm hover:bg-[#E5C84F] transition-colors"
-          target={hasResults ? "_blank" : undefined}
-          rel={hasResults ? "noopener noreferrer" : undefined}
         >
-          {hasResults ? 'Get Course' : 'Calculate'}
+          {hasResults ? 'Free Prompts' : 'Calculate'}
         </a>
       </div>
     </div>

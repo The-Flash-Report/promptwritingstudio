@@ -334,15 +334,15 @@ export default function MarketingProfessionalsPage() {
               Ready to 10x Your Marketing Results?
             </h2>
             <p className="text-xl mb-8 text-blue-100">
-              Get access to 100+ advanced marketing prompts, templates, and exclusive training
+              Get access to 100+ advanced marketing prompts, templates, and free guides
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+              <Link
+                href="/ai-prompt-examples"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
               >
-                Upgrade to PromptWritingStudio Pro
-              </a>
+                Browse Free Prompt Examples
+              </Link>
               <Link
                 href="/claude-code-guide"
                 className="bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-900 transition-colors"

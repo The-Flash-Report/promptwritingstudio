@@ -140,12 +140,6 @@ export default function CookiePolicy() {
                       <td className="px-4 py-2">_gtm</td>
                       <td className="px-4 py-2">Session</td>
                     </tr>
-                    <tr className="border-t">
-                      <td className="px-4 py-2">Teachable</td>
-                      <td className="px-4 py-2">Course platform</td>
-                      <td className="px-4 py-2">_teachable_session</td>
-                      <td className="px-4 py-2">Session</td>
-                    </tr>
                   </tbody>
                 </table>
               </div>

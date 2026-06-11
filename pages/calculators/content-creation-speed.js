@@ -290,19 +290,17 @@ export default function ContentCreationSpeedPage() {
                   Ready to Actually Implement These Time Savings?
                 </h2>
                 <p className="text-xl mb-6 opacity-90">
-                  Get the exact AI prompts, workflows, and strategies that top content creators use to 4-8x their output
+                  Browse the free AI prompts, workflows, and strategies that top content creators use to 4-8x their output
                 </p>
                 <div className="text-sm opacity-75 mb-6">
-                  ✓ 50+ Proven AI Prompts ✓ Step-by-Step Workflows ✓ Industry-Specific Templates
+                  ✓ Free AI Prompt Examples ✓ Step-by-Step Workflows ✓ Copy-Paste Templates
                 </div>
-                <a
-                  href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/ai-prompt-examples"
                   className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors"
                 >
-                  Join Prompt Writing Studio
-                </a>
+                  Browse Free Prompt Examples
+                </Link>
               </div>
             </div>
 

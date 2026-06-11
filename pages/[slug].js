@@ -160,11 +160,11 @@ export default function SEOPage({ pageData }) {
             <p className="text-xl mb-8">
               Access our full library of templates and start creating better prompts today.
             </p>
-            <Link 
-              href="/#pricing" 
+            <Link
+              href="/ai-prompt-examples"
               className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition inline-block"
             >
-              View Pricing Plans
+              Browse Free Prompt Examples
             </Link>
           </div>
         </div>

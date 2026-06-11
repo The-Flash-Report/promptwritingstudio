@@ -344,7 +344,7 @@ export default function AICostComparisonPage() {
               Ready to Implement AI in Your Business?
             </h2>
             <p className="text-lg mb-4 opacity-90">
-              Our PromptWritingStudio course teaches you the exact prompts and processes 
+              Our free AI prompt examples show you the exact prompts and processes
               to achieve the cost savings shown in your calculation.
             </p>
             <div className="bg-white bg-opacity-20 rounded-lg p-4 mb-6">
@@ -357,14 +357,12 @@ export default function AICostComparisonPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
+              <Link
+                href="/ai-prompt-examples"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
               >
-                Start Learning Now
-              </a>
+                Browse Free Prompt Examples
+              </Link>
               <Link
                 href="/roi-calculator"
                 className="border border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"

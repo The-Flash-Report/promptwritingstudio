@@ -430,21 +430,13 @@ export default function CalculatorsHub() {
               Ready to Implement Your AI Strategy?
             </h2>
             <p className="text-lg mb-8 opacity-90">
-              After calculating your potential savings, learn how to implement AI in your business 
-              with our comprehensive PromptWritingStudio course.
+              After calculating your potential savings, explore our free AI prompt tools
+              and guides to start implementing AI in your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Start Learning Now
-              </a>
               <Link
                 href="/ai-prompt-generator"
-                className="border border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-600 transition-colors duration-200"
+                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors duration-200"
               >
                 Try Free Tools
               </Link>

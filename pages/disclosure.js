@@ -32,9 +32,9 @@ export default function Disclosure() {
                   buy a product or subscribe to a service, we may earn a commission at no extra cost to you.
                 </li>
                 <li>
-                  <strong>Course + digital product sales.</strong> We sell educational products — including
-                  the Prompt Writing Studio course — hosted through Teachable under the Become a Writer Today
-                  brand. Those purchases are a direct relationship between you and Teachable.
+                  <strong>Course + digital product sales (historical).</strong> We previously sold the
+                  Prompt Writing Studio course, hosted through Teachable under the Become a Writer Today
+                  brand. That course is now closed to new enrollment and is no longer sold on this site.
                 </li>
                 <li>
                   <strong>Referral credits.</strong> Some tools (for example, Anthropic's Claude referral
@@ -49,7 +49,7 @@ export default function Disclosure() {
                 the whole site. You should assume that any outbound link to a paid AI tool, course, or software
                 product on Prompt Writing Studio <strong>may</strong> be an affiliate or referral link. That
                 currently includes, but is not limited to: Anthropic (Claude), OpenAI (ChatGPT), Jasper,
-                Grammarly, Teachable, and various tools we recommend in our reviews and calculators.
+                Grammarly, and various tools we recommend in our reviews and calculators.
               </p>
               <p className="mb-6">
                 If a link is <em>not</em> an affiliate link — for example, a link to official documentation, a
