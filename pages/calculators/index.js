@@ -70,7 +70,7 @@ export default function CalculatorsHub() {
     },
     {
       title: 'Claude Model Selector',
-      description: 'Pick the right Claude model (Opus 4.7, Sonnet 4.6, Haiku 4.5) for your task with live monthly cost estimates',
+      description: 'Pick the right Claude model (Opus 4.8, Sonnet 4.6, Haiku 4.5) for your task with live monthly cost estimates',
       url: '/calculators/claude-model-selector',
       keywords: ['Claude model', 'Claude pricing', 'Opus vs Sonnet'],
       color: 'from-amber-500 to-yellow-400',
@@ -88,7 +88,7 @@ export default function CalculatorsHub() {
     },
     {
       title: 'Claude Prompt Cost Calculator',
-      description: 'Calculate the cost of a single Claude API call (or a million), across Haiku 4.5, Sonnet 4.6, and Opus 4.7',
+      description: 'Calculate the cost of a single Claude API call (or a million), across Haiku 4.5, Sonnet 4.6, and Opus 4.8',
       url: '/calculators/claude-prompt-cost',
       keywords: ['Claude API cost', 'token pricing', 'prompt cost'],
       color: 'from-emerald-500 to-teal-600',

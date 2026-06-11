@@ -39,7 +39,7 @@ const faqs = [
 const frontmatterFields = [
   { field: "description", required: true, desc: "One-line plain-English summary of what the skill does. Claude Code shows this in autocomplete." },
   { field: "allowed-tools", required: false, desc: "Array of tool names the skill can use (e.g. [Bash, Read, Edit]). Omit to allow all tools." },
-  { field: "model", required: false, desc: "Force a specific Claude model — 'claude-haiku-4-5' for lightweight tasks, 'claude-opus-4-7' for deep reasoning." },
+  { field: "model", required: false, desc: "Force a specific Claude model — 'claude-haiku-4-5' for lightweight tasks, 'claude-opus-4-8' for deep reasoning." },
   { field: "argument-hint", required: false, desc: "What input, if any, the skill expects. Shown in autocomplete after the slash command." }
 ]
 

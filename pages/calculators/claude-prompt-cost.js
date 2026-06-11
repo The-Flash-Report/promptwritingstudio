@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "How much cheaper is Haiku than Opus?",
-    answer: "Haiku 4.5 is 5x cheaper than Opus 4.7 on both input and output — $1/M in vs $5/M in, and $5/M out vs $25/M out. For high-volume routine tasks (classification, short Q&A, simple transforms), running Haiku instead of Opus is one of the biggest cost optimisations available. The quality difference is often invisible for easy tasks. (Note: older Opus 4 and 4.1 were $15/$75 per MTok — a 15x gap — but current-generation Opus dropped to $5/$25 with the 4.5 release.)"
+    answer: "Haiku 4.5 is 5x cheaper than Opus 4.8 on both input and output — $1/M in vs $5/M in, and $5/M out vs $25/M out. For high-volume routine tasks (classification, short Q&A, simple transforms), running Haiku instead of Opus is one of the biggest cost optimisations available. The quality difference is often invisible for easy tasks. (Note: older Opus 4 and 4.1 were $15/$75 per MTok — a 15x gap — but current-generation Opus dropped to $5/$25 with the 4.5 release.)"
   },
   {
     question: "How do I cut my Claude API costs?",
@@ -71,7 +71,7 @@ export default function ClaudePromptCost() {
     <>
       <Head>
         <title>Claude Prompt Cost Calculator (Opus, Sonnet, Haiku) | PromptWritingStudio</title>
-        <meta name="description" content="Calculate the cost of a single Claude API call — or a million of them. Supports Claude Opus 4.7, Sonnet 4.6, and Haiku 4.5 at current Anthropic pricing. Free, no signup." />
+        <meta name="description" content="Calculate the cost of a single Claude API call — or a million of them. Supports Claude Opus 4.8, Sonnet 4.6, and Haiku 4.5 at current Anthropic pricing. Free, no signup." />
         <link rel="canonical" href="https://promptwritingstudio.com/calculators/claude-prompt-cost" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
@@ -81,7 +81,7 @@ export default function ClaudePromptCost() {
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Claude Prompt Cost Calculator</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              Work out what a Claude API call will cost — one call, a thousand, or a million — across Haiku 4.5, Sonnet 4.6, and Opus 4.7.
+              Work out what a Claude API call will cost — one call, a thousand, or a million — across Haiku 4.5, Sonnet 4.6, and Opus 4.8.
             </p>
             <LastVerified date={MODELS_META.lastVerified} source={MODELS_META.source} className="mt-4 text-gray-300" />
           </div>
@@ -192,7 +192,7 @@ export default function ClaudePromptCost() {
             <div className="space-y-4">
               <div className="bg-[#F9F9F9] p-5 rounded-lg border-l-4 border-[#FFDE59]">
                 <h3 className="font-bold text-[#1A1A1A] mb-1">1. Pick the smallest model that works</h3>
-                <p className="text-[#333333]">Start with Haiku. Escalate only when quality suffers. Dropping from Opus 4.7 to Sonnet 4.6 cuts cost by 40%; dropping from Sonnet to Haiku cuts another 67%.</p>
+                <p className="text-[#333333]">Start with Haiku. Escalate only when quality suffers. Dropping from Opus 4.8 to Sonnet 4.6 cuts cost by 40%; dropping from Sonnet to Haiku cuts another 67%.</p>
               </div>
               <div className="bg-[#F9F9F9] p-5 rounded-lg border-l-4 border-[#FFDE59]">
                 <h3 className="font-bold text-[#1A1A1A] mb-1">2. Use prompt caching for repeated context</h3>

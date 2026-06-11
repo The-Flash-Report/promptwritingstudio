@@ -8,11 +8,11 @@ import EmailCapture from '../components/ui/EmailCapture'
 const faqs = [
   {
     question: "What is vision AI prompting and how is it different from image generation?",
-    answer: "Vision AI prompting is about using AI to analyze and understand images you provide, not about creating new images. When you upload a photo, screenshot, chart, or document to models like GPT-4 Vision, Claude, or Gemini, you can ask the AI to describe what it sees, extract data, interpret charts, read handwriting, analyze designs, and much more. Image generation (like DALL-E or Midjourney) creates images from text. Vision AI does the opposite: it creates text understanding from images."
+    answer: "Vision AI prompting is about using AI to analyze and understand images you provide, not about creating new images. When you upload a photo, screenshot, chart, or document to multimodal models like GPT-5, Claude, or Gemini, you can ask the AI to describe what it sees, extract data, interpret charts, read handwriting, analyze designs, and much more. Image generation (like DALL-E or Midjourney) creates images from text. Vision AI does the opposite: it creates text understanding from images."
   },
   {
     question: "Which AI models support vision and image understanding?",
-    answer: "As of 2026, the major models with strong vision capabilities are: GPT-5 and GPT-4o (OpenAI/ChatGPT), Claude Opus 4.7 and Claude Sonnet 4.6 (Anthropic), and Gemini 2.5 Pro (Google). All three platforms allow you to upload images alongside text prompts. Each has slightly different strengths: GPT-4o is fast and versatile, Claude excels at detailed document analysis, and Gemini handles very large images and videos well."
+    answer: "As of 2026, the major models with strong vision capabilities are: GPT-5 and GPT-4o (OpenAI/ChatGPT), Claude Opus 4.8 and Claude Sonnet 4.6 (Anthropic), and Gemini 2.5 Pro (Google). All three platforms allow you to upload images alongside text prompts. Each has slightly different strengths: GPT-4o is fast and versatile, Claude excels at detailed document analysis, and Gemini handles very large images and videos well."
   },
   {
     question: "What types of images can vision AI analyze?",
@@ -36,7 +36,7 @@ const faqs = [
   },
   {
     question: "Can vision AI read handwriting accurately?",
-    answer: "Modern vision AI models are surprisingly good at reading handwriting, especially when the writing is reasonably legible. GPT-4 Vision and Claude both handle printed handwriting well and can manage cursive with moderate accuracy. For best results, ensure good lighting and contrast in the image, and tell the AI in your prompt that the image contains handwriting and what type of content to expect. Very messy handwriting or unusual scripts may still be challenging."
+    answer: "Modern vision AI models are surprisingly good at reading handwriting, especially when the writing is reasonably legible. GPT-5 and Claude both handle printed handwriting well and can manage cursive with moderate accuracy. For best results, ensure good lighting and contrast in the image, and tell the AI in your prompt that the image contains handwriting and what type of content to expect. Very messy handwriting or unusual scripts may still be challenging."
   }
 ]
 
@@ -118,19 +118,19 @@ export default function VisionAIPrompts() {
   const faqSchema = generateFAQSchema(faqs)
   const articleSchema = generateArticleSchema({
     title: 'Vision AI Prompts | How to Write Prompts for Image Understanding in ChatGPT, Claude & Gemini',
-    description: 'Learn how to write effective prompts for vision AI and image understanding. Extract data from charts, analyze screenshots, read documents, and review designs using GPT-4 Vision, Claude, and Gemini multimodal capabilities.',
+    description: 'Learn how to write effective prompts for vision AI and image understanding. Extract data from charts, analyze screenshots, read documents, and review designs using GPT-5, Claude, and Gemini multimodal capabilities.',
     url: 'https://promptwritingstudio.com/vision-ai-prompts',
     datePublished: '2025-06-01',
     dateModified: '2026-02-01',
-    keywords: ['vision AI prompts', 'GPT-4 vision prompts', 'Claude vision', 'Gemini multimodal prompts', 'image analysis AI', 'AI image understanding', 'vision prompting', 'multimodal AI prompts', 'chart reading AI', 'screenshot analysis AI']
+    keywords: ['vision AI prompts', 'GPT-5 vision prompts', 'Claude vision', 'Gemini multimodal prompts', 'image analysis AI', 'AI image understanding', 'vision prompting', 'multimodal AI prompts', 'chart reading AI', 'screenshot analysis AI']
   })
 
   return (
     <>
       <Head>
         <title>Vision AI Prompts | How to Write Prompts for Image Understanding in ChatGPT, Claude &amp; Gemini</title>
-        <meta name="description" content="Learn to write effective vision AI prompts for image analysis. Extract chart data, read documents, analyze screenshots, and review designs using GPT-4 Vision, Claude, and Gemini multimodal features." />
-        <meta name="keywords" content="vision AI prompts, GPT-4 vision prompts, Claude vision, Gemini multimodal prompts, image analysis AI, AI image understanding, vision prompting, multimodal AI prompts" />
+        <meta name="description" content="Learn to write effective vision AI prompts for image analysis. Extract chart data, read documents, analyze screenshots, and review designs using GPT-5, Claude, and Gemini multimodal features." />
+        <meta name="keywords" content="vision AI prompts, GPT-5 vision prompts, Claude vision, Gemini multimodal prompts, image analysis AI, AI image understanding, vision prompting, multimodal AI prompts" />
         <link rel="canonical" href="https://promptwritingstudio.com/vision-ai-prompts" />
         <script
           type="application/ld+json"
@@ -170,7 +170,7 @@ export default function VisionAIPrompts() {
             </div>
             <div className="text-white text-lg">
               <p>Not about generating images. About using AI to understand them.</p>
-              <p>Works with GPT-5/GPT-4o, Claude Opus 4.7 / Sonnet 4.6, and Gemini 2.5 Pro</p>
+              <p>Works with GPT-5/GPT-4o, Claude Opus 4.8 / Sonnet 4.6, and Gemini 2.5 Pro</p>
             </div>
           </div>
         </section>
@@ -200,7 +200,7 @@ export default function VisionAIPrompts() {
                 </div>
               </div>
               <p className="text-lg text-[#333333]">
-                Modern AI models from OpenAI (GPT-5, GPT-4o), Anthropic (Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5), and Google (Gemini 2.5 Pro, Gemini 2.5 Flash) all support multimodal input. This means you can upload an image alongside your text prompt and the AI will analyze both together. The quality of your results depends almost entirely on how well you write your vision prompt.
+                Modern AI models from OpenAI (GPT-5, GPT-4o), Anthropic (Claude Opus 4.8, Claude Sonnet 4.6, Claude Haiku 4.5), and Google (Gemini 2.5 Pro, Gemini 2.5 Flash) all support multimodal input. This means you can upload an image alongside your text prompt and the AI will analyze both together. The quality of your results depends almost entirely on how well you write your vision prompt.
               </p>
             </div>
           </div>

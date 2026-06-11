@@ -22,8 +22,8 @@ export default function AIModels() {
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "AI Models Compared: Claude, GPT, Gemini, Llama, Mistral & More",
-    "description": "Up-to-date comparison of the major AI models — Claude Opus 4.7, Sonnet 4.6, Haiku 4.5, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral Large and more — with context windows, pricing, and feature differences.",
-    "keywords": "AI models, Claude Opus 4.7, Claude Sonnet 4.6, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral, LLM comparison",
+    "description": "Up-to-date comparison of the major AI models — Claude Opus 4.8, Sonnet 4.6, Haiku 4.5, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral Large and more — with context windows, pricing, and feature differences.",
+    "keywords": "AI models, Claude Opus 4.8, Claude Sonnet 4.6, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral, LLM comparison",
     "datePublished": "2025-01-15T00:00:00+00:00",
     "dateModified": `${AI_MODELS_META.lastVerified}T00:00:00+00:00`,
     "author": {
@@ -68,7 +68,7 @@ export default function AIModels() {
     },
     {
       question: "What are the notable flagship text and multimodal AI models?",
-      answer: "Claude Opus 4.7 (Anthropic) for agentic coding and long-horizon reasoning with a 1M context window; Claude Sonnet 4.6 (Anthropic) for the best price-performance day-to-day with a 1M context window; GPT-5 (OpenAI) as a flagship multimodal model; and Gemini 2.5 Pro (Google) with a 1M+ token context window."
+      answer: "Claude Opus 4.8 (Anthropic) for agentic coding and long-horizon reasoning with a 1M context window; Claude Sonnet 4.6 (Anthropic) for the best price-performance day-to-day with a 1M context window; GPT-5 (OpenAI) as a flagship multimodal model; and Gemini 2.5 Pro (Google) with a 1M+ token context window."
     },
     {
       question: "What are the notable specialized and open-source AI models?",
@@ -178,7 +178,7 @@ export default function AIModels() {
   return (
     <Layout
       title="AI Models Compared — Claude, GPT, Gemini, Llama & More (2026)"
-      description="Up-to-date comparison of the major AI models — Claude Opus 4.7, Sonnet 4.6, Haiku 4.5, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral Large, DeepSeek V3 — with context windows, pricing, and feature differences."
+      description="Up-to-date comparison of the major AI models — Claude Opus 4.8, Sonnet 4.6, Haiku 4.5, GPT-5, GPT-4o, Gemini 2.5 Pro, Llama 3.3, Mistral Large, DeepSeek V3 — with context windows, pricing, and feature differences."
     >
       <script
         type="application/ld+json"
@@ -202,7 +202,7 @@ export default function AIModels() {
                 AI Models Guide
               </h1>
               <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                Side-by-side look at the major AI models — Claude Opus 4.7, Sonnet 4.6, Haiku 4.5, GPT-5, GPT-4o,
+                Side-by-side look at the major AI models — Claude Opus 4.8, Sonnet 4.6, Haiku 4.5, GPT-5, GPT-4o,
                 Gemini 2.5 Pro, Llama 3.3, Mistral Large, DeepSeek V3 — with context windows, pricing, and what each is best at.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-lg">
@@ -480,7 +480,7 @@ export default function AIModels() {
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="border border-gray-300 px-4 py-3 font-medium">Large Language Models</td>
-                      <td className="border border-gray-300 px-4 py-3">Claude Opus 4.7, Claude Sonnet 4.6, GPT-5, Gemini 2.5 Pro, Llama 3.3</td>
+                      <td className="border border-gray-300 px-4 py-3">Claude Opus 4.8, Claude Sonnet 4.6, GPT-5, Gemini 2.5 Pro, Llama 3.3</td>
                       <td className="border border-gray-300 px-4 py-3">Chatbots, research, text generation, code generation</td>
                     </tr>
                     <tr>
@@ -505,7 +505,7 @@ export default function AIModels() {
                 <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-lg border-l-4 border-blue-500">
                   <h4 className="text-lg font-semibold mb-3 text-blue-800">Text & Multimodal</h4>
                   <ul className="text-sm text-gray-700 space-y-2">
-                    <li><strong>Claude Opus 4.7 (Anthropic):</strong> Agentic coding + long-horizon reasoning, 1M context</li>
+                    <li><strong>Claude Opus 4.8 (Anthropic):</strong> Agentic coding + long-horizon reasoning, 1M context</li>
                     <li><strong>Claude Sonnet 4.6 (Anthropic):</strong> Best price-performance for day-to-day, 1M context</li>
                     <li><strong>GPT-5 (OpenAI):</strong> Flagship multimodal model</li>
                     <li><strong>Gemini 2.5 Pro (Google):</strong> 1M+ token context window</li>
