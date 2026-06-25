@@ -7,7 +7,7 @@ import { getAIModelById, AI_MODELS_META } from '../lib/ai-models'
 
 // Pull current model facts from the central multi-vendor JSON so prices/names/context
 // windows update in one place. Never hardcode decaying numbers in prose.
-const opus = getAIModelById('claude-opus-4-7')
+const opus = getAIModelById('claude-opus-4-8')
 const sonnet = getAIModelById('claude-sonnet-4-6')
 const haiku = getAIModelById('claude-haiku-4-5-20251001')
 const geminiPro = getAIModelById('gemini-2-5-pro')

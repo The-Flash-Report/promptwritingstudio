@@ -5,7 +5,7 @@ import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator
 import { getAIModelById } from '../lib/ai-models'
 
 // Pull current model facts from the central JSON so prices/names update in one place.
-const opus = getAIModelById('claude-opus-4-7')
+const opus = getAIModelById('claude-opus-4-8')
 const sonnet = getAIModelById('claude-sonnet-4-6')
 const haiku = getAIModelById('claude-haiku-4-5-20251001')
 

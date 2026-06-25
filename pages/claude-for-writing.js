@@ -7,7 +7,7 @@ import { getAIModelById } from '../lib/ai-models'
 const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
 
 // Pull live model facts from the central JSON so names/prices update in one place.
-const opus = getAIModelById('claude-opus-4-7')
+const opus = getAIModelById('claude-opus-4-8')
 const sonnet = getAIModelById('claude-sonnet-4-6')
 const haiku = getAIModelById('claude-haiku-4-5-20251001')
 
