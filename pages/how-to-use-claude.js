@@ -319,8 +319,8 @@ export default function HowToUseClaude() {
               The gap between a frustrating AI answer and a genuinely useful one is almost always the prompt — not the tool. PromptWritingStudio teaches the prompting system that works across Claude, ChatGPT, and Gemini, so you stop guessing and start getting the output you actually wanted.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
-                Join Now
+              <a href="/prompt-grader" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
+                Grade Your Prompt Free
               </a>
               <Link href="/ai-prompt-generator/claude-prompts" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200">
                 Browse Claude prompts

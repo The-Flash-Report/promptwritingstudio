@@ -219,9 +219,9 @@ If unsure: [what to do instead of guessing].`}</div>
         <section className="py-16 bg-[#1A1A1A] text-center">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-3xl font-bold text-white mb-4">Stop guessing which model to use</h2>
-            <p className="text-gray-300 mb-6">The model selector takes your task type and runs the choice for you. Once you know the model, the next lever is the prompt — that is where most of the quality lives, and what the course teaches end to end.</p>
+            <p className="text-gray-300 mb-6">The model selector takes your task type and runs the choice for you. Once you know the model, the next lever is the prompt — that is where most of the quality lives. The free Prompt Grader scores yours and rewrites it.</p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
-              <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Join Now</a>
+              <a href="/prompt-grader" className="bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Grade Your Prompt Free</a>
               <Link href="/calculators/claude-model-selector" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Open the model selector</Link>
               <Link href="/claude-context-window" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Claude context window</Link>
               <Link href="/claude-vs-gemini" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Claude vs Gemini</Link>

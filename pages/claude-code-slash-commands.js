@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 const faqs = [
   {
@@ -447,8 +447,8 @@ export default function ClaudeCodeSlashCommands() {
             <p className="text-lg text-[#333333] mb-8">
               A slash command is only as good as the prompt inside it. Vague instructions produce vague results no matter how you trigger them. PromptWritingStudio teaches the prompt-writing fundamentals — specificity, context, and structure — that make every command, skill, and AI workflow you build pull its weight.
             </p>
-            <a href={COURSE_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
-              Join Now
+            <a href={GRADER_URL} className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
+              Grade Your Prompt Free
             </a>
           </div>
         </section>

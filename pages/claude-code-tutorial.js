@@ -5,7 +5,7 @@ import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema, generateHowToSchema } from '../lib/schemaGenerator'
 
 const PAGE_URL = 'https://promptwritingstudio.com/claude-code-tutorial'
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 // Steps used for both the visible walkthrough and the HowTo schema.
 const howToSteps = [
@@ -342,7 +342,7 @@ export default function ClaudeCodeTutorial() {
             </div>
             <div className="mt-8 bg-white border-l-4 border-[#FFDE59] p-6 rounded-r-lg">
               <p className="text-[#333333]">
-                <strong>The prompt skill carries over:</strong> writing clear instructions for Claude Code is the same skill as writing clear prompts for ChatGPT or Claude chat — name the outcome, give context, set boundaries. If you want to get systematically better at that, the <a href={COURSE_URL} className="text-[#1A1A1A] underline font-semibold">Prompt Writing Studio course</a> teaches the prompting patterns that make every AI tool, including Claude Code, far more reliable.
+                <strong>The prompt skill carries over:</strong> writing clear instructions for Claude Code is the same skill as writing clear prompts for ChatGPT or Claude chat — name the outcome, give context, set boundaries. If you want to get systematically better at that, the free <a href={GRADER_URL} className="text-[#1A1A1A] underline font-semibold">Prompt Grader</a> scores your instructions and rewrites them, so every AI tool, including Claude Code, gets far more reliable.
               </p>
             </div>
           </div>
@@ -426,10 +426,10 @@ export default function ClaudeCodeTutorial() {
               Get better at the part that actually matters
             </h2>
             <p className="text-lg text-[#333333] mb-8">
-              Claude Code is only as good as the instructions you give it. The prompts in this tutorial are simple on purpose — but real work needs real prompting skill. The Prompt Writing Studio course teaches the patterns that make Claude Code, ChatGPT, and every other AI tool produce work you can trust.
+              Claude Code is only as good as the instructions you give it. The prompts in this tutorial are simple on purpose — but real work needs real prompting skill. Paste your own prompt into the free Prompt Grader for a scored critique and a rewrite you can use straight away.
             </p>
-            <a href={COURSE_URL} className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
-              Join Now
+            <a href={GRADER_URL} className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
+              Grade Your Prompt Free
             </a>
           </div>
         </section>

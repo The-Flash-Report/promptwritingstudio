@@ -29,7 +29,7 @@ const RUBRICS = [
     scale: SCALE,
     passThreshold: 2.0,
     judgeInstructions:
-      'You are an expert prompt-engineering instructor. Judge the prompt as a set of instructions to an AI — not whether its topic is good. Be strict and concrete.',
+      'You are an expert prompt-engineering instructor. Judge the prompt as a set of instructions to an AI — not whether its topic is good. Be strict and concrete: score what is actually written, quote it, and never award points for what the author probably meant.',
     criteria: [
       {
         id: 'role_context',

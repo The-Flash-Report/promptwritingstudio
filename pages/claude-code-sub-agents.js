@@ -452,9 +452,7 @@ URLs the main conversation needs. Never return raw page dumps.`
             </div>
             <div className="mt-10 text-center">
               <a
-                href="https://courses.becomeawritertoday.com/purchase?product_id=6640678"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/prompt-grader"
                 className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
               >
                 Join the Prompt Writing Course

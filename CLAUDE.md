@@ -51,7 +51,7 @@ To add a new modifier page: create a JSON in `/data/modifiers/` and link it from
 ## Design System
 
 - **Primary CTA**: Yellow `#FFDE59` bg, black text
-- **CTA targets**: on-site free resources only (`/ai-prompt-generator`, `/ai-prompt-examples`, `/claude-code-guide`, `/calculators`). The Teachable course is closed — its checkout URL 404s. Never link to `courses.becomeawritertoday.com/purchase`.
+- **CTA targets**: on-site free resources only (`/prompt-grader`, `/ai-prompt-generator`, `/ai-prompt-examples`, `/claude-code-guide`, `/calculators`). The Teachable course is closed — its checkout URL 404s. Never link to `courses.becomeawritertoday.com/purchase`. (All 20 legacy checkout links were rewired to `/prompt-grader` on 2026-07-01.)
 - **Text**: `#1A1A1A` headings, `#333333` body
 - **Backgrounds**: white or `#F9F9F9` alternating
 - **Borders**: `#E5E5E5`
@@ -73,10 +73,16 @@ The core marketing site needs **no** env vars (it's static content). The Prompt
 Studio layer uses these, all optional — the studio degrades gracefully without
 them (pure BYOK, free tier off, everyone on the free plan):
 
+- `ANTHROPIC_API_KEY` — funds the studio-funded grader judge (`grader-sonnet`)
+  and the /learn try-it panels. Set in prod (verified 2026-07-01). Absent ⇒
+  keyless grades return 401; BYOK still works.
 - `OPENROUTER_FREE_KEY` — studio key for the capped free tier (OpenRouter's
   free/rate-limited models). Absent ⇒ studio is pure BYOK.
 - `STUDIO_ENTITLEMENT_SECRET` — HMAC secret for verifying paid-plan entitlement
   tokens. Absent ⇒ every caller is treated as `free`.
+- `NEXT_PUBLIC_STRIPE_PAYMENT_LINK` — Stripe Payment Link for the grader's Pro
+  upsell. Absent ⇒ the upgrade card shows a founding-member waitlist capture
+  instead.
 
 There is intentionally **no** `DATABASE_URL` / `NEXTAUTH_*` — there's no DB or
 auth (see Stack).
@@ -95,8 +101,13 @@ not inference. See `docs/prompt-studio-gateway.md` for the full design.
 - **Critique is grounded.** Every rubric criterion needs a justification +
   in-prompt evidence span; a bare score is rejected as malformed, never surfaced.
 - **Feature gating** lives in `lib/studio/entitlements.js` (free = templates +
-  single-model; paid = compare + critique + saved library). Tier comes from a
-  signed `x-studio-entitlement` header; no token ⇒ free.
+  single-model + METERED critique at 3 grades/day/IP; paid = compare +
+  unlimited critique + saved library). Tier comes from a signed
+  `x-studio-entitlement` header; no token ⇒ free.
+- **The Prompt Grader** (`/prompt-grader`) is the studio's public face: the
+  critique engine + rewrite + failure modes, Anthropic-direct via the
+  `grader-sonnet` registry entry, studio-funded by `ANTHROPIC_API_KEY`.
+  See `docs/prompt-grader.md`.
 - **Saved library** is client-side localStorage (`lib/studio/savedLibrary.js`) —
   no server state.
 

@@ -375,8 +375,8 @@ export default function ClaudeCodeAlternatives() {
               Whichever coding agent you pick, your output is only as good as the instructions you give it. PromptWritingStudio teaches the fill-in-the-blank prompt system that gets sharper results from any AI tool — Claude Code, Cursor, or anything on this list.
             </p>
             <div className="flex justify-center">
-              <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="bg-[#FFDE59] text-[#1A1A1A] px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
-                Join Now
+              <a href="/prompt-grader" className="bg-[#FFDE59] text-[#1A1A1A] px-10 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
+                Grade Your Prompt Free
               </a>
             </div>
           </div>

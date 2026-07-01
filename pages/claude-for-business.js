@@ -262,7 +262,7 @@ export default function ClaudeForBusiness() {
               <Link href="/calculators/business-ai-readiness" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">AI readiness calculator</Link>
               <Link href="/calculators/customer-service-ai-savings" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Support savings calculator</Link>
             </div>
-            <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition">Join Now</a>
+            <a href="/prompt-grader" className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition">Grade Your Prompt Free</a>
           </div>
         </section>
       </Layout>

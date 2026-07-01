@@ -54,16 +54,17 @@ describe('entitlements — Phase 4', () => {
   })
 
   describe('feature gating per the brief', () => {
-    it('free unlocks templates + single-model run only', () => {
+    it('free unlocks templates + single-model run + metered critique', () => {
       expect(isFeatureAllowed('templates', 'free')).toBe(true)
       expect(isFeatureAllowed('run.single', 'free')).toBe(true)
+      expect(isFeatureAllowed('critique', 'free')).toBe(true)
       expect(isFeatureAllowed('compare.multi', 'free')).toBe(false)
-      expect(isFeatureAllowed('critique', 'free')).toBe(false)
+      expect(isFeatureAllowed('critique.unlimited', 'free')).toBe(false)
       expect(isFeatureAllowed('library.saved', 'free')).toBe(false)
     })
 
     it('paid unlocks everything', () => {
-      for (const f of ['templates', 'run.single', 'compare.multi', 'critique', 'library.saved']) {
+      for (const f of ['templates', 'run.single', 'compare.multi', 'critique', 'critique.unlimited', 'library.saved']) {
         expect(isFeatureAllowed(f, 'paid')).toBe(true)
       }
     })
@@ -74,7 +75,7 @@ describe('entitlements — Phase 4', () => {
 
     it('assertFeature throws a 402 EntitlementError for a gated feature', () => {
       try {
-        assertFeature('critique', 'free')
+        assertFeature('critique.unlimited', 'free')
         throw new Error('should have thrown')
       } catch (err) {
         expect(err).toBeInstanceOf(EntitlementError)
