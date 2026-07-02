@@ -196,3 +196,21 @@ describe('grounding match is punctuation-tolerant, not fabrication-tolerant', ()
     expect(() => parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET)).toThrow(/fabricated/)
   })
 })
+
+describe('salvage mode (judge retry)', () => {
+  it('drops an unverifiable span but keeps the justified score', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = 'friendly tone keep the' // reordered — unverifiable
+    const results = parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET, { salvage: true })
+    expect(results[2]).toMatchObject({ id: 'constraints', score: 2, grounded: false, evidenceSpan: '' })
+    expect(results[0].grounded).toBe(true)
+  })
+
+  it('still throws on a missing justification even in salvage mode', () => {
+    const c = goodCriteria()
+    c[1].justification = ''
+    expect(() => parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET, { salvage: true })).toThrow(
+      /ungrounded/
+    )
+  })
+})
