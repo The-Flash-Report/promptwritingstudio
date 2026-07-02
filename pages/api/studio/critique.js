@@ -12,15 +12,13 @@
 // in the x-user-api-key header, is used in-memory for the judge call only, and
 // is never stored, logged, returned, or traced.
 
-import { critiquePrompt, listRubrics, DEFAULT_JUDGE_MODEL, GRADER_JUDGE_MODEL } from '../../../lib/critique'
+import { critiquePrompt, listRubrics, getRubric, DEFAULT_JUDGE_MODEL, GRADER_JUDGE_MODEL } from '../../../lib/critique'
 import { CritiqueError } from '../../../lib/critique/errors'
 import { GatewayError } from '../../../lib/gateway/errors'
 import { getModel } from '../../../lib/gateway/models'
 import { getTier, isFeatureAllowed } from '../../../lib/studio/entitlements'
 import { checkGradeRateLimit, GRADES_DAILY_MAX } from '../../../lib/studio/rateLimit'
 import { recordGradeSpend } from '../../../lib/studio/budget'
-
-const MAX_PROMPT_CHARS = 8000
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -37,9 +35,15 @@ export default async function handler(req, res) {
   if (typeof targetPrompt !== 'string' || targetPrompt.trim() === '') {
     return res.status(400).json({ error: 'targetPrompt is required', code: 'bad_request' })
   }
-  if (targetPrompt.length > MAX_PROMPT_CHARS) {
+
+  // Resolve rubric before the length check so the limit is per-rubric.
+  const rubric = getRubric(rubricId)
+  if (!rubric) {
+    return res.status(404).json({ error: `Unknown rubric: ${rubricId}`, code: 'unknown_rubric' })
+  }
+  if (targetPrompt.length > rubric.maxChars) {
     return res.status(400).json({
-      error: `Prompt exceeds ${MAX_PROMPT_CHARS} characters.`,
+      error: `Prompt exceeds ${rubric.maxChars} characters.`,
       code: 'bad_request',
     })
   }
