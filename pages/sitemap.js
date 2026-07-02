@@ -26,6 +26,8 @@ export default function Sitemap() {
   // Main site pages (not SEO use cases)
   const mainPages = [
     { title: 'Home', url: '/' },
+    { title: 'Prompt Grader', url: '/prompt-grader' },
+    { title: 'Agent Prompt Grader', url: '/agent-prompt-grader' },
     { title: 'Claude Code Guide (Hub)', url: '/claude-code-guide' },
     { title: 'AI Prompt Generator', url: '/ai-prompt-generator' },
     { title: 'Gemini Prompt Generator', url: '/gemini-prompt-generator' },
@@ -59,6 +61,8 @@ export default function Sitemap() {
 
   // Calculator pages - high priority for SEO
   const calculatorPages = [
+    { title: 'Business AI Readiness', url: '/calculators/business-ai-readiness' },
+    { title: 'Customer Service AI Savings', url: '/calculators/customer-service-ai-savings' },
     { title: 'AI Business Calculators Hub', url: '/calculators', description: 'Complete collection of AI calculators for business' },
     { title: 'Claude Plan Picker', url: '/calculators/claude-plan-picker', description: 'Pick the right Claude plan — Pro, Max, or API — for your usage' },
     { title: 'Claude Prompt Cost Calculator', url: '/calculators/claude-prompt-cost', description: 'Estimate API cost per Claude prompt by model, input, and output tokens' },

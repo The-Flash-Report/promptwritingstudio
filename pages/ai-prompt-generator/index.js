@@ -906,70 +906,11 @@ export default function AIPromptGenerator() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Join Thousands of Successful Users</h2>
-              <p className="text-lg text-gray-600">See how our prompt generator is helping people create better AI content</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Generate for Your Platform</h2>
+              <p className="text-lg text-gray-600">Specialized prompt patterns tuned to each AI platform's strengths</p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Success Metrics */}
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Success Metrics</h3>
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Prompts Generated Today</span>
-                    <span className="text-2xl font-bold text-green-600">1,247</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Active Users This Week</span>
-                    <span className="text-2xl font-bold text-blue-600">3,891</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Success Rate</span>
-                    <span className="text-2xl font-bold text-purple-600">94%</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">Time Saved Per User</span>
-                    <span className="text-2xl font-bold text-orange-600">2.5 hrs</span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Popular Combinations */}
-              <div className="bg-white rounded-xl shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Popular Combinations</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div>
-                      <div className="font-medium text-gray-900">Content Creation + ChatGPT + Detailed</div>
-                      <div className="text-sm text-gray-600">Most popular for blog writing</div>
-                    </div>
-                    <span className="text-sm text-gray-500">🔥 Hot</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div>
-                      <div className="font-medium text-gray-900">Business & Marketing + Claude + Expert</div>
-                      <div className="text-sm text-gray-600">Perfect for professional content</div>
-                    </div>
-                    <span className="text-sm text-gray-500">⭐ Popular</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div>
-                      <div className="font-medium text-gray-900">Creative Writing + Gemini + Simple</div>
-                      <div className="text-sm text-gray-600">Great for brainstorming</div>
-                    </div>
-                    <span className="text-sm text-gray-500">💡 Trending</span>
-                  </div>
-                </div>
-                <div className="mt-6 text-center">
-                  <button
-                    onClick={startWizard}
-                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200"
-                  >
-                    Try These Combinations
-                  </button>
-                </div>
-              </div>
-              
+            <div className="max-w-3xl mx-auto">
               {/* Platform-Specific Generators */}
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Platform-Specific Generators</h3>
@@ -1038,7 +979,7 @@ export default function AIPromptGenerator() {
                   Can I save my generated prompts?
                 </h3>
                 <p className="text-gray-700">
-                  Currently, you can copy your generated prompts to save them elsewhere. We're working on adding a feature to save prompts directly in your account for PromptWritingStudio members.
+                  You can copy any generated prompt with one click and save it wherever you keep your prompts. If you want scored feedback on a prompt before you save it, run it through the free Prompt Grader, which also keeps your last three grades in your browser.
                 </p>
               </div>
               

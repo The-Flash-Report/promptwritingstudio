@@ -18,7 +18,7 @@ const faqs = [
   {
     question: 'Which AI model powers the grading?',
     answer:
-      'Claude Sonnet 4.6 via the Anthropic API, run at temperature 0 for consistent scoring. The grader uses a strict rubric: any critique that fails to quote your prompt verbatim is rejected and re-run rather than shown to you.',
+      'Claude Haiku 4.5 via the Anthropic API, run at temperature 0 for consistent scoring. The grader uses a strict rubric: any critique that fails to quote your prompt verbatim is rejected and re-run rather than shown to you.',
   },
   {
     question: 'How is this different from asking ChatGPT to improve my prompt?',

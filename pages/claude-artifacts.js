@@ -469,8 +469,8 @@ export default function ClaudeArtifacts() {
                 <p className="text-sm text-[#666666]">Which model fits which task, side by side.</p>
               </Link>
               <a href={GRADER_URL} className="block p-6 bg-[#1A1A1A] rounded-lg border border-[#1A1A1A] hover:bg-[#333333] transition">
-                <h3 className="font-bold text-white mb-2">Prompt Writing Studio</h3>
-                <p className="text-sm text-gray-300">The course behind every prompt framework on this site. Grade Your Prompt Free.</p>
+                <h3 className="font-bold text-white mb-2">Prompt Grader</h3>
+                <p className="text-sm text-gray-300">Paste any prompt and get a scored critique plus a rewrite. Free, three grades a day.</p>
               </a>
             </div>
           </div>
