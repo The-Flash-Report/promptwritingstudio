@@ -228,7 +228,7 @@ export default function ClaudePlanPicker() {
               </div>
               <div className="bg-[#F9F9F9] p-5 rounded-lg border-l-4 border-[#FFDE59]">
                 <h3 className="font-bold text-[#1A1A1A] mb-1">If "Max 5x" wins</h3>
-                <p className="text-[#333333]">You're a daily Claude Code user running 2-5 hours/day. $100/mo is still a fraction of your hourly rate; the usage headroom prevents "limit reached" disruptions.</p>
+                <p className="text-[#333333]">Your volume exceeds Pro's budget and your estimated API-equivalent spend prices above $100/mo. The usage headroom prevents "limit reached" disruptions mid-session.</p>
               </div>
               <div className="bg-[#F9F9F9] p-5 rounded-lg border-l-4 border-[#FFDE59]">
                 <h3 className="font-bold text-[#1A1A1A] mb-1">If "Max 20x" wins</h3>
@@ -236,7 +236,7 @@ export default function ClaudePlanPicker() {
               </div>
               <div className="bg-[#F9F9F9] p-5 rounded-lg border-l-4 border-[#FFDE59]">
                 <h3 className="font-bold text-[#1A1A1A] mb-1">If "API" wins</h3>
-                <p className="text-[#333333]">Your usage is low enough that pay-per-token beats a flat subscription. Usually means less than ~30 minutes of active Claude use per day — in which case the Free tier might even work for personal chat, with API billing for any automation.</p>
+                <p className="text-[#333333]">Your estimated API-equivalent spend prices below the cheapest subscription that can handle your volume, so pay-per-token wins on cost. Note the trade-off: the API has no flat-fee ceiling, so a heavy month costs more, while a subscription caps your spend.</p>
               </div>
             </div>
           </div>

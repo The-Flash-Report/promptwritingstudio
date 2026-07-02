@@ -12,7 +12,6 @@ export default function IndustryNavigation() {
       cta: "Scale Your Content",
       href: "/content-creators-ai",
       color: "from-purple-500 to-pink-500",
-      stats: "2,000+ creators automated"
     },
     {
       title: "Service Businesses",
@@ -24,7 +23,6 @@ export default function IndustryNavigation() {
       cta: "Automate Your Business",
       href: "/service-business-ai",
       color: "from-blue-500 to-cyan-500",
-      stats: "1,500+ businesses automated"
     },
     {
       title: "E-commerce Stores",
@@ -36,7 +34,50 @@ export default function IndustryNavigation() {
       cta: "Boost Your Sales",
       href: "/ecommerce-ai",
       color: "from-green-500 to-emerald-500",
-      stats: "1,000+ stores automated"
+    },
+    {
+      title: "Education",
+      description: "Teachers, Tutors, Course Creators",
+      icon: "🎓",
+      painPoint: "Lesson plans and feedback eating your evenings?",
+      solution: "Draft lesson plans, rubrics, and feedback with AI prompts",
+      features: ["Lesson Plan Generator", "Rubric Builder", "Feedback Writer", "Quiz Creator"],
+      cta: "Teach With AI",
+      href: "/education-ai",
+      color: "from-blue-500 to-cyan-500",
+    },
+    {
+      title: "Healthcare",
+      description: "Clinics, Practitioners, Health Writers",
+      icon: "🩺",
+      painPoint: "Admin and patient communication crowding out care?",
+      solution: "Draft patient communication and admin docs with AI prompts",
+      features: ["Patient Letter Drafts", "Intake Summaries", "Health Content Writer", "Appointment Follow-ups"],
+      cta: "Streamline Your Practice",
+      href: "/healthcare-ai",
+      color: "from-teal-500 to-green-500",
+    },
+    {
+      title: "Legal",
+      description: "Solicitors, Paralegals, Compliance Teams",
+      icon: "⚖️",
+      painPoint: "Routine drafting consuming billable hours?",
+      solution: "Draft letters, summaries, and reviews faster with AI prompts",
+      features: ["Letter Drafting", "Document Summaries", "Clause Review Helper", "Client Update Writer"],
+      cta: "Draft Faster",
+      href: "/legal-ai",
+      color: "from-slate-500 to-gray-600",
+    },
+    {
+      title: "Real Estate",
+      description: "Agents, Brokers, Property Managers",
+      icon: "🏠",
+      painPoint: "Listings and client follow-ups on repeat?",
+      solution: "Write listings, follow-ups, and market updates with AI prompts",
+      features: ["Listing Description Writer", "Client Follow-ups", "Market Update Drafts", "Open House Promos"],
+      cta: "Sell With AI",
+      href: "/real-estate-ai",
+      color: "from-amber-500 to-orange-500",
     }
   ]
 
@@ -82,7 +123,6 @@ export default function IndustryNavigation() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="text-sm text-[#666666] mb-3">{industry.stats}</div>
                   <Link 
                     href={industry.href}
                     className={`bg-gradient-to-r ${industry.color} text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity duration-200 block`}

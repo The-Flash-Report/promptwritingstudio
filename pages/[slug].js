@@ -10,7 +10,7 @@ const seoPages = [
     description: 'Discover effective ChatGPT prompt templates for content creation, coding, marketing, and more. Get better results with our expert-crafted prompts.',
     content: {
       heading: 'ChatGPT Prompt Templates',
-      subheading: 'Unlock the full potential of ChatGPT with our expert-crafted prompt templates',
+      subheading: 'Copy-paste ChatGPT prompt templates with the variables marked, so you can adapt each one in seconds',
       intro: 'ChatGPT is one of the most versatile AI assistants available today, but getting the best results requires well-crafted prompts. Our templates are designed to help you get consistent, high-quality outputs for various use cases.',
       sections: [
         {
@@ -64,7 +64,7 @@ const seoPages = [
     description: 'Discover effective Gemini prompt templates for multimodal tasks, creative projects, and technical work. Get better results with our expert-crafted prompts.',
     content: {
       heading: 'Gemini Prompt Templates',
-      subheading: 'Harness the power of Google\'s Gemini with our specialized prompt templates',
+      subheading: 'Gemini-specific prompt templates with the variables marked, built around what Gemini does well',
       intro: 'Gemini excels at multimodal tasks, combining text, image, and code understanding. Our templates are designed to help you leverage Gemini\'s unique capabilities for various professional and creative tasks. For interactive prompt building, try our <a href="/gemini-prompt-generator" class="text-blue-600 hover:underline">Gemini Prompt Generator</a>.',
       sections: [
         {

@@ -147,7 +147,7 @@ export default function Home() {
             <Link href="/ai-models" className="bg-white p-6 rounded-lg shadow hover:shadow-lg border border-gray-200 transition group">
               <div className="text-3xl mb-3">📊</div>
               <h3 className="text-lg font-bold mb-2 group-hover:text-blue-600">AI Models Compared</h3>
-              <p className="text-sm text-gray-600">Claude Opus 4 vs Sonnet 4 vs GPT-5 vs Gemini 2.5 — context, price, and what each is best at.</p>
+              <p className="text-sm text-gray-600">Claude Opus 4.8 vs Sonnet 4.6 vs GPT-5 vs Gemini 2.5 — context, price, and what each is best at.</p>
             </Link>
             <Link href="/what-is-rag" className="bg-white p-6 rounded-lg shadow hover:shadow-lg border border-gray-200 transition group">
               <div className="text-3xl mb-3">🧠</div>

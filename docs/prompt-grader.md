@@ -48,7 +48,7 @@ from the rubric + grounding rules + calibration + rewrite-target style
 POST /api/studio/critique { targetPrompt, target?, rubricId? }
   → 400 (missing/oversized prompt, before metering)
   → meter: keyless+unpaid → 3/day/IP (lib/studio/rateLimit), else skip
-  → judge model: keyless → 'grader-sonnet' (Anthropic-direct, studio-funded)
+  → judge model: keyless → 'grader-haiku' (Anthropic-direct, studio-funded; Sonnet hit Netlify's ~30s function wall)
                  BYOK    → body.judgeModel if registered, else default
   → lib/critique.critiquePrompt → gateway.complete (temp 0)
   → parseEnvelope → safety? → flagged result
@@ -71,7 +71,7 @@ splitting the meter into peek/commit if it shows up in practice.
 
 ## Cost & abuse posture
 
-~1,100 tokens in + ~700 out per grade on Sonnet 4.6 ≈ **$0.014/grade**, so the
+~1,100 tokens in + ~700 out per grade on Haiku 4.5 ($1/$5 per MTok) ≈ **$0.005/grade** (agent-rubric grades run larger inputs, ≈ $0.010 worst case), so the
 worst case per IP is ~$0.04/day. `lib/studio/budget.js` logs a warning past
 $3/day total studio-funded spend (Netlify function logs). The in-memory meter
 resets on cold start (same accepted weakness as /learn's).

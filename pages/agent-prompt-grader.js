@@ -13,17 +13,17 @@ const faqs = [
   {
     question: 'How is this different from the chat prompt grader?',
     answer:
-      'The chat prompt grader scores one-shot instructions you type into Claude or ChatGPT. The agent prompt grader scores persistent configuration files — CLAUDE.md files and system prompts that stay in place across many sessions. The criteria are different: agent files need to nail identity, environment context, behavioural rules, and failure guidance. A great chat prompt and a great CLAUDE.md are written for completely different purposes.',
+      'The chat prompt grader scores one-shot instructions you type into Claude or ChatGPT. The agent prompt grader scores persistent configuration files: CLAUDE.md files and system prompts that stay in place across many sessions. The criteria are different: agent files need to nail identity, environment context, behavioural rules, and failure guidance. A great chat prompt and a great CLAUDE.md are written for completely different purposes.',
   },
   {
     question: 'What does the grader actually check?',
     answer:
-      'Five criteria: identity and scope (does the file say what the agent is?), environment and context (stack, paths, commands — the facts the agent needs to act without guessing), behavioural rules (explicit do/do-not instructions that govern commits, secrets, and approvals), failure and escalation guidance (what happens when the agent is uncertain or exceeds its authority), and maintainability (can a new developer or future agent navigate and update the file without guessing?). Every score comes with a verbatim quote from your file as evidence.',
+      'Five criteria: identity and scope (does the file say what the agent is?), environment and context (stack, paths, and commands, the facts the agent needs to act without guessing), behavioural rules (explicit do/do-not instructions that govern commits, secrets, and approvals), failure and escalation guidance (what happens when the agent is uncertain or exceeds its authority), and maintainability (can a new developer or future agent navigate and update the file without guessing?). Every score comes with a verbatim quote from your file as evidence.',
   },
   {
     question: 'Why targeted edits instead of a full rewrite?',
     answer:
-      'A CLAUDE.md or system prompt can be thousands of words long. Rewriting the entire file in one pass would erase context only you know — project history, intentional trade-offs, bespoke conventions. Targeted edits show you exactly which lines to change and why, leaving everything else intact.',
+      'A CLAUDE.md or system prompt can be thousands of words long. Rewriting the entire file in one pass would erase context only you know: project history, intentional trade-offs, bespoke conventions. Targeted edits show you exactly which lines to change and why, leaving everything else intact.',
   },
   {
     question: 'Is it free?',
@@ -73,7 +73,7 @@ export default function AgentPromptGraderPage() {
   return (
     <Layout
       title="Agent Prompt Grader: Score Your CLAUDE.md or System Prompt | PromptWritingStudio"
-      description="Paste your CLAUDE.md or agent system prompt and get a score on 5 agent-specific criteria — identity, environment context, behavioural rules, failure guidance, and maintainability — plus targeted edits. Free, 3 grades a day."
+      description="Paste your CLAUDE.md or agent system prompt and get a score on 5 agent-specific criteria (identity, environment context, behavioural rules, failure guidance, and maintainability) plus targeted edits. Free, 3 grades a day."
     >
       <Head>
         <script

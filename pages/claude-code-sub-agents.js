@@ -455,9 +455,9 @@ URLs the main conversation needs. Never return raw page dumps.`
                 href="/prompt-grader"
                 className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
               >
-                Join the Prompt Writing Course
+                Grade Your Prompt Free
               </a>
-              <p className="text-sm text-[#666666] mt-3">Learn to write the precise descriptions and prompts that make sub-agents delegate reliably.</p>
+              <p className="text-sm text-[#666666] mt-3">Paste a sub-agent description into the free grader and get scored feedback on what will make it delegate reliably.</p>
             </div>
           </div>
         </section>

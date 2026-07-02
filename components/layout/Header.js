@@ -20,6 +20,7 @@ const learnItems = [
   { href: '/claude-pro-vs-max-vs-api', label: '💳 Claude Pro vs Max vs API', bold: true },
   { type: 'divider' },
   { href: '/claude-md-playbook', label: '📘 CLAUDE.md Playbook' },
+  { href: '/claude-code-tutorial', label: '🧭 Claude Code Tutorial' },
   { href: '/claude-code-hooks-recipes', label: '🪝 Claude Code Hooks' },
   { href: '/skills-vs-mcp-vs-hooks', label: '🧠 Skills vs MCP vs Hooks' },
   { href: '/claude-code-vs-cursor', label: '🆚 Claude Code vs Cursor' },

@@ -295,70 +295,7 @@ export default function ContentCreationSpeedPage() {
                 <div className="text-sm opacity-75 mb-6">
                   ✓ Free AI Prompt Examples ✓ Step-by-Step Workflows ✓ Copy-Paste Templates
                 </div>
-                <Link
-                  href="/ai-prompt-examples"
-                  className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors"
-                >
-                  Browse Free Prompt Examples
-                </Link>
-              </div>
-            </div>
-
-            {/* FAQ Section */}
-            <div className="max-w-4xl mx-auto mt-16">
-              <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                Frequently Asked Questions
-              </h2>
-              
-                             <EnhancedFAQSchema faqs={faqs} calculatorName="Content Creation Speed Calculator" showBackground={false} />
-            </div>
-
-            {/* Related Tools */}
-            <div className="max-w-4xl mx-auto mt-16">
-              <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-                Related Business Calculators
-              </h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Link 
-                  href="/roi-calculator" 
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">📊 AI ROI Calculator</h3>
-                  <p className="text-gray-600">Calculate the return on investment for AI tools in your business.</p>
-                </Link>
                 
-                <Link 
-                  href="/calculators/ai-cost-comparison" 
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">💰 AI vs Human Cost Calculator</h3>
-                  <p className="text-gray-600">Compare costs between AI automation and human labor for various tasks.</p>
-                </Link>
-
-                <Link 
-                  href="/calculators/copywriting-tools-calculator" 
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">✏️ Copywriting Tools Calculator</h3>
-                  <p className="text-gray-600">Calculate AI copywriting time and cost savings for sales pages, emails, and ads.</p>
-                </Link>
-
-                <Link 
-                  href="/calculators/content-editor-calculator" 
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">📝 Content Editor Calculator</h3>
-                  <p className="text-gray-600">Calculate AI editing savings for structural edits, line edits, and proofreading.</p>
-                </Link>
-
-                <Link 
-                  href="/calculators/writing-assistant-calculator" 
-                  className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">📝 Writing Assistant Calculator</h3>
-                  <p className="text-gray-600">Estimate AI writing assistant savings across drafting, editing, research, and formatting.</p>
-                </Link>
               </div>
             </div>
           </div>

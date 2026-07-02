@@ -360,7 +360,7 @@ export default function ClaudeVsGemini() {
               The model is half the answer. The prompt is the other half.
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Whichever you pick, the single biggest lever on output quality is how you prompt it — and good prompts transfer between Claude and Gemini. The free Prompt Grader scores your prompt and rewrites it for either model. Still deciding between the bigger players? Read the Claude vs ChatGPT breakdown. Ready to write better prompts in either tool? The free generator is the fastest start, and the course goes deeper.
+              Whichever you pick, the single biggest lever on output quality is how you prompt it — and good prompts transfer between Claude and Gemini. The free Prompt Grader scores your prompt and rewrites it for either model. Still deciding between the bigger players? Read the Claude vs ChatGPT breakdown. Ready to write better prompts in either tool? The free generator is the fastest start.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center flex-wrap">
               <a href="/prompt-grader" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">

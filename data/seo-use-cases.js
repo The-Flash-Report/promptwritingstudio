@@ -2386,7 +2386,7 @@ export const seoUseCases = [
     ],
   },
   {
-    slug: 'how-to-write-ai-prompts',
+    slug: 'how-to-write-ai-prompts-beginners-guide',
     id: 'howToWriteAiPrompts',
     title: 'How to Write AI Prompts — Beginner\'s Guide for ChatGPT, Claude & Gemini (2026)',
     description: 'Learn how to write AI prompts that actually work. A plain-language beginner\'s guide with step-by-step examples for ChatGPT, Claude, and Gemini.',

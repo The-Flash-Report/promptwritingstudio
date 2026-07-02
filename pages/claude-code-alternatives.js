@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "Which Claude Code alternative is best for the terminal?",
-    answer: "Codex CLI (OpenAI), Gemini CLI (Google), Aider, and Cline CLI are the terminal-first agents most comparable to Claude Code. Codex CLI leads SWE-bench Verified at 88.7% on GPT-5.5, just ahead of Claude Opus 4.7 at 87.6%. Aider is the original open-source CLI coding agent and predates Claude Code by over a year. All four run in your terminal and commit to git, so the choice comes down to which model and pricing model you prefer."
+    answer: "Codex CLI (OpenAI), Gemini CLI (Google), Aider, and Cline CLI are the terminal-first agents most comparable to Claude Code. Codex CLI on GPT-5.5 and Claude Code on Claude Opus 4.8 trade the top spots on SWE-bench Verified, separated by about a point depending on the run. Aider is the original open-source CLI coding agent and predates Claude Code by over a year. All four run in your terminal and commit to git, so the choice comes down to which model and pricing model you prefer."
   },
   {
     question: "Cursor vs Claude Code — which should I use?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: "Is the best alternative the one with the highest benchmark score?",
-    answer: "No — and this trips up a lot of buyers. Codex leads SWE-bench Verified (88.7%) and Claude Opus is a point behind (87.6%), but a one-point benchmark gap rarely changes your day-to-day output. Workflow fit, pricing model, and how the tool handles your codebase matter far more than a leaderboard. Pick for fit first, benchmark second."
+    answer: "No — and this trips up a lot of buyers. Codex and Claude Opus sit within roughly a point of each other on SWE-bench Verified, and a one-point benchmark gap rarely changes your day-to-day output. Workflow fit, pricing model, and how the tool handles your codebase matter far more than a leaderboard. Pick for fit first, benchmark second."
   }
 ]
 
@@ -65,14 +65,14 @@ const tools = [
     form: 'Terminal agent',
     free: 'API tokens / ChatGPT subscription',
     forWho: 'Terminal-first developers who want the closest like-for-like Claude Code experience but on OpenAI models.',
-    vsClaude: 'The nearest match in form factor. Codex on GPT-5.5 leads SWE-bench Verified at 88.7% vs Claude Opus 4.7 at 87.6% — a near-tie. Choose on which model and ecosystem you prefer.'
+    vsClaude: 'The nearest match in form factor. Codex on GPT-5.5 and Claude Opus 4.8 are a near-tie on SWE-bench Verified. Choose on which model and ecosystem you prefer.'
   },
   {
     name: 'Gemini CLI',
     form: 'Terminal agent',
     free: 'Free — 1,000 requests/day',
     forWho: 'Developers who want a capable terminal agent at zero cost and are happy on Google\'s models.',
-    vsClaude: 'The strongest free terminal option. Gemini 3.1 Pro scores 80.6% on SWE-bench Verified — behind Claude and Codex, but the generous free tier makes it the easiest no-risk alternative to try.'
+    vsClaude: 'The strongest free terminal option. Gemini 3.1 Pro trails Claude and Codex on SWE-bench Verified, but the generous free tier makes it the easiest no-risk alternative to try.'
   },
   {
     name: 'Aider',
@@ -231,7 +231,7 @@ export default function ClaudeCodeAlternatives() {
               </table>
             </div>
             <p className="text-sm text-[#666666] mt-4">
-              SWE-bench Verified (2026): Codex on GPT-5.5 88.7%, Claude Opus 4.7 87.6%, Gemini 3.1 Pro 80.6%, Cursor Composer 2.5 79.8%. Pricing as of June 2026 and subject to change.
+              SWE-bench Verified rankings shift with every model release; check each vendor's current published results before weighting them. Pricing as of June 2026 and subject to change.
             </p>
           </div>
         </section>

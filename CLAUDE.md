@@ -73,7 +73,7 @@ The core marketing site needs **no** env vars (it's static content). The Prompt
 Studio layer uses these, all optional — the studio degrades gracefully without
 them (pure BYOK, free tier off, everyone on the free plan):
 
-- `ANTHROPIC_API_KEY` — funds the studio-funded grader judge (`grader-sonnet`)
+- `ANTHROPIC_API_KEY` — funds the studio-funded grader judge (`grader-haiku`)
   and the /learn try-it panels. Set in prod (verified 2026-07-01). Absent ⇒
   keyless grades return 401; BYOK still works.
 - `OPENROUTER_FREE_KEY` — studio key for the capped free tier (OpenRouter's
@@ -106,7 +106,7 @@ not inference. See `docs/prompt-studio-gateway.md` for the full design.
   `x-studio-entitlement` header; no token ⇒ free.
 - **The Prompt Grader** (`/prompt-grader`) is the studio's public face: the
   critique engine + rewrite + failure modes, Anthropic-direct via the
-  `grader-sonnet` registry entry, studio-funded by `ANTHROPIC_API_KEY`.
+  `grader-haiku` registry entry, studio-funded by `ANTHROPIC_API_KEY`.
   See `docs/prompt-grader.md`.
 - **Saved library** is client-side localStorage (`lib/studio/savedLibrary.js`) —
   no server state.

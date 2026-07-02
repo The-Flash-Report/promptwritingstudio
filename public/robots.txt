@@ -45,7 +45,6 @@ Crawl-delay: 1
 
 # Sitemaps
 Sitemap: https://promptwritingstudio.com/sitemap.xml
-Sitemap: https://promptwritingstudio.com/sitemap
 
 # Google-specific directives
 User-agent: Googlebot

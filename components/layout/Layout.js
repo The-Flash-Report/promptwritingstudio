@@ -9,14 +9,19 @@ export default function Layout({ children, title, description, canonicalUrl }) {
   const router = useRouter()
   const siteUrl = 'https://promptwritingstudio.com'
   const currentUrl = canonicalUrl || `${siteUrl}${router.asPath.split('?')[0]}`
+  // Most pages render their OWN <Head><title> BEFORE <Layout> in the tree, so
+  // a Layout-emitted default title comes later and silently overrides them
+  // (next/head keeps the last occurrence). Only emit title/description here
+  // when the page passes them as props; pages without props are expected to
+  // carry their own <Head> block (all 68 did as of 2026-07-02).
   const pageTitle = title || 'PromptWritingStudio — Practical Guides for Claude Code, MCP & Sub-agents'
   const pageDescription = description || 'Working guides, templates, and comparisons for building real work with Claude — Claude Code, Projects, Artifacts, Skills, MCP, sub-agents, and hooks.'
 
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
-        <meta name="description" content={pageDescription} />
+        {title && <title>{pageTitle}</title>}
+        {description && <meta name="description" content={pageDescription} />}
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <link rel="canonical" href={currentUrl} />
         <meta property="og:title" content={pageTitle} />
@@ -30,7 +35,7 @@ export default function Layout({ children, title, description, canonicalUrl }) {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={`${siteUrl}/images/og-image.jpg`} />
-        <meta name="twitter:site" content="@bryaborern" />
+        <meta name="twitter:site" content="@BryanJCollins" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

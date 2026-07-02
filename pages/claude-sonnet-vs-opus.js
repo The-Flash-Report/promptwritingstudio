@@ -194,7 +194,7 @@ Format: [exact output shape — JSON, table, headings].
 Examples: [1-2 good outputs to anchor on].
 If unsure: [what to do instead of guessing].`}</div>
             <p className="text-[#333333]">
-              Run that on {sonnet.name} first. If a fully-specified prompt still fails, you have a genuine reasoning task — and that is exactly when {opus.name} earns its price. Our <Link href="/" className="text-blue-700 underline">prompt-writing course</Link> drills this fill-in-the-blank structure across dozens of real tasks.
+              Run that on {sonnet.name} first. If a fully-specified prompt still fails, you have a genuine reasoning task — and that is exactly when {opus.name} earns its price. The free <Link href="/prompt-grader" className="text-blue-700 underline">Prompt Grader</Link> scores your version of this structure and shows you exactly which part is missing.
             </p>
           </div>
         </section>

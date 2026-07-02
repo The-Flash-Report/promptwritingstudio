@@ -62,6 +62,18 @@ const nextConfig = {
       },
     ]
   },
+
+  // /sitemap.xml is served by the dynamic generator. A stale static
+  // public/sitemap.xml shadowed it for a month (removed 2026-07-02) — do not
+  // re-add one; public/ files win over rewrites.
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
