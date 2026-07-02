@@ -28,6 +28,8 @@ Every major call, with the alternatives I rejected and why. Newest at the bottom
 - Using the orphaned `/api/ai/optimize.js` — it fabricates fallback scores (65→85) when parsing fails, the exact anti-pattern the mission bans, and uses a conflicting base64 `CLAUDE_API_KEY` convention.
 - Opus as judge — 5× the cost per grade for marginal gain on a 5-criterion rubric; Sonnet 4.6 at temperature 0 with a hard grounding contract is the right cost/quality point for a free tier. (Default changed from the registry's never-run `claude-opus-4-7`.)
 
+**Amended during Phase 3 (D2a):** the keyless judge is **Haiku 4.5**, not Sonnet. Empirical: Sonnet grades took 18-30s on the live preview and Netlify functions cut off around 26s — the eval's second grade timed out mid-flight. Haiku returns in 5-7s, costs a third as much, and the grounding contract (rejected fabrications, forced evidence) holds the quality floor; EVAL.md verifies the ranking discriminates correctly on Haiku. Sonnet remains available per-request via BYOK `judgeModel`. Also discovered: prod inference runs through the **Netlify AI Gateway** (`ANTHROPIC_BASE_URL` + gateway-minted key), which the gateway route now honors like the SDK does.
+
 ## D3. Free/paid line: critique flips from paid-gated to free-metered (3/day/IP)
 
 **Chosen:** `FEATURES.critique` moves `paid → free`; a new per-IP daily meter (3 studio-funded grades/day) protects spend, mirroring `lib/learn/rateLimit`. Paid (`x-studio-entitlement` token) skips the meter. BYOK skips it too. Paid keeps: saved history beyond last 3, multi-model rewrite variants, compare.

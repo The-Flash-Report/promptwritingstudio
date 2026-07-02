@@ -99,7 +99,7 @@ describe('critiquePrompt via the Anthropic-direct grader judge', () => {
 
     expect(calls[0].url).toContain('api.anthropic.com')
     expect(calls[0].headers['x-api-key']).toBe('sk-ant-STUDIO')
-    expect(JSON.parse(calls[0].body).model).toBe('claude-sonnet-4-6')
+    expect(JSON.parse(calls[0].body).model).toBe('claude-haiku-4-5')
     expect(result.judge.fundedBy).toBe('studio')
     expect(result.judge.model).toBe(GRADER_JUDGE_MODEL)
     expect(result.rewrite).toContain('[PRODUCT]')
