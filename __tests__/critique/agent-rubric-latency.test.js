@@ -44,3 +44,11 @@ test('edits mode: single attempt, fabricated revision dropped via salvage', asyn
   expect(result.revisions).toHaveLength(1)
   expect(result.revisions[0].before_excerpt).toBe('You are the repo agent')
 })
+
+test('parseEnvelope tolerates an unterminated code fence', async () => {
+  const { parseEnvelope } = require('../../lib/critique/judge')
+  const obj = { safety_flag: '', criteria: [], failure_modes: [], revisions: [], summary: 'x' }
+  expect(parseEnvelope('```json\n' + JSON.stringify(obj))).toEqual(obj)
+  expect(parseEnvelope('```json\n' + JSON.stringify(obj) + '\n``')).toEqual(obj)
+  expect(() => parseEnvelope('```json\n{"truncated": tru')).toThrow(/non-JSON/)
+})
