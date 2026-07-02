@@ -15,6 +15,7 @@ export default function handler(req, res) {
     { url: '/sitemap', priority: '0.7', changefreq: 'weekly' },
     { url: '/join', priority: '0.9', changefreq: 'monthly' },
     { url: '/prompt-grader', priority: '0.95', changefreq: 'weekly' },
+    { url: '/agent-prompt-grader', priority: '0.95', changefreq: 'weekly' },
     { url: '/ai-prompt-generator', priority: '0.9', changefreq: 'weekly' },
     { url: '/ai-prompt-examples', priority: '0.9', changefreq: 'weekly' },
     { url: '/chatgpt-prompt-templates', priority: '0.9', changefreq: 'weekly' },

@@ -487,6 +487,26 @@ export default function ClaudeMdPlaybook() {
             </div>
           </div>
         </section>
+
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <div className="bg-[#F9F9F9] border border-[#E5E5E5] rounded-lg p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+              <div className="flex-1">
+                <h2 className="text-xl font-bold text-[#1A1A1A]">Ready to grade your CLAUDE.md?</h2>
+                <p className="text-[#333333] mt-1 text-sm">
+                  Paste your file and get a score on five agent-specific criteria with feedback that quotes your
+                  exact words. Free, 3 grades a day.
+                </p>
+              </div>
+              <Link
+                href="/agent-prompt-grader"
+                className="shrink-0 bg-[#FFDE59] text-[#1A1A1A] px-6 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition text-center"
+              >
+                Grade my CLAUDE.md
+              </Link>
+            </div>
+          </div>
+        </section>
       </Layout>
     </>
   )
