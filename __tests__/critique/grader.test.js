@@ -179,3 +179,49 @@ describe('critiquePrompt via the Anthropic-direct grader judge', () => {
     expect(JSON.parse(calls[0].body).messages[0].content).toContain('ChatGPT')
   })
 })
+
+describe('judge retry on malformed output', () => {
+  const TARGET2 = 'You are a senior copywriter. Write a 100-word product description in bullet points. Keep the tone friendly. For example, highlight benefits.'
+
+  function seqAnthropicFetch(payloads) {
+    let n = 0
+    const fetchImpl = async () => {
+      const content = JSON.stringify(payloads[Math.min(n, payloads.length - 1)])
+      n++
+      return {
+        ok: true,
+        status: 200,
+        json: async () => ({
+          id: 'msg_test',
+          content: [{ type: 'text', text: content }],
+          usage: { input_tokens: 400, output_tokens: 300 },
+        }),
+      }
+    }
+    return { fetchImpl, calls: () => n }
+  }
+
+  it('retries once on a fabricated span and succeeds on the second attempt', async () => {
+    const bad = goodEnvelope()
+    bad.criteria = bad.criteria.map(c => ({ ...c }))
+    bad.criteria[0].evidence_span = 'You are a brain surgeon'
+    const { fetchImpl, calls } = seqAnthropicFetch([bad, goodEnvelope()])
+    const result = await critiquePrompt({
+      targetPrompt: TARGET2,
+      judgeModel: GRADER_JUDGE_MODEL,
+      studioAnthropicKey: 'k',
+      fetchImpl,
+    })
+    expect(calls()).toBe(2)
+    expect(result.overall.pass).toBe(true)
+  })
+
+  it('throws after two malformed attempts', async () => {
+    const bad = goodEnvelope({ rewrite: '' })
+    const { fetchImpl, calls } = seqAnthropicFetch([bad, bad])
+    await expect(
+      critiquePrompt({ targetPrompt: TARGET2, judgeModel: GRADER_JUDGE_MODEL, studioAnthropicKey: 'k', fetchImpl })
+    ).rejects.toThrow(MalformedCritiqueError)
+    expect(calls()).toBe(2)
+  })
+})
