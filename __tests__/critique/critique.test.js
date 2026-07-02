@@ -175,3 +175,24 @@ describe('critiquePrompt — end to end (mocked gateway)', () => {
     await expect(critiquePrompt({ targetPrompt: '', userKey: 'k' })).rejects.toThrow(MalformedCritiqueError)
   })
 })
+
+describe('grounding match is punctuation-tolerant, not fabrication-tolerant', () => {
+  it('accepts a span whose punctuation the judge normalized', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = 'Keep the tone, friendly' // judge inserted a comma
+    const results = parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET)
+    expect(results[2].score).toBe(2)
+  })
+
+  it('still rejects invented words', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = 'Keep the tone strictly formal'
+    expect(() => parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET)).toThrow(/fabricated/)
+  })
+
+  it('rejects a punctuation-only span', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = '"...!"'
+    expect(() => parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET)).toThrow(/fabricated/)
+  })
+})
