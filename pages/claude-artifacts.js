@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 const faqs = [
   {
@@ -343,7 +343,7 @@ export default function ClaudeArtifacts() {
 
             <div className="mt-8 bg-[#F9F9F9] border-l-4 border-[#FFDE59] p-6 rounded-r-lg">
               <p className="text-[#333333]">
-                Want a full library of fill-in-the-blank prompts like these, organised by task? The <Link href="/chatgpt-prompt-templates" className="text-[#1A1A1A] font-semibold underline hover:no-underline">prompt template library</Link> has more, and the <a href={COURSE_URL} className="text-[#1A1A1A] font-semibold underline hover:no-underline">Prompt Writing Studio course</a> teaches the framework behind why the strong versions work.
+                Want a full library of fill-in-the-blank prompts like these, organised by task? The <Link href="/chatgpt-prompt-templates" className="text-[#1A1A1A] font-semibold underline hover:no-underline">prompt template library</Link> has more, and the free <a href={GRADER_URL} className="text-[#1A1A1A] font-semibold underline hover:no-underline">Prompt Grader</a> scores your own version and shows you exactly what to fix.
               </p>
             </div>
           </div>
@@ -401,10 +401,10 @@ export default function ClaudeArtifacts() {
               Artifacts turn Claude into a place where your drafts and tools actually ship. But the gap between a throwaway artifact and a useful one is entirely in how you ask. Prompt Writing Studio teaches the framework behind every strong prompt on this page, with a library you can use across writing, marketing, and building.
             </p>
             <a
-              href={COURSE_URL}
+              href={GRADER_URL}
               className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
             >
-              Join Now
+              Grade Your Prompt Free
             </a>
           </div>
         </section>
@@ -468,9 +468,9 @@ export default function ClaudeArtifacts() {
                 <h3 className="font-bold text-[#1A1A1A] mb-2">Claude vs ChatGPT</h3>
                 <p className="text-sm text-[#666666]">Which model fits which task, side by side.</p>
               </Link>
-              <a href={COURSE_URL} className="block p-6 bg-[#1A1A1A] rounded-lg border border-[#1A1A1A] hover:bg-[#333333] transition">
+              <a href={GRADER_URL} className="block p-6 bg-[#1A1A1A] rounded-lg border border-[#1A1A1A] hover:bg-[#333333] transition">
                 <h3 className="font-bold text-white mb-2">Prompt Writing Studio</h3>
-                <p className="text-sm text-gray-300">The course behind every prompt framework on this site. Join Now.</p>
+                <p className="text-sm text-gray-300">The course behind every prompt framework on this site. Grade Your Prompt Free.</p>
               </a>
             </div>
           </div>

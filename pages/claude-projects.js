@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 const faqs = [
   {
@@ -452,12 +452,10 @@ DELIVERY: give me the draft only, no preamble, unless I ask for options.`}</pre>
                 The custom instructions field is where most writers lose the gains. If your prompts are vague, your project produces vague work. PromptWritingStudio teaches you to write the precise, repeatable prompts that make a workspace like this genuinely save you hours.
               </p>
               <a
-                href={COURSE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={GRADER_URL}
                 className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200"
               >
-                Join Now
+                Grade Your Prompt Free
               </a>
             </div>
           </div>

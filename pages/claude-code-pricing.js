@@ -14,7 +14,7 @@ import {
   getCurrentModelByTier
 } from '../lib/claude-data'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 const pro = getConsumerPlan('pro')
 const max5x = getConsumerPlan('max-5x')
@@ -435,10 +435,10 @@ export default function ClaudeCodePricing() {
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-3xl font-bold text-white mb-4">Make every Claude Code dollar work harder</h2>
             <p className="text-gray-300 mb-6">
-              The fastest way to cut your Claude Code bill is not a cheaper plan — it is better prompts that get the result in one pass instead of five. Our prompt-writing course teaches the exact patterns that make agentic tools land the task first time, so you burn less of your session limit on retries.
+              The fastest way to cut your Claude Code bill is not a cheaper plan — it is better prompts that get the result in one pass instead of five. Run your prompt through the free Prompt Grader to see exactly where it leaks tokens, then use the rewrite so you burn less of your session limit on retries.
             </p>
-            <a href={COURSE_URL} className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition mb-8">
-              Join Now
+            <a href={GRADER_URL} className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition mb-8">
+              Grade Your Prompt Free
             </a>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
               <Link href="/calculators/claude-plan-picker" className="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-[#1A1A1A] transition">Claude plan picker</Link>

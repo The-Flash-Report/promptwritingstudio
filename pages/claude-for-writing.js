@@ -4,7 +4,7 @@ import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 import { getAIModelById } from '../lib/ai-models'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 // Pull live model facts from the central JSON so names/prices update in one place.
 const opus = getAIModelById('claude-opus-4-8')
@@ -345,11 +345,11 @@ export default function ClaudeForWriting() {
               The model is the easy part. The prompting is the skill.
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Everything on this page is one piece of a larger system: writing prompts that get your voice, your structure, and your standards out of the model every time — without re-explaining yourself. That system is what <a href={COURSE_URL} className="text-[#FFDE59] font-semibold underline">PromptWritingStudio</a> teaches. Not a list of one-off tricks — the repeatable method for writing with AI.
+              Everything on this page is one piece of a larger system: writing prompts that get your voice, your structure, and your standards out of the model every time — without re-explaining yourself. That system is what <a href={GRADER_URL} className="text-[#FFDE59] font-semibold underline">PromptWritingStudio</a> teaches. Not a list of one-off tricks — the repeatable method for writing with AI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href={COURSE_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
-                Join Now
+              <a href={GRADER_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
+                Grade Your Prompt Free
               </a>
               <Link href="/model-prompting-guide/claude" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200">
                 Claude prompting guide

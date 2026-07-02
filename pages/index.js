@@ -107,6 +107,27 @@ export default function Home() {
 
       <Hero />
 
+      {/* Prompt Grader — the interactive tool */}
+      <section className="py-12 bg-[#1A1A1A]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">How good is your prompt? Grade it in 20 seconds.</h2>
+              <p className="text-gray-300 mt-2 max-w-2xl">
+                Paste any ChatGPT, Claude, or Gemini prompt. Get a score out of 100, feedback that quotes your
+                exact words, and a rewrite you can copy. 3 free grades a day, no signup.
+              </p>
+            </div>
+            <Link
+              href="/prompt-grader"
+              className="shrink-0 bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition"
+            >
+              Grade Your Prompt Free
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Start Here — entry points for Claude-focused content */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

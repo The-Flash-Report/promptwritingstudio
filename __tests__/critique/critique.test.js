@@ -21,6 +21,18 @@ function goodCriteria() {
   ]
 }
 
+// A complete, valid judge envelope (criteria + grader extras).
+function goodEnvelope(overrides = {}) {
+  return {
+    safety_flag: '',
+    criteria: goodCriteria(),
+    failure_modes: ['The word count is stated but the product itself is never named.'],
+    rewrite: 'You are a senior copywriter. Write a 100-word description of [PRODUCT] in bullet points. Keep the tone friendly.',
+    summary: 'Strong, specific prompt.',
+    ...overrides,
+  }
+}
+
 function makeJudgeFetch(payload) {
   const calls = []
   const content = typeof payload === 'string' ? payload : JSON.stringify(payload)
@@ -112,10 +124,11 @@ describe('critique judge — unit', () => {
 })
 
 describe('critiquePrompt — end to end (mocked gateway)', () => {
-  it('returns grounded criteria + overall + judge meta', async () => {
-    const { fetchImpl } = makeJudgeFetch({ criteria: goodCriteria(), summary: 'Strong, specific prompt.' })
+  it('returns grounded criteria + overall + judge meta + grader extras', async () => {
+    const { fetchImpl } = makeJudgeFetch(goodEnvelope())
     const result = await critiquePrompt({ targetPrompt: TARGET, userKey: 'sk-or-user', fetchImpl })
 
+    expect(result.flagged).toBe(false)
     expect(result.rubricId).toBe('prompt-quality')
     expect(result.rubricVersion).toMatch(/^v1-/)
     expect(result.criteria).toHaveLength(5)
@@ -124,12 +137,14 @@ describe('critiquePrompt — end to end (mocked gateway)', () => {
     })
     expect(result.overall.pass).toBe(true)
     expect(result.summary).toBe('Strong, specific prompt.')
+    expect(result.failureModes).toHaveLength(1)
+    expect(result.rewrite).toContain('[PRODUCT]')
     expect(result.judge.model).toBe('claude-opus-4-7')
     expect(result.judge.fundedBy).toBe('user')
   })
 
   it('judges with the user key (zero studio spend) and never leaks it', async () => {
-    const { fetchImpl, calls } = makeJudgeFetch({ criteria: goodCriteria(), summary: 'ok' })
+    const { fetchImpl, calls } = makeJudgeFetch(goodEnvelope({ summary: 'ok' }))
     const result = await critiquePrompt({
       targetPrompt: TARGET,
       userKey: 'sk-or-SECRET',
@@ -143,14 +158,14 @@ describe('critiquePrompt — end to end (mocked gateway)', () => {
   it('surfaces a malformed judge response as an error, not an ungrounded score', async () => {
     const bad = goodCriteria()
     bad[0].justification = ''
-    const { fetchImpl } = makeJudgeFetch({ criteria: bad })
+    const { fetchImpl } = makeJudgeFetch(goodEnvelope({ criteria: bad }))
     await expect(
       critiquePrompt({ targetPrompt: TARGET, userKey: 'sk-or-user', fetchImpl })
     ).rejects.toThrow(MalformedCritiqueError)
   })
 
   it('throws on an unknown rubric', async () => {
-    const { fetchImpl } = makeJudgeFetch({ criteria: goodCriteria() })
+    const { fetchImpl } = makeJudgeFetch(goodEnvelope())
     await expect(
       critiquePrompt({ targetPrompt: TARGET, rubricId: 'nope', userKey: 'k', fetchImpl })
     ).rejects.toThrow(UnknownRubricError)
@@ -158,5 +173,44 @@ describe('critiquePrompt — end to end (mocked gateway)', () => {
 
   it('rejects an empty target prompt', async () => {
     await expect(critiquePrompt({ targetPrompt: '', userKey: 'k' })).rejects.toThrow(MalformedCritiqueError)
+  })
+})
+
+describe('grounding match is punctuation-tolerant, not fabrication-tolerant', () => {
+  it('accepts a span whose punctuation the judge normalized', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = 'Keep the tone, friendly' // judge inserted a comma
+    const results = parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET)
+    expect(results[2].score).toBe(2)
+  })
+
+  it('still rejects invented words', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = 'Keep the tone strictly formal'
+    expect(() => parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET)).toThrow(/fabricated/)
+  })
+
+  it('rejects a punctuation-only span', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = '"...!"'
+    expect(() => parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET)).toThrow(/fabricated/)
+  })
+})
+
+describe('salvage mode (judge retry)', () => {
+  it('drops an unverifiable span but keeps the justified score', () => {
+    const c = goodCriteria()
+    c[2].evidence_span = 'friendly tone keep the' // reordered — unverifiable
+    const results = parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET, { salvage: true })
+    expect(results[2]).toMatchObject({ id: 'constraints', score: 2, grounded: false, evidenceSpan: '' })
+    expect(results[0].grounded).toBe(true)
+  })
+
+  it('still throws on a missing justification even in salvage mode', () => {
+    const c = goodCriteria()
+    c[1].justification = ''
+    expect(() => parseJudgeResponse(JSON.stringify({ criteria: c }), RUBRIC, TARGET, { salvage: true })).toThrow(
+      /ungrounded/
+    )
   })
 })

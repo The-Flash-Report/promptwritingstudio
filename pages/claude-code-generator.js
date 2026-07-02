@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 const faqs = [
   {
@@ -255,8 +255,8 @@ export default function ClaudeCodeGenerator() {
             <p className="text-lg text-gray-100 mb-8">
               Code generation is just one place specific prompts pay off. PromptWritingStudio teaches the prompting system behind every template on this page — so you stop rewriting AI output and start shipping it.
             </p>
-            <a href={COURSE_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 inline-block">
-              Join Now
+            <a href={GRADER_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200 inline-block">
+              Grade Your Prompt Free
             </a>
           </div>
         </section>

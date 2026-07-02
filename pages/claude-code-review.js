@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema, generateRatingSchema } from '../lib/schemaGenerator'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 const RATING = { value: 4.5, count: 1 }
 
@@ -342,8 +342,8 @@ export default function ClaudeCodeReview() {
               The single biggest lever in this review was clear, well-scoped prompting — vague instructions wasted time, sharp ones did a day's work in an hour. That skill transfers to every AI tool you touch. Prompt Writing Studio teaches it in depth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href={COURSE_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
-                Join Now
+              <a href={GRADER_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
+                Grade Your Prompt Free
               </a>
               <Link href="/claude-code-guide" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200">
                 Read the Claude Code Guide

@@ -234,7 +234,7 @@ Now do the GOAL. Quote the exact text you are referring to.`}
             </p>
             <p className="text-[#333333] mt-4 leading-relaxed">
               Want hundreds more fill-in-the-blank prompts like this, organised by job to be done? That is the core of the{' '}
-              <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="text-[#1A1A1A] font-semibold underline">Prompt Writing Studio course</a> — the prompt engineering system, not a list of one-off tricks.
+              <a href="/prompt-grader" className="text-[#1A1A1A] font-semibold underline">Prompt Grader</a>: paste your prompt and get a scored critique plus a tighter rewrite.
             </p>
           </div>
         </section>
@@ -291,8 +291,8 @@ Now do the GOAL. Quote the exact text you are referring to.`}
         <section className="py-16 bg-[#1A1A1A] text-center">
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <h2 className="text-3xl font-bold text-white mb-4">Stop wasting tokens on weak prompts</h2>
-            <p className="text-gray-300 mb-6">Knowing the context window is the easy part. Writing prompts that get a great answer in the fewest tokens is the skill. The Prompt Writing Studio course is the full system — templates, frameworks, and the engineering behind prompts that work the first time.</p>
-            <a href="https://courses.becomeawritertoday.com/purchase?product_id=6640678" className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Join Now</a>
+            <p className="text-gray-300 mb-6">Knowing the context window is the easy part. Writing prompts that get a great answer in the fewest tokens is the skill. The free Prompt Grader scores your prompt on five criteria and rewrites it to work the first time.</p>
+            <a href="/prompt-grader" className="inline-block bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition">Grade Your Prompt Free</a>
           </div>
         </section>
       </Layout>

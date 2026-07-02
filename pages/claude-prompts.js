@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Layout from '../components/layout/Layout'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
-const COURSE_URL = 'https://courses.becomeawritertoday.com/purchase?product_id=6640678'
+const GRADER_URL = '/prompt-grader'
 
 const faqs = [
   {
@@ -413,11 +413,11 @@ export default function ClaudePrompts() {
               Templates get you started. The method makes you fast.
             </h2>
             <p className="text-xl text-gray-300 mb-8">
-              PromptWritingStudio is the full course on writing prompts that work — for Claude, ChatGPT, and Gemini. You get the frameworks, a template library, and the practice to stop guessing and start getting first-draft-usable output every time.
+              The free Prompt Grader scores your prompt on five criteria, quotes the exact lines that cost you points, and rewrites it for Claude, ChatGPT, or Gemini. Stop guessing and start getting first-draft-usable output every time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href={COURSE_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
-                Join Now
+              <a href={GRADER_URL} className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
+                Grade Your Prompt Free
               </a>
               <Link href="/claude-code-guide" className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#1A1A1A] transition-colors duration-200">
                 Using Claude for code? Read the guide
