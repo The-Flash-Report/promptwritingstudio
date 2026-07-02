@@ -29,6 +29,10 @@ const AGENT_EXAMPLES = [
     label: 'Partial CLAUDE.md',
     text: `# Project assistant\n\nYou help with a Next.js site. Use Tailwind for styling. Don't break existing pages.`,
   },
+  {
+    label: 'Strong CLAUDE.md',
+    text: `# PromptWritingStudio — Claude Code Rules\n\n## Project overview\nNext.js 13 (Pages Router) site on Netlify. Sells a single course via Teachable.\n\n## Stack\n- Framework: Next.js 13, Pages Router only — no App Router\n- Styling: Tailwind CSS only\n- DB: None. All state is client-side localStorage.\n- Deployment: Netlify, auto-deploys from main\n\n## Dev commands\n\`npm run dev\` — localhost:3000\n\`npm run build\` — production build\n\n## Rules\n- Never add App Router files under /app\n- Never link to courses.becomeawritertoday.com (course is closed)\n- Always run \`npm run build\` before committing\n- If a change touches the critique endpoint, run jest __tests__/critique first\n\n## Failure handling\nIf uncertain about a destructive operation (rm, force-push, db migration), stop and ask. Do not guess at deploy secrets — check CLAUDE.md or ask.`,
+  },
 ]
 
 // Free-plan history cap (client-side; the paid plan lifts it).
@@ -78,10 +82,12 @@ function ScoreBar({ score, max }) {
   )
 }
 
-function OverallBadge({ overall }) {
+function OverallBadge({ overall, editsMode = false }) {
   const pct = overall.percentage
   const tone = pct >= 75 ? 'text-green-600' : pct >= 45 ? 'text-amber-500' : 'text-red-500'
-  const verdict = pct >= 75 ? 'Strong prompt' : pct >= 45 ? 'Usable, with gaps' : 'Needs a rewrite'
+  const verdict = editsMode
+    ? pct >= 75 ? 'Strong agent prompt' : pct >= 45 ? 'Usable, with gaps' : 'Needs significant work'
+    : pct >= 75 ? 'Strong prompt' : pct >= 45 ? 'Usable, with gaps' : 'Needs a rewrite'
   return (
     <div className="text-center">
       <div className={`text-6xl font-bold ${tone}`}>{pct}</div>
@@ -290,7 +296,7 @@ export default function PromptGrader({
         <div className="mt-6 space-y-6">
           <div className="bg-white rounded-lg shadow-md border border-[#E5E5E5] p-6">
             <div className="grid md:grid-cols-3 gap-6 items-center">
-              <OverallBadge overall={result.overall} />
+              <OverallBadge overall={result.overall} editsMode={isEditsMode} />
               <div className="md:col-span-2">
                 <p className="text-[#333333]">{result.summary}</p>
                 {result.failureModes?.length > 0 && (
