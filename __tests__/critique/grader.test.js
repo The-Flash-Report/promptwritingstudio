@@ -5,6 +5,42 @@ import { critiquePrompt, GRADER_JUDGE_MODEL } from '../../lib/critique'
 import { parseGraderExtras } from '../../lib/critique/judge'
 import { MalformedCritiqueError } from '../../lib/critique/errors'
 import { MissingKeyError } from '../../lib/gateway/errors'
+import { getRubric } from '../../data/critique-rubrics'
+
+const AGENT_RUBRIC = getRubric('agent-prompt')
+
+const AGENT_TARGET = `# Project assistant
+
+You are a helpful coding assistant. Stack: Next.js 13, Tailwind CSS.
+Always run npm run build before committing.
+If you are unsure about a destructive operation, ask the user first.`
+
+function goodAgentCriteria() {
+  return [
+    { id: 'identity_scope', score: 1, justification: 'Names a project but scope is thin.', evidence_span: 'You are a helpful coding assistant' },
+    { id: 'environment_context', score: 2, justification: 'Stack is named.', evidence_span: 'Next.js 13, Tailwind CSS' },
+    { id: 'behavioral_rules', score: 2, justification: 'Commit rule present.', evidence_span: 'run npm run build before committing' },
+    { id: 'failure_guidance', score: 2, justification: 'Escalation path present.', evidence_span: 'ask the user first' },
+    { id: 'maintainability', score: 1, justification: 'Minimal structure.', evidence_span: 'Project assistant' },
+  ]
+}
+
+function goodAgentEnvelope(overrides = {}) {
+  return {
+    safety_flag: '',
+    criteria: goodAgentCriteria(),
+    failure_modes: ['Stack versions are not pinned so the agent may assume the wrong Next.js APIs.'],
+    revisions: [
+      {
+        issue: 'Identity section does not state what project the agent is operating in.',
+        before_excerpt: 'You are a helpful coding assistant.',
+        after_excerpt: 'You are the coding assistant for the PromptWritingStudio Next.js site at github.com/org/repo.',
+      },
+    ],
+    summary: 'Thin but usable agent prompt.',
+    ...overrides,
+  }
+}
 
 const TARGET =
   'You are a senior copywriter. Write a 100-word product description in bullet points. Keep the tone friendly. For example, highlight benefits.'
@@ -177,6 +213,107 @@ describe('critiquePrompt via the Anthropic-direct grader judge', () => {
       fetchImpl,
     })
     expect(JSON.parse(calls[0].body).messages[0].content).toContain('ChatGPT')
+  })
+})
+
+describe('parseGraderExtras — edits mode (agent-prompt rubric)', () => {
+  it('accepts a valid envelope with grounded revisions', () => {
+    const extras = parseGraderExtras(goodAgentEnvelope(), AGENT_TARGET, AGENT_RUBRIC)
+    expect(extras.flagged).toBe(false)
+    expect(extras.revisions).toHaveLength(1)
+    expect(extras.revisions[0].before_excerpt).toBe('You are a helpful coding assistant.')
+    expect(extras.rewrite).toBe('')
+  })
+
+  it('drops revisions whose before_excerpt is not found verbatim in the target', () => {
+    const env = goodAgentEnvelope({
+      revisions: [
+        {
+          issue: 'Not grounded.',
+          before_excerpt: 'You are a world-class engineer with decades of experience',
+          after_excerpt: 'You are the dedicated assistant for the PromptWritingStudio repo.',
+        },
+      ],
+    })
+    expect(() => parseGraderExtras(env, AGENT_TARGET, AGENT_RUBRIC)).toThrow(/no grounded/)
+  })
+
+  it('throws when no revisions survive grounding', () => {
+    const env = goodAgentEnvelope({ revisions: [] })
+    expect(() => parseGraderExtras(env, AGENT_TARGET, AGENT_RUBRIC)).toThrow(/no grounded/)
+  })
+
+  it('drops revisions where before_excerpt equals after_excerpt', () => {
+    const env = goodAgentEnvelope({
+      revisions: [
+        {
+          issue: 'Identical',
+          before_excerpt: 'You are a helpful coding assistant.',
+          after_excerpt: 'You are a helpful coding assistant.',
+        },
+      ],
+    })
+    expect(() => parseGraderExtras(env, AGENT_TARGET, AGENT_RUBRIC)).toThrow(/no grounded/)
+  })
+
+  it('throws when revisions field is missing', () => {
+    const env = goodAgentEnvelope()
+    delete env.revisions
+    expect(() => parseGraderExtras(env, AGENT_TARGET, AGENT_RUBRIC)).toThrow(/revisions missing/)
+  })
+
+  it('returns the flagged path (safety) in edits mode without validating revisions', () => {
+    const env = goodAgentEnvelope({ safety_flag: 'Malicious.', revisions: [] })
+    const extras = parseGraderExtras(env, AGENT_TARGET, AGENT_RUBRIC)
+    expect(extras.flagged).toBe(true)
+    expect(extras.safetyReason).toBe('Malicious.')
+  })
+})
+
+describe('critiquePrompt — agent rubric end-to-end (mocked gateway)', () => {
+  function makeAnthropicFetch(payload) {
+    const content = typeof payload === 'string' ? payload : JSON.stringify(payload)
+    const fetchImpl = async () => ({
+      ok: true,
+      status: 200,
+      json: async () => ({
+        id: 'msg_test',
+        content: [{ type: 'text', text: content }],
+        usage: { input_tokens: 300, output_tokens: 200 },
+      }),
+    })
+    return { fetchImpl }
+  }
+
+  it('returns revisions (not rewrite) for the agent-prompt rubric', async () => {
+    const { fetchImpl } = makeAnthropicFetch(goodAgentEnvelope())
+    const result = await critiquePrompt({
+      targetPrompt: AGENT_TARGET,
+      rubricId: 'agent-prompt',
+      judgeModel: GRADER_JUDGE_MODEL,
+      studioAnthropicKey: 'sk-ant-STUDIO',
+      fetchImpl,
+    })
+    expect(result.flagged).toBe(false)
+    expect(result.rubricId).toBe('agent-prompt')
+    expect(result.revisions).toHaveLength(1)
+    expect(result.rewrite).toBeUndefined()
+    expect(result.target).toBeUndefined()
+    expect(result.criteria).toHaveLength(5)
+  })
+
+  it('does not reject an unknown target value in edits mode', async () => {
+    const { fetchImpl } = makeAnthropicFetch(goodAgentEnvelope())
+    await expect(
+      critiquePrompt({
+        targetPrompt: AGENT_TARGET,
+        rubricId: 'agent-prompt',
+        target: 'copilot',
+        judgeModel: GRADER_JUDGE_MODEL,
+        studioAnthropicKey: 'sk-ant-STUDIO',
+        fetchImpl,
+      })
+    ).resolves.toMatchObject({ rubricId: 'agent-prompt' })
   })
 })
 
