@@ -844,6 +844,11 @@ Next.js site with Tailwind CSS, deployed on Vercel.
                 <h3 className="font-bold text-[#1A1A1A] mb-2">CLAUDE.md Playbook</h3>
                 <p className="text-sm text-[#666666]">How to write a CLAUDE.md that keeps Claude Code on-rails.</p>
               </Link>
+              <Link href="/agent-prompt-grader" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
+                <div className="text-2xl mb-2">🧪</div>
+                <h3 className="font-bold text-[#1A1A1A] mb-2">Agent Prompt Grader</h3>
+                <p className="text-sm text-[#666666]">Score your CLAUDE.md on five agent-specific criteria and get targeted edits.</p>
+              </Link>
               <Link href="/claude-code-hooks-recipes" className="block p-6 bg-[#F9F9F9] rounded-lg border border-gray-200 hover:border-[#FFDE59] hover:bg-white transition">
                 <div className="text-2xl mb-2">🪝</div>
                 <h3 className="font-bold text-[#1A1A1A] mb-2">Claude Code Hooks Recipes</h3>

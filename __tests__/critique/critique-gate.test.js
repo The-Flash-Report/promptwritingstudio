@@ -43,11 +43,14 @@ describe('critique endpoint — free-metered grader policy', () => {
   })
   beforeEach(() => _resetGradeStoreForTesting())
 
-  it('GET lists rubrics without auth', async () => {
+  it('GET lists rubrics without auth — returns both rubrics', async () => {
     const res = mockRes()
     await handler({ method: 'GET', headers: {} }, res)
     expect(res.statusCode).toBe(200)
     expect(Array.isArray(res.body.rubrics)).toBe(true)
+    const ids = res.body.rubrics.map(r => r.id)
+    expect(ids).toContain('prompt-quality')
+    expect(ids).toContain('agent-prompt')
   })
 
   it('rejects a missing targetPrompt with 400 before metering', async () => {
@@ -98,9 +101,32 @@ describe('critique endpoint — free-metered grader policy', () => {
     }
   })
 
-  it('rejects an oversized prompt with 400', async () => {
+  it('rejects an oversized prompt (>8000) for the default chat rubric with 400', async () => {
     const res = mockRes()
     await handler(postReq({ body: { targetPrompt: 'x'.repeat(8001) } }), res)
     expect(res.statusCode).toBe(400)
+    expect(res.body.code).toBe('bad_request')
+  })
+
+  it('allows a >8000-char prompt for the agent-prompt rubric (24000 limit)', async () => {
+    const res = mockRes()
+    await handler(postReq({ body: { targetPrompt: 'x'.repeat(8001), rubricId: 'agent-prompt' } }), res)
+    // Passes the char limit gate → reaches the gateway → 401 (no API key in test env)
+    expect(res.statusCode).toBe(401)
+    expect(res.body.code).toBe('missing_key')
+  })
+
+  it('rejects a >24000-char prompt even for the agent-prompt rubric', async () => {
+    const res = mockRes()
+    await handler(postReq({ body: { targetPrompt: 'x'.repeat(24001), rubricId: 'agent-prompt' } }), res)
+    expect(res.statusCode).toBe(400)
+    expect(res.body.code).toBe('bad_request')
+  })
+
+  it('returns 404 for an unknown rubricId', async () => {
+    const res = mockRes()
+    await handler(postReq({ body: { targetPrompt: 'do a thing', rubricId: 'no-such-rubric' } }), res)
+    expect(res.statusCode).toBe(404)
+    expect(res.body.code).toBe('unknown_rubric')
   })
 })

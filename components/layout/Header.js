@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 const toolsItems = [
   { href: '/prompt-grader', label: '🧪 Prompt Grader', bold: true },
+  { href: '/agent-prompt-grader', label: '🤖 Agent Prompt Grader', bold: true },
   { href: '/calculators', label: '📊 Business Calculators', bold: true },
   { href: '/ai-prompt-generator', label: '🤖 AI Prompt Generator' },
   { href: '/gemini-prompt-generator', label: '💎 Gemini Prompt Generator' },

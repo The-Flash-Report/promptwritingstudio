@@ -7,7 +7,7 @@
 //
 // Shape: { id, version, title, scale: {min,max,labels}, passThreshold (on the
 // normalized 0-max scale), judgeInstructions, criteria: [{ id, name,
-// description, weight }] }.
+// description, weight }], rewriteMode: 'full'|'edits', maxChars }.
 
 import { createHash } from 'crypto'
 
@@ -22,10 +22,23 @@ const SCALE = {
   },
 }
 
+const AGENT_SCALE = {
+  min: 0,
+  max: 3,
+  labels: {
+    0: 'Absent — the file says nothing about this',
+    1: 'Weak — mentioned but too vague to act on',
+    2: 'Adequate — clear enough to guide the agent',
+    3: 'Excellent — explicit, specific, and unambiguous',
+  },
+}
+
 const RUBRICS = [
   {
     id: 'prompt-quality',
     title: 'Prompt Quality',
+    rewriteMode: 'full',
+    maxChars: 8000,
     scale: SCALE,
     passThreshold: 2.0,
     judgeInstructions:
@@ -59,6 +72,53 @@ const RUBRICS = [
         id: 'examples_or_criteria',
         name: 'Examples or success criteria',
         description: 'Gives examples, or explicit quality/success criteria, to steer the result.',
+        weight: 1,
+      },
+    ],
+  },
+  {
+    id: 'agent-prompt',
+    title: 'Agent Prompt Quality',
+    rewriteMode: 'edits',
+    maxChars: 24000,
+    scale: AGENT_SCALE,
+    passThreshold: 2.0,
+    judgeInstructions:
+      'You are a senior AI-engineering reviewer specialising in CLAUDE.md files and agent system prompts. You are scoring a CLAUDE.md or agent system prompt — not a chat prompt. The file exists to give a persistent AI agent its identity, operating context, behavioural rules, and failure-handling guidance. Be strict: score only what is actually written. Never award points for intent, convention, or what a reasonable developer "probably meant". Quote verbatim from the file for every score above 0.',
+    criteria: [
+      {
+        id: 'identity_scope',
+        name: 'Identity and scope',
+        description:
+          "Declares what the agent is, what project or codebase it operates in, and what is in- and out-of-scope. A bare 'You are a helpful assistant' scores 0.",
+        weight: 1,
+      },
+      {
+        id: 'environment_context',
+        name: 'Environment and context',
+        description:
+          'Supplies the concrete facts the agent needs to act without guessing: stack, paths, commands, external dependencies, and any non-obvious constraints of the runtime environment.',
+        weight: 2,
+      },
+      {
+        id: 'behavioral_rules',
+        name: 'Behavioural rules',
+        description:
+          'States explicit do/do-not rules that govern agent behaviour: commit hygiene, secret handling, file-mutation policy, approval gates, tone. Vague advice ("be careful") scores 1 at most.',
+        weight: 2,
+      },
+      {
+        id: 'failure_guidance',
+        name: 'Failure and escalation guidance',
+        description:
+          'Explains what the agent should do when it is uncertain, hits an error, or encounters a decision that exceeds its authority — not just "ask the user".',
+        weight: 1,
+      },
+      {
+        id: 'maintainability',
+        name: 'Maintainability',
+        description:
+          'The file is structured so a new developer (or a future version of the agent) can navigate and update it without guessing: sections are labelled, the reasoning behind non-obvious rules is present, and stale or contradictory guidance is absent.',
         weight: 1,
       },
     ],

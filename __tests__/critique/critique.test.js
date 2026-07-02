@@ -1,9 +1,50 @@
 import { critiquePrompt } from '../../lib/critique'
-import { getRubric } from '../../data/critique-rubrics'
+import { getRubric, listRubrics } from '../../data/critique-rubrics'
 import { renderJudgePrompt, parseJudgeResponse, computeOverall } from '../../lib/critique/judge'
 import { MalformedCritiqueError, UnknownRubricError } from '../../lib/critique/errors'
 
 const RUBRIC = getRubric('prompt-quality')
+const AGENT_RUBRIC = getRubric('agent-prompt')
+
+describe('rubric registry', () => {
+  it('lists both rubrics', () => {
+    const rubrics = listRubrics()
+    const ids = rubrics.map(r => r.id)
+    expect(ids).toContain('prompt-quality')
+    expect(ids).toContain('agent-prompt')
+  })
+
+  it('prompt-quality version hash has not drifted (v1-6dfd72d2)', () => {
+    expect(RUBRIC.version).toBe('v1-6dfd72d2')
+  })
+
+  it('agent-prompt rubric has rewriteMode edits and maxChars 24000', () => {
+    expect(AGENT_RUBRIC.rewriteMode).toBe('edits')
+    expect(AGENT_RUBRIC.maxChars).toBe(24000)
+    expect(AGENT_RUBRIC.criteria).toHaveLength(5)
+  })
+
+  it('agent-prompt rubric has the expected criterion ids', () => {
+    const ids = AGENT_RUBRIC.criteria.map(c => c.id)
+    expect(ids).toEqual(['identity_scope', 'environment_context', 'behavioral_rules', 'failure_guidance', 'maintainability'])
+  })
+})
+
+describe('agent rubric judge prompt', () => {
+  const AGENT_TARGET = '# Assistant\n\nYou are a helpful coding assistant. Use Node.js.'
+
+  it('renders edits-mode prompt containing "revisions" keyword, not "rewrite"', () => {
+    const p = renderJudgePrompt(AGENT_TARGET, AGENT_RUBRIC)
+    expect(p).toContain('revisions')
+    expect(p).not.toContain('"rewrite"')
+    for (const c of AGENT_RUBRIC.criteria) expect(p).toContain(c.id)
+  })
+
+  it('edits-mode prompt contains FILE TO CRITIQUE label', () => {
+    const p = renderJudgePrompt(AGENT_TARGET, AGENT_RUBRIC)
+    expect(p).toContain('FILE TO CRITIQUE')
+  })
+})
 
 // A prompt that contains a verbatim phrase for each criterion, so grounded
 // evidence spans can be validated.
