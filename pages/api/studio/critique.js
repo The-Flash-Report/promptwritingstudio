@@ -19,6 +19,18 @@ import { getModel } from '../../../lib/gateway/models'
 import { getTier, isFeatureAllowed } from '../../../lib/studio/entitlements'
 import { checkGradeRateLimit, GRADES_DAILY_MAX } from '../../../lib/studio/rateLimit'
 import { recordGradeSpend } from '../../../lib/studio/budget'
+import { buildRecord } from '../../../lib/grades/record'
+import { putRecord } from '../../../lib/grades/store'
+import { createHash } from 'crypto'
+
+// Salted-ish IP hash for abuse tracing on a share record. Never stores raw IP.
+function ipHashOf(req) {
+  const ip =
+    req.headers['x-nf-client-connection-ip'] ||
+    (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    'unknown'
+  return createHash('sha256').update(ip).digest('hex').slice(0, 16)
+}
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
@@ -80,7 +92,27 @@ export default async function handler(req, res) {
         outputTokens: critique.judge.tokensOut,
       })
     }
-    return res.status(200).json({ ...critique, meter })
+
+    // Persist a private, shareable snapshot for non-flagged grades. Best-effort:
+    // a Blobs failure must never break grading, so the share handle is simply
+    // omitted from the response when persistence fails.
+    let share = null
+    if (!critique.flagged) {
+      try {
+        const { record, manageToken } = buildRecord({
+          critique,
+          promptText: targetPrompt,
+          target,
+          ipHash: ipHashOf(req),
+        })
+        await putRecord(record)
+        share = { id: record.id, manageToken }
+      } catch (err) {
+        console.error('Grade persist failed:', err?.name || 'UnknownError')
+      }
+    }
+
+    return res.status(200).json({ ...critique, meter, share })
   } catch (err) {
     if (err instanceof CritiqueError || err instanceof GatewayError) {
       return res.status(err.status).json({ error: err.message, code: err.code })
