@@ -81,8 +81,10 @@ export async function getServerSideProps(context) {
     console.error('Grade page load failed:', err?.name || 'UnknownError')
   }
 
-  // Missing, private, or flagged → 404 (unshared grades must not leak).
+  // Missing, private, or flagged → 404 (unshared grades must not leak). Never
+  // cache the 404, or a later share/unshare transition would be masked by it.
   if (!record || !record.public || record.flagged) {
+    context.res.setHeader('Cache-Control', 'no-store')
     return { notFound: true }
   }
 
@@ -97,8 +99,10 @@ export async function getServerSideProps(context) {
     `${proto}://${host}/api/og?s=${encodeURIComponent(pct)}` +
     `&v=${encodeURIComponent(verdict)}&p=${encodeURIComponent(excerpt)}`
 
-  // Immutable once public — let the CDN cache it hard.
-  context.res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800')
+  // Cache hard for perf, but tag it so delete/unpublish can purge it instantly
+  // (a deleted grade must not linger in the CDN). Bounded SWR as a backstop.
+  context.res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=3600')
+  context.res.setHeader('Cache-Tag', `grade-${id}`)
 
   return { props: { record, ogImage } }
 }

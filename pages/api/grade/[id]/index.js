@@ -6,6 +6,17 @@
 import { getRecord, deleteRecord } from '../../../../lib/grades/store'
 import { verifyManageToken } from '../../../../lib/grades/record'
 
+// Purge the CDN copy of /g/[id] on delete so a removed grade disappears at once
+// (Netlify tags the page with `grade-<id>`). Best-effort: absent locally.
+async function purgeGrade(id) {
+  try {
+    const { purgeCache } = await import('@netlify/functions')
+    await purgeCache({ tags: [`grade-${id}`] })
+  } catch (err) {
+    console.error('purgeCache failed:', err?.name || 'UnknownError')
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== 'DELETE') {
     res.setHeader('Allow', 'DELETE')
@@ -37,5 +48,6 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Could not delete this grade.' })
   }
 
+  await purgeGrade(id)
   return res.status(200).json({ deleted: true, id })
 }

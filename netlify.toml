@@ -9,6 +9,10 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+# Bundle the OG-card fonts into the /api/og function (satori reads them at runtime).
+[functions]
+  included_files = ["assets/og/**"]
+
 # Security and performance headers
 [[headers]]
   for = "/*"
