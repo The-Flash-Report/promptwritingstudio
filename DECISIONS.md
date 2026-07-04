@@ -115,3 +115,21 @@ the "grade → share → return" habit with a paywall before there's habit to mo
 **Open for Bryan (blocking design, not code):** (1) public-grade privacy model — assumed
 explicit opt-in, default private; (2) willingness to seed via one newsletter + one YouTube
 mention — the entire cold-start plan; (3) Stripe link live or still stub.
+
+## D11. OG render = Node satori+resvg (not edge ImageResponse); delete purges CDN
+
+Two calls made during the build, both forced by deploy-preview verification (the PRD's M0):
+
+**OG rendering** — the PRD's primary was Next edge `ImageResponse`. On Netlify's runtime it
+returned HTTP 200 with an **empty body** (content-length 0). Switched `/api/og` to a **Node**
+route rendering `satori` (JSX→SVG) + `@resvg/resvg-js` (SVG→PNG) — the fallback the PRD named.
+Fonts are bundled Roboto TTFs (Apache-2.0) force-included via `netlify.toml`
+`[functions] included_files`. Verified live on the preview: 200, `image/png`, 1200×630, ~27KB,
+score+verdict dominant. Rejected: on-demand vs render-at-mint — chose on-demand + immutable CDN
+cache (simpler, no PNG storage, no native binary at mint).
+
+**Deletion cache** — the public page is cached (`s-maxage`), so a deleted grade kept serving
+from the CDN (a privacy bug: removal must be immediate). Fix: the page emits `Cache-Tag:
+grade-<id>`, `DELETE` calls Netlify `purgeCache({ tags })` to invalidate at once, and the 404
+branch is `no-store` so a share/unshare transition isn't masked by a cached 404. Verified:
+page returns 404 within seconds of delete.
