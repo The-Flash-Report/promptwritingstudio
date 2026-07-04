@@ -124,6 +124,12 @@ export default function PromptGrader({
   const [history, setHistory] = useState([])
   const [gradedOnce, setGradedOnce] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [share, setShare] = useState(null) // { id, manageToken } from the grade response
+  const [shareOptIn, setShareOptIn] = useState(false)
+  const [sharing, setSharing] = useState(false)
+  const [shareUrl, setShareUrl] = useState('')
+  const [shareError, setShareError] = useState('')
+  const [shareCopied, setShareCopied] = useState(false)
 
   useEffect(() => {
     setHistory(loadHistory(historySource))
@@ -154,6 +160,11 @@ export default function PromptGrader({
       if (data.meter) setMeter(data.meter)
       setStatus('done')
       setGradedOnce(true)
+      // Reset any prior share state; capture the new grade's share handle.
+      setShare(data.share || null)
+      setShareOptIn(false)
+      setShareUrl('')
+      setShareError('')
       if (!data.flagged) {
         setHistory(saveToHistory(prompt, data, historySource))
       }
@@ -169,6 +180,52 @@ export default function PromptGrader({
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     })
+  }
+
+  async function publishShare() {
+    if (!share?.id || !shareOptIn || sharing) return
+    setSharing(true)
+    setShareError('')
+    try {
+      const res = await fetch(`/api/grade/${share.id}/share`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ manageToken: share.manageToken }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setShareError(data.error || 'Could not create the share link. Try again.')
+        return
+      }
+      setShareUrl(data.url)
+    } catch (e) {
+      setShareError('Could not reach the server. Try again in a moment.')
+    } finally {
+      setSharing(false)
+    }
+  }
+
+  function copyShareUrl() {
+    if (!shareUrl) return
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      setShareCopied(true)
+      setTimeout(() => setShareCopied(false), 2000)
+    })
+  }
+
+  async function unpublishShare() {
+    if (!share?.id) return
+    try {
+      await fetch(`/api/grade/${share.id}`, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ manageToken: share.manageToken }),
+      })
+    } catch (e) {
+      // Best-effort; hide the UI regardless.
+    }
+    setShareUrl('')
+    setShare(null)
   }
 
   function restore(item) {
@@ -317,6 +374,63 @@ export default function PromptGrader({
               </div>
             </div>
           </div>
+
+          {/* Share this result (opt-in, default off) */}
+          {share?.id && (
+            <div className="bg-white rounded-lg shadow-md border border-[#E5E5E5] p-6">
+              {!shareUrl ? (
+                <>
+                  <h3 className="font-bold text-[#1A1A1A]">Share this result</h3>
+                  <label className="flex items-start gap-2 mt-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={shareOptIn}
+                      onChange={e => setShareOptIn(e.target.checked)}
+                      className="mt-1"
+                    />
+                    <span className="text-sm text-[#333333]">
+                      Make this result public. Your prompt text and score will be visible to anyone with the link.
+                    </span>
+                  </label>
+                  <button
+                    type="button"
+                    onClick={publishShare}
+                    disabled={!shareOptIn || sharing}
+                    className="mt-4 bg-[#FFDE59] text-[#1A1A1A] px-6 py-2 rounded-lg font-bold hover:bg-[#E5C84F] transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {sharing ? 'Creating link…' : 'Create share link'}
+                  </button>
+                  {shareError && <p className="text-sm text-red-600 mt-3">{shareError}</p>}
+                </>
+              ) : (
+                <>
+                  <h3 className="font-bold text-[#1A1A1A]">Your result is public</h3>
+                  <div className="flex flex-col sm:flex-row gap-2 mt-3">
+                    <input
+                      readOnly
+                      value={shareUrl}
+                      onFocus={e => e.target.select()}
+                      className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm text-[#333333]"
+                    />
+                    <button
+                      type="button"
+                      onClick={copyShareUrl}
+                      className="bg-[#1A1A1A] text-white px-4 py-2 rounded-lg font-bold hover:bg-black transition text-sm"
+                    >
+                      {shareCopied ? 'Copied!' : 'Copy link'}
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={unpublishShare}
+                    className="text-sm text-gray-500 underline mt-3 hover:text-gray-700"
+                  >
+                    Remove this public result
+                  </button>
+                </>
+              )}
+            </div>
+          )}
 
           <div className="bg-white rounded-lg shadow-md border border-[#E5E5E5] p-6">
             <h3 className="font-bold text-[#1A1A1A] mb-4">Score breakdown</h3>

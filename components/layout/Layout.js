@@ -5,10 +5,11 @@ import Footer from './Footer'
 import FloatingCTA from '../ui/FloatingCTA'
 import CookieConsent from '../ui/CookieConsent'
 
-export default function Layout({ children, title, description, canonicalUrl }) {
+export default function Layout({ children, title, description, canonicalUrl, ogImage }) {
   const router = useRouter()
   const siteUrl = 'https://promptwritingstudio.com'
   const currentUrl = canonicalUrl || `${siteUrl}${router.asPath.split('?')[0]}`
+  const socialImage = ogImage || `${siteUrl}/images/og-image.jpg`
   // Most pages render their OWN <Head><title> BEFORE <Layout> in the tree, so
   // a Layout-emitted default title comes later and silently overrides them
   // (next/head keeps the last occurrence). Only emit title/description here
@@ -26,7 +27,7 @@ export default function Layout({ children, title, description, canonicalUrl }) {
         <link rel="canonical" href={currentUrl} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={`${siteUrl}/images/og-image.jpg`} />
+        <meta property="og:image" content={socialImage} />
         <meta property="og:url" content={currentUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Prompt Writing Studio" />
@@ -34,7 +35,7 @@ export default function Layout({ children, title, description, canonicalUrl }) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
-        <meta name="twitter:image" content={`${siteUrl}/images/og-image.jpg`} />
+        <meta name="twitter:image" content={socialImage} />
         <meta name="twitter:site" content="@BryanJCollins" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

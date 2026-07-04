@@ -73,3 +73,45 @@ Every major call, with the alternatives I rejected and why. Newest at the bottom
 ## D8. History = localStorage via existing savedLibrary; free keeps last 3, paid unlimited
 
 **Why:** no DB exists and standing up one overnight for v1 history is scope creep; `lib/studio/savedLibrary.js` is tested and SSR-safe. The free cap creates the "save your library" email moment and the paid upsell honestly. Rejected: cookie/server sessions (no auth), IndexedDB (overkill for <100 items).
+
+---
+
+# DECISIONS — second-build investigation, 2026-07-04
+
+Follow-up run (see `SECOND_BUILD.md`). The first-build question above is settled and shipped;
+this asks what comes next given a live Grader and flat organic traffic (GSC: 35 clicks /
+4,589 impressions / 28 days / avg position 54.7).
+
+## D9. Second build = shareable Grader result cards, not a public library or a playground
+
+**Chosen:** turn each grade into a persistent public page `/g/[id]` with a dynamic OG card
+("this prompt scored 38/100 — here's why"). Distribution loop, owned-data, AIO-resistant,
+search-independent. Fold AI-citation schema (candidate #6) in as `Dataset` markup on those
+pages rather than as a standalone project.
+
+**Why:** it's the only candidate that manufactures its own distribution — the site can't rank
+(position 54.7), so the second build must not depend on ranking. The model call is already
+paid for in the grade, so marginal API cost is ~nil (kills the playground's recurring-cost
+problem). Each card is a new indexed, structured, citable page whose corpus grows with usage,
+not editorial effort. A grade of a *specific* prompt passes the AIO test the public library
+fails.
+
+**Rejected:**
+- **Public prompt library (#3)** — verified red-ocean listicle SERP; commodity content AIO
+  answers in one paragraph; needs volume the site doesn't have. Already rejected in D1.
+  Defer until the card loop generates volume.
+- **Live playground / multi-model run (#1)** — recurring inference cost on our dime, no share
+  loop, off-thesis for a creator audience; BYOK compare already exists (#43).
+- **AI-citation as a standalone build (#6)** — nothing worth citing until result pages exist;
+  demoted to markup on #5.
+
+## D10. Scope excludes the paid tier (below the monetisation gate)
+
+**Why:** GSC confirms the site is far under the 1k-visitor/month threshold; this build is a
+reach + list-growth play, not revenue. The paid stub stays a waitlist until traffic justifies
+turning on Stripe. Rejected: bolting checkout onto the share loop now — premature, and dilutes
+the "grade → share → return" habit with a paywall before there's habit to monetise.
+
+**Open for Bryan (blocking design, not code):** (1) public-grade privacy model — assumed
+explicit opt-in, default private; (2) willingness to seed via one newsletter + one YouTube
+mention — the entire cold-start plan; (3) Stripe link live or still stub.
