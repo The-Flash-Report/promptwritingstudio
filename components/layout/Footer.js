@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Script from 'next/script'
 import { FaTwitter, FaLinkedin, FaInstagram, FaYoutube, FaFacebook } from 'react-icons/fa'
+import EmailCapture from '../ui/EmailCapture'
 
 export default function Footer() {
   return (
@@ -64,18 +65,28 @@ export default function Footer() {
 
         </div>
         
+        {/* Newsletter signup - Full Width Section */}
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="max-w-xl mx-auto text-center">
+            <h4 className="text-lg font-bold mb-2">Get practical Claude tips in your inbox</h4>
+            <p className="text-gray-400 mb-4">A short email when there's a new skill, guide, or tool worth your time. No hype, no spam.</p>
+            <div className="flex justify-center">
+              <EmailCapture label="" buttonText="Subscribe" source="footer" theme="dark" />
+            </div>
+          </div>
+        </div>
+
         {/* Connect With Us - Full Width Section */}
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="text-center">
             <h4 className="text-lg font-bold mb-4">Connect With Us</h4>
-            <div className="flex justify-center space-x-6 mb-4">
+            <div className="flex justify-center space-x-6">
               <a href="https://twitter.com/bryanjcollins" className="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
               <a href="https://www.linkedin.com/in/bryancollinswriter/" className="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /></a>
               <a href="https://www.instagram.com/bryancollinswriter/" className="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
               <a href="https://www.youtube.com/c/BryanCollins" className="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer"><FaYoutube size={24} /></a>
               <a href="https://www.facebook.com/becomeawritertoday/" className="text-gray-400 hover:text-white transition" target="_blank" rel="noopener noreferrer"><FaFacebook size={24} /></a>
             </div>
-            <p className="text-gray-400">Stay updated with our latest AI tools and prompt techniques</p>
           </div>
         </div>
         

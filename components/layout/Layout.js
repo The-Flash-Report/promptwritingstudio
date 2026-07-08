@@ -4,6 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import FloatingCTA from '../ui/FloatingCTA'
 import CookieConsent from '../ui/CookieConsent'
+import NewsletterPopup from '../ui/NewsletterPopup'
 
 export default function Layout({ children, title, description, canonicalUrl, ogImage }) {
   const router = useRouter()
@@ -44,6 +45,7 @@ export default function Layout({ children, title, description, canonicalUrl, ogI
       <Footer />
       <FloatingCTA />
       <CookieConsent />
+      <NewsletterPopup />
     </>
   )
 }

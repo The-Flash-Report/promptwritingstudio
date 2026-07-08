@@ -20,14 +20,7 @@ export default function Document() {
             `,
           }}
         />
-        
-        {/* ConvertBox */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `!function(e,t){(e=t.createElement("script")).src="https://cdn.convertbox.com/convertbox/js/embed.js",e.id="app-convertbox-script",e.async=true,e.dataset.uuid="9b03f284-1c74-4054-ba19-6604e0ecdd7a",document.getElementsByTagName("head")[0].appendChild(e)}(window,document);`,
-          }}
-        />
-        
+
         {/* Google Analytics 4 */}
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></script>
         <script
