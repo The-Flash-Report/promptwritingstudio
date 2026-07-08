@@ -21,7 +21,11 @@ export default function EmailCapture({
       body.append('form-name', formName)
       body.append('email', email)
       if (source) body.append('source', source)
-      const res = await fetch('/', {
+      // POST to the static /__forms.html endpoint, not "/". On this Next.js
+      // site "/" is served by the SSR runtime (GET/HEAD only) and returns 405,
+      // so submissions silently fail. /__forms.html is the static form-
+      // declaration file Netlify's form handler actually intercepts.
+      const res = await fetch('/__forms.html', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: body.toString()
