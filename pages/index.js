@@ -1,54 +1,14 @@
 import Layout from '../components/layout/Layout'
-import { useEffect, useState } from 'react'
 import Hero from '../components/sections/Hero'
 import ROICalculator from '../components/tools/ROICalculator'
 import Link from 'next/link'
 import TestimonialEmbed from '../components/sections/TestimonialEmbed'
 import Instructor from '../components/sections/Instructor'
 import IndustryNavigation from '../components/sections/IndustryNavigation'
+import EmailCapture from '../components/ui/EmailCapture'
 import Head from 'next/head'
 
 export default function Home() {
-  const [showExitModal, setShowExitModal] = useState(false)
-
-  // Exit-intent modal (homepage only)
-  useEffect(() => {
-    // Skip if already handled this session
-    try {
-      if (typeof window !== 'undefined' && sessionStorage.getItem('exit_intent_handled') === '1') {
-        return
-      }
-    } catch (e) {}
-
-    // Only apply on devices with a mouse pointer
-    if (typeof window !== 'undefined' && window.matchMedia && !window.matchMedia('(pointer: fine)').matches) {
-      return
-    }
-
-    const handleMouseOut = (e) => {
-      if (!e) return
-      if (e.relatedTarget === null && e.clientY <= 0) {
-        try { sessionStorage.setItem('exit_intent_handled', '1') } catch (e) {}
-        setTimeout(() => {
-          setShowExitModal(true)
-        }, 2000)
-      }
-    }
-
-    window.addEventListener('mouseout', handleMouseOut)
-    return () => window.removeEventListener('mouseout', handleMouseOut)
-  }, [])
-
-  // Allow closing modal with Escape
-  useEffect(() => {
-    if (!showExitModal) return
-    const onKey = (e) => {
-      if (e.key === 'Escape') setShowExitModal(false)
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [showExitModal])
-
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -80,30 +40,6 @@ export default function Home() {
         title="Prompt Writing Studio — Practical Guides for Claude Code, MCP & Sub-agents"
         description="Working guides, templates, and comparisons for people building real work with Claude — Claude Code, Projects, Artifacts, Skills, MCP, sub-agents, and hooks."
       >
-      {showExitModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-          <div role="dialog" aria-modal="true" className="bg-white rounded-xl shadow-2xl max-w-md w-full mx-4 p-6">
-            <div className="text-center mb-4">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">One last thing before you go</h3>
-              <p className="text-gray-700">Grab the free Claude Code starter guide — the same checklist we use to onboard new teams into Claude Code in an afternoon.</p>
-            </div>
-            <div className="space-y-3">
-              <button
-                onClick={() => { window.location.href = '/claude-code-guide' }}
-                className="w-full bg-[#FFDE59] text-[#1A1A1A] py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors"
-              >
-                Read the Claude Code guide
-              </button>
-              <button
-                onClick={() => setShowExitModal(false)}
-                className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-              >
-                Maybe later
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Hero />
 
@@ -263,6 +199,24 @@ export default function Home() {
 
       <Instructor />
       <TestimonialEmbed />
+
+      {/* Newsletter signup */}
+      <section className="py-16 md:py-24 bg-[#1A1A1A] text-white border-t border-gray-800">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Get practical Claude tips in your inbox
+            </h2>
+            <p className="text-lg text-gray-300 mb-8">
+              A short email when there's a new Claude Code skill worth installing, a guide worth
+              reading, or a tool worth trying. No hype, no spam — unsubscribe anytime.
+            </p>
+            <div className="flex justify-center">
+              <EmailCapture label="" buttonText="Subscribe" source="homepage" theme="dark" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Free tools CTA */}
       <section className="py-16 md:py-24 bg-[#F9F9F9] border-t border-[#E5E5E5]">
