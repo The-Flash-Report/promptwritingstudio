@@ -34,12 +34,9 @@ Be direct, data-driven, and focus on practical implementation.`,
       difficulty: 'advanced',
       useCase: 'Strategic planning and business analysis',
       estimatedTime: '10-15 minutes',
-      optimizationScore: 95,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 234,
-      uses: 1250
     },
     {
       id: 'bus_002',
@@ -74,12 +71,9 @@ Prioritize actionable insights over theoretical analysis.`,
       difficulty: 'intermediate',
       useCase: 'Market research and competitive analysis',
       estimatedTime: '8-12 minutes',
-      optimizationScore: 88,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 156,
-      uses: 890
     }
   ],
 
@@ -125,12 +119,9 @@ Output: Hook + full content script + posting strategy`,
       difficulty: 'advanced',
       useCase: 'Creating high-engagement social media content',
       estimatedTime: '5-8 minutes',
-      optimizationScore: 92,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 421,
-      uses: 3200
     },
     {
       id: 'cont_002',
@@ -175,12 +166,9 @@ Output: Complete blog post outline + introduction + first section written in ful
       difficulty: 'intermediate',
       useCase: 'Creating comprehensive blog posts',
       estimatedTime: '10-15 minutes',
-      optimizationScore: 90,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 312,
-      uses: 2100
     }
   ],
 
@@ -237,12 +225,9 @@ Output: Complete sales page copy with headlines, sections, and CTAs`,
       difficulty: 'advanced',
       useCase: 'Creating high-converting sales pages',
       estimatedTime: '15-20 minutes',
-      optimizationScore: 94,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 567,
-      uses: 1890
     },
     {
       id: 'copy_002',
@@ -304,12 +289,9 @@ Output: Complete email sequence with subject lines, preview text, and full copy`
       difficulty: 'advanced',
       useCase: 'Building automated email marketing sequences',
       estimatedTime: '20-25 minutes',
-      optimizationScore: 91,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 389,
-      uses: 1456
     }
   ],
 
@@ -376,12 +358,9 @@ Output: Complete customer avatar with marketing strategy recommendations`,
       difficulty: 'intermediate',
       useCase: 'Understanding and targeting ideal customers',
       estimatedTime: '12-15 minutes',
-      optimizationScore: 89,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 278,
-      uses: 1123
     }
   ],
 
@@ -448,12 +427,9 @@ Be specific with line numbers and provide actionable improvements.`,
       difficulty: 'advanced',
       useCase: 'Reviewing and improving code quality',
       estimatedTime: '8-12 minutes',
-      optimizationScore: 87,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 445,
-      uses: 2890
     }
   ],
 
@@ -521,12 +497,9 @@ Output:
       difficulty: 'advanced',
       useCase: 'Planning SEO content strategy',
       estimatedTime: '15-20 minutes',
-      optimizationScore: 93,
       createdAt: '2024-01-15',
       updatedAt: '2024-01-15',
       author: 'Prompt Writing Studio',
-      likes: 356,
-      uses: 1567
     }
   ]
 };
@@ -555,10 +528,9 @@ export const getPromptById = (id) => {
 };
 
 export const getTopPrompts = (limit = 10) => {
-  const allPrompts = getAllPrompts();
-  return allPrompts
-    .sort((a, b) => (b.likes + b.uses) - (a.likes + a.uses))
-    .slice(0, limit);
+  // No engagement stats are tracked, so surface a stable slice of the library
+  // rather than ranking by fabricated likes/uses.
+  return getAllPrompts().slice(0, limit);
 };
 
 export const getPromptCategories = () => {
