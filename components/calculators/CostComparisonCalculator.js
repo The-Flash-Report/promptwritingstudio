@@ -358,7 +358,7 @@ export default function CostComparisonCalculator() {
               </div>
             </div>
 
-            {/* Newsletter capture — real Netlify Forms -> Resend pipeline */}
+            {/* Newsletter capture: real Netlify Forms -> Resend pipeline */}
             <div className="border-t border-gray-200 pt-6">
               <div className="text-center mb-4">
                 <h4 className="text-lg font-semibold text-gray-800 mb-2">
