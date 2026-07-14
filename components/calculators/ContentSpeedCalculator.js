@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import EmailCapture from '../ui/EmailCapture';
 
 const ContentSpeedCalculator = () => {
   const [inputs, setInputs] = useState({
@@ -87,16 +88,6 @@ const ContentSpeedCalculator = () => {
     });
     
     setShowEmailCapture(true);
-  };
-
-  const handleEmailSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    
-    // Here you would integrate with your email service
-    console.log('Email submitted:', email);
-    alert('Thanks! Check your email for the "Content Creation Automation Guide"');
-    setShowEmailCapture(false);
   };
 
   return (
@@ -279,30 +270,19 @@ const ContentSpeedCalculator = () => {
               <p className="text-gray-600 mb-6">
                 Learn the exact AI prompts and workflows that can 4-8x your content creation speed.
               </p>
-              <form onSubmit={handleEmailSubmit}>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email address"
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <div className="flex gap-3">
-                  <button
-                    type="submit"
-                    className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    Get Free Guide
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setShowEmailCapture(false)}
-                    className="px-4 py-3 text-gray-500 hover:text-gray-700"
-                  >
-                    Close
-                  </button>
-                </div>
-              </form>
+              <EmailCapture
+                theme="light"
+                source="calculator-content-speed"
+                label=""
+                buttonText="Get Free Guide"
+              />
+              <button
+                type="button"
+                onClick={() => setShowEmailCapture(false)}
+                className="mt-4 text-gray-500 hover:text-gray-700"
+              >
+                Close
+              </button>
             </div>
           </div>
         )}

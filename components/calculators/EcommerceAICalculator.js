@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import EmailCapture from '../ui/EmailCapture';
 
 const EcommerceAICalculator = () => {
   const [inputs, setInputs] = useState({
@@ -132,16 +133,6 @@ const EcommerceAICalculator = () => {
     });
     
     setShowEmailCapture(true);
-  };
-
-  const handleEmailSubmit = (e) => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    
-    // Here you would integrate with your email service
-    console.log('Email submitted:', email);
-    alert('Thanks! Check your email for the "E-commerce AI Toolkit"');
-    setShowEmailCapture(false);
   };
 
   return (
@@ -468,30 +459,19 @@ const EcommerceAICalculator = () => {
               <p className="text-gray-600 mb-6">
                 Download ready-to-use AI prompts for product descriptions, customer service responses, and marketing content that can save you thousands.
               </p>
-              <form onSubmit={handleEmailSubmit}>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email address"
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                />
-                <div className="flex gap-3">
-                  <button
-                    type="submit"
-                    className="flex-1 bg-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
-                  >
-                    Get Free Toolkit
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setShowEmailCapture(false)}
-                    className="px-4 py-3 text-gray-500 hover:text-gray-700"
-                  >
-                    Close
-                  </button>
-                </div>
-              </form>
+              <EmailCapture
+                theme="light"
+                source="calculator-ecommerce-ai"
+                label=""
+                buttonText="Get Free Toolkit"
+              />
+              <button
+                type="button"
+                onClick={() => setShowEmailCapture(false)}
+                className="mt-4 text-gray-500 hover:text-gray-700"
+              >
+                Close
+              </button>
             </div>
           </div>
         )}
