@@ -1,0 +1,40 @@
+{
+  "last_updated": "2026-07-15",
+  "note": "Consumer AI subscription plan prices in USD per month. Each price re-verified against the vendor's public pricing page on the last_verified date. Never interpolate or invent a plan price; leave stale and flag if a page is unreachable.",
+  "plans": [
+    {
+      "id": "chatgpt-plus",
+      "label": "ChatGPT Plus",
+      "vendor": "OpenAI",
+      "monthly_usd": 20,
+      "source_url": "https://chatgpt.com/pricing/",
+      "last_verified": "2026-07-15",
+      "verify_note": "Confirmed 2026-07-15 via in-session web search of the official chatgpt.com/pricing page (direct fetch returned 403). Re-pull from the page directly when possible."
+    },
+    {
+      "id": "claude-pro",
+      "label": "Claude Pro",
+      "vendor": "Anthropic",
+      "monthly_usd": 20,
+      "source_url": "https://claude.com/pricing",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "claude-max",
+      "label": "Claude Max",
+      "vendor": "Anthropic",
+      "monthly_usd": 100,
+      "source_url": "https://claude.com/pricing",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "chatgpt-pro",
+      "label": "ChatGPT Pro",
+      "vendor": "OpenAI",
+      "monthly_usd": 200,
+      "source_url": "https://chatgpt.com/pricing/",
+      "last_verified": "2026-07-15",
+      "verify_note": "Confirmed 2026-07-15 via in-session web search of the official chatgpt.com/pricing page (direct fetch returned 403). Re-pull from the page directly when possible."
+    }
+  ]
+}

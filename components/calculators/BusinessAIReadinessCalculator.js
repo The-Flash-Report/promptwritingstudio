@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useCalculatorTracking } from '../ui/CalculatorAnalytics'
 import SocialShare from '../ui/SocialShare'
 import LoadingSpinner from '../ui/LoadingSpinner'
+import EmailCapture from '../ui/EmailCapture'
 
 export default function BusinessAIReadinessCalculator() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -39,7 +40,6 @@ export default function BusinessAIReadinessCalculator() {
   const [results, setResults] = useState(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [showEmailCapture, setShowEmailCapture] = useState(false)
-  const [emailSubmitted, setEmailSubmitted] = useState(false)
 
   const { trackCalculatorStart, trackCalculatorComplete, trackCTAClick } = useCalculatorTracking('Business AI Readiness Calculator')
 
@@ -432,12 +432,6 @@ export default function BusinessAIReadinessCalculator() {
     return currentQuestions.every(question => formData[question.key])
   }
 
-  const handleEmailSubmit = (e) => {
-    e.preventDefault()
-    setEmailSubmitted(true)
-    setShowEmailCapture(false)
-  }
-
   if (results) {
     return (
       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 md:p-8" id="calculator-results">
@@ -661,41 +655,20 @@ export default function BusinessAIReadinessCalculator() {
             <p className="text-gray-600 mb-4">
               Enter your email to receive a personalized AI readiness report and implementation guide.
             </p>
-            <form onSubmit={handleEmailSubmit}>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={(e) => handleInputChange('email', e.target.value)}
-                placeholder="your@email.com"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4"
-              />
-              <div className="flex gap-3">
-                <button
-                  type="submit"
-                  className="flex-1 bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700"
-                >
-                  Get Roadmap
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShowEmailCapture(false)}
-                  className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
-                >
-                  Skip
-                </button>
-              </div>
-            </form>
+            <EmailCapture
+              theme="light"
+              source="calculator-business-ai-readiness"
+              label=""
+              buttonText="Get Roadmap"
+            />
+            <button
+              type="button"
+              onClick={() => setShowEmailCapture(false)}
+              className="mt-4 px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+            >
+              Skip
+            </button>
           </div>
-        </div>
-      )}
-
-      {emailSubmitted && (
-        <div className="mt-4 bg-green-50 border border-green-200 rounded-lg p-4">
-          <p className="text-green-700 font-medium">
-            ✅ Roadmap sent! Check your email for your personalized AI implementation guide.
-          </p>
         </div>
       )}
     </div>
