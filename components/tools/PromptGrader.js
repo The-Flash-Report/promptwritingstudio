@@ -130,6 +130,15 @@ export default function PromptGrader({
   const [shareUrl, setShareUrl] = useState('')
   const [shareError, setShareError] = useState('')
   const [shareCopied, setShareCopied] = useState(false)
+  const [reportEmail, setReportEmail] = useState('')
+  const [reportStatus, setReportStatus] = useState('idle') // idle | sending | sent | error
+  const [reportError, setReportError] = useState('')
+  const [reportSentTo, setReportSentTo] = useState('')
+
+  // Source attribution so the two grader surfaces stay measurable. The API
+  // re-derives the authoritative source from the stored record; this value is
+  // sent as a hint and keeps the surfaces distinct client-side.
+  const reportSource = isEditsMode ? 'agent-prompt-grader-report' : 'prompt-grader-report'
 
   useEffect(() => {
     setHistory(loadHistory(historySource))
@@ -165,6 +174,11 @@ export default function PromptGrader({
       setShareOptIn(false)
       setShareUrl('')
       setShareError('')
+      // Reset the report-email capture for the fresh result.
+      setReportStatus('idle')
+      setReportError('')
+      setReportSentTo('')
+      setReportEmail('')
       if (!data.flagged) {
         setHistory(saveToHistory(prompt, data, historySource))
       }
@@ -226,6 +240,33 @@ export default function PromptGrader({
     }
     setShareUrl('')
     setShare(null)
+  }
+
+  async function sendReport(e) {
+    if (e) e.preventDefault()
+    const address = reportEmail.trim()
+    if (!share?.id || !address || reportStatus === 'sending') return
+    setReportStatus('sending')
+    setReportError('')
+    try {
+      const res = await fetch(`/api/grade/${share.id}/email`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: address, source: reportSource }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setReportError(data.error || 'Could not send the report. Try again.')
+        setReportStatus('error')
+        return
+      }
+      setReportSentTo(data.email || address)
+      setReportStatus('sent')
+      setReportEmail('')
+    } catch (err) {
+      setReportError('Could not reach the server. Try again in a moment.')
+      setReportStatus('error')
+    }
   }
 
   function restore(item) {
@@ -499,6 +540,49 @@ export default function PromptGrader({
               <p className="text-sm text-gray-500 mt-3">
                 Anything in [BRACKETS] is a detail only you know. Fill it in before you run the prompt.
               </p>
+            </div>
+          )}
+
+          {/* Email me this report: capture at the value moment (source={reportSource}) */}
+          {share?.id && (
+            <div className="bg-white rounded-lg shadow-md border border-[#E5E5E5] p-6">
+              {reportStatus === 'sent' ? (
+                <>
+                  <h3 className="font-bold text-[#1A1A1A]">Report sent</h3>
+                  <p className="text-sm text-[#333333] mt-1">
+                    Your full report is on its way to {reportSentTo}. Check your inbox, and your spam folder if you do
+                    not see it in a minute.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h3 className="font-bold text-[#1A1A1A]">Email me this full report</h3>
+                  <p className="text-sm text-[#333333] mt-1 mb-3">
+                    Get the score, the full criterion breakdown, and the {isEditsMode ? 'suggested edits' : 'rewrite'} in
+                    your inbox, and join the PromptWritingStudio list for practical prompt tips. No spam.
+                  </p>
+                  <form onSubmit={sendReport} className="flex flex-col sm:flex-row gap-2 w-full max-w-md">
+                    <input
+                      type="email"
+                      value={reportEmail}
+                      onChange={e => setReportEmail(e.target.value)}
+                      placeholder="Your email address"
+                      required
+                      aria-label="Email address"
+                      disabled={reportStatus === 'sending'}
+                      className="flex-grow min-w-0 px-4 py-3 rounded-lg text-[#1A1A1A] bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FFDE59]"
+                    />
+                    <button
+                      type="submit"
+                      disabled={reportStatus === 'sending' || !reportEmail.trim()}
+                      className="bg-[#FFDE59] text-[#1A1A1A] px-5 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition disabled:opacity-60 disabled:cursor-not-allowed whitespace-nowrap"
+                    >
+                      {reportStatus === 'sending' ? 'Sending…' : 'Email me this report'}
+                    </button>
+                  </form>
+                  {reportError && <p className="text-sm text-red-600 mt-3">{reportError}</p>}
+                </>
+              )}
             </div>
           )}
 
