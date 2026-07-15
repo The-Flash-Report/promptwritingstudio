@@ -7,6 +7,7 @@ import { LEARN_MODULES } from '../../data/learn/modules'
 import aiModels from '../../data/ai-models.json'
 import claudeCodeSkills from '../../data/claude-code-skills.json'
 import { AI_WORKFORCE_MODULES } from '../../data/ai-workforce'
+import { getAllSlugs as getAllPromptLibrarySlugs } from '../../lib/promptLibrary'
 
 // THE live sitemap. `next.config.js` rewrites /sitemap.xml here — there is
 // deliberately NO static public/sitemap.xml (a stale hand-committed copy
@@ -77,6 +78,7 @@ const STATIC_ROUTES = [
   { url: '/learn', priority: '0.8', changefreq: 'monthly' },
   { url: '/ai-workforce', priority: '0.8', changefreq: 'monthly' },
   { url: '/prompt-examples', priority: '0.85', changefreq: 'weekly' },
+  { url: '/prompt-library', priority: '0.85', changefreq: 'weekly' },
   { url: '/ai-models', priority: '0.85', changefreq: 'weekly' },
   { url: '/ai-prompt-generator/ai-art-prompts', priority: '0.7', changefreq: 'monthly' },
   { url: '/what-is-rag', priority: '0.85', changefreq: 'monthly' },
@@ -174,6 +176,11 @@ export default function handler(req, res) {
     .forEach(f => {
       xml += urlEntry(baseUrl, today, `/prompt-examples/${f.replace('.json', '')}`)
     })
+
+  // /prompt-library/[slug] — one URL per library prompt (slug from lib/promptLibrary)
+  getAllPromptLibrarySlugs().forEach(slug => {
+    xml += urlEntry(baseUrl, today, `/prompt-library/${slug}`, 'monthly', '0.7')
+  })
 
   // /model-prompting-guide/[model]
   getAllModelSlugs().forEach(slug => {
