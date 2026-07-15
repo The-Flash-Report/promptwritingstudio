@@ -51,6 +51,7 @@
 - [AI Prompt Generator](https://promptwritingstudio.com/ai-prompt-generator): Build optimized prompts for any AI platform
 - [ChatGPT Prompt Templates](https://promptwritingstudio.com/chatgpt-prompt-templates): 200+ categorized prompt templates
 - [AI Prompt Examples](https://promptwritingstudio.com/ai-prompt-examples): Curated collection of effective prompts
+- [Prompt Library](https://promptwritingstudio.com/prompt-library): Full-length, copy-ready prompt templates, each on its own citable URL (business, copywriting, marketing, SEO, content, code)
 - [Mad Libs Prompt Creator](https://promptwritingstudio.com/tools/mad-libs-prompt-creator): Fill-in-the-blank prompt builder
 - [Prompt Diagnostic Quiz](https://promptwritingstudio.com/tools/prompt-diagnostic-quiz): Why your prompts aren't working
 

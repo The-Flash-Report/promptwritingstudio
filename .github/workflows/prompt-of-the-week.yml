@@ -1,0 +1,52 @@
+name: Prompt of the week (draft only)
+
+# DISARMED. PromptWritingStudio is off-sprint (bench), so there is no schedule.
+# This workflow only ASSEMBLES a broadcast draft and uploads it as an artifact.
+# It never sends email and has no access to any Resend secret. Sending stays
+# manual: Bryan downloads the artifact (or reads the committed draft) and sends
+# the first broadcast from Resend himself.
+#
+# To arm later (needs Bryan): uncomment the schedule block below, pick a cadence
+# day/time, and only THEN wire in a send step with the RESEND secrets. Until the
+# send path is deliberately added, arming the schedule just produces drafts on a
+# timer, which is still safe.
+#
+#     schedule:
+#       - cron: '0 14 * * 4'   # example: Thursday 14:00 UTC (commented = DISARMED)
+
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'Override ISO week selection index (blank = current week)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate broadcast draft (no LLM, no send)
+        run: |
+          if [ -n "${{ inputs.week }}" ]; then
+            node scripts/generate-prompt-of-the-week.js --week "${{ inputs.week }}" --write
+          else
+            node scripts/generate-prompt-of-the-week.js --write
+          fi
+
+      - name: Upload draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: prompt-of-the-week-draft
+          path: broadcasts/prompt-of-the-week-*.md
+          if-no-files-found: error
