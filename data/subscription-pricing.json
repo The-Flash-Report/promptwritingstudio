@@ -8,7 +8,8 @@
       "vendor": "OpenAI",
       "monthly_usd": 20,
       "source_url": "https://chatgpt.com/pricing/",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-15",
+      "verify_note": "Confirmed 2026-07-15 via in-session web search of the official chatgpt.com/pricing page (direct fetch returned 403). Re-pull from the page directly when possible."
     },
     {
       "id": "claude-pro",
@@ -32,7 +33,8 @@
       "vendor": "OpenAI",
       "monthly_usd": 200,
       "source_url": "https://chatgpt.com/pricing/",
-      "last_verified": "2026-07-15"
+      "last_verified": "2026-07-15",
+      "verify_note": "Confirmed 2026-07-15 via in-session web search of the official chatgpt.com/pricing page (direct fetch returned 403). Re-pull from the page directly when possible."
     }
   ]
 }
