@@ -55,6 +55,32 @@
 - [Mad Libs Prompt Creator](https://promptwritingstudio.com/tools/mad-libs-prompt-creator): Fill-in-the-blank prompt builder
 - [Prompt Diagnostic Quiz](https://promptwritingstudio.com/tools/prompt-diagnostic-quiz): Why your prompts aren't working
 
+## Prompt Library Entries (Full-Length, Copy-Ready)
+
+Each entry below is a complete, structured template with placeholders you fill in, on its own citable URL.
+
+- [Business Strategy Analysis](https://promptwritingstudio.com/prompt-library/business-strategy-analysis): Comprehensive framework for analyzing business strategies
+- [Market Research Framework](https://promptwritingstudio.com/prompt-library/market-research-framework): Structured approach to market research and analysis
+- [Pricing Strategy Advisor](https://promptwritingstudio.com/prompt-library/pricing-strategy-advisor): Structured framework for setting, testing, and defending a price
+- [Meeting Notes to Action Plan](https://promptwritingstudio.com/prompt-library/meeting-notes-to-action-plan): Turn messy meeting notes into decisions, owners, and next steps
+- [Viral Content Framework](https://promptwritingstudio.com/prompt-library/viral-content-framework): Create content with high viral potential using proven frameworks
+- [Blog Post Optimizer](https://promptwritingstudio.com/prompt-library/blog-post-optimizer): Transform basic ideas into comprehensive, SEO-optimized blog posts
+- [Newsletter Issue Planner](https://promptwritingstudio.com/prompt-library/newsletter-issue-planner): Plan a complete newsletter issue from a single idea
+- [YouTube Video Script Writer](https://promptwritingstudio.com/prompt-library/youtube-video-script-writer): Draft a retention-first script for a talking-head or tutorial video
+- [High-Converting Sales Page](https://promptwritingstudio.com/prompt-library/high-converting-sales-page): Create compelling sales pages that convert visitors to customers
+- [Email Sequence Builder](https://promptwritingstudio.com/prompt-library/email-sequence-builder): Create automated email sequences that nurture and convert
+- [Product Description Writer](https://promptwritingstudio.com/prompt-library/product-description-writer): Write benefit-led product descriptions that still read as honest
+- [Value Proposition Builder](https://promptwritingstudio.com/prompt-library/value-proposition-builder): Craft a clear value proposition and the messaging around it
+- [Customer Avatar Deep Dive](https://promptwritingstudio.com/prompt-library/customer-avatar-deep-dive): Create detailed customer personas with psychological insights
+- [Content Repurposing Engine](https://promptwritingstudio.com/prompt-library/content-repurposing-engine): Turn one long piece of content into a full multi-channel set
+- [Go-To-Market Launch Plan](https://promptwritingstudio.com/prompt-library/go-to-market-launch-plan): Build a focused launch plan for a product, feature, or offer
+- [Code Review Assistant](https://promptwritingstudio.com/prompt-library/code-review-assistant): Comprehensive code review with security and performance insights
+- [Debugging Assistant](https://promptwritingstudio.com/prompt-library/debugging-assistant): Systematic help isolating and fixing a bug from its symptoms
+- [Technical Documentation Writer](https://promptwritingstudio.com/prompt-library/technical-documentation-writer): Turn code or a feature into clear docs a new user can follow
+- [Keyword Research Strategy](https://promptwritingstudio.com/prompt-library/keyword-research-strategy): Comprehensive keyword research with search intent analysis
+- [On-Page SEO Optimizer](https://promptwritingstudio.com/prompt-library/on-page-seo-optimizer): Audit and improve the on-page SEO of a single piece of content
+- [SEO Content Brief Generator](https://promptwritingstudio.com/prompt-library/seo-content-brief-generator): Build a writer-ready content brief targeting one keyword
+
 ## Educational Resources
 
 - [What is RAG?](https://promptwritingstudio.com/what-is-rag)
