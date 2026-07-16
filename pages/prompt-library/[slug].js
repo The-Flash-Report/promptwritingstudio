@@ -33,8 +33,10 @@ export default function PromptLibraryPage({ prompt, related }) {
     title: prompt.title,
     description: prompt.description,
     url: pageUrl,
-    datePublished: '2025-01-15',
-    dateModified: '2026-07-15',
+    // Real per-entry publish date from the data layer. The prompt content has
+    // not been revised since publication, so dateModified equals datePublished.
+    datePublished: prompt.publishedAt,
+    dateModified: prompt.publishedAt,
     keywords: [...prompt.tags, prompt.categoryLabel, 'prompt template', 'AI prompt'],
   })
 

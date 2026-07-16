@@ -6,6 +6,7 @@ export const promptLibraryData = {
   business: [
     {
       id: 'bus_001',
+      publishedAt: '2026-07-15',
       title: 'Business Strategy Analysis',
       description: 'Comprehensive framework for analyzing business strategies',
       prompt: `You are a senior business strategist with 15+ years of experience in Fortune 500 companies. 
@@ -43,6 +44,7 @@ Be direct, data-driven, and focus on practical implementation.`,
     },
     {
       id: 'bus_002',
+      publishedAt: '2026-07-15',
       title: 'Market Research Framework',
       description: 'Structured approach to market research and analysis',
       prompt: `You are a market research expert specializing in [INDUSTRY] with expertise in competitive analysis and customer insights.
@@ -83,6 +85,7 @@ Prioritize actionable insights over theoretical analysis.`,
     },
     {
       id: 'bus_003',
+      publishedAt: '2026-07-16',
       title: 'Pricing Strategy Advisor',
       description: 'Structured framework for setting, testing, and defending a price',
       prompt: `You are a pricing strategist who has set pricing for products across SaaS, services, and physical goods. You reason from value, willingness to pay, and unit economics, not from guesswork.
@@ -124,6 +127,7 @@ Output: a recommended price, the model and metric behind it, a tier table, and a
     },
     {
       id: 'bus_004',
+      publishedAt: '2026-07-16',
       title: 'Meeting Notes to Action Plan',
       description: 'Turn messy meeting notes into decisions, owners, and next steps',
       prompt: `You are an experienced chief of staff. You turn raw, unstructured meeting notes into a clean record a team can act on without having been in the room.
@@ -163,6 +167,7 @@ Output: the structured record above, ready to paste into a doc or send to the te
   'content-creation': [
     {
       id: 'cont_001',
+      publishedAt: '2026-07-15',
       title: 'Viral Content Framework',
       description: 'Create content with high viral potential using proven frameworks',
       prompt: `You are a viral content creator who has generated over 100M views across platforms. You understand psychology, timing, and platform algorithms.
@@ -210,6 +215,7 @@ Output: Hook + full content script + posting strategy`,
     },
     {
       id: 'cont_002',
+      publishedAt: '2026-07-15',
       title: 'Blog Post Optimizer',
       description: 'Transform basic ideas into comprehensive, SEO-optimized blog posts',
       prompt: `You are an expert content writer and SEO specialist who creates blog posts that rank #1 on Google and generate high engagement.
@@ -260,6 +266,7 @@ Output: Complete blog post outline + introduction + first section written in ful
     },
     {
       id: 'cont_003',
+      publishedAt: '2026-07-16',
       title: 'Newsletter Issue Planner',
       description: 'Plan a complete newsletter issue from a single idea',
       prompt: `You are an email newsletter editor who has grown and kept engaged audiences. You care about one clear takeaway per issue and a reason to open the next one.
@@ -297,6 +304,7 @@ Output: the full issue plan above, ready to draft against.`,
     },
     {
       id: 'cont_004',
+      publishedAt: '2026-07-16',
       title: 'YouTube Video Script Writer',
       description: 'Draft a retention-first script for a talking-head or tutorial video',
       prompt: `You are a YouTube script writer who understands retention, pacing, and how the first fifteen seconds decide whether a viewer stays.
@@ -336,6 +344,7 @@ Output: a shot-aware script with spoken lines and on-screen notes, ready to reco
   copywriting: [
     {
       id: 'copy_001',
+      publishedAt: '2026-07-15',
       title: 'High-Converting Sales Page',
       description: 'Create compelling sales pages that convert visitors to customers',
       prompt: `You are a direct-response copywriter who has generated over $100M in sales. You understand psychology, persuasion, and conversion optimization.
@@ -394,6 +403,7 @@ Output: Complete sales page copy with headlines, sections, and CTAs`,
     },
     {
       id: 'copy_002',
+      publishedAt: '2026-07-15',
       title: 'Email Sequence Builder',
       description: 'Create automated email sequences that nurture and convert',
       prompt: `You are an email marketing expert who specializes in behavioral psychology and automated sequences. Your emails consistently achieve 25%+ open rates and 8%+ click rates.
@@ -461,6 +471,7 @@ Output: Complete email sequence with subject lines, preview text, and full copy`
     },
     {
       id: 'copy_003',
+      publishedAt: '2026-07-16',
       title: 'Product Description Writer',
       description: 'Write benefit-led product descriptions that still read as honest',
       prompt: `You are an ecommerce copywriter who writes product descriptions that convert without overpromising. You lead with the outcome the buyer wants and back it with concrete detail.
@@ -502,6 +513,7 @@ Output: the full set above, ready to paste into a product page.`,
     },
     {
       id: 'copy_004',
+      publishedAt: '2026-07-16',
       title: 'Value Proposition Builder',
       description: 'Craft a clear value proposition and the messaging around it',
       prompt: `You are a positioning and messaging strategist. You write value propositions a stranger understands in one read and a competitor cannot copy without lying.
@@ -546,6 +558,7 @@ Output: the value proposition set above, plain enough to put on a homepage.`,
   marketing: [
     {
       id: 'mkt_001',
+      publishedAt: '2026-07-15',
       title: 'Customer Avatar Deep Dive',
       description: 'Create detailed customer personas with psychological insights',
       prompt: `You are a customer research expert who specializes in behavioral psychology and demographic analysis. You've helped companies increase conversion rates by 40%+ through better customer understanding.
@@ -614,6 +627,7 @@ Output: Complete customer avatar with marketing strategy recommendations`,
     },
     {
       id: 'mkt_002',
+      publishedAt: '2026-07-16',
       title: 'Content Repurposing Engine',
       description: 'Turn one long piece of content into a full multi-channel set',
       prompt: `You are a content strategist who gets maximum mileage from every piece of work. You repurpose without simply copying, adapting each asset to the channel it lives on.
@@ -651,6 +665,7 @@ Output: the full multi-channel set above, each asset ready to schedule.`,
     },
     {
       id: 'mkt_003',
+      publishedAt: '2026-07-16',
       title: 'Go-To-Market Launch Plan',
       description: 'Build a focused launch plan for a product, feature, or offer',
       prompt: `You are a go-to-market lead who has launched products that landed and products that flopped, and you know the difference usually comes down to focus and message, not budget.
@@ -696,6 +711,7 @@ Output: the launch plan above, focused enough that one person could run it.`,
   technical: [
     {
       id: 'tech_001',
+      publishedAt: '2026-07-15',
       title: 'Code Review Assistant',
       description: 'Comprehensive code review with security and performance insights',
       prompt: `You are a senior software engineer with 10+ years of experience in [PROGRAMMING_LANGUAGE] and expertise in code security, performance optimization, and best practices.
@@ -764,6 +780,7 @@ Be specific with line numbers and provide actionable improvements.`,
     },
     {
       id: 'tech_002',
+      publishedAt: '2026-07-16',
       title: 'Debugging Assistant',
       description: 'Systematic help isolating and fixing a bug from its symptoms',
       prompt: `You are a senior engineer who debugs methodically. You form hypotheses, test the cheapest one first, and never change code you do not understand.
@@ -811,6 +828,7 @@ Output: an ordered debugging path from symptom to minimal fix, plus a guardrail.
     },
     {
       id: 'tech_003',
+      publishedAt: '2026-07-16',
       title: 'Technical Documentation Writer',
       description: 'Turn code or a feature into clear docs a new user can follow',
       prompt: `You are a technical writer who writes documentation people actually finish reading. You lead with what the reader is trying to do, then show them how.
@@ -854,6 +872,7 @@ Output: clean documentation with a quick start, a reference, and a worked exampl
   seo: [
     {
       id: 'seo_001',
+      publishedAt: '2026-07-15',
       title: 'Keyword Research Strategy',
       description: 'Comprehensive keyword research with search intent analysis',
       prompt: `You are an SEO expert with 8+ years of experience who has helped websites achieve #1 rankings in competitive niches. You understand search intent, keyword difficulty, and content strategy.
@@ -923,6 +942,7 @@ Output:
     },
     {
       id: 'seo_002',
+      publishedAt: '2026-07-16',
       title: 'On-Page SEO Optimizer',
       description: 'Audit and improve the on-page SEO of a single piece of content',
       prompt: `You are an on-page SEO specialist who optimises for the reader first and the crawler second, because that is what actually ranks now.
@@ -961,6 +981,7 @@ Output: a prioritised list of on-page changes, from highest to lowest impact.`,
     },
     {
       id: 'seo_003',
+      publishedAt: '2026-07-16',
       title: 'SEO Content Brief Generator',
       description: 'Build a writer-ready content brief targeting one keyword',
       prompt: `You are an SEO content strategist who writes briefs so clear that any competent writer could produce a page that ranks, without guessing at scope or intent.
