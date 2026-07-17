@@ -1597,6 +1597,23 @@ export const seoUseCases = [
       'google gemini prompts',
       'how to write gemini prompts'
     ],
+    examplePrompts: [
+      {
+        title: 'Image Analysis',
+        description: 'Get a structured breakdown of any image, using Gemini\'s native multimodal vision.',
+        prompt: 'Analyze this image and describe what you see in detail. Focus on:\n- Main subjects and objects\n- Colors and composition\n- Mood and atmosphere\n- Any text or symbols present\n\nProvide your analysis in a structured format with clear headings.'
+      },
+      {
+        title: 'Code Review',
+        description: 'Have Gemini review a code snippet for quality, bugs, and performance.',
+        prompt: 'Review the following code and provide feedback on:\n- Code quality and best practices\n- Potential bugs or issues\n- Performance optimizations\n- Readability improvements\n\nFormat your response with specific line references and actionable suggestions.'
+      },
+      {
+        title: 'Creative Writing',
+        description: 'A structured creative-writing brief with style, tone, and constraints spelled out.',
+        prompt: 'Write a short story (500-800 words) about a time traveler who discovers they can only travel to moments of great historical significance, but they can\'t change anything.\n\nStyle: Literary fiction\nTone: Contemplative and mysterious\nInclude: Rich sensory details and internal monologue'
+      }
+    ],
     answerBlock: 'A Gemini prompt generator creates optimized prompts for Google\'s Gemini AI, which excels at multimodal tasks, real-time research, and Google Workspace integration. Gemini offers a 1 million token context window, making it the best choice for processing extremely large documents, combining text with images, and tasks requiring current web information.',
     faqs: [
       { question: 'What is Google Gemini and how does it compare to ChatGPT?', answer: 'Gemini is Google\'s AI model family with multimodal capabilities for text, images, audio, and video. It offers a 1M token context window (vs ChatGPT\'s 128K), integrates with Google Workspace, and accesses real-time web data. ChatGPT has a larger plugin ecosystem and is better for conversational tasks.' },
