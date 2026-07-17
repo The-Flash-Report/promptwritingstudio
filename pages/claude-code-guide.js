@@ -603,7 +603,7 @@ Next.js site with Tailwind CSS, deployed on Vercel.
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#FFDE59] mr-2 mt-1 flex-shrink-0">+</span>
-                    <span className="text-[#333333]">Claude Opus: ~$15 per million input tokens, ~$75 per million output tokens</span>
+                    <span className="text-[#333333]">Claude Opus: ~$5 per million input tokens, ~$25 per million output tokens</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#FFDE59] mr-2 mt-1 flex-shrink-0">+</span>

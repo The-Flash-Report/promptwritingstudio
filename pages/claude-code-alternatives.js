@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "How much do Claude Code alternatives cost?",
-    answer: "The $20/month tier has become the standard: Cursor Pro, Windsurf Pro (actually $15), and Claude Code Pro all sit around there. GitHub Copilot Pro is cheaper at $10/month. Codex and Gemini CLI bill via API tokens or subscription. The open-source agents (Cline, Aider, Continue.dev) are free to install and cost only your API usage. The real difference is flat quota versus token-based billing — heavy users prefer a flat fee, light users come out ahead on tokens."
+    answer: "The $20/month tier has become the standard: Cursor Pro, Windsurf Pro, and Claude Code Pro all sit around there. GitHub Copilot Pro is cheaper at $10/month. Codex and Gemini CLI bill via API tokens or subscription. The open-source agents (Cline, Aider, Continue.dev) are free to install and cost only your API usage. The real difference is flat quota versus token-based billing — heavy users prefer a flat fee, light users come out ahead on tokens."
   },
   {
     question: "Do I have to leave Claude Code to use an alternative?",
@@ -56,9 +56,9 @@ const tools = [
   {
     name: 'Windsurf',
     form: 'VS Code fork (by Codeium)',
-    free: 'Pro $15/mo; Teams $30/seat',
-    forWho: 'Cursor-style IDE users who want a slightly cheaper plan and the Cascade agent for flow-based multi-file editing.',
-    vsClaude: 'A direct Cursor competitor rather than a Claude Code competitor — same trade-off: editor UI over terminal automation, undercutting Cursor by $5/mo.'
+    free: 'Pro $20/mo; Teams $40/seat',
+    forWho: 'Cursor-style IDE users who want the Cascade agent for flow-based multi-file editing.',
+    vsClaude: 'A direct Cursor competitor rather than a Claude Code competitor. Same trade-off: editor UI over terminal automation, now at price parity with Cursor Pro at $20/mo.'
   },
   {
     name: 'OpenAI Codex CLI',
@@ -101,7 +101,7 @@ const comparisonRows = [
   { tool: 'Claude Code', form: 'Terminal agent', cost: 'API / Pro $20/mo / Max', open: 'No', best: 'Multi-file refactors, git, hooks, sub-agents' },
   { tool: 'Cursor', form: 'IDE (VS Code fork)', cost: 'Free / Pro $20/mo', open: 'No', best: 'Interactive coding with inline AI' },
   { tool: 'GitHub Copilot', form: 'IDE extension', cost: 'Pro $10/mo', open: 'No', best: 'Cheap autocomplete in GitHub/VS Code stack' },
-  { tool: 'Windsurf', form: 'IDE (VS Code fork)', cost: 'Pro $15/mo', open: 'No', best: 'Cursor-style editing, slightly cheaper' },
+  { tool: 'Windsurf', form: 'IDE (VS Code fork)', cost: 'Pro $20/mo', open: 'No', best: 'Cursor-style editing with the Cascade agent' },
   { tool: 'Codex CLI', form: 'Terminal agent', cost: 'API / ChatGPT sub', open: 'No', best: 'Closest terminal match (top SWE-bench)' },
   { tool: 'Gemini CLI', form: 'Terminal agent', cost: 'Free — 1,000 req/day', open: 'No', best: 'Best free terminal agent' },
   { tool: 'Aider', form: 'Terminal CLI', cost: 'Free (BYOK)', open: 'Yes', best: 'Model-agnostic, git-native, no lock-in' },
@@ -191,7 +191,7 @@ export default function ClaudeCodeAlternatives() {
                 <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4">If you want a visual IDE...</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start"><span className="text-[#FFDE59] mr-2 mt-1 flex-shrink-0">+</span><span className="text-[#333333]"><strong>Cursor</strong> — the most popular IDE alternative</span></li>
-                  <li className="flex items-start"><span className="text-[#FFDE59] mr-2 mt-1 flex-shrink-0">+</span><span className="text-[#333333]"><strong>Windsurf</strong> — Cursor-style, $5/mo cheaper</span></li>
+                  <li className="flex items-start"><span className="text-[#FFDE59] mr-2 mt-1 flex-shrink-0">+</span><span className="text-[#333333]"><strong>Windsurf</strong>: Cursor-style IDE with the Cascade agent, now $20/mo</span></li>
                   <li className="flex items-start"><span className="text-[#FFDE59] mr-2 mt-1 flex-shrink-0">+</span><span className="text-[#333333]"><strong>GitHub Copilot</strong> — cheapest, deepest IDE integration</span></li>
                 </ul>
               </div>
