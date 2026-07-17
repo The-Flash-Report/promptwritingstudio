@@ -6,7 +6,7 @@ const toolsItems = [
   { href: '/agent-prompt-grader', label: '🤖 Agent Prompt Grader', bold: true },
   { href: '/calculators', label: '📊 Business Calculators', bold: true },
   { href: '/ai-prompt-generator', label: '🤖 AI Prompt Generator' },
-  { href: '/gemini-prompt-generator', label: '💎 Gemini Prompt Generator' },
+  { href: '/ai-prompt-generator/gemini-prompt', label: '💎 Gemini Prompt Generator' },
   { href: '/tools/mad-libs-prompt-creator', label: '🎯 Mad Libs Prompt Creator' },
   { href: '/tools/prompt-diagnostic-quiz', label: '🔍 Prompt Diagnostic Quiz' },
   { href: '/ai-prompt-quiz', label: '🧠 Prompt Writing Quiz' },

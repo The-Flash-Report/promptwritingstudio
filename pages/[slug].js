@@ -65,7 +65,7 @@ const seoPages = [
     content: {
       heading: 'Gemini Prompt Templates',
       subheading: 'Gemini-specific prompt templates with the variables marked, built around what Gemini does well',
-      intro: 'Gemini excels at multimodal tasks, combining text, image, and code understanding. Our templates are designed to help you leverage Gemini\'s unique capabilities for various professional and creative tasks. For interactive prompt building, try our <a href="/gemini-prompt-generator" class="text-blue-600 hover:underline">Gemini Prompt Generator</a>.',
+      intro: 'Gemini excels at multimodal tasks, combining text, image, and code understanding. Our templates are designed to help you leverage Gemini\'s unique capabilities for various professional and creative tasks. For interactive prompt building, try our <a href="/ai-prompt-generator/gemini-prompt" class="text-blue-600 hover:underline">Gemini Prompt Generator</a>.',
       sections: [
         {
           title: 'Multimodal Analysis Templates',
