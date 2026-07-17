@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-25",
+  "last_updated": "2026-07-17",
   "note": "Prices in USD per 1M tokens. Cache write cost excluded from calculator (amortized across calls). Gemini context cache excludes per-hour storage cost.",
   "models": [
     {
@@ -12,7 +12,7 @@
       "cache_read_per_1m": 0.50,
       "cache_type": "anthropic",
       "cache_note": "Read price is 10% of input. Write is 1.25x input. 5-min TTL default.",
-      "last_verified": "2026-05-25",
+      "last_verified": "2026-07-17",
       "source_url": "https://claude.com/pricing",
       "verified": true
     },
@@ -26,7 +26,7 @@
       "cache_read_per_1m": 0.30,
       "cache_type": "anthropic",
       "cache_note": "Read price is 10% of input. Write is 1.25x input. 5-min TTL default.",
-      "last_verified": "2026-05-25",
+      "last_verified": "2026-07-17",
       "source_url": "https://claude.com/pricing",
       "verified": true
     },
@@ -40,7 +40,7 @@
       "cache_read_per_1m": 0.10,
       "cache_type": "anthropic",
       "cache_note": "Read price is 10% of input. Write is 1.25x input. 5-min TTL default.",
-      "last_verified": "2026-05-25",
+      "last_verified": "2026-07-17",
       "source_url": "https://claude.com/pricing",
       "verified": true
     },
@@ -53,10 +53,10 @@
       "cache_read_per_1m": 1.25,
       "cache_type": "openai",
       "cache_note": "Automatic input caching at 50% of input price for prompts over 1024 tokens.",
-      "last_verified": "2026-05-25",
+      "last_verified": "2026-07-17",
       "source_url": "https://openai.com/api/pricing/",
       "verified": false,
-      "price_unverified_as_of": "2026-05-25"
+      "price_unverified_as_of": "2026-07-17"
     },
     {
       "id": "gpt-4o-mini",
@@ -67,10 +67,10 @@
       "cache_read_per_1m": 0.075,
       "cache_type": "openai",
       "cache_note": "Automatic input caching at 50% of input price for prompts over 1024 tokens.",
-      "last_verified": "2026-05-25",
+      "last_verified": "2026-07-17",
       "source_url": "https://openai.com/api/pricing/",
       "verified": false,
-      "price_unverified_as_of": "2026-05-25"
+      "price_unverified_as_of": "2026-07-17"
     },
     {
       "id": "gemini-2-5-pro",
@@ -81,7 +81,7 @@
       "cache_read_per_1m": 0.125,
       "cache_type": "gemini",
       "cache_note": "Context cache input at $0.125/1M (under 200K context). Storage billed separately at $4.50/1M tokens/hour.",
-      "last_verified": "2026-05-25",
+      "last_verified": "2026-07-17",
       "source_url": "https://ai.google.dev/pricing",
       "verified": true
     },
@@ -94,7 +94,7 @@
       "cache_read_per_1m": 0.03,
       "cache_type": "gemini",
       "cache_note": "Context cache input at $0.03/1M (text/image/video). Storage billed separately at $1.00/1M tokens/hour.",
-      "last_verified": "2026-05-25",
+      "last_verified": "2026-07-17",
       "source_url": "https://ai.google.dev/pricing",
       "verified": true
     }

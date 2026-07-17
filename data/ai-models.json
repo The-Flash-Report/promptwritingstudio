@@ -1,7 +1,7 @@
 {
   "_meta": {
     "schemaVersion": 1,
-    "lastVerified": "2026-06-09",
+    "lastVerified": "2026-07-17",
     "stalenessThresholdDays": 60,
     "notes": "Multi-vendor AI model facts. Single source of truth for /ai-models, /claude-vs-chatgpt, and any page that quotes pricing or capability claims for non-Claude models. For Claude-only API model IDs and detailed plan data, see data/claude-models.json. This file mirrors top-level facts and adds non-Claude vendors. Update each entry's last_verified_at when you re-check it against the source. Monthly GitHub Actions cron flags entries older than stalenessThresholdDays."
   },
@@ -24,7 +24,7 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2026-06",
-      "last_verified_at": "2026-06-09",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
       "description": "Anthropic's most capable widely released model — built for the most demanding reasoning and long-horizon agentic work.",
       "features": [
@@ -52,7 +52,7 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2026",
-      "last_verified_at": "2026-06-09",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
       "description": "Anthropic's most capable Opus-tier model for complex reasoning, agentic coding, and high-autonomy work.",
       "features": [
@@ -81,7 +81,7 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2025-09",
-      "last_verified_at": "2026-06-09",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
       "description": "Anthropic's mainstream workhorse — the default for Claude.ai, API workloads, and Claude Code day-to-day.",
       "features": [
@@ -109,7 +109,7 @@
       "context_window": 200000,
       "context_window_label": "200K tokens",
       "released": "2025-10",
-      "last_verified_at": "2026-06-09",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
       "description": "Anthropic's small, fast, cheap model — the right default for background agents and high-volume jobs.",
       "features": [
@@ -166,7 +166,7 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-05",
-      "last_verified_at": "2026-05-07",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://openai.com/api/pricing/",
       "description": "OpenAI's omni model — good multimodal default when latency and cost matter more than absolute reasoning quality.",
       "features": [
@@ -192,7 +192,7 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-07",
-      "last_verified_at": "2026-05-07",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://openai.com/api/pricing/",
       "description": "OpenAI's small, cheap multimodal sibling of GPT-4o — strong default for high-volume tasks where latency and cost dominate.",
       "features": [
@@ -220,7 +220,7 @@
       "context_window": 2000000,
       "context_window_label": "1M+ tokens (up to 2M)",
       "released": "2025",
-      "last_verified_at": "2026-05-28",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://ai.google.dev/pricing",
       "verification_notes": "Pricing tiered by context length (≤200K vs >200K). Lower bound applies under 200K input.",
       "description": "Google's Gemini Pro line — the go-to when you need to stuff a whole codebase or long video into a single prompt.",
@@ -248,7 +248,7 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2025",
-      "last_verified_at": "2026-05-28",
+      "last_verified_at": "2026-07-17",
       "verification_source": "https://ai.google.dev/pricing",
       "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority).",
       "description": "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is good enough.",

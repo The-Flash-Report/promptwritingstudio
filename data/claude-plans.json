@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastVerified": "2026-06-09",
+    "lastVerified": "2026-07-17",
     "source": "https://claude.com/pricing",
-    "notes": "Consumer + team plan pricing. Limits are Anthropic's public-facing copy; actual message caps vary. Update when pricing page changes."
+    "notes": "Consumer + team plan pricing. Limits are Anthropic's public-facing copy; actual message caps vary. Update when pricing page changes. 2026-07-17: all prices re-verified against live claude.com/pricing (Free $0, Pro $20/$17, Max 5x $100, Max 20x $200, Team $25/$20 seat, Team Premium $125/$100 seat, Enterprise $20 seat) - all unchanged. Live page now also lists a fifth consumer model (Mythos, limited availability) not reflected in the models arrays - see needs-Bryan."
   },
   "consumer": [
     {
