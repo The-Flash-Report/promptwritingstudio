@@ -226,8 +226,10 @@ export default function Home() {
               Ready to write better prompts that actually work?
             </h2>
             <p className="text-lg text-[#333333] mb-8">
-              The free guides and tools on this site walk you through proven prompt patterns and workflows
-              — applied to real email, content, and business tasks.
+              The free guides and tools on this site walk you through proven prompt patterns and workflows,
+              applied to real email, content, and business tasks. Start from our{' '}
+              <Link href="/chatgpt-prompt-templates" className="text-blue-600 hover:text-blue-700 underline font-medium">free ChatGPT prompt templates</Link>{' '}
+              or build your own below.
             </p>
             <Link
               href="/ai-prompt-generator"

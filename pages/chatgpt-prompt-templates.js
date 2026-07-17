@@ -3,8 +3,31 @@ import Layout from '../components/layout/Layout'
 import Link from 'next/link'
 import Script from 'next/script'
 import { getAllModifiers } from '../lib/modifiers'
+import { generateFAQSchema } from '../lib/schemaGenerator'
 
 export default function ChatGPTPromptTemplates({ modifiers }) {
+  const totalTemplates = modifiers.reduce((sum, m) => sum + (m.promptTemplates ? m.promptTemplates.length : 0), 0)
+
+  const faqs = [
+    {
+      question: "What is a ChatGPT template?",
+      answer: "A ChatGPT template is a reusable, fill-in-the-blank prompt structure you paste into ChatGPT and customise with your own details. Instead of writing a prompt from scratch each time, you start from a proven pattern that already includes the context, instructions, and format that produce a good result."
+    },
+    {
+      question: "How do I use a ChatGPT template?",
+      answer: "Pick the template that matches your task, copy it, and replace the bracketed placeholders with your specifics (your role, audience, topic, and desired format). Paste the finished prompt into ChatGPT. Because the structure is already there, you get a usable first draft without trial and error."
+    },
+    {
+      question: "Are these ChatGPT templates free?",
+      answer: "Yes. Every ChatGPT template on this page is free to copy and use, with no sign-up required. Browse by profession or use case, copy the one you need, and customise it for your own work."
+    },
+    {
+      question: "What is the difference between a ChatGPT prompt and a ChatGPT template?",
+      answer: "A prompt is the specific instruction you send to ChatGPT for one task. A template is the reusable skeleton behind it: the same structure with placeholders you fill in each time. Templates turn a one-off prompt into something you can reuse across similar tasks, which is why ChatGPT templates save time and keep your results consistent."
+    }
+  ]
+  const faqSchema = generateFAQSchema(faqs)
+
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -21,13 +44,17 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
 
   return (
     <Layout
-      title="100+ ChatGPT Prompt Templates — Free, Copy-Paste Ready (2026)"
-      description="Download and copy free ChatGPT prompt templates for business, writing, coding, marketing, and more. Organised by category with one-click copy."
+      title={`${totalTemplates} Free ChatGPT Prompt Templates, Copy-Paste Ready (2026)`}
+      description="Free ChatGPT prompt templates and ready-to-use ChatGPT templates by profession: business, writing, coding, marketing, and more. Copy-paste ready, organised by category, no sign-up."
     >
       <Head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </Head>
       {/* Hero Section */}
@@ -38,7 +65,7 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
               Free ChatGPT Prompt Templates
             </h1>
             <p className="text-xl mb-8">
-              100+ free, copy-paste ChatGPT prompt templates organised by profession and use case. Based on OpenAI best practices — tested for business, writing, coding, marketing, and more.
+              {totalTemplates} free, copy-paste ChatGPT prompt templates organised by profession and use case, based on OpenAI best practices and tested for business, writing, coding, marketing, and more.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="#prompt-categories" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-3 rounded-lg font-bold hover:bg-[#E5C84F] transition-colors duration-200 inline-block">
@@ -129,6 +156,21 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
         </div>
       </section>
       
+      {/* ChatGPT templates (bare-variant) Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6">ChatGPT templates by profession</h2>
+            <p className="text-lg text-gray-700 mb-4">
+              Looking for ready-made ChatGPT templates rather than a blank chat box? Every category below is a set of ChatGPT templates built for a specific job: a fixed structure you paste into a chat, fill in with your own details, and reuse. They are the same thing as prompt templates, framed for how people actually search, so you can grab a proven starting point instead of writing one from scratch.
+            </p>
+            <p className="text-lg text-gray-700">
+              Pick your profession or task, open the category, and copy the ChatGPT templates you need. All {totalTemplates} are free and require no sign-up.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Categories Section */}
       <section id="prompt-categories" className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
@@ -288,6 +330,23 @@ export default function ChatGPTPromptTemplates({ modifiers }) {
         </div>
       </section>
       
+      {/* FAQ Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center">Frequently asked questions about ChatGPT templates</h2>
+            <div className="space-y-8">
+              {faqs.map((faq, i) => (
+                <div key={i}>
+                  <h3 className="text-xl font-bold mb-2 text-gray-800">{faq.question}</h3>
+                  <p className="text-gray-700">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16 md:py-24 gradient-bg text-white">
         <div className="container mx-auto px-4 md:px-6">
