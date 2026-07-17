@@ -918,8 +918,8 @@ export default function AIPromptGenerator() {
                   Get specialized prompts optimized for each AI platform's unique capabilities.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <Link 
-                    href="/gemini-prompt-generator"
+                  <Link
+                    href="/ai-prompt-generator/gemini-prompt"
                     className="flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all duration-200"
                   >
                     <div className="text-3xl mr-4">💎</div>

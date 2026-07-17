@@ -60,6 +60,11 @@ const nextConfig = {
         destination: '/chatgpt-prompt-templates',
         permanent: true,
       },
+      {
+        source: '/gemini-prompt-generator',
+        destination: '/ai-prompt-generator/gemini-prompt',
+        permanent: true,
+      },
     ]
   },
 

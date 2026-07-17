@@ -112,7 +112,6 @@ const STATIC_ROUTES = [
   { url: '/api-pricing', priority: '0.8', changefreq: 'weekly' },
   { url: '/best-ai-tools', priority: '0.8', changefreq: 'monthly' },
   { url: '/business-name-generator', priority: '0.8', changefreq: 'monthly' },
-  { url: '/gemini-prompt-generator', priority: '0.8', changefreq: 'monthly' },
   { url: '/ai-prompt-quiz', priority: '0.7', changefreq: 'monthly' },
   { url: '/ai-glossary', priority: '0.8', changefreq: 'monthly' },
   { url: '/ai-history', priority: '0.8', changefreq: 'monthly' },
