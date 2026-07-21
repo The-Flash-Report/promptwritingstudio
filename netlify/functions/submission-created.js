@@ -2,56 +2,37 @@
 // created on this site. When someone signs up through the EmailCapture
 // component (form-name="pws-newsletter"), we:
 //   1. add them as a contact to the PromptWritingStudio Resend segment, and
-//   2. send a welcome email via Resend.
+//   2. fire the `promptwritingstudio.welcome` event, which starts the
+//      "PromptWritingStudio — Welcome Series" automation in Resend.
 // The hidden "source" field tells us which surface captured them (homepage /
 // footer / popup / a specific page) so we can tailor and measure.
+//
+// WHY AN EVENT AND NOT AN INLINE EMAIL (changed 2026-07-21): this function used
+// to render and send a single welcome email itself. Two problems. It could only
+// ever be one email, so there was no way to follow up. And a raw /emails send
+// carries no subscription state, so its footer said "Reply to unsubscribe" —
+// which is not an unsubscribe mechanism, it is a request that somebody reads
+// the inbox. Sending through an automation means Resend owns the list state and
+// {{{RESEND_UNSUBSCRIBE_URL}}} in the templates resolves to a real one-click
+// unsubscribe.
 //
 // Docs: https://docs.netlify.com/forms/notifications/#email-from-a-function
 //
 // Required env vars (set in Netlify UI → Site settings → Environment):
 //   RESEND_API_KEY      — Resend API key (secret; set via `netlify env:set --secret`)
 //   RESEND_SEGMENT_ID   — Resend audience/segment id for PromptWritingStudio
-//   RESEND_FROM         — Verified sender, e.g.
-//                         "PromptWritingStudio <hello@send.promptwritingstudio.com>"
+// Optional:
+//   RESEND_WELCOME_EVENT — automation trigger name.
+//                          Defaults to "promptwritingstudio.welcome".
 //
-// Returns 200 on success or skip; 500 only on hard send failure so Netlify
-// will retry the webhook.
+// The submission is always stored in Netlify Forms regardless, so that stays
+// the durable record. Returns 200 on success or skip; 500 only on a hard
+// failure, so Netlify retries the webhook.
 
-const SITE_URL = 'https://promptwritingstudio.com';
 const RESEND_API = 'https://api.resend.com';
-
-function buildWelcomeHtml(email, source) {
-  const sourceNote = source
-    ? `You signed up from <strong>${source.replace(/[^a-z0-9:_\-\/]/gi, '')}</strong>.`
-    : '';
-
-  return `<!DOCTYPE html>
-<html>
-<head><meta charset="utf-8"></head>
-<body style="font-family:system-ui,sans-serif;max-width:600px;margin:0 auto;padding:20px;color:#1A1A1A;">
-  <h2 style="margin:0 0 8px;font-size:20px;">You're on the PromptWritingStudio list</h2>
-  <p style="color:#555;font-size:14px;margin:0 0 16px;">
-    Thanks for subscribing. You'll get a short email when there's a new
-    Claude Code skill worth installing, a new guide worth reading, or a
-    tool worth trying. No hype, no spam.
-  </p>
-  <p style="font-size:14px;line-height:1.55;">
-    Some starting points while you wait:
-  </p>
-  <ul style="font-size:14px;line-height:1.6;color:#333;">
-    <li><a href="${SITE_URL}/claude-code-guide" style="color:#1A1A1A;">Claude Code guide</a> — the end-to-end walkthrough.</li>
-    <li><a href="${SITE_URL}/prompt-grader" style="color:#1A1A1A;">Prompt Grader</a> — paste a prompt, get a scored critique and a rewrite.</li>
-    <li><a href="${SITE_URL}/claude-code-mcp-stack" style="color:#1A1A1A;">Minimum viable MCP stack</a> — the 5 servers worth the context tokens.</li>
-  </ul>
-  <p style="margin-top:24px;font-size:12px;color:#888;">
-    ${sourceNote}
-    You're receiving this because <strong>${email}</strong> was used to subscribe at
-    <a href="${SITE_URL}" style="color:#555;">promptwritingstudio.com</a>.
-    Reply to unsubscribe.
-  </p>
-</body>
-</html>`;
-}
+const WELCOME_EVENT =
+  process.env.RESEND_WELCOME_EVENT || 'promptwritingstudio.welcome';
+const SOURCE_MAX_LENGTH = 120;
 
 // Add the subscriber to the Resend segment. Idempotent: an already-present
 // contact returns non-2xx, which we treat as a soft success (re-subscribe).
@@ -72,19 +53,25 @@ async function addContactToSegment({ apiKey, segmentId, email }) {
   }
 }
 
-async function sendWelcome({ apiKey, from, to, subject, html }) {
-  const resp = await fetch(`${RESEND_API}/emails`, {
+// Start the welcome series. The contact must exist first: the automation
+// resolves its recipient from the contact record, not from this payload.
+async function fireWelcomeEvent({ apiKey, email, source }) {
+  const resp = await fetch(`${RESEND_API}/events/send`, {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ from, to, subject, html, tags: [{ name: 'type', value: 'welcome' }] }),
+    body: JSON.stringify({
+      event: WELCOME_EVENT,
+      email,
+      payload: { source: source || 'site' },
+    }),
   });
 
   if (!resp.ok) {
     const body = await resp.text();
-    throw new Error(`Resend ${resp.status}: ${body}`);
+    throw new Error(`Resend event ${resp.status}: ${body}`);
   }
 
   return resp.json();
@@ -109,35 +96,32 @@ exports.handler = async (event) => {
     return { statusCode: 200, body: 'skip: no email' };
   }
 
-  const source = (data.source || '').trim().slice(0, 120);
+  const source = (data.source || '').trim().slice(0, SOURCE_MAX_LENGTH);
 
   const apiKey = process.env.RESEND_API_KEY;
   const segmentId = process.env.RESEND_SEGMENT_ID;
-  const from =
-    process.env.RESEND_FROM ||
-    'PromptWritingStudio <hello@send.promptwritingstudio.com>';
 
   if (!apiKey) {
     console.warn('submission-created: RESEND_API_KEY missing — signup not processed');
     return { statusCode: 200, body: 'skip: resend not configured' };
   }
 
+  // Without a segment there is no contact record, and the automation has no
+  // recipient to resolve against. Fail loudly rather than firing into a void.
+  if (!segmentId) {
+    console.error(
+      'submission-created: RESEND_SEGMENT_ID missing — contact not created, welcome series NOT started',
+    );
+    return { statusCode: 200, body: 'skip: no segment configured' };
+  }
+
   try {
-    if (segmentId) {
-      await addContactToSegment({ apiKey, segmentId, email });
-    } else {
-      console.warn('submission-created: RESEND_SEGMENT_ID missing — contact not added to segment');
-    }
+    await addContactToSegment({ apiKey, segmentId, email });
+    await fireWelcomeEvent({ apiKey, email, source });
 
-    await sendWelcome({
-      apiKey,
-      from,
-      to: email,
-      subject: 'Welcome to PromptWritingStudio',
-      html: buildWelcomeHtml(email, source),
-    });
-
-    console.log(`submission-created: subscribed + welcomed ${email} (source=${source})`);
+    console.log(
+      `submission-created: subscribed + welcome series started for ${email} (source=${source})`,
+    );
     return { statusCode: 200, body: 'sent' };
   } catch (err) {
     console.error('submission-created: Resend flow failed', err);
