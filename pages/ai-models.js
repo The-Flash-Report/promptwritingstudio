@@ -5,6 +5,7 @@ import LastVerified from '../components/LastVerified';
 import { AI_MODELS, AI_MODELS_META } from '../lib/ai-models';
 import { generateFAQSchema } from '../lib/schemaGenerator';
 import MarketShareSection from '../components/sections/MarketShareSection';
+import AIFlashReportTrackerNote from '../components/ui/AIFlashReportTrackerNote';
 import marketShareSnapshot from '../data/ai-models-market-share/2026-05.json';
 
 export default function AIModels() {
@@ -658,6 +659,7 @@ export default function AIModels() {
                 </ul>
               </div>
             </div>
+            <AIFlashReportTrackerNote className="mt-6 pt-4 border-t border-gray-100" />
           </div>
 
           <MarketShareSection snapshotData={marketShareSnapshot} />

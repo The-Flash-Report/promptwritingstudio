@@ -190,6 +190,17 @@ export default function ApiPricing() {
               </tbody>
             </table>
           </div>
+          <p className="text-sm text-[#333333] mt-4">
+            Prices change.{' '}
+            <a href="https://aiflashreport.com/prices/" className="underline text-[#1A1A1A]">
+              AI Flash Report
+            </a>{' '}
+            tracks per-model price history and sends a{' '}
+            <a href="https://aiflashreport.com/changes/" className="underline text-[#1A1A1A]">
+              weekly change digest
+            </a>
+            .
+          </p>
         </section>
 
         {/* Caching explainer */}
