@@ -186,6 +186,17 @@ export default function AnthropicApiPricing() {
               Rates verified against the Anthropic model overview on {MODELS_META.lastVerified}. Model lineup and
               pricing change often — check the source before forecasting a large budget.
             </p>
+            <p className="text-sm text-[#333333] mt-4 text-center">
+              Prices change.{' '}
+              <a href="https://aiflashreport.com/prices/" className="text-[#1A1A1A] underline font-semibold">
+                AI Flash Report
+              </a>{' '}
+              tracks per-model price history and sends a{' '}
+              <a href="https://aiflashreport.com/changes/" className="text-[#1A1A1A] underline font-semibold">
+                weekly change digest
+              </a>
+              .
+            </p>
           </div>
         </section>
 

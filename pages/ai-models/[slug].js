@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Layout from '../../components/layout/Layout';
 import LastVerified from '../../components/LastVerified';
 import { AI_MODELS, AI_MODELS_META } from '../../lib/ai-models';
+import AIFlashReportTrackerNote from '../../components/ui/AIFlashReportTrackerNote';
 
 const CATEGORY_LABELS = {
   text: 'Text Generation',
@@ -191,6 +192,7 @@ export default function ModelDetail({ model, sameVendor, relatedByCategory, last
           )}
 
           <div className="mt-12 pt-6 border-t border-gray-200">
+            <AIFlashReportTrackerNote className="mb-4" />
             <Link href="/ai-models" className="text-blue-600 hover:underline">
               ← Back to all AI models
             </Link>
