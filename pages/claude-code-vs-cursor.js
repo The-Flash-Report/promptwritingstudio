@@ -157,7 +157,7 @@ export default function ClaudeCodeVsCursor() {
 
             <div className="max-w-3xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-6 mb-8 rounded-r-lg text-left">
               <p className="text-lg leading-relaxed text-gray-100">
-                I switched from VS Code to Cursor in 2025 and filmed the reasons at the time. Later I added Claude Code, expecting one of the two to lose. Neither did. The work split instead: Cursor kept the typing and the visual diff review, Claude Code took the terminal, the multi-file changes and the git. This site is maintained day to day with Claude Code doing that half of the work.
+                I filmed my move from VS Code to Cursor in 2025, and I have been writing rules files for Cursor since before that. When Claude Code arrived I expected one of the two to lose. Neither did. The work split instead: Cursor kept the typing and the visual diff review, Claude Code took the terminal, the multi-file changes and the git. This site is maintained day to day with Claude Code doing that half of the work.
               </p>
             </div>
 
@@ -291,6 +291,7 @@ export default function ClaudeCodeVsCursor() {
                 heading="The switch, on camera"
                 context="Before Claude Code entered the picture I moved off VS Code and onto Cursor, and recorded why at the time. Worth watching if the move you are weighing is an editor swap rather than a jump to the terminal."
               />
+              {/* VERIFY: Bryan to confirm the adoption order in the hero (Cursor first, Claude Code later). It is inferred from video publish dates, not stated anywhere. */}
             </div>
           </div>
         </section>
