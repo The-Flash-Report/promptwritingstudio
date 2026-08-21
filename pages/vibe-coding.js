@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../components/layout/Layout';
+import VideoEmbed from '../components/ui/VideoEmbed';
 
 export default function VibeCoding() {
   const currentYear = new Date().getFullYear();
@@ -173,6 +174,14 @@ export default function VibeCoding() {
               <p>
                 For a comprehensive list of vibe coding tools and other AI development assistants, check out our <Link href="/best-ai-tools" className="text-indigo-600 hover:text-indigo-800">Best AI Tools</Link> page.
               </p>
+
+              <div className="not-prose my-12">
+                <VideoEmbed
+                  videoId="yGs7WVcozbQ"
+                  heading="Vibe coding, compressed"
+                  context="A short run at building a website with Cursor AI, prompt first, so you can see the loop before you set up your own."
+                />
+              </div>
 
               <h2 className="text-3xl font-bold mt-12 mb-6">Vibe Coding Best Practices</h2>
 

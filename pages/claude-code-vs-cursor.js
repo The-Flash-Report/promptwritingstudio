@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import VideoEmbed from '../components/ui/VideoEmbed'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
 const faqs = [
@@ -156,12 +157,12 @@ export default function ClaudeCodeVsCursor() {
 
             <div className="max-w-3xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-6 mb-8 rounded-r-lg text-left">
               <p className="text-lg leading-relaxed text-gray-100">
-                Claude Code is Anthropic's terminal-first agentic coding CLI. Cursor is a VS Code-forked IDE with AI woven into the UI. They overlap but they are not the same tool. Short answer: Cursor wins on interactive coding with inline suggestions; Claude Code wins on multi-file refactors, git workflows, hooks, and sub-agents. Most serious developers end up using both, with a clear split of duties.
+                I switched from VS Code to Cursor in 2025 and filmed the reasons at the time. Later I added Claude Code, expecting one of the two to lose. Neither did. The work split instead: Cursor kept the typing and the visual diff review, Claude Code took the terminal, the multi-file changes and the git. This site is maintained day to day with Claude Code doing that half of the work.
               </p>
             </div>
 
             <p className="text-xl md:text-2xl text-white mb-8 max-w-4xl mx-auto">
-              This is the comparison and the 30-day plan I followed. It will not tell you Claude Code is strictly better. It will tell you how to figure out honestly which one fits your work.
+              So this is not a scorecard telling you Claude Code wins. It is the division of labour I landed on, the 30-day plan that got me there, and the pitfalls that make people abandon the switch in week one.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="#comparison" className="bg-[#FFDE59] text-[#1A1A1A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#E5C84F] transition-colors duration-200">
@@ -282,6 +283,14 @@ export default function ClaudeCodeVsCursor() {
               <p className="text-lg text-[#333333]">
                 Neither tool replaces the other. They make each other better.
               </p>
+            </div>
+
+            <div className="mt-10">
+              <VideoEmbed
+                videoId="yRMCSueiMTU"
+                heading="The switch, on camera"
+                context="Before Claude Code entered the picture I moved off VS Code and onto Cursor, and recorded why at the time. Worth watching if the move you are weighing is an editor swap rather than a jump to the terminal."
+              />
             </div>
           </div>
         </section>
