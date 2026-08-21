@@ -4,7 +4,9 @@ import Head from 'next/head'
  * Single-video companion to YouTubeVideoSection (which handles playlists).
  *
  * Metadata below is taken from the YouTube Data API for the Become A Writer
- * Today channel (UCglNILz3uBqPer5EMJ_pzVg), verified 2026-08-21. Titles,
+ * Today channel (UCglNILz3uBqPer5EMJ_pzVg), verified live against videos.list on 2026-08-21.
+ * Titles change: yRMCSueiMTU was retitled 2026-08-19 and a cached dump missed it.
+ * Re-pull from the API rather than trusting data/dump-*.json. Titles,
  * publish dates and durations are the real values, so the VideoObject schema
  * this component emits matches what Google sees on YouTube.
  *
@@ -19,7 +21,7 @@ export const VIDEO_META = {
     duration: 'PT11M44S'
   },
   yRMCSueiMTU: {
-    title: 'Why I Switched from VS Code to Cursor AI',
+    title: 'Cursor vs VS Code: Why I Switched (Honest Comparison)',
     description:
       'Why I moved my day-to-day editing from VS Code to Cursor for vibe coding projects, and what actually changed in the workflow.',
     uploadDate: '2025-09-05',
@@ -53,6 +55,13 @@ export const VIDEO_META = {
     uploadDate: '2025-07-05',
     duration: 'PT5M5S'
   },
+  '1xufb9h1Tjw': {
+    title: 'How to Connect Cursor to GitHub (Beginner Tutorial)',
+    description:
+      'Pushing a Cursor project to GitHub end to end: creating the repository, the first push, writing the deployment workflow into a file, and registering it as an Agent Requested Cursor Rule.',
+    uploadDate: '2025-07-07',
+    duration: 'PT4M45S'
+  },
   yGs7WVcozbQ: {
     title: 'How to Build a Website With Cursor AI',
     description:
@@ -70,7 +79,31 @@ export default function VideoEmbed({
 }) {
   const meta = VIDEO_META[videoId]
 
-  if (!meta) return null
+  // A missing entry used to render nothing at all, which meant a typo'd or
+  // unregistered id removed the embed from the page with no trace anywhere.
+  // Now it shouts, and still renders the video: only the schema is dropped,
+  // because schema built from guessed metadata is worse than no schema.
+  if (!meta) {
+    console.error(
+      `[VideoEmbed] No VIDEO_META entry for "${videoId}". Rendering the iframe without VideoObject schema. Add the video to VIDEO_META in components/ui/VideoEmbed.js.`
+    )
+    return (
+      <div className={`bg-[#F9F9F9] border border-gray-200 rounded-lg overflow-hidden ${className}`}>
+        <div className="aspect-video bg-black">
+          <iframe
+            width="100%"
+            height="100%"
+            src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`}
+            title={heading || 'Video'}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    )
+  }
 
   const videoSchema = {
     '@context': 'https://schema.org',
@@ -90,7 +123,7 @@ export default function VideoEmbed({
     creator: {
       '@type': 'Person',
       name: 'Bryan Collins',
-      url: 'https://www.youtube.com/@BryanCollinsWriter'
+      url: 'https://www.youtube.com/channel/UCglNILz3uBqPer5EMJ_pzVg'
     }
   }
 

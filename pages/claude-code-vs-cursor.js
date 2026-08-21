@@ -199,6 +199,7 @@ export default function ClaudeCodeVsCursor() {
               </div>
             </div>
             <p className="text-center text-[#666666] mt-8">The answer for most developers with real projects: both. Use each where it is strongest.</p>
+            <p className="text-center text-[#666666] mt-4">Staying on Cursor for now? Wire it to your repo first: <Link href="/connect-cursor-to-github" className="text-[#1A1A1A] underline font-semibold hover:no-underline">how to connect Cursor to GitHub</Link>.</p>
           </div>
         </section>
 

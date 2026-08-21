@@ -172,7 +172,7 @@ export default function VibeCoding() {
               </ul>
 
               <p>
-                For a comprehensive list of vibe coding tools and other AI development assistants, check out our <Link href="/best-ai-tools" className="text-indigo-600 hover:text-indigo-800">Best AI Tools</Link> page.
+                For a comprehensive list of vibe coding tools and other AI development assistants, check out our <Link href="/best-ai-tools" className="text-indigo-600 hover:text-indigo-800">Best AI Tools</Link> page. And before you build anything you would hate to lose, back it up: <Link href="/connect-cursor-to-github" className="text-indigo-600 hover:text-indigo-800">connect Cursor to GitHub</Link>.
               </p>
 
               <div className="not-prose my-12">

@@ -21,7 +21,7 @@ export default function OrganizationSchema() {
       "image": "https://promptwritingstudio.com/images/bryan-collins.jpg"
     },
     "sameAs": [
-      "https://www.youtube.com/@BryanCollinsWriter",
+      "https://www.youtube.com/channel/UCglNILz3uBqPer5EMJ_pzVg",
       "https://twitter.com/bryanjcollins",
       "https://www.linkedin.com/in/bryanjcollins/"
     ],

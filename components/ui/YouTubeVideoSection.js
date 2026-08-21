@@ -32,7 +32,7 @@ export default function YouTubeVideoSection({
     "creator": {
       "@type": "Person",
       "name": "Bryan Collins",
-      "url": "https://www.youtube.com/@BryanCollinsWriter"
+      "url": "https://www.youtube.com/channel/UCglNILz3uBqPer5EMJ_pzVg"
     },
     "genre": category,
     "keywords": keywords

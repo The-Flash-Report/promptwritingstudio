@@ -86,6 +86,7 @@ export default function Sitemap() {
     { title: 'Claude Code Hooks Recipes', url: '/claude-code-hooks-recipes', description: 'Pre-tool, post-tool, and stop hooks — with shell examples' },
     { title: 'Skills vs MCP vs Hooks', url: '/skills-vs-mcp-vs-hooks', description: 'When to reach for each primitive — with decision tree' },
     { title: 'Claude Code vs Cursor', url: '/claude-code-vs-cursor', description: 'Honest comparison of the two coding agents — strengths, weaknesses, pricing' },
+    { title: 'Connect Cursor to GitHub', url: '/connect-cursor-to-github', description: 'Push a Cursor project to GitHub, and fix the cannot-connect error for good' },
     { title: 'Claude vs ChatGPT', url: '/claude-vs-chatgpt', description: 'Side-by-side comparison for writers and builders' },
     { title: 'Which Claude Model?', url: '/ai-models', description: 'Opus, Sonnet, Haiku -- price, context window, and use cases' },
     { title: 'LLM API Pricing Calculator', url: '/api-pricing', description: 'Enter input/output tokens and cache hit ratio -- see cost per call across Claude, GPT-4o, and Gemini.' }
