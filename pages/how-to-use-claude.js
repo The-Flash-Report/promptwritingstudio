@@ -148,7 +148,6 @@ export default function HowToUseClaude() {
               <p className="text-lg leading-relaxed text-gray-100">
                 The mechanics take a minute: go to claude.ai, create a free account, type what you want in plain English. What takes longer is getting output you would actually publish. I have been using Claude since 2024 to run a content business, drafting in my own voice, writing LinkedIn posts and email copy, and briefing thumbnails, and almost all of the improvement came from two habits: loading context up front, and never trusting a fact it hands me. This guide is those two lessons, in the order I would teach them.
               </p>
-              {/* VERIFY: Bryan to confirm "since 2024" is right. Earliest Claude video on the channel is October 2024, so the start date is inferred, not stated. */}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

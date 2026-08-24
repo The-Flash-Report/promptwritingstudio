@@ -292,7 +292,6 @@ export default function ClaudeCodeVsCursor() {
                 heading="The switch, on camera"
                 context="Before Claude Code entered the picture I moved off VS Code and onto Cursor, and recorded why at the time. Worth watching if the move you are weighing is an editor swap rather than a jump to the terminal."
               />
-              {/* VERIFY: Bryan to confirm the adoption order in the hero (Cursor first, Claude Code later). It is inferred from video publish dates, not stated anywhere. */}
             </div>
           </div>
         </section>

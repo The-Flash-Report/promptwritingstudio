@@ -197,9 +197,8 @@ export default function ClaudeCodeSkillsHub() {
             <div className="bg-white rounded-lg border-l-4 border-[#FFDE59] p-6 md:p-8 shadow-sm">
               <h2 className="text-sm font-semibold text-[#1A1A1A] uppercase tracking-wide mb-2">The short answer</h2>
               <p className="text-lg text-[#1A1A1A] leading-relaxed mb-4">
-                A skill is worth writing when you have typed the same long instruction into Claude Code for the third time. Not before. Building one earlier than that mostly wastes the effort, because you are automating a workflow you have not settled on yet.
+                A useful rule of thumb: a skill is worth writing once you have typed the same long instruction into Claude Code enough times to be sure of its shape. Building one earlier mostly wastes the effort, because you are automating a workflow you have not settled on yet.
               </p>
-              {/* VERIFY: Bryan to confirm the "third time" threshold matches how he actually decides, or replace with his own rule. */}
               <p className="text-lg text-[#1A1A1A] leading-relaxed">
                 On licensing: the biggest community list, <strong>awesome-claude-code</strong>, is CC&nbsp;BY-NC-ND. You can link to it but cannot republish entries. This directory is the opposite. Every skill comes from a repo with an <strong>MIT, Apache-2.0, BSD, CC0, or Unlicense</strong> licence, so you can copy, fork and adapt without a legal argument. Start with the <strong>High-signal</strong> tier.
               </p>
@@ -234,9 +233,8 @@ export default function ClaudeCodeSkillsHub() {
             <div className="mt-8 bg-[#1A1A1A] p-6 rounded-lg">
               <p className="text-sm font-semibold text-[#FFDE59] uppercase tracking-wide mb-2">The pattern underneath them</p>
               <p className="text-gray-200 leading-relaxed">
-                Look at the six and they fall into two shapes. Four of them gather state from several places at once and hand back a decision: which project needs attention, what failed the audit, what has drifted, what is missing. Two of them just execute a boring sequence I would otherwise do by hand. Both shapes work. What does not work is a skill that tries to be clever about a judgement call, because when it gets that call wrong you have to reconstruct its reasoning before you can correct it, and that costs more than doing the thing yourself.
+                Look at the six and they fall into two shapes. Four of them gather state from several places at once and hand back a decision: which project needs attention, what failed the audit, what has drifted, what is missing. Two of them just execute a boring sequence I would otherwise do by hand. Both shapes work. The shape to be wary of is a skill that tries to be clever about a judgement call: when it gets that call wrong you have to reconstruct its reasoning before you can correct it, which can cost more than doing the thing yourself.
               </p>
-              {/* VERIFY: Bryan to confirm the failed-skill claim in the last sentence reflects a real experience, or cut it. */}
             </div>
           </div>
         </section>
