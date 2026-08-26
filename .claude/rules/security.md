@@ -10,10 +10,10 @@ globs: ["**/*.js", "**/*.jsx", "pages/api/**"]
 Before any commit, verify:
 - No hardcoded secrets (API keys, passwords, tokens)
 - All user inputs validated
-- SQL injection prevention (parameterized queries via Prisma)
 - XSS prevention (sanitized HTML)
 - CSRF protection on state-changing endpoints
 - Error messages don't expose internal details
+- No user API keys (BYOK `x-user-api-key`) stored, logged, or traced — in-memory for one call only
 
 ## Secret Management
 
@@ -22,12 +22,12 @@ Before any commit, verify:
 - Validate that required secrets exist during startup
 - Rotate any potentially compromised credentials immediately
 
-## NextAuth.js Specific
+## Not applicable here
 
-- Validate callback URLs to prevent open redirects
-- Ensure NEXTAUTH_SECRET is strong and rotated periodically
-- Check session validation on all protected API routes
-- Use proper CSRF tokens on forms
+This site has NO auth, NO NextAuth, NO Prisma, NO database (see CLAUDE.md
+Stack). Entitlement is a signed HMAC header (`STUDIO_ENTITLEMENT_SECRET`,
+`lib/studio/entitlements.js`). Do not add NextAuth/Prisma-shaped checks or
+"fix" their absence.
 
 ## API Routes
 
