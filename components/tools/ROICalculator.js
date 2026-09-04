@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitNewsletter } from '../../lib/submitNewsletter'
 
 export default function ROICalculator() {
   const [formData, setFormData] = useState({
@@ -58,18 +59,13 @@ export default function ROICalculator() {
 
   const handleEmailSubmit = async (e) => {
     e.preventDefault()
-    
-    // TODO: Integration with email service (ConvertKit/Mailchimp)
-    console.log('Email submitted:', formData.email, 'Results:', results)
-    
-    // For now, just show success message
+    if (!formData.email) return
+    try {
+      await submitNewsletter(formData.email, 'roi-calculator')
+    } catch (err) {
+      console.error('ROI calculator email submit failed:', err)
+    }
     setEmailSubmitted(true)
-    
-    // In real implementation, you would:
-    // 1. Send email to your email service
-    // 2. Generate and send PDF report
-    // 3. Add to email sequence
-    // 4. Track conversion in analytics
   }
 
   const resetCalculator = () => {
