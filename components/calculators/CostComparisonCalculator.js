@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { submitNewsletter } from '../../lib/submitNewsletter'
 
 export default function CostComparisonCalculator() {
   const [formData, setFormData] = useState({
@@ -148,8 +149,12 @@ export default function CostComparisonCalculator() {
   const handleEmailSubmit = async (e) => {
     e.preventDefault()
     
-    // TODO: Integration with email service
-    console.log('Email submitted:', formData.email, 'Results:', results)
+    if (!formData.email) return
+    try {
+      await submitNewsletter(formData.email, 'cost-comparison-calculator')
+    } catch (err) {
+      console.error('Cost comparison email submit failed:', err)
+    }
     setEmailSubmitted(true)
   }
 
