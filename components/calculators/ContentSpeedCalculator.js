@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitNewsletter } from '../../lib/submitNewsletter';
 
 const ContentSpeedCalculator = () => {
   const [inputs, setInputs] = useState({
@@ -89,12 +90,15 @@ const ContentSpeedCalculator = () => {
     setShowEmailCapture(true);
   };
 
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    
-    // Here you would integrate with your email service
-    console.log('Email submitted:', email);
+    if (!email) return;
+    try {
+      await submitNewsletter(email, 'content-speed-calculator');
+    } catch (err) {
+      console.error('Content speed calculator email submit failed:', err);
+    }
     alert('Thanks! Check your email for the "Content Creation Automation Guide"');
     setShowEmailCapture(false);
   };
