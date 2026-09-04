@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { submitNewsletter } from '../../lib/submitNewsletter';
 
 const EcommerceAICalculator = () => {
   const [inputs, setInputs] = useState({
@@ -134,12 +135,15 @@ const EcommerceAICalculator = () => {
     setShowEmailCapture(true);
   };
 
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    
-    // Here you would integrate with your email service
-    console.log('Email submitted:', email);
+    if (!email) return;
+    try {
+      await submitNewsletter(email, 'ecommerce-ai-calculator');
+    } catch (err) {
+      console.error('Ecommerce calculator email submit failed:', err);
+    }
     alert('Thanks! Check your email for the "E-commerce AI Toolkit"');
     setShowEmailCapture(false);
   };
