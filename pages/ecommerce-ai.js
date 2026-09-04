@@ -2,6 +2,7 @@ import Layout from '../components/layout/Layout'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
+import { submitNewsletter } from '../lib/submitNewsletter'
 
 export default function EcommerceAI() {
   const [email, setEmail] = useState('')
@@ -9,9 +10,13 @@ export default function EcommerceAI() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!email) return
     setIsSubmitting(true)
-    // TODO: Implement email capture
-    console.log('Email captured:', email)
+    try {
+      await submitNewsletter(email, 'ecommerce-ai')
+    } catch (err) {
+      console.error('Ecommerce AI email submit failed:', err)
+    }
     setIsSubmitting(false)
     setEmail('')
   }

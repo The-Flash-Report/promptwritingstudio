@@ -1,13 +1,19 @@
 import { useState } from 'react'
+import { submitNewsletter } from '../../lib/submitNewsletter'
 
 export default function Newsletter() {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
-  
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real implementation, you would send this to your API
-    console.log('Subscribing email:', email)
+    if (!email) return
+    try {
+      await submitNewsletter(email, 'newsletter-section')
+    } catch (err) {
+      // Keep the optimistic UI; the submission is best-effort.
+      console.error('Newsletter submit failed:', err)
+    }
     setIsSubmitted(true)
     setEmail('')
     // Reset form state after 3 seconds

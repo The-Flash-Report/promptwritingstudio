@@ -10,7 +10,9 @@ export default function Layout({ children, title, description, canonicalUrl, ogI
   const router = useRouter()
   const siteUrl = 'https://promptwritingstudio.com'
   const currentUrl = canonicalUrl || `${siteUrl}${router.asPath.split('?')[0]}`
-  const socialImage = ogImage || `${siteUrl}/images/og-image.jpg`
+  // Default social card is rendered on the fly by /api/og (brand mode); the
+  // static /images/og-image.jpg was never produced (see og-image-spec.md).
+  const socialImage = ogImage || `${siteUrl}/api/og?brand=1`
   // Most pages render their OWN <Head><title> BEFORE <Layout> in the tree, so
   // a Layout-emitted default title comes later and silently overrides them
   // (next/head keeps the last occurrence). Only emit title/description here
