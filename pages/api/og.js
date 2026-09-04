@@ -35,6 +35,43 @@ function toneFor(pct) {
 }
 
 export default async function handler(req, res) {
+  // Brand mode: the site-wide default OG/social card (used by Layout when a
+  // page passes no custom image). Matches public/images/og-image-spec.md:
+  // solid brand-yellow ground, product name, tagline, centred.
+  if (req.query.brand !== undefined) {
+    const brandEl = {
+      type: 'div',
+      props: {
+        style: {
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: YELLOW,
+          fontFamily: 'Roboto',
+          padding: '0 80px',
+          textAlign: 'center',
+        },
+        children: [
+          { type: 'div', props: { style: { fontSize: 84, fontWeight: 700, color: INK, lineHeight: 1.05 }, children: 'Prompt Writing Studio' } },
+          { type: 'div', props: { style: { fontSize: 40, color: INK, marginTop: 24 }, children: 'Prompt templates that actually work' } },
+        ],
+      },
+    }
+    try {
+      const svg = await satori(brandEl, { width: 1200, height: 630, fonts: fonts() })
+      const png = new Resvg(svg).render().asPng()
+      res.setHeader('Content-Type', 'image/png')
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+      return res.status(200).send(png)
+    } catch (err) {
+      console.error('OG brand render failed:', err?.name || 'UnknownError', err?.message)
+      return res.status(500).json({ error: 'Could not render card.' })
+    }
+  }
+
   const raw = parseInt(req.query.s ?? '', 10)
   const pct = Number.isFinite(raw) ? Math.max(0, Math.min(100, raw)) : null
   const verdict = String(req.query.v || 'Prompt graded').slice(0, 40)

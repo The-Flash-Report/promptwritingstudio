@@ -141,9 +141,13 @@ function enhancedDescriptionGenerator(baseDescription, calculatorName, estimated
   const remaining = maxLength - enhanced.length
   
   if (remaining > 20) {
-    const randomPhrase = actionPhrases[Math.floor(Math.random() * actionPhrases.length)]
-    if (enhanced.length + randomPhrase.length + 1 <= maxLength) {
-      enhanced += ` ${randomPhrase}`
+    // Pick deterministically from a stable hash of the description so the meta
+    // tag is identical on the server and client. Math.random() here caused a
+    // hydration mismatch and unstable descriptions for crawlers.
+    const seed = enhanced.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0)
+    const chosenPhrase = actionPhrases[seed % actionPhrases.length]
+    if (enhanced.length + chosenPhrase.length + 1 <= maxLength) {
+      enhanced += ` ${chosenPhrase}`
     }
   }
   
