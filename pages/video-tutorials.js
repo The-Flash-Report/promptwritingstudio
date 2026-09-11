@@ -16,12 +16,17 @@ export default function VideoTutorialsPage() {
     }
   ]
 
+  // Playlist ids and public video counts come from the YouTube Data API for
+  // channel UCglNILz3uBqPer5EMJ_pzVg, verified 2026-08-21. Counts are the number
+  // of PUBLIC items in each playlist, which is what a visitor sees in the embed.
+  // Private and deleted items are excluded on purpose.
+
   // AI Writing Tutorials Playlist
   const writingPlaylist = {
     id: 'PLxQrU2dxeHH5O0Wb2AFOD3oATFEtQGoL8',
     title: 'Writing With AI - Complete Tutorial Series',
-    description: 'Master the art of writing effective AI prompts for ChatGPT, Claude, and Gemini. Learn business automation strategies and content creation techniques.',
-    videoCount: 12,
+    description: 'Writing effective AI prompts for ChatGPT, Claude, and Gemini, plus the editing and voice work that turns a draft into something publishable.',
+    videoCount: 40,
     category: 'AI Writing Education'
   }
 
@@ -29,18 +34,18 @@ export default function VideoTutorialsPage() {
   const codingPlaylist = {
     id: 'PLxQrU2dxeHH59wUfRImkLPs3yLJW3IYkE',
     title: 'Vibe Coding for Creators - Technical Tutorials',
-    description: 'Learn coding and technical skills for content creators. Master tools and automation techniques to enhance your AI workflow.',
-    videoCount: 8,
+    description: 'Building real tools as a non-engineer: Cursor, Replit, Lovable, and the prompting habits that keep an AI-built project from falling over.',
+    videoCount: 47,
     category: 'Coding Education'
   }
 
-  // AI Business Applications Playlist
-  const businessPlaylist = {
-    id: 'PLxQrU2dxeHH5O0Wb2AFOD3oATFEtQGoL8', // You can update this with actual playlist ID
-    title: 'AI for Business - Automation & Growth',
-    description: 'Discover how AI can automate your business processes, improve customer service, and drive growth through smart prompt engineering.',
-    videoCount: 6,
-    category: 'Business AI'
+  // Claude Code Playlist
+  const claudeCodePlaylist = {
+    id: 'PLHOyjf-xHDPg',
+    title: 'Claude Code - Real Projects, Start to Finish',
+    description: 'How I use Claude Code on live projects: connecting it to a 7,000 note Zettelkasten, building analyzers, and shipping changes from the terminal.',
+    videoCount: 4,
+    category: 'AI Coding'
   }
 
   const pageSchema = {
@@ -55,6 +60,7 @@ export default function VideoTutorialsPage() {
         "name": writingPlaylist.title,
         "description": writingPlaylist.description,
         "url": `https://www.youtube.com/playlist?list=${writingPlaylist.id}`,
+        "numberOfItems": writingPlaylist.videoCount,
         "publisher": {
           "@type": "Organization",
           "name": "PromptWritingStudio"
@@ -65,6 +71,7 @@ export default function VideoTutorialsPage() {
         "name": codingPlaylist.title,
         "description": codingPlaylist.description,
         "url": `https://www.youtube.com/playlist?list=${codingPlaylist.id}`,
+        "numberOfItems": codingPlaylist.videoCount,
         "publisher": {
           "@type": "Organization",
           "name": "PromptWritingStudio"
@@ -72,9 +79,10 @@ export default function VideoTutorialsPage() {
       },
       {
         "@type": "VideoPlaylist",
-        "name": businessPlaylist.title,
-        "description": businessPlaylist.description,
-        "url": `https://www.youtube.com/playlist?list=${businessPlaylist.id}`,
+        "name": claudeCodePlaylist.title,
+        "description": claudeCodePlaylist.description,
+        "url": `https://www.youtube.com/playlist?list=${claudeCodePlaylist.id}`,
+        "numberOfItems": claudeCodePlaylist.videoCount,
         "publisher": {
           "@type": "Organization",
           "name": "PromptWritingStudio"
@@ -254,15 +262,17 @@ export default function VideoTutorialsPage() {
           />
         </section>
 
-        {/* AI Business Applications Playlist */}
-        <section id="business-ai" className="py-16 bg-gray-50">
+        {/* Claude Code Playlist */}
+        <section id="claude-code" className="py-16 bg-gray-50">
           <YouTubeVideoSection
-            title={businessPlaylist.title}
-            description={businessPlaylist.description}
-            playlistId={businessPlaylist.id}
-            playlistTitle="AI for Business"
-            videoCount={businessPlaylist.videoCount}
-            category={businessPlaylist.category}
+            title={claudeCodePlaylist.title}
+            description={claudeCodePlaylist.description}
+            playlistId={claudeCodePlaylist.id}
+            playlistTitle="Claude Code"
+            videoCount={claudeCodePlaylist.videoCount}
+            category={claudeCodePlaylist.category}
+            itemBlurb="Four public videos so far, with more of the series publishing through the autumn."
+            keywords="Claude Code, AI coding, terminal AI agent, Claude Code tutorial, agentic coding"
           />
         </section>
 
@@ -306,14 +316,14 @@ export default function VideoTutorialsPage() {
               </div>
               
               <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-lg border border-purple-200">
-                <div className="text-4xl mb-4">🚀</div>
+                <div className="text-4xl mb-4">⌨️</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  Business Applications
+                  Claude Code
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Discover how AI can transform your business processes and growth
+                  Watch Claude Code run on real projects, from the terminal, start to finish
                 </p>
-                <a href="#business-ai" className="text-purple-600 font-semibold hover:text-purple-700">
+                <a href="#claude-code" className="text-purple-600 font-semibold hover:text-purple-700">
                   Watch Tutorials →
                 </a>
               </div>

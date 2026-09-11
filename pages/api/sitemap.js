@@ -58,6 +58,7 @@ const STATIC_ROUTES = [
   { url: '/claude-code-pricing', priority: '0.8', changefreq: 'monthly' },
   { url: '/claude-code-alternatives', priority: '0.8', changefreq: 'monthly' },
   { url: '/claude-code-vs-cursor', priority: '0.8', changefreq: 'monthly' },
+  { url: '/connect-cursor-to-github', priority: '0.8', changefreq: 'monthly' },
   { url: '/claude-md-playbook', priority: '0.85', changefreq: 'monthly' },
   { url: '/claude-pro-vs-max-vs-api', priority: '0.85', changefreq: 'monthly' },
   { url: '/claude-artifacts', priority: '0.8', changefreq: 'monthly' },

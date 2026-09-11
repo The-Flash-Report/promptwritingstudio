@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import VideoEmbed from '../components/ui/VideoEmbed'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 
 const faqs = [
@@ -295,6 +296,14 @@ export default function ClaudeMdPlaybook() {
               <p className="text-lg text-[#333333] mb-6">
                 The file is not magic. It is not a config. It is just text that gets prepended to the conversation. That framing matters: every line in CLAUDE.md competes with your actual request for Claude's attention. The shorter and more specific it is, the better it works.
               </p>
+            </div>
+
+            <div className="mt-10">
+              <VideoEmbed
+                videoId="cHkBSjLR4Yk"
+                heading="The same job, in Cursor"
+                context="Cursor solves this with a rules file, and the thinking transfers almost line for line. Here is how I write those rules. If you already keep a .cursorrules, most of it can move into CLAUDE.md with light editing."
+              />
             </div>
           </div>
         </section>

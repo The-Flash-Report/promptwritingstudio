@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import VideoEmbed from '../components/ui/VideoEmbed'
 import { generateFAQSchema, generateArticleSchema, generateRatingSchema } from '../lib/schemaGenerator'
 
 const GRADER_URL = '/prompt-grader'
@@ -274,6 +275,14 @@ export default function ClaudeCodeReview() {
                   <p className="text-lg text-[#333333]">{r.text}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10">
+              <VideoEmbed
+                videoId="TGy3DLIC9Gw"
+                heading="Claude Code on a real project"
+                context="Rather than ask you to take the scores on trust, here is a full run on a project of mine: pointing Claude Code at a 7,000 note Zettelkasten and building three analyzers on top of it, including what it costs to run. A field report rather than a feature tour."
+              />
             </div>
           </div>
         </section>

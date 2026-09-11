@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import VideoEmbed from '../components/ui/VideoEmbed'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 import { getAIModelById } from '../lib/ai-models'
 
@@ -340,6 +341,14 @@ export default function ClaudeVsChatGpt() {
                 <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Your prompts matter more than the model</h3>
                 <p className="text-[#333333]">A well-scoped prompt in either tool will beat a vague prompt in the "better" tool. The delta between the two is often smaller than the delta between a lazy prompt and a clear one on the same model.</p>
               </div>
+            </div>
+
+            <div className="mt-10">
+              <VideoEmbed
+                videoId="d-EXvNDabmA"
+                heading="Both tools, same brief"
+                context="I ran both against the same content jobs and recorded the results rather than summarising them. If you want to see where each one pulls ahead before you pay for either, start here."
+              />
             </div>
           </div>
         </section>

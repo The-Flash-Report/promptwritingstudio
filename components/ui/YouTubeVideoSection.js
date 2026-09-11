@@ -6,19 +6,23 @@ export default function YouTubeVideoSection({
   playlistId,
   playlistTitle,
   videoCount = 0,
-  category = "AI Education"
+  category = "AI Education",
+  itemBlurb,
+  keywords = "AI prompts, ChatGPT, Claude, Gemini, prompt engineering, AI writing, content creation"
 }) {
-  
-  // Video schema for the playlist
+
+  // Video schema for the playlist.
+  // Counts and ids are the live, public-visible values from the YouTube Data API
+  // for channel UCglNILz3uBqPer5EMJ_pzVg. Do not invent thumbnails, durations or
+  // view counts here: a playlist id is not a video id, so img.youtube.com/vi/<playlistId>
+  // does not resolve, and fabricated interaction counts are a structured-data violation.
   const videoSchema = {
     "@context": "https://schema.org",
     "@type": "VideoPlaylist",
     "name": playlistTitle,
-    "description": `${description} - Complete tutorial series with ${videoCount} videos`,
+    "description": `${description} Currently ${videoCount} public videos.`,
     "url": `https://www.youtube.com/playlist?list=${playlistId}`,
-    "thumbnailUrl": `https://img.youtube.com/vi/${playlistId}/maxresdefault.jpg`,
-    "uploadDate": "2024-01-01",
-    "duration": "PT60M",
+    "numberOfItems": videoCount,
     "embedUrl": `https://www.youtube.com/embed/videoseries?list=${playlistId}`,
     "publisher": {
       "@type": "Organization",
@@ -28,15 +32,10 @@ export default function YouTubeVideoSection({
     "creator": {
       "@type": "Person",
       "name": "Bryan Collins",
-      "url": "https://www.youtube.com/@BryanCollinsWriter"
-    },
-    "interactionStatistic": {
-      "@type": "InteractionCounter",
-      "interactionType": "https://schema.org/WatchAction",
-      "userInteractionCount": 1000
+      "url": "https://www.youtube.com/channel/UCglNILz3uBqPer5EMJ_pzVg"
     },
     "genre": category,
-    "keywords": "AI prompts, ChatGPT, Claude, Gemini, prompt engineering, AI writing, content creation"
+    "keywords": keywords
   }
 
   return (
@@ -81,11 +80,11 @@ export default function YouTubeVideoSection({
                   {playlistTitle}
                 </h3>
                 <p className="text-gray-600 mb-3">
-                  Complete tutorial series with {videoCount} videos covering everything you need to know about AI prompt writing.
+                  {itemBlurb || `A running series of ${videoCount} videos, updated as new ones publish.`}
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">
-                    📺 {videoCount} videos • ⏱️ 60+ minutes
+                    {videoCount} {videoCount === 1 ? 'video' : 'videos'}
                   </span>
                   <a
                     href={`https://www.youtube.com/playlist?list=${playlistId}`}

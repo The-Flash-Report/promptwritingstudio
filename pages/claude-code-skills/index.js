@@ -37,6 +37,47 @@ const faqs = [
   }
 ]
 
+// The skills Bryan runs himself. Every slug below must exist in
+// data/claude-code-skills.json, because each card links to its catalogue page.
+const dailyDrivers = [
+  {
+    slug: 'site-picker',
+    name: 'Site Picker',
+    command: '/projects',
+    why: 'A portfolio of sites means a portfolio of context I cannot hold in my head. This prints the list, loads the memory file for whichever one I pick, and runs the git and gh checks in parallel, so the session opens with the outstanding work already on screen instead of me going to find it.'
+  },
+  {
+    slug: 'commit-helper',
+    name: 'Commit Helper',
+    command: '/commit',
+    why: 'Stage the relevant changes, write a conventional-commit message, push. Trivial to do by hand, which is exactly why it earned a skill: the friction was never difficulty, it was repetition.'
+  },
+  {
+    slug: 'qa-swarm',
+    name: 'QA Swarm',
+    command: '/qa',
+    why: 'Fans three to five subagents at the current project, each auditing a different dimension, then synthesises one report. The parallelism is the whole point. Run the same audit sequentially and it is slow enough that I skip it, which means it never runs.'
+  },
+  {
+    slug: 'deploy-netlify',
+    name: 'Deploy to Netlify',
+    command: '/deploy',
+    why: 'Build, preview, then push to main and let Netlify auto-deploy. No Netlify CLI in the loop. The preview step is the part that justifies the skill, because it is the step a human under time pressure drops first.'
+  },
+  {
+    slug: 'drift-check',
+    name: 'Drift Check',
+    command: '/drift-check',
+    why: 'Verifies reference data (model names, prices, dependency versions) against upstream and flags what has gone stale. This site carries several AI pricing pages, and a pricing table that is quietly six months out of date does more damage than no table at all.'
+  },
+  {
+    slug: 'legal-sweep',
+    name: 'Legal Sweep',
+    command: '/legal-sweep',
+    why: 'Audits a site for a legal disclaimer page and a footer link, then creates and wires one up if it is missing. Dull, easy to forget when you run more than one site, and genuinely unpleasant to discover you forgot.'
+  }
+]
+
 const LICENCE_LABELS = {
   'MIT': { color: 'green', label: 'MIT' },
   'Apache-2.0': { color: 'green', label: 'Apache-2.0' },
@@ -124,8 +165,8 @@ export default function ClaudeCodeSkillsHub() {
   return (
     <>
       <Head>
-        <title>Claude Code Skills Catalogue — {stats.total} Licence-Safe Skills & Subagents | PromptWritingStudio</title>
-        <meta name="description" content={`${stats.total} Claude Code skills, subagents, and slash commands — every entry from a repo with MIT, Apache-2.0, BSD, or CC0 licence. Safe to copy, fork, and ship.`} />
+        <title>Claude Code Skills: The 6 I Actually Run, Plus {stats.total} You Can Copy | PromptWritingStudio</title>
+        <meta name="description" content={`The six Claude Code skills that survived daily use on my own sites, with why each one stuck, plus a catalogue of ${stats.total} more from MIT, Apache-2.0, BSD and CC0 repos you can copy without a licensing argument.`} />
         <link rel="canonical" href="https://promptwritingstudio.com/claude-code-skills" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -136,10 +177,10 @@ export default function ClaudeCodeSkillsHub() {
           <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl">
             <p className="text-sm font-semibold text-[#FFDE59] uppercase tracking-wide mb-3">Claude Code · Skills Catalogue</p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Claude Code Skills — the Licence-Safe Directory
+              Claude Code Skills: the ones I actually run, plus {stats.total} you can copy
             </h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              {stats.total} skills, subagents, and slash commands from {stats.repoCount} repos with explicit permissive licences. Every entry is safe to copy into your <code className="bg-black/30 px-1.5 py-0.5 rounded text-sm">.claude/</code> directory.
+              I write skills for my own sites. Plenty get renamed, folded into another skill, or quietly retired once the workflow they automated stops existing. The ones below survived that and still fire most weeks, with the reason each one stuck. Under them sits the full catalogue: {stats.total} skills, subagents and slash commands from {stats.repoCount} repos with explicit permissive licences, so you can copy any of them into your <code className="bg-black/30 px-1.5 py-0.5 rounded text-sm">.claude/</code> directory without a licensing argument.
             </p>
             <div className="mt-6">
               <LastVerified
@@ -155,8 +196,44 @@ export default function ClaudeCodeSkillsHub() {
           <div className="container mx-auto px-4 md:px-6 max-w-3xl">
             <div className="bg-white rounded-lg border-l-4 border-[#FFDE59] p-6 md:p-8 shadow-sm">
               <h2 className="text-sm font-semibold text-[#1A1A1A] uppercase tracking-wide mb-2">The short answer</h2>
+              <p className="text-lg text-[#1A1A1A] leading-relaxed mb-4">
+                A useful rule of thumb: a skill is worth writing once you have typed the same long instruction into Claude Code enough times to be sure of its shape. Building one earlier mostly wastes the effort, because you are automating a workflow you have not settled on yet.
+              </p>
               <p className="text-lg text-[#1A1A1A] leading-relaxed">
-                The biggest community list — <strong>awesome-claude-code</strong> — is CC&nbsp;BY-NC-ND. You can link to it but cannot republish entries. This directory is the opposite: every skill comes from a repo with an <strong>MIT, Apache-2.0, BSD, CC0, or Unlicense</strong> licence. Copy, fork, adapt — no legal friction. Start with the <strong>High-signal</strong> tier; those earn their keep daily.
+                On licensing: the biggest community list, <strong>awesome-claude-code</strong>, is CC&nbsp;BY-NC-ND. You can link to it but cannot republish entries. This directory is the opposite. Every skill comes from a repo with an <strong>MIT, Apache-2.0, BSD, CC0, or Unlicense</strong> licence, so you can copy, fork and adapt without a legal argument. Start with the <strong>High-signal</strong> tier.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* The skills I actually run */}
+        <section className="py-14 bg-white">
+          <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 className="text-3xl font-bold text-[#1A1A1A] mb-3">The six I actually run</h2>
+            <p className="text-lg text-[#333333] mb-8">
+              I maintain a portfolio of sites, so most of my skills exist to stop me doing the same twenty minutes of chores on each one. These are the six that fire most weeks. Each links through to its full page in the catalogue.
+            </p>
+
+            <div className="space-y-4">
+              {dailyDrivers.map(skill => (
+                <Link
+                  key={skill.slug}
+                  href={`/claude-code-skills/${skill.slug}`}
+                  className="block bg-[#F9F9F9] border-l-4 border-[#FFDE59] rounded-r-lg p-6 hover:bg-[#FFDE59]/10 transition"
+                >
+                  <div className="flex flex-wrap items-baseline gap-3 mb-2">
+                    <h3 className="text-lg font-bold text-[#1A1A1A]">{skill.name}</h3>
+                    <code className="text-sm font-mono bg-[#1A1A1A] text-[#FFDE59] px-2 py-0.5 rounded">{skill.command}</code>
+                  </div>
+                  <p className="text-[#333333]">{skill.why}</p>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 bg-[#1A1A1A] p-6 rounded-lg">
+              <p className="text-sm font-semibold text-[#FFDE59] uppercase tracking-wide mb-2">The pattern underneath them</p>
+              <p className="text-gray-200 leading-relaxed">
+                Look at the six and they fall into two shapes. Four of them gather state from several places at once and hand back a decision: which project needs attention, what failed the audit, what has drifted, what is missing. Two of them just execute a boring sequence I would otherwise do by hand. Both shapes work. The shape to be wary of is a skill that tries to be clever about a judgement call: when it gets that call wrong you have to reconstruct its reasoning before you can correct it, which can cost more than doing the thing yourself.
               </p>
             </div>
           </div>
