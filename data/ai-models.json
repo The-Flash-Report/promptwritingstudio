@@ -1,7 +1,7 @@
 {
   "_meta": {
     "schemaVersion": 1,
-    "lastVerified": "2026-08-21",
+    "lastVerified": "2026-10-02",
     "stalenessThresholdDays": 60,
     "notes": "Multi-vendor AI model facts. Single source of truth for /ai-models, /claude-vs-chatgpt, and any page that quotes pricing or capability claims for non-Claude models. For Claude-only API model IDs and detailed plan data, see data/claude-models.json. This file mirrors top-level facts and adds non-Claude vendors. Update each entry's last_verified_at when you re-check it against the source. Monthly GitHub Actions cron flags entries older than stalenessThresholdDays."
   },
@@ -24,15 +24,16 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2026-06",
-      "last_verified_at": "2026-07-17",
-      "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "last_verified_at": "2026-10-02",
+      "verification_source": "https://platform.claude.com/docs/en/models/fable-5/overview",
       "description": "Anthropic's most capable widely released model — built for the most demanding reasoning and long-horizon agentic work.",
       "features": [
         "Anthropic's most capable widely released model",
         "Adaptive thinking (always on)",
         "1M-token context window with 128K max output",
         "Generally available on the Claude API, Bedrock, Vertex AI, and Microsoft Foundry"
-      ]
+      ],
+      "verification_notes": "Verified 2026-10-02: model page shows Status \"Active (legacy)\", retirement not sooner than June 9, 2027; Claude Fable 5.1 is now the current Fable model."
     },
     {
       "id": "claude-opus-4-8",
@@ -52,8 +53,8 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2026",
-      "last_verified_at": "2026-07-17",
-      "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "last_verified_at": "2026-10-02",
+      "verification_source": "https://platform.claude.com/docs/en/models/opus-4-8/overview",
       "description": "Anthropic's most capable Opus-tier model for complex reasoning, agentic coding, and high-autonomy work.",
       "features": [
         "Anthropic's most capable Opus-tier model for complex reasoning",
@@ -61,7 +62,8 @@
         "Adaptive thinking mode for deliberate reasoning",
         "Tool use and computer use",
         "Used inside Claude Code"
-      ]
+      ],
+      "verification_notes": "Verified 2026-10-02: model page shows Status \"Active (legacy)\", retirement not sooner than May 28, 2027; Claude Opus 5.5 is now the current Opus model."
     },
     {
       "id": "claude-sonnet-4-6",
@@ -81,8 +83,8 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2025-09",
-      "last_verified_at": "2026-07-17",
-      "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "last_verified_at": "2026-10-02",
+      "verification_source": "https://platform.claude.com/docs/en/models/sonnet-4-6/overview",
       "description": "Anthropic's mainstream workhorse — the default for Claude.ai, API workloads, and Claude Code day-to-day.",
       "features": [
         "Balanced speed, cost, and capability",
@@ -90,7 +92,8 @@
         "Strong coding and tool-use performance",
         "Vision input support",
         "Prompt caching for large context reuse"
-      ]
+      ],
+      "verification_notes": "Verified 2026-10-02: model page shows Status \"Active (legacy)\", retirement not sooner than February 17, 2027; Claude Sonnet 5.5 is now the current Sonnet model."
     },
     {
       "id": "claude-haiku-4-5-20251001",
@@ -109,7 +112,7 @@
       "context_window": 200000,
       "context_window_label": "200K tokens",
       "released": "2025-10",
-      "last_verified_at": "2026-07-17",
+      "last_verified_at": "2026-10-02",
       "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
       "description": "Anthropic's small, fast, cheap model — the right default for background agents and high-volume jobs.",
       "features": [
@@ -117,7 +120,8 @@
         "Good for high-volume classification and extraction",
         "Vision input support",
         "Suitable for sub-agents and batched pipelines"
-      ]
+      ],
+      "verification_notes": "Verified 2026-10-02: models overview lists Haiku 4.5 as a current model, retirement not sooner than October 15, 2026."
     },
     {
       "id": "gpt-5",
@@ -166,8 +170,8 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-05",
-      "last_verified_at": "2026-07-17",
-      "verification_source": "https://openai.com/api/pricing/",
+      "last_verified_at": "2026-10-02",
+      "verification_source": "https://developers.openai.com/api/docs/models/gpt-4o",
       "description": "OpenAI's omni model — good multimodal default when latency and cost matter more than absolute reasoning quality.",
       "features": [
         "Omni-modal: text, vision, and audio in one model",
@@ -192,8 +196,8 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-07",
-      "last_verified_at": "2026-07-17",
-      "verification_source": "https://openai.com/api/pricing/",
+      "last_verified_at": "2026-10-02",
+      "verification_source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
       "description": "OpenAI's small, cheap multimodal sibling of GPT-4o — strong default for high-volume tasks where latency and cost dominate.",
       "features": [
         "Lowest-cost multimodal OpenAI model",
@@ -217,12 +221,12 @@
       "input_per_million": 1.25,
       "output_per_million": 10.0,
       "pricing_label": "$1.25–$2.50 / $10–$15 per 1M tokens (tiered by context length)",
-      "context_window": 2000000,
-      "context_window_label": "1M+ tokens (up to 2M)",
+      "context_window": 1048576,
+      "context_window_label": "1M tokens",
       "released": "2025",
-      "last_verified_at": "2026-07-17",
-      "verification_source": "https://ai.google.dev/pricing",
-      "verification_notes": "Pricing tiered by context length (≤200K vs >200K). Lower bound applies under 200K input.",
+      "last_verified_at": "2026-10-02",
+      "verification_source": "https://ai.google.dev/gemini-api/docs/pricing",
+      "verification_notes": "Pricing tiered by context length (≤200K vs >200K). Lower bound applies under 200K input. Verified 2026-10-02: ai.google.dev/gemini-api/docs/models/gemini-2.5-pro lists input token limit 1,048,576; the earlier 2M figure is no longer supported. Google states access to 2.5 models is limited to users who have actively used them.",
       "description": "Google's Gemini Pro line — the go-to when you need to stuff a whole codebase or long video into a single prompt.",
       "features": [
         "Very long context window (1M+ tokens)",
@@ -248,9 +252,9 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2025",
-      "last_verified_at": "2026-07-17",
-      "verification_source": "https://ai.google.dev/pricing",
-      "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority).",
+      "last_verified_at": "2026-10-02",
+      "verification_source": "https://ai.google.dev/gemini-api/docs/pricing",
+      "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority). Verified 2026-10-02: input token limit 1,048,576. Google states access to 2.5 models is limited to users who have actively used them.",
       "description": "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is good enough.",
       "features": [
         "Cheap and fast sibling of Gemini 2.5 Pro",
@@ -305,7 +309,7 @@
       "released": "2025",
       "last_verified_at": "2026-05-07",
       "verification_source": "https://x.ai/api",
-      "verification_notes": "xAI retired the grok-3 API model slug on 2026-05-15 as part of the Grok 4.3 rollout (docs.x.ai/developers/migration/may-15-retirement). Requests to grok-3 now redirect to Grok 4.3. The current model table at docs.x.ai/docs/models lists only grok-4.x variants, no grok-3. Entry left unchanged per PR #59 precedent; current xAI flagship is Grok 4.6.",
+      "verification_notes": "xAI retired the grok-3 API model slug on 2026-05-15 as part of the Grok 4.3 rollout (docs.x.ai/developers/migration/may-15-retirement). Requests to grok-3 now redirect to Grok 4.3. The current model table at docs.x.ai/docs/models lists only grok-4.x variants, no grok-3. Entry left unchanged per PR #59 precedent; current xAI flagship is Grok 4.6. Re-checked 2026-10-02: docs.x.ai/docs/models still lists no grok-3 (grok-4.x and grok-imagine variants only). Not re-verified.",
       "description": "xAI's flagship. Relevant mainly if you need real-time X data or a less filtered default tone.",
       "features": [
         "Access to real-time X (Twitter) data",
@@ -334,7 +338,7 @@
       "released": "2024-07",
       "last_verified_at": "2026-05-07",
       "verification_source": "https://mistral.ai/pricing",
-      "verification_notes": "mistral.ai/pricing no longer lists Mistral Large 2 in its pricing tables, only a generic Mistral Large FAQ example remains. docs.mistral.ai/getting-started/models/models_overview/ confirms Mistral Large 2.0 is retired and Mistral Large 2.1 was deprecated 2026-02-27 with retirement 2026-05-31, replacement Mistral Medium 3.5. Entry left unchanged per PR #59 precedent; current flagship is Mistral Large 3.",
+      "verification_notes": "mistral.ai/pricing no longer lists Mistral Large 2 in its pricing tables, only a generic Mistral Large FAQ example remains. docs.mistral.ai/getting-started/models/models_overview/ confirms Mistral Large 2.0 is retired and Mistral Large 2.1 was deprecated 2026-02-27 with retirement 2026-05-31, replacement Mistral Medium 3.5. Entry left unchanged per PR #59 precedent; current flagship is Mistral Large 3. Re-checked 2026-10-02: docs.mistral.ai/getting-started/models/models_overview/ lists Mistral Large 2.0 (retired 3/30/2025) and 2.1 (deprecated 2/27/2026, retired 5/31/2026) as deprecated, no pricing. Not re-verified.",
       "description": "Mistral's flagship. Common pick for EU customers that want non-US-hosted inference for GDPR and sovereignty reasons.",
       "features": [
         "European (France) model — data residency option",
@@ -363,7 +367,7 @@
       "released": "2024-12",
       "last_verified_at": "2026-05-07",
       "verification_source": "https://api-docs.deepseek.com/quick_start/pricing",
-      "verification_notes": "api-docs.deepseek.com/quick_start/pricing now lists only deepseek-v4-flash, deepseek-v4-pro, and deepseek-v4-flash-vision-exp. The deepseek-chat and deepseek-reasoner (V3) model IDs were retired 2026-07-24 15:59 UTC. V3 weights remain accessible via third-party hosts such as OpenRouter but are no longer served by DeepSeek's own API. Entry left unchanged per PR #59 precedent.",
+      "verification_notes": "api-docs.deepseek.com/quick_start/pricing now lists only deepseek-v4-flash, deepseek-v4-pro, and deepseek-v4-flash-vision-exp. The deepseek-chat and deepseek-reasoner (V3) model IDs were retired 2026-07-24 15:59 UTC. V3 weights remain accessible via third-party hosts such as OpenRouter but are no longer served by DeepSeek's own API. Entry left unchanged per PR #59 precedent. Re-checked 2026-10-02: api-docs.deepseek.com/quick_start/pricing lists only deepseek-flash and deepseek-v4-pro; no V3, deepseek-chat or deepseek-reasoner. Not re-verified.",
       "description": "DeepSeek's flagship open-weights MoE model. Chosen when price and open weights matter more than vendor reputation.",
       "features": [
         "Open weights",
