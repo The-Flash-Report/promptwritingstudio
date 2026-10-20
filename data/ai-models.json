@@ -1,11 +1,41 @@
 {
   "_meta": {
     "schemaVersion": 1,
-    "lastVerified": "2026-10-02",
+    "lastVerified": "2026-10-20",
     "stalenessThresholdDays": 60,
     "notes": "Multi-vendor AI model facts. Single source of truth for /ai-models, /claude-vs-chatgpt, and any page that quotes pricing or capability claims for non-Claude models. For Claude-only API model IDs and detailed plan data, see data/claude-models.json. This file mirrors top-level facts and adds non-Claude vendors. Update each entry's last_verified_at when you re-check it against the source. Monthly GitHub Actions cron flags entries older than stalenessThresholdDays."
   },
   "models": [
+    {
+      "id": "claude-fable-5-1",
+      "vendor": "Anthropic",
+      "display_name": "Claude Fable 5.1",
+      "tier": "frontier",
+      "categories": [
+        "text",
+        "reasoning",
+        "coding",
+        "multimodal",
+        "enterprise"
+      ],
+      "input_per_million": 10.0,
+      "output_per_million": 50.0,
+      "pricing_label": "$10 / $50 per 1M tokens (input/output)",
+      "context_window": 1000000,
+      "context_window_label": "1M tokens",
+      "released": "2026-09",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+      "description": "Anthropic's current Fable model, built for demanding reasoning and long-horizon agentic work.",
+      "features": [
+        "Current Fable model, same price as Fable 5",
+        "Adaptive thinking (always on)",
+        "1M-token context window with 128K max output",
+        "Cache reads at $0.25 per 1M tokens",
+        "Available on the Claude API, Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS"
+      ],
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (latest)\", released September 1, 2026, $10 / $50 per MTok, 1M context, 128K max output, retirement not sooner than September 1, 2027."
+    },
     {
       "id": "claude-fable-5",
       "vendor": "Anthropic",
@@ -24,7 +54,7 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2026-06",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://platform.claude.com/docs/en/models/fable-5/overview",
       "description": "Anthropic's most capable widely released model — built for the most demanding reasoning and long-horizon agentic work.",
       "features": [
@@ -33,7 +63,37 @@
         "1M-token context window with 128K max output",
         "Generally available on the Claude API, Bedrock, Vertex AI, and Microsoft Foundry"
       ],
-      "verification_notes": "Verified 2026-10-02: model page shows Status \"Active (legacy)\", retirement not sooner than June 9, 2027; Claude Fable 5.1 is now the current Fable model."
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (legacy)\", released June 9, 2026, $10 / $50 per MTok, 1M context, 128K max output, retirement not sooner than June 9, 2027; Claude Fable 5.1 is the current Fable model."
+    },
+    {
+      "id": "claude-opus-5-5",
+      "vendor": "Anthropic",
+      "display_name": "Claude Opus 5.5",
+      "tier": "flagship",
+      "categories": [
+        "text",
+        "reasoning",
+        "coding",
+        "multimodal",
+        "enterprise"
+      ],
+      "input_per_million": 4.0,
+      "output_per_million": 20.0,
+      "pricing_label": "$4 / $20 per 1M tokens (input/output)",
+      "context_window": 1000000,
+      "context_window_label": "1M tokens",
+      "released": "2026-09",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://platform.claude.com/docs/en/models/opus-5-5/overview",
+      "description": "Anthropic's current Opus model, built for long-running agentic coding and knowledge work. Anthropic suggests it as the starting point for most workloads.",
+      "features": [
+        "Current Opus model",
+        "Adaptive thinking (always on)",
+        "1M-token context window with 128K max output",
+        "Cache reads at $0.20 per 1M tokens",
+        "Available on the Claude API, Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS"
+      ],
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (latest)\", released September 22, 2026, $4 / $20 per MTok, 1M context, 128K max output, retirement not sooner than September 22, 2027."
     },
     {
       "id": "claude-opus-4-8",
@@ -52,8 +112,8 @@
       "pricing_label": "$5 / $25 per 1M tokens (input/output)",
       "context_window": 1000000,
       "context_window_label": "1M tokens",
-      "released": "2026",
-      "last_verified_at": "2026-10-02",
+      "released": "2026-05",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://platform.claude.com/docs/en/models/opus-4-8/overview",
       "description": "Anthropic's most capable Opus-tier model for complex reasoning, agentic coding, and high-autonomy work.",
       "features": [
@@ -63,7 +123,37 @@
         "Tool use and computer use",
         "Used inside Claude Code"
       ],
-      "verification_notes": "Verified 2026-10-02: model page shows Status \"Active (legacy)\", retirement not sooner than May 28, 2027; Claude Opus 5.5 is now the current Opus model."
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (legacy)\", released May 28, 2026, $5 / $25 per MTok, 1M context, retirement not sooner than May 28, 2027; Claude Opus 5.5 is now the current Opus model."
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "vendor": "Anthropic",
+      "display_name": "Claude Sonnet 5.5",
+      "tier": "workhorse",
+      "categories": [
+        "text",
+        "reasoning",
+        "coding",
+        "multimodal",
+        "enterprise"
+      ],
+      "input_per_million": 2.0,
+      "output_per_million": 10.0,
+      "pricing_label": "$2 / $10 per 1M tokens (input/output)",
+      "context_window": 1000000,
+      "context_window_label": "1M tokens",
+      "released": "2026-09",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+      "description": "Anthropic's current Sonnet model, offering the best combination of speed and intelligence.",
+      "features": [
+        "Current Sonnet model",
+        "Adaptive thinking",
+        "1M-token context window with 128K max output",
+        "Cache reads at $0.10 per 1M tokens",
+        "Available on the Claude API, Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS"
+      ],
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (latest)\", released September 28, 2026, $2 / $10 per MTok, 1M context, 128K max output, retirement not sooner than September 28, 2027."
     },
     {
       "id": "claude-sonnet-4-6",
@@ -82,8 +172,8 @@
       "pricing_label": "$3 / $15 per 1M tokens (input/output)",
       "context_window": 1000000,
       "context_window_label": "1M tokens",
-      "released": "2025-09",
-      "last_verified_at": "2026-10-02",
+      "released": "2026-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://platform.claude.com/docs/en/models/sonnet-4-6/overview",
       "description": "Anthropic's mainstream workhorse — the default for Claude.ai, API workloads, and Claude Code day-to-day.",
       "features": [
@@ -93,7 +183,36 @@
         "Vision input support",
         "Prompt caching for large context reuse"
       ],
-      "verification_notes": "Verified 2026-10-02: model page shows Status \"Active (legacy)\", retirement not sooner than February 17, 2027; Claude Sonnet 5.5 is now the current Sonnet model."
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (legacy)\", released February 17, 2026, $3 / $15 per MTok, 1M context, retirement not sooner than February 17, 2027; Claude Sonnet 5.5 is now the current Sonnet model."
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "vendor": "Anthropic",
+      "display_name": "Claude Haiku 5.5",
+      "tier": "fast",
+      "categories": [
+        "text",
+        "reasoning",
+        "coding",
+        "multimodal"
+      ],
+      "input_per_million": 0.1,
+      "output_per_million": 0.5,
+      "pricing_label": "From $0.10 / $0.50 per 1M tokens (input/output); $0.50 / $2.50 for prompts over 100K tokens",
+      "context_window": 1000000,
+      "context_window_label": "1M tokens",
+      "released": "2026-10",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://platform.claude.com/docs/en/models/haiku-5-5/overview",
+      "description": "Anthropic's current Haiku model, built for high-volume, latency-sensitive work such as classification, extraction and routing.",
+      "features": [
+        "Current Haiku model and the fastest in the lineup",
+        "Adaptive thinking",
+        "1M-token context window with 128K max output",
+        "Tiered pricing: higher rates for prompts over 100K tokens",
+        "Available on the Claude API, Bedrock, Google Cloud, Microsoft Foundry and Claude Platform on AWS"
+      ],
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (latest)\", released October 7, 2026, retirement not sooner than October 7, 2027. Pricing is tiered: $0.10 input / $0.50 output per MTok for prompts up to 100,000 tokens, $0.50 / $2.50 above. The price fields hold the lower tier."
     },
     {
       "id": "claude-haiku-4-5-20251001",
@@ -112,8 +231,8 @@
       "context_window": 200000,
       "context_window_label": "200K tokens",
       "released": "2025-10",
-      "last_verified_at": "2026-10-02",
-      "verification_source": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
       "description": "Anthropic's small, fast, cheap model — the right default for background agents and high-volume jobs.",
       "features": [
         "Fastest Claude model at the lowest price point",
@@ -121,7 +240,37 @@
         "Vision input support",
         "Suitable for sub-agents and batched pipelines"
       ],
-      "verification_notes": "Verified 2026-10-02: models overview lists Haiku 4.5 as a current model, retirement not sooner than October 15, 2026."
+      "verification_notes": "Verified 2026-10-20: model page shows Status \"Active (legacy)\", released October 15, 2025, $1 / $5 per MTok, 200K context, 64K max output, retirement not sooner than October 15, 2026; Claude Haiku 5.5 is now the current Haiku model."
+    },
+    {
+      "id": "gpt-6-1-sol",
+      "vendor": "OpenAI",
+      "display_name": "GPT-6.1 Sol",
+      "tier": "workhorse",
+      "categories": [
+        "text",
+        "multimodal",
+        "reasoning",
+        "coding",
+        "enterprise"
+      ],
+      "input_per_million": 2.0,
+      "output_per_million": 10.0,
+      "pricing_label": "$2 / $10 per 1M tokens (input/output)",
+      "context_window": 1050000,
+      "context_window_label": "1.05M tokens (922K max input, 128K max output)",
+      "released": "2026",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "verification_notes": "Verified 2026-10-20 on developers.openai.com/api/docs/models/gpt-6.1-sol and developers.openai.com/api/docs/pricing: $2 input / $10 output per 1M tokens up to 272K input tokens (higher long-context rates above that), 1,050,000 token context window, 922,000 max input, 128,000 max output, knowledge cutoff Apr 30, 2026. Exact release date is not shown on the page, so only the year is recorded.",
+      "description": "OpenAI's GPT-6.1 model offering near-Astra performance for complex coding, computer use and professional work at a lower cost.",
+      "features": [
+        "Near-Astra performance at a lower price",
+        "1.05M-token context window with 128K max output",
+        "Function calling and structured outputs",
+        "Image input, web search and file search",
+        "Prompt caching"
+      ]
     },
     {
       "id": "gpt-5",
@@ -141,12 +290,12 @@
       "context_window": 400000,
       "context_window_label": "400K tokens (272K max input, 128K max output)",
       "released": "2025",
-      "last_verified_at": "2026-08-21",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://developers.openai.com/api/docs/models/gpt-5",
-      "verification_notes": "openai.com/api/pricing/ still blocks automated fetches (403). Pricing and context reconfirmed via developers.openai.com/api/docs/models/gpt-5: input $1.25 per 1M tokens, output $10 per 1M tokens, 400,000 token context window, 272,000 max input tokens, 128,000 max output tokens. OpenAI's docs recommend migrating to GPT-5.6, but GPT-5 itself is still live and billable.",
-      "description": "OpenAI's current flagship model. Check openai.com for up-to-date capability and pricing details before production use.",
+      "verification_notes": "Verified 2026-10-20 on developers.openai.com/api/docs/models/gpt-5 and developers.openai.com/api/docs/pricing: input $1.25 per 1M tokens, output $10 per 1M tokens, 400,000 token context window, 272,000 max input tokens, 128,000 max output tokens. Page describes GPT-5 as a previous-generation model and recommends GPT-6 Astra; it does not mark GPT-5 deprecated. Release date not shown on the page.",
+      "description": "OpenAI's previous-generation flagship. Still billable; OpenAI now recommends GPT-6 Astra for new work.",
       "features": [
-        "OpenAI's current flagship",
+        "Previous-generation OpenAI flagship",
         "Multimodal (text, image, audio)",
         "Strong reasoning and coding performance",
         "Function calling and structured outputs",
@@ -170,7 +319,7 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-05",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://developers.openai.com/api/docs/models/gpt-4o",
       "description": "OpenAI's omni model — good multimodal default when latency and cost matter more than absolute reasoning quality.",
       "features": [
@@ -178,7 +327,8 @@
         "Realtime audio via the Realtime API",
         "Cheaper and faster than GPT-4",
         "Still widely used for general tasks"
-      ]
+      ],
+      "verification_notes": "Verified 2026-10-20 on developers.openai.com/api/docs/models/gpt-4o and developers.openai.com/api/docs/pricing: $2.50 input / $10 output per 1M tokens, 128,000 token context window, 16,384 max output. No deprecation notice on the model page. Release date not shown on the page."
     },
     {
       "id": "gpt-4o-mini",
@@ -196,7 +346,7 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-07",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
       "description": "OpenAI's small, cheap multimodal sibling of GPT-4o — strong default for high-volume tasks where latency and cost dominate.",
       "features": [
@@ -204,6 +354,66 @@
         "Vision input support",
         "Function calling and structured outputs",
         "Good price-performance for classification and extraction"
+      ],
+      "verification_notes": "Verified 2026-10-20 on developers.openai.com/api/docs/models/gpt-4o-mini and developers.openai.com/api/docs/pricing: $0.15 input / $0.60 output per 1M tokens, 128,000 token context window, 16,384 max output. No deprecation notice on the model page. Release date not shown on the page."
+    },
+    {
+      "id": "gemini-4-argon",
+      "vendor": "Google",
+      "display_name": "Gemini 4 Argon",
+      "tier": "flagship",
+      "categories": [
+        "text",
+        "multimodal",
+        "reasoning",
+        "coding",
+        "enterprise"
+      ],
+      "input_per_million": 2.0,
+      "output_per_million": 10.0,
+      "pricing_label": "$2 / $10 per 1M tokens (input/output) through Nov 30, 2026; $4 / $20 from Dec 1, 2026",
+      "context_window": 1048576,
+      "context_window_label": "1M tokens",
+      "released": "2026",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://ai.google.dev/gemini-api/docs/pricing",
+      "verification_notes": "Verified 2026-10-20: ai.google.dev/gemini-api/docs/pricing lists standard-tier $2.00 input / $10.00 output per 1M tokens through Nov 30, 2026, rising to $4.00 / $20.00 from Dec 1, 2026. ai.google.dev/gemini-api/docs/models/gemini-4-argon lists a 1,048,576 token context window, status Stable, last updated October 2026. Exact release date is not shown, so only the year is recorded. The price fields hold the current rate.",
+      "description": "Google's newest Gemini flagship, accepting text, image, video, audio and PDF input.",
+      "features": [
+        "Stable Gemini 4 model",
+        "1M-token context window",
+        "Text, image, video, audio and PDF input",
+        "Thinking levels, function calling, structured outputs and code execution",
+        "Search and Maps grounding"
+      ]
+    },
+    {
+      "id": "gemini-3-8-flash",
+      "vendor": "Google",
+      "display_name": "Gemini 3.8 Flash",
+      "tier": "workhorse",
+      "categories": [
+        "text",
+        "multimodal",
+        "reasoning",
+        "coding"
+      ],
+      "input_per_million": 0.75,
+      "output_per_million": 3.75,
+      "pricing_label": "$0.75 / $3.75 per 1M tokens (input/output) through Dec 31, 2026; $1.50 / $7.50 from Jan 1, 2027",
+      "context_window": 1048576,
+      "context_window_label": "1M tokens",
+      "released": "2026",
+      "last_verified_at": "2026-10-20",
+      "verification_source": "https://ai.google.dev/gemini-api/docs/pricing",
+      "verification_notes": "Verified 2026-10-20: ai.google.dev/gemini-api/docs/pricing lists standard-tier $0.75 input / $3.75 output per 1M tokens through Dec 31, 2026, rising to $1.50 / $7.50 from Jan 1, 2027. ai.google.dev/gemini-api/docs/models/gemini-3.8-flash lists input limit 1,048,576, output limit 65,536, status Stable, last updated September 2026. Exact release date is not shown, so only the year is recorded. The price fields hold the current rate.",
+      "description": "Google's current Flash model, pointed to by Google as the replacement for Gemini 2.5 Flash in new projects.",
+      "features": [
+        "Stable Gemini 3.8 model",
+        "1M-token context window with 65K max output",
+        "Text, image, video, audio and PDF input",
+        "Thinking levels, function calling and structured outputs",
+        "Batch, Flex and Priority inference"
       ]
     },
     {
@@ -224,9 +434,9 @@
       "context_window": 1048576,
       "context_window_label": "1M tokens",
       "released": "2025",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://ai.google.dev/gemini-api/docs/pricing",
-      "verification_notes": "Pricing tiered by context length (≤200K vs >200K). Lower bound applies under 200K input. Verified 2026-10-02: ai.google.dev/gemini-api/docs/models/gemini-2.5-pro lists input token limit 1,048,576; the earlier 2M figure is no longer supported. Google states access to 2.5 models is limited to users who have actively used them.",
+      "verification_notes": "Verified 2026-10-20: ai.google.dev/gemini-api/docs/pricing lists $1.25 input / $10 output per 1M tokens for prompts up to 200K and $2.50 / $15 above 200K. ai.google.dev/gemini-api/docs/models/gemini-2.5-pro lists input token limit 1,048,576 and output limit 65,536. Google states the 2.5 models are not deprecated and are served until further notice, with access limited to users who have used them; new projects are pointed to newer Gemini models.",
       "description": "Google's Gemini Pro line — the go-to when you need to stuff a whole codebase or long video into a single prompt.",
       "features": [
         "Very long context window (1M+ tokens)",
@@ -248,13 +458,13 @@
       ],
       "input_per_million": 0.3,
       "output_per_million": 2.5,
-      "pricing_label": "$0.30–$1.80 / $2.50–$4.50 per 1M tokens (tiered by mode)",
-      "context_window": 1000000,
+      "pricing_label": "$0.30 / $2.50 per 1M tokens (input/output; audio input $1.00)",
+      "context_window": 1048576,
       "context_window_label": "1M tokens",
       "released": "2025",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://ai.google.dev/gemini-api/docs/pricing",
-      "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority). Verified 2026-10-02: input token limit 1,048,576. Google states access to 2.5 models is limited to users who have actively used them.",
+      "verification_notes": "Verified 2026-10-20: ai.google.dev/gemini-api/docs/pricing lists standard-tier input $0.30 (text/image/video) or $1.00 (audio) and output $2.50 per 1M tokens. ai.google.dev/gemini-api/docs/models/gemini-2.5-flash lists input token limit 1,048,576 and output limit 65,536. Google states the 2.5 models are not deprecated and are served until further notice, with access limited to users who have used them. Batch, Flex and Priority rates were not re-checked.",
       "description": "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is good enough.",
       "features": [
         "Cheap and fast sibling of Gemini 2.5 Pro",
@@ -283,7 +493,7 @@
       "released": "2024-12",
       "last_verified_at": "2026-08-21",
       "verification_source": "https://developer.meta.com/ai/",
-      "verification_notes": "llama.com now redirects (301) to developer.meta.com/ai/. The homepage lineup shows only Llama 4 and Llama 3 tiles, no dedicated Llama 3.3 card, but the model card at developer.meta.com/ai/docs/model-cards-and-prompt-formats/llama3_3/, sourced from the GitHub MODEL_CARD.md, confirms 70B parameters, 128k context length, and the Llama 3.3 Community License Agreement. Facts unchanged from prior verification.",
+      "verification_notes": "llama.com now redirects (301) to developer.meta.com/ai/. The homepage lineup shows only Llama 4 and Llama 3 tiles, no dedicated Llama 3.3 card, but the model card at developer.meta.com/ai/docs/model-cards-and-prompt-formats/llama3_3/, sourced from the GitHub MODEL_CARD.md, confirms 70B parameters, 128k context length, and the Llama 3.3 Community License Agreement. Facts unchanged from prior verification. Re-check 2026-10-20: Meta model-card URLs redirect (llama.com to developer.meta.com to dev.meta.ai, which returned 404), so no facts could be re-confirmed. Not re-verified.",
       "description": "Meta's open-weight workhorse — the default choice when you need an open model you can host, fine-tune, or air-gap.",
       "features": [
         "Open weights — run on your own hardware",
@@ -309,7 +519,7 @@
       "released": "2025",
       "last_verified_at": "2026-05-07",
       "verification_source": "https://x.ai/api",
-      "verification_notes": "xAI retired the grok-3 API model slug on 2026-05-15 as part of the Grok 4.3 rollout (docs.x.ai/developers/migration/may-15-retirement). Requests to grok-3 now redirect to Grok 4.3. The current model table at docs.x.ai/docs/models lists only grok-4.x variants, no grok-3. Entry left unchanged per PR #59 precedent; current xAI flagship is Grok 4.6. Re-checked 2026-10-02: docs.x.ai/docs/models still lists no grok-3 (grok-4.x and grok-imagine variants only). Not re-verified.",
+      "verification_notes": "xAI retired the grok-3 API model slug on 2026-05-15 as part of the Grok 4.3 rollout (docs.x.ai/developers/migration/may-15-retirement). Requests to grok-3 now redirect to Grok 4.3. The current model table at docs.x.ai/docs/models lists only grok-4.x variants, no grok-3. Entry left unchanged per PR #59 precedent; current xAI flagship is Grok 4.6. Re-checked 2026-10-02: docs.x.ai/docs/models still lists no grok-3 (grok-4.x and grok-imagine variants only). Not re-verified. Re-check 2026-10-20: docs.x.ai/docs/models lists grok-4.3 to grok-4.7, grok-4.20 variants and grok-build-0.1; no grok-3, and no retirement note on that page. Not re-verified.",
       "description": "xAI's flagship. Relevant mainly if you need real-time X data or a less filtered default tone.",
       "features": [
         "Access to real-time X (Twitter) data",
@@ -338,7 +548,7 @@
       "released": "2024-07",
       "last_verified_at": "2026-05-07",
       "verification_source": "https://mistral.ai/pricing",
-      "verification_notes": "mistral.ai/pricing no longer lists Mistral Large 2 in its pricing tables, only a generic Mistral Large FAQ example remains. docs.mistral.ai/getting-started/models/models_overview/ confirms Mistral Large 2.0 is retired and Mistral Large 2.1 was deprecated 2026-02-27 with retirement 2026-05-31, replacement Mistral Medium 3.5. Entry left unchanged per PR #59 precedent; current flagship is Mistral Large 3. Re-checked 2026-10-02: docs.mistral.ai/getting-started/models/models_overview/ lists Mistral Large 2.0 (retired 3/30/2025) and 2.1 (deprecated 2/27/2026, retired 5/31/2026) as deprecated, no pricing. Not re-verified.",
+      "verification_notes": "mistral.ai/pricing no longer lists Mistral Large 2 in its pricing tables, only a generic Mistral Large FAQ example remains. docs.mistral.ai/getting-started/models/models_overview/ confirms Mistral Large 2.0 is retired and Mistral Large 2.1 was deprecated 2026-02-27 with retirement 2026-05-31, replacement Mistral Medium 3.5. Entry left unchanged per PR #59 precedent; current flagship is Mistral Large 3. Re-checked 2026-10-02: docs.mistral.ai/getting-started/models/models_overview/ lists Mistral Large 2.0 (retired 3/30/2025) and 2.1 (deprecated 2/27/2026, retired 5/31/2026) as deprecated, no pricing. Not re-verified. Re-check 2026-10-20: docs.mistral.ai/getting-started/models/models_overview/ lists Mistral Large 2.0 (retired 3/30/2025) and Large 2.1 (retired 5/31/2026) and a current flagship, Mistral Large 4 (v26.10). This model is retired. Not re-verified.",
       "description": "Mistral's flagship. Common pick for EU customers that want non-US-hosted inference for GDPR and sovereignty reasons.",
       "features": [
         "European (France) model — data residency option",
@@ -367,7 +577,7 @@
       "released": "2024-12",
       "last_verified_at": "2026-05-07",
       "verification_source": "https://api-docs.deepseek.com/quick_start/pricing",
-      "verification_notes": "api-docs.deepseek.com/quick_start/pricing now lists only deepseek-v4-flash, deepseek-v4-pro, and deepseek-v4-flash-vision-exp. The deepseek-chat and deepseek-reasoner (V3) model IDs were retired 2026-07-24 15:59 UTC. V3 weights remain accessible via third-party hosts such as OpenRouter but are no longer served by DeepSeek's own API. Entry left unchanged per PR #59 precedent. Re-checked 2026-10-02: api-docs.deepseek.com/quick_start/pricing lists only deepseek-flash and deepseek-v4-pro; no V3, deepseek-chat or deepseek-reasoner. Not re-verified.",
+      "verification_notes": "api-docs.deepseek.com/quick_start/pricing now lists only deepseek-v4-flash, deepseek-v4-pro, and deepseek-v4-flash-vision-exp. The deepseek-chat and deepseek-reasoner (V3) model IDs were retired 2026-07-24 15:59 UTC. V3 weights remain accessible via third-party hosts such as OpenRouter but are no longer served by DeepSeek's own API. Entry left unchanged per PR #59 precedent. Re-checked 2026-10-02: api-docs.deepseek.com/quick_start/pricing lists only deepseek-flash and deepseek-v4-pro; no V3, deepseek-chat or deepseek-reasoner. Not re-verified. Re-check 2026-10-20: api-docs.deepseek.com/quick_start/pricing lists only deepseek-flash and deepseek-v4-pro; no V3, deepseek-chat or deepseek-reasoner. Not re-verified.",
       "description": "DeepSeek's flagship open-weights MoE model. Chosen when price and open weights matter more than vendor reputation.",
       "features": [
         "Open weights",
