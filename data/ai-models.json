@@ -1,7 +1,7 @@
 {
   "_meta": {
     "schemaVersion": 1,
-    "lastVerified": "2026-10-02",
+    "lastVerified": "2026-10-20",
     "stalenessThresholdDays": 60,
     "notes": "Multi-vendor AI model facts. Single source of truth for /ai-models, /claude-vs-chatgpt, and any page that quotes pricing or capability claims for non-Claude models. For Claude-only API model IDs and detailed plan data, see data/claude-models.json. This file mirrors top-level facts and adds non-Claude vendors. Update each entry's last_verified_at when you re-check it against the source. Monthly GitHub Actions cron flags entries older than stalenessThresholdDays."
   },
@@ -121,7 +121,7 @@
         "Vision input support",
         "Suitable for sub-agents and batched pipelines"
       ],
-      "verification_notes": "Verified 2026-10-02: models overview lists Haiku 4.5 as a current model, retirement not sooner than October 15, 2026."
+      "verification_notes": "Checked 2026-10-20: the models overview now lists Haiku 4.5 under legacy models (still available), not the current lineup, which is Claude Haiku 5.5. Earlier check 2026-10-02 listed it as current, retirement not sooner than October 15, 2026. Not re-verified."
     },
     {
       "id": "gpt-5",
@@ -170,8 +170,9 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-05",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://developers.openai.com/api/docs/models/gpt-4o",
+      "verification_notes": "Verified 2026-10-20: model page shows $2.5 input and $10 output per 1M tokens, 128,000 context window, no deprecation or shutdown notice.",
       "description": "OpenAI's omni model — good multimodal default when latency and cost matter more than absolute reasoning quality.",
       "features": [
         "Omni-modal: text, vision, and audio in one model",
@@ -196,8 +197,9 @@
       "context_window": 128000,
       "context_window_label": "128K tokens",
       "released": "2024-07",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://developers.openai.com/api/docs/models/gpt-4o-mini",
+      "verification_notes": "Verified 2026-10-20: model page shows $0.15 input and $0.6 output per 1M tokens, 128,000 context window, no deprecation or shutdown notice.",
       "description": "OpenAI's small, cheap multimodal sibling of GPT-4o — strong default for high-volume tasks where latency and cost dominate.",
       "features": [
         "Lowest-cost multimodal OpenAI model",
@@ -252,9 +254,9 @@
       "context_window": 1000000,
       "context_window_label": "1M tokens",
       "released": "2025",
-      "last_verified_at": "2026-10-02",
+      "last_verified_at": "2026-10-20",
       "verification_source": "https://ai.google.dev/gemini-api/docs/pricing",
-      "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority). Verified 2026-10-02: input token limit 1,048,576. Google states access to 2.5 models is limited to users who have actively used them.",
+      "verification_notes": "Pricing varies by inference mode (Standard / Batch / Flex / Priority). Re-verified 2026-10-20 on the pricing page: Standard $0.30 input and $2.50 output, Priority up to $1.80 audio input and $4.50 output, 1M token context window, no deprecation notice. Verified 2026-10-02: input token limit 1,048,576. Google states access to 2.5 models is limited to users who have actively used them.",
       "description": "Gemini's low-cost tier. Strong choice for high-volume, long-context workloads where Flash quality is good enough.",
       "features": [
         "Cheap and fast sibling of Gemini 2.5 Pro",
