@@ -7,6 +7,15 @@ Used for:
 The cron should keep these in sync with `data/claude-models.json` (Claude rows)
 and `data/ai-models.json` (non-Claude rows) when models drift;
 out-of-date pricing here only affects cost accounting, not pipeline correctness.
+
+Keys are the observatory run enum (providers.py, lib/observatory/load_corpus.ts),
+not data/ai-models.json ids, so the two lists legitimately differ. Never rename
+or drop a key: an unknown model prices at 0.0 and disables the cost cap.
+Prices are what the observatory actually pays its provider: llama-3.3-70b runs
+on Groq, so it carries Groq's price, not the cheapest OpenRouter host.
+
+Last verified 2026-10-20 against the OpenRouter API (openrouter.ai/api/v1/models;
+Groq row from the llama-3.3-70b-instruct /endpoints list): all 8 rows unchanged.
 """
 from __future__ import annotations
 
