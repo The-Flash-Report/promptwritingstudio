@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import VideoEmbed from '../components/ui/VideoEmbed'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 import { getAIModelById } from '../lib/ai-models'
 
@@ -283,6 +284,14 @@ export default function ClaudeForWriting() {
 - Never start a sentence with "In today's".
 - Ban-list: leverage, robust, seamless, unlock, delve, navigate.
 - Write for: [describe the exact reader].`}</pre>
+            </div>
+
+            <div className="mt-10">
+              <VideoEmbed
+                videoId="GRylWQKlN8U"
+                heading="The voice setup, on screen"
+                context="This is the same idea done live: loading my own writing into a Claude Project so the voice rules stick across every chat instead of being re-pasted each time. It also covers how a Claude Project differs from a ChatGPT custom bot, which is the question that usually follows."
+              />
             </div>
           </div>
         </section>

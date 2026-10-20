@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/layout/Layout'
+import VideoEmbed from '../components/ui/VideoEmbed'
 import { generateFAQSchema, generateArticleSchema } from '../lib/schemaGenerator'
 import { getAIModelById } from '../lib/ai-models'
 
@@ -122,8 +123,8 @@ export default function HowToUseClaude() {
   return (
     <>
       <Head>
-        <title>How to Use Claude: A Beginner's Guide (2026) | PromptWritingStudio</title>
-        <meta name="description" content="How to use Claude AI, explained for beginners: create an account, write prompts that work, understand the Opus/Sonnet/Haiku models, pick free vs paid, and copy-paste prompt templates to start today." />
+        <title>How to Use Claude: The Setup I Use Every Day (2026 Beginner Guide) | PromptWritingStudio</title>
+        <meta name="description" content="I have used Claude daily since 2024 to run a content business. Here is the setup I would hand a beginner: account, the prompt pattern that does most of the work, Opus vs Sonnet vs Haiku, free vs paid, and copy-paste templates." />
         <meta name="keywords" content="how to use claude, how to use claude ai, claude ai beginner guide, claude ai tutorial, getting started with claude, claude prompts for beginners" />
         <meta property="og:title" content="How to Use Claude: A Beginner's Guide (2026)" />
         <meta property="og:description" content="A plain-English beginner's guide to using Claude AI — accounts, prompting basics, the models explained, plans, and copy-paste templates." />
@@ -137,15 +138,15 @@ export default function HowToUseClaude() {
       <Layout>
         <section className="gradient-bg py-16 md:py-24">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <p className="text-[#FFDE59] font-semibold text-lg mb-4">Beginner's guide — updated June 2026</p>
+            <p className="text-[#FFDE59] font-semibold text-lg mb-4">Beginner's guide, updated June 2026</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               How to Use Claude
-              <span className="block text-[#FFDE59]">A plain-English guide for beginners</span>
+              <span className="block text-[#FFDE59]">The setup I actually use, not the docs version</span>
             </h1>
 
             <div className="max-w-3xl mx-auto bg-white/10 border-l-4 border-[#FFDE59] p-6 mb-8 rounded-r-lg text-left">
               <p className="text-lg leading-relaxed text-gray-100">
-                To use Claude, go to claude.ai, create a free account, and type what you want done in plain English. Claude is an AI assistant from Anthropic that writes, summarises, explains, and analyses for you. The only skill that really matters is the prompt — giving Claude clear context gets dramatically better results than asking a vague question. This guide takes you from your first chat to prompts that actually work.
+                The mechanics take a minute: go to claude.ai, create a free account, type what you want in plain English. What takes longer is getting output you would actually publish. I have been using Claude since 2024 to run a content business, drafting in my own voice, writing LinkedIn posts and email copy, and briefing thumbnails, and almost all of the improvement came from two habits: loading context up front, and never trusting a fact it hands me. This guide is those two lessons, in the order I would teach them.
               </p>
             </div>
 
@@ -167,7 +168,7 @@ export default function HowToUseClaude() {
               <strong>Claude is an AI assistant built by Anthropic.</strong> You talk to it in normal language and it talks back — writing drafts, rewriting your text, summarising documents, explaining hard topics, and answering questions. It works in your browser at claude.ai, with no setup required for everyday use.
             </p>
             <p className="text-lg text-[#333333] mb-4">
-              If you have used ChatGPT, Claude will feel familiar. The differences show up in the work: Claude is widely preferred by writers for natural-sounding prose, and it is strong at following detailed instructions and handling long documents.
+              If you have used ChatGPT, Claude will feel familiar. The differences show up in the work. I ran both against the same content jobs and recorded the result: Claude is the one I reach for on prose, long documents, and anything where I have given detailed instructions I want followed literally. ChatGPT still wins other jobs, and the honest comparison is on the <Link href="/claude-vs-chatgpt" className="text-[#1A1A1A] underline font-semibold">Claude vs ChatGPT page</Link>.
             </p>
             <p className="text-lg text-[#333333]">
               This page is about using Claude in the chat app for everyday tasks. If you are a developer who wants Claude to edit files and run code in your terminal, that is a separate tool — see our <Link href="/claude-code-guide" className="text-[#1A1A1A] underline font-semibold">Claude Code guide</Link>.
@@ -189,6 +190,14 @@ export default function HowToUseClaude() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-10">
+              <VideoEmbed
+                videoId="IgqmJQk3O6U"
+                heading="Watch the setup end to end"
+                context="If you would rather follow along than read, this is the same ground covered on screen: creating the account, setting your preferences, and building the project templates you will reuse every week."
+              />
             </div>
           </div>
         </section>
@@ -221,9 +230,12 @@ export default function HowToUseClaude() {
 
         <section className="py-16 bg-[#F9F9F9]">
           <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">The biggest beginner mistake to avoid</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">The habit that took me longest to build</h2>
+            <p className="text-lg text-[#333333] mb-6">
+              Everything above is setup. This is the part that decides whether Claude makes your work better or quietly worse, and it is a habit rather than a setting.
+            </p>
             <div className="bg-white p-6 rounded-lg border-l-4 border-[#FFDE59]">
-              <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Trusting facts and numbers without checking</h3>
+              <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">Never ship a fact or number you did not check yourself</h3>
               <p className="text-[#333333] mb-3">
                 Claude can state something with full confidence and still be wrong — a fabricated statistic, a misremembered date, a citation that does not exist. This is called a hallucination, and every AI assistant does it.
               </p>
