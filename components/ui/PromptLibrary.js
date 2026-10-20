@@ -16,7 +16,7 @@ export default function PromptLibrary({ onPromptSelect }) {
   const [userPrompts, setUserPrompts] = useState([])
   const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
   const [showNewPromptModal, setShowNewPromptModal] = useState(false)
-  const [sortBy, setSortBy] = useState('popularity') // popularity, recent, alphabetical
+  const [sortBy, setSortBy] = useState('recent') // recent, alphabetical
   const [filterBy, setFilterBy] = useState('all') // all, beginner, intermediate, advanced
 
   const categories = ['all', ...getPromptCategories(), 'user-created']
@@ -70,10 +70,7 @@ export default function PromptLibrary({ onPromptSelect }) {
       useCase: promptData.useCase || '',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
-      author: 'You',
-      likes: 0,
-      uses: 0,
-      optimizationScore: 70 // Default score for user prompts
+      author: 'You'
     }
     
     const updatedUserPrompts = [...userPrompts, newPrompt]
@@ -92,19 +89,6 @@ export default function PromptLibrary({ onPromptSelect }) {
     }
     setFavorites(newFavorites)
     localStorage.setItem('favoritePrompts', JSON.stringify([...newFavorites]))
-  }
-
-  // Increment usage count
-  const incrementUsage = (promptId) => {
-    if (promptId.startsWith('user_')) {
-      const updatedUserPrompts = userPrompts.map(prompt => 
-        prompt.id === promptId 
-          ? { ...prompt, uses: prompt.uses + 1 }
-          : prompt
-      )
-      setUserPrompts(updatedUserPrompts)
-      localStorage.setItem('userPrompts', JSON.stringify(updatedUserPrompts))
-    }
   }
 
   // Filter and sort prompts
@@ -133,17 +117,11 @@ export default function PromptLibrary({ onPromptSelect }) {
 
     // Sort
     switch (sortBy) {
-      case 'popularity':
-        filtered.sort((a, b) => ((b.likes || 0) + (b.uses || 0)) - ((a.likes || 0) + (a.uses || 0)))
-        break
       case 'recent':
         filtered.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
         break
       case 'alphabetical':
         filtered.sort((a, b) => a.title.localeCompare(b.title))
-        break
-      case 'optimization':
-        filtered.sort((a, b) => (b.optimizationScore || 0) - (a.optimizationScore || 0))
         break
     }
 
@@ -233,10 +211,8 @@ export default function PromptLibrary({ onPromptSelect }) {
             onChange={(e) => setSortBy(e.target.value)}
             className="p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
           >
-            <option value="popularity">Most Popular</option>
             <option value="recent">Most Recent</option>
             <option value="alphabetical">A-Z</option>
-            <option value="optimization">Best Optimized</option>
           </select>
 
           {/* Favorites Toggle */}
@@ -272,9 +248,6 @@ export default function PromptLibrary({ onPromptSelect }) {
                     <span className={`px-2 py-1 rounded text-xs font-medium ${getDifficultyColor(prompt.difficulty)}`}>
                       {prompt.difficulty}
                     </span>
-                    <span className="text-xs text-gray-500">
-                      Score: {prompt.optimizationScore}/100
-                    </span>
                   </div>
                 </div>
                 <button
@@ -308,8 +281,6 @@ export default function PromptLibrary({ onPromptSelect }) {
               {/* Stats and Actions */}
               <div className="flex justify-between items-center text-sm text-gray-500 mb-3">
                 <div className="flex gap-4">
-                  <span>♥ {prompt.likes || 0}</span>
-                  <span>↗ {prompt.uses || 0}</span>
                   {prompt.estimatedTime && <span>⏱ {prompt.estimatedTime}</span>}
                 </div>
               </div>

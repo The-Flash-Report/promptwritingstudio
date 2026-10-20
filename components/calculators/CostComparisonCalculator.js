@@ -1,77 +1,77 @@
 import { useState } from 'react'
+import EmailCapture from '../ui/EmailCapture'
+import LastVerified from '../LastVerified'
+import subscriptionPricing from '../../data/subscription-pricing.json'
 
 export default function CostComparisonCalculator() {
   const [formData, setFormData] = useState({
     taskType: '',
     volume: '',
     humanCost: '',
-    aiTool: '',
-    email: ''
+    aiTool: ''
   })
   const [results, setResults] = useState(null)
-  const [showEmailCapture, setShowEmailCapture] = useState(false)
-  const [emailSubmitted, setEmailSubmitted] = useState(false)
 
   const taskTypes = [
-    { 
-      value: 'content-writing', 
-      label: 'Content Writing', 
+    {
+      value: 'content-writing',
+      label: 'Content Writing',
       unit: 'articles/month',
       humanTime: 3,
       aiTime: 0.5,
       quality: 0.85
     },
-    { 
-      value: 'customer-support', 
-      label: 'Customer Support', 
+    {
+      value: 'customer-support',
+      label: 'Customer Support',
       unit: 'tickets/month',
       humanTime: 0.25,
       aiTime: 0.05,
       quality: 0.80
     },
-    { 
-      value: 'data-analysis', 
-      label: 'Data Analysis', 
+    {
+      value: 'data-analysis',
+      label: 'Data Analysis',
       unit: 'reports/month',
       humanTime: 8,
       aiTime: 1.5,
       quality: 0.90
     },
-    { 
-      value: 'social-media', 
-      label: 'Social Media Management', 
+    {
+      value: 'social-media',
+      label: 'Social Media Management',
       unit: 'posts/month',
       humanTime: 0.5,
       aiTime: 0.1,
       quality: 0.75
     },
-    { 
-      value: 'email-marketing', 
-      label: 'Email Marketing', 
+    {
+      value: 'email-marketing',
+      label: 'Email Marketing',
       unit: 'emails/month',
       humanTime: 2,
       aiTime: 0.25,
       quality: 0.85
     },
-    { 
-      value: 'product-descriptions', 
-      label: 'Product Descriptions', 
+    {
+      value: 'product-descriptions',
+      label: 'Product Descriptions',
       unit: 'descriptions/month',
       humanTime: 0.75,
       aiTime: 0.1,
       quality: 0.90
     },
-    { 
-      value: 'research', 
-      label: 'Research & Analysis', 
+    {
+      value: 'research',
+      label: 'Research & Analysis',
       unit: 'research projects/month',
       humanTime: 12,
       aiTime: 2,
       quality: 0.85
     },
-    { 
-      value: 'translations', 
-      label: 'Translation Services', 
+    {
+      value: 'translations',
+      label: 'Translation Services',
       unit: 'pages/month',
       humanTime: 0.5,
       aiTime: 0.05,
@@ -79,12 +79,14 @@ export default function CostComparisonCalculator() {
     }
   ]
 
-  const aiTools = [
-    { value: 'chatgpt-plus', label: 'ChatGPT Plus', cost: 20 },
-    { value: 'claude-pro', label: 'Claude Pro', cost: 20 },
-    { value: 'multiple-tools', label: 'Multiple AI Tools', cost: 60 },
-    { value: 'enterprise-ai', label: 'Enterprise AI Suite', cost: 200 }
-  ]
+  // AI subscription prices come from the dated data/subscription-pricing.json
+  // source (each plan carries its own source_url + last_verified), never
+  // hardcoded here.
+  const aiTools = subscriptionPricing.plans.map(plan => ({
+    value: plan.id,
+    label: plan.label,
+    cost: plan.monthly_usd
+  }))
 
   const handleInputChange = (e) => {
     setFormData({
@@ -98,7 +100,7 @@ export default function CostComparisonCalculator() {
     const humanCostPerHour = parseFloat(formData.humanCost)
     const selectedTask = taskTypes.find(task => task.value === formData.taskType)
     const selectedAI = aiTools.find(tool => tool.value === formData.aiTool)
-    
+
     if (!volume || !humanCostPerHour || !selectedTask || !selectedAI) return
 
     // Human calculations
@@ -142,15 +144,6 @@ export default function CostComparisonCalculator() {
     }
 
     setResults(calculatedResults)
-    setShowEmailCapture(true)
-  }
-
-  const handleEmailSubmit = async (e) => {
-    e.preventDefault()
-    
-    // TODO: Integration with email service
-    console.log('Email submitted:', formData.email, 'Results:', results)
-    setEmailSubmitted(true)
   }
 
   const resetCalculator = () => {
@@ -158,12 +151,9 @@ export default function CostComparisonCalculator() {
       taskType: '',
       volume: '',
       humanCost: '',
-      aiTool: '',
-      email: ''
+      aiTool: ''
     })
     setResults(null)
-    setShowEmailCapture(false)
-    setEmailSubmitted(false)
   }
 
   return (
@@ -256,6 +246,11 @@ export default function CostComparisonCalculator() {
                   </option>
                 ))}
               </select>
+              <LastVerified
+                date={subscriptionPricing.last_updated}
+                label="Plan prices last verified"
+                className="mt-2"
+              />
             </div>
 
             <button
@@ -266,14 +261,14 @@ export default function CostComparisonCalculator() {
               Compare Costs
             </button>
           </div>
-        ) : !emailSubmitted ? (
+        ) : (
           // Results + Email Capture
           <div className="space-y-6">
             <div className="text-center mb-6">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
                 AI vs Human: Cost Comparison Results
               </h3>
-              
+
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 {/* Human Cost Card */}
                 <div className="bg-red-50 border border-red-200 p-6 rounded-lg">
@@ -363,99 +358,35 @@ export default function CostComparisonCalculator() {
               </div>
             </div>
 
-            {!showEmailCapture ? (
-              <button
-                onClick={() => setShowEmailCapture(true)}
-                className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors duration-200"
-              >
-                Get Detailed Implementation Guide
-              </button>
-            ) : (
-              <form onSubmit={handleEmailSubmit} className="space-y-4">
-                <div className="text-center mb-4">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-2">
-                    Get Your AI vs Human Implementation Guide
-                  </h4>
-                  <p className="text-gray-600">
-                    Receive a detailed breakdown with specific tools, implementation steps, and ROI tracking templates.
-                  </p>
-                </div>
-                
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder="your@email.com"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                
-                <button
-                  type="submit"
-                  className="w-full bg-gray-800 text-white py-4 rounded-lg font-bold text-lg hover:bg-gray-900 transition-colors duration-200"
-                >
-                  Send My Implementation Guide
-                </button>
-                
-                <p className="text-xs text-gray-500 text-center">
-                  We'll also send you our weekly AI automation insights. Unsubscribe anytime.
+            {/* Newsletter capture: real Netlify Forms -> Resend pipeline */}
+            <div className="border-t border-gray-200 pt-6">
+              <div className="text-center mb-4">
+                <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                  Get Your AI vs Human Implementation Guide
+                </h4>
+                <p className="text-gray-600">
+                  Receive a detailed breakdown with specific tools, implementation steps, and ROI tracking templates.
                 </p>
-              </form>
-            )}
-
-            <button
-              onClick={resetCalculator}
-              className="w-full text-gray-500 hover:text-gray-700 py-2"
-            >
-              Compare a different task →
-            </button>
-          </div>
-        ) : (
-          // Success State
-          <div className="text-center space-y-6">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            
-            <div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                Check Your Email!
-              </h3>
-              <p className="text-gray-600 mb-4">
-                We've sent your AI vs Human implementation guide to <strong>{formData.email}</strong>
-              </p>
-              <p className="text-gray-600 mb-6">
-                Your potential yearly savings: <span className="text-2xl font-bold text-green-600">${results.yearlySavings}</span>
-              </p>
-            </div>
-
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h4 className="font-semibold text-gray-800 mb-3">
-                Ready to implement AI in your business?
-              </h4>
-              <p className="text-gray-600 mb-4">
-                Browse our free AI prompt examples to find the exact prompts and processes to achieve these savings.
-              </p>
-              <a
-                href="/ai-prompt-examples"
-                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors duration-200"
-              >
-                Browse Free Prompt Examples
-              </a>
+              </div>
+              <div className="flex justify-center">
+                <EmailCapture
+                  source="calculator-ai-cost-comparison"
+                  theme="light"
+                  label="We'll also send you our weekly AI automation insights. Unsubscribe anytime."
+                  buttonText="Send My Implementation Guide"
+                />
+              </div>
             </div>
 
             <button
               onClick={resetCalculator}
               className="w-full text-gray-500 hover:text-gray-700 py-2"
             >
-              Compare another task →
+              Compare a different task
             </button>
           </div>
         )}
       </div>
     </div>
   )
-} 
+}

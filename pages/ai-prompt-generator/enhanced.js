@@ -262,7 +262,7 @@ export default function EnhancedAIPromptGenerator() {
 
                     {/* Top Prompts */}
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-4">Popular Prompts</h3>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-4">Prompts to Try</h3>
                       <div className="space-y-3">
                         {topPrompts.map(prompt => (
                           <div key={prompt.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
@@ -270,8 +270,6 @@ export default function EnhancedAIPromptGenerator() {
                               <div className="font-medium text-gray-800 text-sm truncate">{prompt.title}</div>
                               <div className="text-xs text-gray-600 flex items-center gap-2">
                                 <span className="bg-gray-200 px-2 py-0.5 rounded text-xs">{prompt.category}</span>
-                                <span>♥ {prompt.likes}</span>
-                                <span>↗ {prompt.uses}</span>
                               </div>
                             </div>
                             <button
@@ -377,7 +375,7 @@ export default function EnhancedAIPromptGenerator() {
                 <span className="text-2xl">📚</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 mb-2">Professional Library</h3>
-              <p className="text-gray-600">Access curated prompt templates with optimization scores, usage analytics, and community favorites</p>
+              <p className="text-gray-600">Access curated prompt templates organized by category and difficulty</p>
             </div>
           </div>
         </div>

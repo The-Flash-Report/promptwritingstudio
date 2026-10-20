@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useCalculatorTracking } from '../ui/CalculatorAnalytics'
 import SocialShare from '../ui/SocialShare'
 import LoadingSpinner from '../ui/LoadingSpinner'
+import EmailCapture from '../ui/EmailCapture'
 
 export default function CustomerServiceAICalculator() {
   const [formData, setFormData] = useState({
@@ -16,7 +17,6 @@ export default function CustomerServiceAICalculator() {
   const [results, setResults] = useState(null)
   const [isCalculating, setIsCalculating] = useState(false)
   const [showEmailCapture, setShowEmailCapture] = useState(false)
-  const [emailSubmitted, setEmailSubmitted] = useState(false)
 
   const { trackCalculatorStart, trackCalculatorComplete, trackCTAClick } = useCalculatorTracking('Customer Service AI Calculator')
 
@@ -129,13 +129,6 @@ export default function CustomerServiceAICalculator() {
       yearlySavings: yearlySavings,
       roi: calculatedResults.roi
     })
-  }
-
-  const handleEmailSubmit = (e) => {
-    e.preventDefault()
-    setEmailSubmitted(true)
-    setShowEmailCapture(false)
-    // Here you would typically send the email and results to your backend
   }
 
   return (
@@ -366,41 +359,20 @@ export default function CustomerServiceAICalculator() {
             <p className="text-gray-600 mb-4">
               Enter your email to receive a comprehensive AI implementation roadmap based on your results.
             </p>
-            <form onSubmit={handleEmailSubmit}>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="your@email.com"
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg mb-4"
-              />
-              <div className="flex gap-3">
-                <button
-                  type="submit"
-                  className="flex-1 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700"
-                >
-                  Get Report
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setShowEmailCapture(false)}
-                  className="px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
-                >
-                  Skip
-                </button>
-              </div>
-            </form>
+            <EmailCapture
+              theme="light"
+              source="calculator-customer-service-ai"
+              label=""
+              buttonText="Get Report"
+            />
+            <button
+              type="button"
+              onClick={() => setShowEmailCapture(false)}
+              className="mt-4 px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50"
+            >
+              Skip
+            </button>
           </div>
-        </div>
-      )}
-
-      {emailSubmitted && (
-        <div className="mt-4 bg-green-50 border border-green-200 rounded-lg p-4">
-          <p className="text-green-700 font-medium">
-            ✅ Report sent! Check your email for the detailed AI implementation roadmap.
-          </p>
         </div>
       )}
     </div>
