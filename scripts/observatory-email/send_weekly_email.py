@@ -4,7 +4,9 @@ Observatory Weekly Best-Mover Email
 
 Reads the latest observatory run from data/observatory/runs/, finds the model+prompt
 combination with the largest positive score_change, builds a deterministic email,
-and pushes it to Kit as a draft broadcast (no send_at -- Bryan schedules manually).
+and pushes it to Resend as a draft broadcast to the PromptWritingStudio list (never
+sent automatically -- Bryan reviews and sends from Resend). Moved off Kit 2026-11-04,
+when Kit dropped to its free plan.
 
 Usage:
     python3 scripts/observatory-email/send_weekly_email.py [--dry-run] [--run-id YYYY-MM-DD]
@@ -13,7 +15,8 @@ Usage:
     --run-id    Override which run to use. Defaults to the most recent run.
 
 Environment:
-    CONVERTKIT_API_SECRET  Kit API secret. Required unless --dry-run.
+    RESEND_API_KEY        Resend API key. Required unless --dry-run.
+    RESEND_SEGMENT_ID     Optional override for the PromptWritingStudio segment.
 
 Exit codes:
     0  Success or deliberate skip (no mover above threshold, no runs).
@@ -32,7 +35,14 @@ RUNS_DIR = REPO_ROOT / "data" / "observatory" / "runs"
 PROMPTS_DIR = REPO_ROOT / "data" / "observatory" / "prompts"
 CONFIG_PATH = REPO_ROOT / "config" / "observatory-email.json"
 
-KIT_API_URL = "https://api.kit.com/v4/broadcasts"
+RESEND_BROADCASTS_URL = "https://api.resend.com/broadcasts"
+# Resend segment "PromptWritingStudio · newsletter" and its topic, so the unsubscribe
+# page scopes to this list instead of "Unsubscribe All".
+PWS_SEGMENT_ID = "8758d410-436e-49f5-b20f-a0623a976242"
+PWS_TOPIC_ID = "3efe3ee6-6f50-4621-a183-1e67aa7662b7"
+FROM = "PromptWritingStudio <hello@send.promptwritingstudio.com>"
+# Resend sits behind Cloudflare, which rejects some default client User-Agents.
+USER_AGENT = "pws-observatory-email/1.0"
 
 # Deterministic commentary by score_change magnitude (integers only per schema).
 # Threshold is 2, so score_change is always >= 2 when this is called.
@@ -127,7 +137,7 @@ def render_html(model_name, score_change, prompt_title, observatory_url, vendor_
             f'<a href="{vendor_link}">{vendor_link}</a></p>'
         )
 
-    # Kit adds its own unsubscribe footer to all broadcasts automatically.
+    # Resend needs the unsubscribe placeholder in the body; it adds nothing itself.
     return (
         f"<p>{commentary}</p>\n"
         f"\n"
@@ -137,32 +147,35 @@ def render_html(model_name, score_change, prompt_title, observatory_url, vendor_
         f"<p>See the full results: "
         f'<a href="{observatory_url}">{observatory_url}</a></p>'
         f"{vendor_block}"
+        f"\n<p style=\"font-size:12px;color:#9ca3af\">Consistent Publishing Ltd, Landscape House, "
+        f"Baldonnell Business Park, Dublin D22 P3K7, Ireland<br>"
+        f'<a href="{{{{{{RESEND_UNSUBSCRIBE_URL}}}}}}" style="color:#9ca3af">Unsubscribe</a></p>'
     )
 
 
-def create_kit_draft(api_key, subject, html_body):
-    """Push a draft broadcast to Kit (no send_at -- draft only).
+def create_resend_draft(api_key, subject, html_body):
+    """Create a draft broadcast in Resend (send=false, so nothing goes out).
 
     Returns (success: bool, broadcast_id_or_error: str).
     """
     headers = {
-        "X-Kit-Api-Key": api_key,
+        "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
+        "User-Agent": USER_AGENT,
     }
     payload = {
+        "name": f"PWS Observatory: {subject}",
+        "segment_id": os.environ.get("RESEND_SEGMENT_ID") or PWS_SEGMENT_ID,
+        "topic_id": PWS_TOPIC_ID,
+        "from": FROM,
         "subject": subject,
-        "content": html_body,
-        "description": subject,
         "preview_text": subject[:150],
-        "public": True,
-        "subscriber_filter": [{"all": None, "any": None, "none": None}],
-        # No send_at -- Bryan reviews and schedules the draft manually.
+        "html": html_body,
     }
     try:
-        resp = requests.post(KIT_API_URL, json=payload, headers=headers, timeout=30)
+        resp = requests.post(RESEND_BROADCASTS_URL, json=payload, headers=headers, timeout=30)
         resp.raise_for_status()
-        broadcast_id = resp.json().get("broadcast", {}).get("id", "unknown")
-        return True, str(broadcast_id)
+        return True, str(resp.json().get("id", "unknown"))
     except requests.exceptions.RequestException as e:
         detail = ""
         if hasattr(e, "response") and e.response is not None:
@@ -228,33 +241,32 @@ def main():
     if args.dry_run:
         # Dry-run: no HTTP calls made beyond this point.
         payload = {
+            "segment_id": PWS_SEGMENT_ID,
+            "topic_id": PWS_TOPIC_ID,
+            "from": FROM,
             "subject": subject,
-            "content": html_body,
-            "description": subject,
             "preview_text": subject[:150],
-            "public": True,
-            "subscriber_filter": [{"all": None, "any": None, "none": None}],
+            "html": html_body,
         }
         print("DRY RUN -- would-send payload:")
         print(json.dumps(payload, indent=2))
         sys.exit(0)
 
-    api_key = os.environ.get("CONVERTKIT_API_SECRET")
+    api_key = os.environ.get("RESEND_API_KEY")
     if not api_key:
         print(
-            "HALT: CONVERTKIT_API_SECRET not set.\n"
-            "Add it via: gh secret set CONVERTKIT_API_SECRET\n"
-            "Use the same Kit API key as ~/src/zettelkasten/scripts/schedule-newsletter.py.",
+            "HALT: RESEND_API_KEY not set.\n"
+            "Add it via: gh secret set RESEND_API_KEY -R The-Flash-Report/promptwritingstudio",
             file=sys.stderr,
         )
         sys.exit(1)
 
-    success, result = create_kit_draft(api_key, subject, html_body)
+    success, result = create_resend_draft(api_key, subject, html_body)
     if success:
-        print(f"Kit draft created (ID: {result}). Review at https://app.kit.com/broadcasts")
-        print("Bryan: open the draft, add send_at, and publish when ready.")
+        print(f"Resend draft created (ID: {result}). Review at https://resend.com/broadcasts/{result}")
+        print("Bryan: review the draft and send it from Resend when ready.")
     else:
-        print(f"Kit API error: {result}", file=sys.stderr)
+        print(f"Resend API error: {result}", file=sys.stderr)
         sys.exit(1)
 
 
