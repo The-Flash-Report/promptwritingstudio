@@ -1,17 +1,17 @@
-// POST /api/grade/[id]/email  { email, source? }
-// Emails the full grade report for a stored grade record to the given address
-// and adds the address to the PromptWritingStudio Resend segment. This is the
-// capture at the value moment: a completed grade converts to a list signup.
-//
-// The report renders an already-persisted, already-paid-for record and never
-// calls the AI gateway. Ownership is not required: the record id is a ~72-bit
-// unguessable handle minted at grade time, and a per-IP daily cap limits abuse.
-// The report email IS the welcome moment, so no separate welcome email fires.
+// POST /api/grade/[id]/email  { email, source?, form_id?, signup_page?, signup_utm_*?, signup_referrer? }
+// Emails the full grade report for a stored grade record to the given address,
+// adds the address to the PromptWritingStudio Resend segment with set-if-empty
+// attribution properties, and emits server-side PostHog Signup Confirmed / Failed.
 
 import { getRecord } from '../../../../lib/grades/store'
 import { renderGradeReportEmail, isEditsRecord } from '../../../../lib/grades/reportEmail'
 import { checkReportEmailRateLimit, REPORT_EMAILS_DAILY_MAX } from '../../../../lib/grades/emailRateLimit'
-import { addContactToSegment, sendEmail } from '../../../../lib/email/resend'
+import {
+  addContactToSegment,
+  buildAttribution,
+  capturePostHogEvent,
+  sendEmail,
+} from '../../../../lib/email/resend'
 
 // Source attribution applied at the API boundary so the two grader surfaces
 // stay measurable in Resend: prompt-grader-report vs agent-prompt-grader-report.
@@ -35,20 +35,41 @@ export default async function handler(req, res) {
   }
 
   const { id } = req.query
-  const { email } = req.body || {}
+  const body = req.body || {}
+  const { email } = body
+  const attribution = buildAttribution(body, req.headers || {}, 'grade-report-email')
+
   if (!id) {
+    await capturePostHogEvent({
+      event: 'Signup Failed',
+      email: email || 'missing',
+      attribution,
+      extraProperties: { reason: 'bad_request' },
+    })
     return res.status(400).json({ error: 'Missing grade id.', code: 'bad_request' })
   }
 
   const clean = typeof email === 'string' ? email.trim().toLowerCase() : ''
   if (!EMAIL_RE.test(clean)) {
     // Validate before consuming the rate budget so a bad address is cheap.
+    await capturePostHogEvent({
+      event: 'Signup Failed',
+      email: clean || 'invalid',
+      attribution,
+      extraProperties: { reason: 'bad_email' },
+    })
     return res.status(400).json({ error: 'Enter a valid email address.', code: 'bad_email' })
   }
 
   const { allowed, retryAfterSec } = checkReportEmailRateLimit(req)
   if (!allowed) {
     res.setHeader('Retry-After', String(retryAfterSec))
+    await capturePostHogEvent({
+      event: 'Signup Failed',
+      email: clean,
+      attribution,
+      extraProperties: { reason: 'rate_limited' },
+    })
     return res.status(429).json({
       error: `You have sent your ${REPORT_EMAILS_DAILY_MAX} report emails for today. Try again tomorrow.`,
       code: 'rate_limited',
@@ -60,11 +81,23 @@ export default async function handler(req, res) {
     record = await getRecord(id, { strong: true })
   } catch (err) {
     console.error('Report email load failed:', err?.name || 'UnknownError')
+    await capturePostHogEvent({
+      event: 'Signup Failed',
+      email: clean,
+      attribution,
+      extraProperties: { reason: 'store_error' },
+    })
     return res.status(500).json({ error: 'Could not load this grade.' })
   }
 
   // Same 404 for missing, flagged, and scoreless so a caller cannot probe ids.
   if (!record || record.flagged || !record.grade) {
+    await capturePostHogEvent({
+      event: 'Signup Failed',
+      email: clean,
+      attribution,
+      extraProperties: { reason: 'not_found' },
+    })
     return res.status(404).json({ error: 'Grade not found.', code: 'not_found' })
   }
 
@@ -76,6 +109,12 @@ export default async function handler(req, res) {
 
   if (!apiKey) {
     console.warn('Report email: RESEND_API_KEY missing, send skipped')
+    await capturePostHogEvent({
+      event: 'Signup Failed',
+      email: clean,
+      attribution,
+      extraProperties: { reason: 'not_configured' },
+    })
     return res.status(503).json({ error: 'Email is not configured right now. Try again later.', code: 'not_configured' })
   }
 
@@ -98,16 +137,38 @@ export default async function handler(req, res) {
     })
   } catch (err) {
     console.error('Report email send failed:', err?.message ? String(err.message).slice(0, 120) : 'UnknownError')
+    await capturePostHogEvent({
+      event: 'Signup Failed',
+      email: clean,
+      attribution,
+      extraProperties: { reason: 'send_failed' },
+    })
     return res.status(502).json({ error: 'Could not send the report. Try again in a moment.' })
   }
 
   // Segment add is best-effort: the user already has their report, so a segment
   // failure must not turn a delivered email into an error response.
+  let segResult = { added: false, exists: false }
   try {
-    await addContactToSegment({ apiKey, segmentId, email: clean })
+    segResult = await addContactToSegment({
+      apiKey,
+      segmentId,
+      email: clean,
+      attribution,
+    })
   } catch (err) {
     console.warn('Report email add-contact failed:', err?.name || 'UnknownError')
   }
+
+  await capturePostHogEvent({
+    event: 'Signup Confirmed',
+    email: clean,
+    attribution,
+    extraProperties: {
+      is_new: !segResult.exists,
+      report_source: source,
+    },
+  })
 
   return res.status(200).json({ sent: true, email: clean, source })
 }
