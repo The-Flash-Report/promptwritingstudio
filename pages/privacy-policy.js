@@ -29,6 +29,7 @@ export default function PrivacyPolicy() {
               <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">1.1 Information You Provide</h3>
               <ul className="mb-4">
                 <li><strong>Contact Information:</strong> Email address, name when you subscribe to our newsletter or contact us</li>
+                <li><strong>Signup Attribution:</strong> When you subscribe to our newsletter or email yourself a grade report, we save the page path you were on, the referring website hostname, and any campaign tags in the URL on your Resend subscriber record so we know which forms and pages work</li>
                 <li><strong>Communication Data:</strong> Messages you send us through contact forms or email</li>
                 <li><strong>Survey Data:</strong> Responses to surveys or feedback forms you complete voluntarily</li>
               </ul>
@@ -36,6 +37,7 @@ export default function PrivacyPolicy() {
               <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">1.2 Information Automatically Collected</h3>
               <ul className="mb-4">
                 <li><strong>Usage Data:</strong> Information about how you use our calculators and tools</li>
+                <li><strong>Form Funnel Counts:</strong> Cookie-free, anonymous form funnel counts (form viewed, started, and submitted) sent to PostHog without cookies or personal profiles</li>
                 <li><strong>Device Information:</strong> IP address, browser type, device type, operating system</li>
                 <li><strong>Analytics Data:</strong> Page views, time spent on pages, click-through rates via Google Analytics</li>
                 <li><strong>Cookies and Tracking:</strong> Data collected through cookies and similar technologies</li>

@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import EmailCapture from '../ui/EmailCapture'
 import { createSavedLibrary, getBrowserStorage } from '../../lib/studio/savedLibrary'
+import { emitFormEvent, formatFormId, readClientAttribution } from '../../lib/email/clientAttribution'
 
 const TARGETS = [
   { id: 'claude', label: 'Claude' },
@@ -134,11 +135,54 @@ export default function PromptGrader({
   const [reportStatus, setReportStatus] = useState('idle') // idle | sending | sent | error
   const [reportError, setReportError] = useState('')
   const [reportSentTo, setReportSentTo] = useState('')
+  const reportFormRef = useRef(null)
+  const reportViewedRef = useRef(false)
+  const reportStartedRef = useRef(false)
 
   // Source attribution so the two grader surfaces stay measurable. The API
   // re-derives the authoritative source from the stored record; this value is
   // sent as a hint and keeps the surfaces distinct client-side.
   const reportSource = isEditsMode ? 'agent-prompt-grader-report' : 'prompt-grader-report'
+  const reportFormSlug = 'grade-report-email'
+  const [reportAttribution, setReportAttribution] = useState(() => ({
+    form_id: formatFormId(reportFormSlug),
+    signup_page: '',
+    signup_utm_source: '',
+    signup_utm_medium: '',
+    signup_utm_campaign: '',
+    signup_referrer: '',
+  }))
+
+  useEffect(() => {
+    setReportAttribution(readClientAttribution(reportFormSlug))
+  }, [reportFormSlug])
+
+  useEffect(() => {
+    if (!share?.id || reportStatus === 'sent' || reportViewedRef.current) return
+    const el = reportFormRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && !reportViewedRef.current) {
+            reportViewedRef.current = true
+            emitFormEvent('Form Viewed', reportFormSlug)
+            obs.disconnect()
+            break
+          }
+        }
+      },
+      { threshold: 0.5 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [share?.id, reportStatus, reportFormSlug])
+
+  function handleReportFocus() {
+    if (reportStartedRef.current) return
+    reportStartedRef.current = true
+    emitFormEvent('Form Started', reportFormSlug)
+  }
 
   useEffect(() => {
     setHistory(loadHistory(historySource))
@@ -179,6 +223,8 @@ export default function PromptGrader({
       setReportError('')
       setReportSentTo('')
       setReportEmail('')
+      reportViewedRef.current = false
+      reportStartedRef.current = false
       if (!data.flagged) {
         setHistory(saveToHistory(prompt, data, historySource))
       }
@@ -248,11 +294,23 @@ export default function PromptGrader({
     if (!share?.id || !address || reportStatus === 'sending') return
     setReportStatus('sending')
     setReportError('')
+    const currentAttr = readClientAttribution(reportFormSlug)
+    setReportAttribution(currentAttr)
+    emitFormEvent('Form Submitted', reportFormSlug)
     try {
       const res = await fetch(`/api/grade/${share.id}/email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: address, source: reportSource }),
+        body: JSON.stringify({
+          email: address,
+          source: reportSource,
+          form_id: currentAttr.form_id,
+          signup_page: currentAttr.signup_page,
+          signup_utm_source: currentAttr.signup_utm_source,
+          signup_utm_medium: currentAttr.signup_utm_medium,
+          signup_utm_campaign: currentAttr.signup_utm_campaign,
+          signup_referrer: currentAttr.signup_referrer,
+        }),
       })
       const data = await res.json()
       if (!res.ok) {
@@ -547,13 +605,13 @@ export default function PromptGrader({
           {share?.id && (
             <div className="bg-white rounded-lg shadow-md border border-[#E5E5E5] p-6">
               {reportStatus === 'sent' ? (
-                <>
+                <div role="status" aria-live="polite">
                   <h3 className="font-bold text-[#1A1A1A]">Report sent</h3>
                   <p className="text-sm text-[#333333] mt-1">
                     Your full report is on its way to {reportSentTo}. Check your inbox, and your spam folder if you do
                     not see it in a minute.
                   </p>
-                </>
+                </div>
               ) : (
                 <>
                   <h3 className="font-bold text-[#1A1A1A]">Email me this full report</h3>
@@ -561,7 +619,18 @@ export default function PromptGrader({
                     Get the score, the full criterion breakdown, and the {isEditsMode ? 'suggested edits' : 'rewrite'} in
                     your inbox, and join the PromptWritingStudio list for practical prompt tips. No spam.
                   </p>
-                  <form onSubmit={sendReport} className="flex flex-col sm:flex-row gap-2 w-full max-w-md">
+                  <form
+                    ref={reportFormRef}
+                    onFocus={handleReportFocus}
+                    onSubmit={sendReport}
+                    className="flex flex-col sm:flex-row gap-2 w-full max-w-md"
+                  >
+                    <input type="hidden" name="form_id" value={reportAttribution.form_id} />
+                    <input type="hidden" name="signup_page" value={reportAttribution.signup_page} />
+                    <input type="hidden" name="signup_utm_source" value={reportAttribution.signup_utm_source} />
+                    <input type="hidden" name="signup_utm_medium" value={reportAttribution.signup_utm_medium} />
+                    <input type="hidden" name="signup_utm_campaign" value={reportAttribution.signup_utm_campaign} />
+                    <input type="hidden" name="signup_referrer" value={reportAttribution.signup_referrer} />
                     <input
                       type="email"
                       value={reportEmail}
@@ -580,7 +649,7 @@ export default function PromptGrader({
                       {reportStatus === 'sending' ? 'Sending…' : 'Email me this report'}
                     </button>
                   </form>
-                  {reportError && <p className="text-sm text-red-600 mt-3">{reportError}</p>}
+                  {reportError && <p role="alert" className="text-sm text-red-600 mt-3">{reportError}</p>}
                 </>
               )}
             </div>
